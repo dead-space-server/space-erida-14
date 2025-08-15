@@ -1,0 +1,13 @@
+- type: entity
+  id: SpawnPointBlueShield
+  parent: SpawnPointJobBase
+  name: BlueShield
+  components:
+  - type: SpawnPoint
+    job_id: BlueShield
+  - type: Sprite
+    sprite: Backmen/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: blueshield
+      - state: jobicon

@@ -1,0 +1,37 @@
+- type: entity
+  parent: BasePDA
+  id: BlueShieldPDA
+  name: officer "Blueshield" PDA
+  description: He took a bullet and was unharmed.
+  components:
+    - type: Sprite
+      sprite: Backmen/Objects/Devices/pda.rsi
+      layers:
+      - map: [ "enum.PdaVisualLayers.Base" ]
+        state: "pda-blue"
+      - state: "light_overlay"
+        map: [ "enum.PdaVisualLayers.Flashlight" ]
+        shader: "unshaded"
+        visible: false
+      - state: "id_overlay"
+        map: [ "enum.PdaVisualLayers.IdLight" ]
+        shader: "unshaded"
+        visible: false
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          pda-blue
+    - type: PdaBorderColor
+      borderColor: "#3f3f74"
+    - type: Pda
+      id: BlueShieldIDCard
+      penSlot:
+        startingItem: Pen
+        priority: -1
+        whitelist:
+          tags:
+          - Write
+    - type: Icon
+      sprite: Backmen/Objects/Devices/pda.rsi
+      state: pda-blue

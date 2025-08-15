@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingBeltStorageBase, BaseBlueShieldContraband]
+  id: ClothingBeltBlueshieldWebbing
+  name: blueshield webbing
+  description: A unique and versatile chest mount capable of holding blueshield gear.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Belt/bswebbing.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Belt/bswebbing.rsi

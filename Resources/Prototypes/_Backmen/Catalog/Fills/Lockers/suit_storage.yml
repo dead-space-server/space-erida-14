@@ -1,0 +1,20 @@
+- type: entity
+  id: SuitStorageBlueShield
+  parent: SuitStorageBase
+  suffix: BlueShield
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillBlueShieldHardsuit
+  - type: AccessReader
+    access: [["CentralCommand"]]
+
+- type: entityTable
+  id: FillBlueShieldHardsuit
+  table: !type:AllSelector
+    children:
+    - id: ClothingOuterHardsuitBlueShield
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: ClothingMaskBreath

@@ -1,0 +1,51 @@
+# BlueShield
+- type: loadoutGroup
+  id: BlueshieldJumpsuit
+  name: loadout-group-blueshield-jumpsuit
+  loadouts:
+  - ClothingUniformJumpsuitBlueShield
+  - ClothingUniformJumpskirtBlueShield
+  - ClothingUniformBlueShieldTurtleneck
+  - ClothingUniformJumpskirtBlueShieldTurtleneck
+
+- type: loadoutGroup
+  id: BlueShieldEyes
+  name: loadout-group-blueshield-eyes
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingEyesGlassesBlueShield
+  - ClothingEyesBlueshieldVisor
+
+- type: loadoutGroup
+  id: BlueShieldHat
+  name: loadout-group-blueshield-hat
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingHeadHatBlackBeretBlueShield
+  - ClothingHeadHatLightBeretBlueShield
+
+- type: loadoutGroup
+  id: BlueshieldNeck
+  name: loadout-group-blueshield-neck
+  minLimit: 0
+  loadouts:
+  - ClothingNeckMantleBlueShield
+
+- type: loadoutGroup
+  id: BlueshieldBackpack
+  name: loadout-group-blueshield-backpack
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingBackpackBlueshield
+  - ClothingBackpackSatchelBlueshield
+  - ClothingBackpackDuffelBlueshield
+
+- type: loadoutGroup
+  id: BlueshieldOuterClothing
+  name: loadout-group-blueshield-outer
+  loadouts:
+  - ClothingOuterArmorBlueshield
+  - ClothingOuterCoatArmorBlueShield

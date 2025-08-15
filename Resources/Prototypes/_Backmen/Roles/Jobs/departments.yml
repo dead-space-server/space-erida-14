@@ -1,0 +1,9 @@
+- type: department
+  id: CentCom
+  name: department-CentCom
+  description: department-CentCom-description
+  color: "#13db0f"
+  primary: true
+  weight: -5
+  roles:
+    - BlueShield

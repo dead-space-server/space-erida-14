@@ -1,0 +1,63 @@
+- type: entity
+  id: ArmySetLoadouts
+  name: army duffel bag with equipment
+  description: Here is the equipment you took with you from the base. It remains to remember which ones exactly.
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Corvax/Back/Duffels/military.rsi
+    state: icon
+  - type: Item
+    size: Normal
+  - type: ThiefUndeterminedBackpack
+    possibleSets:
+    - UTAPMk1Set
+    # - ShotgunSet
+    # - EG-CSet
+    # - EG-SSet
+    # - XMLGSet
+    # - SR127Set
+    # - MP5Set
+    # - G36Set
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+
+- type: entity
+  id: BlueShieldSetLoadouts
+  parent: ArmySetLoadouts
+  components:
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 1
+    possibleSets:
+    - UTAPMk1Set
+    - ShotgunGuardian17Set
+
+- type: thiefBackpackSet
+  id: UTAPMk1Set
+  name: duffel-category-utapmk1-name
+  description: duffel-category-utapmk1-description
+  sprite:
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/utap-mark1/big.rsi
+    state: icon
+  content:
+  - Flash
+  - WeaponRifleUTAPM1
+  - MagazineRifle
+  - MagazineRifle
+  - MagazineRifle
+
+- type: thiefBackpackSet
+  id: ShotgunGuardian17Set
+  name: duffel-category-Guardian-name
+  description: duffel-category-Guardian-description
+  sprite:
+    sprite: Backmen/Objects/Weapons/Gunsx64/Shotguns/guard-17/big.rsi
+    state: icon
+  content:
+  - WeaponShotgunGuardian
+  - BoxLethalshot
+  - BoxLethalshot

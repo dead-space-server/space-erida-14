@@ -1,0 +1,52 @@
+- type: job
+  id: BlueShield
+  name: job-name-blueshield
+  description: job-description-blueshield
+  playTimeTracker: JobBlueShield
+  canBeAntag: false
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 14400
+    - !type:OverallPlaytimeRequirement
+      time: 86400
+  special:
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
+    - !type:AddComponentSpecial
+      components:
+        - type: AntagImmune
+  startingGear: BlueShieldGear
+  icon: "JobIconBlueShield"
+  supervisors: job-supervisors-hoh
+  accessGroups:
+    - AllAccessWithOutHeads
+  access:
+    - CentralCommand
+
+- type: startingGear
+  id: BlueShieldGear
+  equipment:
+    id: BlueShieldPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetAltCommand
+    shoes: ClothingShoesBootsCombat
+    belt: ClothingBeltBlueshieldWebbingFilled
+  storage:
+    back:
+    - BlueShieldSetLoadouts
+    - CombatKnifeSpetsnaz

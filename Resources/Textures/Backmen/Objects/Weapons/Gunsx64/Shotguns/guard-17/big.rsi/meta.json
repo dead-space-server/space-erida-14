@@ -1,0 +1,17 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-3.0",
+    "copyright": "made by discord: bonquai",
+    "size": {
+        "x": 64,
+        "y": 32
+    },
+    "states": [
+	{
+		"name": "icon"
+	},
+	{
+		"name": "bolt-open"
+    }
+    ]
+}

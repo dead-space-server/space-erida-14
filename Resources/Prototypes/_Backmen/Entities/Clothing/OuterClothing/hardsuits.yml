@@ -1,0 +1,15 @@
+- type: entity
+  parent: [ClothingOuterHardsuitSecurityRed, BaseBlueShieldContraband]
+  id: ClothingOuterHardsuitBlueShield
+  name: officer "Blueshield"'s combat hardsuit
+  description: A hardsuit designed for Blueshield officers with enhanced protection and night vision.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Hardsuits/bluehardsuit.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/OuterClothing/Hardsuits/bluehardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitBlueShield
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8

@@ -1,0 +1,16 @@
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldIDCard
+  name: officer "Blueshield" ID Card
+  components:
+    - type: Sprite
+      layers:
+        - state: card_silver
+        - state: sub_department
+          color: "#1b67a5"
+        - state: frame_head
+          color: "#1b67a5"
+        - sprite: Backmen/Objects/Misc/id_cards.rsi
+          state: idblueshield
+    - type: PresetIdCard
+      job: BlueShield

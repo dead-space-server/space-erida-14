@@ -38,6 +38,10 @@
       "directions": 4
     },
     {
+      "name": "emitter",
+      "directions": 4
+    },
+    {
       "name": "emitter0",
       "directions": 4
     },

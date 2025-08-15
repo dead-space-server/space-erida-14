@@ -1,0 +1,106 @@
+- type: loadoutEffectGroup
+  id: MasterBlueShield
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBlueShield
+      time: 288000 #80 hrs
+
+#suit
+- type: loadout
+  id: ClothingUniformJumpsuitBlueShield
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+
+- type: loadout
+  id: ClothingUniformJumpskirtBlueShield
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueShield
+
+- type: loadout
+  id: ClothingUniformBlueShieldTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformBlueShieldTurtleneck
+
+- type: loadout
+  id: ClothingUniformJumpskirtBlueShieldTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueShieldTurtleneck
+
+#eyes
+- type: loadout
+  id: ClothingEyesGlassesBlueShield
+  equipment:
+    eyes: ClothingEyesGlassesBlueShield
+
+- type: loadout
+  id: ClothingEyesBlueshieldVisor
+  equipment:
+    eyes: ClothingEyesBlueshieldVisor
+
+#hat
+- type: loadout
+  id: ClothingHeadHatBlackBeretBlueShield
+  equipment:
+    head: ClothingHeadHatBlackBeretBlueShield
+
+- type: loadout
+  id: ClothingHeadHatLightBeretBlueShield
+  equipment:
+    head: ClothingHeadHatLightBeretBlueShield
+
+#back
+- type: loadout
+  id: ClothingBackpackBlueshield
+  equipment:
+    back: ClothingBackpackBlueshield
+
+- type: loadout
+  id: ClothingBackpackSatchelBlueshield
+  equipment:
+    back: ClothingBackpackSatchelBlueshield
+
+- type: loadout
+  id: ClothingBackpackDuffelBlueshield
+  equipment:
+    back: ClothingBackpackDuffelBlueshield
+
+- type: loadout
+  id: ClothingBackpackMessengerBlueshield
+  equipment:
+    back: ClothingBackpackMessengerBlueshield
+
+#outerClothing
+- type: loadout
+  id: ClothingOuterArmorBlueshield
+  equipment:
+    outerClothing: ClothingOuterArmorBlueshield
+
+- type: loadout
+  id: ClothingOuterCoatArmorBlueShield
+  equipment:
+    outerClothing: ClothingOuterCoatArmorBlueShield
+
+#neck
+- type: loadout
+  id: ClothingNeckMantleBlueShield
+  equipment:
+    neck: ClothingNeckMantleBlueShield
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterBlueShield
+
+#weapon
+- type: loadout
+  id: WeaponMultiphaseEnergyGun
+  equipment:
+    pocket1: WeaponMultiphaseEnergyGun
+
+- type: loadout
+  id: WeaponPistolUCS
+  dummyEntity: WeaponPistolUCS
+  storage:
+    back:
+    - WeaponPistolUCS
+    - MagazinePistol57x28Extd

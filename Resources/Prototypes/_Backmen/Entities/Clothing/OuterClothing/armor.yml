@@ -1,0 +1,23 @@
+- type: entity
+  parent: [ ClothingOuterArmorBase, AllowSuitStorageClothing]
+  id: ClothingOuterArmorBlueshield
+  name: officer "Blueshield"'s vest
+  description: Redesigned security vest with increased protection.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Armor/armor_blueshield.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/OuterClothing/Armor/armor_blueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.4
+        ArmorPiercing: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: GroupExamine
+  - type: Contraband
+    allowedJobs: [ BlueShield ]

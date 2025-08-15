@@ -1,0 +1,17 @@
+- type: roleLoadout
+  id: JobBlueShield
+  groups:
+  - Werx #backmen
+  - Niz #backmen
+  - Socks #backmen
+  - BlueShieldHat
+  - BlueShieldEyes
+  - BlueshieldNeck
+  - BlueshieldBackpack
+  - BlueshieldJumpsuit
+  - BlueshieldOuterClothing
+  - Trinkets
+  - SurvivalSecurity
+  - Medals #backmen
+  - GroupSpeciesBreathTool
+  - Inventory # Corvax-Loadouts
