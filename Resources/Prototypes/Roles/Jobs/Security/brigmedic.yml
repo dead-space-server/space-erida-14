@@ -1,0 +1,35 @@
+- type: job
+  id: Brigmedic
+  name: job-name-brigmedic
+  description: job-description-brigmedic
+  playTimeTracker: JobBrigmedic
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 7200
+  startingGear: BrigmedicGear
+  icon: "JobIconBrigmedic"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+    - Medical
+    - Security
+    - Brig
+    - Maintenance
+    - External
+  #start-backmen: currency
+  minBankBalance: 150
+  maxBankBalance: 250
+  wageDepartment: Security
+  wage: 50
+  #end-backmen: currency
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: PsionicBonusChance
+          flatBonus: 0.025
+    - !type:AddImplantSpecial
+      implants: [ MindShieldImplant ]
