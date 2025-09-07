@@ -81,6 +81,7 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: medical
+  - type: TTS # Corvax-TTS
 
 - type: entity
   id: BorgChassisService

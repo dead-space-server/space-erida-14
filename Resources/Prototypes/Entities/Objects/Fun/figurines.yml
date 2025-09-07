@@ -25,6 +25,7 @@
   - type: TriggerOnSignal
   - type: Speech
     speechSounds: Pai # it just sounds better
+  - type: TTS
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice

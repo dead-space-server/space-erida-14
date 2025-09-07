@@ -24,6 +24,8 @@
   - type: Damageable
     damageContainer: ManifestedSpirit
     damageModifierSet: ManifestedSpirit
+  - type: TTS # Corvax-TTS
+    voice: Monolith2
   - type: NoSlip
   - type: Eye
     drawFov: false
@@ -86,3 +88,10 @@
     tags:
     - SlowImmune
     - KnockdownImmune
+  # backmen
+  - type: UniversalLanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic

@@ -1,11 +1,13 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.Preferences;
@@ -43,6 +45,17 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly SharedIdentitySystem _identity = default!;
 
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
+
+    // Corvax-TTS-Start
+    public const string DefaultVoice = "Aidar";
+
+    public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
+    {
+        { Sex.Male, "Aidar" },
+        { Sex.Female, "Kseniya" },
+        { Sex.Unsexed, "Baya" },
+    };
+    // Corvax-TTS-End
 
     public override void Initialize()
     {
@@ -529,6 +542,18 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
+    
+    // Corvax-TTS-Start
+    // ReSharper disable once InconsistentNaming
+    public void SetTTSVoice(EntityUid uid, string voiceId, HumanoidAppearanceComponent humanoid)
+    {
+        if (!TryComp<TTSComponent>(uid, out var comp))
+            return;
+
+        humanoid.Voice = voiceId;
+        comp.VoicePrototypeId = voiceId;
+    }
+    // Corvax-TTS-End
 
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.

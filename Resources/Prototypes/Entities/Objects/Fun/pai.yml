@@ -76,6 +76,8 @@
     # This has to be installed because otherwise they're not "alive",
     #  so they can ghost and come back.
     # Note that the personal AI never "dies".
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
   - type: MobState
     allowedStates:
       - Alive
@@ -88,6 +90,15 @@
           Searching: { state: pai-searching-overlay }
           On: { state: pai-on-overlay }
   - type: StationMap
+  - type: LanguageSpeaker #backmen: languages
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - Binary
+    - TauCetiBasic
+    understands:
+    - Binary
+    - TauCetiBasic
   - type: ChangeVoiceInContainer
     whitelist:
       components:

@@ -111,12 +111,13 @@
   - type: TypingIndicator
     proto: slime
   - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
+    currentLanguage: Slime
   - type: LanguageKnowledge #backmen: languages
     speaks:
     - Slime
     understands:
     - Slime
+    - TauCetiBasic
 
 - type: entity
   name: basic slime
@@ -147,6 +148,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: TTS # Corvax-TTS
+    voice: Aidar
 
 - type: entity
   name: blue slime

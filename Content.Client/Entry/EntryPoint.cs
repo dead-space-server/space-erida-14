@@ -2,6 +2,7 @@ using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
+using Content.Client.Corvax.TTS;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
@@ -83,7 +84,7 @@ namespace Content.Client.Entry
 
             foreach (var callback in TestingCallbacks)
             {
-                var cast = (ClientModuleTestingCallbacks) callback;
+                var cast = (ClientModuleTestingCallbacks)callback;
                 cast.ClientBeforeIoC?.Invoke();
             }
 

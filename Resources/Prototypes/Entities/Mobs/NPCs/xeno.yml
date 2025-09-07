@@ -118,6 +118,16 @@
     molsPerSecondPerUnitMass: 0.0005
   - type: Speech
     speechVerb: LargeMob
+  - type: TTS # Corvax TTS
+    voice: Xenia
+  - type: LanguageSpeaker
+    currentLanguage: Xeno
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
 
 - type: entity
   name: praetorian
