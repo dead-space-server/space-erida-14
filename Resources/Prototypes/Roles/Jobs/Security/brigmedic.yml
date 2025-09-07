@@ -6,10 +6,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000
+      time: 28800 # 8 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 7200
+      time: 28800 # 8 hours
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
@@ -17,6 +17,7 @@
   access:
     - Medical
     - Security
+    - Brigmedic
     - Brig
     - Maintenance
     - External
@@ -24,12 +25,8 @@
   minBankBalance: 150
   maxBankBalance: 250
   wageDepartment: Security
-  wage: 50
+  wage: 55
   #end-backmen: currency
   special:
-    - !type:AddComponentSpecial
-      components:
-        - type: PsionicBonusChance
-          flatBonus: 0.025
     - !type:AddImplantSpecial
       implants: [ MindShieldImplant ]

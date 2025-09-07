@@ -104,14 +104,14 @@
   id: Security
   name: department-Security
   description: department-Security-description
-  color: "#DE3A3A"
-  weight: 20
+  color: "#cc0000"
+  weight: 5
   roles:
-  - HeadOfSecurity
-  - SecurityCadet
-  - SecurityOfficer
-  - Detective
-  - Warden
+    - JobHeadOfSecurity
+    - JobWarden
+    - JobSecurityOfficer
+    - JobSecurityCadet
+    - JobBrigmedic  
 
 - type: department
   id: Science
