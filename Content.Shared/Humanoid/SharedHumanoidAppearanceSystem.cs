@@ -464,6 +464,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
+        SetTTSVoice(uid, profile.Voice, humanoid); // Corvax-TTS
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
