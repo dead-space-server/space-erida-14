@@ -32,5 +32,3 @@ ent-CarpetWhite = { ent-CarpetBase }
     .desc = { ent-CarpetBase.desc }
 ent-CarpetChapel = ковёр храма
     .desc = { ent-BaseStructure.desc }
-ent-CarpetCard = картонный "ковёр"
-    .desc = Даже линолеум лучше.

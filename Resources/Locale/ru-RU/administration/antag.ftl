@@ -14,5 +14,5 @@ admin-verb-text-make-nuclear-operative = Сделать ядерным опер�
 admin-verb-text-make-pirate = Сделать пиратом
 admin-verb-text-make-head-rev = Сделать Главой революции
 admin-verb-text-make-thief = Сделать вором
-admin-verb-text-make-paradox-clone = Создать парадоксального клона
+admin-verb-text-make-paradox-clone = Create Paradox Clone
 admin-overlay-antag-classic = АНТАГ
