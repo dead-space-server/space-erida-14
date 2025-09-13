@@ -6,6 +6,7 @@ ent-FoodDonutPlain = обычный пончик
     .desc = { ent-FoodDonutBase.desc }
 ent-FoodDonutJellyPlain = обычный желейный пончик
     .desc = { ent-FoodDonutBase.desc }
+ent-FoodDonutJellyScurret = желейный слизеньковый пончик
 ent-FoodDonutHomer = пончик
     .desc = { ent-FoodDonutBase.desc }
 ent-FoodDonutChaos = пончик хаоса
