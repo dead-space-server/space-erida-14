@@ -1,0 +1,54 @@
+- type: job
+  id: IAA
+  name: job-name-iaa
+  description: job-description-iaa
+  playTimeTracker: JobIAA
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 72000
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000
+  - !type:AgeRequirement
+    requiredAge: 21
+  startingGear: IAAGear
+  icon: "JobIconIAA"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Cryogenics
+  - Security
+  - Brig
+  - Lawyer
+  - Engineering
+  - Medical
+  - Salvage
+  - Cargo
+  - Research
+  - Service
+  - Maintenance
+  - External
+  - Janitor
+  - Theatre
+  - Bar
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - GenpopEnter
+  - GenpopLeave
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: IAAGear
+  equipment:
+    shoes: ClothingShoesColorBlack
+    id: IAAPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetIAA
+    pocket2: BookSpaceLaw
+  inhand:
+    - BriefcaseIAAFilled

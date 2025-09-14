@@ -1,0 +1,117 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretCaptainWhite
+  name: white captain beret
+  description: A white captain beret, an icon of style.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/white_beret.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/white_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretSheriff
+  name: sheriff beret
+  description: Beret, a favorite among local sheriffs.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/sheriff_beret.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/sheriff_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapcapWhite
+  name: white cap cap
+  description: Stylish white cap cap.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/white_capcap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/white_capcap.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCapcapSheriff
+  name: sheriff cap
+  description: Stylish sheriff cap.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/sheriff_capcap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/sheriff_capcap.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPlet
+  name: wicker hat
+  description: The hat comes straight from the eastern part of the earth, where it is popular among tourists and fellow countrymen.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/hatfriz.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/hatfriz.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatChapa
+  name: headchap
+  description: church hat, great for weddings.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/headchap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/headchap.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadJeester
+  name: jester's hat
+  description: there is definitely no rabbit in it
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/jeester.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/jeester.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSanabi
+  name: brigadier general hat
+  description: Smells like steel.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/sanabi.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/sanabi.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

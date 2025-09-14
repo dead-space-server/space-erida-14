@@ -78,7 +78,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Corvax/Announcements/announce.ogg
+      path: /Audio/Corvax/Announcements/flux.ogg
     weight: 8
     duration: 35
   - type: AnomalySpawnRule
@@ -94,7 +94,7 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/Corvax/Announcements/announce.ogg
+      path: /Audio/Corvax/Announcements/blusp_anomalies.ogg
     weight: 8
     duration: 35
   - type: BluespaceArtifactRule
@@ -338,9 +338,15 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/gasleak_start.ogg # Corvax-Announcements
+      params:
+        volume: -4
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
+    endAudio:
+      path: /Audio/Announcements/gasleak_end.ogg # Corvax-Announcements
+      params:
+        volume: -4
   - type: GasLeakRule
 
 - type: entity
@@ -361,9 +367,13 @@
   - type: StationEvent
     weight: 5
     startAnnouncement: station-event-power-grid-check-start-announcement
-    endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
-      path: /Audio/Announcements/power_off.ogg
+      path: /Audio/Announcements/Power_off.ogg # Corvax-Announcements
+      params:
+        volume: -4
+    endAnnouncement: station-event-power-grid-check-end-announcement
+    endAudio:
+      path: /Audio/Announcements/Power_on.ogg # Corvax-Announcements
       params:
         volume: -4
     duration: 60
@@ -378,8 +388,10 @@
     weight: 8
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
+    startAudio: # Erida-Announcements
+      path: /Audio/_Erida/Announcements/solar_flare.ogg
+      params:
+        volume: -4
     duration: 120
     maxDuration: 240
   - type: SolarFlareRule
@@ -405,7 +417,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/ventClog.ogg
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
@@ -419,7 +431,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -440,7 +452,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -461,7 +473,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -478,7 +490,7 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/Announcements/attention.ogg
+      path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 20
     weight: 1.5
@@ -568,7 +580,7 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/Announcements/intercept.ogg
+      path: /Audio/Announcements/attention.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule

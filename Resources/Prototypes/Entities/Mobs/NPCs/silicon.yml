@@ -5,6 +5,16 @@
   parent: BaseMob
   id: MobRobotic
   components:
+  # Erida-start
+  - type: LanguageSpeaker
+    currentLanguage: Binary
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - TauCetiBasic
+    understands:
+    - Binary
+    - TauCetiBasic
+  # Erida-end
   - type: Reactive
     groups:
       Acidic: [Touch]
@@ -59,6 +69,16 @@
   parent: MobRobotic
   id: MobSiliconBase
   components:
+  # Erida-start
+  - type: LanguageSpeaker
+    currentLanguage: Binary
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - TauCetiBasic
+    understands:
+    - Binary
+    - TauCetiBasic
+  # Erida-end
   - type: NpcFactionMember
     factions:
     - SimpleNeutral

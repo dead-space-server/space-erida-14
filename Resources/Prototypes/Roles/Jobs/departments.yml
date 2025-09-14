@@ -23,7 +23,6 @@
   - Clown
   - HeadOfPersonnel
   - Janitor
-  - Lawyer
   - Librarian
   - Mime
   - Musician
@@ -64,6 +63,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - IAA
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -75,6 +75,15 @@
   - DeathSquad
   primary: false
   weight: 100
+
+- type: department
+  id: Law
+  name: department-Law
+  description: department-Law-description
+  color: "#d98b71"
+  roles:
+  - IAA
+  - Lawyer
 
 - type: department
   id: Engineering
@@ -144,3 +153,4 @@
   - Zookeeper
   - Psychologist
   primary: false
+

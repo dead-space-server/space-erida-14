@@ -33,7 +33,7 @@ public sealed partial class MeteorSwarmComponent : Component
     public LocId? Announcement = "station-event-meteor-swarm-start-announcement";
 
     [DataField]
-    public SoundSpecifier? AnnouncementSound = new SoundPathSpecifier("/Audio/Announcements/meteors.ogg")
+    public SoundSpecifier? AnnouncementSound = new SoundPathSpecifier("/Audio/Announcements/meteors_start.ogg")
     {
         Params = new()
         {
@@ -54,5 +54,5 @@ public sealed partial class MeteorSwarmComponent : Component
     public MinMax MeteorsPerWave = new(3, 4);
 
     [DataField]
-    public MinMax WaveCooldown = new (10, 60);
+    public MinMax WaveCooldown = new(10, 60);
 }

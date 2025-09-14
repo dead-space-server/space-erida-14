@@ -71,15 +71,6 @@
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
   - type: ShowJobIcons
-  - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - Binary
-    - TauCetiBasic
-    understands:
-    - Binary
-    - TauCetiBasic
 
 - type: entity
   id: AiHeldIntellicard
@@ -284,6 +275,39 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
+  - type: LanguageSpeaker #backmen: languages
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - Binary
+    - TauCetiBasic
+    - SolCommon
+    - RootSpeak
+    - Dwarven
+    - Garpy
+    - Moffic
+    - Nekomimetic
+    - Dragon
+    - Shadokin
+    - Slime
+    - Canilunzt
+    - Freespeak
+    - Spider
+    understands:
+    - Binary
+    - TauCetiBasic
+    - SolCommon
+    - RootSpeak
+    - Dwarven
+    - Garpy
+    - Moffic
+    - Nekomimetic
+    - Dragon
+    - Shadokin
+    - Slime
+    - Canilunzt
+    - Freespeak
+    - Spider
   - type: Tag
     tags:
     - HideContextMenu

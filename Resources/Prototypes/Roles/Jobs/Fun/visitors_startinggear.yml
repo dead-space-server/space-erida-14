@@ -1121,7 +1121,6 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
     ears: ClothingHeadsetSecurity
-    pocket1: RubberStampLawyer
     pocket2: LuxuryPen
   inhand:
   - BriefcaseBrownFilled
@@ -1136,7 +1135,6 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelLeather
     ears: ClothingHeadsetSecurity
-    pocket1: RubberStampLawyer
     pocket2: SmokingPipeFilledTobacco
   inhand:
   - BriefcaseBrownFilled
@@ -1152,7 +1150,6 @@
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltStorageWaistbag
     ears: ClothingHeadsetSecurity
-    pocket1: RubberStampLawyer
     pocket2: SmokingPipeFilledTobacco
   inhand:
   - BriefcaseBrownFilled
@@ -1170,7 +1167,6 @@
     back: ClothingBackpackSatchelLeather
     ears: ClothingHeadsetSecurity
     outerClothing: ClothingOuterCoatExpensive
-    pocket1: RubberStampLawyer
     pocket2: LuxuryPen
   inhand:
   - BriefcaseBrownFilled
@@ -1186,7 +1182,6 @@
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltStorageWaistbag
     ears: ClothingHeadsetSecurity
-    pocket1: RubberStampLawyer
     pocket2: LuxuryPen
   inhand:
   - BriefcaseBrownFilled
@@ -1204,7 +1199,6 @@
     belt: ClothingBeltStorageWaistbag
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetCentCom
-    pocket1: RubberStampLawyer
     pocket2: LuxuryPen
   inhand:
   - BriefcaseBrownFilled

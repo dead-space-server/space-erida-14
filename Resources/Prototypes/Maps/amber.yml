@@ -53,6 +53,7 @@
           Detective: [ 1, 1 ]
           SecurityCadet: [ 2, 2 ] #intern, not counted
           Lawyer: [ 2, 2 ]
+          IAA: [ 0, 1 ]
           #supply (6 - 7)
           SalvageSpecialist: [ 3, 3 ]
           CargoTechnician: [ 3, 4 ]

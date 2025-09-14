@@ -50,6 +50,7 @@
     stealthy: true
     stripTimeReduction: 1
   - type: Speech
+    allowedEmotes: [ 'Mews', 'Meows', 'Purrs' ]
     speechSounds: Alto
   - type: DamageOnHighSpeedImpact
     damage:
