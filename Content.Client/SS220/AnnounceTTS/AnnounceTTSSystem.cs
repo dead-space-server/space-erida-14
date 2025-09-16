@@ -120,7 +120,7 @@ public sealed class AnnounceTTSSystem : EntitySystem
 
     private bool TryCreateAudioSource(byte[] data, float volume, [NotNullWhen(true)] out TTSAudioStream? source)
     {
-        var filePath = new ResPath($"{_fileIdx++}.ogg");
+        var filePath = new ResPath($"{_fileIdx++}.wav");
         _contentRoot.AddOrUpdateFile(filePath, data);
 
         var audioParams = AudioParams.Default.WithVolume(volume).WithRolloffFactor(1f).WithMaxDistance(float.MaxValue).WithReferenceDistance(1f);

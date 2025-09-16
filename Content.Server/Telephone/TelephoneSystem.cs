@@ -23,6 +23,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using System.Linq;
+using Content.Shared.Backmen.Chat;
 using Content.Shared.Backmen.Language;
 
 namespace Content.Server.Telephone;
@@ -91,7 +92,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         if (!_recentChatMessages.Add((args.Source, args.Message, entity)))
             return;
 
-        SendTelephoneMessage(args.Source, args.Message, entity);
+        SendTelephoneMessage(args.Source, args.Message, entity, language: args.Language); // backmen: language
     }
 
     private void OnTelephoneMessageReceived(Entity<TelephoneComponent> entity, ref TelephoneMessageReceivedEvent args)
@@ -130,7 +131,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         }
         // Corvax-TTS-End
 
-        _chat.TrySendInGameICMessage(speaker, args.Message, volume, range, nameOverride: name, checkRadioPrefix: false);
+        _chat.TrySendInGameICMessage(speaker, args.Message, volume, range, nameOverride: name, checkRadioPrefix: false, languageOverride: args.Language);
     }
 
     #endregion
@@ -388,7 +389,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         RaiseLocalEvent(source, ref evSentMessage);
         source.Comp.StateStartTime = _timing.CurTime;
 
-        var evReceivedMessage = new TelephoneMessageReceivedEvent(message, chatMsg, messageSource, source);
+        var evReceivedMessage = new TelephoneMessageReceivedEvent(message, chatMsg, messageSource, source, language); // backmen: language
 
         foreach (var receiver in source.Comp.LinkedTelephones)
         {
