@@ -1,0 +1,69 @@
+# Felinids
+- type: emote
+  id: Mews
+  category: Vocal
+  available: false
+  name: chat-emote-name-mews
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-mews"]
+  chatTriggers:
+    - mew
+    - mew.
+    - mew!
+    - mews
+    - mews.
+    - mews!
+    - мя
+    - мя.
+    - мя!
+
+- type: emote
+  id: Meows
+  category: Vocal
+  available: false
+  name: chat-emote-name-meows
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-meows"]
+  chatTriggers:
+    - Meows
+    - Meows.
+    - Meows!
+    - Meow
+    - Meow.
+    - Meow!
+    - мяу
+    - мяу.
+    - мяу!
+    - мяукает
+    - мяукает.
+    - мяукает!
+
+- type: emote
+  id: Purrs
+  category: Vocal
+  available: false
+  name: chat-emote-name-purrs
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-purrs"]
+  chatTriggers:
+    - мурчит
+    - мурчит.
+    - мурчит!
+    - Purrs
+    - Purrs.
+    - Purrs!

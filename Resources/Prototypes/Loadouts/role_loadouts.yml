@@ -30,6 +30,19 @@
   - Trinkets
   - GroupSpeciesBreathTool
 
+- type: roleLoadout
+  id: JobIAA
+  groups:
+  - Werx-IAA #erida
+  - Niz-IAA #erida
+  - Socks-IAA #erida
+  - LawyerNeck
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
 # Silicons
 - type: roleLoadout
   id: JobBorg

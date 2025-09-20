@@ -126,6 +126,8 @@
     attributes:
       gender: male
   - type: Sharp
+  - type: TTS # Corvax-TTS
+    voice: Monolith2
 
 - type: entity
   id: MobRatKingBuff

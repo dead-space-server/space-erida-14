@@ -10,8 +10,6 @@
   skinColoration: Hues
   maleFirstNames: NamesFirstMale
   femaleFirstNames: NamesFirstFemale
-  maleLastNames: names_last_male
-  femaleLastNames: names_last_female
 
 - type: speciesBaseSprites
   id: MobDemonSprites

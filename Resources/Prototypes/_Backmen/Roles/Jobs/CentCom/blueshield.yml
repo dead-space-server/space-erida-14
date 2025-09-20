@@ -50,3 +50,17 @@
     back:
     - BlueShieldSetLoadouts
     - CombatKnifeSpetsnaz
+
+- type: chameleonOutfit
+  id: BlueShieldChameleonOutfit
+  job: BlueShield
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatLightBeretBlueShield
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckMantleBlueShield
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsCombat
+    glasses: ClothingEyesBlueshieldVisor
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+    id: BlueShieldPDA

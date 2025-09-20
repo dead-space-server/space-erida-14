@@ -1,1 +1,1 @@
-species-name-felinid = Кошка
+species-name-felinid = Фелинид

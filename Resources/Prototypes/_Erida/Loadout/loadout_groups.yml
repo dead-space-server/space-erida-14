@@ -50,7 +50,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -112,7 +111,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -220,7 +218,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -282,7 +279,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -344,7 +340,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -406,7 +401,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -468,7 +462,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -530,7 +523,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -592,7 +584,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -654,7 +645,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -716,7 +706,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -778,7 +767,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -840,7 +828,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -902,7 +889,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -964,7 +950,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1026,7 +1011,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1088,7 +1072,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1150,7 +1133,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnder_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1212,7 +1194,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1274,7 +1255,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1336,7 +1316,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1398,7 +1377,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1460,7 +1438,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1522,7 +1499,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1585,7 +1561,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1648,7 +1623,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1711,7 +1685,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1774,7 +1747,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1837,7 +1809,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1899,7 +1870,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -1961,7 +1931,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2023,7 +1992,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2085,7 +2053,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2147,7 +2114,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2209,7 +2175,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2271,7 +2236,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2333,7 +2297,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2395,7 +2358,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2458,7 +2420,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh
@@ -2520,7 +2481,6 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocks_knee
   - ClothingUnderSocks_norm
   - ClothingUnderSocks_short
   - ClothingUnderSocks_thigh

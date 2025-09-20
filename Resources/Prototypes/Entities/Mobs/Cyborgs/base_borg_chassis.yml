@@ -219,7 +219,7 @@
       startValue: 0.1
       endValue: 2.0
       isLooped: true
-  - type: ToggleVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
   - type: PointLight
     enabled: false
@@ -239,6 +239,7 @@
     - SiliconEmotes
     - Unimplantable
   - type: Emoting
+  - type: TTS # Corvax-TTS
   - type: GuideHelp
     guides:
     - Cyborgs

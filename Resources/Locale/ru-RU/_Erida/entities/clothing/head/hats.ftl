@@ -1,0 +1,16 @@
+ent-ClothingHeadHatBeretCaptainWhite = белый берет капитана
+   .desc = Белый берет капитана, икона стиля.
+ent-ClothingHeadHatBeretSheriff = берет шерифа
+   .desc = Берет - фаворит, местных шерифов.
+ent-ClothingHeadHatCapcapWhite = белая фуражка капитана
+   .desc = Стильная белая фуражка капитана.
+ent-ClothingHeadHatCapcapSheriff = фуражка шерифа
+   .desc = Стильная фуражка шерифа.
+ent-ClothingHeadPlet = плетёная шляпа 
+   .desc = Шляпа прямиком с востока Земли, где она пользуется популярностью среди туристов.
+ent-ClothingHeadHatChapa = церковная шапка
+   .desc = церковная шляпа, отлично подходит для свадеб.
+ent-ClothingHeadSanabi = шапка генерала
+   .desc = выглядит стильно.
+ent-ClothingHeadJeester = шляпа джестера
+   .desc = в ней точно нет кролика.

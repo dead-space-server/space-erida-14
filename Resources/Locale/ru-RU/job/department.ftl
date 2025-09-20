@@ -9,3 +9,4 @@ department-Science = Научный отдел
 department-Silicon = Синтетики
 department-Specific = На определённых станциях
 department-Unknown = Неизвестный
+department-Law-description = Следите за соблюдением СРП и консультируйте экипаж.

@@ -2,16 +2,46 @@
   id: AmoreAmore
   name: Pyrokinesis - Аморе Аморе
   path:
-    path: /Audio/_Erida/Jukebox/pyrokinesis/pyrokinesis_amore_amore.ogg
+    path: /Audio/_Erida/JukeBox/Pyrokinesis/pyrokinesis_amore_amore.ogg
 
 - type: jukebox
   id: GentleElectricity
   name: Pyrokinesis - Нежное Электричество
   path:
-    path: /Audio/_Erida/Jukebox/pyrokinesis/pyrokinesis_gentle_electricity.ogg
+    path: /Audio/_Erida/JukeBox/Pyrokinesis/pyrokinesis_gentle_electricity.ogg
 
 - type: jukebox
   id: GodLegend
   name: Pyrokinesis - Легенда о Богине Гроз
   path:
-    path: /Audio/_Erida/Jukebox/pyrokinesis/pyrokinesis_god_legend.ogg
+    path: /Audio/_Erida/JukeBox/Pyrokinesis/pyrokinesis_god_legend.ogg
+
+- type: jukebox
+  id: Franz40
+  name: Franz Ferdinand - 40
+  path:
+    path: /Audio/_Erida/JukeBox/Franz_Ferdinand/Franz_Ferdinand_40.ogg
+
+- type: jukebox
+  id: TakeMeOut
+  name: Franz Ferdinand - Take Me Out
+  path:
+    path: /Audio/_Erida/JukeBox/Franz_Ferdinand/Franz_Ferdinand_Take_Me_Out.ogg
+
+- type: jukebox
+  id: ThisFfire
+  name: Franz Ferdinand - This Ffire
+  path:
+    path: /Audio/_Erida/JukeBox/Franz_Ferdinand/Franz_Ferdinand_This_Ffire.ogg
+
+- type: jukebox
+  id: Kapital
+  name: Ляпис Трубецкой - Капитал
+  path:
+    path: /Audio/_Erida/JukeBox/Lyapis_Trubeckojj/Lyapis_Trubeckojj_Kapital.ogg
+
+- type: jukebox
+  id: YourBalcony
+  name: Перемотка - Твоего балкона свет
+  path:
+    path: /Audio/_Erida/JukeBox/Peremotka/Peremotka_Tvoego_balkona.ogg

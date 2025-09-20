@@ -4,7 +4,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Metabolizer
-    metabolizerTypes: [ AnthroAnimal ]
+    metabolizerTypes: [ Animal ]
 
 - type: entity
   parent: OrganHumanLiver
@@ -12,7 +12,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Metabolizer
-    metabolizerTypes: [ AnthroAnimal ]
+    metabolizerTypes: [ Animal ]
 
 - type: entity
   parent: OrganHumanHeart
@@ -20,4 +20,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Metabolizer
-    metabolizerTypes: [ AnthroAnimal ]
+    metabolizerTypes: [ Animal ]

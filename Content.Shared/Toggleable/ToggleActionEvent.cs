@@ -15,8 +15,24 @@ public sealed partial class ToggleActionEvent : InstantActionEvent;
 ///     Generic enum keys for toggle-visualizer appearance data & sprite layers.
 /// </summary>
 [Serializable, NetSerializable]
-public enum ToggleVisuals : byte
+public enum ToggleableVisuals : byte
 {
-    Toggled,
-    Layer
+    Enabled,
+    Layer,
+    Color,
+}
+
+/// <summary>
+///     Generic sprite layer keys
+/// </summary>
+[Serializable, NetSerializable]
+public enum LightLayers : byte
+{
+    Light,
+
+    /// <summary>
+    ///     Used as key for generic unshaded layers. Not necessaily related to an entity with an actual light source.
+    ///     Use this instead of creating a unique single-purpose "unshaded" enum for every visualizer.
+    /// </summary>
+    Unshaded,
 }

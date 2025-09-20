@@ -1,0 +1,25 @@
+- type: entity
+  name: hypospray "Blue Shield"
+  parent: BaseItem
+  description: A sterile injector for rapid administration of drugs to patients.
+  id: HypoBlueShield
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Specific/Medical/hypospray.rsi
+    state: hypoblueshield
+  - type: Item
+    sprite: _Erida/Objects/Specific/Medical/hypospray.rsi
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 15
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+  - type: Hypospray
+    onlyAffectsMobs: false
+  - type: UseDelay
+    delay: 2.5
+  - type: StaticPrice
+    price: 550

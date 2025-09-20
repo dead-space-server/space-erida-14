@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Modified from existing  texture (tritium.png) by Anilori, healium Modified from existing  texture (frezon.png) by Anilori, HypNob Taken From https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station", 
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+
+        {
+            "name": "healium",
+            "delays": [[0.2, 0.2, 0.2, 0.3, 0.3, 0.2, 0.2, 0.2]]
+        },
+        {
+            "name": "nitrium",
+            "delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
+        },
+        {
+            "name": "BZ",
+            "delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
+        },
+        {
+            "name": "zauker",
+            "delays": [[0.1, 0.1, 0.1, 0.1, 0.1]]
+        },
+        {
+            "name": "HypNob",
+            "delays": [[0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]]
+        }
+    ]
+}

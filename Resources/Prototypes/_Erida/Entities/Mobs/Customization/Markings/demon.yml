@@ -128,6 +128,7 @@
   id: DemonGoatee
   bodyPart: FacialHair
   markingCategory: FacialHair
+  speciesRestriction: [Demon]
   sprites:
   - sprite: _Erida/Mobs/Demon/custom.rsi
     state: goatee

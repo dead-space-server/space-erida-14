@@ -13,11 +13,11 @@ public sealed class AirtightRequiresPowerSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<AirtightRequiresPowerComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<AirtightRequiresPowerComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<AirtightRequiresPowerComponent, PowerChangedEvent>(OnPowerChanged);
     }
 
-    private void OnInit(EntityUid uid, AirtightRequiresPowerComponent component, ref ComponentInit args)
+    private void OnMapInit(EntityUid uid, AirtightRequiresPowerComponent component, ref MapInitEvent args)
     {
         if (!TryComp<ApcPowerReceiverComponent>(uid, out var apcPowerReceiver)) return;
 

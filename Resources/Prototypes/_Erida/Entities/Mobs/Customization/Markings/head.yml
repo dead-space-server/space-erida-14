@@ -2,6 +2,7 @@
   id: ADTAlldurak
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: durak
@@ -10,6 +11,7 @@
   id: ADTAllhorn1
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: horn1
@@ -18,6 +20,7 @@
   id: ADTAllhorn2
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: horn2
@@ -26,6 +29,7 @@
   id: ADTAllhorn3
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: horn3
@@ -34,6 +38,7 @@
   id: ADTAllhorn4
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: horn4
@@ -42,6 +47,7 @@
   id: ADTAllhorn5
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: horn5
@@ -50,6 +56,7 @@
   id: ADTAllhorn6
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: horn6
@@ -58,6 +65,7 @@
   id: ADTAlllord
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: lord
@@ -66,6 +74,7 @@
   id: ADTAlloldpain
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: oldpain
@@ -74,6 +83,7 @@
   id: ADTAlltavrhorn
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: tavrhorn
@@ -82,6 +92,7 @@
   id: ADTAlltelehorn
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: telehorn
@@ -90,6 +101,7 @@
   id: ADTAllvampirehorn
   bodyPart: HeadTop
   markingCategory: HeadTop
+  speciesRestriction: [Demon]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/head.rsi
       state: vampirehorn

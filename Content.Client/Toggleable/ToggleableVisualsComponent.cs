@@ -6,9 +6,9 @@ namespace Content.Client.Toggleable;
 /// Component that handles toggling the visuals of an entity, including layers on an entity's sprite,
 /// the in-hand visuals, and the clothing/equipment visuals.
 /// </summary>
-/// <see cref="ToggleableLightVisualsSystem"/>
+/// <see cref="ToggleableVisualsSystem"/>
 [RegisterComponent]
-public sealed partial class ToggleableLightVisualsComponent : Component
+public sealed partial class ToggleableVisualsComponent : Component
 {
     /// <summary>
     /// Sprite layer that will have its visibility toggled when this item is toggled.

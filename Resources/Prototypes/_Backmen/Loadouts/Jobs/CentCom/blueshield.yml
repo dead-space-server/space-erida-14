@@ -66,11 +66,6 @@
   equipment:
     back: ClothingBackpackDuffelBlueshield
 
-- type: loadout
-  id: ClothingBackpackMessengerBlueshield
-  equipment:
-    back: ClothingBackpackMessengerBlueshield
-
 #outerClothing
 - type: loadout
   id: ClothingOuterArmorBlueshield
@@ -91,16 +86,3 @@
   - !type:GroupLoadoutEffect
     proto: MasterBlueShield
 
-#weapon
-- type: loadout
-  id: WeaponMultiphaseEnergyGun
-  equipment:
-    pocket1: WeaponMultiphaseEnergyGun
-
-- type: loadout
-  id: WeaponPistolUCS
-  dummyEntity: WeaponPistolUCS
-  storage:
-    back:
-    - WeaponPistolUCS
-    - MagazinePistol57x28Extd

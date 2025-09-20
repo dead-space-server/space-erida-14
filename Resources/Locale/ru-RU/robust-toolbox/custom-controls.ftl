@@ -11,3 +11,8 @@ entity-spawn-window-override-menu-tooltip = Перезапись размеще�
 ## Console
 
 console-line-edit-placeholder = Введите сюда команду
+
+## Common Used
+
+window-search-bar-placeholder = Поиск
+window-clear-button = Очистить

@@ -5,7 +5,13 @@
   components:
   - type: StorageFill
     contents:
-      - id: MedkitCombatFilled
-      - id: Stunbaton
+      - id: HypoBlueShield
+      - id: ChemistryBottleOmnizine
+      - id: ChemistryBottleEpinephrine
+      - id: ChemistryBottleBicaridine
+      - id: ChemistryBottleArithrazine
+      - id: ChemistryBottleDexalin
+      - id: ChemistryBottleDermaline
+      - id: ChemistryBottleEphedrine
       - id: Handcuffs
       - id: Handcuffs

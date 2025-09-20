@@ -1,0 +1,194 @@
+- type: gasReaction
+  id: BZProductionReaction
+  priority: 3
+  maximumTemperature: 313.149
+  minimumRequirements:
+  - 0     # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 10    # plasma
+  - 0     # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 10    # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  effects:
+  - !type:BZProductionReaction {}
+
+- type: gasReaction
+  id: PluoxiumProductionReaction
+  priority: 4
+  minimumTemperature: 50
+  maximumTemperature: 273.15
+  minimumRequirements:
+  - 0.01  # oxygen
+  - 0     # nitrogen
+  - 0.01  # carbon dioxide
+  - 0     # plasma
+  - 0.01  # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  effects:
+  - !type:PluoxiumProductionReaction {}
+
+- type: gasReaction
+  id: HydrogenFireReaction
+  priority: -3
+  minimumTemperature: 373.149 # Same as Atmospherics.FireMinimumTemperatureToExist
+  minimumRequirements:
+  - 0.01  # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0.01  # hydrogen
+  effects:
+  - !type:HydrogenFireReaction {}
+
+- type: gasReaction
+  id: HealiumProduction
+  priority: 8
+  minimumTemperature: 25
+  maximumTemperature: 300
+  minimumRequirements:
+  - 0     # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0.01  # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0.01  # bz
+  - 0     # healium
+  effects:
+  - !type:HealiumProductionReaction {}
+
+- type: gasReaction
+  id: NitriumProduction
+  priority: 5
+  minimumTemperature: 1500
+  minimumRequirements:
+  - 0     # oxygen
+  - 0.01  # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0.01  # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0.01  # bz
+  - 0     # healium
+  effects:
+  - !type:NitriumProductionReaction {}
+
+- type: gasReaction
+  id: NitriumDecomposition
+  priority: 6
+  maximumTemperature: 343.15
+  minimumRequirements:
+  - 0.01  # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0     # bz
+  - 0     # healium
+  - 0.01  # nitrium
+  - 0     # hyper-noblium
+  - 0     # zauker
+  effects:
+  - !type:NitriumDecompositionReaction {}
+- type: gasReaction
+  id: ZaukerProduction
+  priority: 9
+  minimumTemperature: 50000
+  maximumTemperature: 75000
+  minimumRequirements:
+  - 0     # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0     # bz
+  - 0     # healium
+  - 0.01  # nitrium
+  - 0.01  # hyper-noblium
+  - 0     # zauker
+  effects:
+  - !type:ZaukerProductionReaction {}
+
+- type: gasReaction
+  id: ZaukerDecomposition
+  priority: 10
+  minimumRequirements:
+  - 0     # oxygen
+  - 0.01  # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0     # bz
+  - 0     # healium
+  - 0     # nitrium
+  - 0     # hyper-noblium
+  - 0.01  # zauker
+  effects:
+  - !type:ZaukerDecompositionReaction {}
+
+- type: gasReaction
+  id: HyperNobliumProduction
+  priority: 7
+  minimumTemperature: 2.7
+  maximumTemperature: 15
+  minimumRequirements:
+  - 0     # oxygen
+  - 0.01  # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0.01  # tritium
+  - 0     # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0     # bz
+  - 0     # healium
+  - 0     # nitrium
+  - 0     # hyper-noblium
+  - 0     # zauker
+  effects:
+  - !type:HyperNobliumProductionReaction {}

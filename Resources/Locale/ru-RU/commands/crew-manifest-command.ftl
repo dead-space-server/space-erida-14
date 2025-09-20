@@ -1,2 +1,2 @@
-cmd-crewmanifest-desc = Opens the crew manifest for the given station.
+cmd-crewmanifest-desc = Открывает список экипажа к выбранной станции.
 cmd-crewmanifest-help = Usage: crewmanifest <entityUid>

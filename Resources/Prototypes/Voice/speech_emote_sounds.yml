@@ -291,6 +291,8 @@
       collection: BikeHorn
     Gasp:
       collection: MaleGasp
+    Moan:
+      collection: MaleMoan
     DefaultDeathgasp:
       collection: DeathGasp
 

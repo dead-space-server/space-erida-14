@@ -6,12 +6,12 @@
     - type: Sprite
       state: engineering
     - type: MachineBoard
-      prototype: AtmosDeviceFanTiny
+      prototype: AtmosDeviceFanTinyPWR
       stackRequirements:
         Manipulator: 2
         CableHV: 5
-        Uranium: 2
-        Gold: 10
+        Steel: 5
+        Gold: 5
 
 - type: entity
   id: TinyFanDirectionalCircuitboard
@@ -21,9 +21,9 @@
     - type: Sprite
       state: engineering
     - type: MachineBoard
-      prototype: AtmosDeviceFanDirectional
+      prototype: AtmosDeviceFanDirectionalPWR
       stackRequirements:
         Manipulator: 2
         CableHV: 5
-        Uranium: 5
-        Gold: 10
+        Steel: 5
+        Gold: 5

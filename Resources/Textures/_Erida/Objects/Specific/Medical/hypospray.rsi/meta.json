@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Erida at commit e3d8231cbcb4682f6c77788d5b1b6ddc1d1adbc4",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+
+    {
+      "name": "hypoblueshield"
+    }
+
+  ]
+}

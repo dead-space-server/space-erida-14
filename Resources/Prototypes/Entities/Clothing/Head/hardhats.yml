@@ -40,7 +40,7 @@
       startValue: 0.1
       endValue: 2.0
       isLooped: true
-  - type: ToggleVisuals
+  - type: ToggleableVisuals
     spriteLayer: light
     inhandVisuals:
       left:

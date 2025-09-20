@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingWitchHunter
+  name: Witch Hunter Cape
+  description: Kill these witches!
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Misc/witchhunterbelov.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Misc/witchhunterbelov.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingGlavaKylt
+  name: black cape of the head
+  description: A strange black cape of a senior follower, smells of mysticism.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Misc/glava.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Misc/glava.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingPosledKylt
+  name: Black Cape of the Follower
+  description: A strange black cape of a follower, smells of mysticism.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Misc/posledov.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Misc/posledov.rsi

@@ -39,7 +39,6 @@
     state: "head_m"
   - type: BodyPart
     partType: Head
-    toolName: "a head"
   - type: Input
     context: "ghost"
   - type: MovementSpeedModifier
@@ -60,7 +59,6 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
-    toolName: "a left arm"
 
 - type: entity
   id: RightArmShadowkin
@@ -74,7 +72,6 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
-    toolName: "a right arm"
 
 - type: entity
   id: LeftHandShadowkin
@@ -88,7 +85,6 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
-    toolName: "a left hand"
 
 - type: entity
   id: RightHandShadowkin
@@ -102,7 +98,6 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
-    toolName: "a right hand"
 
 - type: entity
   id: LeftLegShadowkin
@@ -116,7 +111,6 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-    toolName: "a left leg"
   - type: MovementBodyPart
 
 - type: entity
@@ -131,7 +125,6 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-    toolName: "a right leg"
   - type: MovementBodyPart
 
 - type: entity
@@ -146,7 +139,6 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
-    toolName: "a left foot"
 
 - type: entity
   id: RightFootShadowkin
@@ -160,4 +152,3 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
-    toolName: "a right foot"

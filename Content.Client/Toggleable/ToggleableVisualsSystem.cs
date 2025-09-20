@@ -13,12 +13,12 @@ using Robust.Shared.Utility;
 namespace Content.Client.Toggleable;
 
 /// <summary>
-/// Implements the behavior of <see cref="ToggleableLightVisualsComponent"/> by reacting to
+/// Implements the behavior of <see cref="ToggleableVisualsComponent"/> by reacting to
 /// <see cref="AppearanceChangeEvent"/>, for the sprite directly; <see cref="OnGetHeldVisuals"/> for the
 /// in-hand visuals; and <see cref="OnGetEquipmentVisuals"/> for the clothing visuals.
 /// </summary>
-/// <see cref="ToggleableLightVisualsComponent"/>
-public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLightVisualsComponent>
+/// <see cref="ToggleableVisualsComponent"/>
+public sealed class ToggleableVisualsSystem : VisualizerSystem<ToggleableVisualsComponent>
 {
     [Dependency] private readonly SharedItemSystem _item = default!;
     [Dependency] private readonly SharedPointLightSystem _pointLight = default!;
@@ -26,21 +26,21 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<ToggleableLightVisualsComponent, GetInhandVisualsEvent>(OnGetHeldVisuals,
+        SubscribeLocalEvent<ToggleableVisualsComponent, GetInhandVisualsEvent>(OnGetHeldVisuals,
             after: [typeof(ItemSystem)]);
-        SubscribeLocalEvent<ToggleableLightVisualsComponent, GetEquipmentVisualsEvent>(OnGetEquipmentVisuals,
+        SubscribeLocalEvent<ToggleableVisualsComponent, GetEquipmentVisualsEvent>(OnGetEquipmentVisuals,
             after: [typeof(ClientClothingSystem)]);
     }
 
     protected override void OnAppearanceChange(EntityUid uid,
-        ToggleableLightVisualsComponent component,
+        ToggleableVisualsComponent component,
         ref AppearanceChangeEvent args)
     {
-        if (!AppearanceSystem.TryGetData<bool>(uid, ToggleableLightVisuals.Enabled, out var enabled, args.Component))
+        if (!AppearanceSystem.TryGetData<bool>(uid, ToggleableVisuals.Enabled, out var enabled, args.Component))
             return;
 
         var modulateColor =
-            AppearanceSystem.TryGetData<Color>(uid, ToggleableLightVisuals.Color, out var color, args.Component);
+            AppearanceSystem.TryGetData<Color>(uid, ToggleableVisuals.Color, out var color, args.Component);
 
         // Update the item's sprite
         if (args.Sprite != null && component.SpriteLayer != null &&
@@ -58,7 +58,7 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
             DebugTools.Assert(!light.NetSyncEnabled,
                 $"{typeof(ItemTogglePointLightComponent)} requires point lights without net-sync");
             _pointLight.SetEnabled(uid, enabled, light);
-            if (modulateColor && toggleLights.ToggleableLightVisualsColorModulatesLights)
+            if (modulateColor && toggleLights.ToggleableVisualsColorModulatesLights)
             {
                 _pointLight.SetColor(uid, color, light);
             }
@@ -69,11 +69,11 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
     }
 
     private void OnGetEquipmentVisuals(EntityUid uid,
-        ToggleableLightVisualsComponent component,
+        ToggleableVisualsComponent component,
         GetEquipmentVisualsEvent args)
     {
         if (!TryComp(uid, out AppearanceComponent? appearance)
-            || !AppearanceSystem.TryGetData<bool>(uid, ToggleableLightVisuals.Enabled, out var enabled, appearance)
+            || !AppearanceSystem.TryGetData<bool>(uid, ToggleableVisuals.Enabled, out var enabled, appearance)
             || !enabled)
             return;
 
@@ -89,7 +89,7 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
         if (layers == null && !component.ClothingVisuals.TryGetValue(args.Slot, out layers))
             return;
 
-        var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableLightVisuals.Color, out var color, appearance);
+        var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableVisuals.Color, out var color, appearance);
 
         var i = 0;
         foreach (var layer in layers)
@@ -108,17 +108,17 @@ public sealed class ToggleableLightVisualsSystem : VisualizerSystem<ToggleableLi
         }
     }
 
-    private void OnGetHeldVisuals(EntityUid uid, ToggleableLightVisualsComponent component, GetInhandVisualsEvent args)
+    private void OnGetHeldVisuals(EntityUid uid, ToggleableVisualsComponent component, GetInhandVisualsEvent args)
     {
         if (!TryComp(uid, out AppearanceComponent? appearance)
-            || !AppearanceSystem.TryGetData<bool>(uid, ToggleableLightVisuals.Enabled, out var enabled, appearance)
+            || !AppearanceSystem.TryGetData<bool>(uid, ToggleableVisuals.Enabled, out var enabled, appearance)
             || !enabled)
             return;
 
         if (!component.InhandVisuals.TryGetValue(args.Location, out var layers))
             return;
 
-        var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableLightVisuals.Color, out var color, appearance);
+        var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableVisuals.Color, out var color, appearance);
 
         var i = 0;
         var defaultKey = $"inhand-{args.Location.ToString().ToLowerInvariant()}-toggle";

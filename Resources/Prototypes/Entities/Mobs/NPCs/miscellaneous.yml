@@ -142,7 +142,7 @@
     speaks:
     - SpaceMob
     understands:
-    - SpaceMo
+    - SpaceMob
   - type: Item
   - type: MultiHandedItem
   - type: NpcFactionMember

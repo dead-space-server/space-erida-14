@@ -1,0 +1,52 @@
+- type: job
+  id: IAA
+  name: job-name-iaa
+  description: job-description-iaa
+  playTimeTracker: JobIAA
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 72000
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000
+  - !type:AgeRequirement
+    requiredAge: 21
+  startingGear: IAAGear
+  icon: "JobIconIAA"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Lawyer
+  - Maintenance
+  - External
+  - Command
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: IAAGear
+  equipment:
+    shoes: ClothingShoesColorBlack
+    id: IAAPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetIAA
+    pocket2: BookSpaceLaw
+  inhand:
+    - BriefcaseIAAFilled
+  
+- type: chameleonOutfit
+  id: IAAChameleonOutfit
+  job: IAA
+  hasMindShield: true
+  equipment:
+    neck: ClothingNeckLawyerbadge
+    head: ClothingHeadHatBowlerHat
+    shoes: ClothingShoesColorBlack
+    id: IAAPDA
+    eyes: ClothingEyesGlassesSunglasses
+    ears: ClothingHeadsetIAA
+    gloves: ClothingHandsGlovesColorBlack

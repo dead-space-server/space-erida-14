@@ -104,7 +104,7 @@
   id: PotassiumExplosion
   impact: High
   priority: 20
-  conserveEnergy: false
+  #conserveEnergy: false
   reactants:
     Water:
       amount: 1
@@ -120,9 +120,9 @@
 
 - type: reaction
   id: Smoke
-  priority: -10
+  priority: 10
   impact: High
-  conserveEnergy: false
+  #conserveEnergy: false
   reactants:
     Phosphorus:
       amount: 1
@@ -139,9 +139,9 @@
 
 - type: reaction
   id: Foam
-  priority: -10
+  priority: 10
   impact: High
-  conserveEnergy: false
+  #conserveEnergy: false
   reactants:
     Fluorosurfactant:
       amount: 1
@@ -157,8 +157,8 @@
 - type: reaction
   id: IronMetalFoam
   impact: High
-  priority: -10
-  conserveEnergy: false
+  priority: 10
+  #conserveEnergy: false
   reactants:
     Iron:
       amount: 3
@@ -176,8 +176,8 @@
 - type: reaction
   id: AluminiumMetalFoam
   impact: High
-  priority: -10
-  conserveEnergy: false
+  priority: 10
+  #conserveEnergy: false
   reactants:
     Aluminium:
       amount: 3
@@ -196,7 +196,7 @@
   id: UraniumEmpExplosion
   impact: High
   priority: 20
-  conserveEnergy: false
+  #conserveEnergy: false
   reactants:
     Iron:
       amount: 1
@@ -215,7 +215,7 @@
   id: Flash
   impact: High
   priority: 20
-  conserveEnergy: false
+  #conserveEnergy: false
   reactants:
     Aluminium:
       amount: 1

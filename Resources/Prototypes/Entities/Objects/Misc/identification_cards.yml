@@ -882,3 +882,19 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
+
+- type: entity
+  parent: IDCardStandard
+  id: IAAIDCard
+  name: internal affairs agent ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: card_silver # Backmen
+        - state: sub_department # Backmen
+          color: "#1b67a5"
+        - state: frame_head # Backmen
+          color: "#1b67a5"
+        # - state: idiaa
+    - type: PresetIdCard
+      job: IAA

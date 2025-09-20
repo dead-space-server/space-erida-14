@@ -5,6 +5,7 @@ using Content.Shared.Backmen.Chat;
 using Content.Server.Interaction;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Chat;
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Database;
 using Content.Shared.Labels.Components;
 using Content.Shared.Mind.Components;
@@ -22,6 +23,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using System.Linq;
+using Content.Shared.Backmen.Chat;
+using Content.Shared.Backmen.Language;
 
 namespace Content.Server.Telephone;
 
@@ -89,7 +92,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         if (!_recentChatMessages.Add((args.Source, args.Message, entity)))
             return;
 
-        SendTelephoneMessage(args.Source, args.Message, entity);
+        SendTelephoneMessage(args.Source, args.Message, entity, language: args.Language); // backmen: language
     }
 
     private void OnTelephoneMessageReceived(Entity<TelephoneComponent> entity, ref TelephoneMessageReceivedEvent args)
@@ -115,7 +118,20 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         var range = args.TelephoneSource.Comp.LinkedTelephones.Count > 1 ? ChatTransmitRange.HideChat : ChatTransmitRange.GhostRangeLimit;
         var volume = entity.Comp.SpeakerVolume == TelephoneVolume.Speak ? InGameICChatType.Speak : InGameICChatType.Whisper;
 
-        _chat.TrySendInGameICMessage(speaker, args.Message, volume, range, nameOverride: name, checkRadioPrefix: false);
+        // Corvax-TTS-Start
+        // If speaker entity has TTS, the telephone will speak with the same voice
+        if(TryComp<TTSComponent>(args.MessageSource, out var ttsSpeaker))
+        {
+            EnsureComp<TTSComponent>(speaker, out var ttsTelephone);
+            ttsTelephone.VoicePrototypeId = ttsSpeaker.VoicePrototypeId;
+        }
+        else // Remove TTS if the speaker has no TTS
+        {
+            RemComp<TTSComponent>(speaker);
+        }
+        // Corvax-TTS-End
+
+        _chat.TrySendInGameICMessage(speaker, args.Message, volume, range, nameOverride: name, checkRadioPrefix: false, languageOverride: args.Language);
     }
 
     #endregion
@@ -328,7 +344,9 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         SetTelephoneMicrophoneState(entity, false);
     }
 
-    private void SendTelephoneMessage(EntityUid messageSource, string message, Entity<TelephoneComponent> source, bool escapeMarkup = true)
+    private void SendTelephoneMessage(EntityUid messageSource, string message, Entity<TelephoneComponent> source, bool escapeMarkup = true,
+        LanguagePrototype? language = null // backmen: language
+        )
     {
         // This method assumes that you've already checked that this
         // telephone is able to transmit messages and that it can
@@ -371,7 +389,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         RaiseLocalEvent(source, ref evSentMessage);
         source.Comp.StateStartTime = _timing.CurTime;
 
-        var evReceivedMessage = new TelephoneMessageReceivedEvent(message, chatMsg, messageSource, source);
+        var evReceivedMessage = new TelephoneMessageReceivedEvent(message, chatMsg, messageSource, source, language); // backmen: language
 
         foreach (var receiver in source.Comp.LinkedTelephones)
         {

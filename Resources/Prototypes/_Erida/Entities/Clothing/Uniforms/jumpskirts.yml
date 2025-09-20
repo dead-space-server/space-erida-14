@@ -1,0 +1,45 @@
+- type: entity
+  parent: ClothingUniformJumpskirtCaptain
+  id: ClothingUniformJumpskirtWhiteCaptain
+  name: white captain jumpskirt
+  description: White captain jumpsuit skirt symbolizing that your salary clearly exceeds the norm.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/white_captain.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/white_captain.rsi
+    
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitmaidblack
+  name: Black Maid Costume
+  description: This appears to be a classic French maid costume.
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_black.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_black.rsi
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitmaidblue
+  name: Blue Maid Costume
+  description: It's the same as the black one, but blue, don't offend its owner ;)
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_blue.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_blue.rsi
+
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitmaidpink
+  name: Pink Maid Costume
+  description: It's the same as the black one, but blue, don't offend its owner ;)
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_pink.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_pink.rsi

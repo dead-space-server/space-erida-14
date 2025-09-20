@@ -2,7 +2,6 @@
   id: TaurCanine
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
   speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
@@ -14,7 +13,6 @@
   id: TaurCow
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
   speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
@@ -24,8 +22,7 @@
   id: TaurDeer
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
-  speciesRestriction: [Anthropomorph, Human]
+  speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
       state: taur_deer
@@ -36,7 +33,6 @@
   id: TaurDrake
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
   speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
@@ -48,8 +44,7 @@
   id: TaurSpider
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
-  speciesRestriction: [Anthropomorph, Human, Arachnid]
+  speciesRestriction: [Anthropomorph, Arachnid]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
       state: taur_drider
@@ -58,7 +53,6 @@
   id: TaurEevee
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
   speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
@@ -70,7 +64,6 @@
   id: TaurFeline
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
   speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
@@ -82,8 +75,7 @@
   id: TaurHorse
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
-  speciesRestriction: [Anthropomorph, Human]
+  speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
       state: taur_horse
@@ -111,7 +103,7 @@
   id: TaurNaga
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian, Human]
+  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
       state: taur_naga
@@ -152,8 +144,7 @@
   id: TaurTentacle
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
-  speciesRestriction: [Anthropomorph, Human]
+  speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi
       state: taur_tentacle
@@ -162,7 +153,6 @@
   id: TaurSynthWolf
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true
   speciesRestriction: [Anthropomorph]
   sprites:
     - sprite: _Ataraxia/Mobs/Customization/taur.rsi

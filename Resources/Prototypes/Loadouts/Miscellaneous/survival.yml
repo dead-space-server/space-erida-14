@@ -20,6 +20,9 @@
     - Reptilian
      #backmen-species-start
     - Felinid
+    - Anthropomorph
+    - Demon
+    - Shark
     #backmen-species-end
 
 - type: loadoutEffectGroup

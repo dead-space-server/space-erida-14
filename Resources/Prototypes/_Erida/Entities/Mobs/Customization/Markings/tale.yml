@@ -2,6 +2,7 @@
   id: ADTAllsuccubus
   bodyPart: Chest
   markingCategory: Chest
+  speciesRestriction: [Demon, SlimePerson]
   sprites:
     - sprite: _Erida/Customization/Markings/horns/tale.rsi
       state: succubus

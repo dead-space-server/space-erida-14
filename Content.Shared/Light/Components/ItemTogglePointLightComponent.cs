@@ -11,8 +11,8 @@ namespace Content.Shared.Light.Components;
 public sealed partial class ItemTogglePointLightComponent : Component
 {
     /// <summary>
-    /// When true, causes the color specified in <see cref="ToggleableLightVisuals.Color"/>
+    /// When true, causes the color specified in <see cref="ToggleableVisuals.Color"/>
     /// be used to modulate the color of lights on this entity.
     /// </summary>
-    [DataField] public bool ToggleableLightVisualsColorModulatesLights = false;
+    [DataField] public bool ToggleableVisualsColorModulatesLights = false;
 }

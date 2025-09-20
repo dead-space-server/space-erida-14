@@ -55,6 +55,14 @@
     ClothingShoesBootsCowboyBrown: 1
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
+    #Erida-Start
+    ClothingHeadPlet: 1 
+    ClothingHeadJeester: 1
+    ClothingHeadSanabi: 1
+    ClothingNeckCloakSanabiCloak: 1
+    ClothingUniformArbitr: 1
+    ClothingNeckCloakArbiter: 1
+    #Erida-End
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ToyFigurineBoxer: 1

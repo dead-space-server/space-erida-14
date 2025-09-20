@@ -12,7 +12,7 @@ public sealed partial class TTSSystem
 
     private ResPath GetCacheId(TTSVoicePrototype voicePrototype, string cacheId)
     {
-        var resPath = new ResPath($"voicecache/{voicePrototype.ID}/{cacheId}.ogg").ToRootedPath();
+        var resPath = new ResPath($"voicecache/{voicePrototype.ID}/{cacheId}.wav").ToRootedPath();
         _resourceManager.UserData.CreateDir(resPath.Directory);
         return resPath.ToRootedPath();
     }

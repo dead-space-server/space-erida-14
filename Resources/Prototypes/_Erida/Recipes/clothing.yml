@@ -1,0 +1,15 @@
+## Adjutant
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitmaidblack
+  result: ClothingUniformJumpsuitmaidblack
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitmaidpink
+  result: ClothingUniformJumpsuitmaidpink
+
+- type: latheRecipe
+  parent: BaseJumpsuitRecipe
+  id: ClothingUniformJumpsuitmaidblue
+  result: ClothingUniformJumpsuitmaidblue

@@ -84,3 +84,7 @@ ent-FoodCakeCotton = хлопковый торт
     .desc = Торт из волокон и ваты сверху.
 ent-FoodCakeCottonSlice = кусок хлопкового торта
     .desc = Торт из волокон и ваты сверху.
+ent-FoodCakeBerryDelight = ягодное наслаждение
+    .desc = Этот торт надвигается.
+ent-FoodCakeBerryDelightSlice = кусок ягодного наслаждения
+    .desc = Вставь вилку, твой голод развеется.

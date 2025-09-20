@@ -1,0 +1,150 @@
+# Devices which are not portable but don't link up to anything
+- type: entity
+  id: AtmosDeviceFanTinyPWR
+  name: powered tiny fan
+  description: A tiny fan, releasing a thin gust of air.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/tinyfan.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+  - type: Clickable
+  - type: Tag
+    tags:
+      - SpreaderIgnore
+   # ERIDA-start
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+    pricePerJoule: 0.05
+  - type: ApcPowerReceiverBattery
+    idleLoad: 45
+    batteryRechargeRate: 200
+    batteryRechargeEfficiency: 0.0 # temporarily no power draw because this was causing potentially SEIZURE inducing light flickering
+  - type: ApcPowerReceiver
+    powerLoad: 45
+  - type: ExtensionCableReceiver
+  - type: AirtightRequiresPower
+  - type: Machine
+    board: TinyFanCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+# Erida-end
+
+- type: entity
+  id: AtmosDeviceFanDirectionalPWR
+  name: powered directional fan
+  description: A thin fan, stopping the movement of gases across it.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: Structures/Piping/Atmospherics/directionalfan.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.48,-0.48,0.48,-0.40"
+  - type: Airtight
+    noAirWhenFullyAirBlocked: false
+    airBlockedDirection:
+      - South
+  - type: Clickable
+  - type: Tag
+    tags:
+      - SpreaderIgnore
+# ERIDA-start
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+    pricePerJoule: 0.05
+  - type: ApcPowerReceiverBattery
+    idleLoad: 45
+    batteryRechargeRate: 200
+    batteryRechargeEfficiency: 0.0 # temporarily no power draw because this was causing potentially SEIZURE inducing light flickering
+  - type: ApcPowerReceiver
+    powerLoad: 45
+  - type: ExtensionCableReceiver
+  - type: AirtightRequiresPower
+  - type: Machine
+    board: TinyFanDirectionalCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: Construction
+    graph: Machine
+    node: machine
+    containers:
+    - machine_parts
+    - machine_board
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -6
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # Erida-end
