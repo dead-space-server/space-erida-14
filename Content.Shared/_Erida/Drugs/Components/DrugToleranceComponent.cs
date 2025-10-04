@@ -1,7 +1,4 @@
 // File: DrugToleranceComponent.cs
-using Content.Shared.Chemistry.Reagent;
-using Robust.Shared.GameObjects;
-
 namespace Content.Shared.Drugs.Components
 {
     [RegisterComponent]
