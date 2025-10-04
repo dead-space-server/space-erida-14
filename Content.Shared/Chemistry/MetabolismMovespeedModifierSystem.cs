@@ -1,60 +1,38 @@
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Movement.Systems;
-using Robust.Shared.Timing;
+// File: ReagentEffectModifier.cs
+using Content.Shared.Chemistry.Events;
+using Content.Shared.Drugs.Components;
 
-namespace Content.Shared.Chemistry
+namespace Content.Shared.Tolerance.Systems
 {
-    // TODO CONVERT THIS TO A STATUS EFFECT!!!!!!!!!!!!!!!!!!!!!!!!
-    public sealed class MetabolismMovespeedModifierSystem : EntitySystem
+    public sealed class ReagentEffectModifier : EntitySystem
     {
-        [Dependency] private readonly IGameTiming _gameTiming = default!;
-        [Dependency] private readonly MovementSpeedModifierSystem _movespeed = default!;
-
-        private readonly List<Entity<MovespeedModifierMetabolismComponent>> _components = new();
-
         public override void Initialize()
         {
             base.Initialize();
 
-            UpdatesOutsidePrediction = true;
-
-            SubscribeLocalEvent<MovespeedModifierMetabolismComponent, ComponentStartup>(AddComponent);
-            SubscribeLocalEvent<MovespeedModifierMetabolismComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovespeed);
+            SubscribeLocalEvent<MetabolizeReagentEvent>(HandleMetabolizeReagent);
         }
 
-        private void OnRefreshMovespeed(EntityUid uid, MovespeedModifierMetabolismComponent component, RefreshMovementSpeedModifiersEvent args)
+        private void HandleMetabolizeReagent(MetabolizeReagentEvent ev)
         {
-            args.ModifySpeed(component.WalkSpeedModifier, component.SprintSpeedModifier);
-        }
+            var playerEnt = ev.Target;
+            if (!EntityManager.TryGetComponent(playerEnt, out DrugToleranceComponent toleranceComp))
+                return;
 
-        private void AddComponent(Entity<MovespeedModifierMetabolismComponent> metabolism, ref ComponentStartup args)
-        {
-            _components.Add(metabolism);
-        }
-
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
-
-            var currentTime = _gameTiming.CurTime;
-
-            for (var i = _components.Count - 1; i >= 0; i--)
+            // Проверяем, что ID не равен null
+            if (ev.Reagent.ID != null)
             {
-                var metabolism = _components[i];
+                var reagentID = ev.Reagent.ID;
 
-                if (metabolism.Comp.Deleted)
+                if (toleranceComp.Tolerances.TryGetValue(reagentID, out var tolerance))
                 {
-                    _components.RemoveAt(i);
-                    continue;
+                    // Ослабляем воздействие вещества
+                    ev.Amount *= 1 - tolerance / 100;
                 }
-
-                if (metabolism.Comp.ModifierTimer > currentTime)
-                    continue;
-
-                _components.RemoveAt(i);
-                RemComp<MovespeedModifierMetabolismComponent>(metabolism);
-
-                _movespeed.RefreshMovementSpeedModifiers(metabolism);
+            }
+            else
+            {
+                // Обработка ситуации, когда ID равен null
             }
         }
     }
