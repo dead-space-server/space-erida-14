@@ -287,4 +287,11 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField("effects", required: true)]
         public EntityEffect[] Effects = default!;
     }
+
+    public sealed partial class ReagentPrototype : IPrototype
+    {
+        // Новое свойство: насколько быстро растет толерантность к этому веществу
+        [DataField("toleranceIncreaseRate")] public float ToleranceIncreaseRate { get; private set; } = 0.1f;
+    }
+
 }
