@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/15/2025 14:13:13
-  entityCount: 29420
+  time: 10/20/2025 13:45:10
+  entityCount: 29421
 maps:
 - 1
 grids:
@@ -20083,7 +20083,7 @@ entities:
         DoorStatus: True
         DockStatus: True
     - type: Door
-      secondsUntilStateChange: -41316.6
+      secondsUntilStateChange: -41393.47
       changeAirtight: False
       state: Opening
   - uid: 324
@@ -20100,7 +20100,7 @@ entities:
         DoorStatus: True
         DockStatus: True
     - type: Door
-      secondsUntilStateChange: -72054.42
+      secondsUntilStateChange: -72131.29
       changeAirtight: False
       state: Opening
   - uid: 325
@@ -20160,7 +20160,7 @@ entities:
         DoorStatus: True
         DockStatus: True
     - type: Door
-      secondsUntilStateChange: -41317.8
+      secondsUntilStateChange: -41394.668
       changeAirtight: False
       state: Opening
   - uid: 29196
@@ -20177,7 +20177,7 @@ entities:
         DoorStatus: True
         DockStatus: True
     - type: Door
-      secondsUntilStateChange: -41317.066
+      secondsUntilStateChange: -41393.934
       changeAirtight: False
       state: Opening
 - proto: AirlockFreezer
@@ -20238,7 +20238,7 @@ entities:
       pos: 28.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -94696.055
+      secondsUntilStateChange: -94772.92
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -20249,7 +20249,7 @@ entities:
       pos: 24.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -234875.84
+      secondsUntilStateChange: -234952.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -21708,7 +21708,7 @@ entities:
       pos: 9.5,25.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -148132.34
+      secondsUntilStateChange: -148209.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -97620,7 +97620,7 @@ entities:
       pos: 0.5,18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31396.697
+      secondsUntilStateChange: -31473.564
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -97969,7 +97969,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -229064.39
+      secondsUntilStateChange: -229141.25
       state: Closing
   - uid: 14095
     components:
@@ -98365,7 +98365,7 @@ entities:
       pos: 56.5,5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -22207.037
+      secondsUntilStateChange: -22283.904
       state: Closing
   - uid: 14162
     components:
@@ -157958,10 +157958,15 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Cargo
+      - Shaft
+      - Scientific
+      - Robotics
+      - Medical
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 22909
@@ -163940,6 +163945,13 @@ entities:
     components:
     - type: Transform
       pos: 14.5,40.5
+      parent: 2
+- proto: SpawnPointIAA
+  entities:
+  - uid: 29421
+    components:
+    - type: Transform
+      pos: -12.5,15.5
       parent: 2
 - proto: SpawnPointJanitor
   entities:
@@ -172634,10 +172646,15 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Cargo
+      - Shaft
+      - Scientific
+      - Robotics
+      - Medical
+      - Service
 - proto: UniformSchoolgirlBlack
   entities:
   - uid: 11490

@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/15/2025 12:57:24
-  entityCount: 14145
+  time: 10/20/2025 13:47:22
+  entityCount: 14146
 maps:
 - 1
 grids:
@@ -6876,7 +6876,7 @@ entities:
       pos: 13.5,12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -84126.516
+      secondsUntilStateChange: -84201.73
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -33922,7 +33922,7 @@ entities:
       pos: 26.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -643.29944
+      secondsUntilStateChange: -718.5065
       state: Opening
   - uid: 4782
     components:
@@ -33930,7 +33930,7 @@ entities:
       pos: 27.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -643.76605
+      secondsUntilStateChange: -718.9731
       state: Opening
   - uid: 4784
     components:
@@ -33938,7 +33938,7 @@ entities:
       pos: 25.5,13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -642.8994
+      secondsUntilStateChange: -718.10645
       state: Opening
 - proto: CurtainsBlackOpen
   entities:
@@ -33963,7 +33963,7 @@ entities:
       pos: -67.5,-1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -41881.273
+      secondsUntilStateChange: -41956.48
       state: Closing
   - uid: 5206
     components:
@@ -74005,10 +74005,15 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Cargo
+      - Shaft
+      - Scientific
+      - Robotics
+      - Medical
+      - Service
 - proto: SeedExtractor
   entities:
   - uid: 11229
@@ -76661,6 +76666,13 @@ entities:
     components:
     - type: Transform
       pos: 41.5,-33.5
+      parent: 2
+- proto: SpawnPointIAA
+  entities:
+  - uid: 14146
+    components:
+    - type: Transform
+      pos: 9.5,8.5
       parent: 2
 - proto: SpawnPointJanitor
   entities:
@@ -81579,10 +81591,15 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Cargo
+      - Shaft
+      - Scientific
+      - Robotics
+      - Medical
+      - Service
 - proto: UprightPianoInstrument
   entities:
   - uid: 12275

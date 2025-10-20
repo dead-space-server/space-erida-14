@@ -4,8 +4,8 @@ meta:
   engineVersion: 266.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/15/2025 12:42:09
-  entityCount: 40905
+  time: 10/20/2025 13:43:01
+  entityCount: 40906
 maps:
 - 1
 grids:
@@ -23176,7 +23176,7 @@ entities:
       pos: -8.5,36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -189940.8
+      secondsUntilStateChange: -190163.33
       state: Opening
 - proto: AirlockBlueShieldGlassLocked
   entities:
@@ -23239,6 +23239,12 @@ entities:
     - type: Transform
       pos: 10.5,-0.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -210.2949
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 281
     components:
     - type: Transform
@@ -23421,7 +23427,7 @@ entities:
       pos: -116.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -200570.2
+      secondsUntilStateChange: -200792.73
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -23787,7 +23793,7 @@ entities:
       pos: -74.5,0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -184872.27
+      secondsUntilStateChange: -185094.8
       state: Opening
   - uid: 360
     components:
@@ -24359,7 +24365,7 @@ entities:
       pos: 90.5,21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -58645.797
+      secondsUntilStateChange: -58868.324
       changeAirtight: False
       state: Opening
     - type: Docking
@@ -24388,7 +24394,7 @@ entities:
       pos: 4.5,0.5
       parent: 40584
     - type: Door
-      secondsUntilStateChange: -58645.164
+      secondsUntilStateChange: -58867.69
       changeAirtight: False
       state: Opening
     - type: Docking
@@ -24993,7 +24999,7 @@ entities:
       pos: -29.5,39.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -189977.8
+      secondsUntilStateChange: -190200.33
       state: Opening
 - proto: AirlockKitchenLocked
   entities:
@@ -25067,7 +25073,7 @@ entities:
       pos: 44.5,29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -128040.516
+      secondsUntilStateChange: -128263.05
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25338,7 +25344,7 @@ entities:
       pos: 11.5,61.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -286786.53
+      secondsUntilStateChange: -287009.06
       state: Opening
   - uid: 584
     components:
@@ -25403,7 +25409,7 @@ entities:
       pos: 44.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -224616.19
+      secondsUntilStateChange: -224838.72
       state: Opening
   - uid: 594
     components:
@@ -32712,7 +32718,7 @@ entities:
             - -0.4,0.4
           mask:
           - Impassable
-          - TableLayer
+          - MidImpassable
           - HighImpassable
           - LowImpassable
           layer: []
@@ -117125,7 +117131,7 @@ entities:
     - type: Openable
       opened: True
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.35337734
+      sprayFizzinessThresholdRoll: 0.5261045
     - type: Tag
       tags:
       - DrinkCan
@@ -117229,7 +117235,7 @@ entities:
     - type: Openable
       opened: True
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.8527801
+      sprayFizzinessThresholdRoll: 0.6717176
     - type: Tag
       tags:
       - DrinkCan
@@ -117330,7 +117336,7 @@ entities:
     - type: Openable
       opened: True
     - type: PressurizedSolution
-      sprayFizzinessThresholdRoll: 0.3256477
+      sprayFizzinessThresholdRoll: 0.09027381
     - type: ContainerContainer
       containers:
         solution@drink: !type:ContainerSlot
@@ -121539,7 +121545,7 @@ entities:
       pos: -53.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -186203.97
+      secondsUntilStateChange: -186426.5
       state: Closing
   - uid: 18002
     components:
@@ -121661,7 +121667,7 @@ entities:
       pos: -54.5,-23.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -251130.98
+      secondsUntilStateChange: -251353.52
       state: Closing
   - uid: 18020
     components:
@@ -122081,7 +122087,7 @@ entities:
       deviceLists:
       - 193
     - type: Door
-      secondsUntilStateChange: -230296.98
+      secondsUntilStateChange: -230519.52
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 8864.0812182
@@ -122290,7 +122296,7 @@ entities:
       deviceLists:
       - 193
     - type: Door
-      secondsUntilStateChange: -300403.53
+      secondsUntilStateChange: -300626.06
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 8862.6812766
@@ -122657,7 +122663,7 @@ entities:
       pos: 52.5,-33.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -152101.7
+      secondsUntilStateChange: -152324.23
       state: Closing
     - type: Firelock
       emergencyCloseCooldown: 7442.325893
@@ -122809,7 +122815,7 @@ entities:
       pos: -23.5,-32.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -262819.78
+      secondsUntilStateChange: -263042.3
       state: Closing
   - uid: 18169
     components:
@@ -123149,7 +123155,7 @@ entities:
       pos: -16.5,-19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -251239.78
+      secondsUntilStateChange: -251462.31
       state: Closing
   - uid: 18231
     components:
@@ -190247,7 +190253,7 @@ entities:
       pos: 56.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -183100.17
+      secondsUntilStateChange: -183322.7
       state: Opening
   - uid: 27744
     components:
@@ -217187,10 +217193,15 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Cargo
+      - Shaft
+      - Scientific
+      - Robotics
+      - Medical
+      - Service
 - proto: SecurityWhistle
   entities:
   - uid: 31957
@@ -225958,6 +225969,13 @@ entities:
     components:
     - type: Transform
       pos: 35.5,20.5
+      parent: 2
+- proto: SpawnPointIAA
+  entities:
+  - uid: 40906
+    components:
+    - type: Transform
+      pos: 35.5,-1.5
       parent: 2
 - proto: SpawnPointJanitor
   entities:
@@ -238603,10 +238621,15 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Industrial
+      - Engineering
       - Arsenal
-      - Experimental
-      - CivilianServices
+      - Security
+      - Cargo
+      - Shaft
+      - Scientific
+      - Robotics
+      - Medical
+      - Service
 - proto: UniformSchoolgirlBlack
   entities:
   - uid: 34900
@@ -266238,7 +266261,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -196240.72
+      secondsUntilStateChange: -196463.25
       state: Opening
   - uid: 40162
     components:

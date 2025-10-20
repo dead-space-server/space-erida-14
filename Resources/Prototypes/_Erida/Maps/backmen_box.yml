@@ -28,6 +28,9 @@
             Reporter: [ 1, 1 ]
             ServiceWorker: [ 2, 2 ]
             Zookeeper: [ 1, 1 ]
+            #law
+            IAA: [ 1,1 ]
+            Lawyer: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
