@@ -1,0 +1,91 @@
+- type: technology
+  id: ComprehensiveResearchDevelopmentSystem
+  name: research-technology-Comprehensive-development-system-research-machines
+  icon:
+    sprite: Structures/Machines/server.rsi
+    state: server-on
+  discipline: Scientific
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ResearchAndDevelopmentServerMachineCircuitboard
+  position: 2,0
+
+- type: technology
+  id: AnomalousResearchMachines
+  name: research-technology-anomalous-research-machines
+  icon:
+    sprite: Structures/Machines/Anomaly/ape.rsi
+    state: base
+  discipline: Scientific
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - APECircuitboard
+  - AnomalyVesselCircuitboard
+  technologyPrerequisites:
+  - ComprehensiveResearchDevelopmentSystem
+  - AnomalousResearch
+  position: 1,0
+
+- type: technology
+  id: AnomalyResearchAdvancedMachines
+  name: research-technology-anomaly-research-advanced-machines
+  icon:
+    sprite: Structures/Machines/anomaly_sync.rsi
+    state: base
+  discipline: Scientific
+  tier: 1
+  cost: 12500
+  recipeUnlocks:
+  - AnomalySynchronizerCircuitboard
+  - AnomalyVesselExperimentalCircuitboard
+  technologyPrerequisites:
+  - AnomalousResearchMachines
+  - AnomalousResearchAdvanced
+  position: 0,0
+
+- type: technology
+  id: XenoArcheologyMachines
+  name: research-technology-xenoarcheology-machines
+  icon:
+    sprite: Structures/Machines/artifact_analyzer.rsi
+    state: display
+  discipline: Scientific
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - AnalysisComputerCircuitboard
+  - ArtifactAnalyzerMachineCircuitboard
+  technologyPrerequisites:
+  - ComprehensiveResearchDevelopmentSystem
+  - XenoarchaeologyResearch
+  position: 3,0
+
+- type: technology
+  id: AlternativeResearchMachines
+  name: research-technology-alternative-research-machines
+  icon:
+    sprite: Structures/Machines/tech_disk_printer.rsi
+    state: display
+  discipline: Scientific
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - TechDiskComputerCircuitboard
+  position: 4,1
+
+- type: technology
+  id: AbnormalArtifactManipulationMachines
+  name: research-technology-abnormal-artifact-manipulation-machines
+  icon:
+    sprite: Structures/Machines/traversal_distorter.rsi
+    state: display
+  discipline: Scientific
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ArtifactCrusherMachineCircuitboard
+  technologyPrerequisites:
+  - XenoArcheologyMachines
+  position: 4,0

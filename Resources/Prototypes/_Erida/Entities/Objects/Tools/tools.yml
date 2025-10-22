@@ -1,0 +1,21 @@
+- type: entity
+  id: ProfessionalRCD
+  parent: [RCD, BaseGrandTheftContraband]
+  name: Professional RCD
+  description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 30
+  - type: Sprite
+    sprite: _Erida/Objects/Tools/cercd.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Erida/Objects/Tools/cercd.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: ProfessionalRCD

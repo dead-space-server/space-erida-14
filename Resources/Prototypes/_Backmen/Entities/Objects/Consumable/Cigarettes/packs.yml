@@ -1,0 +1,14 @@
+- type: entity
+  id: CigPackInteQ
+  parent: CigPackBase
+  name: InteQ cigarette pack
+  description: Elite cigarette pack. Cigarettes have buttons with the smell of whiskey and gunpowder.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Consumable/Smokeables/Cigarettes/Packs/inteq_cigarette.rsi
+  - type: Item
+    sprite: Backmen/Objects/Consumable/Smokeables/Cigarettes/Packs/inteq_cigarette.rsi
+  - type: StorageFill
+    contents:
+    - id: CigaretteInteQ
+      amount: 10

@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingBackpackDuffelInteQ
+  id: ClothingBackpackDuffelInteQEVABundle
+  name: inteq EVA bundle
+  description: "Contains the InteQ approved EVA suit."
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxInteQEVA
+
+- type: entity
+  parent: ClothingBackpackDuffelInteQ
+  id: ClothingBackpackDuffelInteQHardsuitBundle
+  name: inteq hardsuit bundle
+  description: "Contains the InteQ signature hardsuit."
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterHardsuitInteQ
+      - id: ClothingHandsGlovesCombat
+      - id: DoubleEmergencyOxygenTankFilled
+      - id: DoubleEmergencyNitrogenTankFilled

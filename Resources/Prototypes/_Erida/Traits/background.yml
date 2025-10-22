@@ -1,0 +1,28 @@
+# If you add a new trait, make sure to add the corresponding component to the whitelist in \Resources\Prototypes\Entities\Mobs\Player\clone.yml so it gets copied to clones correctly!
+
+- type: trait
+  id: NTEmployee
+  name: trait-NT-employee-name
+  description: trait-NT-employee-desc
+  category: Background
+  cost: 1
+  components:
+  - type: LanguageAdd
+    speaks:
+      - NewCodespeak
+    understands:
+      - NewCodespeak
+
+- type: trait
+  id: SyndicateEmployee
+  name: trait-Syndicate-employee-name
+  description: trait-Syndicate-employee-desc
+  category: Background
+  cost: 1
+  components:
+  - type: LanguageAdd
+    speaks:
+      - Codespeak
+    understands:
+      - Codespeak
+

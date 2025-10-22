@@ -53,3 +53,20 @@
     maxUses: 2
     languages:
       - OldFastCodes
+
+- type: entity
+  parent: BaseItem
+  id: ManualNewCodespeak
+  name: Сodespeak manual
+  description: Manual that teaches you the codespeak language.
+  suffix: 2 uses
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Misc/books.rsi
+    layers:
+    - state: inteq
+  - type: LanguageLearn
+    maxUses: 2
+    languages:
+      - NewCodespeak
+

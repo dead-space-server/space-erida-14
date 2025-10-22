@@ -1,0 +1,13 @@
+- type: entity
+  name: inteq encryption key box
+  parent: [BoxEncryptionKeyPassenger, BaseSyndicateContraband]
+  id: BoxEncryptionKeyInteQ
+  description: Two inteq encryption keys for the price of one. Miniaturized for ease of use.
+  components:
+  - type: Item
+    size: Normal
+  - type: StorageFill
+    contents:
+      - id: EncryptionKeyInteQ
+        amount: 2
+  - type: Storage

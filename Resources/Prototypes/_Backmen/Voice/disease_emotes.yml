@@ -7,6 +7,7 @@
   whitelist:
     components:
     - Vocal
+  icon: _Erida/Interface/Emotes/mew.png
   blacklist:
     components:
     - BorgChassis
@@ -30,6 +31,7 @@
   whitelist:
     components:
     - Vocal
+  icon: _Erida/Interface/Emotes/meow.png
   blacklist:
     components:
     - BorgChassis
@@ -56,6 +58,7 @@
   whitelist:
     components:
     - Vocal
+  icon: _Erida/Interface/Emotes/purr.png
   blacklist:
     components:
     - BorgChassis
@@ -67,6 +70,27 @@
     - Purrs
     - Purrs.
     - Purrs!
+
+- type: emote
+  id: Hiss
+  category: Vocal
+  available: false
+  name: chat-emote-name-hiss
+  whitelist:
+    components:
+    - Vocal
+  icon: _Erida/Interface/Emotes/hiss.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-hiss"]
+  chatTriggers:
+    - шипит
+    - шипит.
+    - шипит!
+    - hiss
+    - hiss.
+    - hiss!
 
 # shadowkin
 - type: emote

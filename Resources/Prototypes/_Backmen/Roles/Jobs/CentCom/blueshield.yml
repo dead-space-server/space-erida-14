@@ -1,8 +1,8 @@
 - type: job
-  id: BlueShield
+  id: BlueShieldOfficer
   name: job-name-blueshield
   description: job-description-blueshield
-  playTimeTracker: JobBlueShield
+  playTimeTracker: JobBlueShieldOfficer
   canBeAntag: false
   requireAdminNotify: true
   joinNotifyCrew: true
@@ -53,7 +53,7 @@
 
 - type: chameleonOutfit
   id: BlueShieldChameleonOutfit
-  job: BlueShield
+  job: BlueShieldOfficer
   hasMindShield: true
   equipment:
     head: ClothingHeadHatLightBeretBlueShield

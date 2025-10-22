@@ -26,6 +26,8 @@
       collection: FelinidMeows
     Purrs:
       collection: FelinidPurrs
+    Hiss:
+      collection: FelinidHisses
     Weh:
       collection: Weh
     Hew:
@@ -62,6 +64,8 @@
       collection: FelinidMeows
     Purrs:
       collection: FelinidPurrs
+    Hiss:
+      collection: FelinidHisses
     Weh:
       collection: Weh
     Gasp:
@@ -140,7 +144,7 @@
       collection: Wurble
     Yawn:
       collection: FemaleYawn
-      
+
 - type: emoteSounds
   id: ShadowkinBodyEmotes
   sounds:

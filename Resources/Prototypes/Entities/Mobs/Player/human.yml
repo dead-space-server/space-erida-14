@@ -93,7 +93,7 @@
     randomizeName: false
   - type: NukeOperative
   - type: Loadout
-    prototypes: [SyndicateLoneOperativeGearFull]
+    prototypes: [InteQLoneOperativeGearFull]
     roleLoadout: [ RoleSurvivalSyndicate ]
   - type: RandomMetadata
     nameSegments:

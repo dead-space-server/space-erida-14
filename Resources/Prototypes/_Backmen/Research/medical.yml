@@ -1,0 +1,110 @@
+- type: technology
+  id: Medicine
+  name: research-technology-medicine
+  icon:
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: firstaid
+  discipline: Medical
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - Brutepack
+  - Ointment
+  - Gauze
+  - Defibrillator
+  - HandheldHealthAnalyzer
+  - ClothingHandsGlovesLatex
+  - ClothingHandsGlovesNitrile
+  - ClothingMaskSterile
+  - DiseaseSwab
+  - RollerBedSpawnFolded
+  - CheapRollerBedSpawnFolded
+  - EmergencyRollerBedSpawnFolded
+  - Medkit
+  - MedkitBurn
+  - MedkitToxin
+  - MedkitO2
+  - MedkitBrute
+  - MedkitAdvanced
+  - MedkitRadiation
+  - MedkitCombat
+  - OffsetCane
+  - WhiteCane
+  - OffsetCaneWood
+  - BodyBag
+  - LauncherSyringe
+  position: 4,-5
+
+- type: technology
+  id: Surgery
+  name: research-technology-surgery
+  icon:
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+  discipline: Medical
+  tier: 1
+  cost: 4000
+  recipeUnlocks:
+  - Scalpel
+  - Retractor
+  - Cautery
+  - Drill
+  - Saw
+  - Hemostat
+  - Implanter
+  technologyPrerequisites:
+  - Medicine
+  position: 4,-4
+
+- type: technology
+  id: Chemistry
+  name: research-technology-chemistry
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker_large.rsi
+    state: beakerlarge
+  discipline: Medical
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - Beaker
+  - LargeBeaker
+  - Dropper
+  - Jug
+  - PillCanister
+  - ChemistryEmptyBottle01
+  - Syringe
+  - BaseChemistryEmptyVial
+  - MiniSyringe
+  position: 3,-4
+
+- type: technology
+  id: ChemistryBluespace
+  name: research-technology-chemistry-bluespace
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker_bluespace.rsi
+    state: beakerbluespace
+  discipline: Medical
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - BluespaceBeaker
+  - SyringeBluespace
+  technologyPrerequisites:
+  - Chemistry
+  position: 3,-5
+
+- type: technology
+  id: BiochemicalStasis
+  name: research-technology-biochemical-stasis
+  icon:
+    sprite: Objects/Specific/Chemistry/beaker_cryostasis.rsi
+    state: beakernoreact
+  discipline: Medical
+  tier: 1
+  cost: 6500
+  recipeUnlocks:
+  - CryostasisBeaker
+  - SyringeCryostasis
+  technologyPrerequisites:
+  - Medicine
+  position: 5,-5

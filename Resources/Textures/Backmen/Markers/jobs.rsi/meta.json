@@ -20,31 +20,16 @@
       "name": "centcom_official"
     },
     {
-      "name": "Delivery"
-    },
-    {
       "name": "centcom_head_of_securiry"
     },
     {
       "name": "centcom_intern"
     },
     {
-      "name": "prisoner"
-    },
-    {
-      "name": "virologist"
-    },
-    {
-      "name": "brigmedic"
-    },
-    {
       "name": "roboticist"
     },
     {
       "name": "blueshield"
-    },
-    {
-      "name": "surgeon"
     }
   ]
 }

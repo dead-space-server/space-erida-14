@@ -173,6 +173,8 @@
     - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade
+    - id: ProfessionalRCD #Erida-Edit
+    - id: SupermatterFlatpack #backmen 
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -233,6 +235,7 @@
     - id: RubberStampCMO
     - id: MedTekCartridge
     - id: ClothingEyesHudMedChem #Erida-edit
+    - id: AdvancedDefibrillator #Erida-edit
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

@@ -95,3 +95,4 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: BkmSupermatterImmune #backmen

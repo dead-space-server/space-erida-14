@@ -22,10 +22,10 @@ traitor-death-match-end-round-description-entry = КПК { $originalName }, с {
 
 # TraitorRole
 traitor-role-greeting =
-    Вы — агент организации { $corporation } на задании [color = darkred]InteQ.[/color].
+    Вы — агент частной военной компании [color = #FFFF00]InteQ[/color]. Вас наняли для подрыва отношений между NT и Синдикатом.
     Ваши цели и кодовые слова перечислены в меню персонажа.
     Воспользуйтесь своим аплинком, чтобы приобрести всё необходимое для выполнения работы.
-    Смерть Nanotrasen!
+    Сломите Пакт!
 traitor-role-codewords =
     Кодовые слова следующие: [color = lightgray]
     { $codewords }.[/color]

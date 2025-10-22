@@ -1,0 +1,57 @@
+- type: entity
+  parent: CaseInteQ
+  id: CaseInteQInfiltrator
+  suffix: InteQ Infiltrator, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHeadHelmetInteQInfiltrator
+      - id: ClothingMaskInteQInfiltrator
+      - id: ClothingHandsGlovesInteQInfiltrator
+      - id: ClothingOuterArmorInteQInfiltrator
+      - id: ClothingShoesBootsInteQInfiltrator
+
+- type: entity
+  parent: CaseInteQ
+  id: CaseInteQIronTombstone
+  suffix: InteQ Iron Tombstone, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterArmorInteQIronTombstone
+
+- type: entity
+  parent: CaseInteQ
+  id: CaseInteQAKM
+  suffix: InteQ AKM, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponRifleInteQAKM
+      - id: MagazineLightRifle
+        amount: 3
+      - id: MagazineBoxLightRifle
+
+- type: entity
+  parent: CaseInteQ
+  id: CaseInteQBulldog
+  suffix: InteQ Bulldog, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponShotgunInteQBulldog
+      - id: MagazineShotgun
+        amount: 2
+      - id: BoxLethalshot
+
+- type: entity
+  parent: CaseInteQ
+  id: CaseInteQSMG
+  suffix: InteQ SMG, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponSubMachineGunInteQSMG
+      - id: MagazinePistolSubMachineGun
+        amount: 2
+      - id: MagazineBoxPistol

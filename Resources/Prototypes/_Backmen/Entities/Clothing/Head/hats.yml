@@ -1,3 +1,82 @@
+#inteq
+- type: entity
+  parent: [ClothingHeadBase, BaseSecurityContraband]
+  id: ClothingHeadCapSecurityPilot
+  name: security pilot cap
+  description: The cap of the security service pilot... Contains signs of communism...
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Hats/secpilotcap.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Hats/secpilotcap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadDarkSurgeonHat
+  name: dark surgeon hat
+  description: The surgeon's black headdress also has a small mirror.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hats/surgeon_hat.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hats/surgeon_hat.rsi
+
+- type: entity
+  parent: [ClothingHeadBase, BaseMinorContraband]
+  id: ClothingHeadInteQBeret
+  name: InteQ beret
+  description: Brown beret with a gold emblem on it.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hats/inteq_beret.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hats/inteq_beret.rsi
+
+- type: entity
+  parent: [ClothingHeadBase, BaseMinorContraband]
+  id: ClothingHeadInteQHonorableBeret
+  name: InteQ honorable beret
+  description: White beret with a emblem on it.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hats/inteq_honorable_beret.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hats/inteq_honorable_beret.rsi
+
+- type: entity
+  parent: [ClothingHeadBase, BaseMinorContraband]
+  id: ClothingHeadHatInteQMAA
+  name: InteQ master at arms hat
+  description: Master at arms hat, looks intimidating, I doubt that you will like to communicate with its owner...
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hats/inteq_peaked.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hats/inteq_peaked.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatInteQTacticalMaidHeadband
+  name: tactical maid headband
+  description: White headband - dont imagine yourself a Buster.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Hats/inteq_headband.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Hats/inteq_headband.rsi
+
+#centcom
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretHoSCentcom
+  name: Берет Начальника Безопасности ЦК
+  description: Стильный чёрный берет с зелёным значком показывает кто тут следит запорядком.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Head/Hats/cchos_beret.rsi
+    - type: Clothing
+      sprite: Backmen/Clothing/Head/Hats/cchos_beret.rsi
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBlackBeretBlueShield
@@ -25,3 +104,20 @@
     sprite: Backmen/Clothing/Head/Hats/lightblueberet.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Head/Hats/lightblueberet.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetKendoMen
+  name: men
+  description: The quintessential head armor of the kendo practitioner.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Head/Helmets/men.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Head/Helmets/men.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.95
+        Piercing: 0.95

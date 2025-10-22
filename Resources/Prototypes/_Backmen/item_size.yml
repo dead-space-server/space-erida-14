@@ -1,0 +1,6 @@
+- type: itemSize
+  id: SmallNormal
+  weight: 2
+  name: item-component-size-Normal
+  defaultShape:
+  - 0,0,1,1

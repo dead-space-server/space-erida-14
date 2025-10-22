@@ -49,3 +49,49 @@
   loadouts:
   - ClothingOuterArmorBlueshield
   - ClothingOuterCoatArmorBlueShield
+
+# Brigmedic
+- type: loadoutGroup
+  id: ClothingUniformJumpsuitBrigmedic
+  name: loadout-group-brigmedic-jumpsuit
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUniformJumpsuitBrigmedic
+  - ClothingUniformJumpskirtBrigmedic
+  - ClothingUniformJumpskirtOfLife
+
+- type: loadoutGroup
+  id: ClothingBackpackBrigmedic
+  name: loadout-group-brigmedic-backpack
+  loadouts:
+  - ClothingBackpackBrigmedic
+  - ClothingBackpackDuffelBrigmedic
+  - ClothingBackpackSatchelBrigmedic
+
+- type: loadoutGroup
+  id: ClothingHeadHatBrigmedic
+  name: loadout-group-brigmedic-hat
+  minLimit: 0
+  loadouts:
+  - ClothingHeadHatBeretBrigmedic
+  - ClothingHeadHatBeretSecurityMedic
+
+- type: loadoutGroup
+  id: ClothingOuterBrigmedic
+  name: loadout-group-brigmedic-outer
+  maxLimit: 1
+  loadouts:
+  - ClothingOuterVestArmorMedSec
+  - ClothingOuterCoatAMG
+  - ClothingOuterVestSecurityMedic
+  - ClothingOuterCoatLabSecurityMedic
+
+- type: loadoutGroup
+  id: ClothingMaskBrigmedic
+  name: loadout-group-brigmedic-mask
+  minLimit: 0
+  loadouts:
+  - ClothingMaskBreathMedicalSecurity
+  - ClothingMaskSterile
+  - ClothingMaskGasSecurity

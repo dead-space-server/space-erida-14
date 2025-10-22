@@ -9,6 +9,6 @@ namespace Content.Server.Nuke;
 [RegisterComponent]
 public sealed partial class NukeLabelComponent : Component
 {
-    [DataField] public LocId Prefix = "nuke-label-nanotrasen";
+    [DataField] public LocId Prefix = "nuke-label-pact";
     [DataField] public int SerialLength = 6;
 }

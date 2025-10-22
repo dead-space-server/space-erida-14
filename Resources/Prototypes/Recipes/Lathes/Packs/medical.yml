@@ -14,8 +14,8 @@
   - LargeBeaker
   - Syringe
   - PillCanister
-  - HandLabeler
   - BaseChemistryEmptyVial
+  - Dropper # Backmen
 
 - type: latheRecipePack
   parent: BasicChemistryStatic

@@ -56,12 +56,12 @@
   suffix: Empty
   components:
   - type: Sprite
-    sprite: Objects/Devices/communication.rsi
+    sprite: _Erida/Objects/Devices/inteq_uplink.rsi
     layers:
-    - state: old-radio
+    - state: inteq-uplink
   - type: Item
-    sprite: Objects/Devices/communication.rsi
-    heldPrefix: old-radio
+    sprite: _Erida/Objects/Devices/inteq_uplink.rsi
+    heldPrefix: inteq-uplink
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:

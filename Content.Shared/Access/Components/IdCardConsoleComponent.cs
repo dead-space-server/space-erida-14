@@ -69,6 +69,7 @@ public sealed partial class IdCardConsoleComponent : Component
         "ResearchDirector",
         "Salvage",
         "Security",
+        "SecurityTechnician", // pilot
         "Service",
         "Theatre",
     };

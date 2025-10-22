@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMachinePowered
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: PhotocopierBase
   name: копировальный аппарат
   description: ЦК закупило их чтобы сэкономить на ручках для юридического отдела.
@@ -95,9 +95,9 @@
 - type: entity
   parent: PhotocopierBase
   id: PhotocopierSyndicate
-  name: копировальный аппарат Синдиката
+  name: копировальный аппарат InteQ
   description: Скорее всего он был украден со станции NanoTrasen.
-  suffix: Синдикат
+  suffix: InteQ
   components:
   - type: Photocopier
     paperSlot:

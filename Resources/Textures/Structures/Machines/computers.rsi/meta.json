@@ -434,6 +434,28 @@
             ]
         },
         {
+            "name": "comm_inteq",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
             "name": "comm_wizard",
             "directions": 4,
             "delays": [
@@ -1815,6 +1837,24 @@
         {
             "name": "syndishuttle",
             "directions": 4
+        },
+        {
+      "name": "inteqshuttle",
+      "directions": 4,
+      "license": "CC-BY-SA-3.0",
+      "copyright": "Erida"
+        },
+        {
+      "name": "inteq_key",
+      "directions": 4,
+      "license": "CC-BY-SA-3.0",
+      "copyright": "Erida"
+        },
+        {
+      "name": "inteq_key_off",
+      "directions": 4,
+      "license": "CC-BY-SA-3.0",
+      "copyright": "Erida"
         },
         {
             "name": "tank",

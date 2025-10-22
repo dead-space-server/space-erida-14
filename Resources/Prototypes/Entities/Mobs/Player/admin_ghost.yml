@@ -109,6 +109,7 @@
   - type: BypassInteractionChecks
   - type: ExplosionResistance
     damageCoefficient: 0
+  - type: BkmSupermatterImmune # supermatter
 
 - type: entity
   abstract: true

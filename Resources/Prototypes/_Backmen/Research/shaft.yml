@@ -1,0 +1,110 @@
+- type: technology
+  id: SalvageWeapons
+  name: research-technology-salvage-weapons
+  icon:
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    state: icon
+  discipline: Shaft
+  tier: 1
+  cost: 3500
+  recipeUnlocks:
+  - WeaponProtoKineticAccelerator
+  position: 11,1
+
+- type: technology
+  id: KineticModifications
+  name: research-technology-kinetic-modifications
+  icon:
+    sprite: Objects/Tools/upgrade.rsi
+    state: display
+  discipline: Shaft
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - PKAUpgradeDamage
+  - PKAUpgradeRange
+  - PKAUpgradeFireRate
+  technologyPrerequisites:
+  - SalvageWeapons
+  position: 12,1
+
+- type: technology
+  id: SalvageEquipment
+  name: research-technology-salvage-equipment
+  icon:
+    sprite: Objects/Specific/Mining/mineral_scanner.rsi
+    state: icon
+  discipline: Shaft
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - MiningDrill
+  - Pickaxe
+  - MineralScannerEmpty
+  - ClothingMaskWeldingGas
+  position: 10,1
+
+- type: technology
+  id: SalvageEquipmentAdvanced
+  name: research-technology-salvage-equipment-advanced
+  icon:
+    sprite: Objects/Specific/Mining/ore_bag_holding.rsi
+    state: icon
+  discipline: Shaft
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+   - OreBagOfHolding
+   - AdvancedMineralScannerEmpty
+   - MiningDrillDiamond
+   - ClothingShoesBootsJump
+  technologyPrerequisites:
+  - SalvageEquipment
+  position: 10,4
+
+- type: technology
+  id: Fulton
+  name: research-technology-fulton
+  icon:
+    sprite: Objects/Tools/fulton.rsi
+    state: extraction_point
+  discipline: Shaft
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - Fulton
+  - FultonBeacon
+  technologyPrerequisites:
+  - SalvageEquipment
+  position: 9,1
+
+- type: technology
+  id: Grappling
+  name: research-technology-grappling
+  icon:
+    sprite: Objects/Weapons/Guns/Launchers/grappling_gun.rsi
+    state: base
+  discipline: Shaft
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+   - WeaponGrapplingGun
+  technologyPrerequisites:
+  - SalvageEquipment
+  position: 9,3
+
+- type: technology
+  id: SpaceScanning
+  name: research-technology-space-scanning
+  icon:
+    sprite: Objects/Tools/handheld_mass_scanner.rsi
+    state: icon
+  discipline: Shaft
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+   - HandheldGPSBasic
+   - HandHeldMassScanner
+  technologyPrerequisites:
+  - SalvageEquipment
+  position: 11,3

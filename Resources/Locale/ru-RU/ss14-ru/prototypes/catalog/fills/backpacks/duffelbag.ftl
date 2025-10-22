@@ -3,7 +3,7 @@ ent-ClothingBackpackDuffelSurgeryFilled = хирургический вещме�
 # Corvax-HiddenDesc-Start
 ent-ClothingBackpackDuffelSyndicateFilledMedical = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
-    .suffix = хирургический вещмешок Синдиката
+    .suffix = хирургический вещмешок InteQ
 ent-ClothingBackpackDuffelSyndicateFilledShotgun = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
     .suffix = набор "Бульдог"
@@ -31,7 +31,7 @@ ent-ClothingBackpackDuffelSyndicateAmmoFilled = { ent-ClothingBackpackDuffelSynd
 # Corvax-HiddenDesc-End
 ent-ClothingBackpackDuffelSyndicateCostumeClown = { ent-ClothingBackpackDuffelClown }
     .desc = { ent-ClothingBackpackDuffelClown.desc }
-    .suffix = Синдикат
+    .suffix = InteQ
 # Corvax-HiddenDesc-Start
 ent-ClothingBackpackDuffelSyndicateCarpSuit = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
@@ -41,7 +41,7 @@ ent-ClothingBackpackDuffelSyndicatePyjamaBundle = { ent-ClothingBackpackDuffelSy
     .suffix = вещмешок пижам Синдиката
 ent-ClothingBackpackDuffelSyndicateC4tBundle = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
-    .suffix = набор C-4 Синдиката
+    .suffix = набор C-4 InteQ
 # Corvax-HiddenDesc-End
 ent-ClothingBackpackChameleonFill = { ent-ClothingBackpackDuffelSyndicate }
     .suffix = Заполненный, Хамелеон
@@ -64,7 +64,7 @@ ent-ClothingBackpackDuffelSyndicateHardsuitExtrasBundle = { ent-ClothingBackpack
     .suffix = набор дополнений скафандров Синдиката
 ent-ClothingBackpackDuffelZombieBundle = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
-    .suffix = зомби набор Синдиката
+    .suffix = зомби набор InteQ
 ent-ClothingBackpackDuffelSyndicateMedicalBundleFilled = { ent-ClothingBackpackDuffelSyndicate }
     .desc = { ent-ClothingBackpackDuffelSyndicate.desc }
     .suffix = набор медикаментов

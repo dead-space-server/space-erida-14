@@ -1,0 +1,62 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakPirate
+  name: Плащ пирата
+  description: Когда нету флагштока, ты сам становишься флагштоком!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/pirate.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakmeibe
+  name: Плащ лучшего инженера
+  description: Выдаётся за особые заслуги перед Атмосией. Гордитесь собой ведь такой плащ есть только у единиц !
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/cloak_best_engineer_meibe.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakchess
+  name: Плащ лучшего шахматиста станции
+  description: Только истинный стратег сможет поднять его!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/chess.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakTGMCCloak
+  name: Офицерский плащ
+  description: На воротнике видна подпись-MK II-Dusya
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/TGMCcloak.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSanabi
+  name: Чёрный плащ "Санаби"
+  description: Чёрный плащ, с красной оконтовкой, на очень маленькой бирке написано Санаби!
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/sanabi.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakTGMCwhite
+  name: белый боевой плащ
+  description: Белый боевой плащ из лёгкой ткани.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Neck/Cloaks/tgmcwhite.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakInteQ
+  name: InteQ cloak
+  description: Cloak of the members of the InteQ, with a gold lining inside and a stylish gold shield on the back.
+  components:
+    - type: Sprite
+      sprite: Backmen/Clothing/Neck/Cloaks/inteq_cloak.rsi

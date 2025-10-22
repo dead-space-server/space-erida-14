@@ -1,0 +1,23 @@
+- type: entity
+  parent: OrganHumanStomach
+  id: OrganFelinidStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganHumanLiver
+  id: OrganFelinidLiver
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: OrganHumanHeart
+  id: OrganFelinidHeart
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]

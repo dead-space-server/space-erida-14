@@ -1,10 +1,10 @@
 - type: loadoutEffectGroup
-  id: MasterBlueShield
+  id: CentralCommandBlueShieldOfficerNeck
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobBlueShield
+      role: JobBlueShieldOfficer
       time: 288000 #80 hrs
 
 #suit
@@ -84,5 +84,4 @@
     neck: ClothingNeckMantleBlueShield
   effects:
   - !type:GroupLoadoutEffect
-    proto: MasterBlueShield
-
+    proto: CentralCommandBlueShieldOfficerNeck

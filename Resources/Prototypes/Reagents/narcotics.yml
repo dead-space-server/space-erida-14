@@ -24,6 +24,7 @@
             Poison: 2 # this is added to the base damage of the meth.
             Asphyxiation: 2
     Narcotic:
+      metabolismRate: 1.0
       effects:
       - !type:MovespeedModifier
         walkSpeedModifier: 1.35
@@ -32,13 +33,13 @@
         key: Stutter
         component: StutteringAccent
       - !type:Jitter
-      - !type:GenericStatusEffect
-        key: Stun
-        time: 3
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 5
         type: Remove
       - !type:GenericStatusEffect
         key: KnockedDown
-        time: 3
+        time: 5
         type: Remove
       - !type:ModifyStatusEffect
         conditions:
@@ -46,7 +47,7 @@
           reagent: Haloperidol
           max: 0.01
         effectProto: StatusEffectDrowsiness
-        time: 10
+        time: 3
         type: Remove
     Medicine:
       effects:
@@ -80,13 +81,13 @@
             Poison: 2 # this is added to the base damage of the meth.
             Asphyxiation: 2
       - !type:Jitter
-      - !type:GenericStatusEffect
-        key: Stun
-        time: 1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 3
         type: Remove
       - !type:GenericStatusEffect
         key: KnockedDown
-        time: 1
+        time: 3
         type: Remove
       - !type:ModifyStatusEffect
         conditions:

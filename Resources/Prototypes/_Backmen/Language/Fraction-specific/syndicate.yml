@@ -5,8 +5,8 @@
     color: "#DC143C"
   obfuscation:
     !type:SyllableObfuscation
-    minSyllables: 5
-    maxSyllables: 12
+    minSyllables: 1
+    maxSyllables: 3
     replacement:
     - когда
     - после

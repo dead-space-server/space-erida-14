@@ -31,7 +31,7 @@ nuke-user-interface-second-status-current-code = CODE: {$code}
 nuke-user-interface-second-status-cooldown-time = WAIT: {$time}
 
 ## Nuke labels
-nuke-label-nanotrasen = NT-{$serial}
+nuke-label-pact = NT-{$serial}
 
 # do you even need this one? It's more funnier to say that
 # the Syndicate stole a NT nuke

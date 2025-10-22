@@ -10,3 +10,9 @@
 - type: traitCategory
   id: Quirks
   name: trait-category-quirks
+
+# Erida-Edit
+- type: traitCategory
+  id: Background
+  name: trait-category-background
+  maxTraitPoints: 1

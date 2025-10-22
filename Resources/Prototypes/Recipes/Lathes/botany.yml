@@ -37,3 +37,19 @@
   parent: BaseHydroToolRecipe
   id: HydroponicsToolClippers
   result: HydroponicsToolClippers
+
+- type: latheRecipe
+  parent: BaseHydroToolRecipe
+  id: ClothingBeltPlant
+  result: ClothingBeltPlant
+  materials:
+    Steel: 300
+    Cloth: 200
+
+- type: latheRecipe
+  parent: BaseHydroToolRecipe
+  id: PlantBag
+  result: PlantBag
+  materials:
+    Steel: 500
+    Cloth: 400

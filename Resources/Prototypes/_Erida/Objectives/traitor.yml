@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseCMOStealObjective
+  id: CMOAdvancedDefibStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: AdvancedDefib
+
+- type: entity
+  parent: BaseTraitorStealObjective
+  id: CEProfessionalRCDStealObjective
+  components:
+  - type: StealCondition
+    stealGroup: ProfessionalRCD
+    owner: job-name-ce

@@ -50,6 +50,10 @@
   - type: Storage
     grid:
     - 0,0,4,1
+    whitelist: # Erida
+      tags:
+      - Cigarette
+      - Lighter
   - type: StorageFill
     contents:
     - id: Cigarette

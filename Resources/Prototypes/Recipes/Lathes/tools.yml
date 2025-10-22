@@ -45,6 +45,13 @@
 
 - type: latheRecipe
   parent: BaseToolRecipe
+  id: HandLabeler
+  result: HandLabeler
+  materials:
+    Plastic: 100
+
+- type: latheRecipe
+  parent: BaseToolRecipe
   id: Wrench
   result: Wrench
   materials:

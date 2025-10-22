@@ -123,7 +123,7 @@
     - prefRoles: [ NukeopsCommander ]
       fallbackRoles: [ Nukeops, NukeopsMedic ]
       spawnerPrototype: SpawnPointNukeopsCommander
-      startingGear: SyndicateCommanderGearFull
+      startingGear: InteQCommanderGearFull
       roleLoadout:
       - RoleSurvivalNukie
       components:
@@ -140,7 +140,7 @@
     - prefRoles: [ NukeopsMedic ]
       fallbackRoles: [ Nukeops, NukeopsCommander ]
       spawnerPrototype: SpawnPointNukeopsMedic
-      startingGear: SyndicateOperativeMedicFull
+      startingGear: InteQOperativeMedicFull
       roleLoadout:
       - RoleSurvivalNukie
       components:
@@ -159,7 +159,7 @@
       spawnerPrototype: SpawnPointNukeopsOperative
       max: 3
       playerRatio: 10
-      startingGear: SyndicateOperativeGearFull
+      startingGear: InteQOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie
       components:

@@ -9,6 +9,7 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: NanoTrasen
@@ -22,6 +23,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Mouse
@@ -43,6 +45,7 @@
   - AllHostile
   - Wizard
   - Dragon
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleHostile
@@ -58,6 +61,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: SimpleNeutral
@@ -74,6 +78,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xeno
@@ -103,6 +108,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Revolutionary
@@ -131,6 +137,7 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Wizard
@@ -148,6 +155,7 @@
   - Revolutionary
   - AllHostile
   - Xenoborg
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Xenoborg

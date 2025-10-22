@@ -51,7 +51,6 @@
   - RuleC6
   - RuleC7
   - RuleC8
-  - RuleC9
 
 - type: guideEntry
   id: RuleC1
@@ -100,12 +99,6 @@
   name: guide-entry-rules-c8
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC8.xml"
-
-- type: guideEntry
-  id: RuleC9
-  name: guide-entry-rules-c9
-  ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC9.xml"
 
 - type: guideEntry
   id: RoleplayRules

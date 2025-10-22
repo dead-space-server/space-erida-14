@@ -895,6 +895,22 @@
           color: "#1b67a5"
         - state: frame_head # Backmen
           color: "#1b67a5"
-        # - state: idiaa
+        - state: idiaa
     - type: PresetIdCard
       job: IAA
+
+- type: entity
+  parent: IDCardStandard
+  id: PilotIDCard
+  name: pilot ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: sub_department # Backmen
+          color: "#cb0000"
+        - state: frame_default # Backmen
+          color: "#cb0000"
+        - state: idpilot
+    - type: PresetIdCard
+      job: SecurityPilot

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Resprite base PAI by Vecortys",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "pai-base"
+    },
+    {
+      "name": "inteq-icon-pai-off"
+    },
+    {
+      "name": "inteq-pai-off-overlay"
+    },
+    {
+      "name": "inteq-pai-on-overlay",
+      "delays": [
+        [
+          0.8,
+          0.8
+        ]
+      ]
+    },
+    {
+      "name": "inteq-pai-searching-overlay",
+      "delays": [
+        [
+          0.8,
+          0.8
+        ]
+      ]
+    }
+  ]
+}

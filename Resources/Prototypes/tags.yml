@@ -1547,3 +1547,6 @@
 - type: Tag
   id: XenoborgModuleStealth
 # ALPHABETICAL
+
+- type: Tag
+  id: FullBodyOuter # this outerclothing wraps around the feet and legs

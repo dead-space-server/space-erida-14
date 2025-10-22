@@ -1,0 +1,26 @@
+- type: entity
+  name: InteQ cookies
+  parent: FoodSnackBase
+  id: FoodSnackInteQCookies
+  description: Cookies with something black.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - motivating
+  - type: Sprite
+    sprite: Backmen/Objects/Consumable/Food/inteq_cookies.rsi
+    state: inteq_cookies
+  - type: Item
+  - type: Food
+    trash:
+    - FoodPacketInteQCookiesTrash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodPacketInteQCookiesTrash
+  name: InteQ cookies bag
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Consumable/Food/inteq_cookies.rsi
+    state: inteq_cookies_trash

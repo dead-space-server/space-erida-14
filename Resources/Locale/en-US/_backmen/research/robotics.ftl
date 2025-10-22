@@ -1,0 +1,17 @@
+research-technology-robotics = Basic robotics
+research-technology-robotics-advanced = Advanced robotics
+research-technology-critter-mech = EXOSUIT: Critter
+research-technology-ripley-aplu-mech = EXOSUIT: Ripley APLU
+research-technology-cyborg-modules = Basic cyborg modules
+research-technology-mechanized-treatment-modules = Mechanized treatment modules
+research-technology-advanced-medical-modules = Advanced medical modules
+research-technology-space-scanning-modules = Space scanning modules
+research-technology-Engineering-tools-modules = Engineering tools modules
+research-technology-hydroponics-modules = Hydroponics modules
+research-technology-advanced-service-modules = Advanced Service Modules
+research-technology-advanced-miner-modules = Advanced Miner Modules
+research-technology-salvage-equipment-modules = Salvage equipment modules
+research-technology-robotic-cleanliness-modules = Cleanliness modules
+research-technology-Anomaly-modules = Anomaly modules
+research-technology-xeno-archeology-modules = Xenoarcheology modules
+research-technology-robotics-machines = Robotics machines
