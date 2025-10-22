@@ -115,6 +115,18 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         _pathfindingSystem.PauseUpdating = false;
     }
 
+    //Erida-Start
+    public void SetExplosionResistance(EntityUid entityUid, float newCoefficient, ExplosionResistanceComponent? component = null)
+    {
+        if (!Resolve(entityUid, ref component))
+            return;
+
+        component.DamageCoefficient = newCoefficient;
+
+        Dirty(entityUid, component);
+    }
+    //Erida-End
+    
     public override void Shutdown()
     {
         base.Shutdown();

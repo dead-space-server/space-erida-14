@@ -9,7 +9,7 @@ using Robust.Shared.Map;
 namespace Content.Server.Explosion.EntitySystems;
 
 // This part of the system handled send visual / overlay data to clients.
-public sealed partial class ExplosionSystem
+public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
 {
     public void InitVisuals()
     {

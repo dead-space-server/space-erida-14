@@ -1,0 +1,64 @@
+- type: listing
+  id: BoxingDrobeInventory1
+  productEntity: UniformShortsRed
+  categories:
+    - BoxingDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 3
+      
+- type: listing
+  id: BoxingDrobeInventory2
+  productEntity: UniformShortsRedWithTop
+  categories:
+    - BoxingDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 3
+
+- type: listing
+  id: BoxingDrobeInventory3
+  productEntity: ClothingHandsGlovesBoxingRed
+  categories:
+    - BoxingDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: BoxingDrobeInventory4
+  productEntity: ClothingHandsGlovesBoxingBlue
+  categories:
+    - BoxingDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: BoxingDrobeInventory5
+  productEntity: ClothingHandsGlovesBoxingGreen
+  categories:
+    - BoxingDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+- type: listing
+  id: BoxingDrobeInventory6
+  productEntity: ClothingHandsGlovesBoxingYellow
+  categories:
+    - BoxingDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
+
+# Emag
+
+- type: listing
+  id: BoxingDrobeInventory7
+  productEntity: ClothingUniformJumpsuitGachi
+  categories:
+    - BoxingDrobeInventoryEmag
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 5

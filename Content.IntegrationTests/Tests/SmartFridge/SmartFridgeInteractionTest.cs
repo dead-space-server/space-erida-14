@@ -59,9 +59,10 @@ public sealed class SmartFridgeInteractionTest : InteractionTest
         // dispense an item
         await SendBui(SmartFridgeUiKey.Key, new SmartFridgeDispenseItemMessage(component.Entries[0]));
 
-        // assert that the listing disappeared after dispensing last item
-        Assert.That(component.Entries, Is.Empty);
-        Assert.That(component.ContainedEntries, Is.Empty);
+        // assert that the listing is still there
+        Assert.That(component.Entries, Is.Not.Empty);
+        // but empty
+        Assert.That(component.ContainedEntries[component.Entries[0]], Is.Empty);
 
         // and that the thing we dispensed is actually around
         await AssertEntityLookup(

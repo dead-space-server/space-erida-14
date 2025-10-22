@@ -31,7 +31,7 @@
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
-  id: JobIAA
+  id: JobIAA # Corvax
   groups:
   - Werx-IAA #erida
   - Niz-IAA #erida
@@ -40,6 +40,23 @@
   - LawyerJumpsuit
   - CommonBackpack
   - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSecurityPilot # Corvax
+  groups:
+  - Werx
+  - Niz
+  - Socks
+  - SecurityJumpsuitPilot #backmen
+  - SecurityBackpack
+  - SecurityOuterClothingPilot #backmen
+  - SecurityHeadPilot #backmen
+  - SecurityClothingBeltPilot #backmen
+  - SecurityEyesPilot #backmen
+  - SecurityShoesPilot #backmen
+  - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathTool
 

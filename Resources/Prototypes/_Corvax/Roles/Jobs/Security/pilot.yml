@@ -1,0 +1,52 @@
+- type: job
+  id: SecurityPilot
+  name: job-name-pilot
+  description: job-description-pilot
+  playTimeTracker: JobSecurityPilot
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 72000 #20 hrs
+  startingGear: PilotGear
+  icon: "JobIconPilot"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - SecurityTechnician #backmen
+  - Security
+  - Brig
+  - Maintenance
+  - Engineering #backmen
+  - Atmospherics #backmen
+  - External
+  - Cryogenics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: PilotGear
+  equipment:
+    id: PilotPDA
+    ears: ClothingHeadsetSecurity
+    gloves: ClothingHandsGlovesCombat #backmen
+    pocket1: WeaponMultiphaseEnergyGun #backmen
+  storage:
+    back:
+    - Flash
+    - securityTechnicianRCD    #backmen
+   #- MagazinePistol  (backmen)
+
+- type: chameleonOutfit
+  id: SecurityPilotChameleonOutfit
+  job: SecurityPilot
+  equipment:
+    id: PilotPDA
+    ears: ClothingHeadsetSecurity
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadCapSecurityPilot
+    eyes: ClothingEyesSecEngineerVisors
+    jumpsuit: ClothingUniformJumpsuitSecurityPilot
+    outerClothing: ClothingOuterSecurityVestHazard
+    shoes: ClothingShoesBootsMagSecurity
+

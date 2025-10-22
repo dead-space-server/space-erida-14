@@ -8,3 +8,107 @@
     sprite: Backmen/Clothing/Belt/bswebbing.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Belt/bswebbing.rsi
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltOrden
+  name: Scabbard of the red order
+  description: A special scabbard created exclusively for the sabers of the Red Order.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Belt/orden_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Backmen/Clothing/Belt/orden_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - SwordSquadRO
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - SwordSquadRO
+  - type: Appearance
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltKatanaSheath
+  name: katana sheaths
+  description: An ornate belt designed to hold a pair of samurai's blades, or daisho.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Belt/katanasheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Backmen/Clothing/Belt/katanasheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item-1:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Katana
+      item-2:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Wakizashi
+  - type: ContainerContainer
+    containers:
+      item-1: !type:ContainerSlot
+      item-2: !type:ContainerSlot
+  - type: ItemMapper
+    mapLayers:
+      Wakizashi:
+        whitelist:
+          tags:
+          - Wakizashi
+      Katana:
+        whitelist:
+          tags:
+          - Katana
+    sprite: Backmen/Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+
+- type: entity
+  parent: [ClothingBeltStorageBase, BaseMinorContraband]
+  id: ClothingBeltInteQWebbing
+  name: combat webbing
+  description: Unique and versatile chest mount in which you can store weapons and ammunition.
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Belt/inteq_webbing.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Belt/inteq_webbing.rsi
+
+- type: entity
+  parent: [ClothingBeltStorageBase, BaseMinorContraband]
+  id: ClothingBeltInteQDropPouch
+  name: combat drop pouch
+  description: Improved unloading for storing various items
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Belt/inteq_droppouch.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/Belt/inteq_droppouch.rsi

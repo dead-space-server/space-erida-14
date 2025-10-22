@@ -1,0 +1,12 @@
+- type: entity
+  parent: [ IDCardStandard, BaseSyndicateContraband ]
+  id: InteQIDCard
+  name: inteq ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idpassenger
+  - type: Access
+    tags:
+    - InteQ

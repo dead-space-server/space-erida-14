@@ -1,6 +1,21 @@
+#CMO
 - type: stealTargetGroup
   id: MedChemHUD
   name: steal-target-groups-medchemhud
   sprite:
     sprite: _Erida/Clothing/Eyes/Hud/medchem.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: AdvancedDefib
+  name: steal-target-groups-advanced-defib
+  sprite:
+    sprite: _Erida/Objects/Specific/Medical/advanceddefib.rsi
+    state: icon
+
+- type: stealTargetGroup
+  id: ProfessionalRCD
+  name: steal-target-groups-profesional-rcd
+  sprite:
+    sprite: _Erida/Objects/Tools/cercd.rsi
     state: icon

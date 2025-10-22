@@ -32,10 +32,10 @@ nuke-user-interface-second-status-cooldown-time = ОЖИДАНИЕ: { $time }
 
 ## Nuke labels
 
-nuke-label-nanotrasen = NT-{ $serial }
+nuke-label-pact = PACT-{ $serial }
 # do you even need this one? It's more funnier to say that
-# the Syndicate stole a NT nuke
-nuke-label-syndicate = SYN-{ $serial }
+# the InteQ stole a NT nuke
+nuke-label-syndicate = INT-{ $serial }
 # Codes
 nuke-codes-message = [color=red]СОВЕРШЕННО СЕКРЕТНО![/color]
 nuke-codes-list = Код { $name }: { $code }

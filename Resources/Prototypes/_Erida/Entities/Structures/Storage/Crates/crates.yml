@@ -1,0 +1,10 @@
+- type: entity
+  parent: CrateGenericSteel
+  id: CrateInteQ
+  name: InteQ crate
+  description: COOLEST CRATE EVER!
+  components:
+  - type: Icon
+    sprite: _Erida/Structures/Storage/Crates/inteq.rsi
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/Crates/inteq.rsi

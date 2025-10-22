@@ -1,0 +1,622 @@
+# sofa
+# sofa-black
+
+- type: construction
+  name: BlackSofa
+  id: ADTSofaBlackLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablackleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlackSofa
+  id: ADTSofaBlackMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablackmiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlackSofa
+  id: ADTSofaBlackRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablackright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-red
+
+- type: construction
+  name: RedSofa
+  id: ADTSofaRedLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofaredleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: RedSofa
+  id: ADTSofaRedMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofaredmiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: RedSofa
+  id: ADTSofaRedRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofaredright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-violet
+
+- type: construction
+  name: VioletSofa
+  id: ADTVioletSofaLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofavioletleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: VioletSofa
+  id: ADTSofaVioletMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofavioletmiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: VioletSofa
+  id: ADTSofaVioletRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofavioletright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-leather
+
+- type: construction
+  name: LeatherSofa
+  id: ADTSofaLeatherLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofaleatherleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: LeatherSofa
+  id: ADTSofaLeatherMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofaleathermiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: LeatherSofa
+  id: ADTSofaLeatherRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofaleatherright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-white
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhiteleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhiteright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-white
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteLeftSideRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhiteleft2
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteRightSideRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhiteright2
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhitemiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteLeftCornerRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhiteleftcorner
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteSofa
+  id: ADTSofaWhiteRightCornerRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofawhiterightcorner
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-blue
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablueleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablueright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueLeftSideRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablueleft2
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueRightSideRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablueright2
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabluemiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueLeftCornerRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofablueleftcorner
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueSofa
+  id: ADTSofaBlueRightCornerRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabluerightcorner
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# sofa-brown
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownLeftSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownleft
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownRightSideRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownright
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownLeftSideRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownleft2
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownRightSideRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownright2
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownMiddleRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownmiddle
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownLeftCornerRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownleftcorner
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownSofa
+  id: ADTSofabrownRightCornerRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtsofabrownrightcorner
+  category: construction-category-furniture
+  description: Sofa-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# Chairs
+# From Yuna
+
+- type: construction
+  name: VioletChair-name
+  id: ADTArmchairVioletRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairviolet
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: RedChair-name
+  id: ADTArmchairRedRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairred
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: LeatherChair-name
+  id: ADTArmchairLeatherRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairleather
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+# From Luna
+
+- type: construction
+  name: BlackChair-name
+  id: ADTArmchairBlackRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairblack
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteArmChair-name
+  id: ADTArmchairWhiteRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairwhite
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: WhiteArmChair-name
+  id: ADTArmchairWhiteRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairwhite2
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownArmChair-name
+  id: ADTArmchairBrownRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairbrown
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BrownArmChair-name
+  id: ADTArmchairBrownRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairbrown2
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueArmChair-name
+  id: ADTArmchairBlueRecipe
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairblue
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: BlueArmChair-name
+  id: ADTArmchairBlueRecipe2
+  graph: ADTSeat
+  startNode: start
+  targetNode: adtarmchairblue2
+  category: construction-category-furniture
+  description: ArmChair-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

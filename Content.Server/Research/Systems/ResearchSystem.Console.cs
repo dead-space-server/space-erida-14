@@ -69,6 +69,10 @@ public sealed partial class ResearchSystem
 
     private void UpdateConsoleInterface(EntityUid uid, ResearchConsoleComponent? component = null, ResearchClientComponent? clientComponent = null)
     {
+        // Goobstation R&D Console Rework commented and replaced with other func
+        UpdateFancyConsoleInterface(uid, component, clientComponent);
+
+        /*
         if (!Resolve(uid, ref component, ref clientComponent, false))
             return;
 
@@ -85,8 +89,8 @@ public sealed partial class ResearchSystem
         }
 
         _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);
+*/
     }
-
     private void OnPointsChanged(EntityUid uid, ResearchConsoleComponent component, ref ResearchServerPointsChangedEvent args)
     {
         if (!_uiSystem.IsUiOpen(uid, ResearchConsoleUiKey.Key))

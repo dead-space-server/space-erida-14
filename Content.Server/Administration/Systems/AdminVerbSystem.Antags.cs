@@ -12,6 +12,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Goobstation.Common.Blob; //GoobBlob
 
 namespace Content.Server.Administration.Systems;
 
@@ -52,7 +53,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = traitorName,
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Syndicate"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Backmen/Interface/Misc/job_icons.rsi"), "InteQ"),
             Act = () =>
             {
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
@@ -191,5 +192,19 @@ public sealed partial class AdminVerbSystem
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
+        // Goobstation - Blob
+        Verb blobAntag = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-blob"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Goobstation/Blob/Actions/blob.rsi"), "blobFactory"),
+            Act = () =>
+            {
+                EnsureComp<BlobCarrierComponent>(args.Target).HasMind = HasComp<ActorComponent>(args.Target);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-text-make-blob"),
+        };
+        args.Verbs.Add(blobAntag);
     }
 }

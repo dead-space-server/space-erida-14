@@ -121,6 +121,8 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Brigmedic
+  - SecurityPilot # Corvax-Pilot
 
 - type: department
   id: Science

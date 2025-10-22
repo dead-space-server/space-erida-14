@@ -47,7 +47,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     weight: 3 # Erida
-    reoccurrenceDelay: 30
+    reoccurrenceDelay: 80 # Erida
     duration: 1
     maxOccurrences: 1 # should be the same as [copies] in shuttle_incoming_event.yml
   - type: RuleGrids

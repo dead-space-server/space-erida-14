@@ -1,0 +1,26 @@
+- type: listing
+  id: UplinkHardsuitInteQ
+  name: uplink-hardsuit-inteq-name
+  description: uplink-hardsuit-inteq-desc
+  icon: { sprite: /Textures/Backmen/Clothing/OuterClothing/Hardsuits/inteq_hardsuit.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelInteQHardsuitBundle
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkInteQStamp
+  name: uplink-inteq-stamp-name
+  description: uplink-inteq-stamp-desc
+  productEntity: RubberStampInteq
+  discountCategory: rareDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkPointless

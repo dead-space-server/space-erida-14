@@ -3,11 +3,13 @@
   name: job-name-intern
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 18000 # 5 hrs
-      inverted: true # stop playing intern if you're good at med!
+      # Erida-start
+  # requirements:
+  #   - !type:DepartmentTimeRequirement
+  #     department: Medical
+  #     time: 18000 # 5 hrs
+  #     inverted: true # stop playing intern if you're good at med!
+      # Erida-end
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine

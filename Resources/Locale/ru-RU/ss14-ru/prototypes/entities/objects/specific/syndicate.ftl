@@ -1,5 +1,5 @@
 # Corvax-HiddenDesc-Start
-ent-Telecrystal = красный кристалл
+ent-Telecrystal = оранжевый кристалл
     .desc = Похоже, он переливается подозрительно манящей энергией.
     .suffix = 20 ТК, телекристалл
 ent-Telecrystal1 = { ent-Telecrystal }

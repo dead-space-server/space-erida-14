@@ -38,14 +38,12 @@
       - id: ClothingEyesGlassesSunglasses
       - id: SpaceCash30000
         amount: 1
-      - id: EncryptionKeySyndie
+      - id: EncryptionKeyInteQ
       - id: RubberStampTrader
-      - id: PhoneInstrumentSyndicate
       - id: ClothingUniformJumpsuitTacticool
       - id: ClothingOuterCoatJensen
       - id: ClothingHandsGlovesCombat
       - id: ClothingMaskNeckGaiter
-      - id: SyndieHandyFlag
 
 - type: entity
   id: BriefcaseThiefBribingBundleFilled

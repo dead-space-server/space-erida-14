@@ -1,0 +1,37 @@
+# Translators
+- type: latheRecipePack
+  id: BackmenTranslators
+  recipes:
+  # start-backmen: languages
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - XenoTranslator
+  - BasicGalaticCommonTranslatorImplanter
+  - AdvancedGalaticCommonTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - AnimalTranslator
+  - MofficTranslatorImplanter
+  - MofficTranslator
+  - ElvishTranslator
+  - DwarvenTranslator
+  - ShadokinTranslator
+  - ValyrianStandardTranslator
+  - ElvishStandardTranslatorImplanter
+  - DwarvenStandardTranslatorImplanter
+  - ShadokinStandardTranslatorImplanter
+  - ValyrianStandardTranslatorImplanter
+  - CarshnilTranslatorImplanter
+  - EvePishtuTranslatorImplanter
+  - EvePishtuTranslator
+  - CarshnilTranslator
+
+  # end-backmen: languages

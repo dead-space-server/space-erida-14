@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/BlueMoon-Labs/BlueMoon-Station | Redacted by xkttty",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "inteq-inhand-left"
+    },
+    {
+      "name": "inteq-inhand-right"
+    },
+    {
+      "name": "inteq1"
+    },
+    {
+      "name": "inteq2"
+    },
+    {
+      "name": "inteq3"
+    },
+    {
+      "name": "inteq4"
+    }
+  ]
+}

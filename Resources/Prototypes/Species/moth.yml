@@ -17,8 +17,9 @@
   sprites:
     Head: MobMothHead
     Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking # DS14
+    # UndergarmentTop: MobHumanoidAnyMarking # DS14
+    # UndergarmentBottom: MobHumanoidAnyMarking # DS14
     Chest: MobMothTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
@@ -41,10 +42,10 @@
 
 - type: markingPoints
   id: MobMothMarkingLimits
-  onlyWhitelisted: true
+  # onlyWhitelisted: true # DS14-disabled
   points:
     Hair:
-      points: 0
+      points: 1 # DS14
       required: false
     FacialHair:
       points: 0
@@ -66,12 +67,12 @@
     Head:
       points: 1
       required: false
-    UndergarmentTop:
-      points: 1
-      required: false
-    UndergarmentBottom:
-      points: 1
-      required: false
+    # UndergarmentTop:
+    #   points: 1
+    #   required: false
+    # UndergarmentBottom:
+    #   points: 1
+    #   required: false
     Chest:
       points: 2
       required: false

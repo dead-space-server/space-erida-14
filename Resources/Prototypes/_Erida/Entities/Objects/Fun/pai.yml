@@ -1,0 +1,38 @@
+- type: entity
+  parent: [ PersonalAI, BaseSyndicateContraband]
+  id: InteqPersonalAI
+  name: inteq personal ai device
+  description: Your Inteq pal who's fun to be with!
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Fun/pai.rsi
+    layers:
+    - state: pai-base
+    - state: inteq-pai-off-overlay
+      shader: unshaded
+      map: ["screen"]
+  - type: ToggleableGhostRole
+    roleName: pai-system-role-name-inteq
+    roleDescription: pai-system-role-description-inteq
+    roleRules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - InteQ
+  - type: ActiveRadio
+    channels:
+    - InteQ
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        screen:
+          Off: { state: inteq-pai-off-overlay }
+          Searching: { state: inteq-pai-searching-overlay }
+          On: { state: inteq-pai-on-overlay }
+  - type: StaticPrice
+    price: 500
+  - type: Vocal
+    sounds:
+      Unsexed: UnisexSiliconSyndicate

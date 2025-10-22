@@ -1,0 +1,35 @@
+- type: entity
+  id: AdvancedDefibrillator 
+  parent: [BaseDefibrillator, BaseGrandTheftContraband]
+  name: advanced defibrillator
+  description: Now in fun size!
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Specific/Medical/advanceddefib.rsi
+    layers:
+      - state: icon
+      - state: ready
+        map: [ "enum.ToggleableVisuals.Layer" ]
+        visible: false
+        shader: unshaded
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Item
+    size: Normal
+  - type: Defibrillator
+    zapHeal:
+      types:
+        Asphyxiation: -40
+    doAfterDuration: 3
+  - type: DoAfter
+  - type: UseDelay
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: StealTarget
+    stealGroup: AdvancedDefib

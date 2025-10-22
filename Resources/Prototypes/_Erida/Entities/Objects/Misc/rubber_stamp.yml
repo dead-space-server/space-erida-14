@@ -1,0 +1,15 @@
+- type: entity
+  name: inteq rubber stamp
+  parent: [RubberStampBase, BaseSyndicateContraband]
+  id: RubberStampInteq
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-inteq
+    stampedColor: "#e08814"
+    stampState: "paper_stamp-syndicate"
+  - type: Sprite
+    sprite: _Erida/Objects/Misc/stamps.rsi
+    state: stamp-inteq
+  - type: StaticPrice
+    price: 1000

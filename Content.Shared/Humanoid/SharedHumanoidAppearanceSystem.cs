@@ -1,7 +1,6 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using Content.Corvax.Interfaces.Shared;
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;

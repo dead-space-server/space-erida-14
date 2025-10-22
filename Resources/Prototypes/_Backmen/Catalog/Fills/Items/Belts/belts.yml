@@ -15,3 +15,77 @@
       - id: ChemistryBottleEphedrine
       - id: Handcuffs
       - id: Handcuffs
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase]
+  id: ClothingBeltRapier
+  name: Ножны рапиры
+  description: Ножны для рапиры
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/Belt/rapier.rsi
+    state: sheath
+  - type: Clothing
+    sprite: Backmen/Clothing/Belt/rapier.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - Rapier
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - Rapier
+  - type: Appearance
+
+- type: entity
+  id: ClothingBeltKatanaSheathFilled
+  parent: ClothingBeltKatanaSheath
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item-1:
+      - Katana
+      item-2:
+      - Wakizashi
+
+- type: entity
+  id: ClothingBeltSheathFilledOrd
+  parent: ClothingBeltOrden
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - OrdenSabre
+
+- type: entity
+  id: ClothingBeltSheathFilledRapier
+  parent: ClothingBeltRapier
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - Rapier
+
+- type: entity
+  id: ClothingBeltSheathFilledMythistophelRapier
+  parent: ClothingBeltRapier
+  suffix: Filled, Рапира Мифистофеля
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - MythistophelRapier

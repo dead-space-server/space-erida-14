@@ -1,0 +1,9 @@
+- type: soundCollection
+  id: EridaLobbyMusic
+  files:
+    - /Audio/_Erida/Lobby/Gunge.ogg
+    - /Audio/_Erida/Lobby/HaveAtThee.ogg
+    - /Audio/_Erida/Lobby/HighCaliberWelcome.ogg
+    - /Audio/_Erida/Lobby/Hoods.ogg
+    - /Audio/_Erida/Lobby/InPosition.ogg
+    - /Audio/_Erida/Lobby/LightShow.ogg

@@ -1,0 +1,45 @@
+- type: entity
+  parent: MarkerBase
+  id: RandomBox
+  name: random box spawner
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Objects/Storage/boxes.rsi
+        state: box
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - BoxCardboard
+      - BoxMousetrap
+      - BoxLightbulb
+      - BoxLighttube
+      - BoxLightMixed
+      #- BoxColoredLighttube
+      #- BoxMaintenanceLightbulb
+      - BoxMesonScanners
+      - BoxMRE
+      - BoxInflatable
+      - BoxPerformer
+      - BoxFlare
+      - BoxTrashbag
+      - BoxSurvival
+      - BoxSyringe
+      - BoxPillCanister
+      - BoxBottle
+      - BoxSterileMask
+      - BoxLatexGloves
+      - BoxBodyBag
+      - BoxBeaker
+    chance: 0.7
+    rarePrototypes:
+      - BoxHugHealing
+      - BoxSurvivalMedical
+      - BoxNitrileGloves
+      - BoxMouthSwab
+      - BoxHandcuff
+      - BoxFlashbang
+      - BoxZiptie
+      - PresentRandom
+    rareChance: 0.05

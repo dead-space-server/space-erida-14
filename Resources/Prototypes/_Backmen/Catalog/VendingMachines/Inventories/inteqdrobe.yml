@@ -1,0 +1,4 @@
+- type: vendingMachineInventory
+  id: InteqDrobeInventory
+  startingInventory:
+    ClothingEyesGogglessInteQ: 2

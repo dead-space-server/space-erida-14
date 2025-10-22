@@ -1,0 +1,36 @@
+- type: entity
+  name: suspicious toolbox
+  parent: [ToolboxBase, BaseSyndicateContraband]
+  id: ToolboxInteQ
+  description: Cool toolbox, yeah!
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Tools/Toolboxes/toolbox_inteq.rsi
+    state: icon
+  - type: Item
+    sprite: _Erida/Objects/Tools/Toolboxes/toolbox_inteq.rsi
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,3
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 20
+
+- type: entity
+  parent: ToolboxInteQ
+  id: ToolboxInteQFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: Crowbar
+    - id: Wrench
+    - id: Screwdriver
+    - id: Wirecutter
+    - id: Welder
+    - id: Multitool
+    - id: ClothingHandsGlovesCombat
+  - type: StaticPrice
+    price: 1000

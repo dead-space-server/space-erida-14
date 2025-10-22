@@ -178,13 +178,6 @@
   name: lathe-recipe-MedkitCombat-name
 
 - type: latheRecipe
-  parent: BaseToolRecipe
-  id: HandLabeler
-  result: HandLabeler
-  materials:
-    Plastic: 100
-
-- type: latheRecipe
   id: Jug
   result: Jug
   completetime: 4

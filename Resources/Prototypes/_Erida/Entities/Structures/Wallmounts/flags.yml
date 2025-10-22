@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseSign
+  id: InteqFlag
+  name: Inteq flag
+  description: Smells like gun powder.
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Decoration/inteq_flag.rsi
+    state: inteq_flag

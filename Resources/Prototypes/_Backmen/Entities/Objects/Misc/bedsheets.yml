@@ -1,0 +1,11 @@
+- type: entity
+  id: BedsheetInteq
+  parent: BedsheetBase
+  name: inteq bedsheet
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Misc/inteq_bedsheet.rsi
+    state: sheetinteq
+  - type: Clothing
+    sprite: Backmen/Clothing/Neck/Bedsheets/inteq_bedsheet.rsi
+    state: equipped-NECK

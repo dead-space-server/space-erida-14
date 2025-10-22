@@ -35,6 +35,8 @@
 - type: latheRecipePack
   id: BorgModules
   recipes:
+  - BorgModuleAnomaly
+  - BorgModuleArtifact
   - BorgModuleAdvancedCleaning
   - BorgModuleAdvancedTool
   - BorgModuleAdvancedClowning

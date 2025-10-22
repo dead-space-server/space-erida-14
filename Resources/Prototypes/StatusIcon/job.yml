@@ -455,11 +455,19 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconIAA
+  id: JobIconIAA # Corvax
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
     state: IAA
   jobName: job-name-iaa
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconPilot # Corvax
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Pilot
+  jobName: job-name-pilot
 
 - type: jobIcon
   parent: JobIcon

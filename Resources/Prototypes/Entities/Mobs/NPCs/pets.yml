@@ -954,4 +954,12 @@
       gender: male
   - type: Loadout
     prototypes: [ MobPollyGear ]
-
+    # Erida-start
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+    # Erida-end

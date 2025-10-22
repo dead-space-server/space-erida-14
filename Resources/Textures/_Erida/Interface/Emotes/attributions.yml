@@ -2,8 +2,8 @@
   license: "CC-BY-SA-3.0"
   copyright: "Modified from existing laugh texture (laugh.png) by Sarahon"
   source: "https://github.com/Sarahon"
-  
-- files: ["purse.png", "purr.png"]
+
+- files: ["purse.png", "purr.png", "hiss.png", "mew.png", "meow.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Taken from https://github.com/AdventureTimeSS14/space_station_ADT"
   source: "https://github.com/AdventureTimeSS14/space_station_ADT"

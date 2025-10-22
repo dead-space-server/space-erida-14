@@ -1,0 +1,81 @@
+- type: startingGear
+  id: InteQOperativeGearFullNoUplink
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelInteQ
+    mask: ClothingMaskInteQInfiltrator
+    eyes: ClothingEyesHudSyndicate
+    ears: ClothingHeadsetInteQ
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitInteQ
+    shoes: ClothingShoesBootsCombatFilled
+    id: InteQIDCard
+    pocket2: PlushieCarp
+    belt: ClothingBeltMilitaryWebbing
+  storage:
+    back:
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - DeathAcidifierImplanter
+
+#Nuclear Operative Gear
+- type: startingGear
+  id: InteQOperativeGearFull
+  parent: InteQOperativeGearFullNoUplink
+  equipment:
+    pocket2: BaseUplinkRadio40TC
+
+- type: chameleonOutfit
+  id: InteQNukeopsOutfit
+  name: roles-antag-nuclear-operative-name
+  startingGear: InteQOperativeGearFullNoUplink
+  icon: "JobIconInteQ"
+  equipment:
+    head: ClothingHeadHelmetHardsuitSyndie
+    neck: ClothingNeckScarfStripedSyndieRed
+
+#Nuclear Operative Commander Gear
+- type: startingGear
+  id: InteQCommanderGearFull
+  parent: InteQOperativeGearFull
+  equipment:
+    neck: SyndicateWhistle
+    outerClothing: ClothingOuterHardsuitSyndicateInteQ
+  inhand:
+  - NukeOpsDeclarationOfWar
+
+#Nuclear Operative Medic Gear
+- type: startingGear
+  id: InteQOperativeMedicFull
+  parent: InteQOperativeGearFull
+  equipment:
+    eyes: ClothingEyesHudSyndicateAgent
+    shoes: ClothingShoesBootsMagSyndie
+    belt: ClothingBeltMilitaryWebbingMedFilled
+  storage:
+    back:
+    - SyndiHypo
+    - SawAdvanced
+    - Cautery
+    - CombatKnife
+    - WeaponPistolViper
+    - PinpointerSyndicateNuclear
+    - HandheldHealthAnalyzer
+    - CombatMedipen
+    - DeathAcidifierImplanter
+
+- type: chameleonOutfit
+  id: InteQNukeopsMedicOutfit
+  name: roles-antag-nuclear-operative-agent-name
+  startingGear: InteQOperativeMedicFull
+  icon: "JobIconInteQ"
+  equipment:
+    head: ClothingHeadHelmetHardsuitSyndieMedic
+    neck: ClothingNeckScarfStripedLightBlue
+
+#Lone Operative Gear
+- type: startingGear
+  id: InteQLoneOperativeGearFull
+  parent: InteQOperativeGearFull
+  equipment:
+    pocket2: BaseUplinkRadio60TC

@@ -90,13 +90,9 @@ public sealed class SmartFridgeSystem : EntitySystem
 
         if (ent.Comp.ContainedEntries.TryGetValue(key, out var contained))
         {
-            contained.Remove(GetNetEntity(args.Entity));  // deleting entity from the list on zero count
-            if (contained.Count == 0)
-            {
-                ent.Comp.ContainedEntries.Remove(key);
-                ent.Comp.Entries.Remove(key);
-            }
+            contained.Remove(GetNetEntity(args.Entity));
         }
+
         Dirty(ent);
     }
 

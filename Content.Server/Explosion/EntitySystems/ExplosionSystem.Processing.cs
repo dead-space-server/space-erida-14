@@ -25,7 +25,7 @@ using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 
 namespace Content.Server.Explosion.EntitySystems;
 
-public sealed partial class ExplosionSystem
+public sealed partial class ExplosionSystem : SharedExplosionSystem //Erida-Edit
 {
     [Dependency] private readonly FlammableSystem _flammableSystem = default!;
 

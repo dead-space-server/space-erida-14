@@ -129,6 +129,19 @@
   equipment:
     outerClothing: ClothingOuterWinterSec
 
+- type: loadout #Backmen
+  id: ClothingOuterCoatSecurityOvercoat
+  equipment:
+    outerClothing: ClothingOuterCoatSecurityOvercoat
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+
+- type: startingGear #Backmen
+  id: ClothingOuterCoatSecurityOvercoat
+  equipment:
+    outerClothing: ClothingOuterCoatSecurityOvercoat
+
 # Shoes
 - type: loadout
   id: CombatBoots

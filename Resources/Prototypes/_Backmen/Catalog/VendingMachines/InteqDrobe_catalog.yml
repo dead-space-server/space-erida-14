@@ -1,0 +1,8 @@
+- type: listing
+  id: InteqDrobeInventory2
+  productEntity: ClothingEyesGogglessInteQ
+  categories:
+    - InteqDrobeInventory
+  conditions:
+    - !type:ListingLimitedStockCondition
+      stock: 2
