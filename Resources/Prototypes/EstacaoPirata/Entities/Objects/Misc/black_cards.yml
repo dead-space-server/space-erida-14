@@ -818,7 +818,6 @@
   - type: SolutionInjectWhileEmbedded
     transferAmount: 4
     updateInterval: 0.1
-    maxInjections: 1
     solution: injector
     pierceArmor: false
 # endregion Black Cards

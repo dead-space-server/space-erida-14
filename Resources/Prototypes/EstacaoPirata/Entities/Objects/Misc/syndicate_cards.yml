@@ -718,8 +718,6 @@
     duration: 0.25
     generated:
       reagents:
-      - ReagentId: Tirizene
-        Quantity: 3
       - ReagentId: Bananadine
         Quantity: 1.5
       - ReagentId: Honk
@@ -729,7 +727,6 @@
   - type: SolutionInjectWhileEmbedded
     transferAmount: 7
     updateInterval: 0.1
-    maxInjections: 1
     solution: injector
     pierceArmor: false
 # endregion Syndicate Cards
