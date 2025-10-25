@@ -44,10 +44,10 @@
   id: MobShadowkinMarkingLimits
   points:
     Hair:
-      points: 1
+      points: 0
       required: false
     FacialHair:
-      points: 1
+      points: 0
       required: false
     Tail:
       points: 1
@@ -61,10 +61,10 @@
       points: 1
       required: false
     Legs:
-      points: 2
+      points: 4
       required: false
     Arms:
-      points: 2
+      points: 4
       required: false
 
 - type: humanoidBaseSprite

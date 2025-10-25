@@ -17,6 +17,7 @@
     FacialHair: MobSlimeMarkingFollowSkin
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
     Chest: MobSlimeTorso
     Eyes: MobHumanoidEyes
     LArm: MobSlimeLArm
@@ -45,6 +46,9 @@
       required: false
     Arms:
       points: 4
+      required: false
+    Tail:
+      points: 1
       required: false
 
 - type: humanoidBaseSprite

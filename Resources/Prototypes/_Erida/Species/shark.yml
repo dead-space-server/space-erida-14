@@ -54,6 +54,12 @@
     Head:
       points: 3
       required: false
+    Arms:
+      points: 4
+      required: false
+    Legs:
+      points: 4
+      required: false
 
 - type: humanoidBaseSprite
   id: MobSharkEyes

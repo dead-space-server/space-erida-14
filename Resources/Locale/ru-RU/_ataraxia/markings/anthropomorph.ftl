@@ -444,11 +444,10 @@ marking-TailFox = Хвост, лиса
 marking-TailGecko = Хвост, гекон
 marking-TailKitsune = Хвост, китсуне (альт.)
 marking-TailMaw = Хвост, Мав
-marking-TailSuccubus = Хвост, суккуба
 marking-TailTentacle = Тентакли
 
 
-# ГРУДЬ 
+# ГРУДЬ
 
 marking-AnthropomorphChestAbsarms = Абрамс, грудь
 marking-AnthropomorphChestAbsbelly = Абели, грудь

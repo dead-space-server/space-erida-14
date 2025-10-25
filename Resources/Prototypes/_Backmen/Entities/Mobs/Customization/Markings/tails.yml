@@ -226,19 +226,10 @@
       state: snake_under_secondary_wagging
 
 - type: marking
-  id: TailSuccubus
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Moth, Felinid]
-  sprites:
-    - sprite: Backmen/Mobs/Customization/tails32x32.rsi
-      state: succubus
-
-- type: marking
   id: TailTentacle
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, nHuman, Oni]
+  speciesRestriction: [Anthropomorph, Human, Oni]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: tentacle

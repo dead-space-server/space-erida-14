@@ -2,7 +2,6 @@
   id: Malstrem
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Demon]
   coloring:
     default:
       type:
@@ -16,7 +15,6 @@
   id: Beholder
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Demon]
   coloring:
     default:
       type:
@@ -30,7 +28,6 @@
   id: Terminator
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Demon]
   coloring:
     default:
       type:
@@ -44,7 +41,6 @@
   id: Iron_jaw
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Demon]
   coloring:
     default:
       type:

@@ -1651,7 +1651,7 @@
   bodyPart: Tail
   markingCategory: Tail
 #  sponsorOnly: true
-  speciesRestriction: [Anthropomorph, Felinid, Dwarf, Human]
+  speciesRestriction: [Anthropomorph, Human, Demon]
   sprites:
   - sprite: _Ataraxia/Mobs/Customization/Anthropomorph/mam_tails.rsi
     state: tail_succubus
