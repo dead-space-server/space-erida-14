@@ -2,6 +2,7 @@ using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared._Erida.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared._Erida.Chemistry.Helpers;
 
 namespace Content.Shared._Erida.Chemistry.Systems;
 
@@ -15,14 +16,35 @@ public sealed class MedicalToleranceSystem : EntitySystem
 
         var currentTime = _gameTiming.CurTime;
 
-        var playersWithMedTolComponent = EntityQuery<MedicalToleranceComponent>().Select(pair => pair.Owner).ToList();
-
-        foreach (var playerEntity in playersWithMedTolComponent)
+        var enumerator = EntityQueryEnumerator<MedicalToleranceComponent>();
+        while (enumerator.MoveNext(out var _, out var medTolComponent))
         {
+            var keysCopy = medTolComponent.Tolerances.Keys.ToList();
 
-            var medTolComponent = EntityManager.GetComponent<MedicalToleranceComponent>(playerEntity);
+            foreach (var reagentId in keysCopy)
+            {
+                float newTolerance = Math.Max(medTolComponent.Tolerances[reagentId] - 0.01f, 0f);
 
+                if (newTolerance == 0f)
+                {
+                    medTolComponent.Tolerances.Remove(reagentId);
+                }
+                else
+                {
+                    medTolComponent.Tolerances[reagentId] = newTolerance;
+                }
+            }
         }
+    }
+
+    public void ApplyDrugEffect(EntityUid playerEntity, ReagentId reagentId, float originalEffect)
+    {
+
+        float tolerance = GetTolerance(playerEntity, reagentId);
+
+
+        float adjustedEffect = DrugMechanicsHelper.CalculateAdjustedDrugEffect(originalEffect, tolerance);
+
     }
 
     public void SetTolerance(EntityUid playerEntity, ReagentId reagentId, float tolerance)
@@ -38,7 +60,7 @@ public sealed class MedicalToleranceSystem : EntitySystem
         {
             comp.Tolerances.Add(reagentId, 0f);
         }
-        comp.Tolerances[reagentId] += increment;
+        comp.Tolerances[reagentId] = Math.Min(comp.Tolerances[reagentId] + increment, 1f);
     }
 
     public float GetTolerance(EntityUid playerEntity, ReagentId reagentId)
