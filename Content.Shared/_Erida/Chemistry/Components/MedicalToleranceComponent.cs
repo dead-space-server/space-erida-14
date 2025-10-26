@@ -1,15 +1,15 @@
 
-namespace Content.Shared._Erida.Chemistry.Components
+namespace Content.Shared._Erida.Chemistry.Components;
 
+[RegisterComponent]
+public sealed partial class MedicalToleranceComponent : Component
 {
 
-    [RegisterComponent]
-    public sealed partial class MedicalToleranceComponent : Component
-    {
+    [ViewVariables]
 
-        [ViewVariables]
-        public Dictionary<string, float> Tolerances { get; set; } = new();
+    public Dictionary<string, float> Tolerances { get; set; } = new();
 
-        private const float ToleranceDecay = 0.01f;
-    }
+
+    private const float ToleranceDecay = 0.01f;
+
 }
