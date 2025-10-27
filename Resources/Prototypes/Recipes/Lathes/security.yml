@@ -62,6 +62,17 @@
     Cloth: 500
 
 - type: latheRecipe
+  id: SimplifiedTaser
+  result: SimplifiedTaser
+  categories:
+  - Clothing
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 500
+    Glass: 400
+
+- type: latheRecipe
   id: ClothingEyesHudSecurity
   result: ClothingEyesHudSecurity
   categories:

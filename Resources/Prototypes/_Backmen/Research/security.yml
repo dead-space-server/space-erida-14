@@ -103,3 +103,18 @@
   technologyPrerequisites:
   - RiotControlAdvanced
   position: 2,-3
+
+- type: technology
+  id: Taser
+  name: research-technology-Taser
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/taser.rsi
+    state: base
+  discipline: Security
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - SimplifiedTaser
+  technologyPrerequisites:
+  - WarCrimes
+  position: 3,-3

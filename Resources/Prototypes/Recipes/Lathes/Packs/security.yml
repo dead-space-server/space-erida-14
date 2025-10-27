@@ -76,6 +76,7 @@
   - PowerCageSmall
   - TelescopicShield
   - ClothingBackpackHarmpack
+  - SimplifiedTaser
 
 - type: latheRecipePack
   id: SecurityBoards
