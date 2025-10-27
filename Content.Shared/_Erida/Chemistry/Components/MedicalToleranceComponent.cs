@@ -8,4 +8,6 @@ public sealed partial class MedicalToleranceComponent : Component
 
     [ViewVariables]
     public Dictionary<ReagentId, float> Tolerances { get; set; } = new();
+
+    public const float ToleranceDecay = 0.01f;
 }

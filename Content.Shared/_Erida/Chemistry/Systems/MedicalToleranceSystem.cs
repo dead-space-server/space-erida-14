@@ -14,16 +14,17 @@ public sealed class MedicalToleranceSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var currentTime = _gameTiming.CurTime;
-
         var enumerator = EntityQueryEnumerator<MedicalToleranceComponent>();
         while (enumerator.MoveNext(out var _, out var medTolComponent))
         {
+
             var keysCopy = medTolComponent.Tolerances.Keys.ToList();
 
             foreach (var reagentId in keysCopy)
             {
-                float newTolerance = Math.Max(medTolComponent.Tolerances[reagentId] - 0.01f, 0f);
+
+                float oldTolerance = medTolComponent.Tolerances[reagentId];
+                float newTolerance = Math.Max(oldTolerance - frameTime * MedicalToleranceComponent.ToleranceDecay, 0f);
 
                 if (newTolerance == 0f)
                 {
