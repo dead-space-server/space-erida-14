@@ -62,5 +62,10 @@ public sealed partial class StunOnCollideComponent : Component
     /// Fixture we track for the collision.
     /// </summary>
     [DataField("fixture")] public string FixtureID = "projectile";
-}
 
+    /// <summary>
+    /// Tag that prevents receiving stun effects during collisions.
+    /// </summary>
+    [DataField]
+    public string PreventingTag = "NoStunEffect";
+}

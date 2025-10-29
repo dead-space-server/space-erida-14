@@ -3,6 +3,8 @@ using Content.Shared.Movement.Systems;
 using JetBrains.Annotations;
 using Content.Shared.Throwing;
 using Robust.Shared.Physics.Events;
+using Content.Shared.Tag;
+using Content.Shared.Inventory; // Подключаем пространство имён Inventory
 
 namespace Content.Server.Stunnable.Systems;
 
@@ -11,6 +13,8 @@ internal sealed class StunOnCollideSystem : EntitySystem
 {
     [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
+    [Dependency] private readonly TagSystem _tagSystem = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!; // Внедряем InventorySystem
 
     public override void Initialize()
     {
@@ -22,6 +26,16 @@ internal sealed class StunOnCollideSystem : EntitySystem
 
     private void TryDoCollideStun(Entity<StunOnCollideComponent> ent, EntityUid target)
     {
+        var slotEnumerator = _inventory.GetSlotEnumerator(target);
+
+        while (slotEnumerator.NextItem(out var item, out var slot))
+        {
+            if (_tagSystem.HasTag(item, ent.Comp.PreventingTag))
+            {
+                return;
+            }
+        }
+
         _stunSystem.TryKnockdown(target, ent.Comp.KnockdownAmount, ent.Comp.Refresh, ent.Comp.AutoStand, ent.Comp.Drop);
 
         if (ent.Comp.Refresh)
