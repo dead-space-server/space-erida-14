@@ -18,4 +18,9 @@ public sealed partial class LatheHeatProducingComponent : Component
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan NextSecond;
+
+    // Erida-Start
+    [DataField]
+    public float ExplosionThreshold = 373.15f; // 100C
+    // Erida-End
 }

@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Lathe.Components;
 using Content.Server.Materials;
@@ -56,6 +57,7 @@ namespace Content.Server.Lathe
         [Dependency] private readonly StackSystem _stack = default!;
         [Dependency] private readonly TransformSystem _transform = default!;
         [Dependency] private readonly RadioSystem _radio = default!;
+        [Dependency] private readonly ExplosionSystem _explosion = default!; // Erida
 
         /// <summary>
         /// Per-tick cache
@@ -114,6 +116,16 @@ namespace Content.Server.Lathe
                         _environments.Add(mix);
                     }
                 }
+
+                // Erida-Start
+                var maxTemperature = _environments.MaxBy(mix => mix.Temperature)?.Temperature ?? 0f;
+                if (maxTemperature >= heatComp.ExplosionThreshold)
+                {
+                    // 💥大爆炸💥
+                    _explosion.QueueExplosion(uid, "Default", 1000f, 4f, 20f, canCreateVacuum: false);
+                    continue;
+                }
+                // Erida-End
 
                 if (_environments.Count > 0)
                 {
