@@ -4,8 +4,10 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Tag;
+using Content.Shared.Throwing;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -14,7 +16,10 @@ namespace Content.Shared.Hands.EntitySystems;
 public abstract partial class SharedHandsSystem
 {
     [Dependency] private readonly TagSystem _tagSystem = default!;
-
+    // Erida-start
+    [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
+    [Dependency] private readonly INetManager _netMan = default!;
+    // Erida-end
     private static readonly ProtoId<TagPrototype> BypassDropChecksTag = "BypassDropChecks";
 
     private void InitializeDrop()
@@ -154,7 +159,23 @@ public abstract partial class SharedHandsSystem
         var (itemPos, itemRot) = TransformSystem.GetWorldPositionRotation(entity.Value);
         var origin = new MapCoordinates(itemPos, itemXform.MapID);
         var target = TransformSystem.ToMapCoordinates(targetDropLocation.Value);
-        TransformSystem.SetWorldPositionRotation(entity.Value, GetFinalDropCoordinates(ent, origin, target, entity.Value), itemRot);
+        // Erida-start
+        var finalCoords = GetFinalDropCoordinates(ent, origin, target, entity.Value);
+        var spawnStep = (finalCoords - origin.Position).Normalized() / 3;
+        TransformSystem.SetWorldPositionRotation(entity.Value, origin.Position + spawnStep, itemRot);
+        if (_netMan.IsServer)
+        {
+            _throwingSystem.TryThrow(entity.Value,
+                                    finalCoords - origin.Position - spawnStep,
+                                    3f,
+                                    ent,
+                                    0,
+                                    compensateFriction: true,
+                                    playSound: false,
+                                    doSpin: false,
+                                    notRaiseLand: true);
+        }
+        // Erida-end
         return true;
     }
 

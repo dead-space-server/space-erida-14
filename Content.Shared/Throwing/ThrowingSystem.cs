@@ -91,7 +91,8 @@ public sealed class ThrowingSystem : EntitySystem
         bool animated = true,
         bool playSound = true,
         bool doSpin = true,
-        bool unanchor = false)
+        bool unanchor = false,
+        bool notRaiseLand = false) // Erida
     {
         var physicsQuery = GetEntityQuery<PhysicsComponent>();
         if (!physicsQuery.TryGetComponent(uid, out var physics))
@@ -108,7 +109,7 @@ public sealed class ThrowingSystem : EntitySystem
             baseThrowSpeed,
             user,
             pushbackRatio,
-            friction, compensateFriction: compensateFriction, recoil: recoil, animated: animated, playSound: playSound, doSpin: doSpin, unanchor: unanchor);
+            friction, compensateFriction: compensateFriction, recoil: recoil, animated: animated, playSound: playSound, doSpin: doSpin, unanchor: unanchor, notRaiseLand: notRaiseLand); // Erida
     }
 
     /// <summary>
@@ -136,7 +137,8 @@ public sealed class ThrowingSystem : EntitySystem
         bool animated = true,
         bool playSound = true,
         bool doSpin = true,
-        bool unanchor = false)
+        bool unanchor = false,
+        bool notRaiseLand = false) // Erida
     {
         if (baseThrowSpeed <= 0 || direction == Vector2Helpers.Infinity || direction == Vector2Helpers.NaN || direction == Vector2.Zero || friction < 0)
             return;
@@ -155,6 +157,7 @@ public sealed class ThrowingSystem : EntitySystem
         {
             Thrower = user,
             Animate = animated,
+            NotRaiseLand = notRaiseLand
         };
 
         // if not given, get the default friction value for distance calculation
@@ -193,7 +196,8 @@ public sealed class ThrowingSystem : EntitySystem
         }
 
         var throwEvent = new ThrownEvent(user, uid);
-        RaiseLocalEvent(uid, ref throwEvent, true);
+        if (!notRaiseLand) // Erida
+            RaiseLocalEvent(uid, ref throwEvent, true);
         if (user != null)
             _adminLogger.Add(LogType.Throw, LogImpact.Low, $"{ToPrettyString(user.Value):user} threw {ToPrettyString(uid):entity}");
 

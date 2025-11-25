@@ -128,7 +128,10 @@ namespace Content.Shared.Throwing
 
             _broadphase.RegenerateContacts((uid, physics));
             var landEvent = new LandEvent(thrownItem.Thrower, playSound);
-            RaiseLocalEvent(uid, ref landEvent);
+            // Erida-start
+            if (!thrownItem.NotRaiseLand)
+                RaiseLocalEvent(uid, ref landEvent);
+            // Erida-end
         }
 
         /// <summary>

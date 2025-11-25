@@ -50,5 +50,15 @@ namespace Content.Shared.Throwing
         /// </summary>
         [DataField]
         public Vector2? OriginalScale = null;
+
+        // Erida-start
+
+        /// <summary>
+        ///     Item is thrown don't need to raise any events.
+        /// </summary>
+        [DataField]
+        public bool NotRaiseLand = false;
+
+        // Erida-end
     }
 }
