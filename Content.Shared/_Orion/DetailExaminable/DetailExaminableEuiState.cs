@@ -27,12 +27,10 @@ public sealed class DetailExaminableEuiState : EuiStateBase
     public string RedFlavorText = string.Empty;
     public string TagsFlavorText = string.Empty;
     public string LinksFlavorText = string.Empty;
-    public string NSFWFlavorText = string.Empty;
-    // Erida start
-    public string NSFWOOCFlavorText = string.Empty;
-    public string NSFWLinksFlavorText = string.Empty;
-    public string NSFWTagsFlavorText = string.Empty;
-    // Erida end
+    public string NsfwFlavorText = string.Empty;
+    public string NsfwOOCFlavorText = string.Empty;
+    public string NsfwLinksFlavorText = string.Empty;
+    public string NsfwTagsFlavorText = string.Empty;
 
     public DetailExaminableEuiState(
         NetEntity target,
@@ -67,11 +65,9 @@ public sealed class DetailExaminableEuiState : EuiStateBase
         RedFlavorText = redFlavorText;
         TagsFlavorText = tagsFlavorText;
         LinksFlavorText = linksFlavorText;
-        NSFWFlavorText = nsfwFlavorText;
-        // Erida start
-        NSFWOOCFlavorText = nsfwOOCFlavorText;
-        NSFWLinksFlavorText = nsfwLinksFlavorText;
-        NSFWTagsFlavorText = nsfwTagsFlavorText;
-        // Erida end
+        NsfwFlavorText = nsfwFlavorText;
+        NsfwOOCFlavorText = nsfwOOCFlavorText;
+        NsfwLinksFlavorText = nsfwLinksFlavorText;
+        NsfwTagsFlavorText = nsfwTagsFlavorText;
     }
 }

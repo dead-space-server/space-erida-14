@@ -285,12 +285,10 @@ namespace Content.Server.Database
                 profile.TagsFlavorText,
                 profile.LinksFlavorText,
                 profile.NSFWFlavorText,
-                // Orion-End
-                // Erida start
                 profile.NSFWOOCFlavorText,
                 profile.NSFWLinksFlavorText,
                 profile.NSFWTagsFlavorText,
-                // Erida end
+                // Orion-End
                 profile.Species,
                 voice, // Corvax-TTS
                 profile.Age,
@@ -329,20 +327,18 @@ namespace Content.Server.Database
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
             // Orion-Start
-            profile.OOCFlavorText = humanoid.OOCFlavorText;
+            profile.OOCFlavorText = humanoid.OocFlavorText;
             profile.CharacterFlavorText = humanoid.CharacterFlavorText;
             profile.GreenFlavorText = humanoid.GreenFlavorText;
             profile.YellowFlavorText = humanoid.YellowFlavorText;
             profile.RedFlavorText = humanoid.RedFlavorText;
             profile.TagsFlavorText = humanoid.TagsFlavorText;
             profile.LinksFlavorText = humanoid.LinksFlavorText;
-            profile.NSFWFlavorText = humanoid.NSFWFlavorText;
+            profile.NSFWFlavorText = humanoid.NsfwFlavorText;
+            profile.NSFWLinksFlavorText = humanoid.NsfwLinksFlavorText;
+            profile.NSFWOOCFlavorText = humanoid.NsfwOOCFlavorText;
+            profile.NSFWTagsFlavorText = humanoid.NsfwTagsFlavorText;
             // Orion-End
-            // Erida start
-            profile.NSFWLinksFlavorText = humanoid.NSFWLinksFlavorText;
-            profile.NSFWOOCFlavorText = humanoid.NSFWOOCFlavorText;
-            profile.NSFWTagsFlavorText = humanoid.NSFWTagsFlavorText;
-            // Erida end
             profile.Species = humanoid.Species;
             profile.Voice = humanoid.Voice; // Corvax-TTS
             profile.Age = humanoid.Age;

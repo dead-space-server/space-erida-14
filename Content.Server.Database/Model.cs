@@ -411,12 +411,10 @@ namespace Content.Server.Database
         public string TagsFlavorText { get; set; } = null!;
         public string LinksFlavorText { get; set; } = null!;
         public string NSFWFlavorText { get; set; } = null!;
-        // Orion-End
-        // Erida start
         public string NSFWOOCFlavorText { get; set; } = null!;
         public string NSFWLinksFlavorText { get; set; } = null!;
         public string NSFWTagsFlavorText { get; set; } = null!;
-        // Erida end
+        // Orion-End
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;

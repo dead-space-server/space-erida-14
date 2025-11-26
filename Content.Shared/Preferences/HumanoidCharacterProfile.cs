@@ -71,7 +71,7 @@ namespace Content.Shared.Preferences
 
         // Orion-Start
         [DataField]
-        public string OOCFlavorText { get; set; } = string.Empty;
+        public string OocFlavorText { get; set; } = string.Empty;
 
         [DataField]
         public string CharacterFlavorText { get; set; } = string.Empty;
@@ -92,18 +92,17 @@ namespace Content.Shared.Preferences
         public string LinksFlavorText { get; set; } = string.Empty;
 
         [DataField]
-        public string NSFWFlavorText { get; set; } = string.Empty;
+        public string NsfwFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwOOCFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwLinksFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwTagsFlavorText { get; set; } = string.Empty;
         // Orion-End
-        // Erida start
-        [DataField]
-        public string NSFWOOCFlavorText { get; set; } = string.Empty;
-
-        [DataField]
-        public string NSFWLinksFlavorText { get; set; } = string.Empty;
-
-        [DataField]
-        public string NSFWTagsFlavorText { get; set; } = string.Empty;
-        // Erida end
 
         /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
@@ -174,12 +173,10 @@ namespace Content.Shared.Preferences
             string tagsflavortext,
             string linksflavortext,
             string nsfwflavortext,
-            // Orion-End
-            // Erida start
             string nsfwoocflavortext,
             string nsfwlinksflavortext,
             string nsfwtagsflavortext,
-            // Erida end
+            // Orion-End
             string species,
             string voice, // Corvax-TTS
             int age,
@@ -196,20 +193,18 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             // Orion-Start
-            OOCFlavorText = oocflavortext;
+            OocFlavorText = oocflavortext;
             CharacterFlavorText = characterflavortext;
             GreenFlavorText = greenflavortext;
             YellowFlavorText = yellowflavortext;
             RedFlavorText = redflavortext;
             TagsFlavorText = tagsflavortext;
             LinksFlavorText = linksflavortext;
-            NSFWFlavorText = nsfwflavortext;
+            NsfwFlavorText = nsfwflavortext;
+            NsfwOOCFlavorText = nsfwoocflavortext;
+            NsfwLinksFlavorText = nsfwlinksflavortext;
+            NsfwTagsFlavorText = nsfwtagsflavortext;
             // Orion-End
-            // Erida start
-            NSFWOOCFlavorText = nsfwoocflavortext;
-            NSFWLinksFlavorText = nsfwlinksflavortext;
-            NSFWTagsFlavorText = nsfwtagsflavortext;
-            // Erida end
             Species = species;
             Voice = voice; // Corvax-TTS
             Age = age;
@@ -243,20 +238,18 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 // Orion-Start
-                other.OOCFlavorText,
+                other.OocFlavorText,
                 other.CharacterFlavorText,
                 other.GreenFlavorText,
                 other.YellowFlavorText,
                 other.RedFlavorText,
                 other.TagsFlavorText,
                 other.LinksFlavorText,
-                other.NSFWFlavorText,
+                other.NsfwFlavorText,
+                other.NsfwOOCFlavorText,
+                other.NsfwLinksFlavorText,
+                other.NsfwTagsFlavorText,
                 // Orion-End
-                // Erida start
-                other.NSFWOOCFlavorText,
-                other.NSFWLinksFlavorText,
-                other.NSFWTagsFlavorText,
-                // Erida ends
                 other.Species,
                 other.Voice, // Corvax-TTS
                 other.Age,
@@ -373,7 +366,7 @@ namespace Content.Shared.Preferences
         // Orion-Start
         public HumanoidCharacterProfile WithOOCFlavorText(string oocFlavorText)
         {
-            return new(this) { OOCFlavorText = oocFlavorText };
+            return new(this) { OocFlavorText = oocFlavorText };
         }
 
         public HumanoidCharacterProfile WithCharacterText(string characterFlavorText)
@@ -406,27 +399,27 @@ namespace Content.Shared.Preferences
             return new(this) { LinksFlavorText = linksFlavorText };
         }
 
-        public HumanoidCharacterProfile WithNSFWPreferencesText(string nsfwFlavorText)
+        public HumanoidCharacterProfile WithNsfwPreferencesText(string nsfwFlavorText)
         {
-            return new(this) { NSFWFlavorText = nsfwFlavorText };
+            return new(this) { NsfwFlavorText = nsfwFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwOOCFlavorText(string nsfwOOCFlavorText)
+        {
+            return new(this) { NsfwOOCFlavorText = nsfwOOCFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwLinksText(string nsfwLinksFlavorText)
+        {
+            return new(this) { NsfwLinksFlavorText = nsfwLinksFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwTagsText(string nsfwTagsFlavorText)
+        {
+            return new(this) { NsfwTagsFlavorText = nsfwTagsFlavorText };
         }
         // Orion-End
-        // Erida start
-        public HumanoidCharacterProfile WithNSFWOOCFlavorText(string nsfwOOCFlavorText)
-        {
-            return new(this) { NSFWOOCFlavorText = nsfwOOCFlavorText };
-        }
 
-        public HumanoidCharacterProfile WithNSFWLinksText(string nsfwLinksFlavorText)
-        {
-            return new(this) { NSFWLinksFlavorText = nsfwLinksFlavorText };
-        }
-
-        public HumanoidCharacterProfile WithNSFWTagsText(string nsfwTagsFlavorText)
-        {
-            return new(this) { NSFWTagsFlavorText = nsfwTagsFlavorText };
-        }
-        // Erida end
         public HumanoidCharacterProfile WithAge(int age)
         {
             return new(this) { Age = age };
@@ -632,20 +625,18 @@ namespace Content.Shared.Preferences
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
             // Orion-Start
-            if (OOCFlavorText != other.OOCFlavorText) return false;
+            if (OocFlavorText != other.OocFlavorText) return false;
             if (CharacterFlavorText != other.CharacterFlavorText) return false;
             if (GreenFlavorText != other.GreenFlavorText) return false;
             if (YellowFlavorText != other.YellowFlavorText) return false;
             if (RedFlavorText != other.RedFlavorText) return false;
             if (TagsFlavorText != other.TagsFlavorText) return false;
             if (LinksFlavorText != other.LinksFlavorText) return false;
-            if (NSFWFlavorText != other.NSFWFlavorText) return false;
+            if (NsfwFlavorText != other.NsfwFlavorText) return false;
+            if (NsfwOOCFlavorText != other.NsfwOOCFlavorText) return false;
+            if (NsfwLinksFlavorText != other.NsfwLinksFlavorText) return false;
+            if (NsfwTagsFlavorText != other.NsfwTagsFlavorText) return false;
             // Orion-End
-            // Erida start
-            if (NSFWOOCFlavorText != other.NSFWOOCFlavorText) return false;
-            if (NSFWLinksFlavorText != other.NSFWLinksFlavorText) return false;
-            if (NSFWTagsFlavorText != other.NSFWTagsFlavorText) return false;
-            // Erida end
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -720,78 +711,78 @@ namespace Content.Shared.Preferences
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
+                flavortext = FlavorText[..maxFlavorTextLength]; // Orion-Edit | Remove RemoveMarkupOrThrow
             }
             else
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
+                flavortext = FlavorText; // Orion-Edit | Remove RemoveMarkupOrThrow
             }
 
             // Orion-Start
             string oocflavortext;
             var oocMaxFlavorTextLength = configManager.GetCVar(CCVars.OOCMaxFlavorTextLength);
-            if (OOCFlavorText.Length > oocMaxFlavorTextLength)
+            if (OocFlavorText.Length > oocMaxFlavorTextLength)
             {
-                oocflavortext = FormattedMessage.RemoveMarkupOrThrow(OOCFlavorText)[..oocMaxFlavorTextLength];
+                oocflavortext = OocFlavorText[..oocMaxFlavorTextLength];
             }
             else
             {
-                oocflavortext = FormattedMessage.RemoveMarkupOrThrow(OOCFlavorText);
+                oocflavortext = OocFlavorText;
             }
 
             string characterDescription;
             var maxCharacterDescriptionLength = configManager.GetCVar(CCVars.CharacterDescriptionLength);
             if (CharacterFlavorText.Length > maxCharacterDescriptionLength)
             {
-                characterDescription = FormattedMessage.RemoveMarkupOrThrow(CharacterFlavorText)[..maxCharacterDescriptionLength];
+                characterDescription = CharacterFlavorText[..maxCharacterDescriptionLength];
             }
             else
             {
-                characterDescription = FormattedMessage.RemoveMarkupOrThrow(CharacterFlavorText);
+                characterDescription = CharacterFlavorText;
             }
 
             string greenPreferences;
             var maxGreenPreferencesLength = configManager.GetCVar(CCVars.GreenPreferencesLength);
             if (GreenFlavorText.Length > maxGreenPreferencesLength)
             {
-                greenPreferences = FormattedMessage.RemoveMarkupOrThrow(GreenFlavorText)[..maxGreenPreferencesLength];
+                greenPreferences = GreenFlavorText[..maxGreenPreferencesLength];
             }
             else
             {
-                greenPreferences = FormattedMessage.RemoveMarkupOrThrow(GreenFlavorText);
+                greenPreferences = GreenFlavorText;
             }
 
             string yellowPreferences;
             var maxYellowPreferencesLength = configManager.GetCVar(CCVars.YellowPreferencesLength);
             if (YellowFlavorText.Length > maxYellowPreferencesLength)
             {
-                yellowPreferences = FormattedMessage.RemoveMarkupOrThrow(YellowFlavorText)[..maxYellowPreferencesLength];
+                yellowPreferences = YellowFlavorText[..maxYellowPreferencesLength];
             }
             else
             {
-                yellowPreferences = FormattedMessage.RemoveMarkupOrThrow(YellowFlavorText);
+                yellowPreferences = YellowFlavorText;
             }
 
             string redPreferences;
             var maxRedPreferencesLength = configManager.GetCVar(CCVars.RedPreferencesLength);
             if (RedFlavorText.Length > maxRedPreferencesLength)
             {
-                redPreferences = FormattedMessage.RemoveMarkupOrThrow(RedFlavorText)[..maxRedPreferencesLength];
+                redPreferences = RedFlavorText[..maxRedPreferencesLength];
             }
             else
             {
-                redPreferences = FormattedMessage.RemoveMarkupOrThrow(RedFlavorText);
+                redPreferences = RedFlavorText;
             }
 
             string tags;
             var maxTagsLength = configManager.GetCVar(CCVars.TagsLength);
             if (TagsFlavorText.Length > maxTagsLength)
             {
-                tags = FormattedMessage.RemoveMarkupOrThrow(TagsFlavorText)[..maxTagsLength];
+                tags = TagsFlavorText[..maxTagsLength];
             }
             else
             {
-                tags = FormattedMessage.RemoveMarkupOrThrow(TagsFlavorText);
+                tags = TagsFlavorText;
             }
 
             tags = FormatTags(tags);
@@ -800,57 +791,57 @@ namespace Content.Shared.Preferences
             var maxLinksLength = configManager.GetCVar(CCVars.LinksLength);
             if (LinksFlavorText.Length > maxLinksLength)
             {
-                links = FormattedMessage.RemoveMarkupOrThrow(LinksFlavorText)[..maxLinksLength];
+                links = LinksFlavorText[..maxLinksLength];
             }
             else
             {
-                links = FormattedMessage.RemoveMarkupOrThrow(LinksFlavorText);
+                links = LinksFlavorText;
             }
 
             string nsfwPreferences;
-            var maxNSFWPreferencesLength = configManager.GetCVar(CCVars.NSFWPreferencesLength);
-            if (NSFWFlavorText.Length > maxNSFWPreferencesLength)
+            var maxNsfwPreferencesLength = configManager.GetCVar(CCVars.NsfwPreferencesLength);
+            if (NsfwFlavorText.Length > maxNsfwPreferencesLength)
             {
-                nsfwPreferences = FormattedMessage.RemoveMarkupOrThrow(NSFWFlavorText)[..maxNSFWPreferencesLength];
+                nsfwPreferences = NsfwFlavorText[..maxNsfwPreferencesLength];
             }
             else
             {
-                nsfwPreferences = FormattedMessage.RemoveMarkupOrThrow(NSFWFlavorText);
+                nsfwPreferences = NsfwFlavorText;
             }
-            // Orion-End
-            // Erida start
+
             string nsfwoocflavortext;
-            if (NSFWOOCFlavorText.Length > oocMaxFlavorTextLength)
+            if (NsfwOOCFlavorText.Length > oocMaxFlavorTextLength)
             {
-                nsfwoocflavortext = FormattedMessage.RemoveMarkupOrThrow(NSFWOOCFlavorText)[..oocMaxFlavorTextLength];
+                nsfwoocflavortext = NsfwOOCFlavorText[..oocMaxFlavorTextLength];
             }
             else
             {
-                nsfwoocflavortext = FormattedMessage.RemoveMarkupOrThrow(NSFWOOCFlavorText);
+                nsfwoocflavortext = NsfwOOCFlavorText;
             }
 
             string nsfwlinks;
-            if (NSFWLinksFlavorText.Length > maxLinksLength)
+            if (NsfwLinksFlavorText.Length > maxLinksLength)
             {
-                nsfwlinks = FormattedMessage.RemoveMarkupOrThrow(NSFWLinksFlavorText)[..maxLinksLength];
+                nsfwlinks = NsfwLinksFlavorText[..maxLinksLength];
             }
             else
             {
-                nsfwlinks = FormattedMessage.RemoveMarkupOrThrow(NSFWLinksFlavorText);
+                nsfwlinks = NsfwLinksFlavorText;
             }
 
             string nsfwtags;
-            if (NSFWTagsFlavorText.Length > maxTagsLength)
+            if (NsfwTagsFlavorText.Length > maxTagsLength)
             {
-                nsfwtags = FormattedMessage.RemoveMarkupOrThrow(NSFWTagsFlavorText)[..maxTagsLength];
+                nsfwtags = NsfwTagsFlavorText[..maxTagsLength];
             }
             else
             {
-                nsfwtags = FormattedMessage.RemoveMarkupOrThrow(NSFWTagsFlavorText);
+                nsfwtags = NsfwTagsFlavorText;
             }
 
             nsfwtags = FormatTags(nsfwtags);
-            // Erida end
+            // Orion-End
+
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
@@ -900,20 +891,18 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             // Orion-Start
-            OOCFlavorText = oocflavortext;
+            OocFlavorText = oocflavortext;
             CharacterFlavorText = characterDescription;
             GreenFlavorText = greenPreferences;
             YellowFlavorText = yellowPreferences;
             RedFlavorText = redPreferences;
             TagsFlavorText = tags;
             LinksFlavorText = links;
-            NSFWFlavorText = nsfwPreferences;
+            NsfwFlavorText = nsfwPreferences;
+            NsfwOOCFlavorText = nsfwoocflavortext;
+            NsfwLinksFlavorText = nsfwlinks;
+            NsfwTagsFlavorText = nsfwtags;
             // Orion-End
-            // Erida start
-            NSFWOOCFlavorText = nsfwoocflavortext;
-            NSFWLinksFlavorText = nsfwlinks;
-            NSFWTagsFlavorText = nsfwtags;
-            // Erida end
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -1045,20 +1034,18 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             // Orion-Start
-            hashCode.Add(OOCFlavorText);
+            hashCode.Add(OocFlavorText);
             hashCode.Add(CharacterFlavorText);
             hashCode.Add(GreenFlavorText);
             hashCode.Add(YellowFlavorText);
             hashCode.Add(RedFlavorText);
             hashCode.Add(TagsFlavorText);
             hashCode.Add(LinksFlavorText);
-            hashCode.Add(NSFWFlavorText);
+            hashCode.Add(NsfwFlavorText);
+            hashCode.Add(NsfwOOCFlavorText);
+            hashCode.Add(NsfwLinksFlavorText);
+            hashCode.Add(NsfwTagsFlavorText);
             // Orion-End
-            // Erida start
-            hashCode.Add(NSFWOOCFlavorText);
-            hashCode.Add(NSFWLinksFlavorText);
-            hashCode.Add(NSFWTagsFlavorText);
-            // Erida end
             hashCode.Add(Species);
             hashCode.Add(Voice);
             hashCode.Add(Age);
