@@ -1321,9 +1321,9 @@
     spread: 9
 
 - type: entity
-  name : Режим лечения тупых травм
+  name : Лечение травм
   id: HealingBruteBolt
-  parent: WatcherBolt
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -1336,12 +1336,13 @@
       impactEffect: BulletImpactEffectRed
       damage:
         groups:
-          Brute: -20
+          Brute: -15
+      ignoreResistances: true
 
 - type: entity
-  name : Режим лечения ожогов
+  name : Лечение ожогов
   id: HealingBurnBolt
-  parent: WatcherBolt
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -1355,11 +1356,12 @@
       damage:
         groups:
           Burn: -20
+      ignoreResistances: true
 
 - type: entity
-  name : Режим лечения токсинов
+  name : Лечение токсинов
   id: HealingToxinBolt
-  parent: WatcherBolt
+  parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -1372,4 +1374,5 @@
       impactEffect: BulletImpactEffectGreen
       damage:
         groups:
-          Toxin: -20
+          Toxin: -10
+      ignoreResistances: true

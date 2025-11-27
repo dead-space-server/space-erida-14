@@ -103,3 +103,19 @@
   technologyPrerequisites:
   - RiotControlAdvanced
   position: 2,-3
+
+- type: technology
+  id: FieldFastMedicine
+  name: research-technology-Field-Fast-Medicine
+  icon:
+    sprite: Objects/Materials/Scrap/generic.rsi
+    state: junk-pai-gold
+  discipline: Security
+  tier: 3
+  cost: 50000
+  recipeUnlocks:
+  - HealingGun
+  technologyPrerequisites:
+  - WarCrimes
+  - Chemistry
+  position: 3,-3

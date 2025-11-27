@@ -134,6 +134,7 @@
   - WeaponLaserCarbine
   - WeaponXrayCannon
   - WeaponTemperatureGun
+  - HealingGun
 
 - type: latheRecipePack
   id: SecurityDisablers

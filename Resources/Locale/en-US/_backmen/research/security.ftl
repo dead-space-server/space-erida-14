@@ -3,3 +3,4 @@ research-technology-targets = Targets
 research-technology-riot-control = Riot control
 research-technology-riot-control-advanced = Advanced riot control
 research-technology-war-crimes = War crimes
+research-technology-Field-Fast-Medicine = Field Threat
