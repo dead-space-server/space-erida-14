@@ -23,7 +23,7 @@ public sealed partial class BasicStationEventSchedulerComponent : Component
     /// How long until the next check for an event runs, is initially set based on MinimumTimeUntilFirstEvent & MinMaxEventTiming.
     /// </summary>
     [DataField]
-    public float TimeUntilNextEvent;
+    public TimeSpan TimeUntilNextEvent = TimeSpan.MinValue;
 
     /// <summary>
     /// The gamerules that the scheduler can choose from

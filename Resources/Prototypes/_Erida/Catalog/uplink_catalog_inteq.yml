@@ -6,7 +6,7 @@
   id: UplinkInteQStamp
   name: uplink-inteq-stamp-name
   description: uplink-inteq-stamp-desc
-  productEntity: RubberStampInteq
+  productEntity: RubberStampInteQ
   discountCategory: rareDiscounts
   discountDownTo:
     TelecrystalOrange: 1

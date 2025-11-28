@@ -9,6 +9,11 @@
     sprite: _Orion/Structures/Doors/Airlocks/Hatches/hatch_inteq.rsi
   - type: Weldable
     time: 10
+  # Erida start
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsInteQ ]
+  # Erida end
 
 - type: entity
   parent: AirlockGlass
@@ -21,3 +26,8 @@
     sprite: _Orion/Structures/Doors/Airlocks/Hatches/hatch_glass_inteq.rsi
   - type: Weldable
     time: 10
+    # Erida start
+  - type: ContainerFill # Erida edit
+    containers:
+      board: [ DoorElectronicsInteQ ]
+    # Erida end

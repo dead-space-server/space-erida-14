@@ -1,5 +1,4 @@
 using Robust.Shared.Containers;
-using Robust.Shared.GameStates;
 
 namespace Content.Shared._Erida.Lathe
 {
@@ -19,7 +18,7 @@ namespace Content.Shared._Erida.Lathe
         public float BaseMaterialModifier = 1;
 
         [DataField]
-        public bool isFirstUpdate = true;
+        public bool IsFirstUpdate = true;
 
         public Container Container = default!;
         public string ContainerId = "UpgradeStorage";
