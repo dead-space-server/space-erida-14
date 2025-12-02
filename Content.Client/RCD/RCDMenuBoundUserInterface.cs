@@ -31,6 +31,10 @@ public sealed class RCDMenuBoundUserInterface : BoundUserInterface
             ["Vents"] = ("rpd-component-vents", new SpriteSpecifier.Texture(new ResPath("/Textures/_Erida/Interface/Radial/RPD/vent_passive.png"))),
             ["SensorsMonitors"] = ("rpd-component-sensors-monitors", new SpriteSpecifier.Texture(new ResPath("/Textures/_Erida/Interface/Radial/RPD/airalarm.png"))),
             // Erida end
+            // Lua start
+            ["FloorCornersPlating"] = ("rcd-component-floor-corners-plating", new SpriteSpecifier.Texture(new ResPath("/Textures/_Mono/Tiles/plating/ne.png"))),
+            ["FloorCornersLattice"] = ("rcd-component-floor-corners-lattice", new SpriteSpecifier.Texture(new ResPath("/Textures/_Lua/Tiles/lattice/ne.png"))),
+            // Lua end
         };
 
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
