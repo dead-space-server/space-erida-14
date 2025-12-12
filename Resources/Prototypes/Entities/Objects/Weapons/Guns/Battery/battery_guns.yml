@@ -924,7 +924,7 @@
   id: HealingGun
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/healing_gun.rsi
+    sprite: _Erida/Objects/Weapons/Guns/Battery/healing_gun.rsi
     layers:
     - state: icon
   - type: Item
