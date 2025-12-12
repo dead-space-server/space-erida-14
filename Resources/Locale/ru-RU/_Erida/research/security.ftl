@@ -1,0 +1,1 @@
+research-technology-Field-Fast-Medicine = Полевое лечение
