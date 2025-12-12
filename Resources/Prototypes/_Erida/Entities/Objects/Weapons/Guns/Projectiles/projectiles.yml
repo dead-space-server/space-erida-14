@@ -1,0 +1,56 @@
+- type: entity
+  name : Лечение травм
+  id: HealingBruteBolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      layers:
+      - state: omnilaser_greyscale
+        shader: unshaded
+        color: red
+    - type: Projectile
+      impactEffect: BulletImpactEffectRed
+      damage:
+        groups:
+          Brute: -15
+      ignoreResistances: true
+
+- type: entity
+  name : Лечение ожогов
+  id: HealingBurnBolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      layers:
+      - state: omnilaser_greyscale
+        shader: unshaded
+        color: orange
+    - type: Projectile
+      impactEffect: BulletImpactEffectOrange
+      damage:
+        groups:
+          Burn: -20
+      ignoreResistances: true
+
+- type: entity
+  name : Лечение токсинов
+  id: HealingToxinBolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      layers:
+      - state: omnilaser_greyscale
+        shader: unshaded
+        color: green
+    - type: Projectile
+      impactEffect: BulletImpactEffectGreen
+      damage:
+        groups:
+          Toxin: -10
+      ignoreResistances: true
