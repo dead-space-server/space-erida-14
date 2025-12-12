@@ -936,7 +936,10 @@
     steps: 5
     zeroVisible: false
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/healing_gun.rsi
+    sprite: _Erida/Objects/Weapons/Guns/Battery/healing_gun.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
   - type: Wieldable
   - type: Gun
     fireRate: 0.5
