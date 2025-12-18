@@ -3,6 +3,13 @@
 # SPDX-License-Identifier: MPL-2.0
 
 - type: tile
+  id: DebugLatticeRadarHalfWidth
+  parent: Lattice
+  name: debug radar half width lattice
+  sprite: /Textures/Tiles/lattice.png
+  vertices: ["0.25, 0", "0.75, 0", "0.75, 1", "0.25, 1"]
+
+- type: tile
   id: LatticeCornerNE
   parent: TrainLattice #Lua
   name: tiles-latticecornerNE
@@ -35,12 +42,14 @@
   parent: TrainLattice #Lua
   name: tiles-platingcornerNE
   sprite: /Textures/_Mono/Tiles/plating/ne.png
+  vertices: ["1, 0", "1, 1", "0, 1"]
 
 - type: tile
   id: PlatingCornerNW
   parent: TrainLattice #Lua
   name: tiles-platingcornerNW
   sprite: /Textures/_Mono/Tiles/plating/nw.png
+  vertices: ["0, 0", "1, 1", "0, 1"]
 
 - type: tile
   id: PlatingCornerSW
@@ -54,3 +63,4 @@
   parent: TrainLattice #Lua
   name: tiles-platingcornerSE
   sprite: /Textures/_Mono/Tiles/plating/se.png
+  vertices: ["0, 0", "1, 0", "1, 1"]
