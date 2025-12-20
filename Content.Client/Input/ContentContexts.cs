@@ -97,7 +97,13 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.ArcadeRight);
             human.AddFunction(ContentKeyFunctions.Arcade1);
             human.AddFunction(ContentKeyFunctions.Arcade2);
+<<<<<<< HEAD
             human.AddFunction(ContentKeyFunctions.Arcade3);
+=======
+            human.AddFunction(ContentKeyFunctions.OfferItem); // ADT-Tweak
+            human.AddFunction(ContentKeyFunctions.PickupHumans); // ADT-Tweak
+            human.AddFunction(ContentKeyFunctions.TogglePosing); // ADT-Tweak
+>>>>>>> 11432e57d6 (Позирование (#2315))
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);
