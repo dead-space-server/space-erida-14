@@ -1,15 +1,6 @@
 ###############
 #  Head
 ###############
-- type: latheRecipe
-  parent: BaseCommandHatRecipe
-  id: ClothingHeadHatSyndieMAA
-  result: ClothingHeadHatSyndieMAA
-
-- type: latheRecipe
-  parent: BaseCommandHatRecipe
-  id: ClothingHeadHatSyndie
-  result: ClothingHeadHatSyndie
 
 - type: latheRecipe
   parent: BaseCommandHatRecipe
@@ -20,11 +11,6 @@
   parent: BaseCommandHatRecipe
   id: ClothingMaskNeckGaiter
   result: ClothingMaskNeckGaiter
-
-- type: latheRecipe
-  parent: BaseNeckClothingRecipe
-  id: ClothingNeckScarfStripedRed
-  result: ClothingNeckScarfStripedRed
 
 ###############
 #  Neck
