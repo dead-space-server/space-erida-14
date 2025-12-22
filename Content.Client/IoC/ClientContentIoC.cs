@@ -35,8 +35,8 @@ namespace Content.Client.IoC
         public static void Register(IDependencyCollection collection)
         {
             SharedContentIoC.Register(collection);
-            IoCManager.Register<Content.Corvax.Interfaces.Client.IClientJoinQueueManager, Backmen.JoinQueue.JoinQueueManager>(); // Corvax-Queue
-            IoCManager.Register<Content.Corvax.Interfaces.Client.IClientDiscordAuthManager, Backmen.DiscordAuth.DiscordAuthManager>(); // Corvax-DiscordAuth
+            IoCManager.Register<Content.Corvax.Interfaces.Client.IClientJoinQueueManager, _Backmen.JoinQueue.JoinQueueManager>(); // Corvax-Queue
+            IoCManager.Register<Content.Corvax.Interfaces.Client.IClientDiscordAuthManager, _Backmen.DiscordAuth.DiscordAuthManager>(); // Corvax-DiscordAuth
             collection.Register<IParallaxManager, ParallaxManager>();
             collection.Register<GeneratedParallaxCache>();
             collection.Register<IChatManager, ChatManager>();

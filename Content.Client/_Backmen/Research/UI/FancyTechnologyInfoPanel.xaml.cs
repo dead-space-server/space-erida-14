@@ -10,7 +10,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Backmen.Research.UI;
+namespace Content.Client._Backmen.Research.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class FancyTechnologyInfoPanel : Control
@@ -20,6 +20,7 @@ public sealed partial class FancyTechnologyInfoPanel : Control
 
     public TechnologyPrototype Prototype;
     public Action<TechnologyPrototype>? BuyAction;
+    public Action<TechnologyPrototype>? OpenPrerequistAction; // Erida edit
     public FancyTechnologyInfoPanel(TechnologyPrototype proto, bool hasAccess, ResearchAvailability availability, SpriteSystem sprite)
     {
         RobustXamlLoader.Load(this);
@@ -61,6 +62,11 @@ public sealed partial class FancyTechnologyInfoPanel : Control
         ResearchButton.OnPressed += Bought;
     }
 
+    private void OnTechnologyButtonPressed(BaseButton.ButtonEventArgs args, TechnologyPrototype tech)
+    {
+        OpenPrerequistAction?.Invoke(tech);
+    }
+
     private void InitializePrerequisites(TechnologyPrototype proto, ResearchSystem research, SpriteSystem sprite)
     {
         NoPrereqLabel.Visible = proto.TechnologyPrerequisites.Count == 0;
@@ -71,7 +77,12 @@ public sealed partial class FancyTechnologyInfoPanel : Control
         {
             var tech = _proto.Index(techId);
             var description = research.GetTechnologyDescription(tech, true, false, true);
-            RequiredTechContainer.AddChild(new MiniTechnologyCardControl(tech, _proto, sprite, description));
+
+            var cardControl = new MiniTechnologyCardControl(tech, _proto, sprite, description);
+            cardControl.Main.Disabled = false;
+            cardControl.Main.OnPressed += args => { OnTechnologyButtonPressed(args, tech); };
+
+            RequiredTechContainer.AddChild(cardControl);
         }
     }
 

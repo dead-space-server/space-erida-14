@@ -3,7 +3,7 @@ using Robust.Client.UserInterface.Controls;
 using System.Linq;
 using System.Numerics;
 
-namespace Content.Client.Backmen.Research.UI;
+namespace Content.Client._Backmen.Research.UI;
 
 /// <summary>
 /// UI element for visualizing technologies prerequisites

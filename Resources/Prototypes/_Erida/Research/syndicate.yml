@@ -1,0 +1,50 @@
+###############
+#   Service
+###############
+
+- type: technology
+  id: SyndicateKitchenMachines
+  name: research-technology-syndicate-kitchen-machines
+  icon:
+    sprite: Structures/Machines/microwave_syndie.rsi
+    state: mw
+  discipline: Service
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - SyndicateMicrowaveMachineCircuitboard
+  technologyPrerequisites:
+   - KitchenMachines
+   - SyndicateServiceMachines
+  position: 3,0
+  corporation: Syndicate
+
+- type: technology
+  id: SyndicateServiceMachines
+  name: research-technology-syndicate-service-integration
+  icon:
+    sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
+    state: icon
+  discipline: Service
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ClothingUniformJumpsuitOperative
+  - ClothingUniformJumpskirtOperative
+  - ClothingUniformJumpskirtSyndieFormalDress
+  - ClothingUniformJumpsuitSyndieFormal
+  - ClothingMaskNeckGaiter
+  - ClothingHeadHatOutlawHat
+  - ClothingHeadHatSyndieMAA
+  - ClothingHeadHatSyndie
+  - ClothingUniformJumpsuitPyjamaSyndicatePink
+  - ClothingUniformJumpsuitPyjamaSyndicateBlack
+  - ClothingUniformJumpsuitPyjamaSyndicateRed
+  - ClothingNeckScarfStripedSyndieGreen
+  - ClothingNeckScarfStripedSyndieRed
+  - ClothingOuterWinterSyndie
+  - ClothingOuterWinterSyndieCap
+  technologyPrerequisites:
+   - ServiceMachines
+  position: 3,1
+  corporation: Syndicate

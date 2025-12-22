@@ -10,7 +10,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Network;
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Client.Backmen.DiscordAuth;
+namespace Content.Client._Backmen.DiscordAuth;
 
 public sealed class DiscordAuthManager : Content.Corvax.Interfaces.Client.IClientDiscordAuthManager
 {

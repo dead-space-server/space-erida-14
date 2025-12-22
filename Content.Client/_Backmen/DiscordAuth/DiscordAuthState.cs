@@ -5,7 +5,7 @@ using Robust.Client.UserInterface;
 using Robust.Shared.Network;
 using Timer = Robust.Shared.Timing.Timer;
 
-namespace Content.Client.Backmen.DiscordAuth;
+namespace Content.Client._Backmen.DiscordAuth;
 
 public sealed class DiscordAuthState : State
 {

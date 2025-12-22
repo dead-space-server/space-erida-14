@@ -6,7 +6,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client.Backmen.Research.UI;
+namespace Content.Client._Backmen.Research.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class FancyResearchConsoleItem : LayoutContainer

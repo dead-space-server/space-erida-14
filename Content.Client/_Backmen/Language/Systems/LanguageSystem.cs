@@ -4,7 +4,7 @@ using Content.Shared.Backmen.Language.Systems;
 using Robust.Client;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client.Backmen.Language.Systems;
+namespace Content.Client._Backmen.Language.Systems;
 
 /// <summary>
 ///   Client-side language system.

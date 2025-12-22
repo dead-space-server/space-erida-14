@@ -16,7 +16,7 @@ using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Backmen.Research.UI;
+namespace Content.Client._Backmen.Research.UI;
 
 [GenerateTypedNameReferences]
 public sealed partial class FancyResearchConsoleMenu : FancyWindow
@@ -58,6 +58,10 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// </summary>
     private bool _draggin;
 
+    // Erida start
+    private string _currentCorporation = "NanoTrasen";
+    // Erida end
+
     /// <summary>
     /// Global position that all tech relates to.
     /// For dragging mostly
@@ -81,6 +85,9 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         DragContainer.OnKeyBindUp += OnKeybindUp;
         RecenterButton.OnPressed += _ => Recenter();
 
+        NanoTrasenButton.OnPressed += _ => OnCorporationButton("NanoTrasen");
+        SyndicateButton.OnPressed += _ => OnCorporationButton("Syndicate");
+
         UpdatePanels(List);
         Recenter();
     }
@@ -96,6 +103,8 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         foreach (var tech in List)
         {
             var proto = _prototype.Index<TechnologyPrototype>(tech.Key);
+
+            if (proto.Corporation != _currentCorporation) { continue; }
 
             var control = new FancyResearchConsoleItem(proto, _sprite, tech.Value);
             DragContainer.AddChild(control);
@@ -188,6 +197,39 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
             _draggin = false;
     }
 
+    // Erida start
+    private void OnCorporationButton(string corporation)
+    {
+        foreach (Button button in CorporationBox.Children)
+        {
+            if (button.Name != null && button.Name.Contains(corporation))
+            {
+                button.Disabled = true;
+                continue;
+            }
+
+            button.Disabled = false;
+        }
+
+        _currentCorporation = corporation;
+
+        Recenter();
+        UpdatePanels(List);
+    }
+
+    private void OnOpenPrerequistPressed(TechnologyPrototype tech)
+    {
+        if (_currentCorporation != tech.Corporation) { OnCorporationButton(tech.Corporation); }
+
+        Recenter();
+
+        foreach (var child in DragContainer.Children)
+        {
+            LayoutContainer.SetPosition(child, child.Position - tech.Position * 150 + new Vector2(DragContainer.Width / 2 - 45, 75));
+        }
+    }
+    // Erida end
+
     protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
         => _draggin ? DragMode.None : base.GetDragModeFor(relativeMousePos);
     #endregion
@@ -206,6 +248,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         CurrentTech = proto.ID;
         var control = new FancyTechnologyInfoPanel(proto, _accessReader.IsAllowed(_player.LocalEntity.Value, Entity), availability, _sprite);
         control.BuyAction += args => OnTechnologyCardPressed?.Invoke(args.ID);
+        control.OpenPrerequistAction += OnOpenPrerequistPressed;
         InfoContainer.AddChild(control);
     }
 

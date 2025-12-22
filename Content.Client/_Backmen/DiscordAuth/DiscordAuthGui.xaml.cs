@@ -8,7 +8,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Backmen.DiscordAuth;
+namespace Content.Client._Backmen.DiscordAuth;
 
 [GenerateTypedNameReferences]
 public sealed partial class DiscordAuthGui : Control

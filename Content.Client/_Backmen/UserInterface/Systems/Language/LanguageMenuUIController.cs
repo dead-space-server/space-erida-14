@@ -1,5 +1,5 @@
-using Content.Client.Backmen.Language;
-using Content.Client.Backmen.Language.Systems;
+using Content.Client._Backmen.Language;
+using Content.Client._Backmen.Language.Systems;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
@@ -12,7 +12,7 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 using JetBrains.Annotations;
 using Robust.Client.Input;
 
-namespace Content.Client.Backmen.UserInterface.Systems.Language;
+namespace Content.Client._Backmen.UserInterface.Systems.Language;
 
 [UsedImplicitly]
 public sealed class LanguageMenuUIController :

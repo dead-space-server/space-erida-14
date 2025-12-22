@@ -1,0 +1,64 @@
+###############
+#  Head
+###############
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingHeadHatSyndieMAA
+  result: ClothingHeadHatSyndieMAA
+
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingHeadHatSyndie
+  result: ClothingHeadHatSyndie
+
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingHeadHatOutlawHat
+  result: ClothingHeadHatOutlawHat
+
+- type: latheRecipe
+  parent: BaseCommandHatRecipe
+  id: ClothingMaskNeckGaiter
+  result: ClothingMaskNeckGaiter
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckScarfStripedRed
+  result: ClothingNeckScarfStripedRed
+
+###############
+#  Neck
+###############
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckScarfStripedSyndieRed
+  result: ClothingNeckScarfStripedSyndieRed
+
+- type: latheRecipe
+  parent: BaseNeckClothingRecipe
+  id: ClothingNeckScarfStripedSyndieGreen
+  result: ClothingNeckScarfStripedSyndieGreen
+
+###############
+#  Packs
+###############
+
+- type: latheRecipePack
+  id: SyndicateClothing
+  recipes:
+  - ClothingUniformJumpsuitOperative
+  - ClothingUniformJumpskirtOperative
+  - ClothingUniformJumpskirtSyndieFormalDress
+  - ClothingUniformJumpsuitSyndieFormal
+  - ClothingMaskNeckGaiter
+  - ClothingHeadHatOutlawHat
+  - ClothingHeadHatSyndieMAA
+  - ClothingHeadHatSyndie
+  - ClothingUniformJumpsuitPyjamaSyndicatePink
+  - ClothingUniformJumpsuitPyjamaSyndicateBlack
+  - ClothingUniformJumpsuitPyjamaSyndicateRed
+  - ClothingNeckScarfStripedSyndieGreen
+  - ClothingNeckScarfStripedSyndieRed
+  - ClothingOuterWinterSyndie
+  - ClothingOuterWinterSyndieCap

@@ -1,6 +1,6 @@
 ﻿using Content.Shared.Backmen.Supermatter;
 
-namespace Content.Client.Backmen.Supermatter;
+namespace Content.Client._Backmen.Supermatter;
 
 public sealed class SupermatterSystem : SharedSupermatterSystem
 {

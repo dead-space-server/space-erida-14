@@ -2,7 +2,7 @@
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
-                      xmlns:goob="clr-namespace:Content.Client.Backmen.Research.UI"
+                      xmlns:goob="clr-namespace:Content.Client._Backmen.Research.UI"
                       Title="{Loc 'research-console-menu-title'}"
                       SetSize="1270 850">
     <BoxContainer Orientation="Vertical"
@@ -11,16 +11,21 @@
         <BoxContainer Orientation="Horizontal"
                       HorizontalExpand="True"
                       VerticalExpand="False"
-                      MinHeight="60"
+                      MinHeight="30"
                       Margin="10">
-            <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+            <BoxContainer Orientation="Vertical" VerticalExpand="True" VerticalAlignment="Center" HorizontalExpand="True">
                 <RichTextLabel Name="ResearchAmountLabel"/>
                 <Control VerticalExpand="True"/>
-                <BoxContainer Name="TierDisplayContainer" Orientation="Horizontal" HorizontalExpand="True" VerticalAlignment="Bottom"/>
+                <BoxContainer Name="TierDisplayContainer" Orientation="Horizontal" VerticalAlignment="Bottom"/>
                 <!-- This is where we put all of the little graphics that display discipline tiers!-->
             </BoxContainer>
+            <BoxContainer Orientation="Vertical" Name="CorporationBox" VerticalExpand="True" HorizontalAlignment="Center" Margin="0 0 30 0">
+                <Button Name="SyndicateButton"  Text="{Loc 'research-console-menu-syndicate-button'}" Modulate="#e3e3e3" ModulateSelfOverride="#6b0303" Margin="0 0 0 2" MinHeight="30" />
+                <Button Name="NanoTrasenButton" Text="{Loc 'research-console-menu-nanotrasen-button'}" Modulate="#e3e3e3" ModulateSelfOverride="#070480" Disabled="True" MinHeight="30" />
+            </BoxContainer>
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalAlignment="Right">
-                <Button Name="ServerButton" Text="{Loc 'research-console-menu-server-selection-button'}" MinHeight="30"/>
+                <Button Name="RecenterButton" Text="{Loc 'research-console-menu-recenter-button'}" Margin="0 0 0 2" MinHeight="30" />
+                <Button Name="ServerButton" Text="{Loc 'research-console-menu-server-selection-button'}" MinHeight="30" />
             </BoxContainer>
         </BoxContainer>
         <BoxContainer Orientation="Horizontal"
@@ -47,7 +52,6 @@
                             <!-- There lives all of technologies -->
                         </goob:ResearchesContainerPanel>
                     </AnimatedTextureRect>
-                    <Button Name="RecenterButton" Text="{Loc 'research-console-menu-recenter-button'}" MinHeight="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5 -5"/>
                 </PanelContainer>
             </BoxContainer>
             <PanelContainer SizeFlagsStretchRatio="2">

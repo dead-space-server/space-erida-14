@@ -2,7 +2,7 @@
 using Robust.Client.State;
 using Robust.Shared.Network;
 
-namespace Content.Client.Backmen.JoinQueue;
+namespace Content.Client._Backmen.JoinQueue;
 
 public sealed class JoinQueueManager : Content.Corvax.Interfaces.Client.IClientJoinQueueManager
 {

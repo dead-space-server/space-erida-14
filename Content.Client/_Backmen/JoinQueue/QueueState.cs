@@ -6,7 +6,7 @@ using Robust.Client.State;
 using Robust.Client.UserInterface;
 using Robust.Shared.Player;
 
-namespace Content.Client.Backmen.JoinQueue;
+namespace Content.Client._Backmen.JoinQueue;
 
 public sealed class QueueState : State
 {

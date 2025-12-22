@@ -5,3 +5,5 @@ research-console-menu-recenter-button = Центрировать
 research-console-menu-server-researched-button = Исследовано
 research-console-tech-cost-label = { $cost } очков
 research-console-tier-percentage = : { $perc }%
+research-console-menu-syndicate-button = Syndicate
+research-console-menu-nanotrasen-button = Nano Trasen
