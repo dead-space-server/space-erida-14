@@ -1,41 +1,5 @@
 - type: entity
-  id: BulletImpactEffect
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: TimedDespawn
-    lifetime: 0.25
-  - type: Sprite
-    drawdepth: Effects
-    layers:
-    - shader: unshaded
-      map: ["enum.EffectLayers.Unshaded"]
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: impact_bullet
-  - type: EffectVisuals
-  - type: Tag
-    tags:
-      - HideContextMenu
-
-- type: entity
-  id: BulletImpactEffectDisabler
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: TimedDespawn
-      lifetime: 0.2
-    - type: Sprite
-      drawdepth: Effects
-      layers:
-        - shader: unshaded
-          map: ["enum.EffectLayers.Unshaded"]
-          sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-          state: impact_laser_blue
-    - type: EffectVisuals
-    - type: Tag
-      tags:
-        - HideContextMenu
-
-- type: entity
-  id: BulletImpactEffectOrangeDisabler
+  id: BulletImpactEffectRed
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -47,14 +11,14 @@
       map: ["enum.EffectLayers.Unshaded"]
       sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
       state: impact_laser_greyscale
-      color: orangered
+      color: red
   - type: EffectVisuals
   - type: Tag
     tags:
     - HideContextMenu
 
 - type: entity
-  id: BulletImpactEffectKinetic
+  id: BulletImpactEffectOrange
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -64,10 +28,29 @@
     layers:
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
-      sprite: Effects/arcs.rsi
-      state: punch
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      state: impact_laser_greyscale
+      color: orange
   - type: EffectVisuals
   - type: Tag
     tags:
-      - HideContextMenu
+    - HideContextMenu
 
+- type: entity
+  id: BulletImpactEffectGreen
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      state: impact_laser_greyscale
+      color: green
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu

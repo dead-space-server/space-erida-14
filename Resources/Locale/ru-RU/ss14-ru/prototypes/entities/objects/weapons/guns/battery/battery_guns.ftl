@@ -74,5 +74,4 @@ ent-XenoborgLaserGun = лазерная пушка ксеноборга
     .desc = { ent-WeaponAdvancedLaser.desc }
 ent-XenoborgHeavyLaserGun = тяжёлая лазерная пушка ксеноборга
     .desc = { ent-WeaponAdvancedLaser.desc }
-ent-HealingGun = Лечащая пушка
-    .desc = I AM BULLETPROOOOF!!
+    

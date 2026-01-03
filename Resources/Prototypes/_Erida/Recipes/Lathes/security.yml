@@ -1,0 +1,10 @@
+- type: latheRecipe
+  parent: BaseWeaponRecipeSidearm
+  id: HealingGun
+  result: HealingGun
+  materials:
+    Steel: 2000
+    Gold: 500
+    Glass: 1500
+    Plasma: 500
+    Plastic: 100
