@@ -3,9 +3,12 @@ using Content.Shared.Database;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
+using Content.Shared.Throwing;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -14,12 +17,16 @@ namespace Content.Shared.Hands.EntitySystems;
 public abstract partial class SharedHandsSystem
 {
     [Dependency] private readonly TagSystem _tagSystem = default!;
-
+    // Erida-start
+    [Dependency] private readonly ThrowingSystem _throwingSystem = default!;
+    [Dependency] private readonly INetManager _netMan = default!;
+    // Erida-end
     private static readonly ProtoId<TagPrototype> BypassDropChecksTag = "BypassDropChecks";
 
     private void InitializeDrop()
     {
         SubscribeLocalEvent<HandsComponent, EntRemovedFromContainerMessage>(HandleEntityRemoved);
+        SubscribeLocalEvent<HandsComponent, EntityStorageIntoContainerAttemptEvent>(OnEntityStorageDump);
     }
 
     protected virtual void HandleEntityRemoved(EntityUid uid, HandsComponent hands, EntRemovedFromContainerMessage args)
@@ -37,6 +44,14 @@ public abstract partial class SharedHandsSystem
 
         if (TryComp(args.Entity, out VirtualItemComponent? @virtual))
             _virtualSystem.DeleteVirtualItem((args.Entity, @virtual), uid);
+    }
+
+
+    private void OnEntityStorageDump(Entity<HandsComponent> ent, ref EntityStorageIntoContainerAttemptEvent args)
+    {
+        // If you're physically carrying an EntityStroage which tries to dump its contents out,
+        // we want those contents to fall to the floor.
+        args.Cancelled = true;
     }
 
     private bool ShouldIgnoreRestrictions(EntityUid user)
@@ -154,7 +169,23 @@ public abstract partial class SharedHandsSystem
         var (itemPos, itemRot) = TransformSystem.GetWorldPositionRotation(entity.Value);
         var origin = new MapCoordinates(itemPos, itemXform.MapID);
         var target = TransformSystem.ToMapCoordinates(targetDropLocation.Value);
-        TransformSystem.SetWorldPositionRotation(entity.Value, GetFinalDropCoordinates(ent, origin, target, entity.Value), itemRot);
+        // Erida-start
+        var finalCoords = GetFinalDropCoordinates(ent, origin, target, entity.Value);
+        var spawnStep = (finalCoords - origin.Position).Normalized() / 3;
+        TransformSystem.SetWorldPositionRotation(entity.Value, origin.Position + spawnStep, itemRot);
+        if (_netMan.IsServer)
+        {
+            _throwingSystem.TryThrow(entity.Value,
+                                    finalCoords - origin.Position - spawnStep,
+                                    3f,
+                                    ent,
+                                    0,
+                                    compensateFriction: true,
+                                    playSound: false,
+                                    doSpin: false,
+                                    notRaiseLand: true);
+        }
+        // Erida-end
         return true;
     }
 

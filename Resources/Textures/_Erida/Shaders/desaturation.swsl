@@ -1,0 +1,14 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float desaturation = 0.1;
+
+void fragment() {
+    highp vec4 color = texture(SCREEN_TEXTURE, UV);
+
+    highp float lum = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+    highp vec3 gray = vec3(lum);
+
+    highp float t = clamp(desaturation, 0.0, 1.0);
+    highp vec3 outRgb = mix(color.rgb, gray, t);
+
+    COLOR = vec4(outRgb, color.a);
+}

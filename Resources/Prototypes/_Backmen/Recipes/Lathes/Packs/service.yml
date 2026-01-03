@@ -23,15 +23,17 @@
   - MofficTranslator
   - ElvishTranslator
   - DwarvenTranslator
-  - ShadokinTranslator
+  - MarTranslator
   - ValyrianStandardTranslator
   - ElvishStandardTranslatorImplanter
   - DwarvenStandardTranslatorImplanter
-  - ShadokinStandardTranslatorImplanter
+  - MarStandardTranslatorImplanter
   - ValyrianStandardTranslatorImplanter
   - CarshnilTranslatorImplanter
   - EvePishtuTranslatorImplanter
   - EvePishtuTranslator
   - CarshnilTranslator
+  - WawaTranslator
+  - WawaStandardTranslatorImplanter
 
   # end-backmen: languages

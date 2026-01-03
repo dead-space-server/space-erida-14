@@ -1,0 +1,26 @@
+- type: playTimeTracker
+  id: JobChiefOfStaffCentralCommand
+
+- type: playTimeTracker
+  id: JobCentralCommandOperator
+
+- type: playTimeTracker
+  id: JobCentralCommandOfficer
+
+- type: playTimeTracker
+  id: JobCentralCommandIntendant
+
+- type: playTimeTracker
+  id: JobCentralCommandEngineer
+
+- type: playTimeTracker
+  id: JobCentralCommandClerc
+
+- type: playTimeTracker
+  id: JobOSO
+
+- type: playTimeTracker
+  id: JobCentralCommandHoS
+  
+- type: playTimeTracker
+  id: JobCentralCommandSecurity

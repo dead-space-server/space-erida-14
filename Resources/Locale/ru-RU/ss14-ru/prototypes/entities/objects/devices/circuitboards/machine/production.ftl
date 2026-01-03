@@ -164,3 +164,5 @@ ent-ReagentGrinderIndustrialMachineCircuitboard = промышленный из�
     .desc = { ent-BaseMachineCircuitboard.desc }
 ent-CutterMachineCircuitboard = резательный станок (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.desc }
+ent-SurveillanceCameraWirelessRouterXenoborgCircuitboard = маршрутизатор беспроводных камер наблюдения ксеноборгов (машинная плата)
+    .desc = Печатная плата маршрутизатора беспроводных камер наблюдения ксеноборгов.

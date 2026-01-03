@@ -35,13 +35,14 @@
 
 - type: markingPoints
   id: MobReptilianMarkingLimits
-  onlyWhitelisted: true
+  # Erida-start
+  onlyWhitelisted: false
   points:
     Hair:
-      points: 0
+      points: 10
       required: false
     FacialHair:
-      points: 0
+      points: 10
       required: false
     Tail:
       points: 1
@@ -51,27 +52,28 @@
       points: 1
       required: true
       defaultMarkings: [ LizardSnoutRound ]
+    Head:
+      points: 10
+      required: false
     HeadTop:
-      points: 2
+      points: 10
       required: false
     HeadSide:
-      points: 1
-      required: false
-    UndergarmentTop:
-      points: 1
-      required: false
-    UndergarmentBottom:
-      points: 1
+      points: 10
       required: false
     Chest:
-      points: 3
+      points: 10
       required: false
     Legs:
-      points: 2
+      points: 10
       required: false
     Arms:
-      points: 2
+      points: 10
       required: false
+    Overlay:
+      points: 10
+      required: false
+    # Erida-end
 
 - type: humanoidBaseSprite
   id: MobReptilianHead

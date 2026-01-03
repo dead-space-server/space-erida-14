@@ -56,16 +56,6 @@
   equipment:
     back: ClothingBackpackBlueshield
 
-- type: loadout
-  id: ClothingBackpackSatchelBlueshield
-  equipment:
-    back: ClothingBackpackSatchelBlueshield
-
-- type: loadout
-  id: ClothingBackpackDuffelBlueshield
-  equipment:
-    back: ClothingBackpackDuffelBlueshield
-
 #outerClothing
 - type: loadout
   id: ClothingOuterArmorBlueshield

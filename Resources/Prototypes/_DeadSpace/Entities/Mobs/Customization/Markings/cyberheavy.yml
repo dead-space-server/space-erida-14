@@ -2,7 +2,7 @@
   id: AugmentsCyberheavyArmRight
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: r_arm
@@ -11,7 +11,7 @@
   id: AugmentsCyberheavyHandRight
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: r_hand
@@ -20,7 +20,7 @@
   id: AugmentsCyberheavyArmLeft
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: l_arm
@@ -29,7 +29,7 @@
   id: AugmentsCyberheavyHandLeft
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: l_hand
@@ -38,7 +38,7 @@
   id: AugmentsCyberheavyTorso
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: torso
@@ -47,7 +47,7 @@
   id: AugmentsCyberheavyFootRight
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: r_foot
@@ -56,7 +56,7 @@
   id: AugmentsCyberheavyFootLeft
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
   - sprite: _DeadSpace/Mobs/Customization/augments/cyberbody.rsi
     state: l_foot

@@ -1,4 +1,4 @@
-chatsan-word-1 = omg
+﻿chatsan-word-1 = omg
 chatsan-replacement-1 = oh my god
 chatsan-word-2 = omfg
 chatsan-replacement-2 = oh my fucking god
@@ -127,3 +127,5 @@ chatsan-word-66 = smth
 chatsan-replacement-66 = something
 chatsan-word-67 = allg
 chatsan-replacement-67 = all good
+chatsan-word-68 = idk
+chatsan-replacement-68 = i don't know

@@ -37,6 +37,9 @@
     },
     {
       "name": "off"
+    },
+    {
+      "name": "off-civilian"
     }
   ]
 }

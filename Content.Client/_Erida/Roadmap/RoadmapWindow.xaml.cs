@@ -20,8 +20,7 @@ public sealed partial class RoadmapWindow : FancyWindow
     public RoadmapWindow()
     {
         RobustXamlLoader.Load(this);
-        WindowTitle.AddStyleClass(StyleBase.StyleClassLabelHeading);
-        Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
+        WindowTitle.AddStyleClass(StyleNano.StyleClassLabelHeading);
     }
 
     protected override void Opened()
@@ -43,7 +42,7 @@ public sealed partial class RoadmapWindow : FancyWindow
             {
                 Text = task.Name,
                 ToolTip = task.Description,
-                StyleClasses = { StyleBase.ButtonSquare },
+                StyleClasses = { StyleClass.ButtonSquare },
                 Margin = new Thickness(10, 10, 10, 0),
                 HorizontalExpand = true,
                 VerticalAlignment = VAlignment.Top

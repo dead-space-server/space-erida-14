@@ -14,9 +14,6 @@
       - MindRoleGhostRoleSoloAntagonist
       raffle:
         settings: default
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 18000 #5 hours
     - type: Sprite
       sprite: Markers/jobs.rsi
       layers:
@@ -80,7 +77,7 @@
       - ActionDowngradeBlob
   - type: BlobNode
   - type: BlobResource
-    pointsPerPulsed: 5
+    pointsPerPulsed: 8
   - type: Sprite
     sprite: _Goobstation/Blob/Mobs/blob.rsi
     drawdepth: BlobTiles
@@ -103,9 +100,6 @@
     reregister: false
     raffle:
       settings: default
-    requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 18000 #5 hours
   - type: GhostTakeoverAvailable
 
 - type: entity

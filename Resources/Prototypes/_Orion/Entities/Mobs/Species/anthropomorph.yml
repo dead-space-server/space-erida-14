@@ -8,8 +8,11 @@
   - type: HumanoidAppearance
     species: Anthropomorph
     hideLayersOnEquip:
+    - Hair # Erida edit
     - Snout
+    - HeadTop # Erida edit
     - HeadSide
+    - Tail # Erida edit
   - type: Hunger
   - type: Puller
     needsHands: false
@@ -83,8 +86,11 @@
   - type: HumanoidAppearance
     species: Anthropomorph
     hideLayersOnEquip:
+    - Hair
     - Snout
+    - HeadTop
     - HeadSide
+    - Tail
   - type: Inventory
     speciesId: reptilian
     # Orion-Start

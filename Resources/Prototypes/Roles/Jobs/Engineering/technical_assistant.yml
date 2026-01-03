@@ -5,7 +5,7 @@
   playTimeTracker: JobTechnicalAssistant
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 3600 #1 hr
+      time: 1h
         # Erida-start
     # - !type:DepartmentTimeRequirement
     #   department: Engineering

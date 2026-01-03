@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingNeckBase
+  parent: [ClothingNeckBase, BaseInteQContraband]
   id: ClothingNeckCloakInteQ
   name: InteQ cloak
   description: Cloak of the members of the InteQ, with a gold lining inside and a stylish gold shield on the back.

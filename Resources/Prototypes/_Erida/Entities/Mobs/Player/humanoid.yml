@@ -1,0 +1,304 @@
+## Random humanoids whith no "zoo"
+
+- type: randomHumanoidSettings
+  id: EventHumanoidAlt
+  speciesBlacklist:
+  - Anthropomorph
+  - Diona
+  - Vox
+  - Shadowkin
+  - Arachnid
+  - Diona
+  - Shark
+  - Vox
+  - Reptilian
+  - Moth
+  - SlimePerson
+  - Dwarf
+  - Demon
+  - Felinid
+  components:
+    - type: RandomHumanoidAppearance
+      randomizeName: false
+    - type: GhostTakeoverAvailable
+    - type: IdBind
+
+## CoS CentComm
+
+- type: entity
+  name: CentComm CoS
+  id: RandomHumanoidSpawnerCentcomCoS
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomCoS
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomCoS
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-coscc
+      description: job-description-coscc
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CoSCCGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Officer
+
+- type: entity
+  name: CentComm Officer
+  id: RandomHumanoidSpawnerCentcomOfficer
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOfficer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomOfficer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-officer
+      description: job-description-centcom-officer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomOfficerGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Operator
+
+- type: entity
+  name: CentComm Operator
+  id: RandomHumanoidSpawnerCentcomOperator
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOperator
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomOperator
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-operator
+      description: job-description-centcom-operator
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomOperatorGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm OSO
+
+- type: entity
+  name: CentComm OSO
+  id: RandomHumanoidSpawnerCentcomOSO
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomOSO
+    - type: RandomMetadata
+      nameSegments:
+      - NamesMilitaryFirstLeader
+      - NamesMilitaryLast
+      nameFormat: name-format-ert
+
+- type: randomHumanoidSettings
+  id: CentcomOSO
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-oso
+      description: job-description-centcom-oso
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ OSOGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Clerc
+
+- type: entity
+  name: CentComm Clerc
+  id: RandomHumanoidSpawnerCentcomClerc
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomClerc
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomClerc
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-clerc
+      description: job-description-centcom-clerc
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomClercGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Cargo
+
+- type: entity
+  name: CentComm Intendant
+  id: RandomHumanoidSpawnerCentcomIntendant
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomIntendant
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomIntendant
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-intendant
+      description: job-description-centcom-intendant
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomIntendantGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Engineer
+
+- type: entity
+  name: CentComm Engineer
+  id: RandomHumanoidSpawnerCentcomEngineer
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomEngineer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomEngineer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-engineer
+      description: job-description-centcom-engineer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomEngineerGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm HoS
+
+- type: entity
+  name: CentComm HoS
+  id: RandomHumanoidSpawnerCentcomHoS
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomHoS
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomHoS
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-hos
+      description: job-description-centcom-hos
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomHoSGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+
+## CentComm Security
+
+- type: entity
+  name: CentComm Security
+  id: RandomHumanoidSpawnerCentcomSecurity
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: CentcomSecurity
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirst
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: CentcomSecurity
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-centcom-sec
+      description: job-description-centcom-sec
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ CentcomSecGear ]
+      roleLoadout: [ RoleSurvivalStandard ]
+

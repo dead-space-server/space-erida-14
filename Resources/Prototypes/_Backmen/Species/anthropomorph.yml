@@ -17,6 +17,7 @@
   sprites:
     Head: MobAnthropomorphHead
     Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking # Erida
     Snout: MobHumanoidAnyMarking
     Chest: MobAnthropomorphTorso
     HeadTop: MobHumanoidAnyMarking
@@ -36,42 +37,44 @@
   id: MobAnthropomorphMarkingLimits
   #onlyWhitelisted: true
   points:
+    # Erida-start
     Hair:
-      points: 1
+      points: 10
       required: false
     FacialHair:
-      points: 1
+      points: 10
       required: false
     Tail:
-      points: 1
+      points: 10
       required: false
 #      defaultMarkings: [ AnthropomorphTailDataShark ]
     Snout:
-      points: 1
+      points: 10
       required: false
 #      defaultMarkings: [ AnthropomorphShoutShark ]
     Head:
-      points: 1
+      points: 10
       required: false
     HeadTop:
-      points: 2
+      points: 10
       required: false
     HeadSide:
-      points: 2
+      points: 10
       required: false
 #      defaultMarkings: [ AnthropomorphHeadSideFoldedBack ]
     Chest:
-      points: 3
+      points: 10
       required: false
     Legs:
-      points: 4
+      points: 10
       required: false
     Arms:
-      points: 4
+      points: 10
       required: false
     Overlay:
-      points: 1
+      points: 10
       required: false
+    # Erida-end
 
 - type: humanoidBaseSprite
   id: MobAnthropomorphHead

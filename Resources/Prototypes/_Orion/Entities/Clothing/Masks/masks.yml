@@ -8,6 +8,7 @@
   - type: HideLayerClothing
     slots:
     - Snout
+    - Hair
   - type: UserInterface
     interfaces:
       enum.VoiceMaskUIKey.Key:
@@ -20,11 +21,11 @@
     sprite: _Orion/Clothing/Mask/inteq_infiltrator.rsi
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 0.95
-        Heat: 0.95
+      coefficients: # Erida
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
 #  - type: Tag
 #    tags:
 #    - IPCMaskWearable # EE - IPCs

@@ -32,5 +32,6 @@
     - id: Welder
     - id: Multitool
     - id: ClothingHandsGlovesCombat
+    - id: ClothingEyesGlassesMeson
   - type: StaticPrice
     price: 1000

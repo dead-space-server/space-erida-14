@@ -4,6 +4,9 @@
   components:
   - type: StealCondition
     stealGroup: AdvancedDefib
+  - type: NoOwnerRequirement
+    job:
+    - ChiefMedicalOfficer
 
 - type: entity
   parent: BaseTraitorStealObjective
@@ -12,3 +15,96 @@
   - type: StealCondition
     stealGroup: ProfessionalRCD
     owner: job-name-ce
+  - type: NoOwnerRequirement
+    job:
+    - ChiefEngineer
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: HumiliateRandomObjective
+  description: The employer wants the target to be disgraced.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-colormap
+  - type: TargetObjective
+    title: objective-condition-humiliate-person-title
+  - type: PickRandomPerson
+  - type: FreeObjective
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: ExcuseRandomObjective
+  description: The employer wants the target to apologize for their mistakes.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-colormap
+  - type: TargetObjective
+    title: objective-condition-excuse-person-title
+  - type: PickRandomPerson
+  - type: FreeObjective
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: ResignRandomObjective
+  description: The employer wants the target to be fired.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-colormap
+  - type: TargetObjective
+    title: objective-condition-resign-person-title
+  - type: PickRandomPerson
+    filters:
+    - !type:BodyMindFilter
+      whitelist:
+        components:
+        - MindShield
+  - type: FreeObjective
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: BackstabRandomObjective
+  description: The employer wants you to frame the target for theft.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-colormap
+  - type: TargetObjective
+    title: objective-condition-backstab-person-title
+  - type: PickRandomPerson
+    filters:
+    - !type:TargetObjectiveMindFilter
+      blacklist:
+        components:
+        - MindShield
+  - type: FreeObjective
+
+- type: entity
+  parent: BaseTraitorObjective
+  id: RecruitingRandomObjective
+  description: Recruit any member of the crew into the ranks of InteQ.
+  components:
+  - type: Objective
+    difficulty: 1
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-colormap
+  - type: TargetObjective
+    title: objective-condition-recruiting-person-title
+  - type: PickRandomPerson
+    filters:
+    - !type:TargetObjectiveMindFilter
+      blacklist:
+        components:
+        - MindShield
+  - type: FreeObjective

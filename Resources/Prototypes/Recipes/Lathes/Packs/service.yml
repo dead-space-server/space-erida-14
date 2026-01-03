@@ -37,6 +37,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - PrinterDocMachineCircuitboard # DS-14
+  - SmartFridgeCircuitboard
 
 - type: latheRecipePack
   id: Botany
@@ -68,9 +69,11 @@
   recipes:
   - BiofabricatorMachineCircuitboard
   - FatExtractorMachineCircuitboard
-  - HydroponicsTrayMachineCircuitboard 
-  - SeedExtractorMachineCircuitboard 
   - MassMediaCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
   - JukeboxCircuitBoard
   - DawInstrumentMachineCircuitboard
+  # Erida-start
+  - HydroponicsTrayMachineCircuitboard
+  - SeedExtractorMachineCircuitboard
+  # Erida-end

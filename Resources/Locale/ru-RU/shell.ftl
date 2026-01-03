@@ -1,10 +1,12 @@
-### for technical and/or system messages
+﻿### for technical and/or system messages
 
 ## General
 
 shell-command-success = Команда выполнена.
 shell-invalid-command = Неверная команда.
 shell-invalid-command-specific = Неверная команда { $commandName }.
+shell-can-only-run-from-pre-round-lobby = Эту команду можно запускать только в лобби перед началом раунда.
+shell-can-only-run-while-round-is-active = Эту команду можно запускать только во время раунда.
 shell-cannot-run-command-from-server = Вы не можете выполнить эту команду с сервера.
 shell-only-players-can-run-this-command = Только игроки могут выполнять эту команду.
 shell-must-be-attached-to-entity = Для выполнения этой команды вы должны быть прикреплены к сущности.

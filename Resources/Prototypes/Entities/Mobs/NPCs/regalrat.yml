@@ -61,7 +61,7 @@
         Piercing: 8
   - type: Body
     prototype: Rat
-    requiredLegs: 1 # TODO: More than 1 leg
+    requiredLegs: 0 # TODO: Make more than 1 leg, set to 0 to avoid sprint speed being reset by the body system
   - type: Hunger # probably should be prototyped
     thresholds:
       Overfed: 200
@@ -102,8 +102,11 @@
       - CannotSuicide
       - FootstepSound
   - type: NoSlip
+  - type: Rummager
   - type: RatKing
-    hungerPerArmyUse: 25
+    # Erida-start
+    hungerPerArmyUse: 50 # 25
+    # Erida-end
     hungerPerDomainUse: 50
   - type: MobsterAccent
   - type: Speech
@@ -175,8 +178,10 @@
   components:
   - type: CombatMode
   - type: MovementSpeedModifier
-    baseWalkSpeed : 3.5
-    baseSprintSpeed : 3.5
+    # Erida-start
+    baseWalkSpeed : 5.00 # 3.5
+    baseSprintSpeed : 5.00 # 3.5
+    # Erida-end
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -230,8 +235,10 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      15: Critical
-      30: Dead
+      # Erida-start
+      30: Critical # 15
+      60: Dead # 30
+      # Erida-end
   - type: Destructible
     thresholds:
     - trigger:
@@ -250,11 +257,13 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 5
-        Piercing: 3
+        # Erida-start
+        Slash: 10 # 5
+        Piercing: 6 # 3
+        # Erida-end
   - type: Body
     prototype: Rat
-    requiredLegs: 1 # TODO: More than 1 leg
+    requiredLegs: 0 # TODO: Make more than 1 leg, set to 0 to avoid sprint speed being reset by the body system
   - type: Hunger # probably should be prototyped
     thresholds:
       Overfed: 200
@@ -308,12 +317,16 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
 
-- type: weightedRandomEntity
+- type: entityTable
   id: RatKingLoot
-  weights:
-    RandomSpawner100: 66 #garbage
-    FoodCheese: 28 #food
-    IngotGold1: 5 #loot
+  table: !type:GroupSelector
+    children:
+    - id: RandomSpawner100
+      weight: 66
+    - id: FoodCheese
+      weight: 28
+    - id: IngotGold1
+      weight: 5
 
 - type: entity
   parent: BaseAction
@@ -322,7 +335,9 @@
   description: Spend some hunger to summon an allied rat to help defend you.
   components:
   - type: Action
-    useDelay: 4
+    # Erida-start
+    useDelay: 8 # 4
+    # Erida-end
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: ratKingArmy

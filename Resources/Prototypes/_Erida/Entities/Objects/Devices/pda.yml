@@ -1,0 +1,108 @@
+- type: entity
+  parent: CentcomPDA
+  id: CoSCCPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Centcom Chief Of Staff PDA
+  components:
+  - type: Pda
+    id: CoSCCIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomOfficerPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command Officer PDA
+  components:
+  - type: Pda
+    id: CentcomOfficerIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomOperatorPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command Operator PDA
+  components:
+  - type: Pda
+    id: CentcomOperatorIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomIntendantPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command Intendant PDA
+  components:
+  - type: Pda
+    id: CentcomIntendantIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomEngineerPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command Engineer PDA
+  components:
+  - type: Pda
+    id: CentcomEngineerIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentcomClercPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command Clerc PDA
+  components:
+  - type: Pda
+    id: CentcomClercIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: OSOPDA
+  categories: [ HideSpawnMenu ]
+  suffix: OSO PDA
+  components:
+  - type: Pda
+    id: OSOIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentralCommandHoSPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command HoS PDA
+  components:
+  - type: Pda
+    id: CentralCommandHoSIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent: CentcomPDA
+  id: CentralCommandSecPDA
+  categories: [ HideSpawnMenu ]
+  suffix: Central Command Security PDA
+  components:
+  - type: Pda
+    id: CentralCommandSecIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+

@@ -2,7 +2,7 @@
   id: Loop_Erida
   mapName: 'Loop Station'
   mapPath: /Maps/Erida/loop.yml
-  minPlayers: 35
+  minPlayers: 0
   maxPlayers: 70
   stations:
     Loop:
@@ -86,3 +86,9 @@
           - Bunker
           - XenobiologyRepair
           - VirusologyAmbusol
+        # blob-config-start
+        - type: StationBlobConfig
+          stageBegin: 50
+          stageCritical: 450
+          stageTheEnd: 800
+        # blob-config-end

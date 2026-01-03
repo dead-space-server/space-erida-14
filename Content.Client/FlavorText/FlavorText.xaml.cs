@@ -9,6 +9,22 @@ namespace Content.Client.FlavorText
     public sealed partial class FlavorText : Control
     {
         public Action<string>? OnFlavorTextChanged;
+        // Orion-Start
+        public Action<string>? OnFlavorOOCTextChanged;
+        public Action<string>? OnCharacterTextChanged;
+        public Action<string>? OnGreenTextChanged;
+        public Action<string>? OnYellowTextChanged;
+        public Action<string>? OnRedTextChanged;
+        public Action<string>? OnTagsTextChanged;
+        public Action<string>? OnLinksTextChanged;
+        public Action<string>? OnNSFWTextChanged;
+        // Orion-End
+        // Erida start
+        public Action<int>? OnFlavorTabChanged;
+        public Action<string>? OnNSFWLinksTextChanged;
+        public Action<string>? OnNSFWFlavorOOCTextChanged;
+        public Action<string>? OnNSFWTagsTextChanged;
+        // Erida end
 
         public FlavorText()
         {
@@ -16,13 +32,120 @@ namespace Content.Client.FlavorText
             IoCManager.InjectDependencies(this);
 
             var loc = IoCManager.Resolve<ILocalizationManager>();
+
+            // Orion-Start
+            FlavorTabs.SetTabTitle(0, Loc.GetString("flavor-tab-flavor"));
+            FlavorTabs.SetTabTitle(1, Loc.GetString("flavor-tab-character"));
+            FlavorTabs.SetTabTitle(2, Loc.GetString("flavor-tab-ooc-flavor"));
+            FlavorTabs.SetTabTitle(3, Loc.GetString("flavor-tab-gyr"));
+            FlavorTabs.SetTabTitle(4, Loc.GetString("flavor-tab-nsfw"));
+            FlavorTabs.SetTabTitle(5, Loc.GetString("flavor-tab-nsfw-ooc-flavor")); // Erida edit
+
             CFlavorTextInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-placeholder"));
-            CFlavorTextInput.OnTextChanged  += _ => FlavorTextChanged();
+            CFlavorTextInput.OnTextChanged += _ => FlavorTextChanged();
+
+            CCharacterTextInput.Placeholder = new Rope.Leaf(loc.GetString("character-flavor-text-placeholder"));
+            CCharacterTextInput.OnTextChanged += _ => CharacterTextChanged();
+
+            CFlavorOOCTextInput.Placeholder = new Rope.Leaf(loc.GetString("ooc-flavor-text-placeholder"));
+            CFlavorOOCTextInput.OnTextChanged += _ => FlavorOOCTextChanged();
+
+            CTagsTextInput.Placeholder = new Rope.Leaf(loc.GetString("tags-flavor-text-placeholder"));
+            CTagsTextInput.OnTextChanged += _ => TagsTextChanged();
+
+            CLinksTextInput.Placeholder = new Rope.Leaf(loc.GetString("links-flavor-text-placeholder"));
+            CLinksTextInput.OnTextChanged += _ => LinksTextChanged();
+
+            CGreenTextInput.Placeholder = new Rope.Leaf(loc.GetString("green-flavor-text-placeholder"));
+            CGreenTextInput.OnTextChanged += _ => GreenTextChanged();
+
+            CYellowTextInput.Placeholder = new Rope.Leaf(loc.GetString("yellow-flavor-text-placeholder"));
+            CYellowTextInput.OnTextChanged += _ => YellowTextChanged();
+
+            CRedTextInput.Placeholder = new Rope.Leaf(loc.GetString("red-flavor-text-placeholder"));
+            CRedTextInput.OnTextChanged += _ => RedTextChanged();
+
+            CNSFWTextInput.Placeholder = new Rope.Leaf(loc.GetString("nsfw-flavor-text-placeholder"));
+            CNSFWTextInput.OnTextChanged += _ => NSFWTextChanged();
+            // Orion-End
+            // Erida start
+            CFlavorNSFWOOCTextInput.Placeholder = new Rope.Leaf(loc.GetString("ooc-flavor-text-placeholder"));
+            CFlavorNSFWOOCTextInput.OnTextChanged += _ => FlavorNSFWOOCTextChanged();
+
+            CNSFWLinksTextInput.Placeholder = new Rope.Leaf(loc.GetString("links-flavor-text-placeholder"));
+            CNSFWLinksTextInput.OnTextChanged += _ => NSFWLinksTextChanged();
+
+            CNSFWTagsTextInput.Placeholder = new Rope.Leaf(loc.GetString("tags-flavor-text-placeholder"));
+            CNSFWTagsTextInput.OnTextChanged += _ => NSFWTagsTextChanged();
+            // Erida end
         }
 
         public void FlavorTextChanged()
         {
             OnFlavorTextChanged?.Invoke(Rope.Collapse(CFlavorTextInput.TextRope).Trim());
         }
+
+        // Orion-Start
+        public void FlavorOOCTextChanged()
+        {
+            OnFlavorOOCTextChanged?.Invoke(Rope.Collapse(CFlavorOOCTextInput.TextRope).Trim());
+        }
+
+        public void CharacterTextChanged()
+        {
+            OnCharacterTextChanged?.Invoke(Rope.Collapse(CCharacterTextInput.TextRope).Trim());
+        }
+
+        public void GreenTextChanged()
+        {
+            OnGreenTextChanged?.Invoke(Rope.Collapse(CGreenTextInput.TextRope).Trim());
+        }
+
+        public void YellowTextChanged()
+        {
+            OnYellowTextChanged?.Invoke(Rope.Collapse(CYellowTextInput.TextRope).Trim());
+        }
+
+        public void RedTextChanged()
+        {
+            OnRedTextChanged?.Invoke(Rope.Collapse(CRedTextInput.TextRope).Trim());
+        }
+
+        public void TagsTextChanged()
+        {
+            OnTagsTextChanged?.Invoke(Rope.Collapse(CTagsTextInput.TextRope).Trim());
+        }
+
+        public void LinksTextChanged()
+        {
+            OnLinksTextChanged?.Invoke(Rope.Collapse(CLinksTextInput.TextRope).Trim());
+        }
+
+        public void NSFWTextChanged()
+        {
+            OnNSFWTextChanged?.Invoke(Rope.Collapse(CNSFWTextInput.TextRope).Trim());
+        }
+        // Orion-End
+        // Erida start
+        public void FlavorTabChanged(int tab)
+        {
+            OnFlavorTabChanged?.Invoke(tab);
+        }
+
+        public void FlavorNSFWOOCTextChanged()
+        {
+            OnNSFWFlavorOOCTextChanged?.Invoke(Rope.Collapse(CFlavorNSFWOOCTextInput.TextRope).Trim());
+        }
+
+        public void NSFWLinksTextChanged()
+        {
+            OnNSFWLinksTextChanged?.Invoke(Rope.Collapse(CNSFWLinksTextInput.TextRope).Trim());
+        }
+
+        public void NSFWTagsTextChanged()
+        {
+            OnNSFWTagsTextChanged?.Invoke(Rope.Collapse(CNSFWTagsTextInput.TextRope).Trim());
+        }
+        // Erida end
     }
 }

@@ -1,4 +1,4 @@
-signal-port-name-autoclose = Автозакрытие
+﻿signal-port-name-autoclose = Автозакрытие
 signal-port-description-autoclose = Переключает, должно ли устройство автоматически закрываться.
 signal-port-name-toggle = Переключить
 signal-port-description-toggle = Переключает состояние устройства.
@@ -25,6 +25,8 @@ signal-port-description-order-receiver = Получает заказ на кон
 signal-port-name-pressurize = Нагнетатель давления
 signal-port-description-pressurize = Заставляет устройство закачивать воздух, пока не будет достигнуто заданное давление.
 signal-port-name-depressurize = Сбрасыватель давления
+signal-port-name-trigger-receiver = Триггер
+signal-port-description-trigger-receiver = Запускает некоторый механизм на устройстве.
 signal-port-description-depressurize = Заставляет устройство откачивать воздух, пока не будет достигнуто заданное давление.
 signal-port-name-pod-sender = Капсула клонирования
 signal-port-description-pod-sender = Передатчик сигнала капсулы клонирования

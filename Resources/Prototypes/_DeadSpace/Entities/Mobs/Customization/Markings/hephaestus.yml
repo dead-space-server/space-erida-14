@@ -2,7 +2,7 @@
   id: AugmentsHephaestusArmRight
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: r_arm
@@ -11,7 +11,7 @@
   id: AugmentsHephaestusHandRight
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: r_hand
@@ -20,7 +20,7 @@
   id: AugmentsHephaestusArmLeft
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: l_arm
@@ -29,7 +29,7 @@
   id: AugmentsHephaestusHandLeft
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: l_hand
@@ -38,7 +38,7 @@
   id: AugmentsHephaestusTorso
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: torso
@@ -47,7 +47,7 @@
   id: AugmentsHephaestusLegRight
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: r_leg
@@ -56,7 +56,7 @@
   id: AugmentsHephaestusFootRight
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: r_foot
@@ -65,7 +65,7 @@
   id: AugmentsHephaestusLegLeft
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: l_leg
@@ -74,7 +74,7 @@
   id: AugmentsHephaestusFootLeft
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Shark, Dwarf, Moth, SlimePerson]
   sprites:
     - sprite: _DeadSpace/Mobs/Customization/augments/hephaestus.rsi
       state: l_foot

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Erida.Ghosts;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CombatMode;
 using Content.Shared.Cuffs;
@@ -128,10 +129,10 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         // Is the target a handcuff?
         if (TryComp<VirtualItemComponent>(heldEntity, out var virtualItem) &&
-            TryComp<CuffableComponent>(target.Owner, out var cuffable) &&
-            _cuffableSystem.GetAllCuffs(cuffable).Contains(virtualItem.BlockingEntity))
+            _cuffableSystem.TryGetAllCuffs(target.Owner, out var cuffs) &&
+            cuffs.Contains(virtualItem.BlockingEntity))
         {
-            _cuffableSystem.TryUncuff(target.Owner, user, virtualItem.BlockingEntity, cuffable);
+            _cuffableSystem.TryUncuff(target.Owner, user, virtualItem.BlockingEntity);
             return;
         }
 
@@ -350,7 +351,7 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         RaiseLocalEvent(item, new DroppedEvent(user), true); // Gas tank internals etc.
 
-        _handsSystem.PickupOrDrop(user, item, animateUser: stealth, animate: !stealth);
+        _handsSystem.PickupOrDrop(user, item, animateUser: stealth, animate: !stealth, dropNear: true);
         _adminLogger.Add(LogType.Stripping, LogImpact.High, $"{ToPrettyString(user):actor} has stripped the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s {slot} slot");
     }
 
@@ -379,7 +380,7 @@ public abstract class SharedStrippableSystem : EntitySystem
             return false;
         }
 
-        if (!_handsSystem.CanPickupToHand(target, activeItem.Value, handName, checkActionBlocker: false, target.Comp))
+        if (!_handsSystem.CanPickupToHand(target, activeItem.Value, handName, checkActionBlocker: false, handsComp: target.Comp))
         {
             _popupSystem.PopupCursor(Loc.GetString("strippable-component-cannot-put-message", ("owner", Identity.Entity(target, EntityManager))));
             return false;
@@ -564,7 +565,7 @@ public abstract class SharedStrippableSystem : EntitySystem
             return;
 
         _handsSystem.TryDrop(target, item, checkActionBlocker: false);
-        _handsSystem.PickupOrDrop(user, item, animateUser: stealth, animate: !stealth, handsComp: user.Comp);
+        _handsSystem.PickupOrDrop(user, item, animateUser: stealth, animate: !stealth, handsComp: user.Comp, dropNear: true);
         _adminLogger.Add(LogType.Stripping, LogImpact.High, $"{ToPrettyString(user):actor} has stripped the item {ToPrettyString(item):item} from {ToPrettyString(target):target}'s hands");
 
         // Hand update will trigger strippable update.
@@ -699,4 +700,16 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         return !HasComp<BypassInteractionChecksComponent>(viewer);
     }
+
+    // Erida edit start
+    public bool[] IsInventoryIgnored(EntityUid? viewer) // [shouldShowBlocked, shouldShowHided]
+    {
+        var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(viewer);
+        if (ignoreInventoryBlockComponent == null) { return [false, false]; }
+        else
+        {
+            return [ignoreInventoryBlockComponent.IgnoreBlock, ignoreInventoryBlockComponent.ShowAllItems];
+        }
+    }
+    // Erida edit end
 }

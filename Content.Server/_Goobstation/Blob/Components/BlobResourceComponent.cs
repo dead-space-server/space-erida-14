@@ -6,5 +6,5 @@ namespace Content.Goobstation.Server.Blob.Components;
 public sealed partial class BlobResourceComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("pointsPerPulsed")]
-    public FixedPoint2 PointsPerPulsed = 3;
+    public FixedPoint2 PointsPerPulsed = 2;
 }

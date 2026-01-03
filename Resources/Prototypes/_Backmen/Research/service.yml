@@ -71,6 +71,7 @@
   - FoodPlateTin
   - FoodPlateMuffinTin
   - FoodKebabSkewer
+  - UtilityKnife
   technologyPrerequisites:
   - ServiceMachines
   position: 4,9
@@ -129,6 +130,9 @@
   - FauxTileAstroIce
   - FauxTileAstroSnow
   - FauxTileAstroAsteroidSand
+  - FauxTileDarkAstroGrass
+  - FauxTileLightAstroGrass
+  - FauxTileDesertAstroSand
   technologyPrerequisites:
   - Entertainment
   position: 2,10
@@ -150,6 +154,7 @@
    - Holoprojector
    - WetFloorSign
    - ClothingHeadHatCone
+   - TowelColorWhite
   technologyPrerequisites:
   - ServiceMachines
   position: 4,6
@@ -220,10 +225,11 @@
   - MofficTranslator
   - ElvishTranslator
   - DwarvenTranslator
-  - ShadokinTranslator
+  - MarTranslator
   - ValyrianStandardTranslator
   - EvePishtuTranslator
   - CarshnilTranslator
+  - WawaTranslator
   position: 7,6
 
 - type: technology
@@ -277,10 +283,11 @@
   - MofficTranslatorImplanter
   - ElvishStandardTranslatorImplanter
   - DwarvenStandardTranslatorImplanter
-  - ShadokinStandardTranslatorImplanter
+  - MarStandardTranslatorImplanter
   - ValyrianStandardTranslatorImplanter
   - CarshnilTranslatorImplanter
   - EvePishtuTranslatorImplanter
+  - WawaStandardTranslatorImplanter
   technologyPrerequisites:
   - TranslationImplanter
   - TranslationDeviceAdvanced

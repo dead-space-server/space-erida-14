@@ -16,6 +16,16 @@ public sealed partial class CCVars
     public static readonly CVarDef<int> MaxNameLength =
         CVarDef.Create("ic.name_length", 32, CVar.SERVER | CVar.REPLICATED);
 
+    // Erida-start
+
+    /// <summary>
+    ///      Sets the maximum Custom Species length.
+    /// </summary>
+    public static readonly CVarDef<int> MaxCustomSpeciesLength =
+        CVarDef.Create("ic.custom_species_length", 16, CVar.SERVER | CVar.REPLICATED);
+
+    // Erida-end
+
     /// <summary>
     ///     Sets the maximum name length for a loadout name (e.g. cyborg name).
     /// </summary>

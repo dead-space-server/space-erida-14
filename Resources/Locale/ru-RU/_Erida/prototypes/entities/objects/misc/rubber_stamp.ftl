@@ -1,2 +1,5 @@
-ent-RubberStampInteq = печать InteQ
-    .desc = Печать из резины для проставления печатей на важных документах.
+ent-RubberStampFuckingDenied = печать ОТКАЗАНО НАХУЙ
+    .desc = { ent-RubberStampBaseAlt.desc }
+
+ent-RubberStampRewrite = печать ПЕРЕДЕЛАТЬ
+    .desc = { ent-RubberStampBaseAlt.desc }

@@ -34,6 +34,14 @@ public sealed partial class InventoryComponent : Component
     [ViewVariables]
     public SlotDefinition[] Slots = Array.Empty<SlotDefinition>();
 
+    // Erida edit start
+    [DataField("blockedSlotsList"), AutoNetworkedField] // Erida edit start
+    public HashSet<SlotFlags> BlockList = new();
+
+    [DataField("hidedSlotsList"), AutoNetworkedField]
+    public HashSet<SlotFlags> HideList = new(); // Erida edit end
+    // Erida edit end
+
     [ViewVariables]
     public ContainerSlot[] Containers = Array.Empty<ContainerSlot>();
 

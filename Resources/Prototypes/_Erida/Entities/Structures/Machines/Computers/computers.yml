@@ -1,0 +1,63 @@
+- type: entity
+  id: InteQComputerComms
+  parent: SyndicateComputerComms
+  components:
+  - type: AccessReader
+    access: [["InteQ"]]
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-inteq-nukie
+    color: "#fda502"
+    canShuttle: false
+    global: true
+    announceSentBy: false
+    sound: /Audio/Announcements/war.ogg
+  - type: Computer
+    board: InteQCommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#fda502"
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_inteq
+    - map: ["computerLayerKeys"]
+      state: inteq_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+
+- type: entity
+  parent: BaseComputerShuttle
+  id: ComputerShuttleInteQ
+  name: InteQ shuttle console
+  description: Used to pilot a InteQ shuttle.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: inteqshuttle
+    - map: ["computerLayerKeys"]
+      state: inteq_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: Tag
+    tags:
+      - Syndicate
+  - type: RadarConsole
+    maxRange: 384
+  - type: WorldLoader
+    radius: 1536
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#fda502"
+  - type: Computer
+    board: InteQShuttleConsoleCircuitboard

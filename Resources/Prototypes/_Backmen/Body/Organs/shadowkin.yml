@@ -51,7 +51,7 @@
     state: heart
   - type: Metabolizer
     maxReagents: 2
-    metabolizerTypes: [Animal]
+    metabolizerTypes: [Shadowkin]
     groups:
     - id: Medicine
     - id: Poison
@@ -76,7 +76,7 @@
           Quantity: 5
   - type: Metabolizer
     maxReagents: 3
-    metabolizerTypes: [Animal]
+    metabolizerTypes: [Shadowkin]
     groups:
     - id: Food
     - id: Drink
@@ -94,7 +94,6 @@
     metabolizerTypes: [Animal]
     groups:
     - id: Alcohol
-      rateModifier: 0.1
 
 - type: entity
   id: OrganShadowkinKidneys
@@ -125,7 +124,7 @@
     removeEmpty: true
     solutionOnBody: false
     solution: "Lung"
-    metabolizerTypes: [ Animal ]
+    metabolizerTypes: [Animal]
     groups:
     - id: Gas
       rateModifier: 20.0

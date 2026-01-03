@@ -159,6 +159,8 @@
     - id: RCD
     - id: RCDAmmo
     - id: AirGrenade
+    - id: trayScanner # Erida
+    - id: ClothingHandsGlovesColorYellow # Erida
 
 - type: entityTable
   id: FillAtmosphericsHardsuit

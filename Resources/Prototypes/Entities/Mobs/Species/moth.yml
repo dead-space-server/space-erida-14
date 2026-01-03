@@ -8,7 +8,11 @@
   - type: HumanoidAppearance
     species: Moth
     hideLayersOnEquip:
+    - Hair # Erida edit start
+    - Snout
     - HeadTop
+    - HeadSide
+    - Tail # Erida edit end
   - type: Hunger
   - type: Thirst
   - type: Icon
@@ -33,7 +37,10 @@
     - id: FoodMeat
       amount: 5
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -45,8 +52,8 @@
   - type: Vocal
     sounds:
       Male: UnisexMoth
-      Female: UnisexMoth
-      Unsexed: UnisexMoth
+      Female: FemaleMoth #Erida
+      Unsexed: MaleMoth #Erida
   - type: MovementSpeedModifier
     baseWeightlessAcceleration: 1.5 # Move around more easily in space.
     baseWeightlessFriction: 1
@@ -54,7 +61,7 @@
   - type: Flammable
     damage:
       types:
-        Heat: 4.5 # moths burn more easily
+        Heat: 2.5 # moths burn more easily
   - type: Temperature # Moths hate the heat and thrive in the cold.
     heatDamageThreshold: 320
     coldDamageThreshold: 230
@@ -102,12 +109,13 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "eyes" ]
-      - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
+      - map: [ "belt" ] # Erida edit
       - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
       - map: [ "back" ]
       - map: [ "neck" ]
+      - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

@@ -9,6 +9,7 @@ using Content.Shared.GameTicking.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.TypeParsers;
 using Robust.Shared.Utility;
@@ -24,18 +25,19 @@ namespace Content.Server.StationEvents
     {
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly EventManagerSystem _event = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         protected override void Started(EntityUid uid, BasicStationEventSchedulerComponent component, GameRuleComponent gameRule,
             GameRuleStartedEvent args)
         {
             // A little starting variance so schedulers dont all proc at once.
-            component.TimeUntilNextEvent = RobustRandom.NextFloat(component.MinimumTimeUntilFirstEvent, component.MinimumTimeUntilFirstEvent + 120);
+            component.TimeUntilNextEvent = TimeSpan.FromSeconds(RobustRandom.NextFloat(component.MinimumTimeUntilFirstEvent, component.MinimumTimeUntilFirstEvent + 120)); // Erida
         }
 
         protected override void Ended(EntityUid uid, BasicStationEventSchedulerComponent component, GameRuleComponent gameRule,
             GameRuleEndedEvent args)
         {
-            component.TimeUntilNextEvent = component.MinimumTimeUntilFirstEvent;
+            component.TimeUntilNextEvent = TimeSpan.FromSeconds(component.MinimumTimeUntilFirstEvent); // Erida
         }
 
 
@@ -52,11 +54,10 @@ namespace Content.Server.StationEvents
                 if (!GameTicker.IsGameRuleActive(uid, gameRule))
                     continue;
 
-                if (eventScheduler.TimeUntilNextEvent > 0)
-                {
-                    eventScheduler.TimeUntilNextEvent -= frameTime;
+                // Erida-start
+                if (eventScheduler.TimeUntilNextEvent > _timing.CurTime)
                     continue;
-                }
+                // Erida-end
 
                 _event.RunRandomEvent(eventScheduler.ScheduledGameRules);
                 ResetTimer(eventScheduler);
@@ -68,7 +69,7 @@ namespace Content.Server.StationEvents
         /// </summary>
         private void ResetTimer(BasicStationEventSchedulerComponent component)
         {
-            component.TimeUntilNextEvent = component.MinMaxEventTiming.Next(_random);
+            component.TimeUntilNextEvent = _timing.CurTime + TimeSpan.FromSeconds(component.MinMaxEventTiming.Next(_random)); // Erida
         }
     }
 

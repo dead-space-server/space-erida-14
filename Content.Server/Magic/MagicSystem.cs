@@ -1,5 +1,4 @@
 using Content.Server.Chat.Systems;
-using Content.Shared.Backmen.Chat;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Shared.Magic;

@@ -1,4 +1,4 @@
-markings-used = Используемые черты
+﻿markings-used = Используемые черты
 markings-unused = Неиспользуемые черты
 markings-add = Добавить черту
 markings-remove = Убрать черту
@@ -12,6 +12,12 @@ marking-slot-add = Добавить
 marking-slot-remove = Удалить
 marking-slot = Слот { $number }
 
+humanoid-marking-modifier-force = Принудительно
+humanoid-marking-modifier-ignore-species = Игнорировать рассу
+humanoid-marking-modifier-base-layers = Базовый слой
+humanoid-marking-modifier-enable = Включить
+humanoid-marking-modifier-prototype-id = ID прототипа:
+
 # Categories
 
 markings-category-Special = Специальное
@@ -21,6 +27,7 @@ markings-category-Head = Голова
 markings-category-HeadTop = Голова (верх)
 markings-category-HeadSide = Голова (бок)
 markings-category-Snout = Морда
+markings-category-SnoutCover = Морда (Поверх)
 markings-category-UndergarmentTop = Нижнее бельё (Верх)
 markings-category-UndergarmentBottom = Нижнее бельё (Низ)
 markings-category-Chest = Грудь

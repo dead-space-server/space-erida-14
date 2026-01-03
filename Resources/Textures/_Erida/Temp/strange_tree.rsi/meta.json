@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by shrimplill (discord) for Space Station 14 server МК: Эрида 18+",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "strange_tree",
+      "directions": 4
+    }
+  ]
+}

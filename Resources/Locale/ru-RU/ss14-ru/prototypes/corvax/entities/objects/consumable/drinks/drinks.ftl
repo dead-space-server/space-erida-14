@@ -1,9 +1,6 @@
 ent-DrinkAlexanderGlass = { ent-DrinkGlass }
     .suffix = Александр
     .desc = { ent-DrinkGlass.desc }
-ent-DrinkBadTouchGlass = { ent-DrinkGlass }
-    .suffix = Проникновение
-    .desc = { ent-DrinkGlass.desc }
 ent-DrinkBoyarskyGlass = { ent-DrinkGlass }
     .suffix = Боярский
     .desc = { ent-DrinkGlass.desc }

@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: BaseStructure
+  parent: [BaseStructure, BaseDeltaPressureBasic] # Erida
   id: BaseStructureWall
   name: basewall
   description: Keeps the air in and the greytide out.
@@ -9,6 +9,10 @@
     snap:
     - Wall
   components:
+  - type: Anchorable
+    flags:
+    - Anchorable
+  - type: Rotatable
   - type: RangedDamageSound
     soundGroups:
       Brute:
@@ -264,7 +268,6 @@
   - type: Tag
     tags:
       - Wall
-      - Debug
   - type: Sprite
     sprite: Structures/Walls/debug.rsi
   - type: Icon
@@ -512,7 +515,7 @@
       resistance: 5
 
 - type: entity
-  parent: WallPlastitaniumIndestructible
+  parent: [WallPlastitaniumIndestructible, BaseDeltaPressureReinforced] # Erida
   id: WallPlastitanium
   name: plastitanium wall
   suffix: ""
@@ -581,7 +584,7 @@
             collection: MetalSlam
 
 - type: entity
-  parent: BaseWall
+  parent: [BaseWall, BaseDeltaPressureReinforced] # Erida
   id: WallReinforced
   name: reinforced wall
   components:
@@ -902,7 +905,7 @@
     price: 200
 
 - type: entity
-  parent: BaseWall
+  parent: [BaseWall, BaseDeltaPressureReinforced] # Erida
   id: WallShuttle
   name: shuttle wall
   components:
@@ -1135,7 +1138,7 @@
     fx: EffectRCDDeconstruct8
 
 - type: entity
-  parent: BaseWall
+  parent: [BaseWall, BaseDeltaPressureReinforced] # Erida
   id: WallReinforcedChitin
   name: reinforced chitin
   components:
@@ -1191,6 +1194,33 @@
   - type: Construction
     graph: Girder
     node: reinforcedWallChitin
+
+- type: entity
+  parent: WallPlastitanium
+  id: WallXenoborg
+  name: xenoborg wall
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/xenoborg.rsi
+  - type: Icon
+    sprite: Structures/Walls/xenoborg.rsi
+  - type: IconSmooth
+    key: walls
+    base: xenoborg
+
+- type: entity
+  parent: WallPlastitaniumDiagonal
+  id: WallXenoborgDiagonal
+  name: xenoborg wall
+  suffix: diagonal
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite: Structures/Walls/xenoborg_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite: Structures/Walls/xenoborg_diagonal.rsi
+    state: state0
 
 - type: entity
   parent: BaseWall
@@ -1696,6 +1726,6 @@
   - type: IconSmooth
     key: cards
     base: card
-  - type: Occluder 
+  - type: Occluder
   - type: BlockWeather
   - type: SunShadowCast

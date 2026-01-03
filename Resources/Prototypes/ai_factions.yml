@@ -14,6 +14,7 @@
   - AllHostile
   - Wizard
   - Blob # Goobstation - Blob
+  - Xenoborg
 
 - type: npcFaction
   id: NanoTrasen
@@ -44,6 +45,8 @@
 
 - type: npcFaction
   id: PetsNT
+  friendly:
+  - NanoTrasen
   hostile:
   # Orion-Start-Factions
   - InteQHostile
@@ -53,7 +56,6 @@
   - Zombie
   - Xeno
   - AllHostile
-  - Wizard
   - Dragon
   - Blob # Goobstation - Blob
 
@@ -211,5 +213,5 @@
   - Xeno # rivalry
 
   # cause they are hostile to them
-  - SimpleHostile 
+  - SimpleHostile
   - AllHostile

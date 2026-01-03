@@ -223,3 +223,5 @@ ent-FloorTileItemXenoMaint = технический ксенопол
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemDarkSquiggly = тёмная волнистая стальная плитка
     .desc = { ent-FloorTileItemDark.desc }
+ent-FloorTileItemXenoborg = покрытие ксеноборгов
+    .desc = { ent-FloorTileItemBase.desc }

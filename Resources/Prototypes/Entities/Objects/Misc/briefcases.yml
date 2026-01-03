@@ -9,9 +9,6 @@
   - type: Storage
     grid:
     - 0,0,5,3
-  - type: Tag
-    tags:
-    - Briefcase
   - type: MeleeWeapon
     damage:
       types:
@@ -27,6 +24,48 @@
     state: icon
   - type: Item
     sprite: Objects/Storage/Briefcases/briefcase_brown.rsi
+
+- type: entity
+  parent: BriefcaseBase
+  id: BoxBucketHappy
+  name: brown briefcase
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/pumpkin_bucket/bucket_happy.rsi
+    state: icon
+  - type: Item
+    sprite: _Erida/Holidays/halloween/pumpkin_bucket/bucket_happy.rsi
+  - type: Storage
+    grid:
+    - 0,0,3,2
+
+- type: entity
+  parent: BriefcaseBase
+  id: BoxBucketRelaxed
+  name: brown briefcase
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/pumpkin_bucket/bucket_scary.rsi
+    state: icon
+  - type: Item
+    sprite: _Erida/Holidays/halloween/pumpkin_bucket/bucket_relaxed.rsi
+  - type: Storage
+    grid:
+    - 0,0,3,2
+
+- type: entity
+  parent: BriefcaseBase
+  id: BoxBucketScary
+  name: brown briefcase
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/pumpkin_bucket/bucket_scary.rsi
+    state: icon
+  - type: Item
+    sprite: _Erida/Holidays/halloween/pumpkin_bucket/bucket_scary.rsi
+  - type: Storage
+    grid:
+    - 0,0,3,2
 
 - type: entity
   parent: BriefcaseBrown

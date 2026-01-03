@@ -13,3 +13,4 @@ store-not-account-owner = Этот { $store } не привязан к вам!
 store-preset-name-uplink = Аплинк Синдиката
 store-preset-name-uplink-InteQ = Аплинк InteQ
 store-preset-name-spellbook = Книга заклинаний
+store-preset-name-changeling = Магазин ДНК

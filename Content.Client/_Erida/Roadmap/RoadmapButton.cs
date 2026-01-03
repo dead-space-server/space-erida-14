@@ -1,4 +1,5 @@
-﻿using Robust.Client.UserInterface.Controls;
+﻿using Content.Client.Stylesheets;
+using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client._Erida.Roadmap;
 
@@ -14,6 +15,7 @@ public sealed class RoadmapButton : Button
     {
         base.EnteredTree();
         Text = Loc.GetString("roadmap-button");
+        StyleClasses.Add(StyleNano.ButtonCaution);
     }
 
     protected override void ExitedTree()

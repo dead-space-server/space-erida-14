@@ -1,15 +1,21 @@
 - type: entity
-  name: inteq rubber stamp
-  parent: [RubberStampBase, BaseSyndicateContraband]
-  id: RubberStampInteq
-  categories: [ DoNotMap ]
+  parent: RubberStampBaseAlt
+  id: RubberStampFuckingDenied
+  name: FUCKING DENIED rubber stamp
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-inteq
-    stampedColor: "#e08814"
-    stampState: "paper_stamp-syndicate"
+    stampedName: stamp-component-stamped-name-fucking-denied
+    stampedColor: "#491313"
+    stampState: "paper_stamp-deny"
   - type: Sprite
-    sprite: _Erida/Objects/Misc/stamps.rsi
-    state: stamp-inteq
-  - type: StaticPrice
-    price: 1000
+    state: stamp-deny
+
+- type: entity
+  parent: RubberStampGreytide
+  id: RubberStampRewrite
+  name: rewrite rubber stamp
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-rewrite
+    stampedColor: "#000000"
+    stampState: "paper_stamp-trader"

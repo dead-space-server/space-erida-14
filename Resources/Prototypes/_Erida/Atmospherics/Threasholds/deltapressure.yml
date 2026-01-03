@@ -1,0 +1,23 @@
+
+
+## For reinforced walls... e.t.c.
+- type: entity
+  abstract: true
+  id: BaseDeltaPressureReinforced
+  components:
+  - type: DeltaPressure
+    minPressure: 200000
+    minPressureDelta: 150000
+    scalingType: Linear
+    scalingPower: 0.0001
+
+## For basic walls... e.t.c.
+- type: entity
+  abstract: true
+  id: BaseDeltaPressureBasic
+  components:
+  - type: DeltaPressure
+    minPressure: 75000
+    minPressureDelta: 50000
+    scalingType: Linear
+    scalingPower: 0.0005

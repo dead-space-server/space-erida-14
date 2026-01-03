@@ -1,0 +1,45 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBeast
+  name: Beast mask
+  description: "Awooo!!!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/beast/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/beast/head.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      Snout: HEAD
+
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadFrankenstein
+  name: Frankenstein mask
+  description: "Beautiful!—Great God!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/frankenstein/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/frankenstein/head.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      Snout: HEAD
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSkeleton
+  name: Skeleton mask
+  description: "How do skeletons call their friends? On the tele-bone!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/head.rsi
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+      Snout: HEAD

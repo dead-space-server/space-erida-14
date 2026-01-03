@@ -6,3 +6,5 @@ ent-MagazineBoxLightRifleInteQ = коробка патронов (.30 винто
     .desc = { ent-BaseItem.desc }
 ent-MagazineBoxShotgunInteQ = коробка патронов (.50 дробь)
     .desc = { ent-BaseItem.desc }
+ent-MagazineBoxLightRifleIncendiaryInteQ = коробка патронов (.30 зажигательные)
+    .desc = { ent-BaseItem.desc }

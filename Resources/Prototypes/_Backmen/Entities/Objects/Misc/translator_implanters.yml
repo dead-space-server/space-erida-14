@@ -85,12 +85,12 @@
     implant: ValyrianStandardTranslatorImplant
 
 - type: entity
-  id: ShadokinStandardTranslatorImplanter
+  id: MarStandardTranslatorImplanter
   parent: [ BaseTranslatorImplanter ]
-  name: Shadokin standard translator implant
+  name: Mar standard translator implant
   components:
   - type: Implanter
-    implant: ShadokinStandardTranslatorImplant
+    implant: MarStandardTranslatorImplant
 
 - type: entity
   id: DwarvenStandardTranslatorImplanter
@@ -124,3 +124,11 @@
   components:
   - type: Implanter
     implant: Eve-pishtuStandardTranslatorImplant
+
+- type: entity
+  id: WawaStandardTranslatorImplanter
+  parent: [ BaseTranslatorImplanter ]
+  name: Wawa standard translator implant
+  components:
+  - type: Implanter
+    implant: WawaStandardTranslatorImplant

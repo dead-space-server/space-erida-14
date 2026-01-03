@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesSkeleton
+  name: Skeleton shoes
+  description: "Why don’t skeletons play music in church? They have no organs!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/boots.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/boots.rsi

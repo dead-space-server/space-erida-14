@@ -1,0 +1,8 @@
+- type: speechSounds
+  id: Shadowkin
+  saySound:
+    path: /Audio/_Erida/Voice/Shadowkin/speak_mrrp_say.ogg
+  askSound:
+    path: /Audio/_Erida/Voice/Shadowkin/speak_mrrp_ask.ogg
+  exclaimSound:
+    path: /Audio/_Erida/Voice/Shadowkin/speak_mrrp_say.ogg

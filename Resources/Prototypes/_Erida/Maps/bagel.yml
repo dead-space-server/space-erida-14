@@ -2,7 +2,7 @@
   id: Bagel_Erida
   mapName: 'Bagel Station'
   mapPath: /Maps/Erida/bagel.yml
-  minPlayers: 30
+  minPlayers: 0
   stations:
     Bagel:
       stationProto: StandardNanotrasenStation
@@ -86,3 +86,9 @@
           - Bunker
           - XenobiologyRepair
           - VirusologyAmbusol
+        # blob-config-start
+        - type: StationBlobConfig
+          stageBegin: 20
+          stageCritical: 400
+          stageTheEnd: 500
+        # blob-config-end

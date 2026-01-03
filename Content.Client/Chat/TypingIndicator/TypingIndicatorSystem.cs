@@ -17,13 +17,20 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
     private TimeSpan _lastTextChange;
     private bool _isClientTyping;
     private bool _isClientChatFocused;
-
+    private bool _isClientEmoteWindowActive; // Erida edit
     public override void Initialize()
     {
         base.Initialize();
 
         Subs.CVar(_cfg, CCVars.ChatShowTypingIndicator, OnShowTypingChanged);
     }
+
+    // Erida edit start
+    public void ClientChangedWindowStatus(bool isOpen)
+    {
+        _isClientEmoteWindowActive = isOpen;
+    }
+    // Erida edit end
 
     public void ClientChangedChatText()
     {
@@ -74,6 +81,7 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
             {
                 // client didn't typed anything for a long time - change indicator
                 _isClientTyping = false;
+                _isClientEmoteWindowActive = false; // Erida edit
                 ClientUpdateTyping();
             }
         }
@@ -86,7 +94,7 @@ public sealed class TypingIndicatorSystem : SharedTypingIndicatorSystem
             return;
 
         var state = TypingIndicatorState.None;
-        if (_isClientChatFocused)
+        if (_isClientChatFocused || _isClientEmoteWindowActive) // Erida edit
             state = _isClientTyping ? TypingIndicatorState.Typing : TypingIndicatorState.Idle;
 
         // send a networked event to server

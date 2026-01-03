@@ -1,0 +1,33 @@
+- type: gamePreset
+  id: Calm
+  name: calm-title
+  showInVote: true
+  description: calm-description
+  rules:
+  - BasicCalmStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: LightDynamic
+  name: light-dynamic-title
+  showInVote: false
+  description: light-dynamic-description
+  rules:
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlFriendlyEventScheduler
+  - BasicRoundstartVariation
+  - LightDynamicScheduler
+
+- type: gamePreset
+  id: HardDynamic
+  name: hard-dynamic-title
+  showInVote: false
+  description: hard-dynamic-description
+  rules:
+  - RampingStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+  - HardDynamicScheduler

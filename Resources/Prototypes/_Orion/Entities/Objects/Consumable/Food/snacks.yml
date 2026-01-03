@@ -11,7 +11,7 @@
     sprite: _Orion/Objects/Consumable/Food/inteq_cookies.rsi
     state: inteq_cookies
   - type: Item
-  - type: Food
+  - type: Edible
     trash:
     - FoodPacketInteQCookiesTrash
 

@@ -354,9 +354,8 @@ public sealed class PhotocopierSystem : EntitySystem
 
         text = text.Replace("DOCUMENT NAME", Loc.GetString(formPrototype.Name));
         // Erida-Edit-Start | GameTicker/DateTime > TimeSystem
-        var (timeOfDay, stationDate) = _timeSystem.GetStationTime();
-        text = text.Replace("{{HOUR.MINUTE.SECOND}}", timeOfDay.ToString("hh\\:mm\\:ss"));
-        text = text.Replace("{{DAY.MONTH.YEAR}}", stationDate.ToString("dd.MM.yyyy"));
+        text = text.Replace("{{HOUR.MINUTE.SECOND}}", _timeSystem.GetRoundDuration().ToString("hh\\:mm\\:ss"));
+        text = text.Replace("{{DAY.MONTH.YEAR}}", _timeSystem.GetStationDate().ToString("dd.MM.yyyy"));
         // Erida-Edit-End
 
         if (_station.GetOwningStation(uid) is { } station)

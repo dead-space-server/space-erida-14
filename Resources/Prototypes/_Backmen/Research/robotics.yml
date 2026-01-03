@@ -117,6 +117,8 @@
    - BorgModuleCable
    - BorgModuleFireExtinguisher
    - BorgModuleTool
+   - BorgModuleInflatable
+   - BorgModuleArtistry
   technologyPrerequisites:
   - RoboticsAdvanced
   position: 6,-2

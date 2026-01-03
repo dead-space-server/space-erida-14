@@ -1,0 +1,22 @@
+- type: entity
+  parent: [ClothingBackpack, BaseBlueShieldContraband]
+  id: ClothingBackpackBlueshield
+  name: officer "Blueshield" backpack
+  description: It's a very blue robust backpack.
+  components:
+  - type: Sprite
+    sprite: _DeadSpace/Clothing/Backpack/blueshield.rsi
+  - type: Storage
+    grid:
+    - 0,0,4,6
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitBlueShield
+    requiredSlot: BACK
+    slot: outerClothing
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: ExplosionResistance
+    damageCoefficient: 0.6

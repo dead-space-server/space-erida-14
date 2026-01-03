@@ -1,0 +1,59 @@
+- type: jukebox
+  id: CosmicCult
+  name: A New Dawn - Cosmic Cult
+  path:
+    path: /Audio/_Erida/Jukebox/A_New_Dawn-Space_Station_14_Cosmic_Cult_OST.ogg
+
+- type: jukebox
+  id: DidITellU
+  name: adore - did i tell u that i miss u
+  path:
+    path: /Audio/_Erida/Jukebox/adore-did_i_tell_u_that_i_miss_u_(slowed).ogg
+
+- type: jukebox
+  id: AiKillClown
+  name: AI - Казнь клоуна
+  path:
+    path: /Audio/_Erida/Jukebox/AI_Kill_Clown.ogg
+
+- type: jukebox
+  id: AircraftGraveyard
+  name: Валентин Стрыкало - Кладбище самолетов
+  path:
+    path: /Audio/_Erida/Jukebox/Aircraft_Graveyard.ogg
+
+- type: jukebox
+  id: FromTheStartFunk
+  name: From The Start (Funk)
+  path:
+    path: /Audio/_Erida/Jukebox/From_The_Start_Funk_(Subscribe).ogg
+
+- type: jukebox
+  id: GoldenFantasy
+  name: JD Beats - Golden Fantasy
+  path:
+    path: /Audio/_Erida/Jukebox/Golden_Fantasy.ogg
+
+- type: jukebox
+  id: Honeypie
+  name: JAWNY - Honeypie
+  path:
+    path: /Audio/_Erida/Jukebox/Jawny-Honeypie.ogg
+
+- type: jukebox
+  id: InstructorFromNATO
+  name: Neverlove - Инструктор из НАТО
+  path:
+    path: /Audio/_Erida/Jukebox/Neverlove-Instructor_from_NATO.ogg
+
+- type: jukebox
+  id: NoOneWrites
+  name: Би-2 - Полковнику никто не пишет
+  path:
+    path: /Audio/_Erida/Jukebox/No_One_Writes_to_the_Colone.ogg
+
+- type: jukebox
+  id: Title1
+  name: Title1 (Flip-Flap)
+  path:
+    path: /Audio/_Erida/Jukebox/Space_Station_13-Title1_(Flip-Flap).ogg

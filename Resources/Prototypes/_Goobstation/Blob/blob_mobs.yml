@@ -90,14 +90,14 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 50
+            damage: 30
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
     - type: MobThresholds
       thresholds:
         0: Alive
-        50: Dead
+        30: Dead
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
       baseSprintSpeed: 4
@@ -254,9 +254,6 @@
       rules: You are an antagonist, destroy the station!
       mindRoles:
       - MindRoleGhostRoleSoloAntagonist
-      requirements:
-      - !type:OverallPlaytimeRequirement
-        time: 18000 #5 hours
     - type: GhostTakeoverAvailable
     - type: Fixtures
       fixtures:

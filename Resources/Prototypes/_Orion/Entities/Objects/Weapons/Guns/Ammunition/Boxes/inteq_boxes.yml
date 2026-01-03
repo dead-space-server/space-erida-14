@@ -66,3 +66,20 @@
     layers:
       - state: icon
       - state: 50
+
+# Erida edit
+- type: entity
+  parent: BaseMagazineBoxInteQ
+  id: MagazineBoxLightRifleIncendiaryInteQ
+  name: ammunition box (.30 incendiary)
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifleIncendiary
+    capacity: 60
+    whitelist:
+      tags:
+      - CartridgeLightRifle
+  - type: Sprite
+    layers:
+      - state: icon
+      - state: 30

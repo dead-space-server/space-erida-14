@@ -40,6 +40,16 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> VoteMapEnabled =
         CVarDef.Create("vote.map_enabled", false, CVar.SERVERONLY);
 
+    // Erida-start
+
+    /// <summary>
+    ///     How long (in rounds) map will be hidden after vote-selection. Include first reset.
+    /// </summary>
+    public static readonly CVarDef<int> MapHideDuration =
+        CVarDef.Create("vote.map_hide_duration", 3, CVar.SERVERONLY);
+
+    // Erida-end
+
     /// <summary>
     ///     The required ratio of the server that must agree for a restart round vote to go through.
     /// </summary>

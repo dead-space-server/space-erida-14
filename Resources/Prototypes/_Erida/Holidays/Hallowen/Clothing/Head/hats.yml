@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBaseButcherable
+  id: ClothingHeadHatWhitch
+  name: Whitch hat
+  description: "Hey, there's some red hair left here."
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/whitch_hat/head.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/whitch_hat/head.rsi

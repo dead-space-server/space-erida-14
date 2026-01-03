@@ -1,0 +1,10 @@
+ent-HumiliateRandomObjective = { ent-BaseTraitorObjective }
+    .desc = Заказчик хочет, чтобы цель была опозорена.
+ent-ExcuseRandomObjective = { ent-BaseTraitorObjective }
+    .desc = Заказчик хочет, чтобы цель извинилась за свои ошибки. На коленях.
+ent-ResignRandomObjective = { ent-BaseTraitorObjective }
+    .desc = Заказчику нужно, чтобы цель была уволена.
+ent-BackstabRandomObjective = { ent-BaseTraitorObjective }
+    .desc = Заказчику необходимо, чтобы цель посадили по любой статье КЗ.
+ent-RecruitingRandomObjective = { ent-BaseTraitorObjective }
+    .desc = InteQ необходим этот член экипажа в своих рядах.

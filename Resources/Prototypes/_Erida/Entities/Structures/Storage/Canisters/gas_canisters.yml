@@ -1,0 +1,442 @@
+- type: entity
+  parent: GasCanister
+  id: BZCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: purple
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 0           # pluoxium
+      - 0           # hydrogen
+      - 1871.71051  # bz
+      - 0           # healium
+      - 0           # nitrium
+      - 0           # hyper-noblium
+      - 0           # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          BZCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: GasCanister
+  id: PluoxiumCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: darkblue
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 1871.71051  # pluoxium
+      - 0           # hydrogen
+      - 0           # bz
+      - 0           # healium
+      - 0           # nitrium
+      - 0           # hyper-noblium
+      - 0           # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PluoxiumCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: GasCanister
+  id: HydrogenCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: h2
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 0           # pluoxium
+      - 1871.71051  # hydrogen
+      - 0           # bz
+      - 0           # healium
+      - 0           # nitrium
+      - 0           # hyper-noblium
+      - 0           # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          HydrogenCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: GasCanister
+  id: NitriumCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: brown
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 0           # pluoxium
+      - 0           # hydrogen
+      - 0           # bz
+      - 0           # healium
+      - 1871.71051  # nitrium
+      - 0           # hyper-noblium
+      - 0           # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          NitriumCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: GasCanister
+  id: HyperNobliumCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: nob
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 0           # pluoxium
+      - 0           # hydrogen
+      - 0           # bz
+      - 0           # healium
+      - 0           # nitrium
+      - 1871.71051  # hyper-noblium
+      - 0           # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          HyperNobliumCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: GasCanister
+  id: ZaukerCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: zauker
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 0           # pluoxium
+      - 0           # hydrogen
+      - 0           # bz
+      - 0           # healium
+      - 0           # nitrium
+      - 0           # hyper-noblium
+      - 1871.71051  # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ZaukerCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+- type: entity
+  parent: GasCanister
+  id: HealiumCanister
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    layers:
+    - state: healium
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+      - 0           # oxygen
+      - 0           # nitrogen
+      - 0           # carbon dioxide
+      - 0           # plasma
+      - 0           # tritium
+      - 0           # vapor
+      - 0           # miasma
+      - 0           # n2o
+      - 0           # frezon
+      - 0           # pluoxium
+      - 0           # hydrogen
+      - 0           # bz
+      - 1871.71051  # healium
+      - 0           # nitrium
+      - 0           # hyper-noblium
+      - 0           # zauker
+      temperature: 293.15
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          HealiumCanisterBroken:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:DumpCanisterBehavior
+  - type: Lock
+    locked: true
+
+# broken
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: BZCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: purple-1
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: PluoxiumCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: darkblue-1
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: HydrogenCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: h2-1
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: NitriumCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: brown-1
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: HealiumCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: healium-1
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: HyperNobliumCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: nob-1
+
+- type: entity
+  parent: GasCanisterBrokenBase
+  id: ZaukerCanisterBroken
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/canister.rsi
+    state: zauker-1

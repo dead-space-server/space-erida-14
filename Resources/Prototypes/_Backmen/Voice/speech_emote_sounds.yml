@@ -85,7 +85,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: MaleScreams
+      collection: ShadowkinScreams
     Laugh:
       collection: MaleLaugh
     Sneeze:
@@ -112,6 +112,8 @@
       collection: Wurble
     Yawn:
       collection: MaleYawn
+    ShadowkinGrowl:
+      collection: ShadowkinGrowl
 
 - type: emoteSounds
   id: FemaleShadowkin
@@ -119,7 +121,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: FemaleScreams
+      collection: ShadowkinScreams
     Laugh:
       collection: FemaleLaugh
     Sneeze:
@@ -144,18 +146,22 @@
       collection: Wurble
     Yawn:
       collection: FemaleYawn
+    ShadowkinGrowl:
+      collection: ShadowkinGrowl
 
 - type: emoteSounds
   id: ShadowkinBodyEmotes
   sounds:
     Thump:
-      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+      path: /Audio/Effects/soft_thump.ogg
       params:
         variation: 0.125
     Clap:
       collection: Claps
     ClapSingle:
       collection: ClapSingle
+    Wink:
+      collection: Wink
     Snap:
       collection: Snaps
       params:

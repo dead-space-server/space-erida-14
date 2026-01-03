@@ -23,6 +23,9 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
+  - type: SlotBlock
+    blockList: [ UNDERWEAR, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, GLOVES, SOCKS ]
+    hideList: [ IDCARD, POCKET ]
 
 - type: entity
   abstract: true
@@ -122,12 +125,12 @@
     size: Ginormous
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.95
-        Heat: 0.90
-        Radiation: 0.25
+      coefficients: # Erida
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.85
+        Heat: 0.80
+        Radiation: 0.15
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
@@ -145,9 +148,14 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
-  - type: ClothingGrant # supermatter 
+  - type: ClothingGrant # supermatter
     component:
     - type: BkmSupermatterImmune
+  - type: SlotBlock
+    blockList: [ UNDERWEAR, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, GLOVES, SOCKS, FEET ]
+    hideList: [ IDCARD, POCKET ]
+  - type: HideLayerClothing
+    layers: { Tail: OUTERCLOTHING }
 
 - type: entity
   abstract: true
@@ -155,9 +163,6 @@
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:
-# SlotBlocker blocked until UI change
-#  - type: SlotBlock
-#    slots: [innerclothing, feet]
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -177,6 +182,11 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  - type: SlotBlock
+    blockList: [ UNDERWEAR, SOCKS, UNDERSHIRT, UNDERPANTS, FEET, LEGS, GLOVES, INNERCLOTHING, FEET ]
+    hideList: [ IDCARD, POCKET ]
+  - type: HideLayerClothing # Erida edit
+    layers: { Tail: OUTERCLOTHING } # Erida edit
 
 - type: entity
   parent: ClothingOuterBase
@@ -192,6 +202,9 @@
       toggleable-clothing: !type:ContainerSlot {}
       storagebase: !type:Container
         ents: []
+  - type: SlotBlock
+    blockList: [ UNDERWEAR, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING ]
+    hideList: [ IDCARD, POCKET ]
 
 - type: entity
   abstract: true

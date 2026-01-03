@@ -21,6 +21,7 @@ using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Serialization.Markdown;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared.Sprite;
 
 namespace Content.Shared.Humanoid;
 
@@ -41,7 +42,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly GrammarSystem _grammarSystem = default!;
-    [Dependency] private readonly SharedIdentitySystem _identity = default!;
+    [Dependency] private readonly IdentitySystem _identity = default!;
+
+    [Dependency] private readonly SharedScaleVisualsSystem _scaleVisuals = default!; // Erida
 
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
 
@@ -103,7 +106,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         if (string.IsNullOrEmpty(humanoid.Initial)
-            || !_proto.TryIndex(humanoid.Initial, out HumanoidProfilePrototype? startingSet))
+            || !_proto.Resolve(humanoid.Initial, out HumanoidProfilePrototype? startingSet))
         {
             LoadProfile(uid, HumanoidCharacterProfile.DefaultWithSpecies(humanoid.Species), humanoid);
             return;
@@ -124,7 +127,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var species = GetSpeciesRepresentation(component.Species).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
 
-        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
+        // Erida-start
+        string currentSpecies = string.IsNullOrEmpty(component.CustomSpecies) ? species : component.CustomSpecies;
+        args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", currentSpecies)));
+        // Erida-end
     }
 
     /// <summary>
@@ -162,6 +168,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             return;
 
         targetHumanoid.Species = sourceHumanoid.Species;
+        // Erida-start
+        targetHumanoid.CustomSpecies = sourceHumanoid.CustomSpecies;
+        targetHumanoid.Height = sourceHumanoid.Height;
+        targetHumanoid.Width = sourceHumanoid.Width;
+        // Erida-end
         targetHumanoid.SkinColor = sourceHumanoid.SkinColor;
         targetHumanoid.EyeColor = sourceHumanoid.EyeColor;
         targetHumanoid.Age = sourceHumanoid.Age;
@@ -273,6 +284,40 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
             Dirty(uid, humanoid);
     }
 
+    // Erida-start
+    public void SetCustomSpecies(EntityUid uid, string customspecies, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid))
+        {
+            return;
+        }
+
+        humanoid.CustomSpecies = customspecies;
+
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+
+    public void SetSizes(EntityUid uid, float height, float width, bool sync = true, HumanoidAppearanceComponent? humanoid = null)
+    {
+        if (!Resolve(uid, ref humanoid))
+        {
+            return;
+        }
+
+        var baseScale = _scaleVisuals.GetSpriteScale(uid);
+        var resultScale = new Vector2(width * baseScale.X, height * baseScale.Y);
+
+        if (resultScale.X <= 0 || resultScale.Y <= 0) // Shitcode, but idk why he dont work correct
+            return;
+
+        _scaleVisuals.SetSpriteScale(uid, resultScale);
+
+        if (sync)
+            Dirty(uid, humanoid);
+    }
+    // Erida-end
+
     /// <summary>
     /// Sets the gender in the entity's HumanoidAppearanceComponent and GrammarComponent.
     /// </summary>
@@ -304,14 +349,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (!Resolve(uid, ref humanoid))
             return;
 
-        if (!_proto.TryIndex<SpeciesPrototype>(humanoid.Species, out var species))
+        if (!_proto.Resolve<SpeciesPrototype>(humanoid.Species, out var species))
         {
             return;
         }
 
-        if (verify && !SkinColor.VerifySkinColor(species.SkinColoration, skinColor))
+        if (verify && _proto.Resolve(species.SkinColoration, out var index))
         {
-            skinColor = SkinColor.ValidSkinTone(species.SkinColoration, skinColor);
+            var strategy = index.Strategy;
+            skinColor = strategy.EnsureVerified(skinColor);
         }
 
         humanoid.SkinColor = skinColor;
@@ -405,6 +451,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         SetSpecies(uid, profile.Species, false, humanoid);
+        // Erida-start
+        SetCustomSpecies(uid, profile.CustomSpecies, false, humanoid);
+        SetSizes(uid, profile.Height, profile.Width);
+        // Erida-end
         SetSex(uid, profile.Sex, false, humanoid);
         humanoid.EyeColor = profile.Appearance.EyeColor;
 
@@ -542,7 +592,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
-    
+
     // Corvax-TTS-Start
     // ReSharper disable once InconsistentNaming
     public void SetTTSVoice(EntityUid uid, string voiceId, HumanoidAppearanceComponent humanoid)

@@ -242,7 +242,8 @@
     - Slime
     - AmmoniaBlood
     - ZombieBlood
-    - ShadowkinBlood
+    - ShadowkinBlood #erida
+    - Sap
 
 - type: xenoArchTrigger
   id: TriggerThrow

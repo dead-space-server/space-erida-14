@@ -3,10 +3,50 @@
 ##################
 
 - type: listing
+  id: UplinkInteQBalloon
+  name: uplink-inteq-balloon-name
+  description: uplink-inteq-balloon-desc
+  productEntity: BalloonInteQ
+  cost:
+    TelecrystalOrange: 20
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkInteQCostumeClown
+  name: uplink-inteq-costume-clown-name
+  description: uplink-inteq-costume-clown-desc
+  productEntity: ClothingBackpackDuffelSyndicateCostumeClown
+  cost:
+    TelecrystalOrange: 3
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkInteQOutlawHat
+  name: uplink-inteq-outlaw-hat-name
+  description: uplink-inteq-outlaw-hat-desc
+  productEntity: ClothingHeadHatOutlawHat
+  cost:
+    TelecrystalOrange: 1
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkInteQOutlawGlasses
+  name: uplink-inteq-outlaw-glasses-name
+  description: uplink-inteq-outlaw-glasses-desc
+  productEntity: ClothingEyesGlassesOutlawGlasses
+  cost:
+    TelecrystalOrange: 1
+  categories:
+  - UplinkPointless
+
+- type: listing
   id: UplinkInteQStamp
   name: uplink-inteq-stamp-name
   description: uplink-inteq-stamp-desc
-  productEntity: RubberStampInteq
+  productEntity: RubberStampInteQ
   discountCategory: rareDiscounts
   discountDownTo:
     TelecrystalOrange: 1
@@ -21,14 +61,14 @@
   description: uplink-cat-ears-desc
   productEntity: ClothingHeadHatCatEars
   cost:
-    TelecrystalOrange: 16
+    TelecrystalOrange: 26
   categories:
   - UplinkPointless
 
 - type: listing
   id: UplinkInteQJugPlasma
-  name: uplink-jug-plasma-name
-  description: uplink-jug-plasma-desc
+  name: uplink-inteq-jug-plasma-name
+  description: uplink-inteq-jug-plasma-desc
   productEntity: JugPlasma
   cost:
     TelecrystalOrange: 2
@@ -60,6 +100,46 @@
 ##################
 
 - type: listing
+  id: UplinkInteQCarpSuitBundle
+  name: uplink-inteq-carp-suit-bundle-name
+  description: uplink-inteq-carp-suit-bundle-desc
+  productEntity: ClothingBackpackDuffelInteQCarpSuit
+  cost:
+    TelecrystalOrange: 4
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkInteQHolster
+  name: uplink-inteq-holster-name
+  description: uplink-inteq-holster-desc
+  productEntity: ClothingBeltInteQHolster
+  cost:
+    TelecrystalOrange: 1
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkInteQOperativeSuit
+  name: uplink-inteq-operative-suit-name
+  description: uplink-inteq-operative-suit-desc
+  productEntity: ClothingUniformJumpsuitInteQOperative
+  cost:
+    TelecrystalOrange: 1
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkInteQOperativeSkirt
+  name: uplink-inteq-operative-skirt-name
+  description: uplink-inteq-operative-skirt-desc
+  productEntity: ClothingUniformJumpskirtInteQOperative
+  cost:
+    TelecrystalOrange: 1
+  categories:
+  - UplinkPointless
+
+- type: listing
   id: UplinkJetpackInteQ
   name: uplink-black-jetpack-name
   description: uplink-black-jetpack-desc
@@ -83,8 +163,29 @@
     TelecrystalOrange: 5
   cost:
     TelecrystalOrange: 8
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+        - NukeOpsUplink
+
+- type: listing
+  id: UplinkInteQClothingBeltInteQShieldBelt
+  name: uplink-inteq-shield-belt-name
+  description: uplink-inteq-shield-belt-desc
+  productEntity: ClothingBeltInteQShieldBelt
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 10
+  cost:
+    TelecrystalOrange: 12
   categories:
   - UplinkWearables
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
 
 - type: listing
   id: UplinkInteQClothingBackpackDuffelInteQHardsuit
@@ -130,7 +231,7 @@
   description: uplink-inteq-inteq-iron-tombstone-desc
   productEntity: ClothingOuterArmorInteQIronTombstone
   cost:
-    TelecrystalOrange: 14
+    TelecrystalOrange: 12
   categories:
   - UplinkWearables
   conditions:
@@ -222,7 +323,7 @@
   discountDownTo:
     TelecrystalOrange: 3
   cost:
-    TelecrystalOrange: 5
+    TelecrystalOrange: 6
   categories:
   - UplinkWearables
 
@@ -292,6 +393,76 @@
 ##################
 
 - type: listing
+  id: UplinkInteQRevolverPython
+  name: uplink-inteq-revolver-python-name
+  description: uplink-inteq-revolver-python-desc
+  productEntity: WeaponRevolverPythonAP
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 4
+  cost:
+    TelecrystalOrange: 6
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:ListingLimitedStockCondition
+      stock: 1
+
+- type: listing
+  id: UplinkInteQRifleMosin
+  name: uplink-inteq-rifle-mosin-name
+  description: uplink-inteq-rifle-mosin-desc
+  productEntity: WeaponSniperMosin
+  cost:
+    TelecrystalOrange: 2
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkInteQEnergyDagger
+  name: uplink-inteq-edagger-name
+  description: uplink-inteq-edagger-desc
+  icon: { sprite: /Textures/Objects/Weapons/Melee/e_dagger.rsi, state: icon }
+  productEntity: EnergyDaggerBox
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 1
+  cost:
+    TelecrystalOrange: 2
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkInteQSMGCase
+  name: uplink-inteq-smg-case-name
+  description: uplink-inteq-smg-case-desc
+  icon: { sprite: /Textures/_Orion/Objects/Weapons/Guns/SMG/inteq_smg.rsi, state: icon }
+  productEntity: CaseInteQSMG
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 10
+  cost:
+    TelecrystalOrange: 12
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkInteQEnergyCrossbow
+  name: uplink-inteq-energycrossbow-name
+  description: uplink-inteq-energycrossbow-desc
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 4
+  productEntity: WeaponEnergyCrossbow
+  cost:
+    TelecrystalOrange: 8
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: UplinkInteQLightMachineGunL6
   name: uplink-inteq-l6-saw-bundle-name
   description: uplink-inteq-l6-saw-bundle-desc
@@ -320,7 +491,7 @@
   discountDownTo:
     TelecrystalOrange: 4
   cost:
-    TelecrystalOrange: 8
+    TelecrystalOrange: 5
   categories:
   - UplinkWeaponry
   conditions:
@@ -351,11 +522,16 @@
   productEntity: ClothingBackpackDuffelInteQFilledAtreides
   discountCategory: usualDiscounts
   discountDownTo:
-    TelecrystalOrange: 6
-  cost:
     TelecrystalOrange: 12
+  cost:
+    TelecrystalOrange: 16
   categories:
   - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
 
 - type: listing
   id: UplinkInteQEstocBundle
@@ -367,7 +543,7 @@
   discountDownTo:
     TelecrystalOrange: 11
   cost:
-    TelecrystalOrange: 18
+    TelecrystalOrange: 16
   categories:
   - UplinkWeaponry
 
@@ -462,8 +638,11 @@
   name: uplink-inteq-bulldog-name
   description: uplink-inteq-bulldog-desc
   productEntity: CaseInteQBulldog
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 14
   cost:
-    TelecrystalOrange: 12
+    TelecrystalOrange: 16
   categories:
   - UplinkWeaponry
 
@@ -472,8 +651,11 @@
   name: uplink-inteq-akm-name
   description: uplink-inteq-akm-desc
   productEntity: CaseInteQAKM
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 10
   cost:
-    TelecrystalOrange: 12
+    TelecrystalOrange: 13
   categories:
   - UplinkWeaponry
 
@@ -507,9 +689,9 @@
   productEntity: PlasmaScythe
   discountCategory: veryRareDiscounts
   discountDownTo:
-    TelecrystalOrange: 10
+    TelecrystalOrange: 14
   cost:
-    TelecrystalOrange: 15
+    TelecrystalOrange: 16
   categories:
   - UplinkWeaponry
   conditions:
@@ -549,9 +731,29 @@
   description: uplink-inteq-magazine-box-shotgun-desc
   productEntity: MagazineBoxShotgunInteQ
   cost:
-    TelecrystalOrange: 9
+    TelecrystalOrange: 6
   categories:
   - UplinkAmmo
+
+- type: listing
+  id: UplinkInteQMagazineBoxLightRifleIncendiary
+  name: uplink-inteq-magazine-box-rifle-incendiary-name
+  description: uplink-inteq-magazine-box-rifle-incendiary-desc
+  productEntity: MagazineBoxLightRifleIncendiaryInteQ
+  discountCategory: usualDiscounts
+  discountDownTo:
+    TelecrystalOrange: 6
+  cost:
+    TelecrystalOrange: 8
+  categories:
+  - UplinkAmmo
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+        - NukeOpsUplink
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 # For the C20R
 - type: listing
@@ -694,8 +896,8 @@
 
 - type: listing
   id: UplinkInteQGrenadePenguin
-  name: uplink-penguin-grenade-name
-  description: uplink-penguin-grenade-desc
+  name: uplink-inteq-penguin-grenade-name
+  description: uplink-inteq-penguin-grenade-desc
   productEntity: MobGrenadePenguin
   discountCategory: usualDiscounts
   discountDownTo:
@@ -929,7 +1131,7 @@
 
 - type: listing
   id: UplinkInteQStimpack
-  name: uplink-stimpack-name
+  name: uplink-inteq-stimpack-name
   description: uplink-inteq-stimpack-desc
   productEntity: Stimpack
   discountCategory: usualDiscounts
@@ -998,6 +1200,29 @@
 ##################
 # Deception
 ##################
+
+- type: listing
+  id: UplinkInteQSmugglerSatchel
+  name: uplink-inteq-smuggler-satchel-name
+  description: uplink-inteq-smuggler-satchel-desc
+  productEntity: ClothingBackpackSatchelSmugglerUnanchored
+  discountCategory: usualDiscounts
+  discountDownTo:
+    TelecrystalOrange: 1
+  cost:
+    TelecrystalOrange: 2
+  categories:
+  - UplinkDeception
+
+- type: listing
+  id: UplinkInteQIDCard
+  name: uplink-inteq-id-card-name
+  description: uplink-inteq-id-card-desc
+  productEntity: InteQVanguardIDCard
+  cost:
+    TelecrystalOrange: 1
+  categories:
+  - UplinkDeception
 
 - type: listing
   id: UplinkInteQAgentIDCard
@@ -1123,7 +1348,7 @@
   id: UplinkInteQBribe
   name: uplink-bribe-name
   description: uplink-bribe-desc
-  productEntity: BriefcaseSyndieLobbyingBundleFilled
+  productEntity: BriefcaseInteQLobbyingBundleFilled
   discountCategory: usualDiscounts
   discountDownTo:
     TelecrystalOrange: 2
@@ -1136,6 +1361,33 @@
 ##################
 # Disruption
 ##################
+
+- type: listing
+  id: UplinkInteQMartyrModule
+  name: uplink-inteq-martyr-module-name
+  description: uplink-inteq-martyr-module-desc
+  productEntity: BorgModuleMartyr
+  icon: { sprite: /Textures/Objects/Specific/Robotics/borgmodule.rsi, state: syndicateborgbomb }
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 3
+  cost:
+    TelecrystalOrange: 5
+  categories:
+    - UplinkDisruption
+
+- type: listing
+  id: UplinkInteQWeaponModule
+  name: uplink-inteq-weapon-module-name
+  description: uplink-inteq-weapon-module-desc
+  productEntity: BorgModuleSyndicateWeapon
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 4
+  cost:
+    TelecrystalOrange: 6
+  categories:
+  - UplinkDisruption
 
 - type: listing
   id: UplinkInteQAccessBreaker
@@ -1232,9 +1484,9 @@
   productEntity: AntimovCircuitBoard
   discountCategory: rareDiscounts
   discountDownTo:
-    TelecrystalOrange: 20
+    TelecrystalOrange: 18
   cost:
-    TelecrystalOrange: 24
+    TelecrystalOrange: 20
   categories:
   - UplinkDisruption
 
@@ -1300,13 +1552,73 @@
   categories:
   - UplinkDisruption
 
+- type: listing
+  id: UplinkInteQStarterKit
+  name: uplink-starter-kit-name
+  description: uplink-starter-kit-desc
+  productEntity: ClothingBackpackDuffelInteQFilledStarterKit
+  cost:
+    TelecrystalOrange: 40
+  categories:
+  - UplinkDisruption
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+        - NukeOpsUplink
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+        - SurplusBundle
+
 ##################
 # Implants
 ##################
 
 - type: listing
+  id: UplinkInteQMacroBombImplanter
+  name: uplink-inteq-macro-bomb-implanter-name
+  description: uplink-inteq-macro-bomb-implanter-desc
+  icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: explosive }
+  productEntity: MacroBombImplanter
+  cost:
+    TelecrystalOrange: 14
+  categories:
+    - UplinkImplants
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing
+  id: UplinkInteQMicroBombImplanter
+  name: uplink-inteq-micro-bomb-implanter-name
+  description: uplink-inteq-micro-bomb-implanter-desc
+  icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: explosive }
+  productEntity: MicroBombImplanterInteQ
+  cost:
+    TelecrystalOrange: 2
+  categories:
+  - UplinkImplants
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+
+- type: listing
   id: UplinkChameleonControllerImplanterInteQ
   name: uplink-inteq-chameleon-name
+  icon: { sprite: /Textures/Clothing/Mask/gas.rsi, state: icon }
   description: uplink-inteq-chameleon-desc
   productEntity: ChameleonControllerImplanterInteQ
   discountCategory: rareDiscounts
@@ -1318,6 +1630,7 @@
 - type: listing
   id: UplinkUplinkImplanterInteQ
   name: uplink-inteq-uplink-implanter-name
+  icon: { sprite: /Textures/_Orion/Objects/Devices/inteq_uplink.rsi, state: inteq-uplink }
   description: uplink-inteq-uplink-implanter-desc
   productEntity: UplinkImplanterInteQ
   cost:
@@ -1329,6 +1642,7 @@
   id: UplinkStorageImplanterInteQ
   name: uplink-inteq-storage-implanter-name
   description: uplink-inteq-storage-implanter-desc
+  icon: { sprite: /Textures/Clothing/Back/Backpacks/backpack.rsi, state: icon }
   productEntity: StorageImplanterInteQ
   discountCategory: rareDiscounts
   discountDownTo:
@@ -1342,6 +1656,7 @@
   id: UplinkRadioImplanterInteQ
   name: uplink-inteq-radio-implanter-name
   description: uplink-inteq-radio-implanter-desc
+  icon: { sprite: /Textures/_Orion/Objects/Devices/encryption_keys.rsi, state: inteq_label }
   productEntity: RadioImplanterInteQ
   discountCategory: rareDiscounts
   discountDownTo:
@@ -1356,6 +1671,7 @@
   name: uplink-inteq-scram-implanter-name
   description: uplink-inteq-scram-implanter-desc
   productEntity: ScramImplanterInteQ
+  icon: { sprite: /Textures/Structures/Specific/anomaly.rsi, state: anom4 }
   discountCategory: rareDiscounts
   discountDownTo:
     TelecrystalOrange: 4
@@ -1369,6 +1685,7 @@
   name: uplink-inteq-freedom-implanter-name
   description: uplink-inteq-freedom-implanter-desc
   productEntity: FreedomImplanterInteQ
+  icon: { sprite: /Textures/Actions/Implants/implants.rsi, state: freedom }
   discountCategory: veryRareDiscounts
   discountDownTo:
     TelecrystalOrange: 3
@@ -1382,6 +1699,7 @@
   name: uplink-inteq-fake-mindShield-implanter-name
   description: uplink-inteq-fake-mindShield-implanter-desc
   productEntity: FakeMindShieldImplanterInteQ
+  icon: { sprite: Interface/Actions/actions_fakemindshield.rsi, state: icon-on }
   discountCategory: rareDiscounts
   discountDownTo:
     TelecrystalOrange: 3
@@ -1395,6 +1713,7 @@
   name: uplink-inteq-dna-scrambler-implanter-name
   description: uplink-inteq-dna-scrambler-implanter-desc
   productEntity: DnaScramblerImplanterInteQ
+  icon: { sprite: /Textures/Mobs/Species/Human/parts.rsi, state: full }
   discountCategory: veryRareDiscounts
   discountDownTo:
     TelecrystalOrange: 2
@@ -1408,6 +1727,7 @@
   name: uplink-inteq-emp-implanter-name
   description: uplink-inteq-emp-implanter-desc
   productEntity: EmpImplanterInteQ
+  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: shield }
   discountCategory: veryRareDiscounts
   discountDownTo:
     TelecrystalOrange: 1
@@ -1421,9 +1741,10 @@
   name: uplink-inteq-death-rattler-implanter-name
   description: uplink-inteq-death-rattler-implanter-desc
   productEntity: DeathRattleImplanterInteQ
+  icon: { sprite: /Textures/_Orion/Icons/inteq.rsi, state: logo }
   discountCategory: rareDiscounts
   cost:
-    TelecrystalOrange: 4
+    TelecrystalOrange: 3
   categories:
   - UplinkImplants
 
@@ -1432,6 +1753,7 @@
   name: uplink-death-acidifier-implant-name
   description: uplink-death-acidifier-implant-desc
   productEntity: DeathAcidifierImplanterInteQ
+  icon: { sprite: /Textures/Objects/Magic/magicactions.rsi, state: gib }
   cost:
     TelecrystalOrange: 4
   categories:
@@ -1447,9 +1769,132 @@
 ##################
 
 
+- type: listing
+  id: UplinkInteQPersonalAI
+  name: uplink-inteq-pai-name
+  description: uplink-inteq-pai-desc
+  icon: { sprite: /Textures/_Erida/Objects/Fun/pai.rsi, state: inteq-icon-pai-off }
+  productEntity: InteqPersonalAI
+  cost:
+    TelecrystalOrange: 1
+  categories:
+    - UplinkAllies
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkInteQCarpDehydrated
+  name: uplink-inteq-carp-dehydrated-name
+  description: uplink-inteq-carp-dehydrated-desc
+  productEntity: DehydratedSpaceCarp
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 1
+  cost:
+    TelecrystalOrange: 2
+  categories:
+  - UplinkAllies
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkInteQHoloparaKit
+  name: uplink-holopara-kit-name
+  description: uplink-holopara-kit-desc
+  icon: { sprite: /Textures/Objects/Misc/guardian_info.rsi, state: icon }
+  productEntity: BoxHoloparasite
+  discountCategory: usualDiscounts
+  discountDownTo:
+    TelecrystalOrange: 8
+  cost:
+    TelecrystalOrange: 14
+  categories:
+  - UplinkAllies
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: UplinkReinforcementRadioInteQAncestorNukeops
+  name: uplink-reinforcement-radio-ancestor-name
+  description: uplink-reinforcement-radio-ancestor-desc
+  productEntity: ReinforcementRadioInteQAncestorNukeops
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-ancestor }
+  discountCategory: usualDiscounts
+  discountDownTo:
+    TelecrystalOrange: 4
+  cost:
+    TelecrystalOrange: 6
+  categories:
+  - UplinkAllies
+  conditions:
+    - !type:StoreWhitelistCondition
+      whitelist:
+        tags:
+          - NukeOpsUplink
+
+- type: listing
+  id: UplinkReinforcementRadioInteQAncestor
+  name: uplink-reinforcement-radio-ancestor-name
+  description: uplink-reinforcement-radio-ancestor-desc
+  productEntity: ReinforcementRadioInteQAncestor
+  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-ancestor }
+  discountCategory: usualDiscounts
+  discountDownTo:
+    TelecrystalOrange: 4
+  cost:
+    TelecrystalOrange: 6
+  categories:
+  - UplinkAllies
+  conditions:
+    - !type:StoreWhitelistCondition
+      blacklist:
+        tags:
+          - NukeOpsUplink
+
 ##################
 # Job
 ##################
+
+- type: listing
+  id: uplinkInteQBriefcaseGun
+  name: uplink-inteq-briefcase-gun-name
+  description: uplink-inteq-briefcase-gun-desc
+  productEntity: WeaponSubMachineGunBriefcase
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 14
+  cost:
+    TelecrystalOrange: 16
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Lawyer
+
+- type: listing
+  id: UplinkInteQChimpUpgradeKit
+  name: uplink-inteq-chimp-upgrade-kit-name
+  description: uplink-inteq-chimp-upgrade-kit-desc
+  productEntity: WeaponPistolCHIMPUpgradeKit
+  discountCategory: usualDiscounts
+  discountDownTo:
+    TelecrystalOrange: 2
+  cost:
+    TelecrystalOrange: 4
+  categories:
+  - UplinkJob
+  conditions:
+    - !type:BuyerDepartmentCondition
+      whitelist:
+      - Science
 
 - type: listing
   id: UplinkInteQAcolyteArmor
@@ -1679,6 +2124,8 @@
     whitelist:
     - Mime
     - Clown
+  - !type:ListingLimitedStockCondition
+    stock: 1
 
 - type: listing
   id: uplinkInteQBananaPeelExplosive

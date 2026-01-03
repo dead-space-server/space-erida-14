@@ -1,4 +1,4 @@
-# ban
+﻿# ban
 cmd-ban-desc = Банит кого-либо
 cmd-ban-help = Использование: ban <name or user ID> <reason> [продолжительность в минутах, без указания или 0 для пермабана]
 cmd-ban-player = Не удалось найти игрока с таким именем.
@@ -76,3 +76,4 @@ server-ban-string-no-pii = { $admin } установил серверный ба
 cmd-ban_exemption_get-arg-player = <player>
 # Kick on ban
 ban-kick-reason = Вы были забанены
+ban-panel-expiry-error = ошибка

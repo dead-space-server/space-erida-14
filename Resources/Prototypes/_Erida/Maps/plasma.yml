@@ -68,3 +68,9 @@
             #silicon (3 - 5)
             Borg: [ 2, 4 ]
             StationAi: [ 1, 1 ]
+        # blob-config-start
+        - type: StationBlobConfig
+          stageBegin: 50
+          stageCritical: 400
+          stageTheEnd: 700
+        # blob-config-end

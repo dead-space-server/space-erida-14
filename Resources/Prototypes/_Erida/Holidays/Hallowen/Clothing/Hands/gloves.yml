@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsGlovesSkeleton
+  name: Skeleton gloves
+  description: "Why did the skeleton go to the party alone? He couldn’t find anyone with the same “skeletons” in their closet!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/gloves.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/gloves.rsi
+  - type: FingerprintMask

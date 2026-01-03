@@ -14,6 +14,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Threading.Tasks;
 using Content.Shared.Players.PlayTimeTracking;
+using Content.Shared.GameTicking;
+using Content.Server.Voting.Managers;
 
 namespace Content.Server.Voting;
 
@@ -25,6 +27,7 @@ public sealed class VotingSystem : EntitySystem
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly IVoteManager _voteManager = default!; // Erida
     [Dependency] private readonly JobSystem _jobs = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly ISharedPlaytimeManager _playtimeManager = default!;
@@ -34,6 +37,7 @@ public sealed class VotingSystem : EntitySystem
         base.Initialize();
 
         SubscribeNetworkEvent<VotePlayerListRequestEvent>(OnVotePlayerListRequestEvent);
+        SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted); // Erida
     }
 
     private async void OnVotePlayerListRequestEvent(VotePlayerListRequestEvent msg, EntitySessionEventArgs args)
@@ -71,6 +75,13 @@ public sealed class VotingSystem : EntitySystem
         var response = new VotePlayerListResponseEvent(players.ToArray(), false);
         RaiseNetworkEvent(response, args.SenderSession.Channel);
     }
+
+    // Erida-start
+    private void OnRoundStarted(RoundStartedEvent args)
+    {
+        _voteManager.DecreaseMapCooldowns();
+    }
+    // Erida-end
 
     public string GetPlayerVoteListName(EntityUid attached)
     {

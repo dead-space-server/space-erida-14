@@ -39,12 +39,12 @@
     Fluorine:
       amount: 3
   effects:
-  - !type:ExplosionReactionEffect
+  - !type:Explosion
     explosionType: Default # 15 damage per intensity.
     maxIntensity: 200
-    intensityPerUnit: 5
-    intensitySlope: 5
-    maxTotalIntensity: 200
+    intensityPerUnit: 3
+    intensitySlope: 2
+    maxTotalIntensity: 20
   - !type:PopupMessage
     messages: [ "clf3-explosion" ]
     type: Pvs

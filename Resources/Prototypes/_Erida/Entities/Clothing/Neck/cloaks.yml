@@ -82,3 +82,48 @@
   components:
     - type: Sprite
       sprite: _Erida/Clothing/Neck/Cloaks/tgmcwhite.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckCoSCCCloak
+  name: centcom chief of staff cloak
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/coscc_cloak.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckCentcomCloak
+  name: centcom cloak
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/centcom_cloak.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckCentcomCloakFormal
+  name: centcom cloak formal
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/centcom_cloak_formal.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckCentcomCargo
+  name: centcom cargo cloak
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/centcom_cargo_cloak.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCentcommContraband]
+  id: ClothingNeckOSOCloak
+  name: OSO cloak
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/oso_cloak.rsi

@@ -30,3 +30,7 @@ roles-antag-thief-name = Вор
 roles-antag-thief-objective = Пополните свою личную коллекцию имуществом Nanotrasen, не прибегая к насилию.
 roles-antag-dragon-name = Космический дракон
 roles-antag-dragon-objective = Создайте армию карпов для захвата квадранта.
+roles-antag-mothership-core-name = Ядро Ксеноборгов
+roles-antag-mothership-core-objective = Создайте как можно больше ксеноборгов!
+roles-antag-xenoborg-name = Ксеноборг
+roles-antag-xenoborg-objective = Помогите ядру создать как можно больше ксеноборгов.

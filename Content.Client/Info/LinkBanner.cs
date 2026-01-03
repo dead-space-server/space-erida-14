@@ -49,9 +49,11 @@ namespace Content.Client.Info
             changelogButton.OnPressed += args => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();
             buttons.AddChild(changelogButton);
 
-            var roadmapButton = new RoadmapButton();
-            roadmapButton.OnPressed += args => UserInterfaceManager.GetUIController<RoadmapUIController>().ToggleWindow();
-            buttons.AddChild(roadmapButton);
+            // Erida-start
+            // var roadmapButton = new RoadmapButton();
+            // roadmapButton.OnPressed += args => UserInterfaceManager.GetUIController<RoadmapUIController>().ToggleWindow();
+            // buttons.AddChild(roadmapButton);
+            // Erida-end
 
             void AddInfoButton(string loc, CVarDef<string> cVar)
             {

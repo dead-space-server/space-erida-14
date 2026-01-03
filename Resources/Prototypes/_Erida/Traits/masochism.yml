@@ -1,0 +1,31 @@
+- type: trait
+  id: MasochistLight
+  name: trait-masochism-light-name
+  description: trait-masochism-light-desc
+  category: Masochism
+  cost: 1
+  components:
+  - type: Masochist
+    arousalPerDamageModifier: 2.5
+    totalDamageLimit: 40
+    damageThreshold:
+      Thermal: 20,
+      Piercing: 15,
+      Blunt: 25,
+      Shock: 30,
+
+- type: trait
+  id: MasochistHard
+  name: trait-masochism-hardcore-name
+  description: trait-masochism-hardcore-desc
+  category: Masochism
+  cost: 1
+  components:
+  - type: Masochist
+    arousalPerDamageModifier: 1.8
+    totalDamageLimit: 110
+    damageThreshold:
+      Thermal: 80,
+      Piercing: 90,
+      Blunt: 90,
+      Shock: 90,

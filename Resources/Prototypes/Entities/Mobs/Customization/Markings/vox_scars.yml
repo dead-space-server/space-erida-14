@@ -1,8 +1,10 @@
+# ERIDA - COMMENT ALL speciesRestriction
+
 - type: marking
   id: VoxScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
     state: vox_scar_eye_right
@@ -11,7 +13,7 @@
   id: VoxScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -21,7 +23,7 @@
   id: VoxScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -31,7 +33,7 @@
   id: VoxScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -41,7 +43,7 @@
   id: VoxScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -51,7 +53,7 @@
   id: VoxScarNeck
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -61,7 +63,7 @@
   id: VoxScarChestBullets
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -71,7 +73,7 @@
   id: VoxScarStomachBullets
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -81,7 +83,7 @@
   id: VoxScarFace1
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -91,7 +93,7 @@
   id: VoxScarFace2
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -101,7 +103,7 @@
   id: VoxScarEyeRightSmall
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi
@@ -111,7 +113,7 @@
   id: VoxScarEyeLeftSmall
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Vox]
+#  speciesRestriction: [Vox]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/vox_scars.rsi

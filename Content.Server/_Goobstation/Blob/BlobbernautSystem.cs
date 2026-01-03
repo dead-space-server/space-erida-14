@@ -4,6 +4,7 @@ using Content.Goobstation.Shared.Blob.Components;
 using Content.Server.Emp;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -100,13 +101,13 @@ public sealed class BlobbernautSystem : SharedBlobbernautSystem
             {
                 var xform = Transform(args.HitEntities.FirstOrDefault());
                 if (_random.Prob(0.2f))
-                    _empSystem.EmpPulse(_transform.GetMapCoordinates(xform), 3f, 1000f, 3f);
+                    _empSystem.EmpPulse(_transform.GetMapCoordinates(xform), 3f, 1000f, TimeSpan.FromSeconds(3));
                 break;
             }
         }
     }
 
-    private DamageSpecifier? TryChangeDamage(string msg, EntityUid ent, DamageSpecifier dmg)
+    private bool TryChangeDamage(string msg, EntityUid ent, DamageSpecifier dmg)
     {
         _popup.PopupEntity(Loc.GetString(msg), ent, ent, PopupType.LargeCaution);
         return _damageableSystem.TryChangeDamage(ent, dmg);

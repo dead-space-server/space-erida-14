@@ -110,6 +110,7 @@ namespace Content.Server.Carrying
                 Text = Loc.GetString("carry-verb"),
                 Priority = 2
             };
+
             args.Verbs.Add(verb);
         }
 
@@ -121,7 +122,7 @@ namespace Content.Server.Carrying
             if (!HasComp<CarriableComponent>(args.BlockingEntity))
                 return;
 
-            DropCarried(uid, args.BlockingEntity);
+            DropCarried(uid, component.Carried);
         }
 
         /// <summary>

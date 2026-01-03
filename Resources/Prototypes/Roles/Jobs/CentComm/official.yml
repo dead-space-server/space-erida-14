@@ -19,18 +19,22 @@
 - type: startingGear
   id: CentcomGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    shoes: ClothingShoesBootsCombatFilled
-    head: ClothingHeadHatCentcom
-    eyes: ClothingEyesGlassesCommand
-    gloves: ClothingHandsGlovesColorBlack
-    outerClothing: ClothingOuterArmorCentcommCarapace
+  # CentComm ivent roles start
+    jumpsuit: ClothingUniformJumpsuitCentcomDeputy
+    mask: ClothingMaskGasCentcom
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCentcomcap
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorCentcomDeputyCarapace
+  # CentComm ivent roles end
     id: CentcomPDA
     ears: ClothingHeadsetAltCentCom
-    belt: WeaponPistolN1984
-    pocket1: BoxFolderBlack
-    pocket2: PenCentcom
-
+  # CentComm ivent roles start
+    belt: ClothingBeltSheathFilled
+    pocket1: ClothingNeckCentcomCloak
+    pocket2: BoxFolderCentComClipboard
+  # CentComm ivent roles end
 
 - type: chameleonOutfit
   id: CentralCommandOfficialOutfit

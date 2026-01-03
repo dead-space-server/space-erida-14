@@ -1,4 +1,4 @@
-device-pda-slot-component-slot-name-cartridge = Картридж
+﻿device-pda-slot-component-slot-name-cartridge = Картридж
 default-program-name = Программа
 notekeeper-program-name = Заметки
 nano-task-program-name = НаноДела
@@ -84,6 +84,8 @@ wanted-list-status-label = [color=darkgray]статус:[/color] { $status ->
         [detained] [color=#b18644]под арестом[/color]
         [paroled] [color=green]освобождён по УДО[/color]
         [discharged] [color=green]освобождён[/color]
+        [hostile] [color=darkred]враждебен[/color]
+        [eliminated] [color=gray]устранён[/color]
        *[other] нет
     }
 wanted-list-history-table-time-col = Время

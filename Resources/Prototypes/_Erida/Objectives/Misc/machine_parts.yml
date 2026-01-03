@@ -19,7 +19,7 @@
       state: micro_mani
     - type: UpgradeMachinePart
       MaterialModifier: 0.9
-      SpeedModifier: 1.10
+      SpeedModifier: 1.20
       Tier: 2
 
 - type: entity
@@ -33,5 +33,5 @@
       state: micro_mani
     - type: UpgradeMachinePart
       MaterialModifier: 0.8
-      SpeedModifier: 1.25
+      SpeedModifier: 1.35
       Tier: 3

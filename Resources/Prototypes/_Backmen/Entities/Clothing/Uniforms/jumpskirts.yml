@@ -10,7 +10,7 @@
     sprite: Backmen/Clothing/Uniforms/Jumpskirt/blueskirt.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseBlueShieldContraband]
+  parent: [ClothingUniformSkirtBase, BaseBlueShieldContraband]
   id: ClothingUniformJumpskirtBlueShieldTurtleneck
   name: officer "Blueshield"'s turtleneck
   description: A turtleneck specifically for a Blueshield officers.

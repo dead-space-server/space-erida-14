@@ -26,6 +26,8 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Atmos.Components;
 
 namespace Content.Goobstation.Server.Blob;
 
@@ -261,7 +263,7 @@ public sealed class BlobCoreActionSystem : SharedBlobCoreActionSystem
             case BlobChemType.ElectromagneticWeb:
             {
                 if (_random.Prob(0.2f))
-                    _empSystem.EmpPulse(_transform.GetMapCoordinates(target), 3f, 1000f, 3f);
+                    _empSystem.EmpPulse(_transform.GetMapCoordinates(target), 3f, 1000f, TimeSpan.FromSeconds(3));
                 break;
             }
             case BlobChemType.BlazingOil:

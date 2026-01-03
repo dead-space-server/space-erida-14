@@ -41,4 +41,80 @@
     sprite: _Erida/Clothing/Uniforms/Jumpsuit/arbitr.rsi
   - type: Clothing
     sprite: _Erida/Clothing/Uniforms/Jumpsuit/arbitr.rsi
-      
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitCoSCC
+  name: centcom chief of staff jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/coscc_jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/coscc_jumpsuit.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitCentcomDeputy
+  name: centcom deputy jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_jumpsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitCentcomClerc
+  name: centcom clerc jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_assistant_jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_assistant_jumpsuit.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitCentcomEngineer
+  name: centcom engineer jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_engineer_jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_engineer_jumpsuit.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitCentcomCargo
+  name: centcom cargo jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_cargo_jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_cargo_jumpsuit.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitCentcomOperator
+  name: centcom operator jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_turtleneck.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/centcom_turtleneck.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpsuitOSO
+  name: OSO jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/oso_jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/oso_jumpsuit.rsi

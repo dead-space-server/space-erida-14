@@ -39,8 +39,8 @@
   - type: MobMover
   - type: InputMover
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 5
+    baseWalkSpeed: 4
+    baseSprintSpeed: 6
     baseWeightlessModifier: 1.5
   - type: RandomSprite
     available:
@@ -88,26 +88,25 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      450: Critical
-      500: Dead
+      950: Critical
+      1000: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      250: 0.7
-      400: 0.5
+      700: 0.7
+      850: 0.5
   # disable taking damage from fire, since its a fire breathing dragon
   - type: Flammable
     damage:
       types: {}
   - type: StatusEffects # Overwriting basesimplemob to remove flash, getting flashed as dragon just feelsbad
     allowed:
-    - Stutter
     - Electrocution
     - TemporaryBlindness
     - Pacified
     - RadiationProtection
     - Adrenaline
   - type: Temperature
-    heatDamageThreshold: 800
+    heatDamageThreshold: 2400
   - type: Metabolizer
     solutionOnBody: false
     updateInterval: 0.25
@@ -133,7 +132,7 @@
     damage:
       types:
         Piercing: 15
-        Slash: 15
+        Slash: 25
   - type: Devourer
     foodPreferenceWhitelist:
       components:

@@ -127,11 +127,12 @@
       - Moffic
       - Nekomimetic
       - Dragon
-      - Shadokin
+      - Mar
       - Slime
       - Canilunzt
       - Freespeak
       - Spider
+      - Wawa
 
 # From the uplink injector
 - type: entity
@@ -258,8 +259,7 @@
         types:
           Blunt: 5
           Piercing: 4
-        groups:
-          Burn: 3
+          Heat: 3
       catchingFailDamage:
         types:
           Blunt: 1

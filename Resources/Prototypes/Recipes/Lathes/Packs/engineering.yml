@@ -4,6 +4,7 @@
   id: ToolsStatic
   recipes:
   - HandLabeler
+  - VoiceSensor
   - Wirecutter
   - Screwdriver
   - Welder

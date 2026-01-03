@@ -2,3 +2,28 @@
   license: "CC-BY-SA-3.0"
   copyright: "Taken from CHOMPStation"
   source: "https://github.com/CHOMPStation2/CHOMPStation2"
+
+- files: ["fox-growl.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from DeadSpace"
+  source: "https://github.com/dead-space-server/space-station-14-fobos"
+
+- files: ["mrrp.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Citadel Station 13"
+  source: "https://github.com/Citadel-Station-13/Citadel-Station-13-RP"
+
+- files: ["dog_growl1.ogg", "dog_growl2.ogg", "dog_growl3.ogg"]
+  license: "CC0-1.0"
+  copyright: "Original sound by GlitchedTones at https://freesound.org/people/Glitchedtones/sounds/372533/ - cut out three clips of dog growling, cleaned up, converted to ogg"
+  source: "https://freesound.org/people/Glitchedtones/sounds/372533/"
+
+- files: ["fox-scream3.ogg, fox-scream4.ogg, fox-scream5.ogg, fox-scream6.ogg, fox-scream7.ogg, scream1.ogg, scream2.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from LuaWorld frontier"
+  source: "https://github.com/Lua-Frontier/sector-frontier-14"
+
+- files: ["speak_mrrp.ogg, speak_mrrp_ask.ogg, mrrp2.ogg"]
+  license: "CC0-1.0"
+  copyright: "Taken from https://free-sound-effects.net"
+  source: "https://free-sound-effects.net"

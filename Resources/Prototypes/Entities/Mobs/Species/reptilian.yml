@@ -8,9 +8,11 @@
   - type: HumanoidAppearance
     species: Reptilian
     hideLayersOnEquip:
+    - Hair
     - Snout
     - HeadTop
     - HeadSide
+    - Tail
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Hunger
   - type: Puller
@@ -115,9 +117,11 @@
   - type: HumanoidAppearance
     species: Reptilian
     hideLayersOnEquip:
+    - Hair # Erida edit
     - Snout
     - HeadTop
     - HeadSide
+    - Tail # Erida edit
     undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Inventory
     speciesId: reptilian
@@ -134,12 +138,22 @@
             sprite: _Orion/Mobs/Species/displacement.rsi
             state: shoes
     displacements:
-      jumpsuit:
+      head:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: head
+      mask:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Reptilian/displacement.rsi
+            state: mask
+      jumpsuit:    # corvax
         sizeMaps:
           32:
             sprite: _Orion/Mobs/Species/displacement.rsi
             state: jumpsuit
-      shoes:
+      shoes:       # corvax
         sizeMaps:
           32:
             sprite: _Orion/Mobs/Species/displacement.rsi

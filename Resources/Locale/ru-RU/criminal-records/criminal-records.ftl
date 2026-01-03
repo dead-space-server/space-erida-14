@@ -1,4 +1,4 @@
-criminal-records-console-window-title = Консоль криминальных записей
+﻿criminal-records-console-window-title = Консоль криминальных записей
 criminal-records-console-records-list-title = Члены экипажа
 criminal-records-console-select-record-info = Выбрать запись.
 criminal-records-console-no-records = Записи не найдены!
@@ -16,6 +16,8 @@ criminal-records-status-detained = Под арестом
 criminal-records-status-suspected = Подозревается
 criminal-records-status-discharged = Освобождён
 criminal-records-status-paroled = Освобождён по УДО
+criminal-records-status-hostile = Враждебный
+criminal-records-status-eliminated = Устранен
 criminal-records-console-wanted-reason = Причина розыска
 criminal-records-console-suspected-reason = Причина подозрения
 criminal-records-console-reason = Причина
@@ -42,6 +44,10 @@ criminal-records-console-paroled = { $name } ({ $job }) освободили п�
 criminal-records-console-not-parole = { $name } ({ $job }) лишили права на УДО, ответственный: { $officer }.
 criminal-records-console-unknown-officer = <неизвестный>
 
+criminal-records-console-hostile = {$name} ({$job}) was marked as hostile by {$officer} for: {$reason}.
+criminal-records-console-not-hostile = {$name} ({$job}) no longer marked as hostile by {$officer}.
+criminal-records-console-eliminated = {$name} ({$job}) was marked as eliminated by {$officer}.
+criminal-records-console-not-eliminated = {$name} ({$job}) no longer marked as eliminated by {$officer}.
 ## Filters
 
 criminal-records-filter-placeholder = Введите текст и нажмите "Enter"

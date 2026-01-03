@@ -7,7 +7,7 @@
   guides: [ Traitors ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 1h
 
 - type: antag
   id: TraitorSleeper
@@ -18,21 +18,21 @@
   guides: [ Traitors ]
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 3600 # 1h
+    time: 1h
 
 # Syndicate Operative Outfit - Monkey
 - type: startingGear
   id: SyndicateOperativeGearMonkey
   equipment:
     head: ClothingHeadHatOutlawHat
-    jumpsuit: ClothingUniformJumpsuitOperative
+    jumpsuit: ClothingUniformJumpsuitInteQOperative
     mask: CigaretteSyndicate
 
 # Syndicate Operative Outfit - Barratry
 - type: startingGear
   id: SyndicateOperativeGearExtremelyBasic
   equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
+    jumpsuit: ClothingUniformJumpsuitInteQOperative
     back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsCombatFilled
     gloves: ClothingHandsGlovesColorBlack
@@ -45,7 +45,7 @@
 - type: startingGear
   id: SyndicateOperativeClothing
   equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
+    jumpsuit: ClothingUniformJumpsuitInteQOperative
     back: ClothingBackpackSyndicate
     shoes: ClothingShoesBootsSyndieFilled
     gloves: ClothingHandsGlovesColorBlack

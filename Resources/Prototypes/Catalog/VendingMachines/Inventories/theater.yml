@@ -1,6 +1,16 @@
 - type: vendingMachineInventory
   id: AutoDrobeInventory
   startingInventory:
+    ClothingHeadBeast: 3
+    ClothingHeadFrankenstein: 3
+    ClothingMaskGhostface: 3
+    ClothingHeadSkeleton: 2
+    ClothingUniformJumpsuitSkeleton: 2
+    ClothingShoesSkeleton: 2
+    ClothingHandsGlovesSkeleton: 2
+    ClothingHeadHatWhitch: 3
+    ClothingOuterGhostBlanket: 2
+    ClothingNeckVampireCloak: 2
     ClothingHeadHatJester: 1
     ClothingUniformJumpsuitJester: 1
     ClothingHeadHatJesterAlt: 1
@@ -56,12 +66,17 @@
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
     #Erida-Start
-    ClothingHeadPlet: 1 
+    ClothingHeadPlet: 1
     ClothingHeadJeester: 1
     ClothingHeadSanabi: 1
     ClothingNeckCloakSanabiCloak: 1
     ClothingUniformArbitr: 1
     ClothingNeckCloakArbiter: 1
+    ClothingKimonoPink: 1
+    ClothingKimonoPurple: 1
+    ClothingKimonoGreen: 1
+    ClothingKimonoSky: 1
+    ClothingKimonoBlue: 1
     #Erida-End
   contrabandInventory:
     ClothingHeadHatRichard: 1
@@ -70,6 +85,7 @@
     ClothingShoesBling: 1
     ClothingShoesBootsCowboyFancy: 1
     ClothingOuterDogi: 1
+    ClothingOuterSuitCarp: 1
     ClothingMaskBlushingClown: 1
     ClothingMaskBlushingMime: 1
     ClothingHeadHatCowboyBountyHunter: 1

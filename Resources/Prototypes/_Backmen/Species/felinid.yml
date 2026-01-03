@@ -11,11 +11,12 @@
 - type: markingPoints
   id: MobFelinidMarkingLimits
   points:
+    # Erida-start
     Hair:
-      points: 1
+      points: 10
       required: false
     FacialHair:
-      points: 1
+      points: 10
       required: false
     Tail:
       points: 1
@@ -23,14 +24,27 @@
       defaultMarkings: [ FelinidTailBasic ]
     HeadSide:
       points: 1
-      required: false
+      required: true
       defaultMarkings: [ FelinidEarsBasic ]
+    Snout:
+      points: 10
+      required: false
+    Head:
+      points: 10
+      required: false
+    HeadTop:
+      points: 10
+      required: false
     Chest:
-      points: 1
+      points: 10
       required: false
     Legs:
-      points: 4
+      points: 10
       required: false
     Arms:
-      points: 4
+      points: 10
       required: false
+    Overlay:
+      points: 10
+      required: false
+    # Erida-end

@@ -41,7 +41,7 @@
     layers:
     - state: inteq-4
   - type: ScatteringGrenade
-    fillPrototype: SoapInteQ
+    fillPrototype: SoapletSyndie
     capacity: 30
     delayBeforeTriggerContents: 60
     randomDistance: true

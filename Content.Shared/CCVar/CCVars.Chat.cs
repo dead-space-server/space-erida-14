@@ -10,7 +10,7 @@ public sealed partial class CCVars
     /// </summary>
     /// <seealso cref="ChatRateLimitCount"/>
     public static readonly CVarDef<float> ChatRateLimitPeriod =
-        CVarDef.Create("chat.rate_limit_period", 2f, CVar.SERVERONLY);
+        CVarDef.Create("chat.rate_limit_period", 2.5f, CVar.SERVERONLY);
 
     /// <summary>
     ///     How many chat messages are allowed in a single rate limit period.
@@ -21,7 +21,7 @@ public sealed partial class CCVars
     /// </remarks>
     /// <seealso cref="ChatRateLimitPeriod"/>
     public static readonly CVarDef<int> ChatRateLimitCount =
-        CVarDef.Create("chat.rate_limit_count", 10, CVar.SERVERONLY);
+        CVarDef.Create("chat.rate_limit_count", 2, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum delay (in seconds) between notifying admins about chat message rate limit violations.

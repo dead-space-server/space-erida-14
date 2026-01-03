@@ -15,6 +15,9 @@ namespace Content.Shared.Movement.Systems
         private float _frictionModifier;
         private float _airDamping;
         private float _offGridDamping;
+        private float _speedModifierThreshold;
+        private float _speedModifierThresholdSaveZone;
+        private float _speedModifierThresholdStrength;
 
         public override void Initialize()
         {
@@ -26,6 +29,9 @@ namespace Content.Shared.Movement.Systems
             Subs.CVar(_configManager, CCVars.TileFrictionModifier, value => _frictionModifier = value, true);
             Subs.CVar(_configManager, CCVars.AirFriction, value => _airDamping = value, true);
             Subs.CVar(_configManager, CCVars.OffgridFriction, value => _offGridDamping = value, true);
+            Subs.CVar(_configManager, CCVars.SpeedModifierThreshold, value => _speedModifierThreshold = value, true);
+            Subs.CVar(_configManager, CCVars.SpeedModifierThresholdSaveZone, value => _speedModifierThresholdSaveZone = value, true);
+            Subs.CVar(_configManager, CCVars.SpeedModifierThresholdStrength, value => _speedModifierThresholdStrength = value, true);
         }
 
         private void OnModMapInit(Entity<MovementSpeedModifierComponent> ent, ref MapInitEvent args)
@@ -105,6 +111,21 @@ namespace Content.Shared.Movement.Systems
             Dirty(uid, move);
         }
 
+        private float AdjustMovementModifier(float modifier)
+        {
+            // If the difference between the modifier and the threshold is less than the save zone, then we leave it as it is.
+            // If our excess higher than we reduce it through exponential growth
+            // We should use modifier without safe zone and skip safe zoned values
+            var speedModifierThresholdWithoutSafeZone = _speedModifierThreshold - _speedModifierThresholdSaveZone;
+
+            if (modifier > speedModifierThresholdWithoutSafeZone && modifier - speedModifierThresholdWithoutSafeZone > _speedModifierThresholdSaveZone)
+            {
+                var excess = modifier - speedModifierThresholdWithoutSafeZone;
+                return speedModifierThresholdWithoutSafeZone + (float)Math.Round(Math.Exp(_speedModifierThresholdStrength * excess), 2);
+            }
+            else { return modifier; }
+        }
+
         public void RefreshMovementSpeedModifiers(EntityUid uid, MovementSpeedModifierComponent? move = null)
         {
             if (!Resolve(uid, ref move, false))
@@ -120,8 +141,18 @@ namespace Content.Shared.Movement.Systems
                 MathHelper.CloseTo(ev.SprintSpeedModifier, move.SprintSpeedModifier))
                 return;
 
-            move.WalkSpeedModifier = ev.WalkSpeedModifier;
-            move.SprintSpeedModifier = ev.SprintSpeedModifier;
+            // Erida edit start
+            if (move.WalkSpeedModifier < ev.WalkSpeedModifier || move.SprintSpeedModifier < ev.SprintSpeedModifier)
+            {
+                move.WalkSpeedModifier = AdjustMovementModifier(ev.WalkSpeedModifier);
+                move.SprintSpeedModifier = AdjustMovementModifier(ev.WalkSpeedModifier);
+            }
+            else
+            {
+                move.WalkSpeedModifier = ev.WalkSpeedModifier;
+                move.SprintSpeedModifier = ev.SprintSpeedModifier;
+            }
+            // Erida edit end
             Dirty(uid, move);
         }
 

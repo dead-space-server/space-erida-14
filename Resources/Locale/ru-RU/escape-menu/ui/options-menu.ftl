@@ -1,4 +1,4 @@
-## General stuff
+﻿## General stuff
 
 ui-options-title = Игровые настройки
 ui-options-tab-accessibility = Доступность
@@ -92,6 +92,9 @@ ui-options-vp-integer-scaling-tooltip =
 ui-options-vp-vertical-fit = Подгон окна просмотра по вертикали
 ui-options-vp-vertical-fit-tooltip =
     Когда функция включена, основное окно просмотра не будет учитывать горизонтальную ось
+ui-options-filter-label = Фильтр масштабирования:
+ui-options-filter-nearest = Ближайший (без сглаживания)
+ui-options-filter-bilinear = Билинейный (сглаженный)
     при подгонке под ваш экран. Если ваш экран меньше, чем окно просмотра,
     то это приведёт к его обрезанию по горизонтальной оси.
 ui-options-vp-low-res = Изображение низкого разрешения
@@ -164,6 +167,9 @@ ui-options-function-move-pulled-object = Тянуть объект в сторо
 ui-options-function-release-pulled-object = Перестать тянуть объект
 ui-options-function-point = Указать на что-либо
 ui-options-function-rotate-object-clockwise = Повернуть по часовой стрелке
+ui-options-function-smart-equip-suit-storage = Smart-equip to suit storage
+ui-options-function-smart-equip-pocket1 = Smart-equip to pocket 1
+ui-options-function-smart-equip-pocket2 = Smart-equip to pocket 2
 ui-options-function-rotate-object-counterclockwise = Повернуть против часовой стрелки
 ui-options-function-flip-object = Перевернуть
 ui-options-function-focus-chat-input-window = Писать в чат
@@ -221,6 +227,11 @@ ui-options-function-hotbar8 = Слот хотбара 8
 ui-options-function-hotbar9 = Слот хотбара 9
 ui-options-function-hotbar0 = Слот хотбара 0
 ui-options-function-hotbar-shift1 = Слот хотбара Shift+1
+ui-options-function-inspect-entity-tooltip = Open a ViewVariables window for the entity your mouse is currently hovering over.
+ui-options-function-inspect-server-component = Inspect Server Component
+ui-options-function-inspect-server-component-tooltip = Open a ViewVariables window with the server component set by the "quickinspect" command for the entity your mouse is currently hovering over.
+ui-options-function-inspect-client-component = Inspect Client Component
+ui-options-function-inspect-client-component-tooltip = Open a ViewVariables window with the client component set by the "quickinspect" command for the entity your mouse is currently hovering over.
 ui-options-function-hotbar-shift2 = Слот хотбара Shift+2
 ui-options-function-hotbar-shift3 = Слот хотбара Shift+3
 ui-options-function-hotbar-shift4 = Слот хотбара Shift+4

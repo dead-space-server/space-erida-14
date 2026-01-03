@@ -16,8 +16,8 @@
     Steel: 340
 
 - type: latheRecipe
-  id: ClothingBeltSyndieHolster
-  result: ClothingBeltSyndieHolster
+  id: ClothingBeltInteQHolster
+  result: ClothingBeltInteQHolster
   completetime: 2
   materials:
     Steel: 740

@@ -42,5 +42,5 @@
   recipeUnlocks:
   - RadarConsoleCircuitboard
   technologyPrerequisites:
-  - SpaceScanning
-  position: 12,3
+  - SalvageEquipment
+  position: 11,3

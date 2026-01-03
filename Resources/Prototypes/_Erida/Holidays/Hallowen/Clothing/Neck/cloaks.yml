@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckVampireCloak
+  name: Dracula cape
+  description: "Get this damn garlic away from me!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/cape/cape.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/cape/cape.rsi

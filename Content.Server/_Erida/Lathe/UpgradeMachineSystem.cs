@@ -33,7 +33,7 @@ public sealed class UpgradeMachineSystem : EntitySystem
     {
         var lathComponent = CompOrNull<LatheComponent>(ent.Owner);
 
-        if (ent.Comp.isFirstUpdate)
+        if (ent.Comp.IsFirstUpdate)
         {
             if (lathComponent != null)
             {
@@ -41,7 +41,7 @@ public sealed class UpgradeMachineSystem : EntitySystem
                 ent.Comp.BaseMaterialModifier = lathComponent.MaterialUseMultiplier;
             }
 
-            ent.Comp.isFirstUpdate = false;
+            ent.Comp.IsFirstUpdate = false;
         }
 
         _container.Insert(itemUid, ent.Comp.Container);

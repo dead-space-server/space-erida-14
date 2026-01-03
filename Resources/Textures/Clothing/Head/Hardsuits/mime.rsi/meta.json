@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Sprited by Roudenn(https://github.com/Roudenn)",
+  "copyright": "Sprited by Roudenn(https://github.com/Roudenn); Vox by Fazansen(https://github.com/Fazansen), modified for Vox by TrixxedHeart",
   "size": {
     "x": 32,
     "y": 32
@@ -27,6 +27,14 @@
     },
     {
       "name": "on-equipped-HELMET-reptilian",
+      "directions": 4
+    },
+    {
+      "name": "off-equipped-HELMET-vox",
+      "directions": 4
+    },
+    {
+      "name": "on-equipped-HELMET-vox",
       "directions": 4
     }
   ]

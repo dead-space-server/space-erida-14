@@ -1,0 +1,4 @@
+- type: shader
+  id: DesaturationOverlay
+  kind: source
+  path: "/Textures/_Erida/Shaders/desaturation.swsl"

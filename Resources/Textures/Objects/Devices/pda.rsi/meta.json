@@ -181,7 +181,13 @@
       "name": "pda-syndi"
     },
     {
-      "name": "pda-syndi-agent"
+      "name": "pda-syndi-corpsman"
+    },
+    {
+      "name": "pda-syndi-commander"
+    },
+    {
+      "name": "pda-syndi-operative"
     },
     {
       "name": "pda-virology"
@@ -194,6 +200,9 @@
     },
     {
       "name": "pda-zookeeper"
+    },
+    {
+      "name": "pda-seniorcourier"
     },
     {
       "name": "equipped-BELT",

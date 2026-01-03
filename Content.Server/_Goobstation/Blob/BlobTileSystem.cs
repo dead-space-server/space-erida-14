@@ -7,6 +7,7 @@ using Content.Server.Construction.Components;
 using Content.Server.Destructible;
 using Content.Server.Emp;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Mobs.Components;
 using Content.Shared.NPC.Components;
@@ -79,7 +80,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
 
         if (blobCoreComponent.CurrentChem == BlobChemType.ElectromagneticWeb)
         {
-            _empSystem.EmpPulse(_transform.GetMapCoordinates(uid), 3f, 1000f, 3f);
+            _empSystem.EmpPulse(_transform.GetMapCoordinates(uid), 3f, 1000f, TimeSpan.FromSeconds(3));
         }
     }
 

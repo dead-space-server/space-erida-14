@@ -1,5 +1,6 @@
 using Content.Server.Speech.Components;
 using Content.Shared.Speech;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems
@@ -15,11 +16,19 @@ namespace Content.Server.Speech.EntitySystems
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
             { "you", "wu" },
+            { "You", "Wu" },
+            // Erida-Loc-Start
+            { "ты", "ти" },
+            { "Ты", "Ти" },
+            { "вы", "ви" },
+            { "Вы", "Ви" },
+            // Erida-Loc-End
         };
 
         public override void Initialize()
         {
             SubscribeLocalEvent<OwOAccentComponent, AccentGetEvent>(OnAccent);
+            SubscribeLocalEvent<OwOAccentComponent, StatusEffectRelayedEvent<AccentGetEvent>>(OnAccentRelayed);
         }
 
         public string Accentuate(string message)
@@ -31,12 +40,22 @@ namespace Content.Server.Speech.EntitySystems
 
             return message.Replace("!", _random.Pick(Faces))
                 .Replace("r", "w").Replace("R", "W")
-                .Replace("l", "w").Replace("L", "W");
+                .Replace("l", "w").Replace("L", "W")
+                // Erida-Loc-Start
+                .Replace("р", "в").Replace("Р", "В")
+                .Replace("л", "в").Replace("Л", "В");
+                // Erida-Loc-End
         }
 
-        private void OnAccent(EntityUid uid, OwOAccentComponent component, AccentGetEvent args)
+        private void OnAccent(Entity<OwOAccentComponent> entity, ref AccentGetEvent args)
         {
             args.Message = Accentuate(args.Message);
         }
+
+        private void OnAccentRelayed(Entity<OwOAccentComponent> entity, ref StatusEffectRelayedEvent<AccentGetEvent> args)
+        {
+            args.Args.Message = Accentuate(args.Args.Message);
+        }
+
     }
 }

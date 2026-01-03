@@ -2,7 +2,7 @@
   id: BodyShadowkinArrow
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_arrow
@@ -11,7 +11,7 @@
   id: BodyShadowkinBlackHole
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_blackhole
@@ -20,7 +20,7 @@
   id: BodyShadowkinBrace
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_brace
@@ -29,7 +29,7 @@
   id: BodyShadowkinBrawly
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_brawly
@@ -38,7 +38,7 @@
   id: BodyShadowkinHeart
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_heart
@@ -47,7 +47,7 @@
   id: BodyShadowkinInk
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink
@@ -56,7 +56,7 @@
   id: BodyShadowkinInk2
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink2
@@ -65,7 +65,7 @@
   id: BodyShadowkinInk3
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink3
@@ -74,7 +74,7 @@
   id: BodyShadowkinInk4
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink4
@@ -83,7 +83,7 @@
   id: BodyShadowkinInk5
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink5
@@ -92,7 +92,7 @@
   id: BodyShadowkinInk6
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink6
@@ -101,7 +101,7 @@
   id: BodyShadowkinInkAnim
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_ink_anim
@@ -110,7 +110,7 @@
   id: BodyShadowkinLines
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_lines
@@ -119,7 +119,7 @@
   id: BodyShadowkinNeck
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_neck
@@ -128,7 +128,7 @@
   id: BodyShadowkinShield
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_shield
@@ -137,7 +137,7 @@
   id: BodyShadowkinVacuum
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: body_vacuum
@@ -146,7 +146,7 @@
   id: BodyShadowkinGauzeShoulder
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: gauze_shoulder_shadowkin
@@ -155,7 +155,7 @@
   id: BodyShadowkinGauzeLowArmR
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: gauze_lowerarm_r_shadowkin
@@ -164,7 +164,7 @@
   id: BodyShadowkinGauzeUpArmL
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: gauze_upperarm_l_shadowkin
@@ -173,7 +173,7 @@
   id: BodyShadowkinGauzeUpArmR
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: gauze_upperarm_r_shadowkin
@@ -182,7 +182,7 @@
   id: BodyShadowkinGauzeUpLegL
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: gauze_upperleg_l_shadowkin
@@ -191,7 +191,7 @@
   id: BodyShadowkinGauzeUpLegR
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Shadowkin]
+#  speciesRestriction: [Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_overlay.rsi
       state: gauze_upperleg_r_shadowkin

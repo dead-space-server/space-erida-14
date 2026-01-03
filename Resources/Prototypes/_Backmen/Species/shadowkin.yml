@@ -9,13 +9,14 @@
   markingLimits: MobShadowkinMarkingLimits
   dollPrototype: MobShadowkinDummy
   skinColoration: Hues
-  naming: First
-  maleFirstNames: names_shadowkin
-  femaleFirstNames: names_shadowkin
+  maleFirstNames: names-shadowkin-male-first
+  femaleFirstNames: names-shadowkin-female-first
+  maleLastNames: names-shadowkin-male-last
+  femaleLastNames: names-shadowkin-female-last
   minAge: 18
-  maxAge: 300
-  youngAge: 20
-  oldAge: 250
+  maxAge: 500
+  youngAge: 501
+  oldAge: 502
   sexes:
     - Male
     - Female
@@ -43,11 +44,21 @@
 - type: markingPoints
   id: MobShadowkinMarkingLimits
   points:
+    # Erida-start
+    Head:
+      points: 10
+      required: false
+    HeadSide:
+      points: 10
+      required: false
     Hair:
-      points: 1
+      points: 10
       required: false
     FacialHair:
-      points: 1
+      points: 10
+      required: false
+    Snout:
+      points: 10
       required: false
     Tail:
       points: 1
@@ -58,15 +69,18 @@
       required: true
       defaultMarkings: [EarsShadowkin]
     Chest:
-      points: 1
+      points: 10
       required: false
     Legs:
-      points: 2
+      points: 10
       required: false
     Arms:
-      points: 2
+      points: 10
       required: false
-
+    Overlay:
+      points: 10
+      required: false
+    # Erida-end
 - type: humanoidBaseSprite
   id: MobShadowkinAnyMarking
 

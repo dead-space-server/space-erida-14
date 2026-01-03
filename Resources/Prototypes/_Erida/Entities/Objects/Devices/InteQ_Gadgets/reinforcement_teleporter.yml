@@ -1,0 +1,23 @@
+- type: entity
+  parent: [BaseItem, BaseInteQContraband, ReinforcementRadio]
+  abstract: true
+  id: ReinforcementRadioInteQ
+  name: InteQ reinforcement radio
+  description: Call in a InteQ agent of questionable quality, instantly! Only basic equipment provided.
+  components:
+  - type: Sprite
+    sprite: _Orion/Objects/Devices/inteq_uplink.rsi
+    layers:
+    - state: inteq-uplink
+
+- type: entity
+  parent: [ReinforcementRadioInteQ, ReinforcementRadioSyndicateAncestor]
+  id: ReinforcementRadioInteQAncestor
+  name: InteQ genetic ancestor reinforcement radio
+  description: Calls in a specially trained ancestor of your choosing to assist you.
+
+- type: entity
+  parent: [ReinforcementRadioInteQ, ReinforcementRadioSyndicateAncestorNukeops]
+  id: ReinforcementRadioInteQAncestorNukeops
+  name: InteQ genetic ancestor reinforcement radio
+  description: Calls in a specially trained ancestor of your choosing to assist you.

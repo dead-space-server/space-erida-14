@@ -15,8 +15,8 @@
         Slash: 0.6
         Piercing: 0.6
         Heat: 0.7
-#  - type: StaminaResistance
-#    damageCoefficient: 0.80 // убрано до баланса всего
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine

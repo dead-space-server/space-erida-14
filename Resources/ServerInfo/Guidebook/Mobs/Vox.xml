@@ -1,28 +1,23 @@
 <Document>
-  # Vox
+  # Воксы
 
   <Box>
     <GuideEntityEmbed Entity="MobVox" Caption=""/>
   </Box>
 
-  [color=#ffa500]Warning! This species is not recommended for new players due to their fatal allergy to oxygen![/color]
+  [color=#ffa500]Внимание! Эта раса имеет сильно ограничивающие игровые механики и не рекомендуется для новых игроков. [/color]
 
-  Vox breathe nitrogen, and [color=#ffa500] oxygen is toxic to them.[/color]
-  Unfortunately, space stations tend to be full of oxygen,
-  so Vox must use an internal nitrogen supply at almost all times to avoid fatal exposure.
+  Воксы всегда появляются с включенным баллоном азота.
+  Запасная дыхательная маска и аварийный баллон азота предоставляются в их экстренном наборе.
 
-  Vox always spawn wearing working nitrogen internals equipment.
-  A spare breathing mask and an emergency nitrogen canister is provided in their survival box.
+  В дополнению к обычной еде, Воксы также могут кушать всякие упаковки, кожурки от бананов, скорлупу от яиц, и сырое мясо не имея никаких побочных эффектов. Они также любят пить сварочное топливо.
 
-  In addition to regular foods, Vox can also eat various snack packaging, banana peels, eggshells, and raw meat without any ill effects. They also like to drink welding fuel.
-
-  Vox [color=#1e90ff]slowly recover from low levels of poison damage[/color] on their own,
-  so long as they are careful not to exceed 20 poison damage.
-  This allows them to endure breathing station air for up to thirty seconds at a time without lasting damage,
-  letting them quickly eat, drink, take oral medication, and so on.
-  A thirty second oxygen exposure takes them two minutes to recover from.
-  If their health does not seem to improve within a minute of oxygen exposure, they should seek medical attention.
-
-  Vox deal Slash damage with their unarmed attack.
+  Воксы [color=#1e90ff]медленно восстанавливают повреждения, полученные от ядов если его уровень в них низкий[/color],
+  и не превышает 20 единиц.
+  Это позволяет им переживать дыхание воздухом станции до тридцати секунд без последствий,
+  позволяя быстро что-то съесть, выпить, принять лекарства и т.д.
+  Тридцатисекундное воздействие кислорода требует двух минут для восстановления.
+  Если здоровье не улучшается в течение минуты после воздействия кислорода, они должны обратиться за медицинской помощью.
+  Воксы наносят режущий урон используя свою атаку невооружёнными руками.
 
 </Document>

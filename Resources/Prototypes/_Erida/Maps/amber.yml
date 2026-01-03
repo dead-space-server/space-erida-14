@@ -2,7 +2,7 @@
   id: Amber_Erida
   mapName: 'Amber'
   mapPath: /Maps/Erida/amber.yml
-  minPlayers: 30
+  minPlayers: 0
   maxPlayers: 70
   stations:
     Amber:
@@ -66,6 +66,8 @@
           #silicon (4)
           StationAi: [ 1, 1 ]
           Borg: [ 3, 3 ]
+          #law
+          IAA: [ 1, 1]
       - type: StationGoal
         goals:
           - Singularity
@@ -87,3 +89,9 @@
           - Bunker
           - XenobiologyRepair
           - VirusologyAmbusol
+      # blob-config-start
+      - type: StationBlobConfig
+        stageBegin: 25
+        stageCritical: 350
+        stageTheEnd: 600
+      # blob-config-end

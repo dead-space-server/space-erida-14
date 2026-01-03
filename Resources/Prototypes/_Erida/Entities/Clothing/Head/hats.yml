@@ -115,3 +115,63 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadCoSCCcap
+  name: centcom chief of staff cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/coscc_cap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/coscc_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadCentcomOperatorBeret
+  name: centcom operator beret
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/centcom_beret.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/centcom_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadCentcomCargoCap
+  name: centcom cargo cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/centcom_cargo_cap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/centcom_cargo_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingHeadBase, BaseCentcommContraband]
+  id: ClothingHeadOSOCap
+  name: OSO cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/oso_cap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/oso_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon

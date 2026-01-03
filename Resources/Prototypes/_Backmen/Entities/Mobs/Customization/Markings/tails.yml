@@ -2,7 +2,7 @@
   id: TailAxolotl
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian]
+#  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: axolotl
@@ -11,7 +11,7 @@
   id: TailDatashark
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian]
+#  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: datashark_ears_inner
@@ -28,7 +28,7 @@
   id: TailEasternDragon
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian]
+#  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: easternd_primary
@@ -39,7 +39,7 @@
   id: TailFennec
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Felinid]
+#  speciesRestriction: [Anthropomorph, Felinid]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: fennec
@@ -48,7 +48,7 @@
   id: TailFish
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian]
+#  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: fish_primary
@@ -59,7 +59,7 @@
   id: TailFluffy
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Felinid]
+#  speciesRestriction: [Anthropomorph, Felinid]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: fluffy
@@ -68,7 +68,7 @@
   id: TailFox
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Felinid]
+#  speciesRestriction: [Anthropomorph, Felinid]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: fox_primary
@@ -79,7 +79,7 @@
   id: TailGecko
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian]
+#  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: gecko_primary
@@ -92,7 +92,7 @@
   id: TailKitsune
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Felinid]
+#  speciesRestriction: [Anthropomorph, Felinid]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: kitsune_primary
@@ -103,7 +103,7 @@
   id: TailMaw
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian, SlimePerson]
+#  speciesRestriction: [Anthropomorph, Reptilian, SlimePerson]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: maw
@@ -112,7 +112,7 @@
   id: TailShark
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Reptilian]
+#  speciesRestriction: [Anthropomorph, Reptilian]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: shark_fin
@@ -123,7 +123,7 @@
   id: TailSuccubus
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
+#  speciesRestriction: []
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: succubus
@@ -132,7 +132,7 @@
   id: TailTentacle
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Anthropomorph, Human, Oni]
+#  speciesRestriction: [Anthropomorph, Human, Oni]
   sprites:
     - sprite: Backmen/Mobs/Customization/tails32x32.rsi
       state: tentacle

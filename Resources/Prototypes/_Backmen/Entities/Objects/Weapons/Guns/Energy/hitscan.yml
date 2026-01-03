@@ -22,7 +22,7 @@
           volume: -2
   - type: Item
     size: SmallNormal
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: X01Attack
     fireCost: 100
   - type: BatteryWeaponFireModes
@@ -31,7 +31,7 @@
       fireCost: 100
     - proto: BulletDisabler
       fireCost: 75
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 1200
     startingCharge: 1200
   - type: MagazineVisuals

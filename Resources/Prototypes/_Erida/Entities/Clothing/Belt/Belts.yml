@@ -21,4 +21,10 @@
     state: sheath
   - type: Clothing
     sprite: _Erida/Clothing/Belt/sheriff_sheath.rsi
-    
+
+# i think we need new sprite >.<
+- type: entity
+  parent: [ClothingBeltSyndieHolster]
+  id: ClothingBeltInteQHolster
+  name: inteq shoulder holster
+  description: A deep shoulder holster capable of holding many types of ballistics.

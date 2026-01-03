@@ -8,7 +8,8 @@
     sprite: _Orion/Objects/Consumable/Smokeables/Cigarettes/Packs/inteq_cigarette.rsi
   - type: Item
     sprite: _Orion/Objects/Consumable/Smokeables/Cigarettes/Packs/inteq_cigarette.rsi
-  - type: StorageFill # Erida edit start
-    contents:
-    - id: CigaretteSyndicate
-      amount: 10 # Erida edit end
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: CigaretteSyndicate
+        amount: 10 # Erida edit end

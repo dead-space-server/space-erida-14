@@ -238,21 +238,21 @@
     - Garpy
 
 - type: entity
-  id: ShadokinTranslator
+  id: MarTranslator
   parent: [ TranslatorPoweredBase ]
-  name: Shadokin translator
-  description: Translates speech between Shadokin and Tau-Ceti Basic. For talking to Shadowkin!
+  name: Mar translator
+  description: Translates speech between Mar and Tau-Ceti Basic. For talking to Shadowkin!
   components:
   - type: HandheldTranslator
     spoken:
     - TauCetiBasic
-    - Shadokin
+    - Mar
     understood:
     - TauCetiBasic
-    - Shadokin
+    - Mar
     requires:
     - TauCetiBasic
-    - Shadokin
+    - Mar
 
 - type: entity
   id: DwarvenTranslator
@@ -322,3 +322,20 @@
     requires:
     - TauCetiBasic
     - Shark
+
+- type: entity
+  id: WawaTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Wawa translator
+  description: Translates speech between Wawa and Tau-Ceti Basic. For talking to Shadowkin!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Wawa
+    understood:
+    - TauCetiBasic
+    - Wawa
+    requires:
+    - TauCetiBasic
+    - Wawa

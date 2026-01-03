@@ -243,6 +243,11 @@ figurines-queen-3 = We consume all.
 figurines-queen-4 = We are the apex.
 figurines-queen-5 = You're just biomass.
 figurines-queen-6 = We must evolve.
+figurines-skeleton-1 = ACK ACK!
+figurines-skeleton-2 = Ugh, that locker was cramped!
+figurines-skeleton-3 = You're going to have a bad time.
+figurines-skeleton-4 = Got any milk?
+figurines-skeleton-5 = I have a bone to pick with you!
 
 # figurines-queen
 
@@ -276,3 +281,21 @@ figurines-hamlet-5 = Пип!
 figurines-hamlet-6 = Уиип!
 figurines-hamlet-7 = Иип!
 figurines-hamlet-8 = ТОЛЬКО НЕ МИКРОВОЛНОВКА!
+
+figurines-griffin-1 = МУХАХАХАХА, я такой злой!!
+figurines-griffin-2 = Как только я вижу Оулмена...
+figurines-griffin-3 = Как мы, гриффины, справляемся со стрессом? Просто не стрессуем!
+figurines-griffin-4 = Меня зовут не Гильда!!
+figurines-griffin-5 = Быть криминальным гением нелегко.
+
+figurines-owlman-1 = Не нужно бояться, человек-сова здесь!
+figurines-owlman-2 = ОВЛ ещё вернётся!
+figurines-owlman-3 = ГОРЯЧОО!!
+figurines-owlman-4 = Как ты называешь совиного фокусника, ХУ-ДИНИ?
+figurines-owlman-5 = Не волнуйтесь, гражданин, я спасу ваш день!
+
+figurines-thief-1 = У вас нет ордера!
+figurines-thief-2 = Это всего лишь обычный маяк!
+figurines-thief-3 = В этой сумке нет ничего подозрительного, офицер.
+figurines-thief-4 = Я понятия не имею, где сейчас ваш питомец...
+figurines-thief-5 = Ха, я и не знал, что эта стена может открываться...

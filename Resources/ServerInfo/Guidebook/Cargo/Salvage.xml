@@ -1,13 +1,11 @@
 <Document>
-  # Salvage
+  # Утилизация обломков
 
-  [color=cyan]Salvage[/color] is one of Cargo's key, but also most dangerous, sources of income. Salvage extracts money from [color=cyan]Space Debris[/color] and the enigmatic [color=cyan]Mining Asteroid[/color].
+  Утилизация пролетающих мимо станции обломков является одним из основных источников дохода отдела снабжения... пока крайней мере до того момента, когда атмосферные техники притащат канистру фрезона, стоимостью в дофиглион кредитов. Однако до тех пор вашей основной задачей будет заработок кредитов, а не постройка шаттла.
 
-  While the void of space is full of terrors, with proper preparation and coordination any Salvage Team can make a lot of money for Cargo.
+  ## Подготовка к утилизации
 
-  ## Preparations
-
-  Before leaving the station, ensure you are prepared with all the required equipment. Otherwise, you will likely die before seeing any profits!
+  Прежде чем приступить к утилизации обломков, вам понадобится несколько вещей.
 
   <Box>
     <GuideEntityEmbed Entity="SuitStorageSalv"/>
@@ -15,7 +13,7 @@
     <GuideEntityEmbed Entity="VendingMachineSalvage"/>
   </Box>
 
-  Everything needed before leaving the station is provided inside Salvage's starting room. While Science can research better weapons and equipment, it is best to be equipped with your starting gear rather than nothing.
+  Все необходимое вам перед покиданием станции находиться внутри утилизаторских отделов. Так же это снаряжение является единственным что у вас есть пока учёные не изучат более хорошие устройства.
 
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSpatio"/>
@@ -23,19 +21,19 @@
     <GuideEntityEmbed Entity="VendingMachineTankDispenserEVA"/>
   </Box>
 
-  The most basic equipment you need is the EVA setup.
+  Самое базовое снаряжение, которое вам нужно - это EVA-скафандр.
 
-  - [color=cyan]Spationaut Hardsuit[/color]: This keeps you alive in space. [italic]Remember to activate the helmet so you can breathe and turn on its built-in flashlight[/italic].
-  - [color=cyan]Magboots[/color]: These provide you with gravity when exploring space debris while also making you slip-proof.
-  - [color=cyan]Oxygen/Nitrogen[/color]: Depending on your species, you will need [color=cyan]Nitrogen[/color] (slimes & vox) or [color=cyan]Oxygen[/color] (every other species). The [color=cyan]Gas Tank Dispenser[/color] has all the tanks needed, so stock up.
+  - [color=cyan]Скафандр[/color]: Он позволяет вам передвигаться в космосе. [italic]Не забудьте надеть шлем и включить подачу воздуха, так же вы можете включать встроенный в шлем фонарь[/italic].
+  - [color=cyan]Магнитные ботинки[/color]: Позволяют вам передвигаться в условиях без гравитации по металлическим конструкциям.
+  - [color=cyan]Кислород/Азот[/color]: Исходя из вашей рассы, вам нужен [color=cyan]Азот[/color] (слаймолюды & воксы) или [color=cyan]Кислород[/color] (каждая другая расса). [color=cyan]Раздатчик баллонов[/color] содержит оба типа баллонов, так что не переживайте.
 
   <Box>
     <GuideEntityEmbed Entity="WeaponProtoKineticAccelerator"/>
   </Box>
 
-  All Salvage Specialists must be armed, in case they need to defend themselves from hostiles.
+  Все утилизаторы должны быть вооружены, на случай если им понадобится защититься от врагов.
 
-  - [color=cyan]Proto-Kinetic Accelerator[/color]: This gun has infinite ammunition, allowing you to slowly mine and fly through space. Science can print upgrades to make it hit harder, shoot farther, and cycle faster.
+  - [color=cyan]Прото-кинетический акселератор[/color]: Это оружие имеет бесконечные боеприпасы, позволяя вам медленно убивать врагов и летать по космосу. Учёные могут напечатать улучшения, чтобы сделать его более мощным, дальнобойным и быстрым.
 
   <Box>
     <GuideEntityEmbed Entity="Pickaxe"/>

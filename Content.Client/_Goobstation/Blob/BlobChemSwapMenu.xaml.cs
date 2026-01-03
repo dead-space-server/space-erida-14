@@ -87,4 +87,4 @@ namespace Content.Goobstation.Client.Blob
         }
     }
 }
-public sealed class BlobRadialMenuButton : RadialMenuTextureButtonWithSector;
+public sealed class BlobRadialMenuButton : RadialMenuButtonWithSector;

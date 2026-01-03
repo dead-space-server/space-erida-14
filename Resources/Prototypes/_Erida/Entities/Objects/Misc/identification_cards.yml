@@ -1,0 +1,179 @@
+- type: entity
+  parent: IDCardStandard
+  id: CoSCCIDCard
+  name: centcom chief of staff ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: &icon-rsi Interface/Misc/job_icons.rsi
+      offset: &icon-offset -0.15375, 0.0325 #3 pixels left, 2 pixels up
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: ChiefOfStaffCentralCommand
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomOfficerIDCard
+  name: centcom officer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomOperatorIDCard
+  name: centcom operator ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandOperator
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomIntendantIDCard
+  name: centcom intendant ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandIntendant
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomEngineerIDCard
+  name: centcom engineer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: CentcomClercIDCard
+  name: centcom clerc ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#343b7e"
+    - state: stripe_bottom
+      color: "#343b7e"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandClerc
+
+- type: entity
+  parent: IDCardStandard
+  id: OSOIDCard
+  name: OSO ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#2c2c2c"
+    - state: stripe_bottom
+      color: "#2c2c2c"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: OSO
+
+- type: entity
+  parent: IDCardStandard
+  id: CentralCommandHoSIDCard
+  name: Central Command HoS ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#4e0808"
+    - state: stripe_bottom
+      color: "#4e0808"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandHoS
+
+- type: entity
+  parent: IDCardStandard
+  id: CentralCommandSecIDCard
+  name: Central Command Security ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: "#282958"
+    - state: stripe_bottom
+      color: "#283758"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Nanotrasen
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: CentralCommandSecurity

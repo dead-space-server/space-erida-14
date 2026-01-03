@@ -37,7 +37,7 @@ public sealed partial class CCVars : CVars
     /// </summary>
     public static readonly CVarDef<bool> DebugPow3rDisableParallel =
         CVarDef.Create("debug.pow3r_disable_parallel", false, CVar.SERVERONLY);
-        
+
     /*
     * Blob
     */
@@ -49,4 +49,22 @@ public sealed partial class CCVars : CVars
 
     public static readonly CVarDef<bool> BlobCanGrowInSpace =
          CVarDef.Create("blob.grow_space", false, CVar.SERVER);
+
+    // <summary>
+    // The speed multiplier threshold beyond which it will decrease
+    // <summary>
+    public static readonly CVarDef<float> SpeedModifierThreshold =
+         CVarDef.Create("speed.modifier_threshold", 1.5f, CVar.SERVER);
+
+    // <summary>
+    // The range of numbers before the threshold at which the numbers grow too much
+    // <summary>
+    public static readonly CVarDef<float> SpeedModifierThresholdSaveZone =
+         CVarDef.Create("speed.modifier_threshold_safe_zone", 0.3f, CVar.SERVER);
+
+    // <summary>
+    // The smaller the value, the faster the modifier will decrease after the threshold.
+    // <summary>
+    public static readonly CVarDef<int> SpeedModifierThresholdStrength =
+         CVarDef.Create("speed.modifier_threshold_strength", -4, CVar.SERVER);
 }

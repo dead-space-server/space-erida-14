@@ -4,7 +4,7 @@
   parent: Clothing
   id: ClothingUnderSocksBase
   components:
-    - type: Food
+    - type: Edible
       requiresSpecialDigestion: true
     - type: SolutionContainerManager
       solutions:

@@ -22,6 +22,24 @@
     accent-mobster-words-15: accent-mobster-words-replace-15
     accent-mobster-words-16: accent-mobster-words-replace-16
     accent-mobster-words-17: accent-mobster-words-replace-17
+    # Erida-loc-start
+    accent-mobster-words-18: accent-mobster-words-replace-18
+    accent-mobster-words-19: accent-mobster-words-replace-19
+    accent-mobster-words-20: accent-mobster-words-replace-20
+    accent-mobster-words-21: accent-mobster-words-replace-21
+    accent-mobster-words-22: accent-mobster-words-replace-22
+    accent-mobster-words-23: accent-mobster-words-replace-23
+    accent-mobster-words-24: accent-mobster-words-replace-24
+    accent-mobster-words-25: accent-mobster-words-replace-25
+    accent-mobster-words-26: accent-mobster-words-replace-26
+    accent-mobster-words-27: accent-mobster-words-replace-27
+    accent-mobster-words-28: accent-mobster-words-replace-28
+    accent-mobster-words-29: accent-mobster-words-replace-29
+    accent-mobster-words-30: accent-mobster-words-replace-30
+    accent-mobster-words-31: accent-mobster-words-replace-31
+    accent-mobster-words-32: accent-mobster-words-replace-32
+    accent-mobster-words-33: accent-mobster-words-replace-33
+    # Erida-loc-end
 
 - type: accent
   id: italian
@@ -381,7 +399,7 @@
 - type: accent
   id: chatsanitize
   wordReplacements:
-    # Corvax-ChatSanitize-Start 
+    # Corvax-ChatSanitize-Start
 #    chatsan-word-1: chatsan-replacement-1
 #    chatsan-word-2: chatsan-replacement-2
 #    chatsan-word-3: chatsan-replacement-3
@@ -585,23 +603,32 @@
     liar-word-3: liar-word-replacement-3
     liar-word-4: liar-word-replacement-4
     liar-word-5: liar-word-replacement-5
+    liar-word-5-2: liar-word-replacement-5
     liar-word-6: liar-word-replacement-6
     liar-word-7: liar-word-replacement-7
+    liar-word-7-2: liar-word-replacement-7
+    liar-word-7-3: liar-word-replacement-7
     liar-word-8: liar-word-replacement-8
     liar-word-9: liar-word-replacement-9
     liar-word-10: liar-word-replacement-10
     liar-word-11: liar-word-replacement-11
-    liar-word-12: liar-word-replacement-12
+    # liar-word-12: liar-word-replacement-12 sure -> nah is too confusing.
     liar-word-13: liar-word-replacement-13
     liar-word-14: liar-word-replacement-14
+    liar-word-14-2: liar-word-replacement-14
     liar-word-15: liar-word-replacement-15
+    liar-word-15-2: liar-word-replacement-15
     liar-word-16: liar-word-replacement-16
+    liar-word-16-2: liar-word-replacement-16
     liar-word-17: liar-word-replacement-17
     liar-word-18: liar-word-replacement-18
+    liar-word-18-2: liar-word-replacement-18
     liar-word-19: liar-word-replacement-19
     liar-word-20: liar-word-replacement-20
+    liar-word-20-2: liar-word-replacement-20
     liar-word-21: liar-word-replacement-21
     liar-word-22: liar-word-replacement-22
+    liar-word-22-2: liar-word-replacement-22
     liar-word-23: liar-word-replacement-23
     liar-word-24: liar-word-replacement-24
     liar-word-25: liar-word-replacement-25
@@ -614,15 +641,12 @@
     liar-word-32: liar-word-replacement-32
     liar-word-33: liar-word-replacement-33
     liar-word-34: liar-word-replacement-34
-    liar-word-34-2: liar-word-replacement-34
     liar-word-35: liar-word-replacement-35
     liar-word-36: liar-word-replacement-36
     liar-word-37: liar-word-replacement-37
+    liar-word-37-2: liar-word-replacement-37
     liar-word-38: liar-word-replacement-38
     liar-word-39: liar-word-replacement-39
-    liar-word-40: liar-word-replacement-40
-    liar-word-41: liar-word-replacement-41
-    liar-word-42: liar-word-replacement-42
 
 - type: accent
   id: german

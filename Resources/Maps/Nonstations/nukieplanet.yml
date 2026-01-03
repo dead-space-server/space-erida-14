@@ -14153,7 +14153,7 @@ entities:
     - type: Transform
       pos: -10.5,7.5
       parent: 2
-- proto: VendingMachineChemicals
+- proto: VendingMachineChemicalsInteQ
   entities:
   - uid: 2272
     components:

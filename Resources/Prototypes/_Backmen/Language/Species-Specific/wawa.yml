@@ -1,0 +1,19 @@
+- type: language
+  id: Wawa
+  speech:
+    color: "#fff383"
+    #fontId: UnderdogRegular
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - ва
+    - ваа
+    - ава
+    - вава
+    - вав
+    - ав
+    - аваа
+    - авав
+    - ваав

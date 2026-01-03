@@ -15,8 +15,13 @@
     Head: MobSlimeHead
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
+    # Erida-start
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    # UndergarmentTop: MobHumanoidAnyMarking
+    # UndergarmentBottom: MobHumanoidAnyMarking
+    # Erida-end
     Tail: MobHumanoidAnyMarking
     Chest: MobSlimeTorso
     Eyes: MobHumanoidEyes
@@ -32,24 +37,41 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
+    # Erida-start
     Hair:
-      points: 1
+      points: 10
       required: false
     FacialHair:
-      points: 1
-      required: false
-    Chest:
-      points: 2
+      points: 10
       required: false
     Tail:
-      points: 1
+      points: 10
+      required: false
+    Snout:
+      points: 10
+      required: false
+    Head:
+      points: 10
+      required: false
+    HeadTop:
+      points: 10
+      required: false
+    HeadSide:
+      points: 10
+      required: false
+    Chest:
+      points: 10
       required: false
     Legs:
-      points: 4
+      points: 10
       required: false
     Arms:
-      points: 4
+      points: 10
       required: false
+    Overlay:
+      points: 10
+      required: false
+    # Erida-end
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin

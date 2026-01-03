@@ -81,9 +81,12 @@
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
-    bloodReagent: Blood
-    bloodMaxVolume: 10
+    bloodReagents:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 1
     bloodlossThreshold: 0
+    bloodMaxVolume: 10
   - type: Destructible
     thresholds:
     - trigger:

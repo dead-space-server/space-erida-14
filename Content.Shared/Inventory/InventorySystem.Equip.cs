@@ -1,4 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Erida.Ghosts;
+using Content.Shared._Erida.Strip;
 using Content.Shared.Armor;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -16,7 +18,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Inventory;
@@ -31,7 +32,6 @@ public abstract partial class InventorySystem
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedStrippableSystem _strippable = default!;
@@ -52,6 +52,30 @@ public abstract partial class InventorySystem
         if (!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
             return;
 
+        // Erida edit start
+        var currentSlotBlockComponent = CompOrNull<SlotBlockComponent>(args.Entity);
+        if (currentSlotBlockComponent != null)
+        {
+            var slotsToUnblock = new HashSet<SlotFlags>(currentSlotBlockComponent.BlockList);
+            var slotsToUnhide = new HashSet<SlotFlags>(currentSlotBlockComponent.HideList);
+
+            foreach (var equipContainer in component.Containers)
+            {
+                if (equipContainer == args.Container) continue;
+
+                var slotBlockComponent = CompOrNull<SlotBlockComponent>(equipContainer.ContainedEntity);
+                if (slotBlockComponent == null) continue;
+
+                slotsToUnblock.ExceptWith(slotBlockComponent.BlockList);
+                slotsToUnhide.ExceptWith(slotBlockComponent.BlockList);
+                slotsToUnhide.ExceptWith(slotBlockComponent.HideList);
+            }
+
+            component.BlockList.ExceptWith(slotsToUnblock);
+            component.HideList.ExceptWith(slotsToUnhide);
+        }
+        // Erida edit end
+
         var unequippedEvent = new DidUnequipEvent(uid, args.Entity, slotDef);
         RaiseLocalEvent(uid, unequippedEvent, true);
 
@@ -63,6 +87,18 @@ public abstract partial class InventorySystem
     {
         if (!TryGetSlot(uid, args.Container.ID, out var slotDef, inventory: component))
             return;
+
+        // Erida edit start
+        var slotBlockComponent = CompOrNull<SlotBlockComponent>(args.Entity);
+
+        if (slotBlockComponent != null)
+        {
+            slotBlockComponent.BlockList.ExceptWith(slotBlockComponent.HideList);
+
+            component.BlockList.UnionWith(slotBlockComponent.BlockList);
+            component.HideList.UnionWith(slotBlockComponent.HideList);
+        }
+        // Erida edit end
 
         var equippedEvent = new DidEquipEvent(uid, args.Entity, slotDef);
         RaiseLocalEvent(uid, equippedEvent, true);
@@ -276,8 +312,21 @@ public abstract partial class InventorySystem
             return false;
         }
 
+        // Erida edit start
+        var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(actor);
+        if (ignoreInventoryBlockComponent != null && ignoreInventoryBlockComponent.IgnoreBlock) { }
+        else
+        {
+            if (inventory.BlockList.Contains(slotDefinition.SlotFlags))
+            {
+                reason = "inventory-component-can-equip-blocked-by-other-clothing";
+                return false;
+            }
+        };
+        // Erida edit end
+
         if (_whitelistSystem.IsWhitelistFail(slotDefinition.Whitelist, itemUid) ||
-            _whitelistSystem.IsBlacklistPass(slotDefinition.Blacklist, itemUid))
+            _whitelistSystem.IsWhitelistPass(slotDefinition.Blacklist, itemUid))
         {
             reason = "inventory-component-can-equip-does-not-fit";
             return false;
@@ -468,7 +517,7 @@ public abstract partial class InventorySystem
         // we check if any items were dropped, and make a popup if they were.
         // the reason we check for > 1 is because the first item is always the one we are trying to unequip,
         // whereas we only want to notify for extra dropped items.
-        if (!silent && _gameTiming.IsFirstTimePredicted && firstRun && itemsDropped > 1)
+        if (!silent && firstRun && itemsDropped > 1)
             _popup.PopupClient(Loc.GetString("inventory-component-dropped-from-unequip", ("items", itemsDropped - 1)), target, target);
 
         // TODO: Inventory needs a hot cleanup hoo boy
@@ -516,6 +565,19 @@ public abstract partial class InventorySystem
             reason = "interaction-system-user-interaction-cannot-reach";
             return false;
         }
+
+        // Erida edit start
+        var ignoreInventoryBlockComponent = CompOrNull<IgnoreInventoryBlockComponent>(actor);
+        if (ignoreInventoryBlockComponent != null && ignoreInventoryBlockComponent.IgnoreBlock) { }
+        else
+        {
+            if (inventory.BlockList.Contains(slotDefinition.SlotFlags))
+            {
+                reason = "interaction-system-user-cannot-unequip-blocked-by-other-clothing";
+                return false;
+            }
+        }
+        // Erida edit end
 
         var attemptEvent = new IsUnequippingAttemptEvent(actor, target, itemUid, slotDefinition);
         RaiseLocalEvent(actor, attemptEvent, true);

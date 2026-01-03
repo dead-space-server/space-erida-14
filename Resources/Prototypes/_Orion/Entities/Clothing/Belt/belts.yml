@@ -41,17 +41,17 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHigh
+        startingItem: PowerCellHyper
         whitelist:
           tags:
             - PowerCell
             - PowerCellSmall
-#  - type: EnergyDomeGenerator
-#    damageEnergyDraw: 8
-#    domePrototype: EnergyDomeSmallOrange
+  - type: EnergyDomeGenerator
+    damageEnergyDraw: 8
+    domePrototype: EnergyDomeSmallOrange
   - type: PowerCellDraw
     drawRate: 0
-    useRate: 0
+    useCharge: 0
   - type: UseDelay
     delay: 10.0
 

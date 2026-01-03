@@ -155,7 +155,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
 
             var objectiveLabel = new RichTextLabel
             {
-                StyleClasses = { StyleNano.StyleClassTooltipActionTitle }
+                StyleClasses = { StyleClass.TooltipTitle }
             };
             objectiveLabel.SetMessage(objectiveText);
 
@@ -165,7 +165,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             {
                 var conditionControl = new ObjectiveConditionsControl();
                 conditionControl.ProgressTexture.Texture = _sprite.Frame0(condition.Icon);
-                conditionControl.ProgressTexture.Progress = condition.Progress;
+                // conditionControl.ProgressTexture.Progress = condition.Progress; // Erida
                 var titleMessage = new FormattedMessage();
                 var descriptionMessage = new FormattedMessage();
                 titleMessage.AddText(condition.Title);

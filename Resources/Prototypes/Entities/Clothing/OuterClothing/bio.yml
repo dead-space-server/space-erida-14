@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterBaseLarge
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothingGasTanks]
   id: ClothingOuterBioGeneral
   name: bio suit
   suffix: Generic
@@ -9,10 +9,13 @@
     sprite: Clothing/OuterClothing/Bio/general.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Bio/general.rsi
+  - type: HideLayerClothing
+    slots:
+    - Tail
   - type: Armor
     modifiers:
-      coefficients:
-        Caustic: 0.75
+      coefficients: # Erida
+        Caustic: 0.65
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.35
   - type: GroupExamine
@@ -45,8 +48,8 @@
     sprite: Clothing/OuterClothing/Bio/janitor.rsi
   - type: Armor
     modifiers:
-      coefficients:
-        Caustic: 0.4
+      coefficients: # Erida
+        Caustic: 0.3
 
 - type: entity
   parent: ClothingOuterBioGeneral
@@ -61,7 +64,7 @@
     sprite: Clothing/OuterClothing/Bio/scientist.rsi
 
 - type: entity
-  parent: [ClothingOuterBioGeneral, BaseSecurityContraband]
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseSecurityContraband]
   id: ClothingOuterBioSecurity
   name: bio suit
   suffix: Security
@@ -73,12 +76,16 @@
     sprite: Clothing/OuterClothing/Bio/security.rsi
   - type: Armor
     modifiers:
-      coefficients:
-        Caustic: 0.8
-        Slash: 0.6
-        Piercing: 0.8
+      coefficients: # Erida
+        Caustic: 0.7
+        Slash: 0.5
+        Piercing: 0.7
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.4
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
 
 - type: entity
   parent: ClothingOuterBioGeneral

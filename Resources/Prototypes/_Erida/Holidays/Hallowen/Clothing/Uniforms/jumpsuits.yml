@@ -1,0 +1,10 @@
+- type: entity
+  parent: [ClothingUniformSkirtBase]
+  id: ClothingUniformJumpsuitSkeleton
+  name: Skeleton costume
+  description: "What did the skeleton bring to the barbecue? Spare ribs!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/skeleton_suit/jumpsuit.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/skeleton_suit/jumpsuit.rsi

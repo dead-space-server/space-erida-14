@@ -56,13 +56,3 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMaintenance ]
-
-- type: entity
-  parent: AirlockHatchCentcomm
-  id: AirlockHatchSyndicateLocked
-  name: Syndicate Hatch
-  suffix: Syndicate, Locked
-  components:
-  - type: ContainerFill
-    containers:
-      board: [ DoorElectronicsSyndicateAgent ]

@@ -1,0 +1,35 @@
+- type: job
+  id: OSO
+  name: job-name-centcom-oso
+  description: job-description-centcom-oso
+  playTimeTracker: JobOSO
+  setPreference: false
+  startingGear: OSOGear
+  icon: "JobIconNanotrasenOSO"
+  supervisors: job-supervisors-shosoc
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: OSOGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOSO
+    shoes: ClothingShoesBootsSpetsnaz
+    mask: ClothingMaskGasSecurity
+    head: ClothingHeadOSOCap
+    neck: ClothingNeckOSOCloak
+    eyes: ClothingEyesGlassesOSO
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorOSOCarapace
+    id: OSOPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltMilitaryWebbing
+    pocket1: CombatKnifeSpetsnaz
+    pocket2: ToolDebug
+    suitstorage: WeaponPulsePistol

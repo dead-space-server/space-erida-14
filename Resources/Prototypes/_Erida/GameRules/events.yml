@@ -1,0 +1,10 @@
+- type: entityTable
+  id: BasicLightAntagEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: ClosetSkeleton
+    - id: KingRatMigration
+    - id: ParadoxCloneSpawn
+    - id: RevenantSpawn
+    - id: SleeperAgents
+    - id: DerelictGenericCyborgSpawn

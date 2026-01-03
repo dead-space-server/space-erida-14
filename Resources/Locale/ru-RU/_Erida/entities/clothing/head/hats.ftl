@@ -14,3 +14,7 @@ ent-ClothingHeadSanabi = шапка генерала
    .desc = выглядит стильно.
 ent-ClothingHeadJeester = шляпа джестера
    .desc = в ней точно нет кролика.
+ent-ClothingHeadCoSCCcap = фуражка начальника штаба Центком
+ent-ClothingHeadCentcomOperatorBeret = берет оператора Центком
+ent-ClothingHeadCentcomCargoCap = фуражка снабжения Центком
+ent-ClothingHeadOSOCap = фуражка офицера специальных операций

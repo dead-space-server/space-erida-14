@@ -1,0 +1,31 @@
+- type: job
+  id: CentralCommandClerc
+  name: job-name-centcom-clerc
+  description: job-description-centcom-clerc
+  playTimeTracker: JobCentralCommandClerc
+  setPreference: false
+  startingGear: CentcomClercGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: CentcomClercGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomClerc
+    back: ClothingBackpackSatchelLeather
+    shoes: ClothingShoesColorBlack
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesHop
+    id: CentcomClercPDA
+    ears: ClothingHeadsetCentCom
+    belt: BoxFolderClipboard
+    pocket1: BoxFolderCentCom
+    pocket2: HandLabeler

@@ -49,6 +49,17 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField(required: true), AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species { get; set; }
 
+    // Erida-start
+    [DataField, AutoNetworkedField]
+    public string CustomSpecies { get; set; } = string.Empty;
+
+    [DataField, AutoNetworkedField]
+    public float Height { get; set; } = 1f;
+
+    [DataField, AutoNetworkedField]
+    public float Width { get; set; } = 1f;
+    // Erida-end
+
     // Corvax-TTS-Start
     /// <summary>
     ///     Current voice. Used for correct cloning.

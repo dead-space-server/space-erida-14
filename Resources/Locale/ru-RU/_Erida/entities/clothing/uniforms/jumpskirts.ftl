@@ -6,3 +6,6 @@ ent-ClothingUniformJumpsuitmaidblue = голубой костюм горничн
    .desc = Такой же как и чёрный, но голубой, не обижайте её владельца.
 ent-ClothingUniformJumpsuitmaidpink = розовый костюм горничной 
    .desc = Такой же как и чёрный, но розовый, не обижайте её владельца.
+ent-ClothingUniformJumpskirtCoSCC = юбка-комбинезон начальника штаба Центком
+ent-ClothingUniformJumpskirtCentcomDeputy = юбка-комбинезон представителя Центком
+ent-ClothingUniformJumpskirtCentcomOperator = юбка-комбинезон оператора Центком

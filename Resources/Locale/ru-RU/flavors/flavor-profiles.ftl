@@ -1,4 +1,4 @@
-flavor-profile = На вкус { $flavor }.
+﻿flavor-profile = На вкус { $flavor }.
 flavor-profile-multiple = На вкус { $flavors } и { $lastFlavor }.
 flavor-profile-unknown = Вкус неописуем.
 
@@ -183,6 +183,7 @@ flavor-complex-paint-thinner = как растворитель для краск
 flavor-complex-numbing-tranquility = как оцепенелое спокойствие
 flavor-complex-true-nature = как истинная природа реальности
 flavor-complex-false-meat = как не совсем не мясо
+flavor-complex-canned-tuna = как консервированный тунец
 flavor-complex-paper = как кашеобразная масса
 flavor-complex-compressed-meat = как спрессованное мясо
 flavor-complex-dog-food = как еда для собак

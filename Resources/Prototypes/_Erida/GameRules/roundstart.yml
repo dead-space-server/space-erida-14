@@ -11,6 +11,21 @@
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
 
+- type: entityTable
+  id: BasicLightGameRulesTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+      - !type:NestedSelector
+        tableId: BasicCalmEventsTable
+      - !type:NestedSelector
+        tableId: BasicLightAntagEventsTable
+      - !type:NestedSelector
+        tableId: CargoGiftsTable
+      - !type:NestedSelector
+        tableId: CalmPestEventsTable
+      - !type:NestedSelector
+        tableId: SpicyPestEventsTable
+
 - type: entity
   id: BasicCalmStationEventScheduler
   parent: BaseGameRule
@@ -18,3 +33,37 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: BasicCalmGameRulesTable
+
+- type: entity
+  id: LightDynamicScheduler
+  parent: BaseGameRule
+  components:
+  - type: BasicStationEventScheduler
+    minMaxEventTiming:
+      min: 420 # 7 min
+      max: 1020 # 15.5 min
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicLightGameRulesTable
+  - type: SubGamemodes
+    rules:
+    - id: Traitor
+      prob: 0.8
+    - id: Thief
+      prob: 0.6
+
+- type: entity
+  id: HardDynamicScheduler
+  parent: BaseGameRule
+  components:
+  - type: SubGamemodes
+    rules:
+    - id: Nukeops
+      prob: 0.17
+    - id: Zombie
+      prob: 0.17
+    - id: Wizard
+      prob: 0.17
+    - id: Revolutionary
+      prob: 0.17
+    - id: Xenoborgs
+      prob: 0.17

@@ -88,3 +88,9 @@
           - Bunker
           - XenobiologyRepair
           - VirusologyAmbusol
+        # blob-config-start
+        - type: StationBlobConfig
+          stageBegin: 50
+          stageCritical: 400
+          stageTheEnd: 800
+        # blob-config-end

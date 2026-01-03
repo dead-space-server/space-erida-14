@@ -2,7 +2,7 @@
   id: EarsShadowkin
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -11,7 +11,7 @@
   id: EarsShadowkinStriped
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -22,7 +22,7 @@
   id: EarsShadowkinStripes
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -33,7 +33,7 @@
   id: EarsShadowkinElegant
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -44,7 +44,7 @@
   id: EarsShadowkinMotley
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -55,7 +55,7 @@
   id: EarsShadowkinShady
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: shady
@@ -64,7 +64,7 @@
   id: EarsShadowkinPiercingAll
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -75,7 +75,7 @@
   id: EarsShadowkinPiercingLeft
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -86,7 +86,7 @@
   id: EarsShadowkinPiercingRight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -97,7 +97,7 @@
   id: EarsShadowkinRingedAll
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -108,7 +108,7 @@
   id: EarsShadowkinRingedLeft
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -119,7 +119,7 @@
   id: EarsShadowkinRingedRight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -131,7 +131,7 @@
   id: EarsShadowkinGauzedAll
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -142,7 +142,7 @@
   id: EarsShadowkinGauzedLeft
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -153,7 +153,7 @@
   id: EarsShadowkinGauzedRight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: Backmen/Mobs/Customization/ears.rsi
       state: shadowkin
@@ -164,7 +164,7 @@
   id: EarsShadowkinFluffy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -173,7 +173,7 @@
   id: EarsShadowkinFluffyButterfly
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -184,7 +184,7 @@
   id: EarsShadowkinFluffyCowling
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -195,7 +195,7 @@
   id: EarsShadowkinFluffyCrow
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -206,7 +206,7 @@
   id: EarsShadowkinFluffyMotley
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -217,7 +217,7 @@
   id: EarsShadowkinFluffySpidy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -228,7 +228,7 @@
   id: EarsShadowkinFluffyRingedAll
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -239,7 +239,7 @@
   id: EarsShadowkinFluffyRingedLeft
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -250,7 +250,7 @@
   id: EarsShadowkinFluffyRingedRight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: fluffy_default
@@ -261,7 +261,7 @@
   id: EarsShadowkinSaggy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -270,7 +270,7 @@
   id: EarsShadowkinSaggyBrawly
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -281,7 +281,7 @@
   id: EarsShadowkinSaggyZebra
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -292,7 +292,7 @@
   id: EarsShadowkinSaggyGradient
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -303,7 +303,7 @@
   id: EarsShadowkinSaggyGauzedAll
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -314,7 +314,7 @@
   id: EarsShadowkinSaggyGauzedLeft
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -325,7 +325,7 @@
   id: EarsShadowkinSaggyGauzedRight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: saggy_default
@@ -336,7 +336,7 @@
   id: EarsShadowkinShort
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: short_default
@@ -345,7 +345,7 @@
   id: EarsShadowkinShortButterfly
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: short_default
@@ -356,7 +356,7 @@
   id: EarsShadowkinShortRingedAll
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: short_default
@@ -367,7 +367,7 @@
   id: EarsShadowkinShortRingedLeft
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: short_default
@@ -378,7 +378,7 @@
   id: EarsShadowkinShortRingedRight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: short_default
@@ -389,7 +389,7 @@
   id: EarsShadowkinBull
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: bull_default
@@ -398,7 +398,7 @@
   id: EarsShadowkinBullSmooth
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: bull_default
@@ -409,7 +409,7 @@
   id: EarsShadowkinAqua
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: aqua_default
@@ -418,7 +418,7 @@
   id: EarsShadowkinAquaIncolor
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x32.rsi
       state: aqua_default
@@ -429,7 +429,7 @@
   id: EarsShadowkinAlpha
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x64.rsi
       state: alpha_default
@@ -439,7 +439,7 @@
   id: EarsShadowkinAlphaStripy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x64.rsi
       state: alpha_default
@@ -450,7 +450,7 @@
   id: EarsShadowkinAlphaTorch
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x64.rsi
       state: alpha_default
@@ -461,7 +461,7 @@
   id: EarsShadowkinAlphaTraced
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Anthropomorph, Shadowkin]
+#  speciesRestriction: [Anthropomorph, Shadowkin]
   sprites:
     - sprite: _Erida/Mobs/Customization/Shadowkin/shadowkin_ears_32x64.rsi
       state: alpha_default

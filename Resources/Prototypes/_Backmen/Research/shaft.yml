@@ -106,5 +106,5 @@
    - HandheldGPSBasic
    - HandHeldMassScanner
   technologyPrerequisites:
-  - SalvageEquipment
-  position: 11,3
+  - SpaceScanningMachines
+  position: 12,3

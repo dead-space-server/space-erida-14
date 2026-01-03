@@ -9,3 +9,9 @@
       sprite: _Orion/Objects/Weapons/Melee/inteq_e_shield.rsi
     - type: Item
       sprite: _Orion/Objects/Weapons/Melee/inteq_e_shield.rsi
+    - type: PointLight
+      netsync: false
+      enabled: false
+      radius: 1.5
+      energy: 2
+      color: orange

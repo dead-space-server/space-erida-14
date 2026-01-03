@@ -1,0 +1,9 @@
+job-description-coscc = Manage the Central Command station, distribute work among other members of the Central Command staff, and express your will.
+job-description-centcom-officer = Monitor the performance of operators and maintain order within the Central Command headquarters.
+job-description-centcom-operator = Receive faxes from stations, respond to station requests, and maintain timely control of the situation at stations.
+job-description-centcom-hos = Manage your security personnel and monitor their performance, ensuring the safety of the entire Central Command facility.
+job-description-centcom-sec = Catch access control violators and enemies of the corporation, protect the Central Command employees, ensure compliance with the law and that no one violates document secrecy, and so on.
+job-description-centcom-oso = Do you really need a description of your job?
+job-description-centcom-intendant = Keep track of the relatively modest material needs of the Central Command station.
+job-description-centcom-engineer = Monitor the technical condition of the Central Command station or assist the Central Command representative with inspections of engineering targets.
+job-description-centcom-clerc = Engage in sorting, processing and storing documents for Centcom.

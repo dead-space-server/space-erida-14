@@ -5,6 +5,9 @@
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/posters.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Card
   - type: Destructible
     thresholds:
     - trigger: # Excess damage, don't spawn entities
@@ -18,7 +21,7 @@
         acts: ["Destruction"]
     - trigger:
         !type:DamageTrigger
-        damage: 5
+        damage: 15
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -1049,6 +1052,26 @@
 
 - type: entity
   parent: PosterBase
+  id: PosterScream
+  name: "There Is No Gas Giant"
+  description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/poster1/poster.rsi
+    state: poster
+
+- type: entity
+  parent: PosterBase
+  id: PosterRun
+  name: "There Is No Gas Giant"
+  description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/poster2/poster.rsi
+    state: poster
+
+- type: entity
+  parent: PosterBase
   id: PosterLegitSafetyMothHardhat
   name: "Safety Moth - Hardhats"
   description: "This informational poster uses Safety Moth™ to tell the viewer to wear hardhats in cautious areas. \"It's like a lamp for your head!\""
@@ -1127,6 +1150,15 @@
   components:
   - type: Sprite
     state: poster55_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitBotanyFear
+  name: "Fear of hydroponics"
+  description: "Think three times before opening the airlock to hydroponics, a red threat might be hiding there."
+  components:
+  - type: Sprite
+    state: poster56_legit
 
 #maps
 

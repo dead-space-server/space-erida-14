@@ -34,16 +34,6 @@
   - ClothingNeckMantleBlueShield
 
 - type: loadoutGroup
-  id: BlueshieldBackpack
-  name: loadout-group-blueshield-backpack
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - ClothingBackpackBlueshield
-  - ClothingBackpackSatchelBlueshield
-  - ClothingBackpackDuffelBlueshield
-
-- type: loadoutGroup
   id: BlueshieldOuterClothing
   name: loadout-group-blueshield-outer
   loadouts:

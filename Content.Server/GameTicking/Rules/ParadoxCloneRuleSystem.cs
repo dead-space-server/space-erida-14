@@ -7,6 +7,8 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Medical.SuitSensor;
 using Content.Shared.Mind;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Random;
 
 namespace Content.Server.GameTicking.Rules;
@@ -61,18 +63,31 @@ public sealed class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxCloneRuleComp
             // get possible targets
             var allAliveHumanoids = _mind.GetAliveHumans();
 
-            // we already checked when starting the gamerule, but someone might have died since then.
+            // Erida edit start
+            // Selecting a random target that is at the station and alive
+            Entity<MindComponent> randomHumanoidMind;
+            while (allAliveHumanoids.Count != 0)
+            {
+                randomHumanoidMind = _random.Pick(allAliveHumanoids);
+
+                if (TryComp<TransformComponent>(randomHumanoidMind.Comp.OwnedEntity, out var xform)
+                    && CompOrNull<StationMemberComponent>(xform.GridUid) != null
+                    && TryComp<MobStateComponent>(randomHumanoidMind.Comp.OwnedEntity, out var mobStateComponent)
+                    && mobStateComponent.CurrentState != Shared.Mobs.MobState.Dead)
+                {
+                    ent.Comp.OriginalMind = randomHumanoidMind;
+                    ent.Comp.OriginalBody = randomHumanoidMind.Comp.OwnedEntity;
+                    break;
+                }
+                allAliveHumanoids.Remove(randomHumanoidMind);
+            }
+            // Erida edit end
+
             if (allAliveHumanoids.Count == 0)
             {
                 Log.Warning("Could not find any alive players to create a paradox clone from!");
                 return;
             }
-
-            // pick a random player
-            var randomHumanoidMind = _random.Pick(allAliveHumanoids);
-            ent.Comp.OriginalMind = randomHumanoidMind;
-            ent.Comp.OriginalBody = randomHumanoidMind.Comp.OwnedEntity;
-
         }
 
         if (ent.Comp.OriginalBody == null || !_cloning.TryCloning(ent.Comp.OriginalBody.Value, _transform.GetMapCoordinates(spawner), ent.Comp.Settings, out var clone))

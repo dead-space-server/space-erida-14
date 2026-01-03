@@ -1,8 +1,10 @@
+# ERIDA - COMMENT ALL speciesRestriction
+
 - type: marking
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Dwarf, SlimePerson]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -12,7 +14,7 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Dwarf, SlimePerson]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -22,7 +24,7 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid, Diona]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid, Diona]
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -33,7 +35,7 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid, Diona]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid, Diona]
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -44,7 +46,7 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid, Diona]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid, Diona]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -54,7 +56,7 @@
   id: ScarNeck
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -64,7 +66,7 @@
   id: ScarChestBullets
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -74,7 +76,7 @@
   id: ScarStomachBullets
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth, Arachnid]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -84,7 +86,7 @@
   id: ScarFace1
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -94,7 +96,7 @@
   id: ScarFace2
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson, Moth]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -104,7 +106,7 @@
   id: ScarEyeRightSmall
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -114,7 +116,7 @@
   id: ScarEyeLeftSmall
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson]
+#  speciesRestriction: [Human, Felinid, Dwarf, Reptilian, SlimePerson]
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

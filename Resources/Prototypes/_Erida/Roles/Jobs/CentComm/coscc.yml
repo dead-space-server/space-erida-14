@@ -1,0 +1,32 @@
+- type: job
+  id: ChiefOfStaffCentralCommand
+  name: job-name-coscc
+  description: job-description-coscc
+  playTimeTracker: JobChiefOfStaffCentralCommand
+  setPreference: false
+  startingGear: CoSCCGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-ccsa
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CoSCCGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCoSCC
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadCoSCCcap
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorCoSCCCarapace
+    id: CoSCCPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponPulsePistol
+    pocket1: ClothingNeckCoSCCCloak
+    pocket2: EnergySwordDedSad

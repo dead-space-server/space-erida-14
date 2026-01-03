@@ -1,0 +1,10 @@
+- type: reaction
+  id: BruizineDesoxyephedrine
+  impact: Medium
+  reactants:
+    Desoxyephedrine:
+      amount: 1
+    Dylovene:
+      amount: 1
+  products:
+    Razorium: 1

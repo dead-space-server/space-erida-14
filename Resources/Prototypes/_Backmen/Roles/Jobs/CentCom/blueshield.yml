@@ -47,6 +47,7 @@
   equipment:
     id: BlueShieldPDA
     gloves: ClothingHandsGlovesCombat
+    back: ClothingBackpackBlueshield
     ears: ClothingHeadsetAltCommand
     shoes: ClothingShoesBootsCombat
     belt: ClothingBeltBlueshieldWebbingFilled
@@ -63,6 +64,7 @@
     head: ClothingHeadHatLightBeretBlueShield
     mask: ClothingMaskGasSecurity
     neck: ClothingNeckMantleBlueShield
+    back: ClothingBackpackBlueshield
     gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesBootsCombat
     glasses: ClothingEyesBlueshieldVisor

@@ -1,0 +1,15 @@
+- type: entity
+  parent: EnergyDomeBase
+  id: EnergyDomeSmallBlue
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Orion/Effects/EnergyDome/energydome_small.rsi
+    layers:
+    - state: small
+      color: "#64b9de"
+  - type: PointLight
+    enabled: true
+    radius: 5
+    power: 2
+    color: "#64b9de"

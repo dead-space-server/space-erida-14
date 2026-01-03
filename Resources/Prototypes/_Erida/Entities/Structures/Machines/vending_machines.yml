@@ -116,3 +116,16 @@
   - type: AccessReader
     access: [["Captain"]]
 
+- type: entity
+  parent: VendingMachineChemicals
+  id: VendingMachineChemicalsInteQ
+  components:
+  - type: VendingMachine
+    pack: ChemVendInventorySyndicate
+    offState: off
+    brokenState: broken
+    normalState: normal
+    denyState: deny
+    ejectDelay: 2
+  - type: AccessReader
+    access: [["InteQ"]]

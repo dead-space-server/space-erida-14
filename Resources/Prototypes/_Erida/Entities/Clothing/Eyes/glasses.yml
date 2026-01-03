@@ -1,0 +1,49 @@
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, BaseCentcommContraband]
+  id: ClothingEyesGlassesCentcom
+  name: centcom glasses
+  description: Upgraded sunglasses that provide flash immunity and a security HUD.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Eyes/Glasses/centcom_sunglasses.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Eyes/Glasses/centcom_sunglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Construction
+    graph: GlassesSecHUD
+    node: glassesSec
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, ClothingEyesHudDiagnostic, BaseCentcommContraband]
+  id: ClothingEyesGlassesOSO
+  name: OSO glasses
+  description: Upgraded sunglasses that provide flash immunity and a security HUD.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Eyes/Glasses/oso_sunglasses.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Eyes/Glasses/oso_sunglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: ShowThirstIcons
+  - type: SolutionScanner
+  - type: ShowHungerIcons
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+    - Silicon
+  - type: Construction
+    graph: GlassesSecHUD
+    node: glassesSec
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IdentityBlocker
+    coverage: EYES

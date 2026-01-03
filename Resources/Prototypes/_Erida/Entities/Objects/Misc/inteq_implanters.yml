@@ -1,6 +1,6 @@
 - type: entity
   id: BaseImplantOnlyImplanterInteQ
-  parent: [BaseImplantOnlyImplanter, BaseSyndicateContraband]
+  parent: [BaseImplantOnlyImplanter, BaseInteQContraband]
   name: InteQ implanter
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
   abstract: true
@@ -69,11 +69,11 @@
 
 - type: entity
   id: RadioImplanterInteQ
-  name: syndicate radio implanter
+  name: inteq radio implanter
   parent: BaseImplantOnlyImplanterInteQ
   components:
   - type: Implanter
-    implant: RadioImplant
+    implant: RadioImplantInteQ
 
 - type: entity
   id: UplinkImplanterInteQ
@@ -137,7 +137,7 @@
   parent: BaseImplantOnlyImplanterInteQ
   components:
     - type: Implanter
-      implant: DeathRattleImplant
+      implant: DeathRattleImplantInteQ
 
 - type: entity
   id: DeathAcidifierImplanterInteQ

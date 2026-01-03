@@ -1,0 +1,55 @@
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCoSCCCarapace
+  name: centcom chief of staff carapace
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/coscc_carapace.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/coscc_carapace.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCentcomDeputyCarapace
+  name: centcom deputy carapace
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/centcom_carapace.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/centcom_carapace.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorOSOCarapace
+  name: OSO carapace
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/oso_carapace.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/oso_carapace.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorCentcomSec
+  name: centcom security vest
+  description:
+  components:
+  - type: Sprite
+    sprite: Backmen/Clothing/OuterClothing/Armor/centcom_sec_armor.rsi
+  - type: Clothing
+    sprite: Backmen/Clothing/OuterClothing/Armor/centcom_sec_armor.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

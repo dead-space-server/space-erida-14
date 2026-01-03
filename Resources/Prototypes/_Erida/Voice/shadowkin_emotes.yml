@@ -1,0 +1,56 @@
+- type: emote
+  id: Wurble
+  category: Vocal
+  available: false
+  name: chat-emote-name-wurble
+  whitelist:
+    components:
+    - Vocal
+  icon: _Erida/Interface/Emotes/purr.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-wurble"]
+  chatTriggers:
+    - урчит
+    - мурлычет
+    - фырчит
+
+- type: emote
+  id: Purse
+  name: chat-emote-name-purse
+  category: Hands
+  available: false
+  whitelist:
+    components:
+    - Hands
+  icon: _Erida/Interface/Emotes/purse.png
+  chatMessages: ["chat-emote-msg-purse"]
+  chatTriggers:
+    - поджимает уши
+    - поджимает ушки
+    - поджал ушки
+    - поджала ушки
+    - поджал уши
+    - поджала уши
+    - прижимает уши
+    - прижимает ушки
+    - прижал ушки
+    - прижала ушки
+
+- type: emote
+  id: ShadowkinGrowl
+  name: chat-emote-name-shadowkingrowl
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  icon: _Erida/Interface/Emotes/growl.png
+  chatMessages: ["chat-emote-msg-shadowkingrowl"]
+  chatTriggers:
+    - рычит
+    - скалится

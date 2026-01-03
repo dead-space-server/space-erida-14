@@ -6,8 +6,8 @@ using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
-using Content.Client.Sprite;
 using Content.Client.Stylesheets;
+using Content.Client.Sprite;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
@@ -55,10 +55,26 @@ namespace Content.Client.Lobby.UI
 
         // CCvar.
         private int _maxNameLength;
+        private int _maxCustomSpeciesLength; // Erida
         private bool _allowFlavorText;
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
+        // Orion-Start
+        private TextEdit? _flavorTextOOCEdit;
+        private TextEdit? _characterTextEdit;
+        private TextEdit? _greenTextEdit;
+        private TextEdit? _yellowTextEdit;
+        private TextEdit? _redTextEdit;
+        private TextEdit? _tagsTextEdit;
+        private TextEdit? _linksTextEdit;
+        private TextEdit? _nsfwTextEdit;
+        // Orion-End
+        // Erida start
+        private TextEdit? _nsfwLinksTextEdit;
+        private TextEdit? _flavorTextNSFWOOCEdit;
+        private TextEdit? _nsfwTagsTextEdit;
+        // Erida end
 
         // One at a time.
         private LoadoutWindow? _loadoutWindow;
@@ -136,6 +152,7 @@ namespace Content.Client.Lobby.UI
             _sprite = _entManager.System<SpriteSystem>();
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
+            _maxCustomSpeciesLength = _cfgManager.GetCVar(CCVars.MaxCustomSpeciesLength); // Erida
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
             ImportButton.OnPressed += args =>
@@ -230,6 +247,32 @@ namespace Content.Client.Lobby.UI
                 UpdateHairPickers();
                 OnSkinColorOnValueChanged();
             };
+            // Erida-start
+            IsCustomSpecies.OnPressed += _ =>
+            {
+                CustomSpeciesContainer.Visible = !CustomSpeciesContainer.Visible;
+                if (!IsCustomSpecies.Pressed)
+                    SetCustomSpecies(string.Empty);
+            };
+
+            CustomSpeciesEdit.IsValid = args => args.Length <= _maxCustomSpeciesLength;
+            CustomSpeciesEdit.OnTextChanged += args =>
+            {
+                string formattedMessage = FormattedMessage.RemoveMarkupPermissive(args.Text);
+                if (!string.IsNullOrEmpty(formattedMessage))
+                    SetCustomSpecies(formattedMessage);
+            };
+
+            HeightSlider.OnValueChanged += _ =>
+            {
+                OnHeightValueChanged();
+            };
+
+            WidthSlider.OnValueChanged += _ =>
+            {
+                OnWidthValueChanged();
+            };
+            // Erida-end
 
             #region Skin
 
@@ -480,30 +523,197 @@ namespace Content.Client.Lobby.UI
                 _flavorText = new FlavorText.FlavorText();
                 TabContainer.AddChild(_flavorText);
                 TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-flavortext-tab"));
+
                 _flavorTextEdit = _flavorText.CFlavorTextInput;
+                // Erida start
+                _flavorTextNSFWOOCEdit = _flavorText.CFlavorNSFWOOCTextInput;
+                _nsfwLinksTextEdit = _flavorText.CNSFWLinksTextInput;
+                _nsfwTagsTextEdit = _flavorText.CNSFWTagsTextInput;
+                // Erida end
+                // Orion-Start
+                _flavorTextOOCEdit = _flavorText.CFlavorOOCTextInput;
+                _characterTextEdit = _flavorText.CCharacterTextInput;
+                _greenTextEdit = _flavorText.CGreenTextInput;
+                _yellowTextEdit = _flavorText.CYellowTextInput;
+                _redTextEdit = _flavorText.CRedTextInput;
+                _tagsTextEdit = _flavorText.CTagsTextInput;
+                _linksTextEdit = _flavorText.CLinksTextInput;
+                _nsfwTextEdit = _flavorText.CNSFWTextInput;
+
+                // Orion-End
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
+                // Orion-Start
+                _flavorText.OnFlavorOOCTextChanged += OnFlavorOOCTextChange;
+                _flavorText.OnCharacterTextChanged += OnCharacterFlavorTextChange;
+                _flavorText.OnGreenTextChanged += OnGreenFlavorTextChange;
+                _flavorText.OnYellowTextChanged += OnYellowFlavorTextChange;
+                _flavorText.OnRedTextChanged += OnRedFlavorTextChange;
+                _flavorText.OnTagsTextChanged += OnTagsFlavorTextChange;
+                _flavorText.OnLinksTextChanged += OnLinksFlavorTextChange;
+                _flavorText.OnNSFWTextChanged += OnNSFWFlavorTextChange;
+                // Orion-End
+                // Erida start
+                _flavorText.OnNSFWLinksTextChanged += OnNSFWLinksFlavorTextChange;
+                _flavorText.OnNSFWFlavorOOCTextChanged += OnFlavorNSFWOOCTextChange;
+                _flavorText.OnNSFWTagsTextChanged += OnNSFWTagsFlavorTextChange;
+                _flavorText.OnFlavorTabChanged += OnTabChanged;
+                // Erida end
             }
             else
             {
                 if (_flavorText == null)
                     return;
 
-                TabContainer.RemoveChild(_flavorText);
                 _flavorText.OnFlavorTextChanged -= OnFlavorTextChange;
+                // Orion-Start
+                _flavorText.OnFlavorOOCTextChanged -= OnFlavorOOCTextChange;
+                _flavorText.OnCharacterTextChanged -= OnCharacterFlavorTextChange;
+                _flavorText.OnGreenTextChanged -= OnGreenFlavorTextChange;
+                _flavorText.OnYellowTextChanged -= OnYellowFlavorTextChange;
+                _flavorText.OnRedTextChanged -= OnRedFlavorTextChange;
+                _flavorText.OnTagsTextChanged -= OnTagsFlavorTextChange;
+                _flavorText.OnLinksTextChanged -= OnLinksFlavorTextChange;
+                _flavorText.OnNSFWTextChanged -= OnNSFWFlavorTextChange;
+                // Orion-End
+                // Erida start
+                _flavorText.OnNSFWLinksTextChanged -= OnNSFWLinksFlavorTextChange;
+                _flavorText.OnNSFWFlavorOOCTextChanged -= OnFlavorNSFWOOCTextChange;
+                _flavorText.OnNSFWTagsTextChanged -= OnNSFWTagsFlavorTextChange;
+                _flavorText.OnFlavorTabChanged -= OnTabChanged;
+                // Erida end
+
+                TabContainer.RemoveChild(_flavorText);
                 _flavorText.Dispose();
                 _flavorTextEdit?.Dispose();
+
                 _flavorTextEdit = null;
+                // Orion-Start
+                _flavorTextOOCEdit = null;
+                _characterTextEdit = null;
+                _greenTextEdit = null;
+                _yellowTextEdit = null;
+                _redTextEdit = null;
+                _tagsTextEdit = null;
+                _linksTextEdit = null;
+                _nsfwTextEdit = null;
+                // Orion-End
+                // Erida start
+                _nsfwLinksTextEdit = null;
+                _flavorTextNSFWOOCEdit = null;
+                _nsfwTagsTextEdit = null;
+                // Erida end
+
                 _flavorText = null;
             }
         }
+
+        // Erida start
+        private void UpdateNSFWPreviewVisibility(bool showNsfw)
+        {
+            if (_flavorText == null)
+                return;
+        }
+        private void OnTabChanged(int tab)
+        {
+            switch (tab)
+            {
+                case 3:
+                    UpdateNSFWPreviewVisibility(true);
+                    break;
+                default:
+                    UpdateNSFWPreviewVisibility(false);
+                    break;
+            }
+        }
+        // Erida end
+
+        // Orion-Start
+
+        private void ProcessLinks(string linksText, BoxContainer linksContainer)
+        {
+            if (linksContainer == null)
+                return;
+
+            linksContainer.RemoveAllChildren();
+            if (string.IsNullOrEmpty(linksText))
+                return;
+
+            var links = linksText.Split(new[] { ',', ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var link in links)
+            {
+                if (IsValidUrl(link))
+                {
+                    CreateLinkButton(link, linksContainer); // Erida edit
+                }
+                else
+                {
+                    CreateLinkTextLabel(link, linksContainer); // Erida edit
+                }
+            }
+        }
+
+        private bool IsValidUrl(string url)
+        {
+            return url.StartsWith("http://", StringComparison.OrdinalIgnoreCase) ||
+                url.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
+                url.StartsWith("www.", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void CreateLinkButton(string url, BoxContainer linksContainer) // Erida edit
+        {
+            var button = new Button
+            {
+                Text = GetLinkDisplayText(url),
+                ToolTip = Loc.GetString("humanoid-profile-editor-link-tooltip", ("url", url)),
+                HorizontalExpand = true,
+                HorizontalAlignment = HAlignment.Center,
+                StyleClasses = { StyleNano.ButtonOpenBoth }
+            };
+
+            button.OnPressed += _ => OpenLink(url);
+
+            linksContainer.AddChild(button); // Erida edit
+        }
+
+        private void CreateLinkTextLabel(string text, BoxContainer linksContainer) // Erida edit
+        {
+            var label = new Label
+            {
+                Text = text,
+                HorizontalExpand = true,
+                HorizontalAlignment = HAlignment.Center,
+                FontColorOverride = Color.Gray
+            };
+
+            linksContainer.AddChild(label); // Erida edit
+        }
+
+        private string GetLinkDisplayText(string url)
+        {
+            if (url.Length > 40)
+            {
+                return url[..37] + "...";
+            }
+            return url;
+        }
+
+        private void OpenLink(string url)
+        {
+            if (url.StartsWith("www.", StringComparison.OrdinalIgnoreCase))
+                url = "https://" + url;
+
+            var uriOpener = IoCManager.Resolve<IUriOpener>();
+            uriOpener.OpenUri(url);
+        }
+        // Orion-End
 
         /// <summary>
         /// Refreshes traits selector
         /// </summary>
         public void RefreshTraits()
         {
-            TraitsList.DisposeAllChildren();
+            TraitsList.RemoveAllChildren();
 
             var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
             TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
@@ -551,7 +761,7 @@ namespace Content.Client.Lobby.UI
                     {
                         Text = Loc.GetString(category.Name),
                         Margin = new Thickness(0, 10, 0, 0),
-                        StyleClasses = { StyleBase.StyleClassLabelHeading },
+                        StyleClasses = { StyleClass.LabelHeading },
                     });
                 }
 
@@ -619,6 +829,7 @@ namespace Content.Client.Lobby.UI
             _species.Clear();
 
             _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
+            _species.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.CurrentCultureIgnoreCase));
             var speciesIds = _species.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _species.Count; i++)
@@ -644,7 +855,7 @@ namespace Content.Client.Lobby.UI
 
         public void RefreshAntags()
         {
-            AntagList.DisposeAllChildren();
+            AntagList.RemoveAllChildren();
             var items = new[]
             {
                 ("humanoid-profile-editor-antag-preference-yes-button", 0),
@@ -672,8 +883,10 @@ namespace Content.Client.Lobby.UI
                 selector.Setup(items, title, 250, description, guides: antag.Guides);
                 selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
 
-                var requirements = _entManager.System<SharedRoleSystem>().GetAntagRequirement(antag);
-                if (!_requirements.CheckRoleRequirements(requirements, (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter, out var reason))
+                if (!_requirements.IsAllowed(
+                        antag,
+                        (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter,
+                        out var reason))
                 {
                     selector.LockRequirements(reason);
                     Profile = Profile?.WithAntagPreference(antag.ID, false);
@@ -769,11 +982,16 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateFlavorTextEdit();
+             // Orion
             UpdateSexControls();
             UpdateGenderControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateAgeEdit();
+            // Erida-start
+            UpdateCustomSpeciesEdit();
+            UpdateSize();
+            // Erida-end
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
@@ -823,7 +1041,7 @@ namespace Content.Client.Lobby.UI
             if (_prototypeManager.HasIndex<GuideEntryPrototype>(species))
                 page = new ProtoId<GuideEntryPrototype>(species.Id); // Gross. See above todo comment.
 
-            if (_prototypeManager.TryIndex(DefaultSpeciesGuidebook, out var guideRoot))
+            if (_prototypeManager.Resolve(DefaultSpeciesGuidebook, out var guideRoot))
             {
                 var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
@@ -837,7 +1055,7 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         public void RefreshJobs()
         {
-            JobList.DisposeAllChildren();
+            JobList.RemoveAllChildren();
             _jobCategories.Clear();
             _jobPriorities.Clear();
             var firstCategory = true;
@@ -1085,7 +1303,132 @@ namespace Content.Client.Lobby.UI
 
             Profile = Profile.WithFlavorText(content);
             SetDirty();
+
         }
+
+        // Orion-Start
+        private void OnFlavorOOCTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithOOCFlavorText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnCharacterFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnGreenFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithGreenPreferencesText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnYellowFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithYellowPreferencesText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnRedFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithRedPreferencesText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnTagsFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithTagsText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnLinksFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithLinksText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnNSFWFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWPreferencesText(content);
+            SetDirty();
+
+
+        }
+        // Orion-End
+        // Erida start
+        private void OnFlavorNSFWOOCTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWOOCFlavorText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnNSFWLinksFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWLinksText(content);
+            SetDirty();
+
+
+        }
+
+        private void OnNSFWTagsFlavorTextChange(string content)
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithNSFWTagsText(content);
+            SetDirty();
+
+
+        }
+        // Erida end
 
         private void OnMarkingChange(MarkingSet markings)
         {
@@ -1101,10 +1444,11 @@ namespace Content.Client.Lobby.UI
             if (Profile is null) return;
 
             var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
 
-            switch (skin)
+            switch (strategy.InputType)
             {
-                case HumanoidSkinColor.HumanToned:
+                case SkinColorationStrategyInput.Unary:
                 {
                     if (!Skin.Visible)
                     {
@@ -1112,39 +1456,14 @@ namespace Content.Client.Lobby.UI
                         RgbSkinColorContainer.Visible = false;
                     }
 
-                    var color = SkinColor.HumanSkinTone((int) Skin.Value);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                    break;
-                }
-                case HumanoidSkinColor.Hues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
-                    {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
-
-                    Markings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                    break;
-                }
-                case HumanoidSkinColor.TintedHues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
-                    {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
-
-                    var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
+                    var color = strategy.FromUnary(Skin.Value);
 
                     Markings.CurrentSkinColor = color;
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
                     break;
                 }
-                case HumanoidSkinColor.VoxFeathers:
+                case SkinColorationStrategyInput.Color:
                 {
                     if (!RgbSkinColorContainer.Visible)
                     {
@@ -1152,16 +1471,35 @@ namespace Content.Client.Lobby.UI
                         RgbSkinColorContainer.Visible = true;
                     }
 
-                    var color = SkinColor.ClosestVoxColor(_rgbSkinColorSelector.Color);
+                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
 
                     Markings.CurrentSkinColor = color;
                     Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
                     break;
                 }
             }
 
             ReloadProfilePreview();
         }
+
+        // Erida-start
+        private void OnHeightValueChanged()
+        {
+            Profile = Profile?.WithHeight(HeightSlider.Value / 100);
+            HeightLabel.Text = $"{(int)HeightSlider.Value}%";
+
+            IsDirty = true;
+        }
+
+        private void OnWidthValueChanged()
+        {
+            Profile = Profile?.WithWidth(WidthSlider.Value / 100);
+            WidthLabel.Text = $"{(int)WidthSlider.Value}%";
+
+            IsDirty = true;
+        }
+        // Erida-end
 
         protected override void Dispose(bool disposing)
         {
@@ -1243,6 +1581,14 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
+        // Erida-start
+        private void SetCustomSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithCustomSpecies(newSpecies);
+            IsDirty = true;
+        }
+        // Erida-end
+
         private void SetName(string newName)
         {
             Profile = Profile?.WithName(newName);
@@ -1278,18 +1624,104 @@ namespace Content.Client.Lobby.UI
             NameEdit.Text = Profile?.Name ?? "";
         }
 
+        // Orion-Edit-Start
         private void UpdateFlavorTextEdit()
         {
             if (_flavorTextEdit != null)
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
+
+            if (_flavorTextOOCEdit != null)
+            {
+                _flavorTextOOCEdit.TextRope = new Rope.Leaf(Profile?.OOCFlavorText ?? "");
+            }
+
+            if (_characterTextEdit != null)
+            {
+                _characterTextEdit.TextRope = new Rope.Leaf(Profile?.CharacterFlavorText ?? "");
+            }
+
+            if (_greenTextEdit != null)
+            {
+                _greenTextEdit.TextRope = new Rope.Leaf(Profile?.GreenFlavorText ?? "");
+            }
+
+            if (_yellowTextEdit != null)
+            {
+                _yellowTextEdit.TextRope = new Rope.Leaf(Profile?.YellowFlavorText ?? "");
+            }
+
+            if (_redTextEdit != null)
+            {
+                _redTextEdit.TextRope = new Rope.Leaf(Profile?.RedFlavorText ?? "");
+            }
+
+            if (_tagsTextEdit != null)
+            {
+                _tagsTextEdit.TextRope = new Rope.Leaf(Profile?.TagsFlavorText ?? "");
+            }
+
+            if (_linksTextEdit != null)
+            {
+                _linksTextEdit.TextRope = new Rope.Leaf(Profile?.LinksFlavorText ?? "");
+            }
+
+            if (_nsfwTextEdit != null)
+            {
+                _nsfwTextEdit.TextRope = new Rope.Leaf(Profile?.NSFWFlavorText ?? "");
+            }
+            // Erida start
+            if (_flavorTextNSFWOOCEdit != null)
+            {
+                _flavorTextNSFWOOCEdit.TextRope = new Rope.Leaf(Profile?.NSFWOOCFlavorText ?? "");
+            }
+            if (_nsfwLinksTextEdit != null)
+            {
+                _nsfwLinksTextEdit.TextRope = new Rope.Leaf(Profile?.NSFWLinksFlavorText ?? "");
+            }
+            if (_nsfwTagsTextEdit != null)
+            {
+                _nsfwTagsTextEdit.TextRope = new Rope.Leaf(Profile?.NSFWTagsFlavorText ?? "");
+            }
+            // Erida end
         }
+        // Orion-Edit-End
 
         private void UpdateAgeEdit()
         {
             AgeEdit.Text = Profile?.Age.ToString() ?? "";
         }
+
+        // Erida-start
+        private void UpdateCustomSpeciesEdit()
+        {
+            IsCustomSpecies.Pressed = false;
+            CustomSpeciesContainer.Visible = false;
+
+            CustomSpeciesEdit.Text = Profile?.CustomSpecies ?? string.Empty;
+            if (!string.IsNullOrEmpty(Profile?.CustomSpecies))
+            {
+                IsCustomSpecies.Pressed = true;
+                CustomSpeciesContainer.Visible = true;
+            }
+        }
+
+        private void UpdateSize()
+        {
+            if (Profile?.Height is null || Profile?.Width is null)
+                return;
+
+            float profileHeight = Profile.Height;
+            float profileWidth = Profile.Width;
+
+            HeightLabel.Text = $"{(int)(Profile.Height == 0 ? 100 : profileHeight * 100)}%";
+            WidthLabel.Text = $"{(int)(Profile.Width == 0 ? 100 : profileWidth * 100)}%";
+
+            HeightSlider.Value = Profile.Height == 0 ? 100 : profileHeight * 100;
+            WidthSlider.Value = Profile.Width == 0 ? 100 : profileWidth * 100;
+        }
+        // Erida-end
 
         /// <summary>
         /// Updates selected job priorities to the profile's.
@@ -1313,7 +1745,7 @@ namespace Content.Client.Lobby.UI
             var sexes = new List<Sex>();
 
             // add species sex options, default to just none if we are in bizzaro world and have no species
-            if (_prototypeManager.TryIndex<SpeciesPrototype>(Profile.Species, out var speciesProto))
+            if (_prototypeManager.Resolve<SpeciesPrototype>(Profile.Species, out var speciesProto))
             {
                 foreach (var sex in speciesProto.Sexes)
                 {
@@ -1343,10 +1775,11 @@ namespace Content.Client.Lobby.UI
                 return;
 
             var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
+            var strategy = _prototypeManager.Index(skin).Strategy;
 
-            switch (skin)
+            switch (strategy.InputType)
             {
-                case HumanoidSkinColor.HumanToned:
+                case SkinColorationStrategyInput.Unary:
                 {
                     if (!Skin.Visible)
                     {
@@ -1354,11 +1787,11 @@ namespace Content.Client.Lobby.UI
                         RgbSkinColorContainer.Visible = false;
                     }
 
-                    Skin.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+                    Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
 
                     break;
                 }
-                case HumanoidSkinColor.Hues:
+                case SkinColorationStrategyInput.Color:
                 {
                     if (!RgbSkinColorContainer.Visible)
                     {
@@ -1366,36 +1799,11 @@ namespace Content.Client.Lobby.UI
                         RgbSkinColorContainer.Visible = true;
                     }
 
-                    // set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
-                case HumanoidSkinColor.TintedHues:
-                {
-                    if (!RgbSkinColorContainer.Visible)
-                    {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
-
-                    // set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
-                case HumanoidSkinColor.VoxFeathers:
-                {
-                    if (!RgbSkinColorContainer.Visible)
-                    {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
-                    }
-
-                    _rgbSkinColorSelector.Color = SkinColor.ClosestVoxColor(Profile.Appearance.SkinColor);
+                    _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
 
                     break;
                 }
             }
-
         }
 
         public void UpdateSpeciesGuidebookIcon()
@@ -1406,7 +1814,7 @@ namespace Content.Client.Lobby.UI
             if (species is null)
                 return;
 
-            if (!_prototypeManager.TryIndex<SpeciesPrototype>(species, out var speciesProto))
+            if (!_prototypeManager.Resolve<SpeciesPrototype>(species, out var speciesProto))
                 return;
 
             // Don't display the info button if no guide entry is found
@@ -1414,7 +1822,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             const string style = "SpeciesInfoDefault";
-            SpeciesInfoButton.StyleClasses.Add(style);
+            SpeciesInfoButton.StyleIdentifier = style;
         }
 
         private void UpdateMarkings()
@@ -1598,7 +2006,7 @@ namespace Content.Client.Lobby.UI
                 return;
 
             StartExport();
-            await using var file = await _dialogManager.OpenFile(new FileDialogFilters(new FileDialogFilters.Group("yml")));
+            await using var file = await _dialogManager.OpenFile(new FileDialogFilters(new FileDialogFilters.Group("yml")), FileAccess.Read);
 
             if (file == null)
             {

@@ -43,6 +43,12 @@ public sealed record GeneralStationRecord
     public string Species = string.Empty;
 
     /// <summary>
+    ///     Species tied to this station record.
+    /// </summary>
+    [DataField]
+    public string CustomSpecies = string.Empty;
+
+    /// <summary>
     ///     Gender identity tied to this station record.
     /// </summary>
     /// <remarks>Sex should be placed in a medical record, not a general record.</remarks>

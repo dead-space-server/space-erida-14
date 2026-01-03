@@ -1,8 +1,10 @@
+# ERIDA - COMMENT ALL speciesRestriction
+
 - type: marking
   id: CatEars
   bodyPart: Special
   markingCategory: Special
-  speciesRestriction: [Human]
+#  speciesRestriction: [Human]
   coloring:
     default:
       type:
@@ -25,7 +27,7 @@
   id: CatTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Human]
+#  speciesRestriction: [Human]
   coloring:
     default:
       type:

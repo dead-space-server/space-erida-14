@@ -6,8 +6,9 @@
   components:
   - type: Item
     size: Normal
-  - type: StorageFill
-    contents:
-      - id: EncryptionKeyInteQ
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: EncryptionKeyInteQ
         amount: 2
   - type: Storage

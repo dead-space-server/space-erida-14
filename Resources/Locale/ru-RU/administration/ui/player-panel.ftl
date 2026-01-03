@@ -1,4 +1,4 @@
-player-panel-title = информация о { $player }
+﻿player-panel-title = информация о { $player }
 player-panel-username = Имя пользователя: { $player }
 player-panel-whitelisted = В вайтлисте?:
 player-panel-bans = Всего банов: { $totalBans }
@@ -21,3 +21,4 @@ player-panel-rejuvenate = Вылечить
 player-panel-false = Нет
 player-panel-true = Да
 player-panel-follow = Следовать
+player-panel-camera = Камера

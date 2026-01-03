@@ -67,6 +67,7 @@
   recipeUnlocks:
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
+  - SmartFridgeCircuitboard
   technologyPrerequisites:
    - Bootlegging
   position: 1,9
@@ -83,4 +84,6 @@
   recipeUnlocks:
   - UniformPrinterMachineCircuitboard
   - PrinterDocMachineCircuitboard
+  - BoxFolderClipboardEmpty
+  - BoxFolderPlasticClipboardEmpty
   position: 3,9

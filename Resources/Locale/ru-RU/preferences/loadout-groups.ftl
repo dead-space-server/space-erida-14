@@ -1,7 +1,9 @@
-# Errors
+﻿# Errors
 loadout-group-species-restriction = Этот предмет недоступен для вашего текущего вида.
+
 # Miscellaneous
 loadout-group-trinkets = Безделушки
+loadout-group-jobtrinkets = Должностные безделушки
 loadout-group-glasses = Очки
 loadout-group-backpack = Рюкзак
 loadout-group-instruments = Инструменты
@@ -42,6 +44,7 @@ loadout-group-chef-head = Шеф-повар, голова
 loadout-group-chef-mask = Шеф-повар, маска
 loadout-group-chef-jumpsuit = Шеф-повар, комбинезон
 loadout-group-chef-outerclothing = Шеф-повар, верхняя одежда
+loadout-group-bartender-shaker = Шейкер бармена
 loadout-group-librarian-jumpsuit = Библиотекарь, комбинезон
 loadout-group-lawyer-jumpsuit = Адвокат, комбинезон
 loadout-group-lawyer-neck = Адвокат, шея
@@ -87,6 +90,7 @@ loadout-group-cargo-technician-shoes = Грузчик, обувь
 loadout-group-salvage-specialist-backpack = Утилизатор, рюкзак
 loadout-group-salvage-specialist-outerclothing = Утилизатор, верхняя одежда
 loadout-group-salvage-specialist-shoes = Утилизатор, обувь
+loadout-group-cargo-technician-id = Грузчик, ID
 # Engineering
 loadout-group-chief-engineer-head = Старший инженер, голова
 loadout-group-chief-engineer-jumpsuit = Старший инженер, комбинезон

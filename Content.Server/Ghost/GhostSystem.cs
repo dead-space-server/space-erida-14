@@ -3,13 +3,14 @@ using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Ghost.Components;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Eye;
@@ -37,6 +38,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared._Erida.OnGhostAttemptDamage;
 
 namespace Content.Server.Ghost
 {
@@ -227,7 +229,7 @@ namespace Content.Server.Ghost
 
         private void OnMapInit(EntityUid uid, GhostComponent component, MapInitEvent args)
         {
-            _actions.AddAction(uid, ref component.BooActionEntity, component.BooAction);
+            // _actions.AddAction(uid, ref component.BooActionEntity, component.BooAction); // Erida
             _actions.AddAction(uid, ref component.ToggleGhostHearingActionEntity, component.ToggleGhostHearingAction);
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
@@ -332,7 +334,8 @@ namespace Content.Server.Ghost
             if (_followerSystem.GetMostGhostFollowed() is not { } target)
                 return;
 
-            WarpTo(uid, target);
+            // If there is a ghostnado happening you almost definitely wanna join it, so we automatically follow instead of just warping.
+            _followerSystem.StartFollowingEntity(uid, target);
         }
 
         private void WarpTo(EntityUid uid, EntityUid target)
@@ -586,7 +589,14 @@ namespace Content.Server.Ghost
 
                     DamageSpecifier damage = new(_prototypeManager.Index(AsphyxiationDamageType), dealtDamage);
 
-                    _damageable.TryChangeDamage(playerEntity, damage, true);
+                    // START-ADT-TWeak - Erida: взято с ADT
+                    if (TryComp<OnGhostAttemptDamageComponent>(playerEntity, out var damageComp))
+                    {
+                        damage = new(_prototypeManager.Index<DamageTypePrototype>(damageComp.BloodlossDamageType), dealtDamage);
+                    }
+                    // END-ADT-Tweak - Erida: взято с ADT
+
+                    _damageable.ChangeDamage(playerEntity.Value, damage, true);
                 }
             }
 

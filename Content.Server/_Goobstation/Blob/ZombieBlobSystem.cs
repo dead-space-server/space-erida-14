@@ -31,6 +31,7 @@ using Content.Shared.Roles.Components;
 using Content.Shared.Trigger.Components;
 using Content.Shared.Trigger.Components.Effects;
 using Content.Shared.Trigger.Systems;
+using Content.Shared.Temperature.Components;
 
 namespace Content.Goobstation.Server.Blob;
 

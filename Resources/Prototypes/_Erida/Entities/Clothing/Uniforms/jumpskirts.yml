@@ -43,3 +43,36 @@
       sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_pink.rsi
     - type: Clothing
       sprite: _Erida/Clothing/Uniforms/Jumpskirt/maid_pink.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpskirtCoSCC
+  name: centcom chief of staff jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/coscc_jumpskirt.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/coscc_jumpskirt.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpskirtCentcomDeputy
+  name: centcom deputy jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/centcom_jumpskirt.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/centcom_jumpskirt.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCentcommContraband]
+  id: ClothingUniformJumpskirtCentcomOperator
+  name: centcom operator jumpskirt
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/centcom_turtleneck_jumpskirt.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/centcom_turtleneck_jumpskirt.rsi

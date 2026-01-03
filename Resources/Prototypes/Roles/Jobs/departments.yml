@@ -38,6 +38,17 @@
   description: department-CentralCommand-description
   color: "#0c344d"
   roles:
+  # CentComm ivent roles start
+  - ChiefOfStaffCentralCommand
+  - CentralCommandOfficer
+  - CentralCommandOperator
+  - CentralCommandIntendant
+  - CentralCommandEngineer
+  - CentralCommandClerc
+  - OSO
+  - CentralCommandHoS
+  - CentralCommandSecurity
+  # CentComm ivent roles end
   - CentralCommandOfficial
   - CBURN
   - ERTLeader

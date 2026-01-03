@@ -715,7 +715,7 @@
           Quantity: 2
   - type: SolutionRegeneration
     solution: injector
-    duration: 0.25
+    duration: 5.5
     generated:
       reagents:
       - ReagentId: Bananadine

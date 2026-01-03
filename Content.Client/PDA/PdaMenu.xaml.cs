@@ -120,18 +120,24 @@ namespace Content.Client.PDA
             StationTimeButton.OnPressed += _ =>
             {
                 // Orion-Edit-Start
-                var stationTime = _timeSystem.GetStationTime();
-                _clipboard.SetText(stationTime.Time.ToString("hh\\:mm\\:ss"));
+                _clipboard.SetText(_timeSystem.GetRoundDuration().ToString("hh\\:mm\\:ss")); // Erida edit
                 // Orion-Edit-End
             };
 
             // Orion-Start
             StationDateButton.OnPressed += _ =>
             {
-                var stationDate = _timeSystem.GetStationTime().Date;
-                _clipboard.SetText(stationDate.ToString("dd.MM.yyyy"));
+                _clipboard.SetText(_timeSystem.GetStationDate().ToString("dd.MM.yyyy")); // Erida edit
             };
             // Orion-End
+
+            // Erida edit start
+            StationRealTimeButton.OnPressed += _ =>
+            {
+                _clipboard.SetText(_timeSystem.GetStationTime().ToString("hh\\:mm\\:ss")); // Erida edit
+            };
+            // Erida edit end
+
 
             StationAlertLevelInstructionsButton.OnPressed += _ =>
             {
@@ -357,14 +363,15 @@ namespace Content.Client.PDA
             base.Draw(handle);
 
             // Orion-Edit-Start
-            var stationTime = _timeSystem.GetStationTime();
-            var stationDate = stationTime.Date;
-
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
-                ("time", stationTime.Time.ToString("hh\\:mm\\:ss"))));
+                ("time", _timeSystem.GetRoundDuration().ToString("hh\\:mm\\:ss")))); // Erida edit
             StationDateLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-date",
-                ("date", stationDate.ToString("dd.MM.yyyy"))));
+                ("date", _timeSystem.GetStationDate().ToString("dd.MM.yyyy")))); // Erida edit
             // Orion-Edit-End
+            // Erida edit start
+            StationRealTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-real-time",
+                ("time", _timeSystem.GetStationTime().ToString("hh\\:mm\\:ss"))));
+            // Erida edit end
         }
     }
 }

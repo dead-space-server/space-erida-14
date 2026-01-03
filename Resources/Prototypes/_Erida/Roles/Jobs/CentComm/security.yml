@@ -1,0 +1,36 @@
+- type: job
+  id: CentralCommandSecurity
+  name: job-name-centcom-sec
+  description: job-description-centcom-sec
+  playTimeTracker: JobCentralCommandSecurity
+  setPreference: false
+  startingGear: CentcomSecGear
+  icon: "JobIconPrivate"
+  supervisors: job-supervisors-centcom-sec-hos
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcomSecGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomPrivateOfficer
+    back: WeaponRifleLecter
+    shoes: ClothingShoesBootsCentcom
+    mask: ClothingMaskGasSecurity
+    head: ClothingHeadHelmetCentcom
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorCentcomSec
+    id: CentralCommandSecPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityFilled
+    pocket1: MagazineRifle
+    pocket2: WeaponTaser
+    suitstorage: WeaponPistolMk58

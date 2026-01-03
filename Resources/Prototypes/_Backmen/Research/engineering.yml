@@ -33,7 +33,7 @@
     state: high
   discipline: Engineering
   tier: 1
-  cost: 7500
+  cost: 10000
   recipeUnlocks:
    - PowerCellHyper
    - PowerCellHigh
@@ -49,7 +49,7 @@
     state: microreactor
   discipline: Engineering
   tier: 1
-  cost: 15000
+  cost: 20000
   recipeUnlocks:
    - PowerCellMicroreactor
   technologyPrerequisites:
@@ -88,6 +88,7 @@
   - ClothingHeadHatWelding
   - Igniter
   - HandLabeler
+  - VoiceSensor
   position: -2,1
 
 - type: technology

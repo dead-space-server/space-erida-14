@@ -17,7 +17,7 @@
   - type: PhysicalComposition # 50% of the amount of cloth you'd obtain upon butchering
     materialComposition:
       Cloth: 150
-  - type: Food
+  - type: Edible
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
     solutions:
@@ -31,6 +31,8 @@
     - ClothMade
     - Recyclable
     - WhitelistChameleon
+  - type: SlotBlock
+    blockList: [ UNDERSHIRT, UNDERPANTS, SOCKS, UNDERWEAR ]
 
 - type: entity
   abstract: true
@@ -40,7 +42,9 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-
+  - type: SlotBlock
+    blockList: [ UNDERSHIRT ]
+    hideList: [ UNDERPANTS, UNDERWEAR ]
 
 - type: entity
   abstract: true
@@ -55,6 +59,8 @@
   - type: WirelessNetworkConnection
     range: 1200
   - type: StationLimitedNetwork
+  - type: SlotBlock
+    blockList: [ UNDERSHIRT, UNDERPANTS, SOCKS, UNDERWEAR ]
 
 - type: entity
   abstract: true
@@ -64,3 +70,17 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
+  - type: SlotBlock
+    blockList: [ UNDERSHIRT ]
+    hideList: [ UNDERPANTS, UNDERWEAR ]
+
+- type: entity
+  abstract: true
+  id: ClothingUniformFoldableBase
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    unfoldVerbText: unfold-verb-clothing-jacket
+    foldVerbText: fold-verb-clothing-jacket
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded

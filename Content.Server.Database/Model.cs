@@ -402,10 +402,30 @@ namespace Content.Server.Database
         public int Slot { get; set; }
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
+        // Orion-Start
+        public string OOCFlavorText { get; set; } = null!;
+        public string CharacterFlavorText { get; set; } = null!;
+        public string GreenFlavorText { get; set; } = null!;
+        public string YellowFlavorText { get; set; } = null!;
+        public string RedFlavorText { get; set; } = null!;
+        public string TagsFlavorText { get; set; } = null!;
+        public string LinksFlavorText { get; set; } = null!;
+        public string NSFWFlavorText { get; set; } = null!;
+        // Orion-End
+        // Erida start
+        public string NSFWOOCFlavorText { get; set; } = null!;
+        public string NSFWLinksFlavorText { get; set; } = null!;
+        public string NSFWTagsFlavorText { get; set; } = null!;
+        // Erida end
         public int Age { get; set; }
         public string Sex { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public string Species { get; set; } = null!;
+        // Erida-start
+        public string CustomSpecies { get; set; } = null!;
+        public float Height { get; set; } = 1f;
+        public float Width { get; set; } = 1f;
+        // Erida-end
         public string Voice { get; set; } = null!; // Corvax-TTS
         [Column(TypeName = "jsonb")] public JsonDocument? Markings { get; set; } = null!;
         public string HairName { get; set; } = null!;

@@ -1,0 +1,29 @@
+- type: job
+  id: CentralCommandEngineer
+  name: job-name-centcom-engineer
+  description: job-description-centcom-engineer
+  playTimeTracker: JobCentralCommandEngineer
+  setPreference: false
+  startingGear: CentcomEngineerGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcomEngineerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomEngineer
+    shoes: ClothingShoesBootsWork
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesColorYellow
+    id: CentcomEngineerPDA
+    ears: ClothingHeadsetCentCom
+    belt: ClothingBeltUtilityEngineering

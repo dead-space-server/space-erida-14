@@ -10,7 +10,8 @@
   skinColoration: Hues
   maleFirstNames: NamesArachnidFirst
   femaleFirstNames: NamesArachnidFirst
-  lastNames: NamesArachnidLast
+  maleLastNames: NamesArachnidLast
+  femaleLastNames: NamesArachnidLast
   sexes:
   - Unsexed
 
@@ -43,34 +44,45 @@
 
 - type: markingPoints
   id: MobArachnidMarkingLimits
-  onlyWhitelisted: true
+  # Erida-start
+  onlyWhitelisted: false
   points:
     Hair:
-      points: 0
+      points: 10
       required: false
     FacialHair:
-      points: 0
+      points: 10
       required: false
     Tail:
       points: 1
       required: true
       defaultMarkings: [ ArachnidAppendagesDefault ]
+    Snout:
+      points: 10
+      required: false
+    Head:
+      points: 10
+      required: false
     HeadTop:
-      points: 1
+      points: 10
       required: false
     HeadSide:
       points: 1
       required: true
       defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
-      points: 2
+      points: 10
       required: false
     Legs:
-      points: 2
+      points: 10
       required: false
     Arms:
-      points: 2
+      points: 10
       required: false
+    Overlay:
+      points: 10
+      required: false
+    # Erida-end
 
 - type: humanoidBaseSprite
   id: MobArachnidHead

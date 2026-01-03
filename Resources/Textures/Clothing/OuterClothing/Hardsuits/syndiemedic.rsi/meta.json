@@ -1,8 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Made by Hqlle (github). Vox state made by Flareguy for SS14",
-  "copyright": "inhand resprited by inventor05(gh: inventor055, discord: qwerty05555)",
+  "copyright": "Made by Hqlle (github). Vox state made by Flareguy for SS14; inhand resprited by inventor05(gh: inventor055, discord: qwerty05555); Tail sprites by Tiniest Shark (github)",
   "size": {
     "x": 32,
     "y": 32
@@ -17,6 +16,10 @@
     },
     {
       "name": "equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-reptilian",
       "directions": 4
     },
     {

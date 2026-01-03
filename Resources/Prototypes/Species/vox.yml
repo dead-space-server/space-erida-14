@@ -1,7 +1,7 @@
 - type: species
   id: Vox
   name: species-name-vox
-  roundStart: true
+  roundStart: false # Erida
   prototype: MobVox
   sprites: MobVoxSprites
   markingLimits: MobVoxMarkingLimits
@@ -46,12 +46,15 @@
       points: 1
       required: false
     Head:
-      points: 1
+      points: 4
       required: true
     Snout:
       points: 1
       required: true
       defaultMarkings: [ VoxBeak ]
+    SnoutCover:
+      points: 1
+      required: false
     Arms:
       points: 4
       required: true

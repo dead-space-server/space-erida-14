@@ -44,3 +44,5 @@ ent-PlayerBorgDerelict = { ent-BorgChassisDerelict }
 ent-PlayerBorgDerelictGhostRole = { ent-PlayerBorgDerelict }
     .suffix = Роль призрака
     .desc = { ent-PlayerBorgDerelict.desc }
+ent-PlayerStationAiAssembly = Каркас ядра ИИ
+    .desc = незавершённое ядро компьютера для содержания исскуственного интелекта

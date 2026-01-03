@@ -1,4 +1,4 @@
-### Gravity Generator
+﻿### Gravity Generator
 
 ## UI
 
@@ -25,6 +25,7 @@ gravity-generator-window-power-off = Выкл
 gravity-generator-window-power-label = { $draw } / { $max } Вт
 
 ## UI ETA label
+gravity-generator-unanchoring-failed =  Невозможно открутить активный гравитационный генератор.
 
 gravity-generator-window-eta-none = Н/Д
 gravity-generator-window-eta-value = { TOSTRING($left, "m\\:ss") }

@@ -1,5 +1,6 @@
 
 # PRIMARY TASKS
+
 - type: roadmapTask
   id: DonatorSystem
   name: Донатная Система
@@ -8,18 +9,25 @@
   order: 1
 
 - type: roadmapTask
-  id: Xenobiology
-  name: Уникальная Ксенобиология
-  description: Ксенобиология - наука о изучении аномальных существ.
+  id: CrazyMind
+  name: Состояние Разума
+  description: Следите за вашим психическим состоянием!
   category: Primary
   order: 2
+
+- type: roadmapTask
+  id: AliveAnomaly
+  name: Аномальные Сущности
+  description: Аномалистика столкнулась с новыми угрозами в виде разумных существ с необъяснимыми свойствами.
+  category: Primary
+  order: 3
 
 - type: roadmapTask
   id: AnomalyAmulet
   name: Аномальные Амулеты
   description: Ядро аномалии - мощная сила. Сила, которую вы наконец сможете заполучить Себе.
   category: Primary
-  order: 3
+  order: 4
 
 # LONG-RANGE TASKS
 

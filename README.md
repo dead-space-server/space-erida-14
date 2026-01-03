@@ -41,7 +41,7 @@ git clone https://github.com/space-wizards/space-station-14.git
 cd space-station-14
 python RUN_THIS.py
 ```
-3. Соберите сервер:  
+3. Соберите сервер:
 
 Соберите сервер используя `dotnet build`.
 

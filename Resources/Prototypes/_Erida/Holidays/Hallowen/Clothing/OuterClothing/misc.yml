@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingOuterGhostSheet
+  id: ClothingOuterGhostBlanket
+  name: Ghost blanket
+  description: "BOO!!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/blanket/blanket.rsi
+  - type: Clothing
+    sprite: _Erida/Holidays/halloween/blanket/blanket.rsi
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    layers:
+      Hair: OUTERCLOTHING
+      FacialHair: OUTERCLOTHING

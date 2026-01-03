@@ -1,4 +1,4 @@
-# Weapons
+﻿# Weapons
 uplink-pistol-viper-name = Гадюка
 uplink-pistol-viper-desc = Небольшой, легко скрываемый, но маломощный пистолет. Оснащён полностью автоматической ствольной коробкой. Использует патроны калибра .35 авто.
 uplink-estoc-bundle-name = Эсток (маркманская)
@@ -138,6 +138,8 @@ uplink-storage-implanter-desc = Прячьте предметы внутри с�
 uplink-freedom-implanter-name = Имплантер Свобода
 uplink-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого импланта, который можно использовать аж три раза!
 uplink-scram-implanter-name = Имплантер Побег
+uplink-syndicate-id-card-name = Идентификационная карта синдиката
+uplink-syndicate-id-card-desc = Идентификационная карта синдиката с доступом к синдикату. Сама по себе вряд ли будет полезна, но отлично сочетается с перенастроенными дверями. Не имеет функции копирования доступа.
 uplink-scram-implanter-desc = Двухразовый имплант, который телепортирует вас в большом радиусе. Попытается телепортировать вас на незанятое место. Иногда сбоит. Страхование жизни не прилагается.
 uplink-dna-scrambler-implanter-name = Имплантер Миксер ДНК
 uplink-dna-scrambler-implanter-desc = Одноразовый имплант, который можно активировать для перемешивания ДНК и приобретения совершенно нового облика.
@@ -316,7 +318,7 @@ uplink-scarf-syndie-red-desc = Стильный красный полосаты�
 uplink-scarf-syndie-green-name = Зелёный полосатый шарф Синдиката
 uplink-scarf-syndie-green-desc = Стильный зелёный полосатый шарф Синдиката. Идеальный зимний аксессуар для тех, у кого обострённое чувство моды, и тех, кто просто в настроении что-нибудь украсть.
 uplink-syndicate-pai-name = пИИ Синдиката
-uplink-syndicate-pai-desc = Вариант пИИ от Синдиката, с доступом к радиоканалу IСиндикатаnteQ. Полезность не гарантируется.
+uplink-syndicate-pai-desc = Вариант пИИ от Синдиката, с доступом к радиоканалу Синдиката. Полезность не гарантируется.
 uplink-bribe-name = Набор лоббиста
 uplink-bribe-desc = Сердечный подарок, который может помочь вам изменить чьё-то мнение. Настоящие или фальшивые? Да.
 uplink-hypodart-name = Гиподротик
@@ -339,3 +341,7 @@ uplink-smuggler-satchel-name = Сумка контрабандиста
 uplink-smuggler-satchel-desc = Удобная, подозрительная на вид сумка. Достаточно плоская, чтобы поместиться под напольной плиткой.
 uplink-acolyte-armor-name = Acolyte Armor
 uplink-acolyte-armor-desc = The must have of any self respecting cult leader. An evil looking piece of armor, made of bones, and surprisingly resistant to damage.
+uplink-briefcase-gun-name = Briefcase Gun
+uplink-briefcase-gun-desc = An indistinct briefcase with a highly compact C-20K mounted inside it. Careful not the grip the handle too tight!
+uplink-energycrossbow-name = Mini Energy Crossbow
+uplink-energycrossbow-desc = The go-to sidearm of any operative who prefers their victims not to be moving. Fires regenerating toxic arrows that floors victims in an instant.

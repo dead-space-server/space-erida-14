@@ -153,6 +153,8 @@
   - FlashPayload
   - ExplosivePayload
   - ChemicalPayload
+  - EmptyDetonator
+  - CableDetStack1
   position: -3,-2
 
 - type: technology

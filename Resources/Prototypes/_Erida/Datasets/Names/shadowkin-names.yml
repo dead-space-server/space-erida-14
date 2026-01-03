@@ -1,0 +1,25 @@
+# First names
+- type: localizedDataset
+  id: names-shadowkin-male-first
+  values:
+    prefix: names-shadowkin-male-first-
+    count: 76
+
+- type: localizedDataset
+  id: names-shadowkin-female-first
+  values:
+    prefix: names-shadowkin-female-first-
+    count: 76
+
+# Last names
+- type: localizedDataset
+  id: names-shadowkin-male-last
+  values:
+    prefix: names-shadowkin-male-last-
+    count: 61
+
+- type: localizedDataset
+  id: names-shadowkin-female-last
+  values:
+    prefix: names-shadowkin-female-last-
+    count: 66

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterHardsuitSecurityRed, BaseBlueShieldContraband]
+  parent: [ClothingOuterHardsuitBase, BaseBlueShieldContraband]
   id: ClothingOuterHardsuitBlueShield
   name: officer "Blueshield"'s combat hardsuit
   description: A hardsuit designed for Blueshield officers with enhanced protection and night vision.
@@ -10,9 +10,20 @@
     sprite: Backmen/Clothing/OuterClothing/Hardsuits/bluehardsuit.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBlueShield
+  - type: Armor
+    modifiers:
+      coefficients: # Erida
+        Blunt: 0.6
+        Heat: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Radiation: 0.4
+        Caustic: 0.5
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+    walkModifier: 1
+    sprintModifier: 0.9
+  - type: StaminaResistance # Erida
+    damageCoefficient: 0.4
 
 - type: entity
   parent: ClothingOuterHardsuitSecurity
@@ -25,8 +36,8 @@
   - type: Clothing
     sprite: Backmen/Clothing/OuterClothing/Hardsuits/sec-pilot-hardsuit.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityPilot

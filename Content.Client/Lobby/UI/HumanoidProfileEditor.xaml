@@ -60,8 +60,20 @@
                                     <TextureButton Name="SpeciesInfoButton" Scale="0.3 0.3"
                                                    VerticalAlignment="Center"
                                                    ToolTip="{Loc 'humanoid-profile-editor-guidebook-button-tooltip'}"/>
-                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" />
+                                <!-- Erida - Custom Species start -->
+                                    <OptionButton Name="SpeciesButton" HorizontalAlignment="Right" StyleClasses="OpenRight"/>
+                                    <Button Name="IsCustomSpecies"
+                                            Text="{Loc 'humanoid-profile-editor-is-custom-species-button'}"
+                                            StyleClasses="OpenLeft"
+                                            HorizontalAlignment="Center"
+                                            ToggleMode="True"/>
                                 </BoxContainer>
+                                <BoxContainer Name="CustomSpeciesContainer" HorizontalExpand="True" Visible="False">
+                                    <Label Text="{Loc 'humanoid-profile-editor-custom-species-label'}" />
+                                    <Control HorizontalExpand="True"/>
+                                    <LineEdit Name="CustomSpeciesEdit" MinSize="120 0" HorizontalAlignment="Right" />
+                                </BoxContainer>
+                                <!-- Erida - Custom Species end -->
                                 <!-- Age -->
                                 <BoxContainer HorizontalExpand="True">
                                     <Label Text="{Loc 'humanoid-profile-editor-age-label'}" />
@@ -100,6 +112,26 @@
 									<Button Name="VoicePlayButton" Text="{Loc 'humanoid-profile-editor-voice-play'}" MaxWidth="80" />
                                 </BoxContainer>
                                 <!-- Corvax-TTS-End -->
+                                <!-- Erida - Size start -->
+                                <BoxContainer HorizontalExpand="True">
+                                    <BoxContainer HorizontalExpand="True">
+                                        <Label Text="{Loc 'humanoid-profile-editor-height-label'}" />
+                                    </BoxContainer>
+                                    <BoxContainer HorizontalExpand="True">
+                                        <RichTextLabel Name="HeightLabel" Text="100%" Margin="10 0"/>
+                                        <Slider HorizontalExpand="True" Name="HeightSlider" MinValue="80" MaxValue="120" Value="100" />
+                                    </BoxContainer>
+                                </BoxContainer>
+                                <BoxContainer HorizontalExpand="True">
+                                    <BoxContainer HorizontalExpand="True">
+                                        <Label Text="{Loc 'humanoid-profile-editor-width-label'}" />
+                                    </BoxContainer>
+                                    <BoxContainer HorizontalExpand="True">
+                                        <RichTextLabel Name="WidthLabel" Text="100%" Margin="10 0"/>
+                                        <Slider HorizontalExpand="True" Name="WidthSlider" MinValue="80" MaxValue="120" Value="100" />
+                                    </BoxContainer>
+                                </BoxContainer>
+                                <!-- Erida - Size end -->
                             </BoxContainer>
                             <!-- Skin -->
                             <BoxContainer Margin="10" HorizontalExpand="True" Orientation="Vertical">

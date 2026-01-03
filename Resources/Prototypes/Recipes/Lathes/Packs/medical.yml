@@ -15,7 +15,7 @@
   - Syringe
   - PillCanister
   - BaseChemistryEmptyVial
-  - Dropper # Backmen
+  - Dropper
 
 - type: latheRecipePack
   parent: BasicChemistryStatic

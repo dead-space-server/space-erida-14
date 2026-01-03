@@ -1,0 +1,20 @@
+
+- type: entity
+  id: BriefcaseInteQLobbyingBundleFilled
+  parent: BriefcaseSyndieLobbyingBundleFilled
+  suffix: InteQ, Spesos
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingEyesGlassesSunglasses
+        - id: SpaceCash30000
+        - id: EncryptionKeyInteQ
+        - id: RubberStampTrader
+        - id: PhoneInstrumentSyndicate
+        - id: ClothingUniformJumpsuitTacticool
+        - id: ClothingOuterCoatJensen
+        - id: ClothingHandsGlovesCombat
+        - id: ClothingMaskNeckGaiter
+        - id: BalloonInteQ

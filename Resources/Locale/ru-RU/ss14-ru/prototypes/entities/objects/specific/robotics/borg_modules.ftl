@@ -1,16 +1,3 @@
-borg-slot-cables-empty = Кабели
-borg-slot-construction-empty = Строительные материалы
-borg-slot-circuitboards-empty = Платы
-borg-slot-flatpacks-empty = Упаковки
-borg-slot-tiles-empty = Плитки
-borg-slot-topicals-empty = Наружные препараты
-borg-slot-small-containers-empty = Маленькие ёмкости
-borg-slot-chemical-containers-empty = Химические ёмкости
-borg-slot-documents-empty = Книги и бумаги
-borg-slot-soap-empty = Мыло
-borg-slot-instruments-empty = Музыкальные инструменты
-borg-slot-beakers-empty = Мензурки
-
 ent-BaseBorgModule = модуль борга
     .desc = Техническая деталь, дающая киборгам новые способности.
 ent-BaseProviderBorgModule = { "" }
@@ -133,5 +120,5 @@ ent-XenoborgModuleChameleonProjector = модуль ксеноборга с ма
     .desc = Модуль с маскировочным проектором.
 ent-XenoborgModuleCloakDevice = модуль ксеноборга с устройством невидимости
     .desc = Модуль с устройством, позволяющим ксеноборгам становиться невидимыми на некоторое время.
-ent-XenoborgModuleSuperCloakDevice = модуль ксеноборга с устройством невидимости
+ent-XenoborgModuleSuperCloakDevice = модуль ксеноборга с устройством продвинутым невидимости
     .desc = Модуль с устройством, позволяющим ксеноборгам становиться по-настоящему невидимыми на меньшее время.

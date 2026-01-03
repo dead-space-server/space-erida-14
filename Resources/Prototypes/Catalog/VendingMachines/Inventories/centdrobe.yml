@@ -18,6 +18,41 @@
     ClothingOuterCoatExpensive: 1
     ClothingNeckScarfStripedCentcom: 3
     ClothingNeckCloakCentcom: 3
+  # CentComm ivent roles start
+    ClothingNeckCentcomCloakFormal: 3
+    ClothingNeckCentcomCloak: 3
+    ClothingEyesGlassesCentcom: 3
+    ClothingUniformJumpsuitCentcomDeputy: 3
+    ClothingUniformJumpskirtCentcomDeputy: 3
+    ClothingOuterArmorCentcomDeputyCarapace: 3
+    ClothingHeadCentcomOperatorBeret: 3
+    ClothingUniformJumpsuitCentcomOperator: 3
+    ClothingUniformJumpskirtCentcomOperator: 3
+    ClothingShoesBootsCentcom: 3
+    ClothingHeadHatBeretCentcomNaval: 3
+    ClothingHeadCapCentcomNaval: 3
+    ClothingUniformJumpsuitCentcomAdmiral: 3
+    ClothingHeadHatBeretHoSCentcom: 3
+    ClothingUniformJumpsuitCentcomMilitary: 3
+    ClothingOuterArmorCentcomSec: 3
+    ClothingHeadHelmetCentcom: 3
+    ClothingUniformJumpsuitCentcomPrivateOfficer: 3
+    ClothingUniformJumpsuitCentcomEngineer: 3
+    ClothingUniformJumpsuitCentcomClerc: 3
+    ClothingUniformJumpsuitCentcomVeryOfficial: 3
+    ClothingUniformJumpskirttCentcomVeryOfficial: 3
+    ClothingUniformJumpsuitCentcomIntern: 3
+    ClothingUniformJumpskirtCentcomOfficial: 3
+    ClothingUniformJumpskirtCentcomOfficer: 3
+    ClothingHeadCoSCCcap: 3
+    ClothingUniformJumpsuitCoSCC: 3
+    ClothingUniformJumpskirtCoSCC: 3
+    ClothingOuterArmorCoSCCCarapace: 3
+    ClothingNeckCoSCCCloak: 3
+    ClothingHeadCentcomCargoCap: 3
+    ClothingUniformJumpsuitCentcomCargo: 3
+    ClothingNeckCentcomCargo: 3
+  # CentComm ivent roles end
   contrabandInventory:
     ToyFigurineCaptain: 1
     ToyFigurineHeadOfPersonnel: 1

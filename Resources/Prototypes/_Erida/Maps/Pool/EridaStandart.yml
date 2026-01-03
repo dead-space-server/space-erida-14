@@ -6,7 +6,6 @@
   - BackmenBox
   - BackmenTortuga
   - BackmenHive
-  - BackmenShoukou
   - BackmenRook
   - BackmenDelta
   - Amber_Erida
@@ -31,4 +30,8 @@
   maps:
   - BackmenBox
   - BackmenDelta
-  - BackmenShoukou
+  - Amber_Erida
+  - Omega_Erida
+  - Loop_Erida
+  - Bagel_Erida
+  - Packed_Erida

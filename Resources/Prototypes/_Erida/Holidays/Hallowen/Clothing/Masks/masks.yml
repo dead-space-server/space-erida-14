@@ -1,0 +1,8 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskGhostface
+  name: Ghost mask
+  description: "BOO!!"
+  components:
+  - type: Sprite
+    sprite: _Erida/Holidays/halloween/ghostface/head.rsi

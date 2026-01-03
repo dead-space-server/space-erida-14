@@ -4,7 +4,7 @@
   parent: Clothing
   id: ClothingUnderShirtBase
   components:
-    - type: Food
+    - type: Edible
       requiresSpecialDigestion: true
     - type: SolutionContainerManager
       solutions:
@@ -24,6 +24,10 @@
       state: icon
     - type: TemperatureProtection
       heatingCoefficient: 0.75
+    # Erida edit
+    - type: Item
+      shape:
+      - 0,0,1,0
 
 - type: entity
   parent: ClothingUnderShirtBase

@@ -1,8 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Sprited by Roudenn(https://github.com/Roudenn)",
-    "copyright": "inhand resprited by inventor05(gh: inventor055, discord: qwerty05555)",
+    "copyright": "Sprited by Roudenn(https://github.com/Roudenn); inhand resprited by inventor05(gh: inventor055, discord: qwerty05555); modified for Vox by TrixxedHeart",
     "size": {
         "x": 32,
         "y": 32
@@ -17,6 +16,10 @@
         },
         {
             "name": "equipped-OUTERCLOTHING-reptilian",
+            "directions": 4
+        },
+        {
+            "name": "equipped-OUTERCLOTHING-vox",
             "directions": 4
         },
         {

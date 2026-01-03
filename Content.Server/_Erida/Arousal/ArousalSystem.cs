@@ -129,6 +129,12 @@ public sealed class ArousalSystem : EntitySystem
 
         var severity = (int)Math.Floor(component.ArousalCurrent / 10f);
         severity = Math.Clamp(severity, 0, 10);
+        if (severity == 0)
+        {
+            _alertsSystem.ClearAlert(uid, component.ArousalAlert);
+            return;
+        }
+
         _alertsSystem.ShowAlert(uid, component.ArousalAlert, (short) severity);
     }
 }

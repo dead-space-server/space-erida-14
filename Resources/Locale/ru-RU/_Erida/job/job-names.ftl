@@ -1,1 +1,10 @@
 job-name-inteq = Интек
+job-name-coscc = начальник штаба Центком
+job-name-centcom-officer = офицер Центком
+job-name-centcom-operator = оператор Центком
+job-name-centcom-hos = глава службы безопасности СЦК
+job-name-centcom-sec = офицер службы безопасности СЦК
+job-name-centcom-oso = офицер специальных операций
+job-name-centcom-intendant = интендант Центком
+job-name-centcom-engineer = инженер Центком
+job-name-centcom-clerc = клерк Центком

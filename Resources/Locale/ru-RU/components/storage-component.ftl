@@ -1,4 +1,4 @@
-comp-storage-no-item-size = Нет
+﻿comp-storage-no-item-size = Нет
 comp-storage-cant-insert = Невозможно поместить.
 comp-storage-too-big = Слишком большое!
 comp-storage-insufficient-capacity = Недостаточная вместимость.
@@ -8,5 +8,6 @@ comp-storage-cant-drop = Вы не можете отпустить { $entity }!
 comp-storage-window-title = Предмет хранилище
 comp-storage-window-weight = { $weight }/{ $maxWeight }, Макс. размер: { $size }
 comp-storage-window-slots = Слоты: { $itemCount }/{ $maxCount }, Макс. размер: { $size }
+comp-storage-window-dummy = Пусто
 comp-storage-verb-open-storage = Открыть хранилище
 comp-storage-verb-close-storage = Закрыть хранилище

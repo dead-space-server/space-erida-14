@@ -15,6 +15,6 @@
   - /Audio/_Erida/Voice/Human/male_moan_3.ogg
 
 - type: soundCollection
-  id: Wurble
+  id: Wink
   files:
-  - /Audio/_Erida/Voice/Shadowkin/wurble.ogg
+  - /Audio/_Erida/Voice/Human/wink.ogg

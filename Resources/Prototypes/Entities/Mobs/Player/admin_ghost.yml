@@ -16,6 +16,7 @@
     - SilentStorageUser
     - PreventAccessLogging
     - AllowBiomeLoading
+    - NotGhostnadoWarpable
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -100,6 +101,7 @@
   - type: Stripping
   - type: SolutionScanner
   - type: IgnoreUIRange
+  - type: IgnoreInventoryBlock
   - type: ShowAntagIcons
   - type: ShowContrabandDetails
   - type: Inventory
@@ -110,6 +112,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0
   - type: BkmSupermatterImmune # supermatter
+  - type: DirectionalEmoteTarget # Erida
 
 - type: entity
   abstract: true
@@ -118,7 +121,7 @@
   components:
   - type: Action
     icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    iconOn: { sprite: Structures/Machines/parts.rsi, state: box_2 }
     keywords: [ "AI", "console", "interface" ]
     priority: -10
 

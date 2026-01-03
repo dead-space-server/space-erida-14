@@ -14,3 +14,18 @@
     - постанывает
     - постанывает!
     - стонет
+
+- type: emote
+  id: Wink
+  name: chat-emote-name-wink
+  icon: _Erida/Interface/Emotes/wink.png
+  category: Hands
+  whitelist:
+    components:
+    - Hands
+  chatMessages: ["chat-emote-msg-wink"]
+  chatTriggers:
+    - подмигивает
+    - моргает
+    - winks
+    - blinks

@@ -1,4 +1,4 @@
-borg-player-not-allowed = Мозг не помещается!
+﻿borg-player-not-allowed = Мозг не помещается!
 borg-player-not-allowed-eject = Мозг был извлечён из корпуса!
 borg-panel-not-open = Панель киборга не открыта...
 borg-mind-added = { CAPITALIZE($name) } включается!
@@ -10,6 +10,8 @@ borg-construction-guide-string = Конечности и туловище киб
 borg-ui-menu-title = Интерфейс киборга
 borg-ui-charge-label = Заряд: { $charge }%
 borg-ui-no-brain = Мозг отсутствует
+borg-module-action-name = Активировать {$moduleName}
+borg-module-action-description = Выбрать {$moduleName}, чтобы использовать предоставляемые им инструменты.
 borg-ui-remove-battery = Извлечь
 borg-ui-modules-label = Модули:
 borg-ui-module-counter = { $actual }/{ $max }

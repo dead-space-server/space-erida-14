@@ -25,19 +25,28 @@ public sealed class TimeSystem : EntitySystem
         _roundStart = ev.RoundStartTimeSpan;
     }
 
-    public (TimeSpan Time, DateTime Date) GetStationTime()
+    // Erida edit start
+    public DateTime GetStationDate()
     {
-        var elapsed = _timing.CurTime - _roundStart;
-        if (elapsed < TimeSpan.Zero)
-            elapsed = TimeSpan.Zero;
-
-        var timeOfDay = TimeSpan.FromTicks(elapsed.Ticks % TimeSpan.TicksPerDay);
-
         var today = DateTime.UtcNow.Date;
         var futureYear = today.Year + 684;
         var day = Math.Min(today.Day, DateTime.DaysInMonth(futureYear, today.Month));
         var stationDate = new DateTime(futureYear, today.Month, day);
 
-        return (timeOfDay, stationDate);
+        return stationDate;
     }
+
+    public TimeSpan GetRoundDuration()
+    {
+        var elapsed = _timing.CurTime - _roundStart;
+        if (elapsed < TimeSpan.Zero) elapsed = TimeSpan.Zero;
+
+        return elapsed;
+    }
+
+    public TimeSpan GetStationTime()
+    {
+        return DateTime.UtcNow.TimeOfDay;
+    }
+    // Erida edit end
 }

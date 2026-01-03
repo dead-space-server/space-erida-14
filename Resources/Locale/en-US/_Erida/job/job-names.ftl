@@ -1,0 +1,9 @@
+job-name-coscc = Centcom Chief of Staff
+job-name-centcom-officer = Centcom officer
+job-name-centcom-operator = Centcom operator
+job-name-centcom-hos = Centcom head of the security
+job-name-centcom-sec = Centcom security officer
+job-name-centcom-oso = Centcom Special Operations Officer
+job-name-centcom-intendant = Centcom intendant
+job-name-centcom-engineer = Centcom engineer
+job-name-centcom-clerc = Centcom clerc

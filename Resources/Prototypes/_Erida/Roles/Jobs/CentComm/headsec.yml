@@ -1,0 +1,36 @@
+- type: job
+  id: CentralCommandHoS
+  name: job-name-centcom-hos
+  description: job-description-centcom-hos
+  playTimeTracker: JobCentralCommandHoS
+  setPreference: false
+  startingGear: CentcomHoSGear
+  icon: "JobIconSergant"
+  supervisors: job-supervisors-coscc
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentcomHoSGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomMilitary
+    back: WeaponRifleLecter
+    shoes: ClothingShoesBootsCentcom
+    mask: ClothingMaskGasSecurity
+    head: ClothingHeadHatBeretHoSCentcom
+    neck: CombatKnifeSpetsnaz
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorCentcomSec
+    id: CentralCommandHoSPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityFilled
+    pocket1: MagazineRifle
+    pocket2: WeaponTaser
+    suitstorage: WeaponPistolMk58

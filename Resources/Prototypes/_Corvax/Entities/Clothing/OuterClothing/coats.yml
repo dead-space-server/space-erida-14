@@ -70,11 +70,13 @@
       sprite: Corvax/Clothing/OuterClothing/Coats/sec_leather.rsi
     - type: Armor # Based on /tg/ but slightly compensated to fit the fact that armor stacks in SS14. :x:
       modifiers:
-        coefficients:
-          Blunt: 0.70
-          Slash: 0.70
-          Piercing: 0.60 #Can save you, but bullets will still hurt. Will take about 10 shots from a Viper before critting, as opposed to 7 while unarmored and 16~ with a bulletproof vest.
-          Heat: 0.80
+        coefficients: # Erida
+          Blunt: 0.60
+          Slash: 0.60
+          Piercing: 0.50 #Can save you, but bullets will still hurt. Will take about 10 shots from a Viper before critting, as opposed to 7 while unarmored and 16~ with a bulletproof vest.
+          Heat: 0.70
+    - type: StaminaResistance
+      damageCoefficient: 0.65
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -88,8 +90,8 @@
       sprite: Corvax/Clothing/OuterClothing/Coats/labcoat_security_medic.rsi
     - type: Armor
       modifiers:
-        coefficients:
-          Caustic: 0.75
+        coefficients: # Erida
+          Caustic: 0.65
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -103,12 +105,12 @@
     sprite: Corvax/Clothing/OuterClothing/Coats/captain.rsi
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.5
-  - type: StaminaResistance 
+      coefficients: # Erida
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.4
+  - type: StaminaResistance
     damageCoefficient: 0.65
 
 - type: entity
@@ -123,7 +125,7 @@
     sprite: Corvax/Clothing/OuterClothing/Coats/hop.rsi
   - type: Armor
     modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.8
+      coefficients: # Erida
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7

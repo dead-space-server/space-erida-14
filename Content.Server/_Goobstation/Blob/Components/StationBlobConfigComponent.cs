@@ -4,8 +4,8 @@ namespace Content.Goobstation.Server.Blob.Components;
 public sealed partial class StationBlobConfigComponent : Component
 {
     public const int DefaultStageBegin = 50;
-    public const int DefaultStageCritical = 300;
-    public const int DefaultStageEnd = 500;
+    public const int DefaultStageCritical = 400;
+    public const int DefaultStageEnd = 600;
 
     [DataField]
     public int StageBegin { get; set; } = DefaultStageBegin;

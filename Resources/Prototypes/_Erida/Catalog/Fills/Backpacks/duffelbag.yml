@@ -112,7 +112,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: DefibrillatorCompact
+      - id: DefibrillatorSyndicate
       - id: MedkitCombatFilled
         amount: 4
       - id: Tourniquet
@@ -125,3 +125,39 @@
         amount: 4
       - id: AirlossAutoInjector
         amount: 4
+
+- type: entity
+  parent: ClothingBackpackDuffelInteQ
+  id: ClothingBackpackDuffelInteQFilledStarterKit
+  name: basic operative bundle
+  description: "Contains a weapon, medical supplies, breaching tools, spare ammo, and some simple utilities."
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponSubMachineGunInteQSMG
+        - id: MagazinePistolSubMachineGun
+          amount: 3
+        - id: MagazinePistol
+        - id: InteQJawsOfLife
+        - id: C4
+          amount: 2
+        - id: MedkitCombatFilled
+        - id: EmpImplanterInteQ
+        - id: ClothingShoesBootsMagInteQ
+        - id: AgentIDCard
+
+- type: entity
+  parent: ClothingBackpackDuffelInteQ
+  id: ClothingBackpackDuffelInteQCarpSuit
+  name: carp suit duffel bag
+  description: Contains a carp suit and some friends to play with.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ClothingOuterSuitCarp
+        - id: PlushieCarp
+          amount: 6
