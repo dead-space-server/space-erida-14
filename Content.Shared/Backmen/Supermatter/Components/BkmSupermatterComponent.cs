@@ -406,7 +406,7 @@ public sealed partial class BkmSupermatterComponent : Component
     public string AlertCodeYellowId = "yellow";
 
     [DataField]
-    public string AlertCodeDeltaId = "delta";
+    public string AlertCodeEnigmaId = "enigma"; // Delta => Enigma | Erida
 
     [DataField]
     public bool DelamAnnounced = false;

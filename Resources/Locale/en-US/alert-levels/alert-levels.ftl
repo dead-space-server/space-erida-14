@@ -42,7 +42,3 @@ alert-level-epsilon-instructions = Submit to the forces of the corporation or be
 alert-level-sigma = Lockdown
 alert-level-sigma-announcement = Central Command has ordered a complete lockdown of the station. All personnel must go to their department. Security personnel are allowed to use lethal weapons.
 alert-level-sigma-instructions = All personnel must go to their department.
-
-alert-level-white = white
-alert-level-white-announcement = Aurora levels on station approaching dangerous levels. Disable all aurora beacons. Seek psionic isolation. Authorized personnel are to report mind swaps and aurora beacon locations. Science is to neutralize all registered psionics.
-alert-level-white-instructions = Crew members are advised to seek psionic isolation. All psionics are to be neutralized. Radiance beacons are to be disabled.

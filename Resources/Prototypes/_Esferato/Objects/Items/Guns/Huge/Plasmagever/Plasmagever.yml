@@ -1,0 +1,76 @@
+#region База
+- type: entity
+  name: ESFBaseSuperHeavyHandheldGun
+  parent: BaseItem
+  id: ESFBaseSuperHeavyHandheldGun
+  description: Base
+  abstract: true
+  components:
+  - type: Sprite
+  - type: Item
+    size: Huge
+  - type: MultiHandedItem
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
+  - type: HeldSpeedModifier
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
+    soundEmpty:
+      path: /Audio/_Esferato/Objects/Items/Guns/Huge/Plasmagever/mag_empty.ogg
+  - type: StaticPrice
+    price: 50000
+  - type: Battery
+    maxCharge: 50000
+    startingCharge: 50000
+  - type: ExaminableBattery
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+      output:
+        !type:CableDeviceNode
+        nodeGroupID: MVPower
+  - type: BatteryCharger
+    voltage: High
+  - type: BatteryDischarger
+    voltage: Medium
+  - type: PowerNetworkBattery
+    maxSupply: 15000
+    maxChargeRate: 1500
+    supplyRampTolerance: 1500
+    supplyRampRate: 1500
+
+#region Плазмомёт
+- type: entity
+  name: Плазмагевер
+  id: ESFWeaponFlamengever
+  parent: ESFBaseSuperHeavyHandheldGun
+  description: Сверхтяжёлый плазмомёт. Вызывает панику одним своим появлением. Использует заряд батареи для стрельбы плазменными шарами. Заряжается прикручиванием к ВВ проводу, оснащён миниатюрной подстанцией, необходимой для работы. Для работы с ним желательно носить с собой гаечный ключ и т-лучевой сканер.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Esferato/Objects/Items/Guns/Huge/Plasmagever/plasmagever.rsi
+    layers:
+    - state: icon
+  - type: Item
+    sprite: /Textures/_Esferato/Objects/Items/Guns/Huge/Plasmagever/plasmagever.rsi
+  - type: Gun
+    projectileSpeed: 40
+    fireRate: 0.75
+    soundGunshot:
+      path: /Audio/_Esferato/Objects/Items/Guns/Huge/Plasmagever/plasmagever_shot.ogg
+  - type: Anchorable
+  - type: BatteryAmmoProvider
+    proto: ESFProjectileFlamengeverShot
+    fireCost: 2500
+  - type: PointLight
+    color: "#bc22e2"
+    radius: 2
+    energy: 4.0

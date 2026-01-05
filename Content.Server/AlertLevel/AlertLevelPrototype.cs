@@ -70,6 +70,6 @@ public sealed partial class AlertLevelDetail
     /// <summary>
     /// How long it takes for the shuttle to arrive when called.
     /// </summary>
-    [DataField("shuttleTime")] public TimeSpan ShuttleTime { get; private set; } = TimeSpan.FromMinutes(5);
+    [DataField("shuttleTime")] public TimeSpan ShuttleTime { get; private set; } = TimeSpan.FromMinutes(2); // Erida enigma code
 }
 

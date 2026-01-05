@@ -88,23 +88,24 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-    sigma:
-      announcement: alert-level-sigma-announcement
+    #backmen end
+    #Erida start
+    sierra:
+      announcement: alert-level-sierra-announcement
       selectable: false
       sound: /Audio/Backmen/Misc/new-style-alerts/sigma_code_new_style.ogg
       disableSelection: true
-      color: Pink
+      color: LightSeaGreen
       emergencyLightColor: Aqua
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-    white:
-      announcement: alert-level-white-announcement
-      sound:
-        path: /Audio/Backmen/Misc/new-style-alerts/white_code_new_style.ogg
-        params:
-          volume: -2
-      color: White
-      emergencyLightColor: White
+    enigma:
+      announcement: alert-level-enigma-announcement
+      selectable: false
+      sound: /Audio/_Erida/Misc/alerts/enigma_new_style_alert.ogg
+      disableSelection: true
+      color: '#EF7200'
+      emergencyLightColor: '#EF7200'
       forceEnableEmergencyLights: true
-      shuttleTime: 600
-#backmen end
+      shuttleTime: 120
+    #Erida end

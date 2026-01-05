@@ -955,6 +955,7 @@ public sealed partial class AdminVerbSystem
                 // Erida-Start
                 EnsureComp<StreetRebelAccentComponent>(args.Target);
                 EnsureComp<RoarAccentComponent>(args.Target);
+                EnsureComp<MedievalAccentComponent>(args.Target);
                 // Erida-End
 
                 if (_random.Next(0, 8) == 0)

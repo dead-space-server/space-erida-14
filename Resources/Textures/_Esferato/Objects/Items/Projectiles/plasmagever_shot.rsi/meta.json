@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "modified by 25Hydra08, taken fromTgstation at https://github.com/tgstation/tgstation/commit/906fb0682bab6a0975b45036001c54f021f58ae7",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "plasmaball",
+      "delays": [
+        [
+          0.095,
+          0.095,
+          0.095,
+          0.095,
+          0.095
+        ]
+      ]
+    }
+  ]
+}

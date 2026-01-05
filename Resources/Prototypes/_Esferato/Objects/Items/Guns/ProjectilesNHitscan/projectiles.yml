@@ -1,0 +1,31 @@
+#region Плазменные снаряды
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseBulletTrigger
+  id: ESFProjectileFlamengeverShot
+  name: Плазменный шар
+  description: БЕГИ, БЕГИ, БЕГИ!!!
+  components:
+  - type: PointLight
+    color: "#bc22e2"
+    radius: 2.0
+    energy: 5.0
+  - type: Sprite
+    sprite: /Textures/_Esferato/Objects/Items/Projectiles/plasmagever_shot.rsi
+    layers:
+    - state: plasmaball
+      shader: unshaded
+  - type: IgnitionSource
+    temperature: 1000
+    ignited: true
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: ESFFlamengeverFireExplosion
+    totalIntensity: 12.7
+    intensitySlope: 0.6
+    maxIntensity: 3
+    canCreateVacuum: false
+    deleteAfterExplosion: false
+    repeatable: true
+  - type: TimedDespawn
+    lifetime: 10

@@ -563,7 +563,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
             var station = _station.GetOwningStation(uid);
             if (station != null)
-                _alert.SetLevel((EntityUid) station, sm.AlertCodeDeltaId, true, true, true, false);
+                _alert.SetLevel((EntityUid) station, sm.AlertCodeEnigmaId, true, true, true, false); // Delta => Enigma | Erida
 
             sb.AppendLine(Loc.GetString(loc));
             sb.AppendLine(Loc.GetString("supermatter-seconds-before-delam", ("seconds", sm.DelamTimer)));

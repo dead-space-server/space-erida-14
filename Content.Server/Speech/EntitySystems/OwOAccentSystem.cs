@@ -42,8 +42,7 @@ namespace Content.Server.Speech.EntitySystems
                 .Replace("r", "w").Replace("R", "W")
                 .Replace("l", "w").Replace("L", "W")
                 // Erida-Loc-Start
-                .Replace("р", "в").Replace("Р", "В")
-                .Replace("л", "в").Replace("Л", "В");
+                .Replace("р", "в").Replace("Р", "В");
                 // Erida-Loc-End
         }
 

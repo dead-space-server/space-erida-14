@@ -1,0 +1,11 @@
+#region Плазменный взрыв
+- type: explosion
+  id: ESFFlamengeverFireExplosion
+  damagePerIntensity:
+    types:
+      Heat: 20
+      Blunt: 3
+  lightColor: "#bc22e2"
+  texturePath: /Textures/_Esferato/Effects/plasma_fire.rsi
+  fireStates: 3
+  fireStacks: 2
