@@ -111,3 +111,5 @@ ent-WallXenoborg = стена ксеноборгов
 ent-WallXenoborgDiagonal = { ent-WallXenoborg }
     .suffix = Диагональ
     .desc = { ent-WallXenoborg.desc }
+ent-WallPaper = бумажная стена
+    .desc = Помогает сдерживать повторяющиеся крики мастеров боевых искусств.
