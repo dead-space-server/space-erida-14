@@ -1,0 +1,109 @@
+# Syndicate standart
+- type: entity
+  parent: Airlock
+  id: AirlockEngineeringSyndicate
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/syndicate_engineering.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockEngineering
+  id: AirlockAtmosphericsSyndicate
+  suffix: Atmospherics
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/syndicate_atmospherics.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockMedicalSyndicate
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/syndicate_medical.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: AirlockMedical
+  id: AirlockChemistrySyndicate
+  suffix: Chemistry
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/syndicate_chemistry.rsi
+
+- type: entity
+  parent: Airlock
+  id: AirlockScienceSyndicate
+  suffix: Science
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/syndicate_science.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: Airlock
+  id: AirlockMaintSyndicate
+  name: maintenance access
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/syndicate_maint.rsi
+
+# Syndicate glass
+- type: entity
+  parent: AirlockGlass
+  id: AirlockEngineeringSyndicateGlass
+  suffix: Engineering
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/syndicate_engineering.rsi
+  - type: Wires
+    layoutId: AirlockEngineering
+
+- type: entity
+  parent: AirlockEngineeringSyndicateGlass
+  id: AirlockAtmosphericsSyndicateGlass
+  suffix: Atmospherics
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/syndicate_atmospherics.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMedicalSyndicateGlass
+  suffix: Medical
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/syndicate_medical.rsi
+  - type: Wires
+    layoutId: AirlockMedical
+
+- type: entity
+  parent: AirlockMedicalSyndicateGlass
+  id: AirlockChemistrySyndicateGlass
+  suffix: Chemistry
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/syndicate_chemistry.rsi
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockScienceSyndicateGlass
+  suffix: Science
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/syndicate_science.rsi
+  - type: Wires
+    layoutId: AirlockScience
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockMaintSyndicateGlass
+  suffix: Maintenance
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/syndicate_maint.rsi

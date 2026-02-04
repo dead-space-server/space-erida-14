@@ -1,0 +1,109 @@
+# Syndicate standart
+- type: entity
+  parent: AirlockEngineeringSyndicate
+  id: AirlockEngineeringSyndicateLocked
+  suffix: Engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+
+- type: entity
+  parent: AirlockAtmosphericsSyndicate
+  id: AirlockAtmosphericsSyndicateLocked
+  suffix: Atmospherics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+- type: entity
+  parent: AirlockMedicalSyndicate
+  id: AirlockMedicalSyndicateLocked
+  suffix: Medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+- type: entity
+  parent: AirlockChemistrySyndicate
+  id: AirlockChemistrySyndicateLocked
+  suffix: Chemistry, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+
+- type: entity
+  parent: AirlockScienceSyndicate
+  id: AirlockScienceSyndicateLocked
+  suffix: Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+
+- type: entity
+  parent: AirlockMaintSyndicate
+  id: AirlockMaintSyndicateLocked
+  suffix: Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
+
+# Syndicate glass
+- type: entity
+  parent: AirlockEngineeringSyndicateGlass
+  id: AirlockEngineeringSyndicateGlassLocked
+  suffix: Engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsEngineering ]
+
+- type: entity
+  parent: AirlockAtmosphericsSyndicateGlass
+  id: AirlockAtmosphericsSyndicateGlassLocked
+  suffix: Atmospherics, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsAtmospherics ]
+
+- type: entity
+  parent: AirlockMedicalSyndicateGlass
+  id: AirlockMedicalSyndicateGlassLocked
+  suffix: Medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMedical ]
+
+- type: entity
+  parent: AirlockChemistrySyndicateGlass
+  id: AirlockChemistrySyndicateGlassLocked
+  suffix: Chemistry, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsChemistry ]
+
+- type: entity
+  parent: AirlockScienceSyndicateGlass
+  id: AirlockScienceSyndicateGlassLocked
+  suffix: Science, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsResearch ]
+
+- type: entity
+  parent: AirlockMaintSyndicateGlass
+  id: AirlockMaintSyndicateGlassLocked
+  suffix: Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsMaintenance ]
