@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "copyright": "Content created by Hp. . ., sprites by Evgenimation",
+    "license": "CC-BY-SA-4.0",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "harpy_tail",
+            "directions": 4
+        }
+    ]
+}
