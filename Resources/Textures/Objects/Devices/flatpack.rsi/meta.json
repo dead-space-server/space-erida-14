@@ -51,6 +51,9 @@
         },
         {
             "name": "hydroponics-tray"
+        },
+        {
+            "name": "large"
         }
     ]
 }
