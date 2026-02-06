@@ -17,6 +17,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
@@ -73,8 +74,18 @@ namespace Content.Server.Chemistry.EntitySystems
             var outputContainer = _itemSlotsSystem.GetItemOrNull(owner, SharedChemMaster.OutputSlotName);
 
             var bufferReagents = bufferSolution.Contents;
-            var bufferCurrentVolume = bufferSolution.Volume;
-
+            // Erida-start
+            FixedPoint2 bufferCurrentVolume;
+            if (inputContainer != null
+                && _solutionContainerSystem.TryGetFitsInDispenser(inputContainer.Value, out var containerSoln, out var containerSolution))
+            {
+                bufferCurrentVolume = containerSolution.Volume;
+            }
+            else
+            {
+                bufferCurrentVolume = 0;
+            }
+            // Erida-end
             var state = new ChemMasterBoundUserInterfaceState(
                 chemMaster.Mode, chemMaster.SortingType, BuildInputContainerInfo(inputContainer), BuildOutputContainerInfo(outputContainer),
                 bufferReagents, bufferCurrentVolume, chemMaster.PillType, chemMaster.PillDosageLimit, updateLabel);
@@ -209,7 +220,10 @@ namespace Content.Server.Chemistry.EntitySystems
 
             var needed = message.Dosage * message.Number;
             if (!WithdrawFromBuffer(chemMaster, needed, user, out var withdrawal))
+            {
+                Log.Error("Чёт хуйня");
                 return;
+            }
 
             _labelSystem.Label(container, message.Label);
 
@@ -277,11 +291,14 @@ namespace Content.Server.Chemistry.EntitySystems
         {
             outputSolution = null;
 
-            if (!_solutionContainerSystem.TryGetSolution(chemMaster.Owner, SharedChemMaster.BufferSolutionName, out _, out var solution))
+            // Erida-start
+            var inputContainer = _itemSlotsSystem.GetItemOrNull(chemMaster.Owner, SharedChemMaster.InputSlotName);
+            if (inputContainer == null
+                || !_solutionContainerSystem.TryGetFitsInDispenser(inputContainer.Value, out var containerSoln, out var solution))
             {
                 return false;
             }
-
+            // Erida-end
             if (solution.Volume == 0)
             {
                 if (user.HasValue)
