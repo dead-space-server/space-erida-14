@@ -124,6 +124,8 @@
         /// </summary>
         NameColor = 1 << 21,
 
+        ForceDeadmin = 1 << 22, // Erida edit
+
         /// <summary>
         ///     Dangerous host permissions like scsi.
         /// </summary>

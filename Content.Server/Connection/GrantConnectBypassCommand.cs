@@ -4,7 +4,7 @@ using Robust.Shared.Console;
 
 namespace Content.Server.Connection;
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Host)] // Erida edit
 public sealed class GrantConnectBypassCommand : LocalizedCommands
 {
     private static readonly TimeSpan DefaultDuration = TimeSpan.FromHours(1);

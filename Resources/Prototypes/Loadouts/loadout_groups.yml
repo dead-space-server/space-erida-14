@@ -155,6 +155,8 @@
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
+  - ClothingOuterArmorCaptainCarapaceWhite
+  - ClothingOuterArmorCaptainCarapaceSheriff
 
 - type: loadoutGroup
   id: CaptainJobTrinkets

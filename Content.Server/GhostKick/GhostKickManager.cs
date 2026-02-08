@@ -44,7 +44,7 @@ public sealed class GhostKickManager
     }
 }
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.Stealth)] // Erida edit
 public sealed class GhostKickCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;

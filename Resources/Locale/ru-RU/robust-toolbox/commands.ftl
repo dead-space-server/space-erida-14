@@ -428,3 +428,6 @@ cmd-vfs_ls-help =
     vfs_list /Assemblies
 cmd-vfs_ls-err-args = Нужен ровно 1 аргумент.
 cmd-vfs_ls-hint-path = <path>
+
+cmd-force-deadmin-hint = Админ для deadmin (имя пользователя)
+cmd-force-deadmin-error = Не удаётся распознать игрока: { $str }

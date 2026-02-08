@@ -1,0 +1,21 @@
+- type: entity
+  parent: [ClothingOuterArmorCaptainCarapace]
+  id: ClothingOuterArmorCaptainCarapaceWhite
+  name: white captain's carapace
+  description: An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/captain_white_carapace.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/captain_white_carapace.rsi
+
+- type: entity
+  parent: [ClothingOuterArmorCaptainCarapace]
+  id: ClothingOuterArmorCaptainCarapaceSheriff
+  name: sheriff's carapace
+  description: An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/captain_sheriff_carapace.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/captain_sheriff_carapace.rsi

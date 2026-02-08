@@ -42,6 +42,16 @@
   equipment:
     socks: ClothingUnderwearSocksCaptain
 
+- type: loadout
+  id: ClothingOuterArmorCaptainCarapaceSheriff
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapaceSheriff
+
+- type: loadout
+  id: ClothingOuterArmorCaptainCarapaceWhite
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapaceWhite
+
 #HoP
 - type: loadout
   id: ClothingUnderwearTopBraHeadofPersonnel
