@@ -701,14 +701,14 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: AccessReader
-    access: [[ "NuclearOperative" ]]
+    access: [[ "CentralCommand" ]] # Erida syndiERT tweak
   - type: CommunicationsConsole
     title: comms-console-announcement-title-nukie
     color: "#ff0000"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
     announceSentBy: false # The title already says who they are.
-    sound: /Audio/Announcements/war.ogg
+    sound: /Audio/Ambience/Antag/traitor_start.ogg # Erida syndiERT tweak
   - type: Computer
     board: SyndicateCommsComputerCircuitboard
   - type: PointLight
