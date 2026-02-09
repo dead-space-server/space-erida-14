@@ -12,7 +12,7 @@
 - type: gamePreset
   id: LightDynamic
   name: light-dynamic-title
-  showInVote: false
+  showInVote: true
   description: light-dynamic-description
   rules:
   - MeteorSwarmScheduler
@@ -23,7 +23,7 @@
 - type: gamePreset
   id: HardDynamic
   name: hard-dynamic-title
-  showInVote: false
+  showInVote: true
   description: hard-dynamic-description
   rules:
   - RampingStationEventScheduler

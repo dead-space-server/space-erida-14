@@ -113,22 +113,53 @@ namespace Content.Server.Voting.Managers
         {
             if (!IsValidOption(v, option))
                 throw new ArgumentOutOfRangeException(nameof(option), "Invalid vote option ID");
-
-            if (v.CastVotes.TryGetValue(player, out var existingOption))
+            // Erida-start
+            if (v.Multivariate)
             {
-                v.Entries[existingOption].Votes -= 1;
-            }
+                if (!v.CastVotes.ContainsKey(player))
+                {
+                    v.CastVotes[player] = new List<int>();
+                }
 
-            if (option != null)
-            {
-                v.Entries[option.Value].Votes += 1;
-                v.CastVotes[player] = option.Value;
+                var playerVotes = v.CastVotes[player];
+
+                if (option != null)
+                {
+                    if (playerVotes.Contains(option.Value))
+                    {
+                        playerVotes.Remove(option.Value);
+                        v.Entries[option.Value].Votes -= 1;
+                    }
+                    else
+                    {
+                        v.Entries[option.Value].Votes += 1;
+                        playerVotes.Add(option.Value);
+                    }
+
+                    if (playerVotes.Count == 0)
+                    {
+                        v.CastVotes.Remove(player); // ???
+                    }
+                }
             }
             else
             {
-                v.CastVotes.Remove(player);
-            }
+                if (v.CastVotes.TryGetValue(player, out var existingOption))
+                {
+                    v.Entries[existingOption[0]].Votes -= 1;
+                }
 
+                if (option != null)
+                {
+                    v.Entries[option.Value].Votes += 1;
+                    v.CastVotes[player] = new List<int> { option.Value };
+                }
+                else
+                {
+                    v.CastVotes.Remove(player);
+                }
+            }
+            // Erida-end
             v.VotesDirty.Add(player);
             v.Dirty = true;
         }
@@ -211,7 +242,7 @@ namespace Content.Server.Voting.Managers
             var start = _timing.RealTime;
             var end = start + options.Duration;
             var reg = new VoteReg(id, entries, options.Title, options.InitiatorText,
-                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes, options.TargetEntity);
+                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes, options.TargetEntity, options.Multivariate); // Erida-edit
 
             var handle = new VoteHandle(this, reg);
 
@@ -260,6 +291,7 @@ namespace Content.Server.Voting.Managers
                 msg.VoteInitiator = v.InitiatorText;
                 msg.StartTime = v.StartTime;
                 msg.EndTime = v.EndTime;
+                msg.Multivariate = v.Multivariate; // Erida-edit
 
                 if (v.TargetEntity != null)
                 {
@@ -276,7 +308,7 @@ namespace Content.Server.Voting.Managers
                 msg.IsYourVoteDirty = dirty;
                 if (dirty)
                 {
-                    msg.YourVote = (byte) cast;
+                    msg.YourVotes = cast.Select(c => (byte)c).ToArray(); // Erida-edit
                 }
             }
 
@@ -387,7 +419,12 @@ namespace Content.Server.Voting.Managers
             {
                 if (!CheckVoterEligibility(playerVote.Key, v.VoterEligibility))
                 {
-                    v.Entries[playerVote.Value].Votes -= 1;
+                    // Erida-start
+                    foreach (var value in playerVote.Value)
+                    {
+                        v.Entries[value].Votes -= 1;
+                    }
+                    // Erida-end
                     v.CastVotes.Remove(playerVote.Key);
                 }
             }
@@ -496,7 +533,7 @@ namespace Content.Server.Voting.Managers
         private sealed class VoteReg
         {
             public readonly int Id;
-            public readonly Dictionary<ICommonSession, int> CastVotes = new();
+            public readonly Dictionary<ICommonSession, List<int>> CastVotes = new(); // Erida-edit
             public readonly VoteEntry[] Entries;
             public readonly string Title;
             public readonly string InitiatorText;
@@ -506,6 +543,7 @@ namespace Content.Server.Voting.Managers
             public readonly VoterEligibility VoterEligibility;
             public readonly bool DisplayVotes;
             public readonly NetEntity? TargetEntity;
+            public readonly bool Multivariate; // Erida-edit
 
             public bool Cancelled;
             public bool Finished;
@@ -516,7 +554,7 @@ namespace Content.Server.Voting.Managers
             public ICommonSession? Initiator { get; }
 
             public VoteReg(int id, VoteEntry[] entries, string title, string initiatorText,
-                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, NetEntity? targetEntity)
+                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, NetEntity? targetEntity, bool multivariate) // Erida-edit
             {
                 Id = id;
                 Entries = entries;
@@ -528,6 +566,7 @@ namespace Content.Server.Voting.Managers
                 VoterEligibility = voterEligibility;
                 DisplayVotes = displayVotes;
                 TargetEntity = targetEntity;
+                Multivariate = multivariate; // Erida-edit
             }
         }
 
@@ -567,7 +606,7 @@ namespace Content.Server.Voting.Managers
             public string InitiatorText => _reg.InitiatorText;
             public bool Finished => _reg.Finished;
             public bool Cancelled => _reg.Cancelled;
-            public IReadOnlyDictionary<ICommonSession, int> CastVotes => _reg.CastVotes;
+            public IReadOnlyDictionary<ICommonSession, List<int>> CastVotes => _reg.CastVotes; // Erida-edit
 
             public IReadOnlyDictionary<object, int> VotesPerOption { get; }
 

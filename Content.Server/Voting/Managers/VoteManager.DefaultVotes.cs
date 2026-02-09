@@ -226,7 +226,8 @@ namespace Content.Server.Voting.Managers
                 Title = Loc.GetString("ui-vote-gamemode-title"),
                 Duration = alone
                     ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerAlone))
-                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerPreset))
+                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerPreset)),
+                Multivariate = true // Erida-edit
             };
 
             if (alone)
@@ -272,7 +273,8 @@ namespace Content.Server.Voting.Managers
                 Title = Loc.GetString("ui-vote-map-title"),
                 Duration = alone
                     ? TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerAlone))
-                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerMap))
+                    : TimeSpan.FromSeconds(_cfg.GetCVar(CCVars.VoteTimerMap)),
+                Multivariate = true // Erida-edit
             };
 
             if (alone)
@@ -488,11 +490,11 @@ namespace Content.Server.Voting.Managers
                 List<ICommonSession> noVoters = new();
                 foreach (var (voter, castVote) in vote.CastVotes)
                 {
-                    if (castVote == 0)
+                    if (castVote[0] == 0) // Erida-edit
                     {
                         yesVoters.Add(voter);
                     }
-                    if (castVote == 1)
+                    if (castVote[1] == 1) // Erida-edit
                     {
                         noVoters.Add(voter);
                     }

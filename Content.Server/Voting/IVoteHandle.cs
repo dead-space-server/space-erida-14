@@ -46,7 +46,7 @@ namespace Content.Server.Voting
         /// <summary>
         /// Dictionary of votes cast by players, matching the option's id.
         /// </summary>
-        IReadOnlyDictionary<ICommonSession, int> CastVotes { get; }
+        IReadOnlyDictionary<ICommonSession, List<int>> CastVotes { get; } // Erida-edit
 
         /// <summary>
         /// Current count of votes per option type.

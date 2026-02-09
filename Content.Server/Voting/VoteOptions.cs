@@ -50,7 +50,7 @@ namespace Content.Server.Voting
         public bool DisplayVotes = true;
 
         /// <summary>
-        ///     Whether the vote should have an entity attached to it, to be used for things like letting ghosts follow it. 
+        ///     Whether the vote should have an entity attached to it, to be used for things like letting ghosts follow it.
         /// </summary>
         public NetEntity? TargetEntity = null;
 
@@ -75,5 +75,7 @@ namespace Content.Server.Voting
                 InitiatorText = Loc.GetString("vote-options-server-initiator-text");
             }
         }
+
+        public bool Multivariate = false; // Erida-edit
     }
 }

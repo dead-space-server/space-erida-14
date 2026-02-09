@@ -38,7 +38,7 @@ namespace Content.Client.Voting.UI
 
             Modulate = Color.White.WithAlpha(0.75f);
             _voteButtons = new Button[vote.Entries.Length];
-            var group = new ButtonGroup();
+            var group = _vote.Multivariate ? null : new ButtonGroup(); // Erida-edit
 
             for (var i = 0; i < _voteButtons.Length; i++)
             {
@@ -70,9 +70,17 @@ namespace Content.Client.Voting.UI
                 {
                     _voteButtons[i].Text = Loc.GetString("ui-vote-button-no-votes", ("text", entry.Text));
                 }
-
-                if (_vote.OurVote == i)
-                    _voteButtons[i].Pressed = true;
+                // Erida-start
+                if (_vote.OurVotes != null)
+                    if (_vote.OurVotes.Contains(i))
+                    {
+                        _voteButtons[i].Pressed = true;
+                    }
+                    else
+                    {
+                        _voteButtons[i].Pressed = false;
+                    }
+                // Erida-end
             }
         }
 

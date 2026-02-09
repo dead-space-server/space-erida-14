@@ -16,9 +16,10 @@ namespace Content.Shared.Voting
         public TimeSpan EndTime; // Server RealTime.
         public (ushort votes, string name)[] Options = default!;
         public bool IsYourVoteDirty;
-        public byte? YourVote;
+        public byte[]? YourVotes; // Erida-edit
         public bool DisplayVotes;
         public int TargetEntity;
+        public bool Multivariate; // Erida-edit
 
         public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
         {
@@ -35,6 +36,7 @@ namespace Content.Shared.Voting
             EndTime = TimeSpan.FromTicks(buffer.ReadInt64());
             DisplayVotes = buffer.ReadBoolean();
             TargetEntity = buffer.ReadVariableInt32();
+            Multivariate = buffer.ReadBoolean(); // Erida-edit
 
             Options = new (ushort votes, string name)[buffer.ReadByte()];
             for (var i = 0; i < Options.Length; i++)
@@ -45,8 +47,22 @@ namespace Content.Shared.Voting
             IsYourVoteDirty = buffer.ReadBoolean();
             if (IsYourVoteDirty)
             {
-                YourVote = buffer.ReadBoolean() ? buffer.ReadByte() : null;
+            // Erida-start
+                if (buffer.ReadBoolean())
+                {
+                    var voteCount = buffer.ReadByte();
+                    YourVotes = new byte[voteCount];
+                    for (var i = 0; i < voteCount; i++)
+                    {
+                        YourVotes[i] = buffer.ReadByte();
+                    }
+                }
+                else
+                {
+                    YourVotes = null;
+                }
             }
+            // Erida-end
         }
 
         public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
@@ -64,6 +80,7 @@ namespace Content.Shared.Voting
             buffer.Write(EndTime.Ticks);
             buffer.Write(DisplayVotes);
             buffer.WriteVariableInt32(TargetEntity);
+            buffer.Write(Multivariate); // Erida-edit
 
             buffer.Write((byte) Options.Length);
             foreach (var (votes, name) in Options)
@@ -75,12 +92,18 @@ namespace Content.Shared.Voting
             buffer.Write(IsYourVoteDirty);
             if (IsYourVoteDirty)
             {
-                buffer.Write(YourVote.HasValue);
-                if (YourVote.HasValue)
+                // Erida-start
+                buffer.Write(YourVotes != null);
+                if (YourVotes != null)
                 {
-                    buffer.Write(YourVote.Value);
+                    buffer.Write((byte) YourVotes.Length);
+                    foreach (var vote in YourVotes)
+                    {
+                        buffer.Write(vote);
+                    }
                 }
             }
+            // Erida-end
         }
 
         public override NetDeliveryMethod DeliveryMethod => NetDeliveryMethod.ReliableOrdered;

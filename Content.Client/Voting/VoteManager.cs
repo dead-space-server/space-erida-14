@@ -155,9 +155,9 @@ namespace Content.Client.Voting
                 {
                     Entries = message.Options
                         .Select(c => new VoteEntry(c.name))
-                        .ToArray()
+                        .ToArray(),
+                    Multivariate = message.Multivariate // Erida-edit
                 };
-
                 existingVote = vote;
                 _votes.Add(voteId, vote);
             }
@@ -176,8 +176,9 @@ namespace Content.Client.Voting
             }
 
             // Update vote data from incoming.
-            if (message.IsYourVoteDirty)
-                existingVote.OurVote = message.YourVote;
+            if (message.IsYourVoteDirty
+                && message.YourVotes != null) // Erida-edit
+                existingVote.OurVotes = message.YourVotes.Select(b => (int)b).ToList(); // Erida-edit
             // On the server, most of these params can't change.
             // It can't hurt to just re-set this stuff since I'm lazy and the server is sending it anyways, so...
             existingVote.Initiator = message.VoteInitiator;
@@ -186,6 +187,7 @@ namespace Content.Client.Voting
             existingVote.EndTime = _gameTiming.RealServerToLocal(message.EndTime);
             existingVote.DisplayVotes = message.DisplayVotes;
             existingVote.TargetEntity = message.TargetEntity;
+            existingVote.Multivariate = message.Multivariate; // Erida-edit
 
             // Logger.Debug($"{existingVote.StartTime}, {existingVote.EndTime}, {_gameTiming.RealTime}");
 
@@ -232,7 +234,17 @@ namespace Content.Client.Voting
             var data = _votes[voteId];
             // Update immediately to avoid any funny reconciliation bugs.
             // See also code in server side to avoid bulldozing this.
-            data.OurVote = option;
+            // Erida-start
+            if (data.Multivariate
+                && data.OurVotes != null)
+            {
+                data.OurVotes.Add(option);
+            }
+            else
+            {
+                data.OurVotes = new List<int> { option };
+            }
+            // Erida-end
             _console.LocalShell.RemoteExecuteCommand($"vote {voteId} {option}");
         }
 
@@ -245,10 +257,11 @@ namespace Content.Client.Voting
             public TimeSpan EndTime;
             public string Title = "";
             public string Initiator = "";
-            public int? OurVote;
+            public List<int>? OurVotes = new(); // Erida-edit
             public int Id;
             public bool DisplayVotes;
             public int? TargetEntity; // NetEntity
+            public bool Multivariate; // Erida-edit
             public ActiveVote(int voteId)
             {
                 Id = voteId;
