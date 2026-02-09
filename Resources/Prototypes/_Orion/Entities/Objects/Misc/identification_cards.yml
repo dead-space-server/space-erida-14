@@ -14,6 +14,7 @@
     jobIcon: JobIconInteQ
   - type: Access
     tags:
+    - InteQ
     - InteQVanguardLeader
     - InteQVanguard
     - Maintenance

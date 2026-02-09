@@ -701,7 +701,7 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: AccessReader
-    access: [[ "CentralCommand" ]] # Erida syndiERT tweak
+    access: [[ "SyndicateAgent" ]] # Erida syndiERT tweak
   - type: CommunicationsConsole
     title: comms-console-announcement-title-nukie
     color: "#ff0000"

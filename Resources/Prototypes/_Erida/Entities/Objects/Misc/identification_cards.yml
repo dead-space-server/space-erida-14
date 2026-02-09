@@ -193,6 +193,8 @@
     jobIcon: JobIconInteQ
   - type: Access
     tags:
+    - InteQ
+    - NuclearOperative
     - InteQVanguardLeader
     - InteQVanguard
 
@@ -211,6 +213,8 @@
     jobIcon: JobIconInteQ
   - type: Access
     tags:
+    - InteQ
+    - NuclearOperative
     - InteQVanguard
 
 - type: entity
@@ -228,6 +232,8 @@
     jobIcon: JobIconInteQ
   - type: Access
     tags:
+    - InteQ
+    - NuclearOperative
     - InteQVanguard
 
 # Syndicate ERT

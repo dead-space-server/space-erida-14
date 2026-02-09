@@ -1,10 +1,10 @@
-ent-InteQOpsLeaderIDCard = ID карта InteQ (Лидер)
+ent-InteQOpsLeaderIDCard = ID карта лидера InteQ
     .desc = { ent-IDCardStandard.desc }
 
-ent-InteQOpsMedicIDCard = ID карта InteQ (Медик)
+ent-InteQOpsMedicalIDCard = ID карта медика InteQ
     .desc = { ent-IDCardStandard.desc }
 
-ent-InteQOpsBaseIDCard = ID карта InteQ
+ent-InteQOpsBaseIDCard = ID карта агента InteQ
     .desc = { ent-IDCardStandard.desc }
 
 ent-SyndicateERTOperativeIDCard = ID карта оперативника ОБР Синдиката

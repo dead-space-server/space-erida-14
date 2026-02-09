@@ -13,6 +13,7 @@
   - AllAccess
   access:
   - CentralCommand
+  - SyndicateAgent
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplant, DeathRattleImplantCentcomm ]
@@ -56,6 +57,7 @@
   - AllAccess
   access:
   - CentralCommand
+  - SyndicateAgent
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplant, DeathRattleImplantCentcomm ]
@@ -99,6 +101,7 @@
   - AllAccess
   access:
   - CentralCommand
+  - SyndicateAgent
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplant, DeathRattleImplantCentcomm ]
