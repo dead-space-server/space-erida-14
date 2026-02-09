@@ -26,6 +26,13 @@
     implants:
     - MindShieldImplant
     - DeathRattleImplantCentcomm
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - CodespeakNanoTrasen
+    understands:
+    - TauCetiBasic
+    - CodespeakNanoTrasen
 
 ## Death Squad
 

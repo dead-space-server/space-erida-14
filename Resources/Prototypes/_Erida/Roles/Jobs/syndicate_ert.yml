@@ -45,7 +45,7 @@
 # Medical
 - type: job
   id: SyndicateERTMedical
-  name: job-name-syndicate-ert-medical
+  name: job-name-syndicate-ert-medic
   description: job-description-syndicate-ert-medical
   playTimeTracker: JobSyndicateERTMedical
   setPreference: false

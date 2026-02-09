@@ -313,6 +313,13 @@
     - DeathRattleImplant
     - MindShieldImplant
     - DeathRattleImplantCentcomm
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - CodespeakSyndicate
+    understands:
+    - TauCetiBasic
+    - CodespeakSyndicate
 
 # Operative
 - type: entity
