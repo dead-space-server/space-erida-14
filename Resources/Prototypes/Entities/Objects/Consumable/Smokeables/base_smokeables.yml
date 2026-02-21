@@ -75,7 +75,7 @@
   - type: Vape
     damage:
       types:
-        Heat: 2
+        Asphyxiation: 2
   - type: SolutionContainerManager
     solutions:
       smokable:
