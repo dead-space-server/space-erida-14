@@ -192,3 +192,26 @@
   - 0     # zauker
   effects:
   - !type:HyperNobliumProductionReaction {}
+
+- type: gasReaction
+  id: WaterVaporDecomposition
+  priority: 0
+  minimumRequirements:
+  - 0     # oxygen
+  - 0     # nitrogen
+  - 0     # carbon dioxide
+  - 0     # plasma
+  - 0     # tritium
+  - 0.1   # vapor
+  - 0     # miasma
+  - 0     # n2o
+  - 0     # frezon
+  - 0     # pluoxium
+  - 0     # hydrogen
+  - 0.1   # bz
+  - 0     # healium
+  - 0     # nitrium
+  - 0     # hyper-noblium
+  - 0     # zauker
+  effects:
+    - !type:WaterVaporDecompositionReaction
