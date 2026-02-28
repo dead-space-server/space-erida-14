@@ -86,6 +86,8 @@ uplink-incendiary-grenade-desc = Releases a spray of incendiary fragments, ignit
 uplink-shrapnel-grenade-name = Shrapnel Grenade
 uplink-shrapnel-grenade-desc = Launches a spray of sharp fragments dealing great damage against unarmored targets.
 
+uplink-spiked-grenade-InteQ-name = Spiked Grenade
+uplink-spiked-grenade-InteQ-desc = It's a weaker version of a fragmentation grenade, but it tends to stick to various objects.
 # Ammo
 uplink-pistol-magazine-name = Pistol Magazine (.35 auto)
 uplink-pistol-magazine-desc = Pistol magazine with 10 cartridges. Compatible with the Viper.

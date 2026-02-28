@@ -99,6 +99,7 @@
   - GrenadeEMP
   - GrenadeFlash
   - MagazineGrenadeEmpty
+  - GrenadeSpiked
 
 # Shared between secfab and emagged protolathe
 - type: latheRecipePack

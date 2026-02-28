@@ -1011,6 +1011,19 @@
   - UplinkExplosives
 
 - type: listing
+  id: UplinkInteQGrenadeSpikedInteQ
+  name: uplink-spiked-grenade-InteQ-name
+  description: uplink-spiked-grenade-InteQ-desc
+  productEntity: GrenadeSpikedInteQ
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 2
+  cost:
+    TelecrystalOrange: 3
+  categories:
+  - UplinkExplosives
+
+- type: listing
   id: UplinkInteQGrenadeIncendiary
   name: uplink-incendiary-grenade-name
   description: uplink-incendiary-grenade-desc

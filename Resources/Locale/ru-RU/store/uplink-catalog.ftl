@@ -58,6 +58,8 @@ uplink-incendiary-grenade-name = Зажигательная граната
 uplink-incendiary-grenade-desc = Выпускает серию зажигательных фрагментов, поджигающих всех, кто находится в зоне детонации.
 uplink-shrapnel-grenade-name = Осколочная граната
 uplink-shrapnel-grenade-desc = Выпускает серию острых осколков, наносящих огромный урон по незащищённым целям.
+uplink-spiked-grenade-InteQ-name = Шипастая граната
+uplink-spiked-grenade-InteQ-desc = Слабая версия осколочной гранаты, но имеет свойство прилипать к разным объектам.
 # Ammo
 uplink-pistol-magazine-name = Пистолетный магазин (.35 авто)
 uplink-pistol-magazine-desc = Пистолетный магазин на 10 патронов. Совместим с "Гадюкой".
