@@ -598,7 +598,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         var distance = Math.Min(component.Range, direction.Length());
 
         var damage = GetDamage(meleeUid, user, component);
-        var resistanceBypass = GetResistanceBypass(meleeUid, user, component);
+        var resistanceBypass = false; //erida-edit
         var entities = GetEntityList(ev.Entities);
 
         if (entities.Count == 0)
