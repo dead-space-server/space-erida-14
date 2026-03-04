@@ -20,7 +20,7 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: 0.2
+    reflectProb: 0.15
     spread: 90
   - type: Item
     sprite: _Erida/Objects/Weapons/Melee/syndicate_rapier.rsi
