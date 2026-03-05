@@ -1445,20 +1445,6 @@
   categories:
     - UplinkImplants
 
-- type: listing # Erida-edit
-  id: UplinkInferiorImplant
-  name: uplink-inferior-implanter-name
-  description: uplink-inferior-implanter-desc
-  icon: { sprite: /Textures/Mobs/Species/Human/parts.rsi, state: full }
-  productEntity: InferiorImplanter
-  discountCategory: usualDiscounts
-  discountDownTo:
-    Telecrystal: 3
-  cost:
-    Telecrystal: 5
-  categories:
-    - UplinkImplants
-
 - type: listing
   id: UplinkEmpImplanter
   name: uplink-emp-implanter-name
