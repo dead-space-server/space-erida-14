@@ -167,6 +167,7 @@
     - DoorBumpOpener
     - AnomalyHost
   - type: TTS # Erida
+  - type: CardiopulmonaryResuscitation # Erida-edit
 
 - type: entity
   abstract: true
