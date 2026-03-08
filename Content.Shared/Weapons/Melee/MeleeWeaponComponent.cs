@@ -71,6 +71,9 @@ public sealed partial class MeleeWeaponComponent : Component
     [DataField, AutoNetworkedField]
     public bool ResistanceBypass = false;
 
+    [DataField, AutoNetworkedField] // Erida-edit
+    public bool ResistanceBypassWide = true; // Erida-edit
+
     /// <summary>
     /// Base damage for this weapon. Can be modified via heavy damage or other means.
     /// </summary>

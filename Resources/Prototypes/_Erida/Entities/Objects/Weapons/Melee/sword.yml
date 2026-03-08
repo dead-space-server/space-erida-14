@@ -9,6 +9,7 @@
   - type: DisarmMalus
     malus: 0.6
   - type: MeleeWeapon
+    resistanceBypassWide: false
     wideAnimationRotation: -135
     angle: 0
     animation: WeaponArcThrust
