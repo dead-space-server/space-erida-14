@@ -12,13 +12,14 @@
   - type: Clothing
     sprite: Clothing/Under/Socks/bee.rsi
 
-- type: entity
-  parent: ClothingShoesBase
-  id: ClothingUnderSocksCoder
-  name: coder socks
-  description: It's time to code sisters!!11!
-  components:
-  - type: Sprite
-    sprite: Clothing/Under/Socks/coder.rsi
-  - type: Clothing
-    sprite: Clothing/Under/Socks/coder.rsi
+# - type: entity
+#   parent: ClothingShoesBase
+#   id: ClothingUnderSocksCoder
+#   name: coder socks
+#   description: It's time to code sisters!!11!
+#   components:
+#   - type: Sprite
+#     sprite: Clothing/Under/Socks/coder.rsi
+#   - type: Clothing
+#     sprite: Clothing/Under/Socks/coder.rsi
+# Перенесено в socks
