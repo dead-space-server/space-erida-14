@@ -3,7 +3,7 @@
   parent: BaseWeaponShotgun
   id: WeaponShotgunGuardian
   suffix: Дробовик
-  description: Дробовик Guardian модели U-Type производства "Interdyne" сплав корпуса сделан из передовых материалов, что придает легкость в обращении, .
+  description: Дробовик Guardian модели U-Type производства "Interdyne" сплав корпуса сделан из передовых материалов, что придает легкость в обращении.
   components:
   - type: Sprite
     sprite: _Backmen/Objects/Weapons/Gunsx64/Shotguns/guard-17/big.rsi
