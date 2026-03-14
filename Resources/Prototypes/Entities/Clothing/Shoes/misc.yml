@@ -138,8 +138,8 @@
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
   - type: ClothingSpeedModifier
-    walkModifier: 1.5
-    sprintModifier: 1.5
+    walkModifier: 1.1 # Erida-edit 1.5 -> 1.1
+    sprintModifier: 1.1 # Erida-edit 1.5 -> 1.1
     standing: true
   - type: Appearance
   - type: GenericVisualizer
@@ -151,7 +151,7 @@
   - type: StaticPrice
     price: 500
   - type: PowerCellDraw
-    drawRate: 4
+    drawRate: 8 # Erida-edit 4 -> 8
   - type: ToggleCellDraw
   - type: ItemSlots
     slots:

@@ -339,7 +339,7 @@
   - type: SolutionContainerManager
     solutions:
       beaker:
-        maxVol: 60
+        maxVol: 30 # Erida-edit 60 -> 30
         canReact: false
 
 - type: entity

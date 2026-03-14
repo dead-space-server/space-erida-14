@@ -146,8 +146,8 @@
       effects:
       - !type:MovementSpeedModifier
         conditions:
-        walkSpeedModifier: 1.35
-        sprintSpeedModifier: 1.35
+        walkSpeedModifier: 1.15 # 1.35 -> 1.15
+        sprintSpeedModifier: 1.15 # 1.35 -> 1.15
         time: 0.07
       - !type:HealthChange
         conditions:
