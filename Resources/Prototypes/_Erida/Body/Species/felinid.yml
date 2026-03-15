@@ -120,7 +120,7 @@
         Blunt: 1
         Slash: 5
   - type: Stamina
-    critThreshold: 85
+    BaseCritThreshold: 85
   - type: Vocal
     sounds:
       Male: MaleFelinid

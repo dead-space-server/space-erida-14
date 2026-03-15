@@ -6,6 +6,7 @@
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
 
+# Here belongs DB fix for felinids
 - type: species
   id: Oni
   name: species-name-human
