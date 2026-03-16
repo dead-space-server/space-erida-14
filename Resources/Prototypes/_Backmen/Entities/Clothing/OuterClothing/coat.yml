@@ -11,12 +11,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.7
-#  - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-#    damageCoefficient: 0.8 // убрано до баланса всего
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: GroupExamine

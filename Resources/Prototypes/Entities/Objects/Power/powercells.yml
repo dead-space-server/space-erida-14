@@ -231,7 +231,7 @@
     maxCharge: 720
     startingCharge: 720
   - type: BatterySelfRecharger
-    autoRechargeRate: 12 # takes 1 minute to charge itself back to full
+    autoRechargeRate: 6 # takes 2 minute to charge itself back to full # Erida-edit 12 -> 6
 
 - type: entity
   parent: PowerCellMicroreactor

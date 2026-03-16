@@ -1,28 +1,28 @@
-- type: trait
-  id: Felenid
-  name: trait-felenid-name
-  description: trait-felenid-desc
-  category: Species
-  conditions:
-  - !type:IsSpeciesCondition
-    species: Human
-  effects:
-  - !type:AddCompsEffect
-    removeExisting: true
-    components:
-    - type: Vocal
-      sounds:
-        Male: MaleFelinid
-        Female: FemaleFelinid
-        Unsexed: MaleFelinid
-    - type: Speech
-      allowedEmotes: [ 'Mews', 'Meows', 'Purrs', 'Hiss' ]
-      speechSounds: Alto
-    - type: OwOAccent
-    - type: LanguageKnowledge #backmen: languages
-      speaks:
-      - TauCetiBasic
-      - Nekomimetic
-      understands:
-      - TauCetiBasic
-      - Nekomimetic
+# - type: trait
+#   id: Felenid
+#   name: trait-felenid-name
+#   description: trait-felenid-desc
+#   category: Species
+#   conditions:
+#   - !type:IsSpeciesCondition
+#     species: Human
+#   effects:
+#   - !type:AddCompsEffect
+#     removeExisting: true
+#     components:
+#     - type: Vocal
+#       sounds:
+#         Male: MaleFelinid
+#         Female: FemaleFelinid
+#         Unsexed: MaleFelinid
+#     - type: Speech
+#       allowedEmotes: [ 'Mews', 'Meows', 'Purrs', 'Hiss' ]
+#       speechSounds: Alto
+#     - type: OwOAccent
+#     - type: LanguageKnowledge #backmen: languages
+#       speaks:
+#       - TauCetiBasic
+#       - Nekomimetic
+#       understands:
+#       - TauCetiBasic
+#       - Nekomimetic

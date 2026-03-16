@@ -46,8 +46,8 @@
 
       # Main effects
       - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.20
-        sprintSpeedModifier: 1.20
+        walkSpeedModifier: 1.15 # Erida-edit 1.20 - > 1.15
+        sprintSpeedModifier: 1.15 # Erida-edit 1.20 - > 1.15
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDesoxyStamina # You are on meth. You keep going.
         time: 3
@@ -103,8 +103,8 @@
       effects:
       # Main effects
       - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.15
-        sprintSpeedModifier: 1.15
+        walkSpeedModifier: 1.08 # Erida-edit 1.15 -> 1.08
+        sprintSpeedModifier: 1.08 # Erida-edit 1.15 -> 1.08
       - !type:ModifyStatusEffect
         effectProto: StatusEffectStunned
         time: 1
@@ -176,8 +176,8 @@
       effects:
       # Main effects
       - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.25
-        sprintSpeedModifier: 1.25
+        walkSpeedModifier: 1.20 # Erida-edit 1.25 -> 1.20
+        sprintSpeedModifier: 1.20 # Erida-edit 1.25 -> 1.20
       - !type:ModifyStatusEffect
         effectProto: StatusEffectStimulantsStamina # You are on meth. You keep going.
         time: 3
