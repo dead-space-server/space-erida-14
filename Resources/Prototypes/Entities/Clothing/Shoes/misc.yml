@@ -138,8 +138,8 @@
   - type: ToggleClothing
     action: ActionToggleSpeedBoots
   - type: ClothingSpeedModifier
-    walkModifier: 1.1 # Erida-edit 1.5 -> 1.1
-    sprintModifier: 1.1 # Erida-edit 1.5 -> 1.1
+    walkModifier: 1.25 # Erida-edit 1.5 -> 1.25
+    sprintModifier: 1.25 # Erida-edit 1.5 -> 1.25
     standing: true
   - type: Appearance
   - type: GenericVisualizer

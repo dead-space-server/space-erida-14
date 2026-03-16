@@ -12,3 +12,6 @@ trait-roar-desc = Голос, не признающий полутонов.
 
 trait-medieval-name = Средневековый акцент
 trait-medieval-desc = Удивительно, что вы не скелет со щитом.
+
+trait-vulpkanin-full-name = Пресет Вульпканина
+trait-vulpkanin-full-desc = Добавляет персонажу звуки, действия и механики, характерные для вульпканинов
