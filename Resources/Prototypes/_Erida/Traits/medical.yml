@@ -1,0 +1,16 @@
+- type: trait
+  id: CatLigaments
+  name: trait-catligaments-name
+  description: trait-catligaments-desc
+  category: Medical
+  effects:
+  - !type:AddCompsEffect
+    components:
+     - type: Vocal
+       sounds:
+         Male: MaleFelinid
+         Female: FemaleFelinid
+         Unsexed: MaleFelinid
+     - type: Speech
+       allowedEmotes: [ 'Mews', 'Meows', 'Purrs', 'Hiss' ]
+       speechSounds: Alto
