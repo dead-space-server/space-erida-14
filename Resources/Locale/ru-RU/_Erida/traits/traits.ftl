@@ -12,3 +12,6 @@ trait-roar-desc = Голос, не признающий полутонов.
 
 trait-medieval-name = Средневековый акцент
 trait-medieval-desc = Удивительно, что вы не скелет со щитом.
+
+trait-owo-accent-name = OwO акцент
+trait-owo-accent-desc = Кажется, ты пытаешься быть милым.
