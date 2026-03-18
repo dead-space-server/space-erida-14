@@ -16,6 +16,9 @@ namespace Content.Server.Speech.EntitySystems
         private static readonly IReadOnlyDictionary<string, string> SpecialWords = new Dictionary<string, string>()
         {
             { "you", "wu" },
+            { "You", "Wu" }, // Erida-Localization
+            { "Ты", "Ти" }, // Erida-Localization
+            { "ты", "ти" }, // Corvax-Localization
         };
 
         public override void Initialize()
@@ -32,6 +35,10 @@ namespace Content.Server.Speech.EntitySystems
             }
 
             return message.Replace("!", _random.Pick(Faces))
+                // Corvax-Localization-Start
+                .Replace("р", "в").Replace("Р", "В")
+                .Replace("л", "в").Replace("Л", "В")
+                // Corvax-Localization-End
                 .Replace("r", "w").Replace("R", "W")
                 .Replace("l", "w").Replace("L", "W");
         }
