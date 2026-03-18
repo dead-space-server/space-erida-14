@@ -252,13 +252,6 @@
     requiredMobState:
     - Critical
     - Dead
-
-- type: entity
-  abstract: true
-  parent: BaseBorgChassisNotIonStormable
-  id: BaseBorgChassis
-  components:
-  - type: IonStormTarget
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
   - type: LanguageKnowledge #backmen: languages
@@ -268,6 +261,13 @@
     understands:
     - Binary
     - TauCetiBasic
+
+- type: entity
+  abstract: true
+  parent: BaseBorgChassisNotIonStormable
+  id: BaseBorgChassis
+  components:
+  - type: IonStormTarget
 
 - type: entity
   abstract: true
