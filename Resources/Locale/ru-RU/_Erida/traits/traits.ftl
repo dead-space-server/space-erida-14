@@ -17,4 +17,4 @@ trait-owo-accent-name = OwO акцент
 trait-owo-accent-desc = Кажется, ты пытаешься быть милым.
 
 trait-catligaments-name = Кошачьи связки
-trait-catligaments-desc = Вы способны издавать кошачьи звуки.
+trait-catligaments-desc = Вы способны издавать кошачьи звуки. Полностью заменяет эмоции и звуки вашей расы на кошачьи.

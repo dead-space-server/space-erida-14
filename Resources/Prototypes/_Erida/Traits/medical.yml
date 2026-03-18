@@ -5,6 +5,7 @@
   category: Medical
   effects:
   - !type:AddCompsEffect
+    removeExisting: true
     components:
      - type: Vocal
        sounds:
