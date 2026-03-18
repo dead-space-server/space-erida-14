@@ -130,13 +130,15 @@
 #    - type: NpcFactionMember
 #      factions:
 #        - InteQ
-#    - type: LanguageKnowledge
-#      speaks:
-#      - TauCetiBasic
-#      - OldFastCodes
-#      understands:
-#      - TauCetiBasic
-#      - OldFastCodes
+    - type: LanguageSpeaker
+      currentLanguage: TauCetiBasic
+    - type: LanguageKnowledge
+      speaks:
+      - TauCetiBasic
+      - OldFastCodes
+      understands:
+      - TauCetiBasic
+      - OldFastCodes
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: RandomMetadata

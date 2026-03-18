@@ -130,7 +130,9 @@
   - type: Sharp
   - type: TTS # Corvax-TTS
     voice: Monolith2
-  - type: LanguageKnowledge # backmen
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic
     - Mouse
@@ -176,7 +178,9 @@
     - MinorAntagonists
   - type: TTS # Corvax-TTS
     voice: Monolith2
-  - type: LanguageKnowledge # backmen
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic
     - Mouse
@@ -332,7 +336,9 @@
     normalState: Mouse_burning
   - type: TTS # Corvax-TTS
     voice: Monolith2
-  - type: LanguageKnowledge # backmen
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic
     - Mouse

@@ -259,6 +259,15 @@
   id: BaseBorgChassis
   components:
   - type: IonStormTarget
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - Binary
+    - TauCetiBasic
+    understands:
+    - Binary
+    - TauCetiBasic
 
 - type: entity
   abstract: true

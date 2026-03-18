@@ -29,6 +29,8 @@
     nameFormat: name-format-standard
   - type: DatasetVocalizer
     dataset: InteQAgent
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -124,6 +126,8 @@
   - type: NpcFactionMember
     factions:
       - InteQ
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge
     speaks:
     - OldFastCodes # Uhhh
