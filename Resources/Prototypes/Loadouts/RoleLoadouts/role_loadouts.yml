@@ -371,7 +371,6 @@
   - StationEngineerBackpack
   - Trinkets
   - SurvivalExtended
-  - Trinkets
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -390,8 +389,7 @@
   - StationEngineerID
   - Trinkets
   - SurvivalExtended
-  - Trinkets
-  #- StationEngineerJobTrinkets
+ #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
