@@ -1,3 +1,6 @@
+# When adding new map, dont forget to add it in tests
+# Content.IntegrationTests/Tests/PostMapInitTest.cs >> GameMapsInCurrentPool
+
 - type: gameMapPool
   id: EridaDefaultMapPool
   maps:

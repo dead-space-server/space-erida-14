@@ -141,4 +141,23 @@ public sealed class EntityWhitelistSystem : EntitySystem
 
         return list;
     }
+
+    // Goobstation start
+    /// Helper function to determine if Blacklist is either null or the entity is not on the list
+    /// Duplicate of equivalent Whitelist function
+    /// </summary>
+    public bool IsBlacklistFailOrNull(EntityWhitelist? blacklist, EntityUid uid)
+    {
+        return IsWhitelistFailOrNull(blacklist, uid);
+    }
+
+    /// <summary>
+    /// Helper function to determine if Blacklist is not null and entity is not on the list
+    /// Duplicate of equivalent Whitelist function
+    /// </summary>
+    public bool IsBlacklistFail(EntityWhitelist? blacklist, EntityUid uid)
+    {
+        return IsWhitelistFail(blacklist, uid);
+    }
+    // Goobstation end
 }

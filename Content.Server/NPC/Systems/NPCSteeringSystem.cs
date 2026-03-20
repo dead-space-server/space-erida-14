@@ -31,6 +31,9 @@ using Robust.Shared.Utility;
 using Content.Shared.Prying.Systems;
 using Microsoft.Extensions.ObjectPool;
 using Prometheus;
+using Robust.Server.GameObjects;
+using Content.Shared.Gravity;
+using Content.Shared._Goobstation.TileMovement;
 
 namespace Content.Server.NPC.Systems;
 
@@ -67,13 +70,14 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
-
+    [Dependency] private readonly SharedGravitySystem _gravity = default!; // Tile Movement Change
+    private TimeSpan CurrentTime => _physics.EffectiveCurTime ?? _timing.CurTime; // Tile Movement Change
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<MovementSpeedModifierComponent> _modifierQuery;
     private EntityQuery<NpcFactionMemberComponent> _factionQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;
     private EntityQuery<TransformComponent> _xformQuery;
-
+    private EntityQuery<TileMovementComponent> _tileMovementQuery; // Tile Movement Change
     private ObjectPool<HashSet<EntityUid>> _entSetPool =
         new DefaultObjectPool<HashSet<EntityUid>>(new SetPolicy<EntityUid>());
 
@@ -104,7 +108,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         _factionQuery = GetEntityQuery<NpcFactionMemberComponent>();
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
-
+        _tileMovementQuery = GetEntityQuery<TileMovementComponent>(); // Tile Movement Change
         for (var i = 0; i < InterestDirections; i++)
         {
             Directions[i] = new Angle(InterestRadians * i).ToVec();
@@ -344,7 +348,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         var offsetRot = -_mover.GetParentGridAngle(mover);
         _modifierQuery.TryGetComponent(uid, out var modifier);
         var moveSpeed = GetSprintSpeed(uid, modifier);
-        var body = _physicsQuery.GetComponent(uid);
+        PhysicsComponent? body = _physicsQuery.GetComponent(uid);
         var dangerPoints = steering.DangerPoints;
         dangerPoints.Clear();
         Span<float> interest = stackalloc float[InterestDirections];
@@ -410,7 +414,18 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         steering.LastSteerDirection = resultDirection;
         DebugTools.Assert(!float.IsNaN(resultDirection.X));
-        SetDirection(uid, mover, steering, resultDirection, false);
+        // Tile Movement Change
+        if (TryComp<GravityAffectedComponent>(uid, out var gravityAffected) &&
+            !_gravity.IsWeightless((uid, gravityAffected)) &&
+            body.BodyStatus == BodyStatus.OnGround &&
+            _tileMovementQuery.TryGetComponent(uid, out var tileMovement))
+        {
+            SetTileMovementDirection(xform, tileMovement, resultDirection);
+        }
+        else
+        {
+            SetDirection(uid, mover, steering, resultDirection, false);
+        }
     }
 
     private EntityCoordinates GetCoordinates(PathPoly poly)
@@ -490,5 +505,28 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         }
 
         return modifier.CurrentSprintSpeed;
+    }
+
+    // Tile Movement Functions
+    /// <summary>
+    /// Shitcode solution to get tile movement to work with AI pathing. Essentially converts the direction vector into a
+    /// target tile and manipulates values on the TileMovementComponent as to start a movement towards that location.
+    /// In an optimal world I would tear all of this movement code down and try something more modular.
+    /// </summary>
+    private void SetTileMovementDirection(
+        TransformComponent transform,
+        TileMovementComponent tileMovement,
+        Vector2 direction)
+    {
+        if (tileMovement.SlideActive || direction == Vector2.Zero)
+            return;
+
+        var targetLocation = transform.LocalPosition + (direction.Normalized() * 0.97f);
+
+        tileMovement.SlideActive = true;
+        tileMovement.Origin = new EntityCoordinates(transform.ParentUid, transform.LocalPosition);
+        tileMovement.Destination = SharedMoverController.SnapCoordinatesToTile(targetLocation);
+        tileMovement.MovementKeyInitialDownTime = CurrentTime;
+        tileMovement.CurrentSlideMoveButtons = MoveButtons.None;
     }
 }

@@ -1,3 +1,4 @@
+using Content.Shared._Goobstation.Weapons.Ranged;
 using Content.Shared.Examine;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Audio.Systems;
@@ -50,7 +51,13 @@ public sealed class RechargeBasicEntityAmmoSystem : EntitySystem
                 continue;
             }
 
-            recharge.NextCharge = recharge.NextCharge.Value + TimeSpan.FromSeconds(recharge.RechargeCooldown);
+            // Goobstation start
+            float multiplier = 1f;
+            var ev = new RechargeBasicEntityAmmoGetCooldownModifiersEvent(multiplier);
+            RaiseLocalEvent(uid, ref ev);
+            // Goobstation end
+
+            recharge.NextCharge = recharge.NextCharge.Value + TimeSpan.FromSeconds(recharge.RechargeCooldown * ev.Multiplier); // Goobstation
             Dirty(uid, recharge);
         }
     }
@@ -85,7 +92,13 @@ public sealed class RechargeBasicEntityAmmoSystem : EntitySystem
 
         if (ent.Comp.NextCharge == null || ent.Comp.NextCharge < _timing.CurTime)
         {
-            ent.Comp.NextCharge = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.RechargeCooldown);
+            // Goobstation start
+            float multiplier = 1f;
+            var ev = new RechargeBasicEntityAmmoGetCooldownModifiersEvent(multiplier);
+            RaiseLocalEvent(ent.Owner, ref ev);
+            // Goobstation end
+
+            ent.Comp.NextCharge = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.RechargeCooldown * ev.Multiplier); // Goobstation
             Dirty(ent);
         }
     }

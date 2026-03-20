@@ -1,0 +1,15 @@
+- type: construction
+  id: BoneAxeConstruction
+  graph: BoneAxeConstructionGraph
+  startNode: start
+  category: construction-category-weapons
+  targetNode: axe
+  objectType: Item
+
+- type: construction
+  id: BoneDaggerConstruction
+  graph: DaggerBoneConstructionGraph
+  startNode: start
+  category: construction-category-weapons
+  targetNode: dagger
+  objectType: Item
