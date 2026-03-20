@@ -228,8 +228,9 @@ public abstract partial class SharedGunSystem : EntitySystem
     }
 
     // Erida-start
-    private bool GetAllGuns(EntityUid entity, EntityUid activeGun, out List<Entity<GunComponent>> weaponsList)
+    private bool GetAllGuns(EntityUid entity, EntityUid activeGun, out HashSet<Entity<GunComponent>> weaponsList)
     {
+        /*
         weaponsList = new List<Entity<GunComponent>>();
 
         if (!TryComp<HandsComponent>(entity, out var handsComp))
@@ -244,7 +245,9 @@ public abstract partial class SharedGunSystem : EntitySystem
                 weaponsList.Add((heldItem.Value, gunComp));
             }
         }
-
+        */
+        var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(entity);
+        weaponsList = compWeaponsContainer.gunList;
         return weaponsList.Count > 1;
     }
 
@@ -314,11 +317,8 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private bool AttemptShoot(EntityUid user, Entity<GunComponent> gun)
     {
-        if (gun.Comp.FireRateModified <= 0f ||
-            !_actionBlockerSystem.CanAttack(user))
-        {
+        if (!CheckCanShoot(user, gun))
             return false;
-        }
 
         var toCoordinates = gun.Comp.ShootCoordinates;
 
@@ -326,20 +326,6 @@ public abstract partial class SharedGunSystem : EntitySystem
             return false;
 
         var curTime = Timing.CurTime;
-
-        // check if anything wants to prevent shooting
-        var prevention = new ShotAttemptedEvent
-        {
-            User = user,
-            Used = gun
-        };
-        RaiseLocalEvent(gun, ref prevention);
-        if (prevention.Cancelled)
-            return false;
-
-        RaiseLocalEvent(user, ref prevention);
-        if (prevention.Cancelled)
-            return false;
 
         // Need to do this to play the clicking sound for empty automatic weapons
         // but not play anything for burst fire.
@@ -481,7 +467,30 @@ public abstract partial class SharedGunSystem : EntitySystem
             CauseImpulse(fromCoordinates, toCoordinates.Value, (user, userPhysics));
         return true;
     }
+    public bool CheckCanShoot(EntityUid user, Entity<GunComponent> gun)
+    {
+        if (gun.Comp.FireRateModified <= 0f ||
+            !_actionBlockerSystem.CanAttack(user))
+        {
+            return false;
+        }
 
+        // check if anything wants to prevent shooting
+        var prevention = new ShotAttemptedEvent
+        {
+            User = user,
+            Used = gun
+        };
+        RaiseLocalEvent(gun, ref prevention);
+        if (prevention.Cancelled)
+            return false;
+
+        RaiseLocalEvent(user, ref prevention);
+        if (prevention.Cancelled)
+            return false;
+
+        return true;
+    }
     public void Shoot(
         Entity<GunComponent> gun,
         EntityUid ammo,
