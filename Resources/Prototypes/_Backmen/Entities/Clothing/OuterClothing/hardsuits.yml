@@ -14,7 +14,7 @@
     modifiers:
       coefficients: # Erida
         Blunt: 0.55
-        Heat: 0.6
+        Heat: 0.7
         Slash: 0.55
         Piercing: 0.55
         Radiation: 0.4

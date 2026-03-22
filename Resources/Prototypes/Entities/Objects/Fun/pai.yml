@@ -102,6 +102,15 @@
   - type: Tag
     tags:
     - SiliconEmotes
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - Binary
+    - TauCetiBasic
+    understands:
+    - Binary
+    - TauCetiBasic
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]

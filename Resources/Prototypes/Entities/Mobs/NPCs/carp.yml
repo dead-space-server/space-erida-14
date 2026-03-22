@@ -86,10 +86,13 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    - type: LanguageSpeaker # Erida-edit
+      currentLanguage: TauCetiBasic
     - type: LanguageKnowledge # Erida-edit
       speaks:
       - Dragon
       understands:
+      - TauCetiBasic
       - Dragon
 
 - type: entity

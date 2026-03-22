@@ -2,7 +2,7 @@
   id: SalvageWeapons
   name: research-technology-salvage-weapons
   icon:
-    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi # Lavaland
     state: icon
   discipline: Shaft
   tier: 1

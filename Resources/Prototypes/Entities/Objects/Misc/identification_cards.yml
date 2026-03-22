@@ -43,6 +43,7 @@
   - type: StealTarget
     stealGroup: IDCard
   - type: NanoChatCard # DeltaV
+  - type: MiningPoints # DeltaV
 
 #IDs with layers
 

@@ -62,6 +62,7 @@
     speaks:
     - Mouse
     understands:
+    - TauCetiBasic
     - Mouse
   - type: MeleeWeapon
     soundHit:
@@ -292,6 +293,7 @@
     speaks:
     - Chicken
     understands:
+    - TauCetiBasic
     - Chicken
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
@@ -605,6 +607,7 @@
     speaks:
     - Moffic
     understands:
+    - TauCetiBasic
     - Moffic
   - type: ZombieAccentOverride
     accent: zombieMoth
@@ -755,6 +758,7 @@
     speaks:
     - Duck
     understands:
+    - TauCetiBasic
     - SpaceMob
     - Duck
   - type: SentienceTarget
@@ -1040,6 +1044,7 @@
     speaks:
     - Crab
     understands:
+    - TauCetiBasic
     - SpaceMob
     - Crab
   - type: Bloodstream
@@ -1329,6 +1334,7 @@
     - SpaceMob
     - Kangaroo
     understands:
+    - TauCetiBasic
     - SpaceMob
     - Kangaroo
   - type: Butcherable
@@ -1615,6 +1621,7 @@
     speaks:
     - Kobold
     understands:
+    - TauCetiBasic
     - Kobold
   - type: Speech
     speechSounds: Lizard
@@ -1905,6 +1912,7 @@
     speaks:
     - Mouse
     understands:
+    - TauCetiBasic
     - Mouse
   - type: Tag
     tags:
@@ -2362,6 +2370,8 @@
       reagents:
       - ReagentId: Blood
         Quantity: 50
+  - type: LanguageSpeaker # Erida-edit
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge # Erida-edit
     speaks:
     - TauCetiBasic
@@ -2563,10 +2573,13 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: LanguageSpeaker # Erida-edit
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge # Erida-edit
     speaks:
     - Snake
     understands:
+    - TauCetiBasic
     - Snake
 
 # Code unique spider prototypes or combine them all into one spider and get a
@@ -2660,10 +2673,13 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: LanguageSpeaker # Erida-edit
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge # Erida-edit
     speaks:
     - Spider
     understands:
+    - TauCetiBasic
     - Spider
 
 - type: entity
@@ -4029,6 +4045,8 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic

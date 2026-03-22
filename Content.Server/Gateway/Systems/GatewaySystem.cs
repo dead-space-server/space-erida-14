@@ -13,6 +13,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Tag;
 
 namespace Content.Server.Gateway.Systems;
 
@@ -26,6 +27,7 @@ public sealed class GatewaySystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly StationSystem _stations = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly TagSystem _tag = default!; // Goobstation
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     public override void Initialize()
@@ -99,7 +101,11 @@ public sealed class GatewaySystem : EntitySystem
 
         while (query.MoveNext(out var destUid, out var dest, out var destXform))
         {
-            if (!dest.Enabled || destUid == uid)
+            // Goobstation
+            if (!dest.Enabled
+                || destUid == uid
+                || (comp.TagRestriction != null && !_tag.HasTag(destUid, comp.TagRestriction.Value)) // if we have a tag restriction and destination doesn't have it, abort
+                || (dest.TagRestriction != null && !_tag.HasTag(uid, dest.TagRestriction.Value))) // if destination has a tag restriction but we don't have the tag, abort
                 continue;
 
             // Show destination if either no destination comp on the map or it's ours.

@@ -10,6 +10,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: NanoTrasen
@@ -24,6 +25,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Mouse
@@ -46,6 +48,7 @@
   - Xeno
   - AllHostile
   - Dragon
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: SimpleHostile
@@ -61,6 +64,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: SimpleNeutral
@@ -78,6 +82,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Xeno
@@ -93,6 +98,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Zombie
@@ -108,6 +114,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Revolutionary
@@ -119,6 +126,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: AllHostile
@@ -137,6 +145,7 @@
   - Wizard
   - Xenoborg
   - InteQ
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Wizard
@@ -170,3 +179,21 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
+
+# Lavaland mob faction to stop gang wars
+- type: npcFaction
+  id: Lavafauna
+  hostile:
+  - NanoTrasen
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Wizard # goob edit - wizard
+  friendly:
+  - Dragon

@@ -1,3 +1,4 @@
+using Content.Shared._DV.Salvage;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using JetBrains.Annotations;
@@ -34,6 +35,8 @@ namespace Content.Client.Lathe.UI
             _menu.QueueMoveUpAction += index => SendMessage(new LatheMoveRequestMessage(index, -1));
             _menu.QueueMoveDownAction += index => SendMessage(new LatheMoveRequestMessage(index, 1));
             _menu.DeleteFabricatingAction += () => SendMessage(new LatheAbortFabricationMessage());
+
+            _menu.OnClaimMiningPoints += () => SendMessage(new LatheClaimMiningPointsMessage()); // DeltaV
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)

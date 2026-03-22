@@ -3,6 +3,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Diagnostics;
 using Content.Shared.Station;
+using Content.Shared._Lavaland.Procedural.Prototypes;
 
 namespace Content.Shared.Maps;
 
@@ -51,6 +52,11 @@ public sealed partial class GameMapPrototype : IPrototype
     /// The stations this map contains. The names should match with the BecomesStation components.
     /// </summary>
     public IReadOnlyDictionary<string, StationConfig> Stations => _stations;
+
+    // Goobstation start
+    [DataField]
+    public List<ProtoId<LavalandMapPrototype>> Planets = new() { "Lavaland" };
+    // Goobstation end
 
     /// <summary>
     /// Performs a shallow clone of this map prototype, replacing <c>MapPath</c> with the argument.

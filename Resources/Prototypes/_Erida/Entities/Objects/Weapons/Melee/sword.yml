@@ -28,3 +28,19 @@
   - type: Tag
     tags:
     - SyndicateRapier
+
+- type: entity
+  name: Golden rapier
+  parent: CaptainSabre
+  id: GoldenRapier
+  description: Ancient, forged for those who drunked by their own self-importance.
+  components:
+    - type: Sprite
+      sprite: _Erida/Objects/Weapons/Melee/golden_rapier.rsi
+    - type: MeleeWeapon
+      attackRate: 3
+      damage:
+        types:
+          Piercing: 7.5
+    - type: Item
+      sprite: _Erida/Objects/Weapons/Melee/golden_rapier.rsi

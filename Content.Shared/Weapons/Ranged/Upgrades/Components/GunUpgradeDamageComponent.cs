@@ -9,6 +9,14 @@ namespace Content.Shared.Weapons.Ranged.Upgrades.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(GunUpgradeSystem))]
 public sealed partial class GunUpgradeDamageComponent : Component
 {
+    // Goobstation start
+    /// <summary>
+    /// How much should we multiply the total projectile's damage.
+    /// </summary>
+    [DataField]
+    public float Modifier = 1f;
+    // Goobstation end
+
     /// <summary>
     /// Additional damage added onto the projectile's base damage.
     /// </summary>
