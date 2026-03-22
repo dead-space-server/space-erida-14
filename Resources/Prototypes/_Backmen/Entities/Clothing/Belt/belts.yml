@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseBlueShieldContraband]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseBlueShieldContraband]
   id: ClothingBeltBlueshieldWebbing
   name: blueshield webbing
   description: A unique and versatile chest mount capable of holding blueshield gear.
@@ -8,6 +8,8 @@
     sprite: _Backmen/Clothing/Belt/bswebbing.rsi
   - type: Clothing
     sprite: _Backmen/Clothing/Belt/bswebbing.rsi
+  - type: ExplosionResistance # Erida-edit
+    damageCoefficient: 0.1
 
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase]

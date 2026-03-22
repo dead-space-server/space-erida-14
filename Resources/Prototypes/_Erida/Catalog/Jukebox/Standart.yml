@@ -57,3 +57,9 @@
   name: Title1 (Flip-Flap)
   path:
     path: /Audio/_Erida/Jukebox/Space_Station_13-Title1_(Flip-Flap).ogg
+
+- type: jukebox
+  id: EndOfTheRoad
+  name: Katana Zero - End of the Road
+  path:
+    path: /Audio/_Erida/Jukebox/Katana_Zero_End_of_the_Road.ogg

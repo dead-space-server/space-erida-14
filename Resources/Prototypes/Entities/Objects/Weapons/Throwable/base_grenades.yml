@@ -80,7 +80,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 10
+        damage: 20 # Erida-edit 10 -> 20
       behaviors:
       - !type:TimerStartBehavior
     - trigger: # immediately explode

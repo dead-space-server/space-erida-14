@@ -170,6 +170,8 @@
       path: /Audio/Items/crowbar.ogg
   - type: ProRottingContainer # Erida-edit
     decayModifier: 0
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
   - type: LanguageKnowledge # Erida-edit
     speaks:
     - TauCetiBasic

@@ -30,3 +30,14 @@
   - !type:AddCompsEffect
     components:
     - type: MedievalAccent
+
+- type: trait
+  id: OwOAccent
+  name: trait-owo-accent-name
+  description: trait-owo-accent-desc
+  category: Accents
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: OwOAccent
