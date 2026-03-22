@@ -36,6 +36,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Power.Components;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -317,8 +318,10 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private bool AttemptShoot(EntityUid user, Entity<GunComponent> gun)
     {
+        // Erida-start
         if (!CheckCanShoot(user, gun))
             return false;
+        // Erida-end
 
         var toCoordinates = gun.Comp.ShootCoordinates;
 
@@ -467,6 +470,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             CauseImpulse(fromCoordinates, toCoordinates.Value, (user, userPhysics));
         return true;
     }
+    // Erida-start
     public bool CheckCanShoot(EntityUid user, Entity<GunComponent> gun)
     {
         if (gun.Comp.FireRateModified <= 0f ||
@@ -491,6 +495,35 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         return true;
     }
+
+    public bool CheckCanShootAndAmmo(EntityUid user, Entity<GunComponent> gun)
+    {
+        Log.Debug($"HasAmmo: {HasAmmo(gun)}");
+        if (CheckCanShoot(user, gun)
+            && HasAmmo(gun))
+            return true;
+        if (HasComp<BatterySelfRechargerComponent>(gun))
+            return true;
+        return false;
+    }
+
+    public bool HasAmmo(Entity<GunComponent> gun)
+    {
+        if (TryComp<ChamberMagazineAmmoProviderComponent>(gun, out var chamberMag))
+        {
+            Log.Debug($"GetChamberEntity: {GetChamberEntity(gun)}");
+            if (chamberMag.BoltClosed == false
+                || GetChamberEntity(gun) == null)
+                return false;
+        }
+
+        var ev = new GetAmmoCountEvent();
+        RaiseLocalEvent(gun, ref ev, false);
+        Log.Debug($"Количество патронов у оружия: {ev.Count}");
+
+        return ev.Count > 0;
+    }
+    // Erida-end
     public void Shoot(
         Entity<GunComponent> gun,
         EntityUid ammo,
