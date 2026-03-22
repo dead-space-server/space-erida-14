@@ -252,6 +252,7 @@
     requiredMobState:
     - Critical
     - Dead
+  - type: MiningPoints # DeltaV
 
 - type: entity
   abstract: true

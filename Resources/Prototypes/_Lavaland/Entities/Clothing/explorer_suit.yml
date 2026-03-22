@@ -55,6 +55,7 @@
   - type: Tag
     tags:
     - ExplorerSuit
+  - type: PressureArmorChange
 
 - type: entity
   parent: ClothingHeadBase

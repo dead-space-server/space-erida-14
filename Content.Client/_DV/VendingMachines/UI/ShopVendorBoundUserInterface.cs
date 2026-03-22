@@ -19,12 +19,28 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.GameStates;
+using Content.Shared._DV.VendingMachines;
+using Robust.Client.UserInterface;
 
-namespace Content.Shared._DV.VendingMachines;
+namespace Content.Client._DV.VendingMachines.UI;
 
-/// <summary>
-/// Makes a <see cref="ShopVendorComponent"/> use mining points to buy items.
-/// </summary>
-[RegisterComponent, NetworkedComponent]
-public sealed partial class PointsVendorComponent : Component;
+public sealed class ShopVendorBoundUserInterface : BoundUserInterface
+{
+    [ViewVariables]
+    private ShopVendorWindow? _window;
+
+    public ShopVendorBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
+    {
+    }
+
+    protected override void Open()
+    {
+        base.Open();
+
+        _window = this.CreateWindow<ShopVendorWindow>();
+        _window.SetEntity(Owner);
+        _window.OpenCenteredLeft();
+        _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
+        _window.OnItemSelected += index => SendMessage(new ShopVendorPurchaseMessage(index));
+    }
+}

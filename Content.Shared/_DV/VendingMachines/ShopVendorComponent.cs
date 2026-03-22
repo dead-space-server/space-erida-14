@@ -31,7 +31,7 @@ namespace Content.Shared._DV.VendingMachines;
 /// Does not need restocking.
 /// Another component must handle <see cref="ShopVendorBalanceEvent"/> and <see cref="ShopVendorPurchaseEvent"/> to work.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedShopVendorSystem))]
 [AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class ShopVendorComponent : Component
 {

@@ -29,7 +29,7 @@ namespace Content.Shared._DV.Salvage.Components;
 /// Stores mining points for a holder, such as an ID card or ore processor.
 /// Mining points are gained by smelting ore and redeeming them to your ID card.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, Access(typeof(MiningPointsSystem))]
 [AutoGenerateComponentState]
 public sealed partial class MiningPointsComponent : Component
 {

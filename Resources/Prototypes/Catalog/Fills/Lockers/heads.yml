@@ -14,6 +14,7 @@
     - id: ClothingHandsKnuckleDustersQM
     - id: PlushieLizardJobQuartermaster
       prob: 0.02
+    - id: GatewayFlatpackLavaland # Lavaland
 
 - type: entity
   id: LockerQuarterMasterFilled
