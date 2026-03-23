@@ -34,12 +34,14 @@ using Content.Shared.Projectiles;
 using Content.Shared.Wieldable;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Body;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server._Lavaland.Pressure;
 
 public sealed class PressureEfficiencyChangeSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
+    [Dependency] private readonly BodySystem _body = default!;
 
     public override void Initialize()
     {
@@ -49,6 +51,9 @@ public sealed class PressureEfficiencyChangeSystem : EntitySystem
         SubscribeLocalEvent<PressureDamageChangeComponent, GetMeleeDamageEvent>(OnGetDamage, after: new []{typeof(SharedWieldableSystem)});
         SubscribeLocalEvent<PressureDamageChangeComponent, GunShotEvent>(OnGunShot);
         SubscribeLocalEvent<PressureDamageChangeComponent, ProjectileShotEvent>(OnProjectileShot);
+
+        SubscribeLocalEvent<PressureArmorChangeComponent, ExaminedEvent>(OnArmorExamined);
+        SubscribeLocalEvent<PressureArmorChangeComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnArmorRelayDamageModify, before: [typeof(SharedArmorSystem)]);
     }
 
     private void OnExamined(Entity<PressureDamageChangeComponent> ent, ref ExaminedEvent args)
@@ -110,6 +115,22 @@ public sealed class PressureEfficiencyChangeSystem : EntitySystem
             Math.Round(ent.Comp.ExtraPenetrationModifier * 100),
             localeKey,
             ref args);
+    }
+
+    private void OnArmorRelayDamageModify(Entity<PressureArmorChangeComponent> ent, ref InventoryRelayedEvent<DamageModifyEvent> args)
+    {
+        var pressure = _atmos.GetTileMixture((ent.Owner, Transform(ent)))?.Pressure ?? 0f;
+        if ((pressure >= ent.Comp.LowerBound && pressure <= ent.Comp.UpperBound) != ent.Comp.ApplyWhenInRange
+            || !TryComp<ArmorComponent>(ent, out var armor))
+            return;
+
+        var modify = new DamageModifierSet();
+        foreach (var key in armor.Modifiers.Coefficients.Keys)
+        {
+            modify.Coefficients.TryAdd(key, 1 + ent.Comp.ExtraPenetrationModifier);
+        }
+
+        args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modify);
     }
 
     private void ExamineHelper(double min, double max, double modifier, string localeKey, ref ExaminedEvent args)

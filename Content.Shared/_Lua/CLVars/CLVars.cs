@@ -12,18 +12,18 @@ namespace Content.Shared.Lua.CLVar
         public static readonly CVarDef<bool> NetDynamicTick =
             CVarDef.Create("net.dynamictick", false, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
         public static readonly CVarDef<int> NetDynamicTickMinTickrate =
-            CVarDef.Create("net.dynamictick.min_tickrate", 20, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.min_tickrate", 20, CVar.SERVERONLY | CVar.ARCHIVE);
         public static readonly CVarDef<int> NetDynamicTickMaxTickrate =
-            CVarDef.Create("net.dynamictick.max_tickrate", 50, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.max_tickrate", 50, CVar.SERVERONLY | CVar.ARCHIVE);
         public static readonly CVarDef<float> NetDynamicTickCheckInterval =
-            CVarDef.Create("net.dynamictick.check_interval", 1f, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.check_interval", 1f, CVar.SERVERONLY | CVar.ARCHIVE);
         public static readonly CVarDef<float> NetDynamicTickLowFpsMin =
-            CVarDef.Create("net.dynamictick.low_fps_min", 4f, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.low_fps_min", 4f, CVar.SERVERONLY | CVar.ARCHIVE);
         public static readonly CVarDef<float> NetDynamicTickLowFpsMax =
-            CVarDef.Create("net.dynamictick.low_fps_max", 20f, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.low_fps_max", 20f, CVar.SERVERONLY | CVar.ARCHIVE);
         public static readonly CVarDef<float> NetDynamicTickDecreaseDelay =
-            CVarDef.Create("net.dynamictick.decrease_delay", 15f, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.decrease_delay", 15f, CVar.SERVERONLY | CVar.ARCHIVE);
         public static readonly CVarDef<float> NetDynamicTickIncreaseDelay =
-            CVarDef.Create("net.dynamictick.increase_delay", 1200f, CVar.SERVERONLY | CVar.ARCHIVE);
+            CVarDef.Create("net.increase_delay", 1200f, CVar.SERVERONLY | CVar.ARCHIVE);
     }
 }
