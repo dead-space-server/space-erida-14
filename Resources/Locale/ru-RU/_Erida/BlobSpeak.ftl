@@ -1,2 +1,2 @@
-speak-vv-blob = Тест1
+speak-vv-blob = Тест2
 bkm-radio-Hivemind = Улей
