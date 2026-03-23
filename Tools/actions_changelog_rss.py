@@ -46,7 +46,7 @@ FEED_LANGUAGE    = "en-US"
 FEED_GUID_PREFIX = "ss14-changelog-wizards-"
 FEED_URL         = "https://central.spacestation14.io/changelog.xml"
 
-CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
+CHANGELOG_FILE = "Resources/Changelog/Erida.yml" # Erida edit
 
 TYPES_TO_EMOJI = {
     "Fix":    "🐛",
