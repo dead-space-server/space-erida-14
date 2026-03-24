@@ -51,8 +51,10 @@ def main():
         cur_changelog = yaml.safe_load(f)
 
     diff = diff_changelog(last_changelog, cur_changelog)
-    message_lines = changelog_entries_to_message_lines(diff)
-    send_message_lines(message_lines)
+
+    for entry in diff:
+        embed = entry_to_embed(entry)
+        send_embed(embed)
 
 
 def get_most_recent_workflow(
@@ -215,6 +217,48 @@ def changelog_entries_to_message_lines(entries: Iterable[ChangelogEntry]) -> lis
 
     return message_lines
 
+def entry_to_embed(entry: ChangelogEntry) -> dict:
+    lines = []
+
+    for change in entry["changes"]:
+        emoji = TYPES_TO_EMOJI.get(change["type"], "❓")
+        message = change["message"]
+
+        if len(message) > 4000:
+            message = message[:3900].rstrip() + "..."
+
+        lines.append(f"{emoji} - {message}")
+
+    description = "\n".join(lines)
+
+    embed = {
+        "title": entry["title"],
+        "description": description,
+        "color": 0xa06da8,
+        "footer": {
+            "text": entry.get("author"),
+            "icon_url": entry.get("avatar_url"),
+        },
+        "url": entry.get("url"),
+        "timestamp": entry["timestamp"],
+    }
+
+    return embed
+
+def send_embed(embed: dict):
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL_ERIDA")
+
+    if not webhook_url:
+        print("No Discord webhook configured!")
+        return
+
+    body = {
+        "embeds": [embed],
+        "allowed_mentions": {"parse": []},
+        "flags": 1 << 2,
+    }
+
+    send_with_retry(webhook_url, body, "Erida")
 
 def send_message_lines(message_lines: list[str]):
     """Join a list of message lines into chunks that are each below Discord's message length limit, and send them."""

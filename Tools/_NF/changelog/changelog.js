@@ -21,7 +21,7 @@ const CommentRegex = /<!--.*?-->/gs; // HTML comments
 // Main function
 async function main() {
     const pr = await axios.get(`https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/pulls/${process.env.PR_NUMBER}`);
-    const { merged_at, body, user } = pr.data;
+    const { merged_at, body, user, title } = pr.data;
 
     commentlessBody = body.replace(CommentRegex, '');
 
@@ -60,7 +60,8 @@ async function main() {
         id: getHighestCLNumber() + 1,
         time: time,
         url: `https://github.com/${process.env.GITHUB_REPOSITORY}/pull/${process.env.PR_NUMBER}`,
-        avatarUrl: user.avatar_url
+        avatar_url: user.avatar_url,
+        title: title
     };
 
     writeChangelog(entry);
