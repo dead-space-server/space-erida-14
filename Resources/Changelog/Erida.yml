@@ -1,3 +1,8 @@
-Name: Erida
-Order: -1
-Entries: []
+Entries:
+- author: Sidzaru
+  changes:
+    - type: Fix
+      message: None
+  id: 1
+  time: '2026-22-03T19:50:23.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/288
