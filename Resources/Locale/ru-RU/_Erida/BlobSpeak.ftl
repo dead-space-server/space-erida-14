@@ -1,2 +1,2 @@
-speak-vv-blob = блоб
+speak-vv-blob = блоб1
 bkm-radio-Hivemind = Улей
