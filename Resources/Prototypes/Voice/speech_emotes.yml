@@ -353,6 +353,23 @@
     - snapped fingers
 
 - type: emote
+  id: Rpurr
+  name: chat-emote-name-Rpurr
+  category: Hands
+  available: false
+  icon: Interface/Emotes/hew.png
+  whitelist:
+    components:
+    - Hands
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-rpurr"]
+  chatTriggers:
+    - rpurr
+    - raptor purr
+
+- type: emote
   id: Thump
   name: chat-emote-name-thump
   category: Hands
@@ -449,9 +466,16 @@
 - type: emote
   id: Weh
   name: chat-emote-name-weh
-  category: Vocal
+  category: Hands
   icon: Interface/Emotes/weh.png
   chatMessages: ["chat-emote-msg-weh"]
+  chatTriggers:
+    - weh!
+    - weh
+    - weh..
+    - weh?
+    - weh?!
+    - wehs
 
 - type: emote
   id: Hew

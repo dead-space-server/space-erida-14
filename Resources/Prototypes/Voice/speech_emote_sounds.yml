@@ -96,6 +96,8 @@
       collection: Whistles
     Crying:
       collection: MaleCry
+    Rpurr:
+      collection: Rpurr
     Weh:
       collection: Weh
     Hew:
@@ -592,6 +594,10 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
       params:
         variation: 0.125
+    Weh:
+      path: /Audio/Voice/Reptilian/weh.ogg
+    Rpurr:
+      path: /Audio/Voice/Reptilian/raptor_purr.ogg
     Clap:
       collection: Claps
     ClapSingle:
