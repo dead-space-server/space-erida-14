@@ -32,8 +32,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -74,8 +72,6 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -96,8 +92,10 @@
       collection: Whistles
     Crying:
       collection: MaleCry
+    # Edited by Erida 
     Rpurr:
-      collection: Rpurr
+      path: /Audio/Voice/Reptilian/raptor_purr.ogg
+    # Edited by Erida 
     Weh:
       collection: Weh
     Hew:
@@ -120,8 +118,12 @@
       collection: Whistles
     Crying:
       collection: FemaleCry
+    # Edited by Erida 
+    Rpurr:
+      path: /Audio/Voice/Reptilian/raptor_purr.ogg
     Weh:
       collection: Weh
+    # Edited by Erida 
     Hew:
       collection: Hew
     Gasp:
@@ -162,8 +164,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -206,8 +206,6 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -236,8 +234,6 @@
       collection: BikeHorn
     Crying:
       path: /Audio/Voice/Vox/vox_cry.ogg
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -259,8 +255,6 @@
       path: /Audio/Animals/nymph_chirp.ogg
     Honk:
       collection: BikeHorn
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -283,8 +277,6 @@
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:
@@ -325,8 +317,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -368,8 +358,6 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Gasp:
@@ -395,8 +383,6 @@
       path: /Audio/Voice/Moth/moth_chitter.ogg
     Squeak:
       path: /Audio/Voice/Moth/moth_squeak.ogg
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:
@@ -500,8 +486,6 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:
@@ -540,8 +524,6 @@
       collection: VulpkaninWhines
     Howl:
       collection: VulpkaninHowls
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:
@@ -594,10 +576,12 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
       params:
         variation: 0.125
+    # Edited by Erida 
     Weh:
       path: /Audio/Voice/Reptilian/weh.ogg
     Rpurr:
       path: /Audio/Voice/Reptilian/raptor_purr.ogg
+    # Edited by Erida 
     Clap:
       collection: Claps
     ClapSingle:
@@ -716,8 +700,6 @@
       collection: WawaCry
     Snore:
       collection: Snores
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:

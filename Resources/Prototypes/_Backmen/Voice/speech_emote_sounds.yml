@@ -28,8 +28,6 @@
       collection: FelinidPurrs
     Hiss:
       collection: FelinidHisses
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Moan:
@@ -66,8 +64,6 @@
       collection: FelinidPurrs
     Hiss:
       collection: FelinidHisses
-    Weh:
-      collection: Weh
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:
@@ -98,8 +94,6 @@
       collection: MaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Moan:
@@ -134,8 +128,6 @@
       collection: FemaleCry
     Whistle:
       collection: Whistles
-    Weh:
-      collection: Weh
     Gasp:
       collection: FemaleGasp
     DefaultDeathgasp:

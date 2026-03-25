@@ -352,15 +352,16 @@
     - snapping fingers
     - snapped fingers
 
+# Erida start
 - type: emote
   id: Rpurr
-  name: chat-emote-name-Rpurr
+  name: chat-emote-name-rpurr
   category: Vocal
   available: false
   icon: Interface/Emotes/hew.png
   whitelist:
     components:
-    - Hands
+    - Vocal
   blacklist:
     tags:
     - SiliconEmotes
@@ -368,6 +369,7 @@
   chatTriggers:
     - rpurr
     - raptor purr
+# Erida end
 
 - type: emote
   id: Thump
@@ -469,13 +471,7 @@
   category: Vocal
   icon: Interface/Emotes/weh.png
   chatMessages: ["chat-emote-msg-weh"]
-  chatTriggers:
-    - weh!
-    - weh
-    - weh..
-    - weh?
-    - weh?!
-    - wehs
+# Edited Erida
 
 - type: emote
   id: Hew

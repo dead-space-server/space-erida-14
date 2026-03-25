@@ -13,8 +13,6 @@
       path: /Audio/Voice/Moth/moth_chitter.ogg
     Squeak:
       path: /Audio/Voice/Moth/moth_squeak.ogg
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:
@@ -41,8 +39,6 @@
       path: /Audio/Voice/Moth/moth_chitter.ogg
     Squeak:
       path: /Audio/Voice/Moth/moth_squeak.ogg
-    Weh:
-      collection: Weh
     Hew:
       collection: Hew
     Honk:
