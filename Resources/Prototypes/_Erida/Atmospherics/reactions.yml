@@ -3,16 +3,8 @@
   priority: 3
   maximumTemperature: 313.149
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 10    # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 10    # n2o
-  - 0     # frezon
-  - 0     # pluoxium
+    Plasma: 0.1
+    NitrousOxide: 0.1
   effects:
   - !type:BZProductionReaction {}
 
@@ -22,16 +14,9 @@
   minimumTemperature: 50
   maximumTemperature: 273.15
   minimumRequirements:
-  - 0.01  # oxygen
-  - 0     # nitrogen
-  - 0.01  # carbon dioxide
-  - 0     # plasma
-  - 0.01  # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
+    Oxygen: 0.01
+    CarbonDioxide: 0.01
+    Tritium: 0.01
   effects:
   - !type:PluoxiumProductionReaction {}
 
@@ -40,17 +25,8 @@
   priority: -3
   minimumTemperature: 373.149 # Same as Atmospherics.FireMinimumTemperatureToExist
   minimumRequirements:
-  - 0.01  # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0.01  # hydrogen
+    Oxygen: 0.01
+    Hydrogen: 0.01
   effects:
   - !type:HydrogenFireReaction {}
 
@@ -60,19 +36,8 @@
   minimumTemperature: 25
   maximumTemperature: 300
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0.01  # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0.01  # bz
-  - 0     # healium
+    Frezon: 0.01
+    BZ: 0.01
   effects:
   - !type:HealiumProductionReaction {}
 
@@ -81,19 +46,9 @@
   priority: 5
   minimumTemperature: 1500
   minimumRequirements:
-  - 0     # oxygen
-  - 0.01  # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0.01  # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0.01  # bz
-  - 0     # healium
+    Nitrogen: 0.01
+    Tritium: 0.01
+    BZ: 0.01
   effects:
   - !type:NitriumProductionReaction {}
 
@@ -102,22 +57,8 @@
   priority: 6
   maximumTemperature: 343.15
   minimumRequirements:
-  - 0.01  # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0     # bz
-  - 0     # healium
-  - 0.01  # nitrium
-  - 0     # hyper-noblium
-  - 0     # zauker
+    Oxygen: 0.01
+    Nitrium: 0.01
   effects:
   - !type:NitriumDecompositionReaction {}
 - type: gasReaction
@@ -126,22 +67,8 @@
   minimumTemperature: 50000
   maximumTemperature: 75000
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0     # bz
-  - 0     # healium
-  - 0.01  # nitrium
-  - 0.01  # hyper-noblium
-  - 0     # zauker
+    Nitrium: 0.01
+    HyperNoblium: 0.01
   effects:
   - !type:ZaukerProductionReaction {}
 
@@ -149,22 +76,8 @@
   id: ZaukerDecomposition
   priority: 10
   minimumRequirements:
-  - 0     # oxygen
-  - 0.01  # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0     # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # hyper-noblium
-  - 0.01  # zauker
+    Nitrogen: 0.01
+    Zauker: 0.01
   effects:
   - !type:ZaukerDecompositionReaction {}
 
@@ -174,22 +87,8 @@
   minimumTemperature: 23.15
   maximumTemperature: 33.15
   minimumRequirements:
-  - 0     # oxygen
-  - 0.01  # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0.01  # tritium
-  - 0     # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0     # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # hyper-noblium
-  - 0     # zauker
+    Nitrogen: 0.01
+    Tritium: 0.01
   effects:
   - !type:HyperNobliumProductionReaction {}
 
@@ -197,21 +96,7 @@
   id: WaterVaporDecomposition
   priority: 0
   minimumRequirements:
-  - 0     # oxygen
-  - 0     # nitrogen
-  - 0     # carbon dioxide
-  - 0     # plasma
-  - 0     # tritium
-  - 0.1   # vapor
-  - 0     # miasma
-  - 0     # n2o
-  - 0     # frezon
-  - 0     # pluoxium
-  - 0     # hydrogen
-  - 0.1   # bz
-  - 0     # healium
-  - 0     # nitrium
-  - 0     # hyper-noblium
-  - 0     # zauker
+    WaterVapor: 0.1
+    BZ: 0.1
   effects:
     - !type:WaterVaporDecompositionReaction

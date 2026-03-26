@@ -97,3 +97,18 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/298
   avatar_url: https://avatars.githubusercontent.com/u/183598448?v=4
   title: '[fix] наложение реагентов на копья'
+- author: Anilori
+  changes:
+    - type: Tweak
+      message: Эффект скорости от нитриума был увеличен с 1.15 до 1.2
+    - type: Tweak
+      message: Нитриум дает эффект `PainNumbness`.
+    - type: Tweak
+      message: Хилиум теперь уменьшает кровотечение.
+    - type: Fix
+      message: Эффект дополнительной стамины от нитриума теперь работает.
+  id: 9
+  time: '2026-03-25T19:11:21.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/299
+  avatar_url: https://avatars.githubusercontent.com/u/183598448?v=4
+  title: '[Tweaks/Fix] Атмос'
