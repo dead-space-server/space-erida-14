@@ -3,6 +3,10 @@ using Content.Shared.Bed.Cryostorage;
 using Content.Shared.CCVar;
 using Content.Shared.Medical.Cryogenics;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.SSDIndicator;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
@@ -19,10 +23,9 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     private bool _icSsdSendToCryostorage;
     private float _icSsdSendToCryostorageTime;
@@ -39,13 +42,12 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
     {
         Log.Debug("OnPlayerAttached Рил работает");
         if (!_icSsdSendToCryostorage
-            || !TryComp<SSDIndicatorComponent>(ent, out var sSDIndComp)
-            || !TryComp<MindComponent>(ent, out var mind)
-            || !mind.UserId.HasValue)
+            || !TryComp<MindContainerComponent>(ent, out var mindContainerComp)
+            || !mindContainerComp.HasMind)
             return;
 
         Log.Debug("OnPlayerAttached и идёт дальше");
-        ent.Comp.IsSSD = sSDIndComp.IsSSD;
+        ent.Comp.Active = false;
         ent.Comp.SendToCryostorageTime = TimeSpan.Zero;
     }
 
@@ -54,16 +56,17 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
         Log.Debug("OnPlayerDetached Рил работает");
         Log.Debug($"Проверки: {!_icSsdSendToCryostorage} {!TryComp<SSDIndicatorComponent>(ent, out var sSDIndComp1)} {!HasComp<MindComponent>(ent)}");
         if (!_icSsdSendToCryostorage
-            || !TryComp<SSDIndicatorComponent>(ent, out var sSDIndComp)
-            || !TryComp<MindComponent>(ent, out var mind)
-            || !mind.UserId.HasValue)
+            || !TryComp<MindContainerComponent>(ent, out var mindContainerComp)
+            || !mindContainerComp.HasMind
+            || !TryComp<MobStateComponent>(ent, out var stateComp)
+            || _mobState.IsDead(ent, stateComp))
         {
             return;
         }
 
 
         Log.Debug("OnPlayerDetached и идёт дальше");
-        ent.Comp.IsSSD = sSDIndComp.IsSSD;
+        ent.Comp.Active = true;
         ent.Comp.SendToCryostorageTime = _timing.CurTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
     }
 
@@ -78,10 +81,15 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
         var query = EntityQueryEnumerator<SSDAutoSendToCryostageComponent, TransformComponent, MetaDataComponent, PhysicsComponent>();
         while (query.MoveNext(out var uid, out var ssd, out var xfrom, out var meta, out var physics))
         {
-            if (ssd.SendToCryostorageTime > curTime)
+            if (ssd.SendToCryostorageTime > curTime
+                || !ssd.Active)
                 continue;
 
-            SendToCryostorage(new Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?>(uid, xfrom, meta, physics));
+            if (!SendToCryostorage(new Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?>(uid, xfrom, meta, physics)))
+            {
+                // Try next time
+                ssd.NextUpdate = curTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
+            }
         }
     }
 
@@ -117,13 +125,13 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
         if (bestCryo == null
             || bestContainer == null)
         {
-            Log.Warning($"Не найдено свободной криокамеры для {ToPrettyString(uid)}");
+            Log.Info($"Не было найдено криохранилище для {uid}");
             return false;
         }
 
         if (_container.Insert(uid, bestContainer))
         {
-            Log.Info($"{ToPrettyString(uid)} автоматически отправлен в криокамеру {ToPrettyString(bestCryo.Value)}");
+            Log.Info($"{uid} автоматически отправлен в криокамеру {bestCryo.Value}");
         }
 
         return true;

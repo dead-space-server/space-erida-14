@@ -8,7 +8,7 @@ public sealed partial class SSDAutoSendToCryostageComponent : Component
 {
     [AutoNetworkedField]
     [DataField, ViewVariables(VVAccess.ReadOnly)]
-    public bool IsSSD = true;
+    public bool Active = false;
 
     [AutoNetworkedField, AutoPausedField]
     [Access(typeof(SSDAutoSendToCryostorageSystem))]
@@ -18,7 +18,4 @@ public sealed partial class SSDAutoSendToCryostageComponent : Component
     [AutoNetworkedField, AutoPausedField]
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan NextUpdate = TimeSpan.Zero;
-
-    [DataField]
-    public TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
 }
