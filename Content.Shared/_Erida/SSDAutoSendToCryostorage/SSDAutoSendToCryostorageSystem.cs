@@ -1,4 +1,4 @@
-using Content.Shared._Erida.SSDAutoSendToCryostage.Components;
+using Content.Shared._Erida.SSDAutoSendToCryostorage.Components;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared.CCVar;
 using Content.Shared.Medical.Cryogenics;
@@ -17,7 +17,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Toolshed.TypeParsers;
 
-namespace Content.Shared._Erida.SSDAutoSendToCryostage;
+namespace Content.Shared._Erida.SSDAutoSendToCryostorage;
 
 public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
 {
@@ -31,14 +31,14 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
     private float _icSsdSendToCryostorageTime;
     public override void Initialize()
     {
-        SubscribeLocalEvent<SSDAutoSendToCryostageComponent, PlayerAttachedEvent>(OnPlayerAttached, after: [typeof(SSDIndicatorSystem)]);
-        SubscribeLocalEvent<SSDAutoSendToCryostageComponent, PlayerDetachedEvent>(OnPlayerDetached, after: [typeof(SSDIndicatorSystem)]);
+        SubscribeLocalEvent<SSDAutoSendToCryostorageComponent, PlayerAttachedEvent>(OnPlayerAttached, after: [typeof(SSDIndicatorSystem)]);
+        SubscribeLocalEvent<SSDAutoSendToCryostorageComponent, PlayerDetachedEvent>(OnPlayerDetached, after: [typeof(SSDIndicatorSystem)]);
 
         _cfg.OnValueChanged(CCVars.ICSSDAutoSendToCryostorage, obj => _icSsdSendToCryostorage = obj, true);
         _cfg.OnValueChanged(CCVars.ICSSDAutoSendToCryostorageTime, obj => _icSsdSendToCryostorageTime = obj, true);
     }
 
-    private void OnPlayerAttached(Entity<SSDAutoSendToCryostageComponent> ent, ref PlayerAttachedEvent args)
+    private void OnPlayerAttached(Entity<SSDAutoSendToCryostorageComponent> ent, ref PlayerAttachedEvent args)
     {
         Log.Debug("OnPlayerAttached Рил работает");
         if (!_icSsdSendToCryostorage
@@ -51,7 +51,7 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
         ent.Comp.SendToCryostorageTime = TimeSpan.Zero;
     }
 
-    private void OnPlayerDetached(Entity<SSDAutoSendToCryostageComponent> ent, ref PlayerDetachedEvent args)
+    private void OnPlayerDetached(Entity<SSDAutoSendToCryostorageComponent> ent, ref PlayerDetachedEvent args)
     {
         Log.Debug("OnPlayerDetached Рил работает");
         Log.Debug($"Проверки: {!_icSsdSendToCryostorage} {!TryComp<SSDIndicatorComponent>(ent, out var sSDIndComp1)} {!HasComp<MindComponent>(ent)}");
@@ -78,7 +78,7 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
             return;
 
         var curTime = _timing.CurTime;
-        var query = EntityQueryEnumerator<SSDAutoSendToCryostageComponent, TransformComponent, MetaDataComponent, PhysicsComponent>();
+        var query = EntityQueryEnumerator<SSDAutoSendToCryostorageComponent, TransformComponent, MetaDataComponent, PhysicsComponent>();
         while (query.MoveNext(out var uid, out var ssd, out var xfrom, out var meta, out var physics))
         {
             if (ssd.SendToCryostorageTime > curTime
