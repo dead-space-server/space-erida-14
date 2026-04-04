@@ -30,6 +30,7 @@ public sealed partial class JukeboxMenu : FancyWindow
     public event Action? OnStopPressed;
     public event Action<ProtoId<JukeboxPrototype>>? OnSongSelected;
     public event Action<float>? SetTime;
+    public event Action<float>? SetVolume; // Erida-edit
 
     private EntityUid? _audio;
 
@@ -61,6 +62,7 @@ public sealed partial class JukeboxMenu : FancyWindow
             OnStopPressed?.Invoke();
         };
         PlaybackSlider.OnReleased += PlaybackSliderKeyUp;
+        VolumeSlider.OnReleased += VolumeSliderKeyUp; //Erida-edit
 
         SetPlayPauseButton(_audioSystem.IsPlaying(_audio), force: true);
     }
@@ -79,6 +81,11 @@ public sealed partial class JukeboxMenu : FancyWindow
     {
         SetTime?.Invoke(PlaybackSlider.Value);
         _lockTimer = 0.5f;
+    }
+
+    private void VolumeSliderKeyUp(Slider args)
+    {
+        SetVolume?.Invoke(VolumeSlider.Value);
     }
 
     /// <summary>
@@ -126,8 +133,6 @@ public sealed partial class JukeboxMenu : FancyWindow
             _lockTimer -= args.DeltaSeconds;
         }
 
-        PlaybackSlider.Disabled = _lockTimer > 0f;
-
         if (_entManager.TryGetComponent(_audio, out AudioComponent? audio))
         {
             DurationLabel.Text = $@"{TimeSpan.FromSeconds(audio.PlaybackPosition):mm\:ss} / {_audioSystem.GetAudioLength(audio.FileName):mm\:ss}";
@@ -136,6 +141,8 @@ public sealed partial class JukeboxMenu : FancyWindow
         {
             DurationLabel.Text = $"00:00 / 00:00";
         }
+
+        CurrenVolume.Text = $"{Loc.GetString("jukebox-menu-currentvolume")} {VolumeSlider.Value:F0}%"; // Erida-edit: 0-100%
 
         if (PlaybackSlider.Grabbed)
             return;
@@ -162,5 +169,10 @@ public sealed partial class JukeboxMenu : FancyWindow
         {
             SongName.Text = "---";
         }
+    }
+
+    public void SetCurrentVolume(float volume)
+    {
+        VolumeSlider.SetValueWithoutEvent(volume);
     }
 }

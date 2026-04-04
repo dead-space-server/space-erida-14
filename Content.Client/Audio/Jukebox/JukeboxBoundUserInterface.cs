@@ -2,6 +2,7 @@ using Content.Shared.Audio.Jukebox;
 using Robust.Client.Audio;
 using Robust.Client.UserInterface;
 using Robust.Shared.Audio.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Audio.Jukebox;
@@ -44,6 +45,7 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         _menu.OnSongSelected += SelectSong;
 
         _menu.SetTime += SetTime;
+        _menu.SetVolume += SetVolume; // Erida-edit
         PopulateMusic();
         Reload();
     }
@@ -67,6 +69,9 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
         {
             _menu.SetSelectedSong(string.Empty, 0f);
         }
+        // Erida-start
+        _menu.SetCurrentVolume(SharedAudioSystem.VolumeToGain(jukebox.CurrentVolume) * 100);
+        // Erida-end
     }
 
     public void PopulateMusic()
@@ -97,5 +102,18 @@ public sealed class JukeboxBoundUserInterface : BoundUserInterface
 
         SendMessage(new JukeboxSetTimeMessage(sentTime));
     }
+    // Erida-edit
+    public void SetVolume(float volume)
+    {
+        var sentVolume = SharedAudioSystem.GainToVolume(volume / 100f);
+
+        if (EntMan.TryGetComponent(Owner, out JukeboxComponent? jukebox) &&
+            EntMan.TryGetComponent(jukebox.AudioStream, out AudioComponent? audioComp))
+        {
+            audioComp.Volume = sentVolume;
+        }
+        SendMessage(new JukeboxSetVolumeMessage(sentVolume));
+    }
+    // Erida-edit
 }
 

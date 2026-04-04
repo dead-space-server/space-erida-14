@@ -32,6 +32,9 @@ public sealed partial class JukeboxComponent : Component
     [DataField]
     public string? SelectState;
 
+    [DataField, AutoNetworkedField]
+    public float CurrentVolume = 0f; // Erida-edit
+
     [ViewVariables]
     public bool Selecting;
 
@@ -55,11 +58,18 @@ public sealed class JukeboxSelectedMessage(ProtoId<JukeboxPrototype> songId) : B
 }
 
 [Serializable, NetSerializable]
-public sealed class JukeboxSetTimeMessage(float songTime) : BoundUserInterfaceMessage
+public sealed class JukeboxSetTimeMessage(float songTime) : BoundUserInterfaceMessage // Erida-edit
 {
     public float SongTime { get; } = songTime;
 }
 
+// Erida-start
+[Serializable, NetSerializable]
+public sealed class JukeboxSetVolumeMessage(float songVolume) : BoundUserInterfaceMessage
+{
+    public float SongVolume { get; } = songVolume;
+}
+// Erida-end
 [Serializable, NetSerializable]
 public enum JukeboxVisuals : byte
 {
