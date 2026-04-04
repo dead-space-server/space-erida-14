@@ -14,8 +14,4 @@ public sealed partial class SSDAutoSendToCryostorageComponent : Component
     [Access(typeof(SSDAutoSendToCryostorageSystem))]
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan SendToCryostorageTime = TimeSpan.Zero;
-
-    [AutoNetworkedField, AutoPausedField]
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan NextUpdate = TimeSpan.Zero;
 }

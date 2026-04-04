@@ -40,21 +40,17 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
 
     private void OnPlayerAttached(Entity<SSDAutoSendToCryostorageComponent> ent, ref PlayerAttachedEvent args)
     {
-        Log.Debug("OnPlayerAttached Рил работает");
         if (!_icSsdSendToCryostorage
             || !TryComp<MindContainerComponent>(ent, out var mindContainerComp)
             || !mindContainerComp.HasMind)
             return;
 
-        Log.Debug("OnPlayerAttached и идёт дальше");
         ent.Comp.Active = false;
         ent.Comp.SendToCryostorageTime = TimeSpan.Zero;
     }
 
     private void OnPlayerDetached(Entity<SSDAutoSendToCryostorageComponent> ent, ref PlayerDetachedEvent args)
     {
-        Log.Debug("OnPlayerDetached Рил работает");
-        Log.Debug($"Проверки: {!_icSsdSendToCryostorage} {!TryComp<SSDIndicatorComponent>(ent, out var sSDIndComp1)} {!HasComp<MindComponent>(ent)}");
         if (!_icSsdSendToCryostorage
             || !TryComp<MindContainerComponent>(ent, out var mindContainerComp)
             || !mindContainerComp.HasMind
@@ -64,8 +60,6 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
             return;
         }
 
-
-        Log.Debug("OnPlayerDetached и идёт дальше");
         ent.Comp.Active = true;
         ent.Comp.SendToCryostorageTime = _timing.CurTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
     }
@@ -88,7 +82,7 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
             if (!SendToCryostorage(new Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?>(uid, xfrom, meta, physics)))
             {
                 // Try next time
-                ssd.NextUpdate = curTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
+                ssd.SendToCryostorageTime = curTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
             }
         }
     }
