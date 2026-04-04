@@ -12,8 +12,8 @@
     parent: true
     components:
     - type: Stealth
-      minVisibility: 0.1
-      lastVisibility: 0.1
+      minVisibility: -1.0 # Erida-edit 0.1 -> -1.0
+      lastVisibility: -1.0 # Erida-edit 0.1 -> -1.0
       thermalsImmune: true # Goobstation
   - type: PowerCellDraw
     drawRate: 3.6 # 100 seconds

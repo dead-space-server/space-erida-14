@@ -95,8 +95,8 @@
       1000: Dead # 500 Erida-edit
   - type: SlowOnDamage
     speedModifierThresholds:
-      500: 0.7 # 250 Erida-edit
-      800: 0.5 # 400 Erida-edit
+      700: 0.7 # 250 Erida-edit
+      850: 0.5 # 400 Erida-edit
   # disable taking damage from fire, since its a fire breathing dragon
   - type: Flammable
     damage:
@@ -179,6 +179,7 @@
     understands:
     - TauCetiBasic
     - Dragon
+  - type: NightVision # Erida-edit
 
 - type: entity
   parent: BaseMobDragon

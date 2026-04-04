@@ -111,8 +111,8 @@
     cost: 2000
   # - id: ClothingNeckCloakHelldiver
   #   cost: 2000
-  - id: ClothingShoesBootsMoon
-    cost: 2000
+  #- id: ClothingShoesBootsMoon # Erida-edit disable
+  #  cost: 2000
   - id: ClothingOuterHardsuitSalvage
     cost: 2000
     #TODO: super resonator for 2500
@@ -122,8 +122,8 @@
     cost: 3000 #still costs more than just buying it with spesos you got from vendor but whatever
   - id: ShelterCapsuleLuxury
     cost: 3000
-  - id: ClothingEyesNightVisionGoggles
-    cost: 3500
+  #- id: ClothingEyesNightVisionGoggles # Erida-edit disable
+  #  cost: 3500
   - id: MiningDrillDiamond
     cost: 4000 #Mostly for flexing
   # - id: CrateCargoClarkeAssembly

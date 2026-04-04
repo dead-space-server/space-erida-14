@@ -103,7 +103,7 @@
   result: ClothingEyesNightVisionGoggles
   categories:
   - Clothing
-  completetime: 300
+  completetime: 150
   materials:
     Steel: 500
     Uranium: 1000
@@ -116,14 +116,14 @@
   result: ClothingEyesThermalVisionGoggles
   categories:
   - Clothing
-  completetime: 600
+  completetime: 300
   materials:
     Steel: 500
     Plastic: 500
-    Plasma: 2000
-    Gold: 1000
-    Diamond: 1000
-    Bananium: 1500 # for some reason 1000 -> 6,67 in game. 1500 -> 10
+    Plasma: 1500
+    Gold: 500
+    Diamond: 500
+    Bananium: 750 # for some reason 1000 -> 6,67 in game. 1500 -> 10
 
 # Erida-end
 
