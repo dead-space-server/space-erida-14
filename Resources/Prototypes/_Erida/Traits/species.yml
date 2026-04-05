@@ -1,0 +1,18 @@
+ - type: trait
+   id: VulpJumpAbility
+   name: trait-VulpJumpAbility-name
+   description: trait-VulpJumpAbility-desc
+   category: Species
+   effects:
+   - !type:AddCompsEffect
+     components:
+     - type: JumpAbility
+       action: ActionVulpkaninGravityJump
+       canCollide: true
+       jumpDistance: 3
+       jumpSound:
+         path: /Audio/Weapons/punchmiss.ogg
+         params:
+           pitch: 1.33
+           volume: -5
+           variation: 0.05
