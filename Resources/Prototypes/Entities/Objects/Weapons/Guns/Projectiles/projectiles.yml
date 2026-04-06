@@ -168,7 +168,7 @@
     radius: 1.4 # imp
     energy: 7.0
   - type: IgniteOnCollide
-    fireStacks: 0.25
+    fireStacks: 0.05 # Erida-edit 0.25 -> 0.05
 
 - type: entity
   id: BaseBulletAP
