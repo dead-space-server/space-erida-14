@@ -1,31 +1,30 @@
+using Content.Shared._Erida.SSDAutoSendToCryostorage;
 using Content.Shared._Erida.SSDAutoSendToCryostorage.Components;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared.CCVar;
-using Content.Shared.Medical.Cryogenics;
-using Content.Shared.Mind;
+using Content.Shared.Examine;
 using Content.Shared.Mind.Components;
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.SSDIndicator;
-using Content.Shared.StatusEffectNew;
+using Robust.Server.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
-using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
-using Robust.Shared.Toolshed.TypeParsers;
 
-namespace Content.Shared._Erida.SSDAutoSendToCryostorage;
+namespace Content.Server._Erida.SSDAutoSendToCryostorage;
 
-public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
+public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostorageSystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
 
     private bool _icSsdSendToCryostorage;
     private float _icSsdSendToCryostorageTime;
@@ -33,6 +32,8 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
     {
         SubscribeLocalEvent<SSDAutoSendToCryostorageComponent, PlayerAttachedEvent>(OnPlayerAttached, after: [typeof(SSDIndicatorSystem)]);
         SubscribeLocalEvent<SSDAutoSendToCryostorageComponent, PlayerDetachedEvent>(OnPlayerDetached, after: [typeof(SSDIndicatorSystem)]);
+
+        SubscribeLocalEvent<SSDAutoSendToCryostorageComponent, ExaminedEvent>(OnExamined);
 
         _cfg.OnValueChanged(CCVars.ICSSDAutoSendToCryostorage, obj => _icSsdSendToCryostorage = obj, true);
         _cfg.OnValueChanged(CCVars.ICSSDAutoSendToCryostorageTime, obj => _icSsdSendToCryostorageTime = obj, true);
@@ -79,15 +80,18 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
                 || !ssd.Active)
                 continue;
 
-            if (!SendToCryostorage(new Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?>(uid, xfrom, meta, physics)))
+            if (!SendToCryostorage(new Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?>(uid, xfrom, meta, physics), ref ssd))
             {
                 // Try next time
                 ssd.SendToCryostorageTime = curTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
+                continue;
             }
+
+            ssd.Active = false;
         }
     }
 
-    private bool SendToCryostorage(Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?> uid)
+    private bool SendToCryostorage(Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?> uid, ref SSDAutoSendToCryostorageComponent sSDcomp)
     {
         var (xform, meta, physics) = (uid.Comp1, uid.Comp2, uid.Comp3);
 
@@ -123,11 +127,29 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
             return false;
         }
 
-        if (_container.Insert(uid, bestContainer))
+        _audio.PlayPvs(sSDcomp.SoundSend, uid);
+        var entEffect = SpawnAtPosition(sSDcomp.EntityEffect, playerPos);
+        if (!TryComp<TimedDespawnComponent>(entEffect, out var _))
         {
-            Log.Info($"{uid} автоматически отправлен в криокамеру {bestCryo.Value}");
+            var tDComp = AddComp<TimedDespawnComponent>(entEffect);
+            tDComp.Lifetime = 0.5f;
         }
+        _container.Insert(uid, bestContainer);
+        _audio.PlayPvs(sSDcomp.SoundExit, uid);
 
         return true;
+    }
+
+    private void OnExamined(Entity<SSDAutoSendToCryostorageComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange
+            || !ent.Comp.Active)
+            return;
+
+        var timeToSend = (ent.Comp.SendToCryostorageTime - _timing.CurTime).Seconds.ToString();
+
+        var message = $"[color=yellow]{Loc.GetString("comp-SSDAutoSendToCryostorage-examined-active", ("time", timeToSend))}[/color]";
+
+        args.PushMarkup(message);
     }
 }
