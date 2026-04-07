@@ -1,3 +1,5 @@
+using Content.Shared.Backmen.Supermatter;
+using Content.Shared.Radiation.Systems;
 using Robust.Shared.Physics;
 
 namespace Content.Shared.Radiation.Components;
@@ -6,6 +8,7 @@ namespace Content.Shared.Radiation.Components;
 ///     Irradiate all objects in range.
 /// </summary>
 [RegisterComponent]
+[Access(typeof(SharedRadiationSystem), typeof(SharedSupermatterSystem))] // Erida edit
 public sealed partial class RadiationSourceComponent : Component
 {
     /// <summary>
