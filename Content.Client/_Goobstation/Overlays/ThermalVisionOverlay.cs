@@ -19,6 +19,7 @@ public sealed class ThermalVisionOverlay : Overlay
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IEyeManager _eyeManager = default!;
 
     private readonly TransformSystem _transform;
     private readonly SpriteSystem _sprite;
@@ -46,6 +47,11 @@ public sealed class ThermalVisionOverlay : Overlay
         _light = _entity.System<SharedPointLightSystem>();
 
         ZIndex = -1;
+    }
+
+    protected override bool BeforeDraw(in OverlayDrawArgs args)
+    {
+        return args.Viewport.Eye == _eyeManager.CurrentEye;
     }
 
     protected override void Draw(in OverlayDrawArgs args)

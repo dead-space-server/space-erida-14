@@ -1,0 +1,69 @@
+- type: job
+  id: NanoTrasenNavyMedical
+  name: job-name-nanotrasen-navy-medical
+  description: job-description-nanotrasen-navy-medical
+  playTimeTracker: JobNTNavyMedical
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 2.5h
+  startingGear: NTNavyMedicalGear
+  icon: "JobIconNTNavyMedical"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-navy-wo-officer-medical
+  canBeAntag: false
+  access:
+  - NTNavy
+  - NTNavyMedical
+  - Medical
+  - Chemistry
+  - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavyMedicalGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyMed
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatBeretNTNavyMed
+    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesLatex
+    outerClothing: ClothingOuterCoatLabNTNavy
+    id: NTNavyMedicalPDA
+    ears: ClothingHeadsetNTNavyMedical
+    belt: ClothingBeltMedicalFilled
+
+- type: startingGear
+  id: NTNavyMedicalArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyMed
+    back: ClothingBackpackNTNavyMed
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatBeretNTNavyMed
+    eyes: ClothingEyesHudMedSec
+    gloves: ClothingHandsGlovesLatex
+    outerClothing: ClothingOuterHardsuitNTNavyMedical
+    id: NTNavyMedicalPDA
+    ears: ClothingHeadsetNTNavyMedical
+    belt: ClothingBeltMedicalFilled
+    suitstorage: JetpackVoidFilled
+  inhand:
+    - WeaponNTNavyCarabine
+  storage:
+    back:
+    - WeaponGrapplingGun
+    - JawsOfLife
+    - MedkitCombatFilled
+    - DefibrillatorCompact
+    - HandHeldMassScanner
+    - HandheldStationMap
+    - HandheldCrewMonitor
+    - SpaceMedipen
+    - EmergencyMedipen

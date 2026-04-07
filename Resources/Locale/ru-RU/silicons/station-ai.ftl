@@ -50,3 +50,11 @@ station-ai-hologram-male = Мужской образ
 station-ai-hologram-face = Бестелесная голова
 station-ai-hologram-cat = Форма кота
 station-ai-hologram-dog = Форма корги
+
+station-ai-earlyleave-button = Отключение ИИ
+station-ai-earlyleave-menu-title = Отключение ИИ
+station-ai-earlyleave-menu-text = Вы уверены? Вы будете удалены из раунда, открыв свою роль другим.
+station-ai-earlyleave-menu-confirm = Подтвердить
+station-ai-earlyleave-menu-deny = Отмена
+station-ai-earlyleave-announcement = {$character} (Станционный ИИ) ушёл в гибернацию!
+station-ai-earlyleave-announcement-sender = Ядро ИИ

@@ -179,3 +179,255 @@
           inteq-lead
     - type: Icon
       state: inteq-lead
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavyCaptainPDA
+  name: nanotrasen navy captain PDA
+  components:
+  - type: Pda
+    id: NTNavyCaptainIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-captain"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-captain
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#aa6300"
+    accentVColor: "#f8d860"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-captain
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavyOfficerPDA
+  name: nanotrasen navy officer PDA
+  components:
+  - type: Pda
+    id: NTNavyOfficerIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-officer"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-officer
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#d5d5d5"
+    accentVColor: "#d5d5d5"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-officer
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavyWOEngiPDA
+  name: nanotrasen navy warrant officer PDA
+  components:
+  - type: Pda
+    id: NTNavyWOEngiIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-ce"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-ce
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#FF4500"
+    accentVColor: "#FF4500"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-ce
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavyWOMedPDA
+  name: nanotrasen navy warrant officer PDA
+  components:
+  - type: Pda
+    id: NTNavyWOMedIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-cmo"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-cmo
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#4682B4"
+    accentVColor: "#4682B4"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-cmo
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavySailorPDA
+  name: nanotrasen navy sailor PDA
+  components:
+  - type: Pda
+    id: NTNavySailorIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-sailor"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-sailor
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#0f0f0f"
+    accentVColor: "#d5d5d5"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-sailor
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavyEngineerPDA
+  name: nanotrasen navy engineer PDA
+  components:
+  - type: Pda
+    id: NTNavyEngineerIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-engineer"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-engineer
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#0f0f0f"
+    accentVColor: "#FF4500"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-engineer
+
+- type: entity
+  parent: CentcomPDA
+  id: NTNavyMedicalPDA
+  name: nanotrasen navy medical PDA
+  components:
+  - type: Pda
+    id: NTNavyMedicalIDCard
+  - type: Tag #  Ignore Chameleon tags
+    tags:
+    - DoorBumpOpener
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-nanotrasen-navy-medical"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-nanotrasen-navy-medical
+  - type: PdaBorderColor
+    borderColor: "#0f0f0f"
+    accentHColor: "#0f0f0f"
+    accentVColor: "#4682B4"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: pda-nanotrasen-navy-medical

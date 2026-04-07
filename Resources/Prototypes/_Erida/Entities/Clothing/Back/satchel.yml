@@ -1,0 +1,45 @@
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelNTNavyCaptain
+  name: nanotrasen navy captain satchel
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Back/Satchels/nanotrasen_navy_captain.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelNTNavy
+  name: nanotrasen navy satchel
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Back/Satchels/nanotrasen_navy.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelNTNavyWOEngi
+  suffix: Engineering
+  name: nanotrasen navy warrant officer satchel
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Back/Satchels/nanotrasen_navy_ce.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelNTNavyEngi
+  name: nanotrasen navy engineer satchel
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Back/Satchels/nanotrasen_navy_engineer.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelNTNavyMed
+  name: nanotrasen navy medical satchel
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Back/Satchels/nanotrasen_navy_medical.rsi

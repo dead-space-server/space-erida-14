@@ -1,0 +1,202 @@
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectBlueLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    enabled: true
+    color: "#0000CD" # imp
+    radius: 1.4 # imp
+    energy: 5.0 # imp
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.75, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi # imp
+      state: tempcold # imp
+
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectRedLaser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    enabled: true
+    color: "#FF0000" # imp
+    radius: 1.4 # imp
+    energy: 5.0 # imp
+  - type: Sprite
+    drawdepth: BelowMobs
+    offset: 0.75, 0
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Impstation/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi # imp
+      state: energy # imp
+
+- type: entity
+  name: laser bullet
+  id: BulletEnergyBLUE
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    layers:
+    - state: bluelaser-alt
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectBlueDisabler
+    damage:
+      types:
+        Heat: 25
+    soundHit:
+      collection: MeatLaserImpact
+  - type: PointLight
+    radius: 2
+    color: blue
+    energy: 0.5
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectTempCold # imp
+
+- type: entity
+  name: laser bullet
+  id: BulletEnergyRED
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    layers:
+    - state: redlaser
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 25
+    soundHit:
+      collection: MeatLaserImpact
+  - type: PointLight
+    radius: 2
+    color: red
+    energy: 0.5
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectHeavyLaser
+
+- type: entity
+  id: TurboLaserRed
+  suffix: Red
+  name: turbolaser
+  parent: [BaseBulletTrigger, BulletLaser]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - Energy
+  - type: FlyBySound
+    sound:
+      collection: EnergyMiss
+      params:
+        volume: 5
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    scale: 1, 1
+    layers:
+    - state: heavylaser
+      shader: unshaded
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 75
+    intensitySlope: 5
+    maxIntensity: 10
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectRedLaser
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 200
+        Structural: 50
+  - type: PointLight
+    radius: 3.5
+    color: red
+    energy: 0.5
+
+- type: entity
+  id: TurboLaserBlue
+  suffix: Blue
+  name: turbolaser
+  parent: TurboLaserRed
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    layers:
+    - state: heavyturbolaser_B
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectBlueDisabler
+    damage:
+      types:
+        Heat: 200
+        Structural: 50
+  - type: PointLight
+    radius: 3.5
+    color: blue
+    energy: 0.5
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectBlueLaser
+
+- type: entity
+  id: BulletPlasmaCutter
+  name: cutter bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Reflective
+    reflective:
+      - NonEnergy
+  - type: Sprite
+    noRot: false
+    sprite: _Erida/Objects/Weapons/Guns/Projectiles/bullet_cutter.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: GatheringProjectile
+    amount: 40
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Heat: 5
+        Slash: 10
+        Structural: 30
+  - type: StaminaDamageOnCollide
+    damage: 20
+  - type: TimedDespawn
+    lifetime: 0.1
+  - type: PointLight
+    radius: 2
+    color: purple
+    energy: 1

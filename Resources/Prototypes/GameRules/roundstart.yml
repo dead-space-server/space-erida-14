@@ -525,8 +525,8 @@
   # Erida start
     minimumTimeUntilFirstEvent: 300 # 5 min
     minMaxEventTiming:
-      min: 600 # 10 min
-      max: 900 # 15 mis
+      min: 450 # 7.5 min
+      max: 750 # 12.5 mis
   # Erida end
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable

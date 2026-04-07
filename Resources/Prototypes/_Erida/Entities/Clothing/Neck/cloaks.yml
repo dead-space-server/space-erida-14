@@ -154,3 +154,36 @@
   components:
     - type: Sprite
       sprite: _Erida/Clothing/Neck/Cloaks/redenglishcape.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakNTNavyCaptain
+  name: nanotrasen navy captain cloak
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/nanotrasen_navy_capcloak.rsi
+    - type: StealTarget
+      stealGroup: HeadCloak
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakNTNavyCapFormal
+  name: nanotrasen navy captain formal
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/nanotrasen_navy_capcloakformal.rsi
+    - type: StealTarget
+      stealGroup: HeadCloak
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakNTNavyOfficer
+  name: nanotrasen navy officer cloak
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/nanotrasen_navy_officer_cloak.rsi
+    - type: StealTarget
+      stealGroup: HeadCloak

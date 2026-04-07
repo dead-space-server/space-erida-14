@@ -1,0 +1,125 @@
+# Thrusters
+- type: entity
+  id: ThrusterSecurityMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: security thruster machine board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ThrusterSecurity
+    requirements:
+      Capacitor: 3
+    stackRequirements:
+      Steel: 5
+
+- type: entity
+  id: ThrusterNfsdMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: NFSD thruster machine board
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Misc/module.rsi
+    state: nfsd
+  - type: MachineBoard
+    prototype: ThrusterNfsd
+    requirements:
+      Capacitor: 3
+    stackRequirements:
+      Steel: 5
+
+- type: entity
+  id: SmallThrusterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: small thruster machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: SmallThruster
+    requirements:
+      Capacitor: 4
+    stackRequirements:
+      Steel: 5
+
+  - type: Tag # Frontier
+    tags: # Frontier
+    - SmallThrusterMachineCircuitboard # Frontier
+
+# Gyroscope
+- type: entity
+  id: GyroscopeSecurityMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: security gyroscope machine board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: GyroscopeSecurity
+    requirements:
+      Manipulator: 2
+      Capacitor: 1
+    stackRequirements:
+      Glass: 2
+
+- type: entity
+  id: SmallGyroscopeSecurityMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: small security gyroscope machine board
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: SmallGyroscopeSecurity
+    requirements:
+      Manipulator: 2
+      Capacitor: 1
+    stackRequirements:
+      Glass: 2
+
+- type: entity
+  id: GyroscopeNfsdMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: NFSD gyroscope machine board
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Misc/module.rsi
+    state: nfsd
+  - type: MachineBoard
+    prototype: GyroscopeNfsd
+    requirements:
+      Manipulator: 2
+      Capacitor: 1
+    stackRequirements:
+      Glass: 2
+
+- type: entity
+  id: SmallGyroscopeNfsdMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: small NFSD gyroscope machine board
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Misc/module.rsi
+    state: nfsd
+  - type: MachineBoard
+    prototype: SmallGyroscopeNfsd
+    requirements:
+      Manipulator: 2
+      Capacitor: 1
+    stackRequirements:
+      Glass: 2
+
+- type: entity
+  id: SmallGyroscopeMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: small gyroscope machine board
+  components:
+  - type: Sprite
+    state: supply
+  - type: MachineBoard
+    prototype: SmallGyroscope
+    requirements:
+      Manipulator: 2
+      Capacitor: 1
+    stackRequirements:
+      Glass: 2

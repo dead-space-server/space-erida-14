@@ -1,0 +1,87 @@
+#NANOTRASEN NAVY HARDSUITS
+#NT Navy Captain Hardsuit
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieCommander ]
+  id: ClothingHeadHelmetHardsuitNTNavyCaptain
+  name: nanotrasen navy captain hardsuit helmet
+  description: A reinforced pressure helmet designed for NanoTrasen Naval Command officers. Gold decorative elements are applied to the sides, emphasizing the wearer's status. Heavy, reliable, and very expensive...
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy_captain.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy_captain.rsi
+  - type: PointLight
+    color: "#00FFFF"
+    radius: 7
+    energy: 1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#NT Navy Hardsuit
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  id: ClothingHeadHelmetHardsuitNTNavy
+  name: nanotrasen navy hardsuit helmet
+  description: A special hardsuit helmet worn by crew members of an NanoTrasen naval vessels.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy.rsi
+  - type: PointLight
+    color: "#00FFFF"
+    radius: 7
+    energy: 1
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#NT Navy Engineering Hardsuit
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  id: ClothingHeadHelmetHardsuitNTNavyEngineering
+  name: nanotrasen navy engineer hardsuit helmet
+  description: A special hardsuit helmet worn by crew members of an NanoTrasen naval vessels.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy_engineering.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy_engineering.rsi
+  - type: PointLight
+    color: "#00FFFF"
+    radius: 7
+    energy: 1
+  - type: FireProtection
+    reduction: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+
+#NT Navy Medical Hardsuit
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite ]
+  id: ClothingHeadHelmetHardsuitNTNavyMedical
+  name: nanotrasen navy medical hardsuit helmet
+  description: A special hardsuit helmet worn by crew members of an NanoTrasen naval vessels.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy_medical.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hardsuits/nanotrasen_navy_medical.rsi
+  - type: PointLight
+    color: "#00FFFF"
+    radius: 7
+    energy: 1

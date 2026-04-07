@@ -49,7 +49,6 @@
     price: 800
   - type: ResearchClient
   - type: TechnologyDatabase
-  - type: UpgradeStorage
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -195,6 +194,11 @@
     - ChemistryStatic
     - SurgeryStatic
     # dynamicPacks: # Backmen-EDIT
+    # Erida start
+    - RPED
+    - PartsT2
+    - PartsT3
+    # Erida stop
     - AdvancedTools
     - ScienceEquipment
     - ScienceExplosives

@@ -1,0 +1,126 @@
+- type: entity
+  parent: AirlockNTNavyCaptain
+  id: AirlockNTNavyCaptainLocked
+  suffix: Nanotrasen navy captain, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyCaptain ]
+
+- type: entity
+  parent: AirlockNTNavyOfficer
+  id: AirlockNTNavyOfficerLocked
+  suffix: Nanotrasen navy officer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyOfficer ]
+
+- type: entity
+  parent: AirlockNTNavyCommand
+  id: AirlockNTNavyWOEngineerLocked
+  suffix: Nanotrasen navy WO engineer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyWOEngineer ]
+
+- type: entity
+  parent: AirlockNTNavyCommand
+  id: AirlockNTNavyWOMedicalLocked
+  suffix: Nanotrasen navy WO medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyWOMedical ]
+
+- type: entity
+  parent: AirlockNTNavy
+  id: AirlockNTNavyLocked
+  suffix: Nanotrasen navy, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavy ]
+
+- type: entity
+  parent: AirlockNTNavyEngineering
+  id: AirlockNTNavyEngineeringLocked
+  suffix: Nanotrasen navy engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyEngineering ]
+
+- type: entity
+  parent: AirlockNTNavyMedical
+  id: AirlockNTNavyMedicalLocked
+  suffix: Nanotrasen navy medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyMedical ]
+
+# Glass
+- type: entity
+  parent: AirlockNTNavyCaptainGlass
+  id: AirlockNTNavyCaptainGlassLocked
+  suffix: Nanotrasen navy captain, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyCaptain ]
+
+- type: entity
+  parent: AirlockNTNavyOfficerGlass
+  id: AirlockNTNavyOfficerGlassLocked
+  suffix: Nanotrasen navy officer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyOfficer ]
+
+- type: entity
+  parent: AirlockNTNavyCommandGlass
+  id: AirlockNTNavyWOEngineerGlassLocked
+  suffix: Nanotrasen navy WO engineer, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyWOEngineer ]
+
+- type: entity
+  parent: AirlockNTNavyCommandGlass
+  id: AirlockNTNavyWOMedicalGlassLocked
+  suffix: Nanotrasen navy WO medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyWOMedical ]
+
+- type: entity
+  parent: AirlockNTNavyGlass
+  id: AirlockNTNavyGlassLocked
+  suffix: Nanotrasen navy, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavy ]
+
+- type: entity
+  parent: AirlockNTNavyEngineeringGlass
+  id: AirlockNTNavyEngineeringGlassLocked
+  suffix: Nanotrasen navy engineering, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyEngineering ]
+
+- type: entity
+  parent: AirlockNTNavyMedicalGlass
+  id: AirlockNTNavyMedicalGlassLocked
+  suffix: Nanotrasen navy medical, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsNTNavyMedical ]

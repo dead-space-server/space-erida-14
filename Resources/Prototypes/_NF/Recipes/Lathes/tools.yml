@@ -1,0 +1,19 @@
+# Base prototypes
+
+- type: latheRecipe
+  abstract: true
+  id: NFBaseToolsRecipe
+  categories:
+  - Tools
+  completetime: 3.5
+
+# Migrated from Recipes/Lathes/tools.yml
+- type: latheRecipe
+  id: RPED
+  parent: NFBaseToolsRecipe
+  result: RPED
+  completetime: 10
+  materials:
+    Steel: 650
+    Plastic: 150
+    Gold: 50

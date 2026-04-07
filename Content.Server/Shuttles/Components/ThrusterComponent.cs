@@ -1,8 +1,12 @@
 using System.Numerics;
 using Content.Server.Shuttles.Systems;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Damage;
+using Content.Shared.DeviceLinking; // Frontier
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Shuttles.Components
 {
@@ -31,10 +35,14 @@ namespace Content.Server.Shuttles.Components
         [ViewVariables(VVAccess.ReadWrite), DataField("thrust")]
         public float Thrust = 100f;
 
+        [DataField("baseThrust"), ViewVariables(VVAccess.ReadWrite)]
+        public float BaseThrust = 100f;
+
         [DataField("thrusterType")]
         public ThrusterType Type = ThrusterType.Linear;
 
-        [DataField("burnShape")] public List<Vector2> BurnPoly = new()
+        [DataField("burnShape")]
+        public List<Vector2> BurnPoly = new()
         {
             new Vector2(-0.4f, 0.5f),
             new Vector2(-0.1f, 1.2f),
@@ -67,6 +75,40 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
         public TimeSpan NextFire = TimeSpan.Zero;
+
+        // Frontier: upgradeable parts, togglable thrust
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartThrust = "Capacitor";
+
+        [DataField]
+        public float[] ThrustPerPartLevel = [130, 170, 210, 250, 270];
+
+        /// <summary>
+        /// Load on the power network, in watts.
+        /// </summary>
+        public float OriginalLoad { get; set; } = 0;
+
+        /// <summary>
+        /// Togglable thrusters
+        /// </summary>
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string OnPort = "On";
+
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string OffPort = "Off";
+
+        [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<SinkPortPrototype>))]
+        public string TogglePort = "Toggle";
+        // End Frontier: upgradeable parts, togglable thrust
+
+        // Mono
+        /// <summary>
+        ///     If we have a <see cref="ThermalSignatureComponent">, heat signature output per thrust while working.
+        /// </summary>
+        [DataField]
+        public float HeatSignatureRatio = 40f;
+        [DataField]
+        public float AngularThrustExtra = 0f;
     }
 
     public enum ThrusterType
@@ -74,5 +116,6 @@ namespace Content.Server.Shuttles.Components
         Linear,
         // Angular meaning rotational.
         Angular,
+        Omnidirectional,
     }
 }

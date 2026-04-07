@@ -64,6 +64,9 @@
         layer:
         - MobLayer
         density: 200
+  - type: GPS
+    gpsName: "Signal"
+    enabled: true
 
 - type: entity
   id: LavalandTendrilGoliath
@@ -77,7 +80,7 @@
     mobsToDefeat: 6
     spawnDelay: 15.0
     spawns:
-    - MobGoliath
+    - MobLavalandGoliath
 
 - type: entity
   id: LavalandTendrilLegion

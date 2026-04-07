@@ -1,0 +1,77 @@
+- type: job
+  id: NanoTrasenNavyWarrantOfficerEngineer
+  name: job-name-nanotrasen-navy-warrant-officer-engineer
+  description: job-description-nanotrasen-navy-warrant-officer-engineer
+  playTimeTracker: JobNTNavyWOEngineer
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 2.5h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 2.5h
+    # Erida start
+    - !type:AgeRequirement
+      requiredAge: 21
+    # Erida end
+  weight: 5
+  startingGear: NTNavyWOEngiGear
+  icon: "JobIconNTNavyWOEngi"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-nanotrasen-navy-officer
+  canBeAntag: false
+  access:
+  - NTNavyWOEngineering
+  - NTNavyEngineering
+  - NTNavy
+  - ChiefEngineer
+  - Engineering
+  - Atmospherics
+  - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavyWOEngiGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyWOEngi
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatNTNavyWOEngi
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesColorYellow
+    id: NTNavyWOEngiPDA
+    ears: ClothingHeadsetNTNavyEngineering
+    belt: ClothingBeltChiefEngineerFilled
+
+- type: startingGear
+  id: NTNavyWOEngiArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyWOEngi
+    back: ClothingBackpackNTNavyWOEngi
+    neck: CombatKnifeSpetsnaz
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatNTNavyWOEngi
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesColorYellow
+    outerClothing: ClothingOuterHardsuitNTNavyEngineering
+    id: NTNavyWOEngiPDA
+    ears: ClothingHeadsetNTNavyEngineering
+    belt: ClothingBeltChiefEngineerFilled
+    pocket2: WeaponNTNavyEnergyGun
+    suitstorage: JetpackVoidFilled
+  storage:
+    back:
+    - BoxInflatable
+    - SheetPlasteel
+    - HandheldStationMap
+    - AirGrenade
+    - EmergencyMedipen
+    - RCDAmmo
+    belt:
+    - ProfessionalRCD

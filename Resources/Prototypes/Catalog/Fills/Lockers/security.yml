@@ -40,6 +40,7 @@
     - id: DoorRemoteArmory
     - id: HoloprojectorSecurity
     - id: BookSpaceLaw
+    - id: WeaponEnergyShotgun # Erida edit
     - id: ClothingBackpackElectropack
       amount: 2
     - id: RemoteSignaller

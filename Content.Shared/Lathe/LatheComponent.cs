@@ -82,6 +82,55 @@ namespace Content.Shared.Lathe
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float MaterialUseMultiplier = 1;
+
+        /// <summary>
+        /// A modifier that changes how long it takes to print a recipe
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+        public float FinalTimeMultiplier = 1;
+
+        /// <summary>
+        /// A modifier that changes how much of a material is needed to print a recipe
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadOnly), AutoNetworkedField]
+        public float FinalMaterialUseMultiplier = 1;
+
+        public const float DefaultPartRatingMaterialUseMultiplier = 0.85f; // Frontier: restored for machine parts
+
+        //Frontier Upgrade Code Restore
+        /// <summary>
+        /// The machine part that reduces how long it takes to print a recipe.
+        /// </summary>
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartPrintSpeed = "Manipulator";
+
+        /// <summary>
+        /// The value that is used to calculate the modified <see cref="TimeMultiplier"/>
+        /// </summary>
+        [DataField]
+        public float PartRatingPrintTimeMultiplier = 0.5f;
+
+        /// <summary>
+        /// The machine part that reduces how much material it takes to print a recipe.
+        /// </summary>
+        [DataField]
+        public ProtoId<MachinePartPrototype> MachinePartMaterialUse = "MatterBin";
+
+        // Frontier: restored for machine part upgrades
+        /// <summary>
+        /// The value that is used to calculate the modifier <see cref="MaterialUseMultiplier"/>
+        /// </summary>
+        [DataField]
+        public float PartRatingMaterialUseMultiplier = DefaultPartRatingMaterialUseMultiplier;
+        // End Frontier
+
+        // Frontier: restored for machine part upgrades
+        /// <summary>
+        /// If not null, finite and non-negative, modifies values on spawned items
+        /// </summary>
+        [DataField]
+        public float? ProductValueModifier = 0.3f;
+        // End Frontier
         #endregion
     }
 

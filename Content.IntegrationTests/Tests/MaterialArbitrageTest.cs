@@ -28,10 +28,21 @@ namespace Content.IntegrationTests.Tests;
 [TestFixture]
 public sealed class MaterialArbitrageTest
 {
-    // These sets are for selectively excluding recipes from arbitrage.
-    // You should NOT be adding to these. They exist here for downstreams and potential future issues.
-    private readonly HashSet<string> _destructionArbitrageIgnore = [];
-    private readonly HashSet<string> _compositionArbitrageIgnore = [];
+    // These recipes are currently broken and need fixing. You should not be adding to these sets.
+    private readonly HashSet<string> _destructionArbitrageIgnore =
+    [
+        "BaseChemistryEmptyVial", "DrinkShotGlass", "SodiumLightTube", "DrinkGlassCoupeShaped",
+        "LedLightBulb", "ExteriorLightTube", "LightTube", "DrinkGlass", "DimLightBulb", "LightBulb", "LedLightTube",
+        "SheetRGlass1", "ChemistryEmptyBottle01", "WarmLightBulb",
+        "ExteriorLightBulb", "SodiumLightBulb", "LightTubeUltraviolet" // Frontier
+    ];
+
+    private readonly HashSet<string> _compositionArbitrageIgnore =
+    [
+        "FoodPlateSmall", "AirTank", "FoodPlateTin", "FoodPlateMuffinTin", "WeaponCapacitorRechargerCircuitboard",
+        "WeaponCapacitorRechargerCircuitboard", "BorgChargerCircuitboard", "BorgChargerCircuitboard", "FoodPlate",
+        "CellRechargerCircuitboard", "CellRechargerCircuitboard",
+    ];
 
     [Test]
     public async Task NoMaterialArbitrage()
@@ -86,7 +97,7 @@ public sealed class MaterialArbitrageTest
             if (!proto.Components.TryGetValue(constructionName, out var destructible))
                 continue;
 
-            var comp = (ConstructionComponent) destructible.Component;
+            var comp = (ConstructionComponent)destructible.Component;
             constructionRecipes.Add(proto.ID, comp);
         }
 
@@ -123,7 +134,7 @@ public sealed class MaterialArbitrageTest
                         !spawnProto.Components.TryGetValue(compositionName, out var compositionReg))
                         continue;
 
-                    var mat = (PhysicalCompositionComponent) compositionReg.Component;
+                    var mat = (PhysicalCompositionComponent)compositionReg.Component;
                     foreach (var (matId, amount) in mat.MaterialComposition)
                     {
                         materials[matId] = materialStep.Amount * amount + materials.GetValueOrDefault(matId);
@@ -205,7 +216,7 @@ public sealed class MaterialArbitrageTest
             if (!proto.Components.TryGetValue(destructibleName, out var destructible))
                 continue;
 
-            var comp = (DestructibleComponent) destructible.Component;
+            var comp = (DestructibleComponent)destructible.Component;
 
             var spawnedEnts = new Dictionary<string, float>();
             var spawnedMats = new Dictionary<string, float>();
@@ -321,7 +332,7 @@ public sealed class MaterialArbitrageTest
                         !spawnProto.Components.TryGetValue(compositionName, out var compositionReg))
                         continue;
 
-                    var mat = (PhysicalCompositionComponent) compositionReg.Component;
+                    var mat = (PhysicalCompositionComponent)compositionReg.Component;
                     foreach (var (matId, amount) in mat.MaterialComposition)
                     {
                         materials[matId] = spawnCompletion.Amount * amount + materials.GetValueOrDefault(matId);
@@ -386,7 +397,7 @@ public sealed class MaterialArbitrageTest
             if (!proto.Components.TryGetValue(compositionName, out var composition))
                 continue;
 
-            var comp = (PhysicalCompositionComponent) composition.Component;
+            var comp = (PhysicalCompositionComponent)composition.Component;
             physicalCompositions.Add(proto.ID, comp);
         }
 

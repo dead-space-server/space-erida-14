@@ -1,4 +1,29 @@
 - type: entity
+  id: ClothingBeltNTNavyWebbingFilled
+  parent: ClothingBeltNTNavyWebbing
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: HandHeldMassScanner
+        - id: JawsOfLife
+        - id: CombatKnifeSpetsnaz
+        - id: Omnitool
+        - id: WeaponGrapplingGun
+
+- type: entity
+  id: ClothingBeltNTNavySheathFilled
+  parent: ClothingBeltNTNavySheath
+  suffix: Filled
+  components:
+  - type: ContainerFill
+    containers:
+      item:
+      - CaptainNTNavySabre
+
+- type: entity
   id: ClothingBeltSheathSyndicateFilled
   parent: ClothingBeltSheathSyndicate
   suffix: Filled

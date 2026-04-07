@@ -12,9 +12,9 @@
   - Igniter
   - ModularReceiver
   - MicroManipulatorStockPart
+  - MatterBinStockPart
+  - CapacitorStockPart
   - ConveyorBeltAssembly
-  - MicroManipulatorT2 # Erida-start
-  - MicroManipulatorT3 # Erida-end
 
 - type: latheRecipePack
   id: LightsStatic
@@ -69,3 +69,4 @@
   - PKAUpgradeDamage
   - PKAUpgradeRange
   - PKAUpgradeFireRate
+  - WeaponPlasmaCutter # Erida-edit

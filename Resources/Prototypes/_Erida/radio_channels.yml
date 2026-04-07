@@ -5,3 +5,18 @@
   frequency: 8888
   color: "#800080"
   longRange: true
+
+- type: radioChannel
+  id: NTNavy
+  name: chat-radio-nanotrasen-navy
+  keycode: 'в'
+  frequency: 9847
+  color: "#FFFFFF"
+  longRange: true
+  # radio channels sounds edit start
+  onSendSound:
+    path: /Audio/_Erida/Radio/handheld.ogg
+    params:
+      volume: -6
+      maxDistance: 2
+  # radio channels sounds edit end

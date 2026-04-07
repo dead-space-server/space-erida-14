@@ -31,3 +31,14 @@
     state: inteqknuckleduster
   - type: Clothing
     sprite: _Erida/Clothing/Hands/Gloves/KnuckleDusters/inteqknuckleduster.rsi
+
+- type: entity
+  parent: ClothingHandsGlovesCaptain
+  id: ClothingHandsGlovesNTNavyCaptain
+  name: nanotrasen navy captain gloves
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Hands/nanotarsen_navy_captain_gloves.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Hands/nanotarsen_navy_captain_gloves.rsi

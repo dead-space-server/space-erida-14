@@ -229,3 +229,87 @@
   - type: Access
     tags:
     - InteQVanguard
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavyCaptainIDCard
+  name: nanotrasen navy captain ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-cap
+  - type: PresetIdCard
+    job: NanoTrasenNavyCaptain
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavyOfficerIDCard
+  name: nanotrasen navy officer ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-officer
+  - type: PresetIdCard
+    job: NanoTrasenNavyOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavyWOEngiIDCard
+  name: nanotrasen navy warrant officer engineer ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-wo-engineer
+  - type: PresetIdCard
+    job: NanoTrasenNavyWarrantOfficerEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavyWOMedIDCard
+  name: nanotrasen navy warrant officer medical ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-wo-medical
+  - type: PresetIdCard
+    job: NanoTrasenNavyWarrantOfficerMedical
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavySailorIDCard
+  name: nanotrasen navy sailor ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-sailor
+  - type: PresetIdCard
+    job: NanoTrasenNavySailor
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavyEngineerIDCard
+  name: nanotrasen navy engineer ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-engineer
+  - type: PresetIdCard
+    job: NanoTrasenNavyEngineer
+
+- type: entity
+  parent: IDCardStandard
+  id: NTNavyMedicalIDCard
+  name: nanotrasen navy medical ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-nanotrasen-navy-medical
+  - type: PresetIdCard
+    job: NanoTrasenNavyMedical

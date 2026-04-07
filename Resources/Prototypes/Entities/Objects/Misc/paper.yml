@@ -106,6 +106,7 @@
         type: PaperBoundUserInterface
   - type: FaxableObject
   - type: PaperVisuals
+  - type: StationAiWhitelist # Erida edit
 
 - type: entity
   name: paper scrap
@@ -484,3 +485,4 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: StationAiWhitelist # Erida edit

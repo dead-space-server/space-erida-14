@@ -53,3 +53,17 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+- type: entity
+  parent: [ClothingOuterArmorBaseCarapace, BaseCentcommContraband]
+  id: ClothingOuterArmorNTNavyCapCarapace
+  name: nanotrasen navy captain carapace
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/oso_carapace.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/oso_carapace.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

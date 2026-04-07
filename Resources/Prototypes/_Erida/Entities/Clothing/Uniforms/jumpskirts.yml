@@ -197,3 +197,71 @@
     sprite: _Erida/Clothing/Uniforms/Jumpskirt/kimonomiku.rsi
   - type: Clothing
     sprite: _Erida/Clothing/Uniforms/Jumpskirt/kimonomiku.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNTNavyCaptain
+  name: nanotrasen navy captain jumpskirt
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_captain.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_captain.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNTNavyCapFormalDress
+  name: nanotrasen navy captain formal dress
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_capformaldress.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_capformaldress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNTNavyOfficer
+  name: nanotrasen navy officer jumpskirt
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_officer.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_officer.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNTNavyWOEngi
+  suffix: Engineering
+  name: nanotrasen navy warrant officer jumpskirt
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_ce.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_ce.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNTNavyWOMed
+  suffix: Medical
+  name: nanotrasen navy warrant officer jumpskirt
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_cmo.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_cmo.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtNTNavyMed
+  name: nanotrasen navy medical jumpskirt
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_medical.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Uniforms/Jumpskirt/nanotrasen_navy_medical.rsi

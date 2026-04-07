@@ -1,0 +1,80 @@
+- type: job
+  id: NanoTrasenNavyCaptain
+  name: job-name-nanotrasen-navy-captain
+  description: job-description-nanotrasen-navy-captain
+  playTimeTracker: JobNTNavyCaptain
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 5h
+    # Erida start
+    - !type:AgeRequirement
+      requiredAge: 31
+    # Erida end
+  weight: 20
+  startingGear: NTNavyCaptainGear
+  icon: "JobIconNTNavyCaptain"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-admiral
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  - NTNavyAllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavyCaptainGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyCaptain
+    back: ClothingBackpackNTNavyCaptain
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatCapcapWhite
+    eyes: ClothingEyesGlassesHiddenSecurity
+    gloves: ClothingHandsGlovesNTNavyCaptain
+    outerClothing: ClothingOuterArmorNTNavyCapCarapace
+    id: NTNavyCaptainPDA
+    ears: ClothingHeadsetAltNTNavyHighCommand
+
+- type: startingGear
+  id: NTNavyCaptainArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyCaptain
+    back: ClothingBackpackNTNavyCaptain
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatCapcapWhite
+    eyes: ClothingEyesGlassesHiddenSecurity
+    gloves: ClothingHandsGlovesNTNavyCaptain
+    outerClothing: ClothingOuterHardsuitNTNavyCaptain
+    id: NTNavyCaptainPDA
+    ears: ClothingHeadsetAltNTNavyHighCommand
+    belt: ClothingBeltNTNavySheathFilled
+    pocket2: WeaponNTNavyEnergyGun
+    suitstorage: JetpackVoidFilled
+  storage:
+    back:
+    - ClothingNeckCloakNTNavyCapFormal
+    - JawsOfLife
+    - Omnitool
+    - WeaponGrapplingGun
+    - HandHeldMassScanner
+    - HandheldStationMap
+    - DoorRemoteCustom
+    - EmergencyMedipen

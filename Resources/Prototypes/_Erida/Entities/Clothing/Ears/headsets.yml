@@ -1,0 +1,67 @@
+- type: entity
+  parent: [ ClothingHeadset, BaseCentcommContraband ]
+  id: ClothingHeadsetNTNavy
+  suffix: Base
+  name: nanotrasen navy headset
+  description: A headset used by sailors of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavy
+  - type: Sprite
+    sprite: _Erida/Clothing/Ears/Headsets/nanotrasen_navy_base.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Ears/Headsets/nanotrasen_navy_base.rsi
+
+- type: entity
+  parent: [ ClothingHeadsetNTNavy, BaseCentcommContraband ]
+  id: ClothingHeadsetNTNavyEngineering
+  suffix: Engineering
+  name: nanotrasen navy headset
+  description: A headset used by sailors of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavyEngineering
+
+- type: entity
+  parent: [ ClothingHeadsetNTNavy, BaseCentcommContraband ]
+  id: ClothingHeadsetNTNavyMedical
+  suffix: Medical
+  name: nanotrasen navy headset
+  description: A headset used by sailors of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavyMedical
+
+- type: entity
+  parent: [ ClothingHeadset, BaseCentcommContraband ]
+  id: ClothingHeadsetNTNavyCommand
+  suffix: Command
+  name: nanotrasen navy headset
+  description: A headset used by sailors of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavyCommand
+  - type: Sprite
+    sprite: _Erida/Clothing/Ears/Headsets/nanotrasen_navy_command.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Ears/Headsets/nanotrasen_navy_command.rsi
+
+- type: entity
+  parent: [ ClothingHeadsetNTNavyCommand, BaseCentcommContraband ]
+  id: ClothingHeadsetNTNavyHighCommand
+  suffix: High Command
+  name: nanotrasen navy headset
+  description: A headset used by sailors of Nanotrasen.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavyHighCommand

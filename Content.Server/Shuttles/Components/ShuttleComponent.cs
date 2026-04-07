@@ -20,7 +20,7 @@ namespace Content.Server.Shuttles.Components
         /// Maximum velocity.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        public float BaseMaxLinearVelocity = 60f;
+        public float BaseMaxLinearVelocity = 23.07f;  //Frontier 60 - 23.07. Upstream has it set to 60 to test and for collisions currently. Also, for some reason this value is increased by 30%, not sure if parts related or otherwise, so we do a 23.07 to reach a tier 1 velocity of 30.
 
         public const float MaxAngularVelocity = 4f;
 
@@ -29,6 +29,12 @@ namespace Content.Server.Shuttles.Components
         /// </summary>
         [ViewVariables]
         public readonly float[] LinearThrust = new float[4];
+
+        /// <summary>
+        /// The cached thrust available for each cardinal direction, if all thrusters are T1
+        /// </summary>
+        [ViewVariables]
+        public readonly float[] BaseLinearThrust = new float[4];
 
         /// <summary>
         /// The thrusters contributing to each direction for impulse.
@@ -60,7 +66,7 @@ namespace Content.Server.Shuttles.Components
         /// Base damping modifier applied to the shuttle's physics component when not in FTL.
         /// </summary>
         [DataField]
-        public float BodyModifier = 0.25f;
+        public float BodyModifier = 0.45f;
 
         /// <summary>
         /// Final Damping Modifier for a shuttle.

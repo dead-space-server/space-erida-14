@@ -1,0 +1,113 @@
+# Nanotrasen navy captain
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyCaptain
+  suffix: Nanotrasen navy captain
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_captain.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyCaptainGlass
+  suffix: Nanotrasen navy captain, Glass
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_captain.rsi
+    state: "assembly"
+
+# Nanotrasen navy command
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyCommand
+  suffix: Nanotrasen navy command
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_command.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyCommandGlass
+  suffix: Nanotrasen navy command, Glass
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_command.rsi
+    state: "assembly"
+
+# Nanotrasen navy officer
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyOfficer
+  suffix: Nanotrasen navy officer
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_officer.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyOfficerGlass
+  suffix: Nanotrasen navy officer, Glass
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_officer.rsi
+    state: "assembly"
+
+# Nanotrasen navy
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavy
+  suffix: Nanotrasen navy 
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyGlass
+  suffix: Nanotrasen navy, Glass
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy.rsi
+    state: "assembly"
+
+# Nanotrasen navy engineering
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyEngineering
+  suffix: Nanotrasen navy engineering
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_engineering.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyEngineeringGlass
+  suffix: Nanotrasen navy engineering, Glass
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_engineering.rsi
+    state: "assembly"
+
+# Nanotrasen navy engineering
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyMedical
+  suffix: Nanotrasen navy medical
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_medical.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblyNTNavyMedicalGlass
+  suffix: Nanotrasen navy medical, Glass
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_medical.rsi
+    state: "assembly"

@@ -1,0 +1,25 @@
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltNTNavyCommand
+  suffix: Command
+  name: nanotrasen navy over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavyCommand
+  - type: Sprite
+    sprite: _Erida/Clothing/Ears/Headsets/nanotrasen_navy_command.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Ears/Headsets/nanotrasen_navy_command.rsi
+    
+- type: entity
+  parent: ClothingHeadsetAltNTNavyCommand
+  id: ClothingHeadsetAltNTNavyHighCommand
+  suffix: High Command
+  name: nanotrasen navy over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNTNavyHighCommand

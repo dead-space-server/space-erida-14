@@ -1,0 +1,294 @@
+- type: entityTable
+  id: LockerFillNTNavyCaptain
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavyCaptain
+    - id: ClothingBackpackNTNavyCaptain
+    - id: ClothingBackpackDuffelNTNavyCaptain
+    - id: ClothingUniformJumpsuitNTNavyCaptain
+    - id: ClothingUniformJumpskirtNTNavyCaptain
+    - id: ClothingUniformJumpsuitNTNavyCapFormal
+    - id: ClothingUniformJumpskirtNTNavyCapFormalDress
+    - id: ClothingNeckCloakNTNavyCaptain
+    - id: ClothingNeckCloakNTNavyCapFormal
+    - id: ClothingOuterHardsuitNTNavyCaptain
+    - id: ClothingOuterArmorNTNavyCapCarapace
+    - id: ClothingOuterCoatNTNavyCaptain
+    - id: ClothingHeadHatNTNavyCapcap
+    - id: ClothingHeadHatNTNavyCaptain
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyEnergyGun
+    - id: ClothingBeltNTNavySheathFilled
+    - id: ClothingHeadsetAltNTNavyHighCommand
+    - id: DoorRemoteCustom
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: BoxFlare
+    - id: ClothingMaskGasERT
+    - id: SpaceMedipen
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavyCaptainFilled
+  suffix: Filled
+  parent: LockerNTNavyCaptain
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavyCaptain
+
+- type: entityTable
+  id: LockerFillNTNavyOfficer
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavy
+    - id: ClothingBackpackNTNavy
+    - id: ClothingBackpackDuffelNTNavy
+    - id: ClothingUniformJumpsuitNTNavyOfficer
+    - id: ClothingUniformJumpskirtNTNavyOfficer
+    - id: ClothingNeckCloakNTNavyOfficer
+    - id: ClothingOuterHardsuitNTNavy
+    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterCoatNTNavyOfficer
+    - id: ClothingHeadHatNTNavyOfficerCap
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyEnergyGun
+    - id: CombatKnifeSpetsnaz
+    - id: ClothingHeadsetAltNTNavyCommand
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: BoxFlare
+    - id: ClothingMaskGasERT
+    - id: SpaceMedipen
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavyOfficerFilled
+  suffix: Filled
+  parent: LockerNTNavyOfficer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavyOfficer
+
+- type: entityTable
+  id: LockerFillNTNavyWOEngineer
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavyWOEngi
+    - id: ClothingBackpackNTNavyWOEngi
+    - id: ClothingBackpackDuffelNTNavyWOEngi
+    - id: ClothingUniformJumpsuitNTNavyWOEngi
+    - id: ClothingUniformJumpskirtNTNavyWOEngi
+    - id: ClothingHeadHatNTNavyWOEngi
+    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterHardsuitNTNavyEngineering
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyEnergyGun
+    - id: CombatKnifeSpetsnaz
+    - id: ClothingHeadsetNTNavyEngineering
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: ProfessionalRCD
+    - id: RCDAmmo
+    - id: ToolboxMechanicalFilled
+    - id: ToolboxElectricalFilled
+    - id: BoxInflatable
+    - id: AirGrenade
+    - id: SheetPlasteel
+    - id: SheetRPGlass
+    - id: SheetRUGlass
+    - id: BoxFlare
+    - id: ClothingMaskGasERT
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavyWOEngineerFilled
+  suffix: Filled
+  parent: LockerNTNavyWOEngineer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavyWOEngineer
+
+- type: entityTable
+  id: LockerFillNTNavyWOMedical
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavyMed
+    - id: ClothingBackpackNTNavyMed
+    - id: ClothingBackpackDuffelNTNavyMed
+    - id: ClothingUniformJumpsuitNTNavyWOMed
+    - id: ClothingUniformJumpskirtNTNavyWOMed
+    - id: ClothingHeadHatNTNavyWOMed
+    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterHardsuitNTNavyMedical
+    - id: ClothingOuterCoatLabNTNavy
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyEnergyGun
+    - id: CombatKnifeSpetsnaz
+    - id: ClothingHeadsetNTNavyMedical
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: MedkitAdvancedFilled
+    - id: MedkitCombatFilled
+    - id: BoxBodyBag
+    - id: BoxSterileMask
+    - id: BoxLatexGloves
+    - id: ClothingEyesEyepatchHudMedical
+    - id: DefibrillatorCompact
+    - id: HandheldCrewMonitor
+    - id: ClothingMaskGasERT
+    - id: SpaceMedipen
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavyWOMedicalFilled
+  suffix: Filled
+  parent: LockerNTNavyWOMedical
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavyWOMedical
+
+- type: entityTable
+  id: LockerFillNTNavySailor
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavy
+    - id: ClothingBackpackNTNavy
+    - id: ClothingBackpackDuffelNTNavy
+    - id: ClothingUniformJumpsuitNTNavySailor
+    - id: ClothingOuterHardsuitNTNavy
+    - id: ClothingOuterArmorBasic
+    - id: ClothingHeadHatNTNavySailorCap
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyCarabine
+    - id: CombatKnifeSpetsnaz
+    - id: ClothingHeadsetNTNavy
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: BoxFlare
+    - id: ClothingMaskGasERT
+    - id: SpaceMedipen
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavySailorFilled
+  suffix: Filled
+  parent: LockerNTNavySailor
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavySailor
+
+- type: entityTable
+  id: LockerFillNTNavyMedical
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavyMed
+    - id: ClothingBackpackNTNavyMed
+    - id: ClothingBackpackDuffelNTNavyMed
+    - id: ClothingUniformJumpsuitNTNavyMed
+    - id: ClothingUniformJumpskirtNTNavyMed
+    - id: ClothingHeadHatBeretNTNavyMed
+    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterHardsuitNTNavyMedical
+    - id: ClothingOuterCoatLabNTNavy
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyCarabine
+    - id: CombatKnifeSpetsnaz
+    - id: ClothingHeadsetNTNavyMedical
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: MedkitAdvancedFilled
+    - id: MedkitCombatFilled
+    - id: BoxBodyBag
+    - id: ClothingEyesEyepatchHudMedical
+    - id: HandheldCrewMonitor
+    - id: ClothingMaskGasERT
+    - id: SpaceMedipen
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavyMedicalFilled
+  suffix: Filled
+  parent: LockerNTNavyMedical
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavyMedical
+
+- type: entityTable
+  id: LockerFillNTNavyEngineer
+  table: !type:AllSelector
+    children:
+    - id: ClothingBackpackSatchelNTNavyEngi
+    - id: ClothingBackpackNTNavyEngi
+    - id: ClothingBackpackDuffelNTNavyEngi
+    - id: ClothingUniformJumpsuitNTNavyEngi
+    - id: ClothingHeadHatBeretEngineering
+    - id: ClothingOuterArmorBasic
+    - id: ClothingOuterHardsuitNTNavyEngineering
+    - id: ClothingShoesBootsMagNTNavy
+    - id: ClothingBeltNTNavyWebbingFilled
+    - id: WeaponNTNavyCarabine
+    - id: CombatKnifeSpetsnaz
+    - id: ClothingHeadsetNTNavyEngineering
+    - id: JetpackVoidFilled
+    - id: BoxMRE
+    - id: DoubleEmergencyOxygenTankFilled
+    - id: DoubleEmergencyNitrogenTankFilled
+    - id: HandheldStationMap
+    - id: RCD
+    - id: RCDAmmo
+    - id: ToolboxMechanicalFilled
+    - id: ToolboxElectricalFilled
+    - id: BoxInflatable
+    - id: AirGrenade
+    - id: SheetPlasteel
+    - id: SheetRPGlass
+    - id: SheetRUGlass
+    - id: BoxFlare
+    - id: ClothingMaskGasERT
+    - id: EmergencyMedipen
+
+- type: entity
+  id: LockerNTNavyEngineerFilled
+  suffix: Filled
+  parent: LockerNTNavyEngineer
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: LockerFillNTNavyEngineer

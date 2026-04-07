@@ -1,0 +1,13 @@
+- type: latheRecipePack
+  id: PartsT2
+  recipes:
+  - AdvancedCapacitorStockPart
+  - AdvancedMatterBinStockPart
+  - NanoManipulatorStockPart
+
+- type: latheRecipePack
+  id: PartsT3
+  recipes:
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart

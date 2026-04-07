@@ -232,22 +232,23 @@ public sealed partial class LatheMenu : DefaultWindow
     private string GenerateTooltipText(LatheRecipePrototype prototype)
     {
         StringBuilder sb = new();
-        var multiplier = _entityManager.GetComponent<LatheComponent>(Entity).MaterialUseMultiplier;
+        var latheComponent = _entityManager.GetComponent<LatheComponent>(Entity); // Erida edit
 
         foreach (var (id, amount) in prototype.Materials)
         {
             if (!_prototypeManager.Resolve(id, out var proto))
                 continue;
 
-            var adjustedAmount = SharedLatheSystem.AdjustMaterial(amount, prototype.ApplyMaterialDiscount, multiplier);
+            // Erida edit
+            var adjustedAmount = SharedLatheSystem.AdjustMaterial(amount, prototype.ApplyMaterialDiscount, latheComponent.FinalMaterialUseMultiplier);
             var sheetVolume = _materialStorage.GetSheetVolume(proto);
 
             var unit = Loc.GetString(proto.Unit);
-            var sheets = adjustedAmount / (float) sheetVolume;
+            var sheets = adjustedAmount / (float)sheetVolume;
 
             var availableAmount = _materialStorage.GetMaterialAmount(Entity, id);
             var missingAmount = Math.Max(0, adjustedAmount - availableAmount);
-            var missingSheets = missingAmount / (float) sheetVolume;
+            var missingSheets = missingAmount / (float)sheetVolume;
 
             var name = Loc.GetString(proto.Name);
 
@@ -264,6 +265,11 @@ public sealed partial class LatheMenu : DefaultWindow
 
             sb.AppendLine(tooltipText);
         }
+
+        // Erida start
+        var completeTime = prototype.CompleteTime * latheComponent.FinalTimeMultiplier;
+        sb.AppendLine(Loc.GetString("lathe-menu-material-complete-time", ("time", completeTime.TotalSeconds)));
+        // Erida end
 
         var desc = _lathe.GetRecipeDescription(prototype);
         if (!string.IsNullOrWhiteSpace(desc))

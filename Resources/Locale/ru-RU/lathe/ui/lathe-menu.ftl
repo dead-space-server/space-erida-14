@@ -39,3 +39,5 @@ lathe-menu-move-up-tooltip = Передвинуть эту партию выше
 lathe-menu-move-down-tooltip = Передвинуть эту партию ниже.
 lathe-menu-item-single = {$index}. {$name}
 lathe-menu-item-batch = {$index}. {$name} ({$printed}/{$total})
+
+lathe-menu-material-complete-time = { $time }с. производства.

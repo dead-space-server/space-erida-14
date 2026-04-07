@@ -1,0 +1,36 @@
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretNanoTrasenNavy
+  suffix: NanoTrasen, navy
+  components:
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Erida/Weapons/Guns/Gunshots/1laser7.ogg
+  - type: BallisticAmmoProvider
+    proto: BulletEnergyBLUE
+    capacity: 500
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+
+- type: entity
+  parent: [BaseWeaponBallisticTurret, BaseSyndicateContraband]
+  id: WeaponTurretSyndicateNavy
+  suffix: Syndicate, navy
+  components:
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/_Erida/Weapons/Guns/Gunshots/LSR-39_disabler.ogg
+  - type: BallisticAmmoProvider
+    proto: BulletEnergyRED
+  - type: NpcFactionMember
+    factions:
+    - Syndicate

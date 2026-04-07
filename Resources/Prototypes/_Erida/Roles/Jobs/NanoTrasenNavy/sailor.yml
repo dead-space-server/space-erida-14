@@ -1,0 +1,66 @@
+- type: job
+  id: NanoTrasenNavySailor
+  name: job-name-nanotrasen-navy-sailor
+  description: job-description-nanotrasen-navy-sailor
+  playTimeTracker: JobNTNavySailor
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 2.5h
+  weight: 1
+  startingGear: NTNavySailorGear
+  icon: "JobIconNTNavySailor"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-nanotrasen-navy-officer
+  canBeAntag: false
+  access:
+  - NTNavy
+  - Security
+  - Armory
+  - Brig
+  - Detective
+  - Cryogenics
+  - GenpopEnter
+  - GenpopLeave
+  - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavySailorGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavySailor
+    shoes: ClothingShoesBootsMagNTNavy
+    head: ClothingHeadHatNTNavySailorCap
+    eyes: ClothingEyesGlassesHiddenSecurity
+    neck: CombatKnifeSpetsnaz
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterArmorBasic
+    id: NTNavySailorPDA
+    ears: ClothingHeadsetNTNavy
+    belt: ClothingBeltNTNavyWebbingFilled
+
+- type: startingGear
+  id: NTNavySailorArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavySailor
+    back: ClothingBackpackNTNavy
+    neck: CombatKnifeSpetsnaz
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatNTNavySailorCap
+    eyes: ClothingEyesGlassesHiddenSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitNTNavy
+    id: NTNavySailorPDA
+    ears: ClothingHeadsetNTNavy
+    belt: ClothingBeltNTNavyWebbingFilled
+    suitstorage: JetpackVoidFilled
+  storage:
+    back:
+    - WeaponNTNavyCarabine

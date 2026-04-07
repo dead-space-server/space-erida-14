@@ -1,0 +1,80 @@
+- type: job
+  id: NanoTrasenNavyWarrantOfficerMedical
+  name: job-name-nanotrasen-navy-warrant-officer-medical
+  description: job-description-nanotrasen-navy-warrant-officer-medical
+  playTimeTracker: JobNTNavyWOMedical
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 2.5h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 2.5h
+    # Erida start
+    - !type:AgeRequirement
+      requiredAge: 21
+    # Erida end
+  weight: 5
+  startingGear: NTNavyWOMedGear
+  icon: "JobIconNTNavyWOMed"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-nanotrasen-navy-officer
+  canBeAntag: false
+  access:
+  - NTNavyWOMedical
+  - NTNavyMedical
+  - NTNavy
+  - ChiefMedicalOfficer
+  - Medical
+  - Chemistry
+  - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavyWOMedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyWOMed
+    shoes: ClothingShoesBootsLaceup
+    mask: ClothingMaskSterile
+    head: ClothingHeadHatNTNavyWOMed
+    eyes: ClothingEyesHudMedical
+    gloves: ClothingHandsGlovesNitrile
+    outerClothing: ClothingOuterCoatLabNTNavyOpened
+    id: NTNavyWOMedPDA
+    ears: ClothingHeadsetNTNavyMedical
+    belt: ClothingBeltMedicalEMTFilled
+
+- type: startingGear
+  id: NTNavyWOMedArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyWOMed
+    back: ClothingBackpackNTNavyMed
+    neck: CombatKnifeSpetsnaz
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatNTNavyWOMed
+    eyes: ClothingEyesHudMedSec
+    gloves: ClothingHandsGlovesNitrile
+    outerClothing: ClothingOuterHardsuitNTNavyMedical
+    id: NTNavyWOMedPDA
+    ears: ClothingHeadsetNTNavyMedical
+    belt: ClothingBeltMedicalEMTFilled
+    pocket2: WeaponNTNavyEnergyGun
+    suitstorage: JetpackVoidFilled
+  storage:
+    back:
+    - WeaponGrapplingGun
+    - JawsOfLife
+    - MedkitCombatFilled
+    - DefibrillatorCompact
+    - HandHeldMassScanner
+    - HandheldStationMap
+    - HandheldCrewMonitor
+    - SpaceMedipen
+    - EmergencyMedipen

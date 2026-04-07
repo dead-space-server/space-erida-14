@@ -220,3 +220,115 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNTNavyCapcap
+  name: nanotrasen navy cap cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_captain_cap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_captain_cap.rsi
+  - type: Item
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_captain_cap.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - HamsterWearable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-inanimate
+    weight: 0.0002 # 5,000 times less likely than 1 regular animal
+  - type: BlockMovement
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNTNavyCaptain
+  name: nanotrasen navy captain hardhat
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_captain_hat.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_captain_hat.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNTNavyOfficerCap
+  name: nanotrasen navy officer cap
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_officer_cap.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_officer_cap.rsi
+      
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNTNavySailorCap
+  name: nanotrasen navy sailor cap
+  description:
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_sailor_cap.rsi
+    - type: Clothing
+      sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_sailor_cap.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNTNavyWOEngi
+  name: engineer warrant officer cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_ce_cap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_ce_cap.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatNTNavyWOMed
+  name: medical warrant officer cap
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_cmo_cap.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_cmo_cap.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretNTNavyMed
+  name: nanotrasen navy medical beret
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_medical_beret.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Head/Hats/nanotrasen_navy_medical_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon

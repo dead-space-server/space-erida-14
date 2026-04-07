@@ -1,0 +1,86 @@
+# Frontier: stack type definitions for upgradeable components
+
+# Tier 1 (removed upstream)
+
+- type: stack
+  id: Capacitor
+  name: stack-capacitor
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: capacitor }
+  spawn: CapacitorStockPart
+  maxCount: 10
+
+- type: stack
+  id: MatterBin
+  name: stack-matter-bin
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: matter_bin }
+  spawn: MatterBinStockPart
+  maxCount: 10
+
+# Tier 2
+
+- type: stack
+  id: AdvancedCapacitor
+  name: stack-advanced-capacitor
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: adv_capacitor }
+  spawn: AdvancedCapacitorStockPart
+  maxCount: 10
+
+- type: stack
+  id: AdvancedManipulator
+  name: stack-advanced-manipulator
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: nano_mani }
+  spawn: NanoManipulatorStockPart
+  maxCount: 10
+
+- type: stack
+  id: AdvancedMatterBin
+  name: stack-advanced-matter-bin
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: advanced_matter_bin }
+  spawn: AdvancedMatterBinStockPart
+  maxCount: 10
+
+# Tier 3
+
+- type: stack
+  id: SuperCapacitor
+  name: stack-super-capacitor
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: super_capacitor }
+  spawn: SuperCapacitorStockPart
+  maxCount: 10
+
+- type: stack
+  id: SuperManipulator
+  name: stack-super-manipulator
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: pico_mani }
+  spawn: PicoManipulatorStockPart
+  maxCount: 10
+
+- type: stack
+  id: SuperMatterBin
+  name: stack-super-matter-bin
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: super_matter_bin }
+  spawn: SuperMatterBinStockPart
+  maxCount: 10
+
+# Tier 4
+
+- type: stack
+  id: BluespaceCapacitor
+  name: stack-bluespace-capacitor
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: quadratic_capacitor }
+  spawn: QuadraticCapacitorStockPart
+  maxCount: 10
+
+- type: stack
+  id: BluespaceManipulator
+  name: stack-bluespace-manipulator
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: femto_mani }
+  spawn: FemtoManipulatorStockPart
+  maxCount: 10
+
+- type: stack
+  id: BluespaceMatterBin
+  name: stack-bluespace-matter-bin
+  icon: { sprite: _NF/Objects/Misc/stock_parts.rsi, state: bluespace_matter_bin }
+  spawn: BluespaceMatterBinStockPart
+  maxCount: 10

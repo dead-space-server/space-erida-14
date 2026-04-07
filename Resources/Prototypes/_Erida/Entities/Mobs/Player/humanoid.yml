@@ -303,3 +303,233 @@
       prototypes: [ CentcomSecGear ]
       roleLoadout: [ RoleSurvivalStandard ]
 
+## Nanotrasen navy captain EVA armed
+
+- type: entity
+  name: Nanotrasen navy captain
+  id: RandomHumanoidSpawnerNTNavyCaptain
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_captain
+    - type: RandomHumanoidSpawner
+      settings: NTNavyCaptain
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstCaptain
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyCaptain
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-captain
+      description: job-description-nanotrasen-navy-captain
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyCaptainArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy officer EVA armed
+
+- type: entity
+  name: Nanotrasen navy officer
+  id: RandomHumanoidSpawnerNTNavyOfficer
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_officer
+    - type: RandomHumanoidSpawner
+      settings: NTNavyOfficer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstOfficer
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyOfficer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-officer
+      description: job-description-nanotrasen-navy-officer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyOfficerArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy WO engineer EVA armed
+
+- type: entity
+  name: Nanotrasen navy WO engineer
+  id: RandomHumanoidSpawnerNTNavyWOEngi
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_wo_engineer
+    - type: RandomHumanoidSpawner
+      settings: NTNavyWOEngi
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstWO
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyWOEngi
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-warrant-officer-engineer
+      description: job-description-nanotrasen-navy-warrant-officer-engineer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyWOEngiArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy WO medical EVA armed
+
+- type: entity
+  name: Nanotrasen navy WO medical
+  id: RandomHumanoidSpawnerNTNavyWOMed
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_wo_medical
+    - type: RandomHumanoidSpawner
+      settings: NTNavyWOMed
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstWO
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyWOMed
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-warrant-officer-medical
+      description: job-description-nanotrasen-navy-warrant-officer-medical
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyWOMedArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy sailor EVA armed
+
+- type: entity
+  name: Nanotrasen navy sailor
+  id: RandomHumanoidSpawnerNTNavySailor
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_sailor
+    - type: RandomHumanoidSpawner
+      settings: NTNavySailor
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstSailor
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavySailor
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-sailor
+      description: job-description-nanotrasen-navy-sailor
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavySailorArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy engineer EVA armed
+
+- type: entity
+  name: Nanotrasen navy engineer
+  id: RandomHumanoidSpawnerNTNavyEngineer
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_engineer
+    - type: RandomHumanoidSpawner
+      settings: NTNavyEngineer
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstSailor
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyEngineer
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-engineer
+      description: job-description-nanotrasen-navy-engineer
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyEngineerArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]
+
+## Nanotrasen navy medical EVA armed
+
+- type: entity
+  name: Nanotrasen navy medical
+  id: RandomHumanoidSpawnerNTNavyMedical
+  components:
+    - type: Sprite
+      sprite: _Erida/Markers/jobs.rsi
+      layers:
+        - state: green
+        - state: nanotrasen_navy_medical
+    - type: RandomHumanoidSpawner
+      settings: NTNavyMedical
+    - type: RandomMetadata
+      nameSegments:
+      - NamesNavyFirstSailor
+      - NamesLast
+      nameFormat: name-format-standard
+
+- type: randomHumanoidSettings
+  id: NTNavyMedical
+  parent: EventHumanoidCentcomm
+  components:
+    - type: GhostRole
+      name: job-name-nanotrasen-navy-medical
+      description: job-description-nanotrasen-navy-medical
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: default
+    - type: Loadout
+      prototypes: [ NTNavyMedicalArmedGear ]
+      roleLoadout: [ RoleSurvivalMilitaryDouble ]

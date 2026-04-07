@@ -151,3 +151,92 @@
     sprite: _Erida/Clothing/Uniforms/Jumpsuit/violetenglishcostume.rsi
   - type: Clothing
     sprite: _Erida/Clothing/Uniforms/Jumpsuit/violetenglishcostume.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyCaptain
+  name: nanotrasen navy captain jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_captain.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_captain.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyCapFormal
+  name: nanotrasen navy captain formal suit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_capformal.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_capformal.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyOfficer
+  name: nanotrasen navy officer jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_officer.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_officer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavySailor
+  name: nanotrasen navy sailor jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_sailor.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_sailor.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyWOEngi
+  suffix: Engineering
+  name: nanotrasen navy warrant officer jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_ce.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_ce.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyEngi
+  name: nanotrasen navy engineer jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_engineer.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_engineer.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyWOMed
+  name: nanotrasen navy medical warrant officer jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_cmo.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_cmo.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitNTNavyMed
+  name: nanotrasen navy medical jumpsuit
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_medical.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpsuit/nanotrasen_navy_medical.rsi

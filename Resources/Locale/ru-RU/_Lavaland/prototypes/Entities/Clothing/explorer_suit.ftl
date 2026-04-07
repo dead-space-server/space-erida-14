@@ -1,0 +1,16 @@
+ent-LavalandEquipmentExplorerSuit = броня исследователя
+    .desc = Укреплённая броня для изучения опасной среды.
+ent-LavalandEquipmentExplorerHood = шлем исследователя
+    .desc = Укреплённый шлем для изучения опасной среды.
+ent-LavalandEquipmentExplorerSuitReinforced1 = усиленная броня исследователя
+    .desc = Укреплённая броня для изучения опасной среды. Слегка усилена пластинами голиафа.
+ent-LavalandEquipmentExplorerHoodReinforced1 = усиленный шлем исследователя
+    .desc = Укреплённый шлем для изучения опасной среды. Слегка усилен пластинами голиафа.
+ent-LavalandEquipmentExplorerSuitReinforced2 = усиленная броня исследователя
+    .desc = Укреплённая броня для изучения опасной среды. Усилена пластинами голиафа.
+ent-LavalandEquipmentExplorerHoodReinforced2 = усиленный шлем исследователя
+    .desc = Укреплённый шлем для изучения опасной среды. Усилен пластинами голиафа.
+ent-LavalandEquipmentExplorerSuitReinforced3 = усиленная броня исследователя
+    .desc = Укреплённая броня для изучения опасной среды. Полностью усилена пластинами голиафа.
+ent-LavalandEquipmentExplorerHoodReinforced3 = усиленный шлем исследователя
+    .desc = Укреплённый шлем для изучения опасной среды. Полностью усилен пластинами голиафа.

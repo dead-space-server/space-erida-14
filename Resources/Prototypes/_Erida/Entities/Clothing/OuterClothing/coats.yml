@@ -30,3 +30,63 @@
     sprite: _Erida/Clothing/OuterClothing/Coats/redenglishcoat.rsi
   - type: Clothing
     sprite: _Erida/Clothing/OuterClothing/Coats/redenglishcoat.rsi
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatNTNavyCaptain
+  name: nanotrasen navy captain jacket
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Coats/nanotrasen_navy_captain_coat.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Coats/nanotrasen_navy_captain_coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # Erida
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.4
+  - type: StaminaResistance
+    damageCoefficient: 0.65
+
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatNTNavyOfficer
+  name: nanotrasen navy officer jacket
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Coats/nanotrasen_navy_officer_coat.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Coats/nanotrasen_navy_officer_coat.rsi
+  - type: Armor
+    modifiers:
+      coefficients: # Erida
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.4
+  - type: StaminaResistance
+    damageCoefficient: 0.65
+
+- type: entity
+  parent: ClothingOuterStorageFoldableBase
+  id: ClothingOuterCoatLabNTNavy
+  name: nanotrasen navy lab coat
+  description: A suit that protects against minor chemical spills.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Coats/nanotrasen_navy_labcoat.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Coats/nanotrasen_navy_labcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.75
+
+- type: entity
+  parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabNTNavy]
+  id: ClothingOuterCoatLabNTNavyOpened
+  name: nanotrasen navy lab coat

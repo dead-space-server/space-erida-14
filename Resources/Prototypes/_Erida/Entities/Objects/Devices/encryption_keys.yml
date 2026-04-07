@@ -1,0 +1,101 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: EncryptionKeyErida
+  name: encryption key
+  description: A small cypher chip for headsets.
+  components:
+  - type: EncryptionKey
+  - type: Item
+    sprite: _Erida/Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/encryption_keys.rsi
+
+- type: entity
+  parent: [ EncryptionKeyErida, BaseCentcommContraband ]
+  id: EncryptionKeyNTNavy
+  suffix: Base
+  name: nanotrasen navy encryption key
+  description: An encryption key used by crew members of NanoTrasen naval vessels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NTNavy
+    - Common
+    - Security
+    defaultChannel: NTNavy
+  - type: Sprite
+    layers:
+    - state: crypt_dark_gold
+    - state: nano_label
+
+- type: entity
+  parent: [ EncryptionKeyNTNavy, BaseCentcommContraband ]
+  id: EncryptionKeyNTNavyHighCommand
+  suffix: High Command
+  name: nanotrasen navy encryption key
+  description: An encryption key used by crew members of NanoTrasen naval vessels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NTNavy
+    - Common
+    - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Law
+    defaultChannel: NTNavy
+
+- type: entity
+  parent: [ EncryptionKeyNTNavy, BaseCentcommContraband ]
+  id: EncryptionKeyNTNavyCommand
+  suffix: Command
+  name: nanotrasen navy encryption key
+  description: An encryption key used by crew members of NanoTrasen naval vessels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NTNavy
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Law
+    defaultChannel: NTNavy
+
+- type: entity
+  parent: [ EncryptionKeyNTNavy, BaseCentcommContraband ]
+  id: EncryptionKeyNTNavyEngineering
+  suffix: Engineering
+  name: nanotrasen navy encryption key
+  description: An encryption key used by crew members of NanoTrasen naval vessels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NTNavy
+    - Common
+    - Engineering
+    defaultChannel: NTNavy
+
+- type: entity
+  parent: [ EncryptionKeyNTNavy, BaseCentcommContraband ]
+  id: EncryptionKeyNTNavyMedical
+  suffix: Medical
+  name: nanotrasen navy encryption key
+  description: An encryption key used by crew members of NanoTrasen naval vessels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NTNavy
+    - Common
+    - Medical
+    defaultChannel: NTNavy

@@ -23,26 +23,3 @@
   parent: BaseStockPartRecipe
   id: MicroManipulatorStockPart
   result: MicroManipulatorStockPart
-
-# Erida-start
-- type: latheRecipe
-  parent: BaseStockPartRecipe
-  id: MicroManipulatorT2
-  result: MicroManipulatorT2
-  completetime: 3
-  materials:
-    Steel: 400
-    Plastic: 300
-    Silver: 50
-
-- type: latheRecipe
-  parent: BaseStockPartRecipe
-  id: MicroManipulatorT3
-  result: MicroManipulatorT3
-  completetime: 3
-  materials:
-    Steel: 300
-    Silver: 200
-    Gold: 50
-    Plasma: 50
-# Erida-end

@@ -1,0 +1,74 @@
+- type: job
+  id: NanoTrasenNavyOfficer
+  name: job-name-nanotrasen-navy-officer
+  description: job-description-nanotrasen-navy-officer
+  playTimeTracker: JobNTNavyOfficer
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 4h
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 4h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 4h
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 4h
+    # Erida start
+    - !type:AgeRequirement
+      requiredAge: 25
+    # Erida end
+  weight: 10
+  startingGear: NTNavyOfficerGear
+  icon: "JobIconNTNavyOfficer"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-nanotrasen-navy-captain
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  - NTNavyAllAccess
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavyOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyOfficer
+    shoes: ClothingShoesBootsLaceup
+    head: ClothingHeadHatNTNavyOfficerCap
+    eyes: ClothingEyesGlassesHiddenSecurity
+    gloves: ClothingHandsGlovesCombat
+    id: NTNavyOfficerPDA
+    ears: ClothingHeadsetAltNTNavyCommand
+
+- type: startingGear
+  id: NTNavyOfficerArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyOfficer
+    back: ClothingBackpackNTNavy
+    neck: CombatKnifeSpetsnaz
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatNTNavyOfficerCap
+    eyes: ClothingEyesGlassesHiddenSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitNTNavy
+    id: NTNavyOfficerPDA
+    ears: ClothingHeadsetAltNTNavyCommand
+    belt: ClothingBeltNTNavyWebbingFilled
+    pocket2: WeaponNTNavyEnergyGun
+    suitstorage: JetpackVoidFilled
+  storage:
+    back:
+    - ClothingNeckCloakNTNavyOfficer
+    - BoxFlare
+    - HandheldStationMap
+    - SpaceMedipen
+    - EmergencyMedipen

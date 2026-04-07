@@ -1,0 +1,144 @@
+- type: entity
+  parent: Airlock
+  id: AirlockNTNavyCaptain
+  suffix: Nanotrasen navy captain
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_captain.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTNavyCommand
+  suffix: Nanotrasen navy command
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTNavyOfficer
+  suffix: Nanotrasen navy officer
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_officer.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTNavy
+  suffix: Nanotrasen navy
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTNavyEngineering
+  suffix: Nanotrasen navy engineering
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_engineering.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: Airlock
+  id: AirlockNTNavyMedical
+  suffix: Nanotrasen navy medical
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Standard/nanotrasen_navy_medical.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+# Glass
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTNavyCaptainGlass
+  suffix: Nanotrasen navy captain
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_captain.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTNavyCommandGlass
+  suffix: Nanotrasen navy command
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_command.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTNavyOfficerGlass
+  suffix: Nanotrasen navy officer
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_officer.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTNavyGlass
+  suffix: Nanotrasen navy
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTNavyEngineeringGlass
+  suffix: Nanotrasen navy engineering
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_engineering.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand
+
+- type: entity
+  parent: AirlockGlass
+  id: AirlockNTNavyMedicalGlass
+  suffix: Nanotrasen navy medical
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Doors/Airlocks/Glass/nanotrasen_navy_medical.rsi
+  - type: WiresPanelSecurity
+    securityLevel: medSecurity
+  - type: Wires
+    layoutId: AirlockCommand

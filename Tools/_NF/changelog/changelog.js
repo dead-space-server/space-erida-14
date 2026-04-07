@@ -14,7 +14,8 @@ if (!process.env.CHANGELOG_DIR) {
 const ChangelogFilePath = `../../../${process.env.CHANGELOG_DIR}`
 
 // Regexes
-const HeaderRegex = /^\s*(?::cl:|🆑) *([a-z0-9_\-, ]+)?/img; // :cl: or 🆑 [0] followed by optional author name [1]
+const HeaderRegex = /^\s*(?::cl:|🆑) *([a-z0-9а-я_\-,& ]+)?/img;
+// const HeaderRegex = /^\s*(?::cl:|🆑) *([a-z0-9_\-, ]+)?/img; // :cl: or 🆑 [0] followed by optional author name [1]
 const EntryRegex = /^ *[*-]? *(add|remove|tweak|fix): *([^\n\r]+)\r?$/img; // * or - followed by change type [0] and change message [1]
 const CommentRegex = /<!--.*?-->/gs; // HTML comments
 
@@ -44,12 +45,10 @@ async function main() {
     const entries = getChanges(commentlessBody);
 
     let time = merged_at;
-    if (time)
-    {
+    if (time) {
         time = time.replace("z", ".0000000+00:00").replace("Z", ".0000000+00:00");
     }
-    else
-    {
+    else {
         console.log("Pull request was not merged, skipping");
         return;
     }
@@ -77,8 +76,7 @@ function getChanges(body) {
         matches.push([match[1], match[2]]);
     }
 
-    if (!matches)
-    {
+    if (!matches) {
         console.log("No changes found, skipping");
         return;
     }
@@ -138,7 +136,7 @@ function writeChangelog(entry) {
     fs.writeFileSync(
         ChangelogFilePath,
         "Entries:\n" +
-            yaml.dump(data.Entries, { indent: 2 }).replace(/^---/, "")
+        yaml.dump(data.Entries, { indent: 2 }).replace(/^---/, "")
     );
 }
 

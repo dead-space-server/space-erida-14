@@ -26,6 +26,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         SubscribeLocalEvent<JukeboxComponent, JukeboxPauseMessage>(OnJukeboxPause);
         SubscribeLocalEvent<JukeboxComponent, JukeboxStopMessage>(OnJukeboxStop);
         SubscribeLocalEvent<JukeboxComponent, JukeboxSetTimeMessage>(OnJukeboxSetTime);
+        SubscribeLocalEvent<JukeboxComponent, JukeboxSetVolumeMessage>(OnJukeboxSetVolume); // Erida-edit
         SubscribeLocalEvent<JukeboxComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<JukeboxComponent, ComponentShutdown>(OnComponentShutdown);
 
@@ -55,8 +56,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
             {
                 return;
             }
-
-            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f))?.Entity;
+            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f).WithVolume(component.CurrentVolume))?.Entity; // Erida-edit
             Dirty(uid, component);
         }
     }
@@ -74,7 +74,14 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
             Audio.SetPlaybackPosition(component.AudioStream, args.SongTime + offset);
         }
     }
-
+    // Erida-start
+    private void OnJukeboxSetVolume(EntityUid uid, JukeboxComponent component, JukeboxSetVolumeMessage args)
+    {
+        component.CurrentVolume = args.SongVolume;
+        Audio.SetVolume(component.AudioStream, component.CurrentVolume);
+        Dirty(uid, component);
+    }
+    // Erida-end
     private void OnPowerChanged(Entity<JukeboxComponent> entity, ref PowerChangedEvent args)
     {
         TryUpdateVisualState(entity);

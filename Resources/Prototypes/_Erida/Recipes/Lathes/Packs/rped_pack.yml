@@ -1,0 +1,5 @@
+- type: latheRecipePack
+  id: RPED
+  recipes:
+  - Igniter
+  - RPED

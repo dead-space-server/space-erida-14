@@ -1,0 +1,135 @@
+- type: entity
+  id: LockerNTNavy
+  parent: LockerBaseSecure
+  name: nanotrasen navy locker
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Storage/closet.rsi
+    noRot: true
+    layers:
+    - state: generic
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: generic_door
+      map: ["enum.StorageVisualLayers.Door"]
+    - state: locked
+      map: ["enum.LockVisualLayers.Lock"]
+      shader: unshaded
+    - state: welded
+      visible: false
+      map: ["enum.WeldableLayers.BaseWelded"]
+    - state: paper
+      visible: false
+      sprite: Structures/Storage/closet_labels.rsi
+      offset: "-0.065,0"
+      map: ["enum.PaperLabelVisuals.Layer"]
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_closet
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_closet_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavy"]]
+
+- type: entity
+  id: LockerNTNavyArmory
+  parent: LockerNTNavy
+  name: nanotrasen navy armory locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_armoury
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_armoury_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyArmory"]]
+
+- type: entity
+  id: LockerNTNavySailor
+  parent: LockerNTNavy
+  name: nanotrasen navy sailor locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_sailor
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_sailor_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavy"]]
+
+- type: entity
+  id: LockerNTNavyOfficer
+  parent: LockerNTNavy
+  name: nanotrasen navy officer locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_officer
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_officer_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyOfficer"]]
+
+- type: entity
+  id: LockerNTNavyCaptain
+  parent: LockerNTNavy
+  name: nanotrasen navy captain locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_captain
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_captain_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyCaptain"]]
+
+- type: entity
+  id: LockerNTNavyEngineer
+  parent: LockerNTNavy
+  name: nanotrasen navy engineer locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_engineer
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_engineer_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyEngineering"]]
+
+- type: entity
+  id: LockerNTNavyWOEngineer
+  parent: LockerNTNavy
+  name: nanotrasen navy WO engineer locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_ce
+    stateDoorOpen: nanotrasen_navy_ce_open
+    stateDoorClosed: nanotrasen_navy_ce_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyWOEngineering"]]
+
+- type: entity
+  id: LockerNTNavyMedical
+  parent: LockerNTNavy
+  name: nanotrasen navy medical locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_medical
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_medical_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyMedical"]]
+
+- type: entity
+  id: LockerNTNavyWOMedical
+  parent: LockerNTNavy
+  name: nanotrasen navy WO medical locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: nanotrasen_navy_cmo
+    stateDoorOpen: nanotrasen_navy_closet_open
+    stateDoorClosed: nanotrasen_navy_cmo_door
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyWOMedical"]]

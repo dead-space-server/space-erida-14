@@ -1,1 +1,9 @@
 id-card-access-level-inteq = Интек
+id-card-access-level-nanotrasen-navy-captain = Капитан ВКФ NT
+id-card-access-level-nanotrasen-navy-officer = Офицер ВКФ NT
+id-card-access-level-nanotrasen-navy-wo-engineering = УО инженер ВКФ NT
+id-card-access-level-nanotrasen-navy-wo-medical = УО врач ВКФ NT
+id-card-access-level-nanotrasen-navy = ВКФ NT
+id-card-access-level-nanotrasen-navy-engineering = Инженерный ВКФ NT
+id-card-access-level-nanotrasen-navy-medical = Медициский ВКФ NT
+id-card-access-level-nanotrasen-navy-armory = Оружейный ВКФ NT

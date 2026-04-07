@@ -1,4 +1,4 @@
-research-technology-machine-parts = Детали
+research-technology-machine-parts = Компоненты
 research-technology-powercells = Питание
 research-technology-powercells-advanced = Продвинутое питание
 research-technology-engineering-devices = Инженерные устройства

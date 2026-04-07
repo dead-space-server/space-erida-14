@@ -35,8 +35,16 @@ public abstract partial class InteractionTest
 
     // Parts
     protected const string Manipulator1 = "MicroManipulatorStockPart";
+    protected const string Manipulator4 = "FemtoManipulatorStockPart";
     protected const string Battery1 = "PowerCellSmall";
     protected const string Battery4 = "PowerCellHyper";
+
+    // Frontier: maintaining removed parts
+    protected const string Bin1 = "MatterBinStockPart";
+    protected const string Bin4 = "BluespaceMatterBinStockPart";
+    protected const string Cap1 = "CapacitorStockPart";
+    protected const string Cap4 = "QuadraticCapacitorStockPart";
+    // End Frontier: maintaining removed parts
 
     // Inflatables & Needle used to pop them
     protected static readonly EntProtoId InflatableWall = "InflatableWall";

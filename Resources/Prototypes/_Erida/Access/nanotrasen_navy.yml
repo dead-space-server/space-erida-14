@@ -1,0 +1,43 @@
+- type: accessLevel
+  id: NTNavyCaptain
+  name: id-card-access-level-nanotrasen-navy-captain
+
+- type: accessLevel
+  id: NTNavyOfficer
+  name: id-card-access-level-nanotrasen-navy-officer
+
+- type: accessLevel
+  id: NTNavyWOEngineering
+  name: id-card-access-level-nanotrasen-navy-wo-engineering
+
+- type: accessLevel
+  id: NTNavyWOMedical
+  name: id-card-access-level-nanotrasen-navy-wo-medical
+
+- type: accessLevel
+  id: NTNavy
+  name: id-card-access-level-nanotrasen-navy
+
+- type: accessLevel
+  id: NTNavyEngineering
+  name: id-card-access-level-nanotrasen-navy-engineering
+
+- type: accessLevel
+  id: NTNavyMedical
+  name: id-card-access-level-nanotrasen-navy-medical
+
+- type: accessLevel
+  id: NTNavyArmory
+  name: id-card-access-level-nanotrasen-navy-armory
+
+- type: accessGroup
+  id: NTNavyAllAccess
+  tags:
+  - NTNavyCaptain
+  - NTNavyOfficer
+  - NTNavyWOEngineering
+  - NTNavyWOMedical
+  - NTNavy
+  - NTNavyEngineering
+  - NTNavyMedical
+  - NTNavyArmory

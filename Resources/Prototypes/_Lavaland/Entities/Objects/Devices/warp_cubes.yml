@@ -1,0 +1,41 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: WarpCube
+  components:
+  - type: Item
+    size: Small
+  - type: Appearance
+  - type: ArrivalsBlacklist
+  - type: SwapTeleporter
+    cooldown: 20
+    teleportSound:
+      path: /Audio/_Lavaland/Effects/fleshtostone.ogg
+    teleporterWhitelist:
+      tags:
+      - WarpCube
+  - type: Tag
+    tags:
+    - WarpCube
+
+- type: entity
+  parent: WarpCube
+  abstract: false
+  id: WarpCubeR
+  name: WarpCube
+  description: red cube... where i lost blue?
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Devices/Cubes.rsi
+    state: iconR
+
+- type: entity
+  parent: WarpCube
+  abstract: false
+  id: WarpCubeB
+  name: WarpCube
+  description: Blue cube... where i lost Red?
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Devices/Cubes.rsi
+    state: iconB

@@ -28,12 +28,15 @@
 
 - type: entity
   id: MicroManipulatorStockPart
-  name: modular machine part
+  name: basic manipulator # Frontier: modular machine part<basic manipulator
   parent: BaseStockPart
-  description: A basic machine part used in the construction of a variety of devices.
-  suffix: Rating 1
+  description: A basic manipulator used in the construction of a variety of devices. # Frontier:
+  suffix: Rating 1, Single # Frontier: Single
   components:
     - type: Sprite
       state: micro_mani
+    - type: MachinePart # Frontier
+      part: Manipulator # Frontier
+      rating: 1 # Frontier
     - type: Stack
       stackType: Manipulator

@@ -9,6 +9,8 @@
   cost: 500
   recipeUnlocks:
    - MicroManipulatorStockPart
+   - CapacitorStockPart
+   - MatterBinStockPart
   position: -3,2
 
 - type: technology

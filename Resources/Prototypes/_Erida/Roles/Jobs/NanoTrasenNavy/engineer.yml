@@ -1,0 +1,68 @@
+- type: job
+  id: NanoTrasenNavyEngineer
+  name: job-name-nanotrasen-navy-engineer
+  description: job-description-nanotrasen-navy-engineer
+  playTimeTracker: JobNTNavyEngineer
+  setPreference: false
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 2.5h
+  startingGear: NTNavyEngineerGear
+  icon: "JobIconNTNavyEngineer"
+  joinNotifyCrew: true
+  supervisors: job-supervisors-navy-wo-officer-engineer
+  canBeAntag: false
+  access:
+  - NTNavy
+  - NTNavyEngineering
+  - Engineering
+  - Atmospherics
+  - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: NTNavyEngineerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyEngi
+    shoes: ClothingShoesBootsMagNTNavy
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesColorYellow
+    id: NTNavyEngineerPDA
+    ears: ClothingHeadsetNTNavyEngineering
+    belt: ClothingBeltChiefEngineerFilled
+
+- type: startingGear
+  id: NTNavyEngineerArmedGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitNTNavyEngi
+    back: ClothingBackpackNTNavyEngi
+    neck: CombatKnifeSpetsnaz
+    shoes: ClothingShoesBootsMagNTNavy
+    mask: ClothingMaskGasERT
+    head: ClothingHeadHatBeretEngineering
+    eyes: ClothingEyesGlassesCentcom
+    gloves: ClothingHandsGlovesColorYellow
+    outerClothing: ClothingOuterHardsuitNTNavyEngineering
+    id: NTNavyEngineerPDA
+    ears: ClothingHeadsetNTNavyEngineering
+    belt: ClothingBeltChiefEngineerFilled
+    suitstorage: JetpackVoidFilled
+  inhand:
+    - WeaponNTNavyCarabine
+  storage:
+    back:
+    - BoxInflatable
+    - SheetPlasteel
+    - HandheldStationMap
+    - AirGrenade
+    - EmergencyMedipen
+    - RCDAmmo
+    belt:
+    - ProfessionalRCD

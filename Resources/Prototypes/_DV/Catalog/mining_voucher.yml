@@ -32,6 +32,7 @@
   - FultonBeacon
   - BoxMarkerBeacons
   - ClothingBeltSalvageWebbing
+  - HandheldGPSBasic
 
 - type: thiefBackpackSet
   id: MiningSurvival
@@ -54,6 +55,7 @@
   content:
   - LavalandWeaponKineticMachete
   - WeaponCrusherDagger
+  - UndeterminedWeaponShaftMiner
 
 - type: thiefBackpackSet
   id: MiningMedical

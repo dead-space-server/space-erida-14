@@ -30,6 +30,53 @@
   description: A deep shoulder holster capable of holding many types of ballistics.
 
 - type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  id: ClothingBeltNTNavyWebbing
+  name: chest rig
+  description:
+  components:
+  - type: Sprite
+    sprite:  _Erida/Clothing/Belt/nanotarsen_navy_webbing.rsi
+  - type: Clothing
+    sprite:  _Erida/Clothing/Belt/nanotarsen_navy_webbing.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: [ClothingBeltBase, ClothingSlotBase, BaseCommandContraband]
+  id: ClothingBeltNTNavySheath
+  name: nanotrasen navy sabre sheath
+  description:
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Belt/nanotarsen_navy_sheath.rsi
+    state: sheath
+  - type: Clothing
+    sprite: _Erida/Clothing/Belt/nanotarsen_navy_sheath.rsi
+  - type: Item
+    size: Ginormous
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        insertSound: /Audio/Items/sheath.ogg
+        ejectSound: /Audio/Items/unsheath.ogg
+        whitelist:
+          tags:
+          - CaptainNTNavySabre
+  - type: ItemMapper
+    mapLayers:
+      sheath-sabre:
+        whitelist:
+          tags:
+          - CaptainNTNavySabre
+  - type: Appearance
+  
+- type: entity
   parent: [ClothingBeltBase, ClothingSlotBase, BaseSyndicateContraband]
   id: ClothingBeltSheathSyndicate
   name: rapier sheath
@@ -60,3 +107,4 @@
           tags:
           - SyndicateRapier
   - type: Appearance
+  

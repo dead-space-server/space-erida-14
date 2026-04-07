@@ -66,7 +66,7 @@
     state: icon
   discipline: Scientific
   tier: 1
-  cost: 20000
+  cost: 10000
   recipeUnlocks:
    - ClothingEyesNightVisionGoggles
   technologyPrerequisites:
@@ -81,7 +81,7 @@
     state: icon
   discipline: Scientific
   tier: 1
-  cost: 30000
+  cost: 15000
   recipeUnlocks:
    - ClothingEyesThermalVisionGoggles
   technologyPrerequisites:

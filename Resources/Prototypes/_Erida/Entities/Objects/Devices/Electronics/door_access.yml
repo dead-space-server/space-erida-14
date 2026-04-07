@@ -5,3 +5,59 @@
   components:
   - type: AccessReader
     access: [["InteQ"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavyCaptain
+  suffix: Nanotrasen navy captain, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyCaptain"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavyOfficer
+  suffix: Nanotrasen navy officer, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyOfficer"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavyWOEngineer
+  suffix: Nanotrasen navy WO engineer, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyWOEngineering"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavyWOMedical
+  suffix: Nanotrasen navy WO medical, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyWOMedical"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavy
+  suffix: Nanotrasen navy, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavy"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavyEngineering
+  suffix: Nanotrasen navy engineer, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyEngineering"], ["NTNavy"]]
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsNTNavyMedical
+  suffix: Nanotrasen navy medical, Locked
+  components:
+  - type: AccessReader
+    access: [["CentralCommand"], ["NTNavyMedical"], ["NTNavy"]]

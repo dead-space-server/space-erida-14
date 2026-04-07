@@ -1,2 +1,7 @@
-materials-artifact-fragment = artifact fragment
-materials-artifact-fragment-ore = raw artifact fragment
+materials-artifact-fragment =
+    { $amount ->
+        [1] фрагмент
+        [few] фрагмента
+       *[other] фрагментов
+    } артефакта
+materials-artifact-fragment-ore = фрагмент артефакта

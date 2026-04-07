@@ -1,16 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
+lavaland-examine-pressure-in-range-buff = Это снаряжение достигает максимальной эффективности при давлении [color=yellow]{$min} - {$max} кПа[/color], позволяя наносить урон в [color=yellow]{$modifier} раза/раз[/color] больше!
+lavaland-examine-pressure-in-range-debuff = Это снаряжение ослаблено при давлении [color=yellow]{$min} - {$max} кПа[/color], из-за чего наносит урон в [color=yellow]{$modifier} раза/раз[/color] меньше!
+lavaland-examine-pressure-out-range-buff = Это снаряжение эффективнее за пределами [color=yellow]{$min} - {$max} кПа[/color], позволяя наносить урон в [color=yellow]{$modifier} раза/раз[/color] больше!
+lavaland-examine-pressure-out-range-debuff = Это снаряжение ослаблено за пределами [color=yellow]{$min} - {$max} кПа[/color], из-за чего наносит урон в [color=yellow]{$modifier} раза/раз[/color] меньше!
 
-lavaland-examine-pressure-in-range-buff = This piece of equipment reaches maximum capability between [color=yellow]{$min} - {$max} kPa[/color], allowing it to deal [color=yellow]{$modifier} times[/color] the damage!
-lavaland-examine-pressure-in-range-debuff = This piece of equipment is weakened between [color=yellow]{$min} - {$max} kPa[/color], causing it to deal [color=yellow]{$modifier} times[/color] the damage!
-lavaland-examine-pressure-out-range-buff = This piece of equipment performs better outside [color=yellow]{$min} - {$max} kPa[/color], allowing it to deal [color=yellow]{$modifier} times[/color] the damage!
-lavaland-examine-pressure-out-range-debuff = This piece of equipment is weakened outside [color=yellow]{$min} - {$max} kPa[/color], causing it to deal [color=yellow]{$modifier} times[/color] the damage!
-
-lavaland-examine-pressure-armor-in-range-buff = This piece of armor reaches maximum capability between [color=yellow]{$min} - {$max} kPa[/color], allowing it to be penetrated [color=yellow]{$modifier}%[/color] worse!
-lavaland-examine-pressure-armor-in-range-debuff = This piece of armor is weakened between [color=yellow]{$min} - {$max} kPa[/color], causing it to be penetrated [color=yellow]{$modifier}%[/color] better!
-lavaland-examine-pressure-armor-out-range-buff = This piece of armor performs better outside [color=yellow]{$min} - {$max} kPa[/color], allowing it to be penetrated [color=yellow]{$modifier}%[/color] worse!
-lavaland-examine-pressure-armor-out-range-debuff = This piece of armor is weakened outside [color=yellow]{$min} - {$max} kPa[/color], causing it to be penetrated [color=yellow]{$modifier}%[/color] better!
+lavaland-examine-pressure-armor-in-range-buff = Эта броня достигает максимальной эффективности при давлении [color=yellow]{$min} - {$max} кПа[/color] и становится лучше на [color=yellow]{$modifier}%[/color]!
+lavaland-examine-pressure-armor-in-range-debuff = Эта броня ослаблена при давлении [color=yellow]{$min} - {$max} кПа[/color] и становится хуже на [color=yellow]{$modifier}%[/color]!
+lavaland-examine-pressure-armor-out-range-buff = Эта броня эффективнее за пределами [color=yellow]{$min} - {$max} кПа[/color] и становится лучше на [color=yellow]{$modifier}%[/color]!
+lavaland-examine-pressure-armor-out-range-debuff = Эта броня ослаблена за пределами [color=yellow]{$min} - {$max} кПа[/color] и становится хуже на [color=yellow]{$modifier}%[/color]!

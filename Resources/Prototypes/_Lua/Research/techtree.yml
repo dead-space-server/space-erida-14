@@ -1,0 +1,48 @@
+- type: technology
+  id: NFAdvancedParts
+  name: nf-research-technology-advanced-parts
+  icon:
+    sprite: _NF/Objects/Misc/stock_parts.rsi
+    state: adv_capacitor
+  discipline: Engineering
+  tier: 1
+  cost: 1000
+  recipeUnlocks:
+  - AdvancedCapacitorStockPart
+  - AdvancedMatterBinStockPart
+  - NanoManipulatorStockPart
+  technologyPrerequisites:
+  - MachineParts
+  position: -3,1
+
+- type: technology
+  id: NFSuperParts
+  name: nf-research-technology-super-parts
+  icon:
+    sprite: _NF/Objects/Misc/stock_parts.rsi
+    state: super_matter_bin
+  discipline: Engineering
+  tier: 1
+  cost: 15000
+  recipeUnlocks:
+  - SuperCapacitorStockPart
+  - SuperMatterBinStockPart
+  - PicoManipulatorStockPart
+  technologyPrerequisites:
+  - NFAdvancedParts
+  position: -3,0
+
+- type: technology
+  id: NFRapidPartExchange
+  name: nf-research-technology-rped
+  icon:
+    sprite: _NF/Objects/Specific/Research/rped.rsi
+    state: icon
+  discipline: Engineering
+  tier: 1
+  cost: 2500
+  recipeUnlocks:
+  - RPED
+  technologyPrerequisites:
+  - NFAdvancedParts
+  position: -4,1

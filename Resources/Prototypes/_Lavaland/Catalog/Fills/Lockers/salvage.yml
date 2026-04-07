@@ -4,7 +4,7 @@
   table: !type:AllSelector
     children:
     - id: RadioHandheld
-    - id: HandheldGPSBasic
+#    - id: HandheldGPSBasic
     - id: HandHeldMassScanner
     - id: FlashlightSeclite
     - id: OreBag

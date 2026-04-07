@@ -7,6 +7,8 @@
             <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
             <Label Name="SongName" Text="---" />
             <Slider Name="PlaybackSlider" HorizontalExpand="True" />
+            <Label Name="CurrenVolume"/> <!-- Erida-edit -->
+            <Slider Name="VolumeSlider" HorizontalExpand="True" /> <!-- Erida-edit -->
         </BoxContainer>
         <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
         VerticalExpand="False" SizeFlagsStretchRatio="1">

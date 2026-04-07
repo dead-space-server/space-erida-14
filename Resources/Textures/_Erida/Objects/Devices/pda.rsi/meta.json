@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "InteQ PDA by nikitok007 (Discord)",
+  "copyright": "InteQ PDA by nikitok007 (Discord), other PDA taken from tgstation and resprited for Nanotrasen Navy by Agronomist-NN (GitHub)",
   "size": {
     "x": 32,
     "y": 32
@@ -46,6 +46,27 @@
     },
     {
       "name": "id_overlay"
+    },
+    {
+      "name": "pda-nanotrasen-navy-sailor"
+    },
+    {
+      "name": "pda-nanotrasen-navy-engineer"
+    },
+    {
+      "name": "pda-nanotrasen-navy-medical"
+    },
+    {
+      "name": "pda-nanotrasen-navy-officer"
+    },
+    {
+      "name": "pda-nanotrasen-navy-ce"
+    },
+    {
+      "name": "pda-nanotrasen-navy-cmo"
+    },
+    {
+      "name": "pda-nanotrasen-navy-captain"
     }
   ]
 }

@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Construction.Components;
+using Content.Shared.Construction.Prototypes; // Frontier: upgradeable machine parts
 using Content.Shared.Stacks;
 using Content.Shared.Tag;
 using Robust.Shared.Containers;
@@ -15,6 +16,9 @@ namespace Content.Server.Construction.Components
         [ViewVariables]
         public bool HasBoard => BoardContainer?.ContainedEntities.Count != 0;
 
+        [ViewVariables] // Frontier: upgradeable machine parts
+        public Dictionary<ProtoId<MachinePartPrototype>, int> Progress = new(); // Frontier: upgradeable machine parts
+
         [ViewVariables]
         public readonly Dictionary<ProtoId<StackPrototype>, int> MaterialProgress = new();
 
@@ -23,6 +27,9 @@ namespace Content.Server.Construction.Components
 
         [ViewVariables]
         public readonly Dictionary<ProtoId<TagPrototype>, int> TagProgress = new();
+
+        [ViewVariables] // Frontier: upgradeable machine parts
+        public Dictionary<ProtoId<MachinePartPrototype>, int> Requirements = new(); // Frontier: upgradeable machine parts
 
         [ViewVariables]
         public Dictionary<ProtoId<StackPrototype>, int> MaterialRequirements = new();

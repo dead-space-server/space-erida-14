@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Nanotrasen Navy sprites by Agronomist-NN (GitHub)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {"name": "crypt_dark_gold"},
+    {"name": "nano_label"}
+  ]
+}

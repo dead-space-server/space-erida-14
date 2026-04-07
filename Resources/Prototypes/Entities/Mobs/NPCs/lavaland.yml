@@ -87,6 +87,13 @@
     radius: 1
     energy: 3
     color: red
+  # Erida-start
+  - type: Butcherable
+    spawned:
+    - id: DiamondOre1Unprocessed
+      amount: 1
+    - id: MaterialWatcherWing1
+  # Erida-end
 
 - type: entity
   id: MobWatcherIcewing
@@ -105,6 +112,13 @@
     radius: 1
     energy: 3
     color: deepskyblue
+  # Erida-start
+  - type: Butcherable
+    spawned:
+    - id: DiamondOre1Unprocessed
+      amount: 1
+    - id: MaterialWatcherIceWing1
+  # Erida-end
 
 - type: entity
   id: MobWatcherMagmawing
@@ -126,6 +140,13 @@
   - type: BatteryAmmoProvider
     proto: WatcherBoltMagmawing
     fireCost: 50
+  # Erida-start
+  - type: Butcherable
+    spawned:
+    - id: DiamondOre1Unprocessed
+      amount: 1
+    - id: MaterialWatcherMagmaWing1
+  # Erida-end
 
 - type: entity
   id: MobWatcherPride

@@ -1,0 +1,99 @@
+- type: entity
+  name: nanotrasen navy carabine
+  parent: BaseWeaponBattery
+  id: WeaponNTNavyCarabine
+  suffix: FLEET
+  description:
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Guns/Battery/nanotrasen_navy_rifle/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Erida/Objects/Weapons/Guns/Battery/nanotrasen_navy_rifle/tiny.rsi
+  - type: Item
+    sprite: _Erida/Objects/Weapons/Guns/Battery/nanotrasen_navy_rifle/tiny.rsi
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: -44
+  - type: Gun
+    projectileSpeed: 30
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    - Burst
+    soundGunshot:
+      path: /Audio/_Erida/Weapons/Guns/Gunshots/laser2.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Battery
+    maxCharge: 2500
+    startingCharge: 2500
+  - type: BatteryAmmoProvider
+    proto: BulletEnergyBLUE
+    fireCost: 100
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.6
+  - type: BatterySelfRecharger
+    autoRechargePauseTime: 1
+    autoRechargeRate: 525
+
+- type: entity
+  name: nanotrasen navy laser pistol
+  parent: BaseWeaponBatterySmall
+  id: WeaponNTNavyEnergyGun
+  description:
+  components:
+  - type: Sprite
+    sprite: _Backmen/Objects/Weapons/Guns/Energy/x01.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: _Backmen/Objects/Weapons/Guns/Energy/x01.rsi
+  - type: Gun
+    projectileSpeed: 40
+    soundGunshot:
+      path: /Audio/_Erida/Weapons/Guns/Gunshots/1laser9.ogg
+      params:
+          volume: -2
+  - type: Item
+    size: SmallNormal
+  - type: BatteryAmmoProvider
+    proto: BulletEnergyBLUE
+    fireCost: 100
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: BulletEnergyBLUE
+      fireCost: 100
+    - proto: BulletDisabler
+      fireCost: 75
+  - type: Battery
+    maxCharge: 1200
+    startingCharge: 1200
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 5750
+  - type: BatterySelfRecharger
+    autoRechargePauseTime: 1
+    autoRechargeRate: 525
+

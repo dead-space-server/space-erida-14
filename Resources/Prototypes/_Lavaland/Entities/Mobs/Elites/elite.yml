@@ -22,7 +22,7 @@
         - MobLayer
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna # Erida edit
   - type: HTN
     rootTask:
       task: SimpleHostileCompound

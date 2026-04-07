@@ -1,0 +1,13 @@
+- type: department
+  id: NanoTrasenNavy
+  name: department-nanotrasen-navy
+  description: department-nanotrasen-navy-description
+  color: "#FFFFFF"
+  roles:
+  - NanoTrasenNavyCaptain
+  - NanoTrasenNavyOfficer
+  - NanoTrasenNavyWarrantOfficerEngineer
+  - NanoTrasenNavyWarrantOfficerMedical
+  - NanoTrasenNavySailor
+  - NanoTrasenNavyEngineer
+  - NanoTrasenNavyMedical

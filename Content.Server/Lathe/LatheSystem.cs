@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
+using Content.Shared.Construction.Components; // Frontier
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Lathe.Components;
 using Content.Server.Materials;
@@ -34,6 +35,8 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+using Robust.Shared.Containers;
+
 namespace Content.Server.Lathe
 {
     [UsedImplicitly]
@@ -61,6 +64,12 @@ namespace Content.Server.Lathe
         /// Per-tick cache
         /// </summary>
         private readonly List<GasMixture> _environments = new();
+        private const int MaxItemsPerRequest = 100_000; // Frontier
+        /// <summary>
+        /// Multiplier applied to ALL lathe production times, to make upgrades feel
+        /// actually relevant. Upstream lathe recipes are simply too fast.
+        /// </summary>
+        private const int ProductionTimeMultiplier = 3; // Frontier
 
         public override void Initialize()
         {
@@ -83,6 +92,10 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<TechnologyDatabaseComponent, LatheGetRecipesEvent>(OnGetRecipes);
             SubscribeLocalEvent<EmagLatheRecipesComponent, LatheGetRecipesEvent>(GetEmagLatheRecipes);
             SubscribeLocalEvent<LatheHeatProducingComponent, LatheStartPrintingEvent>(OnHeatStartPrinting);
+
+            //Frontier: upgradeable parts
+            SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh);
+            SubscribeLocalEvent<LatheComponent, UpgradeExamineEvent>(OnUpgradeExamine);
         }
         public override void Update(float frameTime)
         {
@@ -92,7 +105,7 @@ namespace Content.Server.Lathe
                 if (lathe.CurrentRecipe == null)
                     continue;
 
-                if (_timing.CurTime - comp.StartTime >= comp.ProductionLength)
+                if (_timing.CurTime - comp.StartTime >= comp.ProductionLength * ProductionTimeMultiplier) // Frontier: increase production time
                     FinishProducing(uid, lathe);
             }
 
@@ -210,7 +223,7 @@ namespace Content.Server.Lathe
 
             var lathe = EnsureComp<LatheProducingComponent>(uid);
             lathe.StartTime = _timing.CurTime;
-            lathe.ProductionLength = time;
+            lathe.ProductionLength = time * component.FinalTimeMultiplier; // Frontier: TimeMultiplier<FinalTimeMultiplier
             component.CurrentRecipe = recipe;
 
             var ev = new LatheStartPrintingEvent(recipe);
@@ -342,6 +355,11 @@ namespace Content.Server.Lathe
             _appearance.SetData(uid, LatheVisuals.IsRunning, false);
 
             _materialStorage.UpdateMaterialWhitelist(uid);
+            // New Frontiers - Lathe Upgrades - initialization of upgrade coefficients
+            // This code is licensed under AGPLv3. See AGPLv3.txt
+            component.FinalTimeMultiplier = component.TimeMultiplier;
+            component.FinalMaterialUseMultiplier = component.MaterialUseMultiplier;
+            // End of modified code
         }
 
         /// <summary>
@@ -431,7 +449,7 @@ namespace Content.Server.Lathe
             foreach (var (mat, amount) in recipe.Materials)
             {
                 var adjustedAmount = recipe.ApplyMaterialDiscount
-                    ? (int)(amount * lathe.MaterialUseMultiplier)
+                    ? (int)(amount * lathe.FinalMaterialUseMultiplier) // Erida edit
                     : amount;
 
                 yield return (mat, adjustedAmount);
@@ -604,5 +622,24 @@ namespace Content.Server.Lathe
             FinishProducing(uid, component);
         }
         #endregion
+
+        // New Frontiers - Lathe Upgrades - upgrading lathe speed through machine parts
+        // This code is licensed under AGPLv3. See AGPLv3.txt
+        private void OnPartsRefresh(EntityUid uid, LatheComponent component, RefreshPartsEvent args)
+        {
+            var printTimeRating = args.PartRatings[component.MachinePartPrintSpeed];
+            var materialUseRating = args.PartRatings[component.MachinePartMaterialUse];
+
+            component.FinalTimeMultiplier = component.TimeMultiplier * MathF.Pow(component.PartRatingPrintTimeMultiplier, printTimeRating - 1);
+            component.FinalMaterialUseMultiplier = component.MaterialUseMultiplier * MathF.Pow(component.PartRatingMaterialUseMultiplier, materialUseRating - 1);
+            Dirty(uid, component);
+        }
+
+        private void OnUpgradeExamine(EntityUid uid, LatheComponent component, UpgradeExamineEvent args)
+        {
+            //args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / component.FinalTimeMultiplier); // Lua
+            args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / component.FinalTimeMultiplier, _reagentSpeed.GetTimeModifier(uid)); // Lua
+            args.AddPercentageUpgrade("lathe-component-upgrade-material-use", component.FinalMaterialUseMultiplier);
+        }
     }
 }

@@ -1,0 +1,33 @@
+- type: entity
+  id: ShuttleGunNavyTurbolaserBlueMachineGunCircuitboard
+  parent: BaseMachineCircuitboard
+  name: turbolaser machine board
+  description: A machine printed circuit board for an blue turbolaser.
+  suffix: DO NOT MAP, Blue, Machine Board
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunNavyTurbolaserBlue
+    stackRequirements:
+      Manipulator: 10
+      Steel: 15
+      CableHV: 10
+
+- type: entity
+  id: ShuttleGunNavyTurbolaserRedMachineGunCircuitboard
+  parent: BaseMachineCircuitboard
+  name: turbolaser machine board
+  description: A machine printed circuit board for an red turbolaser.
+  suffix: DO NOT MAP, Red, Machine Board
+  categories: [ DoNotMap ]
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: ShuttleGunNavyTurbolaserRed
+    stackRequirements:
+      Manipulator: 10
+      Steel: 15
+      CableHV: 10

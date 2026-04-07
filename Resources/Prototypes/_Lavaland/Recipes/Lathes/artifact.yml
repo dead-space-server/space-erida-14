@@ -1,6 +1,6 @@
 - type: latheRecipe
   id: ArtifactFragment1
   result: ArtifactFragment1
-  completetime: 0
+  completetime: 0.06
   materials:
     RawArtifactFragment: 100

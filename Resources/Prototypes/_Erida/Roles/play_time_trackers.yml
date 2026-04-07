@@ -27,3 +27,24 @@
 
 - type: playTimeTracker
   id: JobMilitia
+
+- type: playTimeTracker
+  id: JobNTNavyCaptain
+
+- type: playTimeTracker
+  id: JobNTNavyOfficer
+
+- type: playTimeTracker
+  id: JobNTNavyWOEngineer
+
+- type: playTimeTracker
+  id: JobNTNavyWOMedical
+
+- type: playTimeTracker
+  id: JobNTNavySailor
+
+- type: playTimeTracker
+  id: JobNTNavyEngineer
+
+- type: playTimeTracker
+  id: JobNTNavyMedical

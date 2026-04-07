@@ -1,0 +1,90 @@
+- type: entity
+  id: SpawnPointNTNavyCaptain
+  parent: SpawnPointJobBase
+  name: nanotrasen navy captain
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavyCaptain
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_captain
+
+- type: entity
+  id: SpawnPointNTNavyOfficer
+  parent: SpawnPointJobBase
+  name: nanotrasen navy officer
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavyOfficer
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_officer
+
+- type: entity
+  id: SpawnPointNTNavyWOEngineer
+  parent: SpawnPointJobBase
+  name: nanotrasen navy warrant officer engineer
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavyWarrantOfficerEngineer
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_wo_engineer
+
+- type: entity
+  id: SpawnPointNTNavyWOMedical
+  parent: SpawnPointJobBase
+  name: nanotrasen navy warrant officer medical
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavyWarrantOfficerMedical
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_wo_medical
+
+- type: entity
+  id: SpawnPointNTNavySailor
+  parent: SpawnPointJobBase
+  name: nanotrasen navy sailor
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavySailor
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_sailor
+
+- type: entity
+  id: SpawnPointNTNavyEngineer
+  parent: SpawnPointJobBase
+  name: nanotrasen navy engineer
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavyEngineer
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_engineer
+
+- type: entity
+  id: SpawnPointNTNavyMedical
+  parent: SpawnPointJobBase
+  name: nanotrasen navy medical
+  components:
+  - type: SpawnPoint
+    job_id: NanoTrasenNavyMedical
+  - type: Sprite
+    sprite: _Erida/Markers/jobs.rsi
+    layers:
+      - state: green
+      - state: nanotrasen_navy_medical
