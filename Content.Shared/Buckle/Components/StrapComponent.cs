@@ -9,7 +9,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Buckle.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Access(typeof(SharedBuckleSystem))]
+[Access(typeof(SharedBuckleSystem), typeof(Content.Shared.ADT.Bed.DoubleBedSystem))] // Added ADT double bed system
 public sealed partial class StrapComponent : Component
 {
     /// <summary>

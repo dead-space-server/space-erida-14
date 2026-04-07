@@ -522,6 +522,7 @@
     - Scarves
     - Carpets
     - Bedsheets
+    - ADTDoubleBedsheets
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm

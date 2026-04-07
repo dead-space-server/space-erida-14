@@ -620,3 +620,31 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  name: doublebedup-name
+  id: EridaBedDoubleUpRecipe
+  graph: doublebed
+  startNode: start
+  targetNode: doublebedup
+  category: construction-category-furniture
+  description: doublebedup-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  name: doublebeddown-name
+  id: EridaBedDoubleDownRecipe
+  graph: doublebed
+  startNode: start
+  targetNode: doublebeddown
+  category: construction-category-furniture
+  description: doublebeddown-desc
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

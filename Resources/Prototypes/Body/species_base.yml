@@ -35,8 +35,8 @@
     bounds: -0.5,-0.5,0.5,0.5
   - type: JobStatus
   - type: RotationVisuals
-    defaultRotation: 90
-    horizontalRotation: 90
+    defaultRotation: -90 # ADT Tweak
+    horizontalRotation: -90 # ADT Tweak
   - type: HumanoidProfile
   - type: TypingIndicator
   - type: SlowOnDamage
