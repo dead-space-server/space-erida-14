@@ -184,7 +184,7 @@
       100: Dead
   - type: NpcFactionMember
     factions:
-      - Zombie
+      - Lavafauna
   - type: TriggerOnMobstateChange
     mobState:
     - Dead
@@ -307,8 +307,10 @@
   - type: SlowOnDamage
     speedModifierThresholds:
       250: 1
+  - type: Damageable
+    damageModifierSet: CombineArmor
   - type: MovementSpeedModifier
-    baseSprintSpeed: 5
+    baseSprintSpeed: 4.5
   - type: Loadout
     prototypes: [NPCMarine]
 
@@ -504,39 +506,3 @@
     damageModifierSet: HEVArmor
   - type: Loadout
     prototypes: [NPCHEV]
-
-- type: damageModifierSet
-  id: CombineArmor
-  coefficients:
-    Blunt: 0.6
-    Slash: 0.6
-    Piercing: 0.5
-    Shock: 0.8
-    Heat: 0.1
-    Radiation: 0.1
-    Caustic: 0.1
-    Stun: 0.1
-
-- type: damageModifierSet
-  id: CombineArmorCP
-  coefficients:
-    Blunt: 0.8
-    Slash: 0.8
-    Piercing: 0.8
-    Shock: 0.9
-    Heat: 0.3
-    Radiation: 0.1
-    Caustic: 0.1
-    Stun: 0.1
-
-- type: damageModifierSet
-  id: CombineArmorElite
-  coefficients:
-    Blunt: 0.3
-    Slash: 0.3
-    Piercing: 0.3
-    Shock: 0.3
-    Heat: 0.01
-    Radiation: 0.1
-    Caustic: 0.1
-    Stun: 0.1

@@ -104,7 +104,7 @@
           mobstate: Critical
         - !type:ReagentCondition
           reagent: TranexamicAcidPlus
-          min: 20
+          min: 10
         damage:
           groups:
             Brute: -5
@@ -113,7 +113,7 @@
         conditions:
         - !type:ReagentCondition
           reagent: TranexamicAcidPlus
-          min: 20
+          min: 10
         damage:
           types:
             Asphyxiation: -3
