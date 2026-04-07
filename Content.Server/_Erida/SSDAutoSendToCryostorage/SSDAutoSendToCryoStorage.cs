@@ -1,7 +1,8 @@
-using Content.Shared._Erida.SSDAutoSendToCryostorage;
-using Content.Shared._Erida.SSDAutoSendToCryostorage.Components;
+using Content.Server._Erida.SSDAutoSendToCryostorage.Components;
+using Content.Server.Administration.Logs;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared.CCVar;
+using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
@@ -17,7 +18,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Erida.SSDAutoSendToCryostorage;
 
-public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostorageSystem
+public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -25,6 +26,7 @@ public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostor
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
     private bool _icSsdSendToCryostorage;
     private float _icSsdSendToCryostorageTime;
@@ -83,6 +85,7 @@ public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostor
             if (!SendToCryostorage(new Entity<TransformComponent?, MetaDataComponent?, PhysicsComponent?>(uid, xfrom, meta, physics), ref ssd))
             {
                 // Try next time
+                _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(uid):uid} not found cryo after to send for a long absence");
                 ssd.SendToCryostorageTime = curTime + TimeSpan.FromSeconds(_icSsdSendToCryostorageTime);
                 continue;
             }
@@ -123,7 +126,6 @@ public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostor
         if (bestCryo == null
             || bestContainer == null)
         {
-            Log.Info($"Не было найдено криохранилище для {uid}");
             return false;
         }
 
@@ -137,6 +139,8 @@ public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostor
         _container.Insert(uid, bestContainer);
         _audio.PlayPvs(sSDcomp.SoundExit, uid);
 
+        _adminLogger.Add(LogType.Mind, LogImpact.Medium, $"{ToPrettyString(uid.Owner):entity} sent to cryo after a long absence");
+
         return true;
     }
 
@@ -146,7 +150,7 @@ public sealed class SSDAutoSendToCryostorageSystem : SharedSSDAutoSendToCryostor
             || !ent.Comp.Active)
             return;
 
-        var timeToSend = (ent.Comp.SendToCryostorageTime - _timing.CurTime).Seconds.ToString();
+        var timeToSend = Math.Round((ent.Comp.SendToCryostorageTime - _timing.CurTime).TotalSeconds).ToString();
 
         var message = $"[color=yellow]{Loc.GetString("comp-SSDAutoSendToCryostorage-examined-active", ("time", timeToSend))}[/color]";
 
