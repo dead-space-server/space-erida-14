@@ -110,7 +110,7 @@ public sealed partial class CCVars
     ///     Won't work without ICSSDAutoSendToCryostorage
     /// </summary>
     public static readonly CVarDef<float> ICSSDAutoSendToCryostorageTime =
-        CVarDef.Create("ic.ssd_auto_send_to_cryo_time", 12f, CVar.SERVER);
+        CVarDef.Create("ic.ssd_auto_send_to_cryo_time", 1200f, CVar.SERVER);
 
     // Erida-end
 }
