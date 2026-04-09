@@ -62,6 +62,7 @@
             amount: 10
             doAfter: 2
           - tag: SalvagePCVPlate
+            name: construction-graph-tag-xen-pcv-plate
             doAfter: 1
     - node: reinforcedhev2
       entity: LavalandEquipmentExplorerSuitReinforcedHEV2
@@ -75,6 +76,7 @@
             amount: 20
             doAfter: 2
           - tag: SalvagePCVPlate
+            name: construction-graph-tag-xen-pcv-plate
             doAfter: 1
     - node: reinforcedhev3
       entity: LavalandEquipmentExplorerSuitReinforcedHEV3

@@ -487,7 +487,6 @@
         volume: 3
   - type: TemperatureProtection
   - type: Temperature
-    damageCap: 0
   - type: NoSlip
   - type: Damageable
     damageModifierSet: HEVArmor
