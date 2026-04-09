@@ -58,11 +58,11 @@
   result: GrenadeSpiked
   categories:
   - Weapons
-  completetime: 4
+  completetime: 10
   materials:
     Steel: 800
-    Plastic: 500
-    Plasma: 300 # Erida end
+    Plastic: 400
+    Plasma: 600 # Erida end
 
 - type: latheRecipe
   parent: BasePartRecipe

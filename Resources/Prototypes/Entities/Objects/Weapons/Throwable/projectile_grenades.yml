@@ -152,7 +152,7 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: ProjectileGrenade
-    fillPrototype: PelletClusterLethal
+    fillPrototype: PelletClusterLethalSmall
     capacity: 10
   - type: TriggerOnUse
   - type: TimerTrigger
@@ -187,7 +187,7 @@
         Piercing: 2
   - type: EmbeddableProjectile
     minimumSpeed: 1
-    removalTime: 2
+    removalTime: 1.2
     offset: 0.0,0.0
 
 - type: entity
@@ -203,14 +203,14 @@
     - state: icon
       map: ["enum.TriggerVisualLayers.Base"]
   - type: ProjectileGrenade
-    fillPrototype: PelletClusterLethal
-    capacity: 16
+    fillPrototype: PelletClusterLethalSmall
+    capacity: 20
   - type: TriggerOnUse
   - type: TimerTrigger
     beepSound:
       path: "/Audio/Effects/beep1.ogg"
       params:
-        volume: 2 
+        volume: 2
     initialBeepDelay: 0
     beepInterval: 0.5
     delay: 5
@@ -218,7 +218,7 @@
     price: 2000
   - type: EmbeddableProjectile
     minimumSpeed: 1
-    removalTime: 2
+    removalTime: 1.2
     offset: 0.0,0.0
   - type: MeleeWeapon
     wideAnimationRotation: -45

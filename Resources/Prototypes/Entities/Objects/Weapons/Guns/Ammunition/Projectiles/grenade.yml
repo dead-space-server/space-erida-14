@@ -28,6 +28,20 @@
   - type: TimedDespawn
     lifetime: 0.25
 
+- type: entity # Erida start
+  parent: BaseBullet
+  id: PelletClusterLethalSmall
+  categories: [ HideSpawnMenu ]
+  name: pellet (ball, lethal)
+  components:
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Piercing: 15
+  - type: TimedDespawn
+    lifetime: 0.10 # Erida end
+
 - type: entity
   parent: BaseBulletIncendiary
   id: PelletClusterIncendiary
