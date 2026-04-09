@@ -1,4 +1,4 @@
-﻿guide-entry-ss14 = Станции и смены
+guide-entry-ss14 = Станции и смены
 guide-entry-engineering = Инженерное дело
 guide-entry-construction = Строительство
 guide-entry-expandingrepairingstation = Расширение и починка станции
@@ -202,3 +202,5 @@ guide-entry-rules-ban-types = Виды банов
 guide-entry-rules-ban-durations = Длительности банов
 guide-entry-writing = Разметка письма
 guide-entry-glossary = Словарь терминов
+
+guide-entry-supermatter = Суперматерия

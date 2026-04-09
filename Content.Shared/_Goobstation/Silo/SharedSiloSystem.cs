@@ -17,7 +17,6 @@ namespace Content.Shared._Goobstation.Silo;
 
 public abstract class SharedSiloSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] protected readonly SharedDeviceLinkSystem DeviceLink = default!;
     [Dependency] protected readonly SharedMaterialStorageSystem _materialStorage = default!;
 

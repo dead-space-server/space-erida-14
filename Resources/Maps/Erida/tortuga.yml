@@ -69301,7 +69301,7 @@ entities:
     - type: Transform
       pos: 30.5,13.5
       parent: 2
-- proto: CrateVendingMachineRestockBoozeFilled
+- proto: VendingMachineRestockBooze
   entities:
   - uid: 10228
     components:

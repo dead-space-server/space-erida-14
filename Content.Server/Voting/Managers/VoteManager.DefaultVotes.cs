@@ -309,11 +309,15 @@ namespace Content.Server.Voting.Managers
                 var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
                 if (ticker.CanUpdateMap())
                 {
-                    if (_gameMapManager.TrySelectMapIfEligible(picked.ID))
+                    if (_gameMapManager.CheckMapExists(picked.ID))
                     {
                         _gameMapManager.SelectMap(picked.ID);
                         ticker.UpdateInfoText();
                         _cooldownMaps.Add(picked.ID, _cfg.GetCVar(CCVars.MapHideDuration)); // Erida
+                    }
+                    else
+                    {
+                        _chatManager.DispatchServerAnnouncement(Loc.GetString("ui-vote-map-invalid", ("winner", maps[picked])));
                     }
                 }
                 else

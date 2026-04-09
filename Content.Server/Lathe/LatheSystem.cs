@@ -64,7 +64,7 @@ namespace Content.Server.Lathe
         /// Per-tick cache
         /// </summary>
         private readonly List<GasMixture> _environments = new();
-        private const int MaxItemsPerRequest = 100_000; // Frontier
+        private new const int MaxItemsPerRequest = 100; // Frontier
         /// <summary>
         /// Multiplier applied to ALL lathe production times, to make upgrades feel
         /// actually relevant. Upstream lathe recipes are simply too fast.

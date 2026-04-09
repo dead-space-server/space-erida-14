@@ -26,15 +26,15 @@
   - type: TechnologyDatabase
     supportedDisciplines:
     # Backmen-Edit-START
-    - Engineering
+    - Industrial
     - Arsenal
     - Security
     - Cargo
     - Shaft
-    - Scientific
+    - Experimental
     - Robotics
     - Medical
-    - Service
+    - CivilianServices
     roundstartTechs:
     - MachineParts
     - Powercells

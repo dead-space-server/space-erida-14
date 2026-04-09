@@ -1,4 +1,4 @@
-﻿[game]
+[game]
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
@@ -48,3 +48,12 @@ ssd_sleep_time = 3600
 
 [lavaland] # Lavaland Change
 enabled = false
+
+[database]
+# Change to sqlite if needed
+engine = "sqlite"
+pg_host = "localhost"
+pg_port = 5432
+pg_database = "ss14"
+pg_username = "postgres"
+pg_password = "postgres"

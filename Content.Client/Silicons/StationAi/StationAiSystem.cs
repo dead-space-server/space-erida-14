@@ -93,3 +93,4 @@ public sealed partial class StationAiSystem : SharedStationAiSystem
         _overlayMgr.RemoveOverlay<StationAiOverlay>();
     }
 }
+

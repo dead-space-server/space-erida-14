@@ -30234,7 +30234,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Service
+      - CivilianServices
 - proto: BlastDoor
   entities:
   - uid: 113
@@ -134315,7 +134315,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Engineering
+      - Industrial
       - Arsenal
       - Security
       - Cargo
@@ -134323,7 +134323,7 @@ entities:
       - Scientific
       - Robotics
       - Medical
-      - Service
+      - CivilianServicesMachines
 - proto: SeedExtractor
   entities:
   - uid: 298
@@ -145096,7 +145096,7 @@ entities:
       parent: 2
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Engineering
+      - Industrial
       - Arsenal
       - Security
       - Cargo
@@ -145104,7 +145104,7 @@ entities:
       - Scientific
       - Robotics
       - Medical
-      - Service
+      - CivilianServicesMachines
 - proto: UniformShortsRed
   entities:
   - uid: 24494

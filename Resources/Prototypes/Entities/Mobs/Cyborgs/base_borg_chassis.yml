@@ -252,6 +252,7 @@
     requiredMobState:
     - Critical
     - Dead
+  # Erida start
   - type: MiningPoints # DeltaV
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
@@ -262,6 +263,7 @@
     understands:
     - Binary
     - TauCetiBasic
+  # Erida end
 
 - type: entity
   abstract: true

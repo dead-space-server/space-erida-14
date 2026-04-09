@@ -41,14 +41,13 @@ namespace Content.Server._Lavaland.Pressure;
 public sealed class PressureEfficiencyChangeSystem : EntitySystem
 {
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
-    [Dependency] private readonly BodySystem _body = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<PressureDamageChangeComponent, ExaminedEvent>(OnExamined);
-        SubscribeLocalEvent<PressureDamageChangeComponent, GetMeleeDamageEvent>(OnGetDamage, after: new []{typeof(SharedWieldableSystem)});
+        SubscribeLocalEvent<PressureDamageChangeComponent, GetMeleeDamageEvent>(OnGetDamage, after: new[] { typeof(SharedWieldableSystem) });
         SubscribeLocalEvent<PressureDamageChangeComponent, GunShotEvent>(OnGunShot);
         SubscribeLocalEvent<PressureDamageChangeComponent, ProjectileShotEvent>(OnProjectileShot);
 

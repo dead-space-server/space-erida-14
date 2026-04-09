@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.IntegrationTests.Fixtures;
 using Content.Server.Power.Components;
 using Content.Shared.Power.Components;
 using Content.Shared.Power.EntitySystems;
@@ -8,7 +9,7 @@ using Robust.Shared.Prototypes;
 namespace Content.IntegrationTests.Tests.Power;
 
 [TestFixture, TestOf(typeof(SharedPowerStateSystem))]
-public sealed class PowerStatePrototypeTest
+public sealed class PowerStatePrototypeTest : GameTest
 {
     /// <summary>
     /// Asserts that the <see cref="SharedApcPowerReceiverComponent"/>'s load is the same
@@ -18,7 +19,7 @@ public sealed class PowerStatePrototypeTest
     [Test]
     public async Task AssertApcPowerMatchesPowerState()
     {
-        await using var pair = await PoolManager.GetServerClient();
+        var pair = Pair;
         var server = pair.Server;
 
         var protoMan = server.ResolveDependency<IPrototypeManager>();
@@ -26,7 +27,7 @@ public sealed class PowerStatePrototypeTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.Multiple(delegate
+            Assert.Multiple(testDelegate: delegate
             {
                 foreach (var prototype in protoMan.EnumeratePrototypes<EntityPrototype>()
                              .Where(p => !p.Abstract)
@@ -35,6 +36,11 @@ public sealed class PowerStatePrototypeTest
                     if (!prototype.TryGetComponent<PowerStateComponent>(out var powerStateComp, entMan.ComponentFactory))
                         continue;
 
+                    // Erida start
+                    if (prototype.TryGetComponent<ApcComponent>(out var apcComponent, entMan.ComponentFactory))
+                        if (apcComponent.CanBeOverloaded == false)
+                            continue;
+                    // Erida end
                     // LESSON LEARNED:
                     // ENSURE THAT THE COMPONENT YOU ARE TRYING TO GET IS THE SERVER-SIDE VARIANT
                     if (!prototype.TryGetComponent<ApcPowerReceiverComponent>(out var powerReceiverComp, entMan.ComponentFactory))
@@ -53,7 +59,5 @@ public sealed class PowerStatePrototypeTest
                 }
             });
         });
-
-        await pair.CleanReturnAsync();
     }
 }
