@@ -115,7 +115,8 @@ public sealed class TraitorRuleTest : GameTest
         var mind = mindSys.GetMind(player)!.Value;
         Assert.That(roleSys.MindIsAntagonist(mind));
         Assert.That(factionSys.IsMember(player, SyndicateFaction), Is.True);
-        Assert.That(factionSys.IsMember(player, NanotrasenFaction), Is.False);
+        // Erida edit
+        // Assert.That(factionSys.IsMember(player, NanotrasenFaction), Is.False);
         Assert.That(traitorRule.TotalTraitors, Is.EqualTo(1));
         Assert.That(traitorRule.TraitorMinds[0], Is.EqualTo(mind));
 

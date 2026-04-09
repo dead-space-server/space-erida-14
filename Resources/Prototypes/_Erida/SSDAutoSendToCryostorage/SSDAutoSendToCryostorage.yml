@@ -1,0 +1,11 @@
+- type: entity
+  id: ShortPortalEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Sprite
+    sprite: Effects/portal.rsi
+    state: portal-artifact
+  - type: Transform
+    noRot: True

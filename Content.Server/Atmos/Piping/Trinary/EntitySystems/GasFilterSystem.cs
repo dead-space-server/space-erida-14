@@ -1,4 +1,5 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Atmos.Commands;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Trinary.Components;
 using Content.Server.NodeContainer.EntitySystems;
@@ -74,6 +75,7 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             if (filter.FilteredGas.HasValue)
             {
                 // Make sure we don't pump over the pressure limit.
+                var filteredGasMixture = new GasMixture { Temperature = removed.Temperature };
                 var limitMolesFilter =
                     AtmosphereSystem.MolesToMaxPressure(removed, filterNode.Air, Atmospherics.MaxOutputPressure);
 
@@ -85,7 +87,6 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
                 removed.AdjustMoles(filter.FilteredGas.Value, -filteredMoles);
 
                 _atmosphereSystem.Merge(filterNode.Air, filteredGasMixture);
-
                 _ambientSoundSystem.SetAmbience(uid, filteredMoles > 0f);
             }
 

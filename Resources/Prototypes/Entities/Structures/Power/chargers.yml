@@ -178,7 +178,8 @@
         blacklist:
           tags:
           - PotatoBattery
-  - type: Item
+          - BatteryRecharge #Erida-edit
+- type: Item
     size: Ginormous
   - type: MultiHandedItem
 
@@ -206,6 +207,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - BatteryRecharge #Erida-edit
   - type: Item
     size: Ginormous
   - type: MultiHandedItem
@@ -237,6 +239,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - BatteryRecharge #Erida-edit
 
 - type: entity
   parent: BaseRecharger
