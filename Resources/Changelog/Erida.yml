@@ -351,3 +351,12 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/317
   avatar_url: https://avatars.githubusercontent.com/u/183598448?v=4
   title: MinersSalve
+- author: Shalnaya_Klyaksa
+  changes:
+    - type: Add
+      message: Добавлена возможность управление боргами у цИИ
+  id: 30
+  time: '2026-04-09T17:31:24.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/324
+  avatar_url: https://avatars.githubusercontent.com/u/110557981?v=4
+  title: StationAi control borg

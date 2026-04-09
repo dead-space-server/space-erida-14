@@ -61,6 +61,7 @@ public sealed class StationAiSystem : SharedStationAiSystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
+
     private readonly HashSet<Entity<StationAiCoreComponent>> _stationAiCores = new();
 
     private readonly ProtoId<ChatNotificationPrototype> _turretIsAttackingChatNotificationPrototype = "TurretIsAttacking";
