@@ -197,7 +197,6 @@
     proto: MobLegionSkull
   - type: TemperatureProtection
   - type: Temperature
-    damageCap: 0
   - type: ReplacementAccent
     accent: zombie
 
@@ -227,18 +226,6 @@
   chatMessages: ["chat-emote-msg-gasp"]
   chatTriggers:
    - pain
-
-- type: damageModifierSet
-  id: HEVArmor
-  coefficients:
-    Blunt: 0.9
-    Slash: 0.9
-    Piercing: 0.5
-    Shock: 0.8
-    Heat: 0.05
-    Radiation: 0
-    Caustic: 0
-    Stun: 0
 
 - type: soundCollection
   id: ZombiePain

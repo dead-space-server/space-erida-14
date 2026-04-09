@@ -11,7 +11,7 @@
   - type: Clothing
     sprite: _Lavaland/Equipment/hev_suit.rsi
     equippedState: hev1-equipped-OUTERCLOTHING
-    equipSound: /Audio/_Lavaland\Clothing\hev/01_hev_logon.ogg
+    equipSound: /Audio/_Lavaland/Clothing/hev/01_hev_logon.ogg
     quickEquip: false
     equipDelay: 10
     unequipDelay: 10
@@ -73,10 +73,9 @@
         Cold: 0.1
         Radiation: 0.1
         Caustic: 0.1
-        Stun: 0.7
   - type: JumpAbility
     jumpDistance: 8
-    jumpSound: /Audio/_Lavaland\Clothing\hev/longjump_pick.ogg
+    jumpSound: /Audio/_Lavaland/Clothing/hev/longjump_pick.ogg
   - type: ActionGrant
     actions:
     - ActionGravityJump
@@ -140,7 +139,8 @@
         Cold: 0.1
         Radiation: 0.1
         Caustic: 0.1
-        Stun: 0.7
+  - type: StaminaResistance
+    damageCoefficient: 0.5
   - type: ToggleableClothing
     clothingPrototype: LavalandEquipmentExplorerHoodReinforcedHEV3
   - type: Construction

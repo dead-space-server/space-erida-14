@@ -6,10 +6,6 @@
   name: PKA modkit (damage T2)
   suffix: Tier 2
   components:
-  - type: GunUpgrade
-    capacityCost: 40
-    tags: [ GunUpgradeDamage ]
-    examineText: gun-upgrade-examine-text-damage
   - type: GunUpgradeDamage
     damage:
       types:

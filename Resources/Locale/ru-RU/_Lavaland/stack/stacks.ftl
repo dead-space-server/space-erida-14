@@ -15,3 +15,10 @@ stack-watcher-wing = крыло наблюдателя
 stack-magma-wing = крыло магматического наблюдателя
 stack-ice-wing = крыло ледяного наблюдателя
 stack-legion-skull = череп легиона
+
+#erida-edit
+piece-of-HEV-suit = часть костюма HEV
+strap-ALICE  = лямка ALICE
+gun-material =  запчасть оружия
+M9-steel = сталь М9
+gold-cable = высоко-скоростной кабель

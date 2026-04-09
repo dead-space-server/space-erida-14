@@ -15,3 +15,10 @@ stack-watcher-wing = watcher wing
 stack-magma-wing = magma watcher wing
 stack-ice-wing = ice watcher wing
 stack-legion-skull = legion skull
+
+#erida-edit
+piece-of-HEV-suit = piece of HEV suit
+strap-ALICE  = strap ALICE
+gun-material =  gun material
+M9-steel = M9 steel
+gold-cable = gold cable

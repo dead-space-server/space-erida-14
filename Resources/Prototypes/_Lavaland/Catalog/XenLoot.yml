@@ -104,8 +104,6 @@
       prob: 0.4
     - id: SalvageAncientTool
       prob: 0.2
-    - id: BoneGel
-      prob: 0.5
     - id: TechnologyDiskRare
       prob: 0.05
       orGroup: Disc
