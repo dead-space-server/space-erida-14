@@ -44,7 +44,6 @@
   - type: InstantAction
     event: !type:RelayedActionComponentChangeEvent
       components:
-      - type: LightOnCollideCollider
       - type: FixturesChange
         fixtures:
           lightTrigger:
