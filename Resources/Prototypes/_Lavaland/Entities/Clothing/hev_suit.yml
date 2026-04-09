@@ -24,6 +24,8 @@
     showExamine: true
     isEnabled: true
   - type: RadiationReceiver
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
   - type: ToggleableClothing
     clothingPrototype: LavalandEquipmentExplorerHoodReinforcedHEV
   - type: Construction
