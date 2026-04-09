@@ -99,5 +99,18 @@ public sealed partial class CCVars
     public static readonly CVarDef<int> MaxCustomSpeciesLength =
         CVarDef.Create("ic.custom_species_length", 16, CVar.SERVER | CVar.REPLICATED);
 
+    /// <summary>
+    ///     Forces SSD characters to cryostorage after ICSSDAutoSendToCryostorageTime seconds
+    /// </summary>
+    public static readonly CVarDef<bool> ICSSDAutoSendToCryostorage =
+        CVarDef.Create("ic.ssd_auto_send_to_cryo", true, CVar.SERVER);
+
+    /// <summary>
+    ///     Time between character getting SSD status and going to Cryostorage
+    ///     Won't work without ICSSDAutoSendToCryostorage
+    /// </summary>
+    public static readonly CVarDef<float> ICSSDAutoSendToCryostorageTime =
+        CVarDef.Create("ic.ssd_auto_send_to_cryo_time", 1200f, CVar.SERVER);
+
     // Erida-end
 }

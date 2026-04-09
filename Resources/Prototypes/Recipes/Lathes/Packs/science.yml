@@ -54,6 +54,7 @@
   - WeaponPistolCHIMP
   - WeaponForceGun
   - WeaponProtoKineticAccelerator
+  - WeaponPlasmaCutter # Erida-Edit
   - PKAUpgradeDamage
   - PKAUpgradeRange
   - PKAUpgradeFireRate

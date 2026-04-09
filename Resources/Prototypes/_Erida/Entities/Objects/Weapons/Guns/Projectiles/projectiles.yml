@@ -141,7 +141,7 @@
     radius: 3.5
     color: red
     energy: 0.5
-    
+
 - type: entity
   id: TurboLaserBlue
   suffix: Blue
@@ -166,3 +166,37 @@
     energy: 0.5
   - type: Ammo
     muzzleFlash: MuzzleFlashEffectBlueLaser
+
+- type: entity
+  id: BulletPlasmaCutter
+  name: cutter bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Reflective
+    reflective:
+      - NonEnergy
+  - type: Sprite
+    noRot: false
+    sprite: _Erida/Objects/Weapons/Guns/Projectiles/bullet_cutter.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: GatheringProjectile
+    amount: 40
+  - type: Projectile
+    deleteOnCollide: false
+    damage:
+      types:
+        Heat: 5
+        Slash: 10
+        Structural: 30
+  - type: StaminaDamageOnCollide
+    damage: 20
+  - type: TimedDespawn
+    lifetime: 0.1
+  - type: PointLight
+    radius: 2
+    color: purple
+    energy: 1

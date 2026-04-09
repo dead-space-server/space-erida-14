@@ -138,7 +138,10 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         // Change the faction
         Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Change faction");
-        _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
+
+        // # Erida commented
+        // _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
+
         _npcFaction.AddFaction(traitor, component.SyndicateFaction);
 
         Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Finished");
@@ -189,7 +192,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     // TODO: AntagCodewordsComponent
     private void OnObjectivesTextPrepend(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextPrependEvent args)
     {
-        if(comp.GiveCodewords)
+        if (comp.GiveCodewords)
             args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", _codewordSystem.GetCodewords(comp.CodewordFactionPrototypeId))));
     }
 

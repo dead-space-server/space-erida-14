@@ -175,6 +175,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - BatteryRecharge #Erida-edit
 
 - type: entity
   parent: BaseItemRecharger
@@ -200,6 +201,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - BatteryRecharge #Erida-edit
 
 - type: entity
   parent: [ BaseItemRecharger, BaseWallmount ]
@@ -228,6 +230,7 @@
         blacklist:
           tags:
           - PotatoBattery
+          - BatteryRecharge #Erida-edit
 
 - type: entity
   parent: BaseRecharger

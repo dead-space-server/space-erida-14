@@ -274,3 +274,71 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/309
   avatar_url: https://avatars.githubusercontent.com/u/271650867?v=4
   title: Add energy shotgun in warden locker
+- author: Lytheriia
+  changes:
+    - type: Add
+      message: Добавлено окно с напоминанием правил в конце раунда
+  id: 23
+  time: '2026-04-05T03:53:17.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/310
+  avatar_url: https://avatars.githubusercontent.com/u/271650867?v=4
+  title: EORG Round end
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: Система автоматической отправки ССД игроков в крио
+  id: 24
+  time: '2026-04-06T20:55:54.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/306
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Autosend to cryostorage ssd players
+- author: Anilori
+  changes:
+    - type: Add
+      message: Плазменый резак
+    - type: Tweak
+      message: >-
+        Изменен структурный урон протокинетических пистолетов, репитора и
+        дробовика
+    - type: Fix
+      message: Локализация
+  id: 25
+  time: '2026-04-06T20:58:00.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/312
+  avatar_url: https://avatars.githubusercontent.com/u/183598448?v=4
+  title: PlasmaCutter + fixes
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Зажигательные патроны меньше поджигают
+  id: 26
+  time: '2026-04-06T21:01:12.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/313
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: 'just fireStacks: 0.05 # Erida-edit 0.25 -> 0.05'
+- author: Lytheriia
+  changes:
+    - type: Add
+      message: Метеориты вновь вернулись в игру
+    - type: Remove
+      message: Гриншифт убран из списка голосования
+    - type: Tweak
+      message: Расширенный режим утратил антагонистов
+    - type: Tweak
+      message: 'Уменьшено КД геймрулов секрета '
+  id: 27
+  time: '2026-04-07T07:38:20.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/314
+  avatar_url: https://avatars.githubusercontent.com/u/271650867?v=4
+  title: Gamerule changes
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: Звуковые и визуальные эффекты при отправлении в крио
+    - type: Fix
+      message: Исправлено автоматическое отправление в крио
+  id: 28
+  time: '2026-04-07T16:04:11.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/315
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Auto cryo ssd (Repaired)

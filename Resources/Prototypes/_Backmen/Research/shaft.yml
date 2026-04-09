@@ -6,9 +6,10 @@
     state: icon
   discipline: Shaft
   tier: 1
-  cost: 3500
+  cost: 5000
   recipeUnlocks:
   - WeaponProtoKineticAccelerator
+  - WeaponPlasmaCutter
   position: 11,1
 
 - type: technology

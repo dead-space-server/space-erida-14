@@ -116,6 +116,7 @@
         Blunt: 5
   - type: SleepEmitSound
   - type: SSDIndicator
+  - type: SSDAutoSendToCryostorage # Erida-edit
   - type: StandingState
   - type: Crawler
   - type: Dna
