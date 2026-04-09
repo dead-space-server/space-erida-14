@@ -30,7 +30,7 @@
   - type: ClothingGrant
     component:
     - type: SolutionRegeneration
-      solution: chemicals
+      solution: bloodstream
       generated:
         reagents:
         - ReagentId: TranexamicAcidPlus

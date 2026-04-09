@@ -2,9 +2,11 @@
   name: портал Зена
   id: TriggerSpawnerXEN
   suffix: Xen Marker
+  abstract: true
   placement:
     mode: SnapgridCenter
   components:
+  - type: Marker
   - type: Physics
     bodyType: Static
   - type: Transform
@@ -35,8 +37,8 @@
         - MachineLayer
         density: 380
   - type: Appearance
-  - type: SpawnOnTrigger
-    proto: AITimedSpawnerXEN
+  #- type: SpawnOnTrigger
+  #  proto: AITimedSpawnerXEN
   - type: DeleteOnTrigger
 
 - type: entity
@@ -57,8 +59,9 @@
     netsync: false
   - type: TimedSpawner
     prototypes:
-      - MobVortigaunt
-      - MobBullSquid
+      #- MobVortigaunt
+      #- MobBullSquid
+      - RandomZombieSpawnerXen
     chance: 0.5
     intervalSeconds: 2
     minimumEntitiesSpawned: 1
@@ -102,7 +105,7 @@
         state: random_anything
   - type: RandomSpawner
     prototypes:
-      - MobHeadcrab
+#      - MobHeadcrab
       - MobLegionZombieScience
       - MobLegionZombieSecurityHeavy
       - MobLegionZombieSecurity
