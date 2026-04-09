@@ -43,9 +43,6 @@
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemM9Steel
             amount: 5
-          - !type:SpawnPrototype
-            prototype: ChanceSpawnerItemSalvagePCVPlate
-            amount: 1
           - !type:DeleteEntity
         steps:
           - tool: Cutting
@@ -145,7 +142,7 @@
           - !type:DeleteEntity
         steps:
           - material: HEVPiece
-            amount: 15
+            amount: 25
             doAfter: 5
           - material: M9Steel
             amount: 30
