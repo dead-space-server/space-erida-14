@@ -147,7 +147,7 @@
   flavor: medicine
   color: "#ba7d7d"
   metabolisms:
-    Medicine:
+    Bloodstream:
       effects:
       - !type:ModifyBleed
         amount: -1.5
@@ -155,18 +155,11 @@
         conditions:
         - !type:MobStateCondition
           mobstate: Critical
-        - !type:ReagentCondition
-          reagent: TranexamicAcidPlus
-          min: 20
         damage:
           groups:
             Brute: -5
             Burn: -5
       - !type:HealthChange
-        conditions:
-        - !type:ReagentCondition
-          reagent: TranexamicAcidPlus
-          min: 20
         damage:
           types:
             Asphyxiation: -3
