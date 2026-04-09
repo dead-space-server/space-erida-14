@@ -15,6 +15,7 @@ public sealed class BaseSwitchableOverlay<TComp> : Overlay where TComp : Switcha
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
     private readonly ShaderInstance _shader;
+    private readonly string NightVisionId = "NightVision";
 
     public TComp? Comp = null;
 
@@ -25,7 +26,7 @@ public sealed class BaseSwitchableOverlay<TComp> : Overlay where TComp : Switcha
     public BaseSwitchableOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _shader = _prototype.Index<ShaderPrototype>("NightVision").InstanceUnique();
+        _shader = _prototype.Index<ShaderPrototype>(NightVisionId).InstanceUnique();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

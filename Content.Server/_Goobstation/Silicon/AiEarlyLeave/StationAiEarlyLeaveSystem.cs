@@ -20,7 +20,6 @@ public sealed class StationAiEarlyLeaveSystem : SharedStationAiEarlyLeaveSystem
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly StationJobsSystem _jobs = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private readonly string _alertChannelName = "Command";

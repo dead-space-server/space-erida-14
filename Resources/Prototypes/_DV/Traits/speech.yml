@@ -109,7 +109,7 @@
       - type: LizardAccent
       - type: MothAccent
       - type: ReplacementAccent
-        accent: dwarf
+        accent: scottish
 
 - type: trait
   id: SocialAnxiety

@@ -43,7 +43,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Server.Speech.EntitySystems;
 using Content.Shared.Station.Components;
 using Content.Shared._Erida.TTS;
 using Content.Shared.Speech.Hushing;
@@ -73,6 +72,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     // Corvax-TTS-Start: Moved from Server to Shared
     // public const int VoiceRange = 10; // how far voice goes in world units
@@ -403,7 +403,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         }
 
-        if (!EntityManager.TryGetComponent<StationDataComponent>(station, out var stationDataComp)) return;
+        if (!_entityManager.TryGetComponent<StationDataComponent>(station, out var stationDataComp)) return;
 
         string voice = "Announcer";
         if (TryComp<TTSComponent>(user, out var ttsComp) && ttsComp.VoicePrototypeId != null)

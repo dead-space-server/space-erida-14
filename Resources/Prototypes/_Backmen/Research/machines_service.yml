@@ -4,7 +4,7 @@
   icon:
     sprite: Structures/Machines/seed_extractor.rsi
     state: seedextractor
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -22,7 +22,7 @@
   icon:
     sprite: Structures/Machines/computers.rsi
     state: television
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 5500
   recipeUnlocks:
@@ -40,7 +40,7 @@
   icon:
     sprite: Structures/Machines/fat_sucker.rsi
     state: display
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -61,7 +61,7 @@
   icon:
     sprite: Structures/smalldispensers.rsi
     state: booze
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 2500
   recipeUnlocks:
@@ -78,7 +78,7 @@
   icon:
     sprite: Structures/Machines/uniform_printer.rsi
     state: icon
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 2500
   recipeUnlocks:

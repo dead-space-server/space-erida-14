@@ -23,6 +23,7 @@ public sealed class AngerSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly MobThresholdSystem _threshold = default!;
     [Dependency] private readonly MobPhasesSystem _phases = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     private EntityQuery<AngerPlayerScalingComponent> _scalingQuery;
 
@@ -84,7 +85,8 @@ public sealed class AngerSystem : EntitySystem
         var addedAnger = anger.CurrentAnger - anger.MinAnger;
 
         // Progress between 0 and 1 until reaching death
-        var healthProgress = Math.Max((float) (damage.TotalDamage / (anger.TotalHp * healthMultiplier)), 0f);
+        var totalDamage = _damageable.GetTotalDamage((ent.Owner, damage));
+        var healthProgress = Math.Max((float)(totalDamage / (anger.TotalHp * healthMultiplier)), 0f);
 
         // Amount of anger based on progress between Min and Max angers
         var newMinAnger = anger.DefaultMinAnger + (anger.DefaultMaxAnger - anger.DefaultMinAnger) * healthProgress;
@@ -147,8 +149,8 @@ public sealed class AngerSystem : EntitySystem
         var anger = Math.Max(ent.Comp.CurrentAnger - ent.Comp.DefaultMinAnger, 0f);
         var progress = anger / maxAnger;
         return inverse
-            ? (int) Math.Round(max + (min - max) * (1f - progress))
-            : (int) Math.Round(min + (max - min) * progress);
+            ? (int)Math.Round(max + (min - max) * (1f - progress))
+            : (int)Math.Round(min + (max - min) * progress);
     }
 
     /// <summary>

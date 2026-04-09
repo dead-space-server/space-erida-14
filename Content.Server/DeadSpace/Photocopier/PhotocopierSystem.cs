@@ -21,6 +21,7 @@ using Content.Shared.UserInterface;
 using Content.Shared.Power;
 using Content.Shared.Hands.EntitySystems;
 using Content.Server.GameTicking;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.DeadSpace.Photocopier;
 
@@ -37,6 +38,8 @@ public sealed class PhotocopierSystem : EntitySystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
     [Dependency] private readonly GameTicker _gameTicker = default!; // Erida
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private const string PaperSlotId = "Paper";
 
@@ -201,8 +204,8 @@ public sealed class PhotocopierSystem : EntitySystem
             Priority = 11,
             Act = () =>
             {
-                if (EntityManager.TryGetComponent(args.User, out HandsComponent? hands)
-                    && EntityManager.TryGetComponent(_sharedHandsSystem.GetActiveItem((args.User, hands)), out TonerCartridgeComponent? toner))
+                if (_entityManager.TryGetComponent(args.User, out HandsComponent? hands)
+                    && _entityManager.TryGetComponent(_sharedHandsSystem.GetActiveItem((args.User, hands)), out TonerCartridgeComponent? toner))
                 {
                     if (component.TonerLeft == component.MaxTonerAmount)
                     {
@@ -245,7 +248,7 @@ public sealed class PhotocopierSystem : EntitySystem
 
     private void OnFormButtonPressed(EntityUid uid, PhotocopierComponent component, PhotocopierChoseFormMessage args)
     {
-        component.ChosenPaper = args.PaperworkForm;
+        component.ChosenPaper = args.PaperworkFormId;
         UpdateUserInterface(uid, component);
     }
 
@@ -288,7 +291,8 @@ public sealed class PhotocopierSystem : EntitySystem
                 return;
             }
             PrintForm(uid, args.Amount, component.ChosenPaper, component);
-            _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(args.Actor):actor} start printing {args.Amount} copys of '{Loc.GetString(component.ChosenPaper.Name)}' on photocopier");
+            var name = _prototypeManager.Index<PaperworkFormPrototype>(component.ChosenPaper).Name;
+            _adminLogger.Add(LogType.Action, LogImpact.Low, $"{ToPrettyString(args.Actor):actor} start printing {args.Amount} copys of '{Loc.GetString(name)}' on photocopier");
         }
         component.TonerLeft -= args.Amount;
         UpdateUserInterface(uid, component);
@@ -345,10 +349,15 @@ public sealed class PhotocopierSystem : EntitySystem
         component.UseTimeoutRemaining += component.ScanningTime;
     }
 
-    private void PrintForm(EntityUid uid, int сopiesAmount, PaperworkFormPrototype formPrototype, PhotocopierComponent? component = null)
+    private void PrintForm(EntityUid uid, int сopiesAmount, string formPrototypeId, PhotocopierComponent? component = null)
     {
         if (!Resolve(uid, ref component))
             return;
+
+        if (formPrototypeId == null)
+            return;
+
+        var formPrototype = _prototypeManager.Index<PaperworkFormPrototype>(formPrototypeId);
 
         string text = _resourceManager.ContentFileReadText(formPrototype.Text).ReadToEnd();
 
@@ -377,7 +386,7 @@ public sealed class PhotocopierSystem : EntitySystem
 
         var printout = component.PrintingQueue.Dequeue();
 
-        var printed = EntityManager.SpawnEntity(printout.PrototypeId, Transform(uid).Coordinates);
+        var printed = _entityManager.SpawnEntity(printout.PrototypeId, Transform(uid).Coordinates);
 
         if (TryComp<PaperComponent>(printed, out var paper))
         {

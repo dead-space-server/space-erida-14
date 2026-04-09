@@ -25,6 +25,9 @@ namespace Content.Server.Atmos.EntitySystems
         public float AtmosMaxProcessTime { get; private set; }
         public float AtmosTickRate { get; private set; }
         public float Speedup { get; private set; }
+        public bool DeltaPressureDamage { get; private set; }
+        public int DeltaPressureParallelProcessPerIteration { get; private set; }
+        public int DeltaPressureParallelBatchSize { get; private set; }
 
         /// <summary>
         /// Time between each atmos sub-update.  If you are writing an atmos device, use AtmosDeviceUpdateEvent.dt

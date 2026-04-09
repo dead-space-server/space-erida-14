@@ -20,3 +20,9 @@ reagent-name-vomit = рвота
 reagent-desc-vomit = Вы можете увидеть в ней несколько кусков чьей-то последней еды.
 reagent-name-grey-matter = серое вещество
 reagent-desc-grey-matter = Сок мыслей, вытекающий из ушей.
+
+reagent-name-sulfur-blood = серная кровь
+reagent-desc-sulfur-blood = Ощущается почти как кислота.
+
+reagent-name-heparin = Гепарин
+reagent-desc-heparin = Широко используемый антикоагулянт. Затрудняет свёртывание крови. При передозировке может вызвать внутренние кровотечения.

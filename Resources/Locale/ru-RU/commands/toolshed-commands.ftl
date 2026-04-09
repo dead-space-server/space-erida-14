@@ -548,3 +548,7 @@ command-description-clone-implants =
     Clones the implants from the provided entity to all input entities. Uses base prototypes, meaning changes to implants won't persist to the cloned versions.
 command-description-clone-storage =
     Clones the storage from the provided entity to all input entities. Uses base prototypes, meaning changes to contents won't persist to the cloned versions.
+command-description-inventory-query =
+    Gets the entities in the inventory slots of the piped entities and passes them along.
+command-description-storage-query =
+    Gets the entities in the storagebase of the piped entities and passes them along.

@@ -161285,7 +161285,7 @@ entities:
       parent: 8364
     - type: TechnologyDatabase
       supportedDisciplines:
-      - Service
+      - CivilianServices
     - type: MaterialStorage
       materialWhiteList:
       - Cloth

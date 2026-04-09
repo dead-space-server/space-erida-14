@@ -44,6 +44,7 @@ public sealed class ThrusterSystem : EntitySystem
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
     private const string GrillePrototypeId = "Grille";
     private static readonly HashSet<string> CablePrototypeIds = new() { "CableApcExtension", "CableHV", "CableMV" };
     private readonly HashSet<EntityUid> _burnOverlapSet = new();
@@ -182,7 +183,7 @@ public sealed class ThrusterSystem : EntitySystem
 
     private void OnActivateThruster(EntityUid uid, ThrusterComponent component, ActivateInWorldEvent args)
     {
-        if (args.Handled || !args.Complex)
+        if (args.Handled || !args.Complex || !component.CanToggle)
             return;
 
         component.Enabled ^= true;
@@ -415,7 +416,7 @@ public sealed class ThrusterSystem : EntitySystem
                     DebugTools.Assert(!shuttleComponent.AngularThrusters.Contains(uid));
                     shuttleComponent.AngularThrusters.Add(uid);
                 }
-                if (EntityManager.TryGetComponent(uid, out physicsComponent) && component.BurnPoly.Count > 0)
+                if (_entityManager.TryGetComponent(uid, out physicsComponent) && component.BurnPoly.Count > 0)
                 {
                     var shape = new PolygonShape();
                     shape.Set(component.BurnPoly);

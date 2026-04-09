@@ -48,10 +48,8 @@
       pen:
         maxVol: 40
         reagents:
-          - ReagentId: Bicaridine
-            Quantity: 10
-          - ReagentId: Dermaline
-            Quantity: 10
+          - ReagentId: MinersSalve
+            Quantity: 20
           - ReagentId: Leporazine
             Quantity: 10
           - ReagentId: Epinephrine

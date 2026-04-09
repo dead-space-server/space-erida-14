@@ -177,14 +177,14 @@ public sealed partial class AntagSelectionSystem
         if (!_pref.TryGetCachedPreferences(session.UserId, out var pref))
             return false;
 
-        var character = (HumanoidCharacterProfile) pref.SelectedCharacter;
+        var character = (HumanoidCharacterProfile)pref.SelectedCharacter;
 
         var valid = false;
 
         // Check each individual antag role
         foreach (var role in roles)
         {
-            var list = new List<ProtoId<AntagPrototype>>{role};
+            var list = new List<ProtoId<AntagPrototype>> { role };
 
             if (character.AntagPreferences.Contains(role)
                 && !_ban.IsRoleBanned(session, list)
@@ -336,14 +336,13 @@ public sealed partial class AntagSelectionSystem
     /// This technically is a gamerule-ent-less way to make an entity an antag.
     /// You should almost never be using this.
     /// </summary>
-    public void ForceMakeAntag<T>(ICommonSession player, string defaultRule) where T : Component
+    public void ForceMakeAntag<T>(ICommonSession? player, string defaultRule) where T : Component
     {
         var rule = ForceGetGameRuleEnt<T>(defaultRule);
 
         if (!TryGetNextAvailableDefinition(rule, out var def))
             def = rule.Comp.Definitions.Last();
-
-        MakeSessionAntagonist(rule, player, def.Value);
+        MakeAntag(rule, player, def.Value);
     }
 
     /// <summary>

@@ -2,6 +2,7 @@ using Content.Server.DoAfter;
 using Content.Shared._Erida.CRP;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
@@ -11,12 +12,13 @@ using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Erida.CPR;
 
 public sealed class CardiopulmonaryResuscitationSystem : EntitySystem
 {
-    [Dependency] protected readonly EntityManager _entityManager = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -96,7 +98,7 @@ public sealed class CardiopulmonaryResuscitationSystem : EntitySystem
             return;
 
         var damageSpec = new DamageSpecifier();
-        damageSpec.DamageDict = new Dictionary<string, FixedPoint2>()
+        damageSpec.DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>()
         {
             { "Asphyxiation", FixedPoint2.New(сRPAsphyxiationAmount) }
         };
@@ -146,4 +148,3 @@ public sealed class CardiopulmonaryResuscitationSystem : EntitySystem
         }
     }
 }
-

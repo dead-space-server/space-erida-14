@@ -4,7 +4,7 @@
   icon:
     sprite: Objects/Misc/module.rsi
     state: charger_APC
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -36,7 +36,7 @@
   icon:
     sprite: Structures/Machines/protolathe_hypercon.rsi
     state: building
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 15000
   recipeUnlocks:
@@ -55,7 +55,7 @@
   icon:
     sprite: Structures/Power/Generation/portable_generator.rsi
     state: portgen0
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 7500
   recipeUnlocks:
@@ -75,7 +75,7 @@
   icon:
     sprite: Structures/Power/Generation/portable_generator.rsi
     state: portgen0
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 12500
   recipeUnlocks:
@@ -92,7 +92,7 @@
   icon:
     sprite: Structures/Machines/flatpacker.rsi
     state: base
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 12500
   recipeUnlocks:
@@ -107,7 +107,7 @@
   icon:
     sprite: Structures/Piping/Atmospherics/thermomachine.rsi
     state: freezerOn
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 8500
   recipeUnlocks:
@@ -125,7 +125,7 @@
   icon:
     sprite: Structures/Piping/Atmospherics/hellfirethermomachine.rsi
     state: freezerOn
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 15000
   recipeUnlocks:

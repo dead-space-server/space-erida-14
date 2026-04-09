@@ -7,6 +7,8 @@ namespace Content.Shared._Erida.Language.Systems;
 
 public abstract class SharedLanguageSystem : EntitySystem
 {
+    private readonly string UniversalId = "Universal";
+
     /// <summary>
     ///     The language used as a fallback in cases where an entity suddenly becomes a language speaker (e.g. the usage of make-sentient)
     /// </summary>
@@ -29,7 +31,7 @@ public abstract class SharedLanguageSystem : EntitySystem
 
     public override void Initialize()
     {
-        Universal = _prototype.Index<LanguagePrototype>("Universal");
+        Universal = _prototype.Index<LanguagePrototype>(UniversalId);
     }
 
     public LanguagePrototype? GetLanguagePrototype(string id)

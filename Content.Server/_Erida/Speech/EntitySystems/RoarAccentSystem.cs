@@ -8,6 +8,8 @@ namespace Content.Server._Erida.Speech.EntitySystems;
 public sealed class RoarAccentSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+    private static readonly Regex RegexR = new("Р");
+    private static readonly Regex Regexr = new("р");
 
     public override void Initialize()
     {
@@ -19,13 +21,9 @@ public sealed class RoarAccentSystem : EntitySystem
     {
         var message = args.Message;
 
-        // r > rrr / R > RRR
-        message = Regex.Replace(message, "r+", _random.Pick(new List<string>() { "rr", "RRR" }));
-        message = Regex.Replace(message, "R+", _random.Pick(new List<string>() { "RR", "RRR" }));
-
         // р > ррр / Р > РРР
-        message = Regex.Replace(message, "р+", _random.Pick(new List<string>() { "рр", "ррр" }));
-        message = Regex.Replace(message, "Р+", _random.Pick(new List<string>() { "РР", "РРР" }));
+        message = Regexr.Replace(message, _random.Pick(new List<string>() { "рр", "ррр" }));
+        message = RegexR.Replace(message, _random.Pick(new List<string>() { "РР", "РРР" }));
 
         args.Message = message;
     }

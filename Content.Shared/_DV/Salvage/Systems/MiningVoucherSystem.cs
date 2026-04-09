@@ -35,7 +35,6 @@ namespace Content.Shared._DV.Salvage.Systems;
 public sealed class MiningVoucherSystem : EntitySystem
 {
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -57,7 +56,7 @@ public sealed class MiningVoucherSystem : EntitySystem
 
     private void OnAfterInteract(Entity<MiningVoucherComponent> ent, ref AfterInteractEvent args)
     {
-        if (args.Target is not {} target || !args.CanReach)
+        if (args.Target is not { } target || !args.CanReach)
             return;
 
         if (_whitelist.IsWhitelistFail(ent.Comp.VendorWhitelist, target))

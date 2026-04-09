@@ -159,7 +159,7 @@
     - id: ChemistryBottleSpaceDrugs
     - id: ChemistryBottleLipolicide
     - id: ChemistryBottlePsicodine
-    - id: ChemistryBottleNecrosol
+    # - id: ChemistryBottleNecrosol
     - id: ChemistryBottleOpporozidone
     - id: ChemistryBottleHaloperidol
 

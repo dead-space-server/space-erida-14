@@ -71,19 +71,18 @@
     - DetectiveGear
     - WardenGear
 
-# Erida edit
-# - type: entity
-#   parent: SalvageHumanCorpse
-#   id: MobRandomCommandCorpse
-#   suffix: Dead, Command
-#   components:
-#   - type: Loadout
-#     prototypes:
-#     - HoPGear
-#     - CentcommGear
-#     - CaptainGear
-#     - HoSGear
-#     - ResearchDirectorGear
-#     - CMOGear
-#     - ChiefEngineerGear
-#     - QuartermasterGear
+- type: entity
+  parent: SalvageHumanCorpse
+  id: MobRandomCommandCorpse
+  suffix: Dead, Command
+  components:
+  - type: Loadout
+    prototypes:
+    - HoPGear
+    # - CentcommGear
+    - CaptainGear
+    - HoSGear
+    - ResearchDirectorGear
+    - CMOGear
+    - ChiefEngineerGear
+    - QuartermasterGear

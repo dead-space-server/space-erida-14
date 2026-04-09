@@ -22,12 +22,14 @@
 
 using Content.Server._Lavaland.Tendril.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -92,7 +94,7 @@ public sealed class TendrilSystem : EntitySystem
         if (comp.DefeatedMobs >= comp.MobsToDefeat)
         {
             comp.DestroyedWithMobs = true;
-            _damage.TryChangeDamage(uid, new DamageSpecifier { DamageDict = new Dictionary<string, FixedPoint2> {{ "Blunt", 1000 }} });
+            _damage.TryChangeDamage(uid, new DamageSpecifier { DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2> { { "Blunt", 1000 } } });
         }
     }
 

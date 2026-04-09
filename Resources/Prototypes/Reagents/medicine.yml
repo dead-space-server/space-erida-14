@@ -39,8 +39,8 @@
           reagent: Dylovene
           min: 20
         damage:
-          groups:
-            Brute: 2
+          types:
+            Blunt: 2
       - !type:Jitter
         conditions:
         - !type:ReagentCondition
@@ -133,8 +133,7 @@
         damage:
           types:
             Radiation: -3
-          groups:
-            Brute: 1.5
+            Blunt: 1.5
 
 - type: reagent
   id: Bicaridine
@@ -254,9 +253,6 @@
             Cold: -1.5
       - !type:HealthChange
         conditions:
-        - !type:MetabolizerTypeCondition # Erida-edit
-          type: [ Shadowkin ]
-          inverted: true
         - !type:ReagentCondition
           reagent: Dermaline
           min: 10
@@ -264,22 +260,7 @@
           types:
             Asphyxiation: 1
             Cold: 2
-          groups:
-            Brute: 0.5
-      - !type:HealthChange # Erida-edit
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Shadowkin ]
-          inverted: false
-        - !type:ReagentCondition
-          reagent: Dermaline
-          min: 10
-        damage:
-          types:
-            Bloodloss: 1
-            Cold: 2
-          groups:
-            Brute: 0.5
+            Blunt: 0.5
       - !type:Jitter
         conditions:
         - !type:ReagentCondition
@@ -422,9 +403,6 @@
         amount: -5
       - !type:HealthChange
         conditions:
-        - !type:MetabolizerTypeCondition # Erida-edit
-          type: [ Shadowkin ]
-          inverted: true
           # they gotta be in crit first
         - !type:MobStateCondition
           mobstate: Critical
@@ -435,51 +413,25 @@
           types:
             Asphyxiation: -3
             Poison: -0.5
-          groups:
-            Brute: -0.5
-            Burn: -0.5
+      - !type:EvenHealthChange
+        conditions:
+          # they gotta be in crit first
+        - !type:MobStateCondition
+          mobstate: Critical
+        - !type:ReagentCondition
+          reagent: Epinephrine
+          max: 20
+        damage:
+          Brute: -0.5
+          Burn: -0.5
       - !type:HealthChange
         conditions:
-        - !type:MetabolizerTypeCondition # Erida-edit
-          type: [ Shadowkin ]
-          inverted: true
         - !type:ReagentCondition
           reagent: Epinephrine
           min: 20
         damage:
           types:
             Asphyxiation: 1
-            Poison: 1
-      - !type:HealthChange # Erida-edit
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Shadowkin ]
-          inverted: false
-        - !type:MobStateCondition
-          mobstate: Critical
-        - !type:ReagentCondition
-          reagent: Epinephrine
-          min: 0
-          max: 20
-        damage:
-          types:
-            Asphyxiation: -1
-            Bloodloss: -1
-            Poison: -0.5
-          groups:
-            Brute: -0.5
-            Burn: -0.5
-      - !type:HealthChange # Erida-edit
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Shadowkin ]
-          inverted: false
-        - !type:ReagentCondition
-          reagent: Epinephrine
-          min: 20
-        damage:
-          types:
-            Bloodloss: 1
             Poison: 1
       - !type:AdjustReagent
         reagent: HeartbreakerToxin
@@ -767,48 +719,18 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:HealthChange
-        conditions: # Erida-edit
-        - !type:MetabolizerTypeCondition
-          type: [ Shadowkin ]
-          inverted: true
+      - !type:EvenHealthChange
         damage:
-          groups:
-            Brute: -3.5
-          types:
-            Asphyxiation: -2.5
+          Brute: -1.75
+          Airloss: -1
       - !type:HealthChange
         conditions:
-        - !type:MetabolizerTypeCondition # Erida-edit
-          type: [ Shadowkin ]
-          inverted: true
         - !type:ReagentCondition
           reagent: PolypyryliumOligomers
           min: 30
         damage:
           types:
             Asphyxiation: 3.5
-      - !type:HealthChange # Erida-edit
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Shadowkin ]
-          inverted: false
-        damage:
-          groups:
-            Brute: -3.5
-          types:
-            Bloodloss: -2.5
-      - !type:HealthChange # Erida-edit
-        conditions:
-        - !type:MetabolizerTypeCondition
-          type: [ Shadowkin ]
-          inverted: false
-        - !type:ReagentCondition
-          reagent: PolypyryliumOligomers
-          min: 30
-        damage:
-          types:
-            Bloodloss: 3.5
       - !type:ModifyBleed
         amount: -0.25
 
@@ -822,6 +744,13 @@
   color: "#86caf7"
   metabolisms:
     Bloodstream:
+      effects:
+        - !type:CureZombieInfection
+          conditions:
+            - !type:ReagentCondition
+              reagent: Ambuzol
+              min: 10
+    Digestion:
       effects:
         - !type:CureZombieInfection
           conditions:
@@ -846,6 +775,14 @@
             - !type:ReagentCondition
               reagent: AmbuzolPlus
               min: 5
+    Digestion:
+      effects:
+      - !type:CureZombieInfection
+        innoculate: true
+        conditions:
+        - !type:ReagentCondition
+          reagent: AmbuzolPlus
+          min: 5
 
 - type: reagent
   id: PulpedBananaPeel
@@ -981,18 +918,20 @@
   metabolisms:
     Bloodstream:
       effects:
+      - !type:EvenHealthChange
+        conditions:
+        - !type:MobStateCondition # no healing in crit so that dedicated single damage type meds can still have a niche.
+          mobstate: Alive
+        damage:
+          Brute: -1
+          Burn: -1
       - !type:HealthChange
         conditions:
-        - !type:TotalDamageCondition
-          max: 50
+        - !type:MobStateCondition
+          mobstate: Alive
         damage:
-          groups:
-            Brute: -1
           types:
-            Poison: -0.5 ##Should be about what it was when it healed the toxin group
-            Heat: -0.33
-            Shock: -0.33
-            Cold: -0.33
+            Poison: -0.5 # Same as what it was before the second coming of offmed
 
 - type: reagent
   id: Lipozine
@@ -1056,8 +995,8 @@
           min: 0
           max: 20
         damage:
-          groups:
-            Brute: 1.5
+          types:
+            Blunt: 1.5
       - !type:EvenHealthChange
         conditions:
         - !type:ReagentCondition
@@ -1071,8 +1010,8 @@
           reagent: Ultravasculine
           min: 20
         damage:
-          groups:
-            Brute: 6
+          types:
+            Blunt: 6
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -1691,10 +1630,10 @@
         amount: -3.0
 
 - type: reagent
-  id: Warfarin
-  name: reagent-name-warfarin
+  id: Heparin
+  name: reagent-name-heparin
   group: Medicine
-  desc: reagent-desc-warfarin
+  desc: reagent-desc-heparin
   physicalDesc: reagent-physical-desc-thin
   allowedDepartments:
   - Medical
@@ -1710,6 +1649,6 @@
       - !type:ModifyBleed
         conditions:
         - !type:ReagentCondition
-          reagent: Warfarin
+          reagent: Heparin
           min: 15
         amount: 0.25
