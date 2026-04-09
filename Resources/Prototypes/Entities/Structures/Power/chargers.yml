@@ -179,7 +179,7 @@
           tags:
           - PotatoBattery
           - BatteryRecharge #Erida-edit
-- type: Item
+  - type: Item
     size: Ginormous
   - type: MultiHandedItem
 

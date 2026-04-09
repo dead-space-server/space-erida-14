@@ -10,7 +10,6 @@ namespace Content.Erida.Server.MaterialEnergy
 {
     public sealed class MaterialEnergySystem : EntitySystem
     {
-        [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly BatterySystem _batterySystem = default!;
         [Dependency] private readonly StackSystem _stack = default!;
 
