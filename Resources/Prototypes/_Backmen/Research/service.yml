@@ -137,6 +137,7 @@
   - FauxTileDesertAstroSand
   - FauxTileAstroIronsand
   - FauxTileAstroIronsandBorderless
+  - FauxTileAstroAsteroidSandBorderless
   technologyPrerequisites:
   - Entertainment
   position: 2,10
