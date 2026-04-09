@@ -9,7 +9,7 @@
         completed:
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemM9Steel
-            amount: 2
+            amount: 3
           - !type:DeleteEntity
         steps:
           - tool: Screwing
@@ -39,10 +39,13 @@
         completed:
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemMaterialCableGold
-            amount: 1
+            amount: 2
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemM9Steel
-            amount: 2
+            amount: 5
+          - !type:SpawnPrototype
+            prototype: ChanceSpawnerItemSalvagePCVPlate
+            amount: 1
           - !type:DeleteEntity
         steps:
           - tool: Cutting
@@ -78,7 +81,7 @@
         completed:
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemM9Steel
-            amount: 1
+            amount: 2
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemMaterialMaterialGunMaterial
             amount: 2
@@ -102,7 +105,7 @@
         completed:
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemMaterialCableGold
-            amount: 2
+            amount: 3
         steps:
           - tool: Screwing
             doAfter: 1
@@ -135,7 +138,32 @@
             doAfter: 1
           - tool: Screwing
             doAfter: 1
+      - to: repair
+        completed:
+          - !type:SpawnPrototype
+            prototype: ClothingOuterArmorVestPCV
+          - !type:DeleteEntity
+        steps:
+          - material: HEVPiece
+            amount: 15
+            doAfter: 5
+          - material: M9Steel
+            amount: 30
+            doAfter: 5
+          - material: M9Steel
+            amount: 15
+            doAfter: 5
+          - material: CableGold
+            amount: 30
+            doAfter: 5
+          - tag: SalvagePCVPlate
+            doAfter: 2
+          - tag: SalvagePCVPlate
+            doAfter: 2
+          - tag: SalvagePCVPlate
+            doAfter: 2
     - node: Unload
+    - node: repair
 
 - type: constructionGraph
   id: HEVArmor
@@ -147,10 +175,10 @@
         completed:
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemMaterialHEVPiece
-            amount: 5
+            amount: 8
           - !type:SpawnPrototype
             prototype: ChanceSpawnerItemMaterialCableGold
-            amount: 2
+            amount: 3
           - !type:DeleteEntity
         steps:
           - tool: Prying
