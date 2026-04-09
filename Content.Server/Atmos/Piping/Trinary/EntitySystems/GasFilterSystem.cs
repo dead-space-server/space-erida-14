@@ -81,7 +81,6 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 
                 var availableMoles = removed.GetMoles(filter.FilteredGas.Value);
                 var filteredMoles = Math.Max(Math.Min(limitMolesFilter, availableMoles), 0);
-                var filteredGasMixture = new GasMixture { Temperature = removed.Temperature };
 
                 filteredGasMixture.SetMoles(filter.FilteredGas.Value, filteredMoles);
                 removed.AdjustMoles(filter.FilteredGas.Value, -filteredMoles);
