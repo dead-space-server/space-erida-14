@@ -110,8 +110,8 @@
   productEntity: GrenadeSpikedSyndicate
   discountCategory: rareDiscounts
   discountDownTo:
-    TelecrystalOrange: 2
+    Telecrystal: 2
   cost:
-    TelecrystalOrange: 3
+    Telecrystal: 3
   categories:
   - UplinkExplosives # Erida end
