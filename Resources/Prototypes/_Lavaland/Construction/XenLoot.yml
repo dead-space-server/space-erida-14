@@ -64,6 +64,7 @@
             amount: 2
             doAfter: 2
           - tag: SalvagePCVPlate
+            name: construction-graph-tag-xen-pcv-plate
             doAfter: 1
     - node: Wires
     - node: repair
@@ -154,10 +155,13 @@
             amount: 30
             doAfter: 5
           - tag: SalvagePCVPlate
+            name: construction-graph-tag-xen-pcv-plate
             doAfter: 2
           - tag: SalvagePCVPlate
+            name: construction-graph-tag-xen-pcv-plate
             doAfter: 2
           - tag: SalvagePCVPlate
+            name: construction-graph-tag-xen-pcv-plate
             doAfter: 2
     - node: Unload
     - node: repair
