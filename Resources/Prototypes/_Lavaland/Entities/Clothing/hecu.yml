@@ -76,6 +76,7 @@
   parent: ClothingBackpackERTSecurity
   id: ClothingSathelHECU
   name: сумка отряда H.E.C.U.
+  description: Сумка спец-отделения Hazardous Environment Combat Unit, компактная РПС что позволяет носить с собой множество снаряжения из-за специфики отряда, эта сумка полностью защищена от внешних факторов.
   components:
   - type: Sprite
     sprite: _Lavaland/Clothing/Back/Satchels/hecu.rsi
@@ -86,10 +87,11 @@
   parent: ClothingBeltMilitaryWebbing
   id: ClothingBeltHECU
   name: пояс отряда H.E.C.U.
+  description: Пояс спец-отделения Hazardous Environment Combat Unit, из-за назначения отряда, их снаряжение выполнено из особых материалов которая устойчива ко множеству опасных внешних условий, этот пояс исключением не стал.
   components:
   - type: Storage
     grid:
-    - 0,0,7,3
+    - 0,0,5,2
   - type: Sprite
     sprite: _Lavaland/Clothing/Belt/hecubelt.rsi
   - type: Clothing
