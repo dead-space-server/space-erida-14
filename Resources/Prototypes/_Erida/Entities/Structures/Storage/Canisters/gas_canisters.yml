@@ -3,7 +3,6 @@
   id: BZCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: purple
   - type: GasCanister
@@ -43,7 +42,6 @@
   id: PluoxiumCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: darkblue
   - type: GasCanister
@@ -83,7 +81,6 @@
   id: HydrogenCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: h2
   - type: GasCanister
@@ -123,7 +120,6 @@
   id: NitriumCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: brown
   - type: GasCanister
@@ -163,7 +159,6 @@
   id: HyperNobliumCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: nob
   - type: GasCanister
@@ -203,7 +198,6 @@
   id: ZaukerCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: zauker
   - type: GasCanister
@@ -243,7 +237,6 @@
   id: HealiumCanister
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     layers:
     - state: healium
   - type: GasCanister
@@ -285,7 +278,6 @@
   id: BZCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: purple-1
 
 - type: entity
@@ -293,7 +285,6 @@
   id: PluoxiumCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: darkblue-1
 
 - type: entity
@@ -301,7 +292,6 @@
   id: HydrogenCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: h2-1
 
 - type: entity
@@ -309,7 +299,6 @@
   id: NitriumCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: brown-1
 
 - type: entity
@@ -317,7 +306,6 @@
   id: HealiumCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: healium-1
 
 - type: entity
@@ -325,7 +313,6 @@
   id: HyperNobliumCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: nob-1
 
 - type: entity
@@ -333,5 +320,4 @@
   id: ZaukerCanisterBroken
   components:
   - type: Sprite
-    sprite: _Erida/Structures/Storage/canister.rsi
     state: zauker-1

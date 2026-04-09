@@ -14,3 +14,10 @@
     storage: StorageCanister
     tritium: TritiumCanister
     water-vapor: WaterVaporCanister
+    nydrogen: HydrogenCanister # Erida start
+    BZ: BZCanister
+    nitrium: NitriumCanister
+    healium: HealiumCanister
+    zauker: ZaukerCanister
+    hypernoblium: HyperNobliumCanister
+    pluoxium: PluoxiumCanister # Erida end
