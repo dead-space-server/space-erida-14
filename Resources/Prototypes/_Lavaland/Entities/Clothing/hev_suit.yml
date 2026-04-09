@@ -116,7 +116,9 @@
         Caustic: 0.1
 
 - type: entity
-  parent: LavalandEquipmentExplorerSuitReinforcedHEV2
+  parent:
+  - LavalandEquipmentExplorerSuitReinforcedHEV2
+  - ClothingOuterHardsuitBase
   id: LavalandEquipmentExplorerSuitReinforcedHEV3
   suffix: Reinforced HEV3
   name: H.E.V. Mark - 3
@@ -146,7 +148,9 @@
     node: reinforcedhev3
 
 - type: entity
-  parent: LavalandEquipmentExplorerHoodReinforcedHEV2
+  parent:
+  - LavalandEquipmentExplorerHoodReinforcedHEV2
+  - ClothingHeadEVAHelmetBase
   id: LavalandEquipmentExplorerHoodReinforcedHEV3
   name: защитный шлем H.E.V.
   description: Hazardous Environment Suit — закрывающий всё тело защитный костюм, разработанный в Чёрной Мезе для защиты учёных, работающих в опасных условиях.
