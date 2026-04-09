@@ -139,3 +139,100 @@
     positional: true
   - type: StaticPrice
     price: 1500
+
+- type: entity # Erida start
+  parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSecurityContraband]
+  id: GrenadeSpiked
+  name: Spiked Grenade
+  description: They are unpleasant to the touch, especially when they are on your head, and they make an annoying squeaking sound.
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Granades/grenadespiked.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ProjectileGrenade
+    fillPrototype: PelletClusterLethal
+    capacity: 10
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 2 
+    initialBeepDelay: 0
+    beepInterval: 0.4
+    delay: 6
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
+    positional: true
+  - type: StaticPrice
+    price: 1500
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Piercing: 1
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+  - type: BalloonPopper
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 2
+  - type: EmbeddableProjectile
+    minimumSpeed: 1
+    removalTime: 2
+    offset: 0.0,0.0
+
+- type: entity
+  parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSyndicateContraband]
+  id: GrenadeSpikedSyndicate
+  name: Spiked Grenade
+  description: a modified version of the old one. More shards = more fun
+  suffix: Syndicate
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Granades/grenadespikedSyndicate.rsi
+    layers:
+    - state: icon
+      map: ["enum.TriggerVisualLayers.Base"]
+  - type: ProjectileGrenade
+    fillPrototype: PelletClusterLethal
+    capacity: 17
+  - type: TriggerOnUse
+  - type: TimerTrigger
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 2 
+    initialBeepDelay: 0
+    beepInterval: 0.5
+    delay: 5
+  - type: StaticPrice
+    price: 2000
+  - type: EmbeddableProjectile
+    minimumSpeed: 1
+    removalTime: 2
+    offset: 0.0,0.0
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Piercing: 3
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 4
+  - type: BalloonPopper
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound:
+      path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
+    positional: true # Erida end

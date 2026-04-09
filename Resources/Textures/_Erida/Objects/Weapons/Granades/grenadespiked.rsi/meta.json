@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by @cat_lixs (discord:428047207481081878) for Space Station 14 server МК: Эрида 18+",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "primed",
+      "delays": [
+        [
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

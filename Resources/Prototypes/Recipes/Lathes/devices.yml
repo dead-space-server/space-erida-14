@@ -53,6 +53,17 @@
     Plasma: 50
     Silver: 50
 
+- type: latheRecipe # Erida start
+  id: GrenadeSpiked
+  result: GrenadeSpiked
+  categories:
+  - Weapons
+  completetime: 4
+  materials:
+    Steel: 800
+    Plastic: 500
+    Plasma: 300 # Erida end
+
 - type: latheRecipe
   parent: BasePartRecipe
   id: Signaller

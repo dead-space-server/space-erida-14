@@ -155,6 +155,7 @@
   - ChemicalPayload
   - EmptyDetonator
   - CableDetStack1
+  - GrenadeSpiked # Erida add
   position: -3,-2
 
 - type: technology

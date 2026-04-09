@@ -101,3 +101,17 @@
     whitelist:
       tags:
       - NukeOpsUplink
+
+- type: listing # Erida start
+  id: UplinkGrenadeSpikedSyndicate
+  name: uplink-spiked-grenade-name
+  description: uplink-spiked-grenade-desc
+  icon: { sprite: _Erida/Objects/Weapons/Granades/grenadespikedSyndicate.rsi, state: icon }
+  productEntity: GrenadeSpikedSyndicate
+  discountCategory: rareDiscounts
+  discountDownTo:
+    TelecrystalOrange: 2
+  cost:
+    TelecrystalOrange: 3
+  categories:
+  - UplinkExplosives # Erida end

@@ -190,6 +190,9 @@ uplink-inteq-magazine-box-rifle-incendiary-desc = коробка патроно�
 uplink-inteq-penguin-grenade-name = Пингвин-гренадёр
 uplink-inteq-penguin-grenade-desc = Маленький, крайне агрессивный пингвин с гранатой на шее. Такие собираются InteQ на отсталых ледяных планетах.
 
+uplink-spiked-grenade-InteQ-name = Шипастая граната
+uplink-spiked-grenade-InteQ-desc = Слабая версия осколочной гранаты, но имеет свойство прилипать к разным объектам.
+
 ##################
 # Deception
 ##################

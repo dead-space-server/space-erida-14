@@ -101,6 +101,7 @@
   - GrenadeEMP
   - GrenadeFlash
   - MagazineGrenadeEmpty
+  - GrenadeSpiked #Erida add
 
 # Shared between secfab and emagged protolathe
 - type: latheRecipePack
