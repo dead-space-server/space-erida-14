@@ -141,6 +141,8 @@
         Caustic: 0.1
   - type: StaminaResistance
     damageCoefficient: 0.5
+  - type: PressureArmorChange
+    extraPenetrationModifier: 0.1 # This is Tier-3
   - type: ToggleableClothing
     clothingPrototype: LavalandEquipmentExplorerHoodReinforcedHEV3
   - type: Construction
