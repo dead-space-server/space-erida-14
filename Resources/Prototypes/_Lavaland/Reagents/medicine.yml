@@ -151,14 +151,13 @@
       effects:
       - !type:ModifyBleed
         amount: -1.5
-      - !type:HealthChange
+      - !type:EvenHealthChange
         conditions:
         - !type:MobStateCondition
           mobstate: Critical
         damage:
-          groups:
-            Brute: -5
-            Burn: -5
+          Brute: -5
+          Burn: -5
       - !type:HealthChange
         damage:
           types:
@@ -166,9 +165,10 @@
             Poison: -0.5
             Bloodloss: -2
             Radiation: -1
-          groups:
-            Brute: -0.3
-            Burn: -0.3
+      - !type:EvenHealthChange
+        damage:
+          Brute: -0.3
+          Burn: -0.3
       - !type:GenericStatusEffect
         key: Stun
         time: 0.75
