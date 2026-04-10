@@ -176,12 +176,14 @@
   id: BlackMesaResearchFacility
   name: lavaland-ruin-bmc-research-facility
   path: /Maps/_Lavaland/UEG/researchfacility.yml
+  patchToPlanet: false
   priority: 1
 
 - type: lavalandGridRuin # erida-edit
   id: BlackMesaOutpost
   name: lavaland-ruin-bmc-research-outpost
   path: /Maps/_Lavaland/UEG/xenoutpost.yml
+  patchToPlanet: false
   priority: 2
 
 - type: lavalandGridRuin # erida-edit
