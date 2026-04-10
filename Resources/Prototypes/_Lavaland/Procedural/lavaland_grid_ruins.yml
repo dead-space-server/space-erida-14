@@ -197,12 +197,6 @@
   priority: 4
 
 - type: lavalandGridRuin # erida-edit
-  id: BlackMesaMet
-  name: lavaland-ruin-bmc-oblom-met
-  path: /Maps/_Lavaland/UEG/ZENoblomMet2.yml
-  priority: 4
-
-- type: lavalandGridRuin # erida-edit
   id: BlackMesaResearchOblom
   name: lavaland-ruin-bmc-research-station
   path: /Maps/_Lavaland/UEG/ZENrndOblom.yml
