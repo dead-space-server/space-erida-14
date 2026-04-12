@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Resprited by @mishutka09 (discord:1152277579206774854)",
+  "copyright": "Resprited by @mishutka09 (discord:1152277579206774854), Resomi taked from https://github.com/space-syndicate/space-station-14-next",
   "size": {
     "x": 32,
     "y": 32
@@ -16,6 +16,10 @@
     },
     {
       "name": "equipped-OUTERCLOTHING-vox",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {
