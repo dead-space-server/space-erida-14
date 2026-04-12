@@ -10,6 +10,8 @@
     sprite: _Backmen/Clothing/OuterClothing/Hardsuits/bluehardsuit.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBlueShield
+  - type: ExplosionResistance # Erida
+    damageCoefficient: 0.6
   - type: Armor
     modifiers:
       coefficients: # Erida
