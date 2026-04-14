@@ -1,0 +1,156 @@
+- type: markingsGroup
+  id: Forgotten
+  onlyGroupWhitelisted: true
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceForgotten
+  name: forgotten appearance
+  components:
+  - type: Inventory
+  - type: InitialBody
+    organs:
+      Torso: OrganForgottenTorso
+      Head: OrganForgottenHead
+      ArmLeft: OrganForgottenArmLeft
+      ArmRight: OrganForgottenArmRight
+      HandRight: OrganForgottenHandRight
+      HandLeft: OrganForgottenHandLeft
+      LegLeft: OrganForgottenLegLeft
+      LegRight: OrganForgottenLegRight
+      FootLeft: OrganForgottenFootLeft
+      FootRight: OrganForgottenFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Forgotten
+
+- type: entity
+  parent:
+  - AppearanceForgotten
+  - BaseSpeciesMobOrganic
+  id: MobForgotten
+  name: Urist McForgotten
+  components:
+  - type: Nightmare
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  - type: Carriable
+
+- type: entity
+  parent: OrganBase
+  id: OrganForgotten
+  abstract: true
+  suffix: forgotten
+
+- type: entity
+  parent: OrganForgotten
+  id: OrganForgottenInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: OrganForgotten
+  id: OrganForgottenExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Erida/Mobs/Forgotten/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _Erida/Mobs/Forgotten/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Forgotten
+
+- type: entity
+  parent: [ OrganBaseTorso, OrganForgottenExternal ]
+  id: OrganForgottenTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganForgottenExternal ]
+  id: OrganForgottenHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganForgottenExternal ]
+  id: OrganForgottenArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganForgottenExternal ]
+  id: OrganForgottenArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganForgottenExternal ]
+  id: OrganForgottenHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganForgottenExternal ]
+  id: OrganForgottenHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganForgottenExternal ]
+  id: OrganForgottenLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganForgottenExternal ]
+  id: OrganForgottenLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganForgottenExternal ]
+  id: OrganForgottenFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganForgottenExternal ]
+  id: OrganForgottenFootRight
