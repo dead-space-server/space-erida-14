@@ -7,8 +7,6 @@ namespace Content.Shared._Erida.LightDestroyer;
 
 public abstract class SharedLightDestroyerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPointLightSystem _sharedPointLight = default!;
-
     public override void Initialize()
     {
         base.Initialize();
