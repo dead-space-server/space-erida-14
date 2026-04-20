@@ -62,10 +62,13 @@ ent-LavalandEquipmentExplorerHoodReinforcedHEV3 = { ent-LavalandEquipmentExplore
 
 ent-PKAUpgradeDamageTier2 = Комплект для модификации PKA (урон T2)
     .suffix = Уровень 2
+    .desc = { ent-BasePKAUpgrade.desc }
 ent-PKAUpgradeRangeTier2 = Комплект для модификации PKA (дальность T2)
     .suffix = Уровень 2
-ent-PKAUpgradeRangeTier2 = Комплект для модификации PKA (скорострельность T2)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeFireRateTier2 = Комплект для модификации PKA (скорострельность T2)
     .suffix = Уровень 2
+    .desc = { ent-BasePKAUpgrade.desc }
 
 ent-MaterialHEVPiece = фрагмент костюма HEV
     .desc = Детали костюма HEV. Если найдем еще такие, мы сможем создать совершенно новый HEV.
