@@ -43,7 +43,7 @@ lavaland-ruin-mug = Mug factory
 lavaland-ruin-temple = Nar'Sie temple
 lavaland-ruin-flock-large = Strange glass ruins
 
-# backmen-edit-start = бакмен редактирование начало
+# backmen-edit-start
 lavaland-ruin-bmc-research-facility = Исследовательская лаборатория Чёрной Мезы
 lavaland-ruin-bmc-research-outpost = Аванпост Чёрной Мезы
 lavaland-ruin-bmc-research-spot = Место исследований Чёрной Мезы
@@ -51,4 +51,4 @@ lavaland-ruin-bmc-oblom-met = Разрушенная химическая лаб
 lavaland-ruin-bmc-research-station = Станция Чёрной Мезы
 lavaland-ruin-bmc-military-shuttle = Шаттл Чёрной Мезы
 lavaland-ruin-bmc-evacuation-shuttle = Эвакуационный шаттл Чёрной Мезы
-# backmen-edit-end = бакмен редактирование конец
+# backmen-edit-end
