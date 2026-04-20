@@ -186,6 +186,9 @@ public abstract partial class SharedStationAiSystem
 
         var verb = new AlternativeVerb
         {
+            // Alt-click executes the highest-priority alternative verb directly.
+            // Station AI actions need to win over entity-specific lock/use verbs so the radial opens consistently.
+            Priority = int.MaxValue,
             Text = isOpen ? Loc.GetString("ai-close") : Loc.GetString("ai-open"),
             Act = () =>
             {

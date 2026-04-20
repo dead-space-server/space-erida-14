@@ -30,7 +30,6 @@ public sealed class AreaEchoSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
@@ -68,7 +67,7 @@ public sealed class AreaEchoSystem : EntitySystem
     /// <summary>
     ///     Collision mask for echoes.
     /// </summary>
-    private int _echoLayer = (int) (CollisionGroup.Opaque | CollisionGroup.Impassable); // this could be better but whatever
+    private int _echoLayer = (int)(CollisionGroup.Opaque | CollisionGroup.Impassable); // this could be better but whatever
 
     private int _echoMaxReflections;
     private bool _echoEnabled = true;
@@ -412,8 +411,8 @@ public sealed class AreaEchoSystem : EntitySystem
         for (; incrementedRayMagnitude < rayMagnitude;)
         {
             var nextCheckedTilePosition = new Vector2i(
-                (int) MathF.Floor(nextCheckedPosition.X / gridTileSize),
-                (int) MathF.Floor(nextCheckedPosition.Y / gridTileSize)
+                (int)MathF.Floor(nextCheckedPosition.X / gridTileSize),
+                (int)MathF.Floor(nextCheckedPosition.Y / gridTileSize)
             );
 
             if (checkRoof)

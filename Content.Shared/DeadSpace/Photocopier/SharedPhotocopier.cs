@@ -15,7 +15,7 @@ public sealed class PhotocopierUiState : BoundUserInterfaceState
 {
     public bool CanPrint { get; }
     public bool IsPaperInserted { get; }
-    public PaperworkFormPrototype? ChosenForm { get; }
+    public string? ChosenForm { get; }
     public PhotocopierMode Mode { get; }
     public PhotocopierType Type { get; }
     public bool WasEmagged { get; }
@@ -25,7 +25,7 @@ public sealed class PhotocopierUiState : BoundUserInterfaceState
     public PhotocopierUiState(
         bool canPrint,
         bool isPaperInserted,
-        PaperworkFormPrototype? chosenForm,
+        string? chosenForm,
         PhotocopierMode mode,
         PhotocopierType type,
         bool wasEmagged,
@@ -46,11 +46,11 @@ public sealed class PhotocopierUiState : BoundUserInterfaceState
 [Serializable, NetSerializable]
 public sealed class PhotocopierChoseFormMessage : BoundUserInterfaceMessage
 {
-    public readonly PaperworkFormPrototype PaperworkForm;
+    public readonly string PaperworkFormId;
 
-    public PhotocopierChoseFormMessage(PaperworkFormPrototype paperworkForm)
+    public PhotocopierChoseFormMessage(string paperworkFormId)
     {
-        PaperworkForm = paperworkForm;
+        PaperworkFormId = paperworkFormId;
     }
 }
 

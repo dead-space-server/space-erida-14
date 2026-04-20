@@ -34,6 +34,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceDiona
+  categories: [ HideSpawnMenu ]
   name: diona appearance
   components:
   - type: Inventory
@@ -68,7 +69,7 @@
   - AppearanceDiona
   - BaseSpeciesMobOrganic
   id: MobDiona
-  name: McUrist Plants
+  name: Urist McPlants
   components:
   - type: Respirator
     damage:
@@ -169,16 +170,6 @@
     allowedStates:
     - Dead
   - type: Rootable
-  - type: LanguageSpeaker
-    currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
-    speaks:
-    - TauCetiBasic
-    - RootSpeak
-    understands:
-    - TauCetiBasic
-    - RootSpeak
-  - type: Carriable
 
 - type: entity
   parent: OrganBase

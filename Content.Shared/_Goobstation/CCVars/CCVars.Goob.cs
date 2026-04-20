@@ -11,11 +11,6 @@ public sealed partial class GoobCVars
     public static readonly CVarDef<float> GpsUpdateRate =
         CVarDef.Create("gps.update_rate", 1f, CVar.SERVER | CVar.REPLICATED);
 
-    /// Whether the no EORG popup is enabled.
-    /// </summary>
-    public static readonly CVarDef<bool> RoundEndNoEorgPopup =
-        CVarDef.Create("game.round_end_eorg_popup_enabled", false, CVar.SERVER | CVar.REPLICATED);
-
     /// <summary>
     /// How long until the next EORG popup can be shown after previous one.
     /// </summary>
@@ -27,11 +22,5 @@ public sealed partial class GoobCVars
     /// </summary>
     public static readonly CVarDef<string> LastReadRoundEndNoEorgPopup =
         CVarDef.Create("game.last_read_end_eorg_popup_time", "", CVar.CLIENTONLY | CVar.ARCHIVE);
-
-    /// <summary>
-    /// How long to display the EORG popup for.
-    /// </summary>
-    public static readonly CVarDef<float> RoundEndNoEorgPopupTime =
-        CVarDef.Create("game.round_end_eorg_popup_time", 5f, CVar.SERVER | CVar.REPLICATED);
 
 }

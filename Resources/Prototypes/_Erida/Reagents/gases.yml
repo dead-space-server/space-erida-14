@@ -105,17 +105,16 @@
         effectProto: StatusEffectForcedSleeping
         time: 0.2
         type: Add
-      - !type:HealthChange
+      - !type:EvenHealthChange
         conditions:
         - !type:ReagentCondition
           reagent: Healium
           min: 0.5
         ignoreResistances: true
         damage:
-          groups:
-            Brute: -0.7
-            Burn: -0.7
-            Toxin: -1.25
+          Brute: -0.7
+          Burn: -0.7
+          Toxin: -1.25
       - !type:ModifyBleed
         amount: -0.15
 

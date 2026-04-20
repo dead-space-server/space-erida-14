@@ -2,6 +2,7 @@ using Content.Server.CrewManifest;
 using Content.Server.Station.Systems;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
+using Content.Shared.Objectives.Systems;
 using Robust.Shared.Random;
 using System.Linq;
 
@@ -9,10 +10,10 @@ namespace Content.Server._Erida.Objectives;
 
 public sealed class NoOwnerRequirementSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _minds = default!;
     [Dependency] private readonly CrewManifestSystem _crewManifest = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly TargetSystem _target = default!;
 
     public override void Initialize()
     {
@@ -26,7 +27,7 @@ public sealed class NoOwnerRequirementSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        var allAliveMinds = _minds.GetAliveHumans(args.Mind.OwnedEntity);
+        var allAliveMinds = _target.GetAliveHumans(args.Mind.OwnedEntity);
 
         foreach (var mind in allAliveMinds)
         {

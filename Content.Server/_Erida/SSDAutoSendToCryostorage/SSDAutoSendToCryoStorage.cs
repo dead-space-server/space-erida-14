@@ -111,7 +111,7 @@ public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
         {
             if (!_container.TryGetContainer(cryoUid, cryoComp.ContainerId, out var container)
                 || container.Count != 0
-                || !TryComp<TransformComponent>(cryoUid, out var cryoXform)
+                || !_entityManager.TryGetComponent<TransformComponent>(cryoUid, out var cryoXform)
                 || !playerPos.TryDistance(_entityManager, cryoXform.Coordinates, out var distance))
                 continue;
 

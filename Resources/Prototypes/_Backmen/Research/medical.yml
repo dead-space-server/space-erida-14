@@ -75,6 +75,7 @@
   - Syringe
   - ChemistryEmptyVial
   - MiniSyringe
+  - ChemistryEmptyVialSmall
   position: 3,-4
 
 - type: technology

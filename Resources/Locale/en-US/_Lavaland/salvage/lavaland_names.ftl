@@ -42,3 +42,13 @@ lavaland-ruin-generator = Generator graveyard
 lavaland-ruin-mug = Mug factory
 lavaland-ruin-temple = Nar'Sie temple
 lavaland-ruin-flock-large = Strange glass ruins
+
+# backmen-edit-start
+lavaland-ruin-bmc-research-facility = Black Mesa Research Facility
+lavaland-ruin-bmc-research-outpost = Black Mesa Outpost
+lavaland-ruin-bmc-research-spot = Black Mesa Researching Spot
+lavaland-ruin-bmc-oblom-met = Black Mesa Ruined Chemistery
+lavaland-ruin-bmc-research-station = Black Mesa Station
+lavaland-ruin-bmc-military-shuttle = Black Mesa Shuttle
+lavaland-ruin-bmc-evacuation-shuttle = Black Mesa Evacuation
+# backmen-edit-end

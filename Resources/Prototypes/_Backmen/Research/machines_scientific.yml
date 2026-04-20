@@ -4,7 +4,7 @@
   icon:
     sprite: Structures/Machines/server.rsi
     state: server-on
-  discipline: Scientific
+  discipline: Experimental
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -17,7 +17,7 @@
   icon:
     sprite: Structures/Machines/Anomaly/ape.rsi
     state: base
-  discipline: Scientific
+  discipline: Experimental
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -34,7 +34,7 @@
   icon:
     sprite: Structures/Machines/anomaly_sync.rsi
     state: base
-  discipline: Scientific
+  discipline: Experimental
   tier: 1
   cost: 12500
   recipeUnlocks:
@@ -51,7 +51,7 @@
   icon:
     sprite: Structures/Machines/artifact_analyzer.rsi
     state: display
-  discipline: Scientific
+  discipline: Experimental
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -68,7 +68,7 @@
   icon:
     sprite: Structures/Machines/tech_disk_printer.rsi
     state: display
-  discipline: Scientific
+  discipline: Experimental
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -81,7 +81,7 @@
   icon:
     sprite: Structures/Machines/traversal_distorter.rsi
     state: display
-  discipline: Scientific
+  discipline: Experimental
   tier: 1
   cost: 5000
   recipeUnlocks:

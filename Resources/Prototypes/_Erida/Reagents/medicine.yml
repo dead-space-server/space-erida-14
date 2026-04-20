@@ -14,13 +14,16 @@
           - !type:TemperatureCondition
             min: 370.0
           damage:
-            groups:
-              Airloss: -6
-              Brute: -7.5
-              Burn: -22
             types:
               Heat: -5
-
+        - !type:EvenHealthChange
+          conditions:
+          - !type:TemperatureCondition
+            min: 370.0
+          damage:
+            Airloss: -6
+            Brute: -7.5
+            Burn: -22
 
 - type: reagent
   id: SyntheticBlood

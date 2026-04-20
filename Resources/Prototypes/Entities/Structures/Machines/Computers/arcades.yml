@@ -204,6 +204,16 @@
     - map: ["enum.WiresVisualLayers.MaintenancePanel"]
       state: panel
       visible: false
+  # Orion start
+  - type: GenericVisualizer
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+          East: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+          West: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+          East, West: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+  # Orion end
   - type: BlockGameArcade
   - type: ActivatableUI
     key: enum.BlockGameUiKey.Key

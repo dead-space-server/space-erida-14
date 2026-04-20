@@ -54,7 +54,7 @@
   icon:
     sprite: Structures/Shuttles/gyroscope.rsi
     state: base
-  discipline: Engineering
+  discipline: Industrial
   tier: 1
   cost: 10000
   recipeUnlocks:

@@ -1,0 +1,31 @@
+# T2 Upgrades
+
+- type: entity
+  id: PKAUpgradeDamageTier2
+  parent: PKAUpgradeDamage
+  name: PKA modkit (damage T2)
+  suffix: Tier 2
+  components:
+  - type: GunUpgradeDamage
+    damage:
+      types:
+        Blunt: 20
+        Structural: 25
+
+- type: entity
+  id: PKAUpgradeRangeTier2
+  parent: PKAUpgradeRange
+  name: PKA modkit (range T2)
+  suffix: Tier 2
+  components:
+  - type: GunUpgradeSpeed
+    coefficient: 3
+
+- type: entity
+  id: PKAUpgradeFireRateTier2
+  parent: PKAUpgradeFireRate
+  name: PKA modkit (fire rate T2)
+  suffix: Tier 2
+  components:
+  - type: GunUpgradeFireRate
+    coefficient: 3

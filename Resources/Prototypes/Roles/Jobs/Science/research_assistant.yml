@@ -3,11 +3,12 @@
   name: job-name-research-assistant
   description: job-description-research-assistant
   playTimeTracker: JobResearchAssistant
-  requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 10h
-      inverted: true # stop playing intern if you're good at science!
+  # Erida edit
+  # requirements:
+  #   - !type:DepartmentTimeRequirement
+  #     department: Science
+  #     time: 10h
+  #     inverted: true # stop playing intern if you're good at science!
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science

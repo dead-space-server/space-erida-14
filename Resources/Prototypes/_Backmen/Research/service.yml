@@ -4,7 +4,7 @@
   icon:
     sprite: Objects/Power/light_bulb.rsi
     state: normal
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 500
   recipeUnlocks:
@@ -19,7 +19,7 @@
   icon:
     sprite: Objects/Power/light_tube.rsi
     state: normal
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 1000
   recipeUnlocks:
@@ -38,7 +38,7 @@
   icon:
     sprite: Objects/Consumable/Drinks/generic_jug.rsi
     state: icon
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 500
   recipeUnlocks:
@@ -58,7 +58,7 @@
   icon:
     sprite: Objects/Consumable/Food/bowl.rsi
     state: bowl
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 500
   recipeUnlocks:
@@ -82,7 +82,7 @@
   icon:
     sprite: Objects/Tools/bucket.rsi
     state: icon
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 500
   recipeUnlocks:
@@ -103,7 +103,7 @@
   icon:
     sprite: Objects/Fun/Instruments/h_synthesizer.rsi
     state: icon
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -120,7 +120,7 @@
   icon:
     sprite: Objects/Tiles/tile.rsi
     state: astroice
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 5000
   recipeUnlocks:
@@ -137,6 +137,7 @@
   - FauxTileDesertAstroSand
   - FauxTileAstroIronsand
   - FauxTileAstroIronsandBorderless
+  - FauxTileAstroAsteroidSandBorderless
   technologyPrerequisites:
   - Entertainment
   position: 2,10
@@ -147,7 +148,7 @@
   icon:
     sprite: Objects/Specific/Janitorial/mop.rsi
     state: mop
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 500
   recipeUnlocks:
@@ -168,7 +169,7 @@
   icon:
     sprite: Objects/Specific/Janitorial/advmop.rsi
     state: advmop
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 10000
   recipeUnlocks:
@@ -181,9 +182,9 @@
   id: Spray
   name: research-technology-spray
   icon:
-    sprite: Objects/Specific/Janitorial/janitorial.rsi
+    sprite: Objects/Specific/Janitorial/spray_bottle.rsi
     state: cleaner
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 500
   recipeUnlocks:
@@ -198,7 +199,7 @@
   icon:
     sprite: Objects/Weapons/Guns/Basic/spraynozzle.rsi
     state: icon
-  discipline: Service
+  discipline: CivilianServices
   tier: 1
   cost: 10000
   recipeUnlocks:

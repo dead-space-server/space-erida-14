@@ -42,7 +42,6 @@
         - id: RubberStampTrader
         - id: PhoneInstrumentSyndicate
         - id: ClothingHandsGlovesCombat
-        - id: SyndieHandyFlag
         - id: ClothingMaskNeckGaiter
 
 - type: entity

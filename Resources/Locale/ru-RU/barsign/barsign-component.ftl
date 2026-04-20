@@ -130,6 +130,7 @@ barsign-prototype-name-whiskeyechoes = Виски Эхо
 barsign-prototype-description-whiskeyechoes = Элитный бар для элитных опер... Подождите, это же станция Nanotrasen. Почему эта вывеска в базе данных?
 
 ## EmpBarSign
+barsign-prototype-name-empbarsign = Глитч
 
 barsign-prototype-description-empbarsign = Что-то пошло совсем не так.
 

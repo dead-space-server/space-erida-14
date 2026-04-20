@@ -99,8 +99,8 @@ public sealed partial class PhotocopierComponent : Component
     /// <summary>
     /// Chosen paper form than will be printed
     /// </summary>
-    [DataField]
-    public PaperworkFormPrototype? ChosenPaper = null;
+    [DataField("chosenPaper", customTypeSerializer: typeof(PrototypeIdSerializer<PaperworkFormPrototype>))]
+    public string? ChosenPaper = null;
 
     [ViewVariables]
     public int TonerLeft = 30;

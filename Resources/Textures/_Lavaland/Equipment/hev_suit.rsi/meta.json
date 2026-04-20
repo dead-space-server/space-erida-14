@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from /tg/station, reinforced sprites by thebiggestbruh on discord, hev sprites by no_mad. too on discord",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "icon_head"
+    },
+    {
+      "name": "equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "hev1-equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "hev1-icon"
+    },
+    {
+      "name": "hev1-equipped-HELMET",
+      "directions": 4
+    },
+    {
+      "name": "hev2-equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "hev2-icon"
+    }
+  ]
+}

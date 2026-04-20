@@ -85,18 +85,6 @@ cmd-addmap-hint-2 = runMapInit [true / false]
 
 cmd-pvs-override-info-desc = Выводит информацию о PVS-переопределениях, связанных с сущностью.
 
-entity-effect-status-effect-owoaccent = Ово-акцент
-entity-effect-status-effect-barkaccent = Лающий акцент
-entity-effect-status-effect-Anticoagulant = Разжижение крови
-entity-effect-status-effect-Hemorrhage = Кровоизлияние
-entity-effect-status-effect-Woozy = Головокружение
-
-entity-effect-status-effect-Hallucinations = Галлюцинации
-
-entity-effect-status-effect-DesoxyStamina  = Максимальная выносливость x2
-entity-effect-status-effect-StimulantsStamina = Максимальная выносливость x1.5
-entity-effect-status-effect-PainNumbness = Притупление боли
-
 entity-effect-guidebook-plant-mutate-chemicals =
     { $chance ->
         [1] Мутирует

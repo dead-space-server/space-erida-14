@@ -1,4 +1,3 @@
-using System.Numerics;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Client.UserInterface.Controls;

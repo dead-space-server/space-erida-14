@@ -16,3 +16,6 @@ reagent-desc-vitrium-froth = A bubbly paste that heals wounds of the skin.
 
 reagent-name-seraka-extract = seraka Extract
 reagent-desc-seraka-extract = A deeply coloured oil present in small amounts in Seraka Mushrooms. Acts as an effective blood clotting agent, but has a low overdose threshold.
+
+reagent-name-tranexamic-acid-plus = tranexamic acid plus
+reagent-desc-tranexamic-acid-plus = A drug that promotes blood clotting, used to stop heavy bleeding and restore skin.

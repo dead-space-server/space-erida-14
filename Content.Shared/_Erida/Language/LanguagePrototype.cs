@@ -3,11 +3,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Erida.Language;
 
-[Prototype("language")]
+[Prototype]
 public sealed partial class LanguagePrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; private set;  } = default!;
+    public string ID { get; private set; } = default!;
 
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
