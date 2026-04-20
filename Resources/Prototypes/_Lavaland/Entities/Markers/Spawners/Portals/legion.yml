@@ -217,12 +217,3 @@
   components:
   - type: SpawnOnTrigger
     proto: RandomBlackMesaSpawner
-
-#- type: entity
-#  name: портал булсквид
-#  id: TriggerInstantSpawnerXENBullSquid
-#  suffix: Xen Instant BullSquid Spawner
-#  parent: TriggerSpawnerXEN
-#  components:
-#  - type: SpawnOnTrigger
-#    proto: MobBullSquid

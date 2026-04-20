@@ -74,7 +74,7 @@
         Radiation: 0.1
         Caustic: 0.1
   - type: JumpAbility
-    jumpDistance: 8
+    jumpDistance: 6
     jumpSound: /Audio/_Lavaland/Clothing/hev/longjump_pick.ogg
   - type: ActionGrant
     actions:

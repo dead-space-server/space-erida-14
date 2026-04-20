@@ -16,7 +16,7 @@
     - type: Storage
       maxItemSize: Huge
       grid:
-      - 0,0,9,5
+      - 0,0,8,5
 
 - type: entity
   parent: ClothingBackpackSalvage
@@ -36,7 +36,7 @@
     - type: Storage
       maxItemSize: Huge
       grid:
-      - 0,0,9,5
+      - 0,0,8,5
 
 - type: entity
   parent: ClothingBackpackDuffelSalvage
@@ -55,4 +55,4 @@
     - type: Storage
       maxItemSize: Huge
       grid:
-      - 0,0,9,5
+      - 0,0,8,5

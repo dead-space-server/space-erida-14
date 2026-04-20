@@ -74,8 +74,10 @@
       orGroup: Syringe
     - id: SyringeDermaline
       prob: 0.5
+      orGroup: Syringe
     - id: SyringeBicaridine
       prob: 0.5
+      orGroup: Syringe
     - id: SyringeHyronalin
       prob: 0.5
       orGroup: Syringe
@@ -100,6 +102,7 @@
       orGroup: Mesh
     - id: Gauze
       prob: 0.5
+      orGroup: Suture
     - id: SalvageAncientTool
       prob: 0.4
     - id: SalvageAncientTool
@@ -112,13 +115,13 @@
       orGroup: Disc
     - id: ResearchDisk10000
       prob: 0.05
-      orGroup: ResearchDisk
+      orGroup: Disc
     - id: ResearchDisk5000
       prob: 0.1
-      orGroup: ResearchDisk
+      orGroup: Disc
     - id: ResearchDisk
       prob: 0.5
-      orGroup: ResearchDisk
+      orGroup: Disc
 
 - type: startingGear
   id: NPCSecurity
@@ -204,8 +207,8 @@
       - state: icon
   - type: SpawnItemsOnUse
     items:
-    - id: Stimpack
-      prob: 0.3
+    - id: SurvivalMedipen
+      prob: 0.4
     - id: CombatMedipen
       prob: 0.5
     - id: SalvageHEV

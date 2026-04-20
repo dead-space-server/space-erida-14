@@ -37,7 +37,7 @@
     count: 1
 
 - type: entity
-  parent: MaterialBase
+  parent: MaterialHEVPiece
   id: MaterialStraps
   name: straps ALICE
   description: Straps of ALICE belt.
@@ -48,11 +48,6 @@
     layers:
     - state: alicemini
       map: [ "base" ]
-  - type: StaticPrice
-    price: 0
-  - type: StackPrice
-    price: 1500
-  - type: Appearance
   - type: Stack
     stackType: StrapALICE
     baseLayer: base
@@ -60,10 +55,6 @@
     - alicemini
     - alicemini_2
     - alicemini_3
-  - type: Item
-    size: Large
-    shape:
-    - 0,0,1,1
 
 - type: entity
   parent: MaterialStraps
@@ -74,7 +65,7 @@
     count: 1
 
 - type: entity
-  parent: MaterialBase
+  parent: MaterialHEVPiece
   id: MaterialGunMaterial
   name: gun material
   description: Parts of ancient weapon.
@@ -85,11 +76,6 @@
     layers:
     - state: gunsling
       map: [ "base" ]
-  - type: StaticPrice
-    price: 0
-  - type: StackPrice
-    price: 1500
-  - type: Appearance
   - type: Stack
     count: 5
     stackType: GunMaterial
@@ -99,10 +85,6 @@
     - gunsling_2
     - gunsling_3
     - gunsling_4
-  - type: Item
-    size: Large
-    shape:
-    - 0,0,1,1
 
 - type: entity
   parent: MaterialGunMaterial
@@ -113,7 +95,7 @@
     count: 1
 
 - type: entity
-  parent: MaterialBase
+  parent: MaterialHEVPiece
   id: MaterialM9Steel
   name: M9 steel
   description: M9 steel alloy, looks more like scrap than tiles.
@@ -124,11 +106,6 @@
     layers:
     - state: M9
       map: [ "base" ]
-  - type: StaticPrice
-    price: 0
-  - type: StackPrice
-    price: 1500
-  - type: Appearance
   - type: Stack
     stackType: M9Steel
     baseLayer: base
@@ -136,10 +113,6 @@
     - M9
     - M9_2
     - M9_3
-  - type: Item
-    size: Large
-    shape:
-    - 0,0,1,1
 
 - type: entity
   parent: MaterialM9Steel
@@ -150,7 +123,7 @@
     count: 1
 
 - type: entity
-  parent: MaterialBase
+  parent: MaterialHEVPiece
   id: MaterialCableGold
   name: high speed wire
   suffix: Full
@@ -162,11 +135,6 @@
     layers:
     - state: coilmv-30
       map: ["base"]
-  - type: StaticPrice
-    price: 0
-  - type: StackPrice
-    price: 1500
-  - type: Appearance
   - type: Stack
     stackType: CableGold
     baseLayer: base
@@ -174,11 +142,6 @@
     - coilmv-10
     - coilmv-20
     - coilmv-30
-  - type: Item
-    heldPrefix: coilmv
-    size: Large
-    shape:
-    - 0,0,1,1
 
 - type: entity
   parent: MaterialCableGold
