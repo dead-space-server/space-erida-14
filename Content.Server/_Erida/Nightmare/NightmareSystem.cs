@@ -119,7 +119,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
                 && TryComp<MobThresholdsComponent>(uid, out var targetThresholds)
                 && TryComp<DamageableComponent>(uid, out var targetDamageable)
                 && _mobThreshold.TryGetThresholdForState(uid, MobState.Dead, out var threshold, targetThresholds)
-                && targetDamageable.TotalDamage < threshold)
+                && _damageable.GetTotalDamage(uid) < threshold)
             {
                 _mobState.ChangeMobState(uid, MobState.Critical);
             }

@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -24,7 +25,7 @@ public sealed partial class NightmareComponent : Component
     [DataField]
     public DamageSpecifier damageFromBurn = new()
     {
-        DamageDict = new Dictionary<string, FixedPoint2>
+        DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
             { "Heat", 20 },
         },
@@ -33,7 +34,7 @@ public sealed partial class NightmareComponent : Component
     [DataField]
     public DamageSpecifier healthFromDarkness = new()
     {
-        DamageDict = new Dictionary<string, FixedPoint2>
+        DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
             { "Blunt", -2.5 },
             { "Slash", -2.5 },
