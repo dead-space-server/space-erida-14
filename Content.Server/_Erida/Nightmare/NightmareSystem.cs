@@ -35,13 +35,14 @@ public sealed class NightmareSystem : SharedNightmareSystem
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly EntityManager _entityManager = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<NightmareComponent, MapInitEvent>(OnInit);
-        SubscribeLocalEvent<NightmareComponent, PolymorphActionEvent>(OnShadowWalkActionEvent, before:[typeof(PolymorphSystem)]);
+        SubscribeLocalEvent<NightmareComponent, PolymorphActionEvent>(OnShadowWalkActionEvent, before: [typeof(PolymorphSystem)]);
     }
 
     private void OnInit(EntityUid uid, NightmareComponent component, MapInitEvent args)
@@ -51,7 +52,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
 
     public void OnShadowWalkActionEvent(Entity<NightmareComponent> ent, ref PolymorphActionEvent args)
     {
-        if (TryComp<TransformComponent>(ent, out var xform)
+        if (_entityManager.TryGetComponent<TransformComponent>(ent, out var xform)
             && TryComp<NightmareComponent>(ent, out var npComp)
             && !CheckCanTransformToPolymorph(ent, npComp, xform))
         {
