@@ -1,0 +1,11 @@
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostNightmare
+  components:
+  - type: GhostRole
+    name: ghost-role-information-nightmare-name
+    description: ghost-role-information-nightmare-description
+    rules: ghost-role-information-nightmare-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist

@@ -1,0 +1,14 @@
+- type: entity
+  parent: BaseActionPolymorph
+  id: ActionShadowWalk
+  name: Shadow Walk
+  description: Allow you to fast moving moving in dark
+  components:
+  - type: Action
+    useDelay: 2
+    icon:
+      sprite: Objects/Magic/magicactions.rsi
+      state: jaunt
+  - type: InstantAction
+    event: !type:PolymorphActionEvent
+      protoId: NightmareShadowWalkJaunt

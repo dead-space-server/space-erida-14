@@ -59,25 +59,23 @@
       FootRight: OrganForgottenFootRight
       Brain: OrganHumanBrain
       Eyes: OrganHumanEyes
-      Tongue: OrganHumanTongue
-      Appendix: OrganHumanAppendix
-      Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
       Heart: OrganHumanHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
   - type: HumanoidProfile
     species: Forgotten
 
 - type: entity
   parent:
   - AppearanceForgotten
-  - BaseSpeciesMobOrganic
+  - BaseSpeciesMob
   id: MobForgotten
   name: Urist McForgotten
   components:
+  - type: Inventory
+    templateId: forgotten
   - type: Nightmare
+  - type: Insulated
+  - type: ProtectedFromStepTriggers
+  - type: NightVision
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
   - type: LanguageKnowledge

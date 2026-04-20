@@ -1,0 +1,31 @@
+- type: entity
+  name: jaunt
+  parent:
+  - Incorporeal
+  - BaseMob
+  id: ShadowWalkJaunt
+  components:
+  - type: ContentEye
+    maxZoom: 1.44,1.44
+  - type: Eye
+    drawFov: false
+  - type: Input
+    context: "ghost"
+  - type: InputMover
+  - type: Visibility
+    layer: 2
+  - type: Spectral
+  - type: Sprite
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    color: "#83007c"
+    layers:
+    - state: animated
+      shader: unshaded
+    noRot: true
+    overrideContainerOcclusion: true
+    drawdepth: Ghosts
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 12
+    baseWalkSpeed: 6
+  - type: NightVision
+  - type: Nightmare

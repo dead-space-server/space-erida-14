@@ -1,0 +1,22 @@
+- type: entity
+  parent: ArmBlade
+  id: NightmareArmBlade
+  components:
+    - type: LightDestroyer
+    - type: Unremoveable
+    - type: Execution
+      doAfterDuration: 2.0
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      wideAnimationRotation: 90
+      attackRate: 1
+      damage:
+        types: # Same as energy sword, but slash/pierce instead of slash/heat
+          Slash: 15
+          Piercing: 15
+          Structural: 30
+    - type: Prying
+      speedModifier: 3 # Jaws of life speed
+      pryPowered: true
+      force: true

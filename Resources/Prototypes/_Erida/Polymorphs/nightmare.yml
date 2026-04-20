@@ -1,0 +1,13 @@
+- type: polymorph
+  id: NightmareShadowWalkJaunt
+  configuration:
+    entity: ShadowWalkJaunt
+    transferName: true
+    inventory: None
+    forced: false
+    revertOnDeath: true
+    revertOnCrit: true
+    allowRepeatedMorphs: false
+    #polymorphSound: /Audio/Magic/ethereal_enter.ogg
+    #exitPolymorphSound: /Audio/Magic/ethereal_exit.ogg
+    #duration: 4

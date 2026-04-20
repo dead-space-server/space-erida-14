@@ -1,7 +1,7 @@
 - type: species
   id: Forgotten
   name: species-name-forgotten
-  roundStart: true
+  roundStart: false
   prototype: MobForgotten
   dollPrototype: AppearanceForgotten
   skinColoration: Hues
