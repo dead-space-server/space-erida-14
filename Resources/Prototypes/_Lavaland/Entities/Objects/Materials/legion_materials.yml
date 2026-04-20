@@ -13,7 +13,7 @@
   - type: StaticPrice
     price: 0
   - type: StackPrice
-    price: 1500
+    price: 100
   - type: Appearance
   - type: Stack
     stackType: HEVPiece
