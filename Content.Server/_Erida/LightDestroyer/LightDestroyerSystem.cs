@@ -17,8 +17,8 @@ namespace Content.Server._Erida.LightDestroyer;
 
 public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
 {
-    [Dependency] protected readonly InventorySystem _inventorySystem = default!;
-    [Dependency] protected readonly AudioSystem _audio = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly PointLightSystem _pointLight = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     public override void Initialize()
