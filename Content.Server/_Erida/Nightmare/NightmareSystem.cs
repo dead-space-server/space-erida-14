@@ -24,8 +24,8 @@ namespace Content.Server._Erida.Nightmare;
 
 public sealed class NightmareSystem : SharedNightmareSystem
 {
-    [Dependency] protected readonly IGameTiming _timing = default!;
-    [Dependency] protected readonly LightIntensionSystem _lightIntension = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly LightIntensionSystem _lightIntension = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
