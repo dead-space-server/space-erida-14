@@ -103,7 +103,6 @@ public sealed class NightmareSystem : SharedNightmareSystem
                 nmComp.timeToCheck = curTime + TimeSpan.FromSeconds(nmComp.timeBetweenChecks);
 
                 var lightIntension = _lightIntension.TryGetLightLevel((uid, xform));
-                //Logger.Debug($"LightIntension: {lightIntension}");
                 if (lightIntension > nmComp.redLineOfLight)
                 {
                     var scale = lightIntension - nmComp.redLineOfLight;

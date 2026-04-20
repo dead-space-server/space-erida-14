@@ -14,7 +14,6 @@ public abstract class SharedLightDestroyerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<DestroyedByLightDestroyerComponent, AttemptPointLightToggleEvent>(OnDestroyedToggle);
-       // SubscribeLocalEvent<DestroyedByLightDestroyerComponent, ComponentInit>(OnDestroyedInit);
     }
 
     private void OnDestroyedToggle(Entity<DestroyedByLightDestroyerComponent> ent, ref AttemptPointLightToggleEvent args)
@@ -22,10 +21,4 @@ public abstract class SharedLightDestroyerSystem : EntitySystem
         if (args.Enabled)
             args.Cancelled = true;
     }
-
-    //private void OnDestroyedInit(Entity<DestroyedByLightDestroyerComponent> ent, ref ComponentInit args)
-    //{
-        //_sharedPointLight.SetEnabled(ent, false);
-        //Dirty(ent, ent.Comp);
-    //}
 }
