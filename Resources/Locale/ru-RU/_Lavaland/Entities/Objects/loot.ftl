@@ -104,3 +104,9 @@ ent-SalvageBeltALICE = разорванная разгрузка ALICE
     .desc = Куски РПС ALICE, в этой мешанине ткани есть целые ремешки, можно их забрать.
 ent-SalvagePCVPlate = плата от P.C.V.
     .desc = Плата используемая в P.C.V. не совсем ясно что оно делает, но она очень важна! Наверное.
+
+ent-ChanceSpawnerItemM9Steel = шанс спавна стали M9
+ent-ChanceSpawnerItemMaterialCableGold = шанс спавна высоко-скоростного кабеля
+ent-ChanceSpawnerItemMaterialMaterialGunMaterial = шанс спавна части оружия
+ent-ChanceSpawnerItemSalvagePCVPlate = шанс спавна платы PCV
+ent-ChanceSpawnerItemMaterialHEVPiece = шанс спавна детали HEV
