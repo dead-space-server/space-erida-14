@@ -20,6 +20,14 @@
           - material: GoliathHide
             amount: 1
             doAfter: 2
+      - to: reinforcedhev  # HEV
+        steps:
+          - material: HEVPiece
+            amount: 10
+            doAfter: 5
+          - material: CableGold
+            amount: 4
+            doAfter: 2
     - node: reinforced1
       entity: LavalandEquipmentExplorerSuitReinforced1
       edges:
@@ -39,17 +47,6 @@
     - node: reinforced3
       entity: LavalandEquipmentExplorerSuitReinforced3
     # HEV
-    - node: start
-      entity: LavalandEquipmentExplorerSuit
-      edges:
-      - to: reinforcedhev
-        steps:
-          - material: HEVPiece
-            amount: 10
-            doAfter: 5
-          - material: CableGold
-            amount: 4
-            doAfter: 2
     - node: reinforcedhev
       entity: LavalandEquipmentExplorerSuitReinforcedHEV
       edges:
