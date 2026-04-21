@@ -30,8 +30,6 @@ public sealed partial class RadiationSystem : SharedRadiationSystem
 
     private float _accumulator;
 
-    private float _currentIntensity; // Erida edit
-
     public override void Initialize()
     {
         base.Initialize();
@@ -102,6 +100,8 @@ public sealed partial class RadiationSystem : SharedRadiationSystem
             return;
         }
 
+        entity.Comp._lastUpdatedIntensity = entity.Comp.Intensity; // Erida edit
+
         var worldPos = _transform.GetWorldPosition(xform);
         var intensity = component.Intensity * _stack.GetCount(uid);
         intensity = GetAdjustedRadiationIntensity(uid, intensity);
@@ -137,6 +137,15 @@ public sealed partial class RadiationSystem : SharedRadiationSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        // Erida start
+        var radSourseQuery = EntityQueryEnumerator<RadiationSourceComponent>();
+        while (radSourseQuery.MoveNext(out EntityUid uid, out RadiationSourceComponent? radSource))
+        {
+            if (radSource._lastUpdatedIntensity != radSource.Intensity)
+                UpdateSource((uid, radSource));
+        }
+        // Erida end
 
         _accumulator += frameTime;
         if (_accumulator < GridcastUpdateRate)

@@ -34,4 +34,6 @@ public sealed partial class RadiationSourceComponent : Component
 
     [ViewVariables]
     public DynamicTree.Proxy Proxy = DynamicTree.Proxy.Free;
+
+    public float _lastUpdatedIntensity; // Erida edit
 }
