@@ -125,6 +125,7 @@
     quickEquip: false
     slots:
       - Belt
+  - type: DestroyableByLightDestroyer # Erida-edit
 
 - type: entity
   parent: FlashlightLantern

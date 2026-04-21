@@ -68,6 +68,7 @@
     - type: Tag
       tags:
       - Flashlight
+    - type: DestroyableByLightDestroyer # Erida-edit
 
 - type: entity
   parent: Lantern
