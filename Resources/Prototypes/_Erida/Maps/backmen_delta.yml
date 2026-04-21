@@ -65,6 +65,9 @@
             # sintetics
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
+            # IAA
+            Lawyer: [ 2, 2 ]
+            IAA: [ 1, 1]
         - type: StationGoal
           goals:
           - Singularity
