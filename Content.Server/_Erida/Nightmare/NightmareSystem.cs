@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightIntension;
+using Content.Server._Erida.Nightmare.Components;
 using Content.Server.Polymorph.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
@@ -41,13 +42,16 @@ public sealed class NightmareSystem : SharedNightmareSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<NightmareComponent, MapInitEvent>(OnInit);
+        SubscribeLocalEvent<NightmareComponent, MapInitEvent>(OnInit, after: [typeof(PolymorphSystem)]);
         SubscribeLocalEvent<NightmareComponent, PolymorphActionEvent>(OnShadowWalkActionEvent, before: [typeof(PolymorphSystem)]);
     }
 
     private void OnInit(EntityUid uid, NightmareComponent component, MapInitEvent args)
     {
-        _action.AddAction(uid, ref component.ShadowWalkActionEntity, component.ShadowWalkAction);
+        if (!HasComp<NightmarePolymorhedComponent>(uid))
+        {
+            _action.AddAction(uid, ref component.ShadowWalkActionEntity, component.ShadowWalkAction);
+        }
     }
 
     public void OnShadowWalkActionEvent(Entity<NightmareComponent> ent, ref PolymorphActionEvent args)
