@@ -168,6 +168,14 @@
         type: SpaceVillainArcadeBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+  - type: GenericVisualizer # Orion
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+          East: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+          West: { state: arcade, sprite: Structures/Machines/arcade.rsi }
+          East, West: { state: arcade, sprite: Structures/Machines/arcade.rsi }
   - type: Computer
     board: SpaceVillainArcadeComputerCircuitboard
   - type: Vocalizer
