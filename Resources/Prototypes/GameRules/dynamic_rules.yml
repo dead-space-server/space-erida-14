@@ -110,3 +110,10 @@
             min: 20
           - !type:RoundDurationCondition
             min: 4800 # 80 minutes Erida edit
+        - id: NightmareSpawn # Erida-edit
+          weight: 15
+          conditions:
+          - !type:HasBudgetCondition
+          - !type:MaxRuleOccurenceCondition
+          - !type:RoundDurationCondition
+            min: 3600 # 60 minutes Erida edit

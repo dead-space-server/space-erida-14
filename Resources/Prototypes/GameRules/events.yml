@@ -46,6 +46,7 @@
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
     - id: WizardSpawn
+    - id: NightmareSpawn # Erida-edit
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
