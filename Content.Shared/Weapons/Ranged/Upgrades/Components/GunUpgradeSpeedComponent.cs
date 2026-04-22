@@ -10,7 +10,7 @@ public sealed partial class GunUpgradeSpeedComponent : Component
 {
     /// <summary>
     /// Multiplier for the speed of a gun's projectile.
-    /// </summary>s
+    /// </summary>
     [DataField]
     public float Coefficient = 1;
 }
