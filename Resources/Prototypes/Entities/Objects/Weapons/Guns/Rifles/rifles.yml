@@ -257,6 +257,8 @@
     availableModes:
     - Burst
     - SemiAuto
+    - FullAuto #Erida-edit
+    fireRate: 6 #5->6
     burstFireRate: 14
   - type: ItemSlots
     slots:
@@ -281,9 +283,9 @@
   - type: EyeCursorOffset
     maxOffset: 2
     pvsIncrease: 0.2
-  - type: SpeedModifiedOnWield
-    walkModifier: 0.9
-    sprintModifier: 0.9
+  #- type: SpeedModifiedOnWield 
+  #  walkModifier: 0.9 
+  #   sprintModifier: 0.9
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
