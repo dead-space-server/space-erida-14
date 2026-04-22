@@ -106,3 +106,6 @@
 
 - type: Tag
   id: WarpCube
+
+- type: Tag
+  id: CrusherUpgradeHandleRange
