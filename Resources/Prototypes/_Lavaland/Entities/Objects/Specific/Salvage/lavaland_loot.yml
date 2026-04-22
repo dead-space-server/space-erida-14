@@ -41,7 +41,7 @@
     sprite: _Lavaland/Objects/Specific/Lavaland/loot.rsi
     state: crystal
   - type: GunUpgrade
-    examineText: gun-upgrade-vampirism-name
+    name: gun-upgrade-vampirism-name
   - type: GunUpgradeVampirism
     damageOnHit:
       types:
