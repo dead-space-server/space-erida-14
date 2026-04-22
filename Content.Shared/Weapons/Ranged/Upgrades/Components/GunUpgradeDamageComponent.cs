@@ -6,7 +6,7 @@ namespace Content.Shared.Weapons.Ranged.Upgrades.Components;
 /// <summary>
 /// A <see cref="GunUpgradeComponent"/> for increasing the damage of a gun's projectile.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(GunUpgradeSystem))]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class GunUpgradeDamageComponent : Component
 {
     // Goobstation start

@@ -26,7 +26,7 @@ namespace Content.Shared._Lavaland.Weapons.Ranged.Upgrades.Components;
 
 [Access(typeof(SharedGunUpgradeSystem))]
 [RegisterComponent, NetworkedComponent]
-public sealed partial class GunUpgradeGoobComponent : Component
+public sealed partial class GunUpgradeComponent : Component
 {
     /// <summary>
     /// Literal name of this upgrade that is shown on all examine texts.

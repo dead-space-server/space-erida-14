@@ -7,10 +7,8 @@
   suffix: Tier 2
   components:
   - type: GunUpgradeDamage
-    damage:
-      types:
-        Blunt: 20
-        Structural: 25
+    modifier: 1.25
+
 
 - type: entity
   id: PKAUpgradeRangeTier2
@@ -19,7 +17,7 @@
   suffix: Tier 2
   components:
   - type: GunUpgradeSpeed
-    coefficient: 3
+    coefficient: 1.5
 
 - type: entity
   id: PKAUpgradeFireRateTier2
@@ -28,4 +26,4 @@
   suffix: Tier 2
   components:
   - type: GunUpgradeFireRate
-    coefficient: 3
+    coefficient: 1.5
