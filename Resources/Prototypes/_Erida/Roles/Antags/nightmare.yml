@@ -1,3 +1,10 @@
+- type: antag
+  id: Nightmare
+  name: role-antag-nightmare-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-inferior-objective
+
 - type: startingGear
   id: NightmareGear
   inhand:

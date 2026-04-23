@@ -12,18 +12,18 @@ namespace Content.Shared._Erida.Nightmare.Components;
 public sealed partial class NightmareComponent : Component
 {
     [DataField]
-    public float timeBetweenChecks = 0.5f;
+    public float TimeBetweenChecks = 0.5f;
 
     [DataField]
-    public float timeBetweenChecksForShadowWalk = 0.05f;
+    public float TimeBetweenChecksForShadowWalk = 0.05f;
 
-    public TimeSpan timeToCheck = TimeSpan.Zero;
-
-    [DataField]
-    public float redLineOfLight = 0.01f;
+    public TimeSpan TimeToCheck = TimeSpan.Zero;
 
     [DataField]
-    public DamageSpecifier damageFromBurn = new()
+    public float RedLineOfLight = 0.01f;
+
+    [DataField]
+    public DamageSpecifier DamageFromBurn = new()
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
@@ -32,7 +32,7 @@ public sealed partial class NightmareComponent : Component
     };
 
     [DataField]
-    public DamageSpecifier healthFromDarkness = new()
+    public DamageSpecifier HealthFromDarkness = new()
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {

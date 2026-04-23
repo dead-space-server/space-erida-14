@@ -73,6 +73,7 @@
   - type: Inventory
     templateId: forgotten
   - type: Nightmare
+  - type: LightDestroyer
   - type: Insulated
   - type: ProtectedFromStepTriggers
   - type: NightVision

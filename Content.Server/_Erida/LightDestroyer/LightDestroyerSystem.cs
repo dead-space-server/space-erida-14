@@ -4,6 +4,7 @@ using Content.Shared._Erida.LightDestroyer;
 using Content.Shared._Erida.LightDestroyer.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Server.Audio;
@@ -26,7 +27,7 @@ public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
         base.Initialize();
 
         SubscribeLocalEvent<LightDestroyerComponent, MeleeHitEvent>(OnMeleeHit);
-        SubscribeLocalEvent<LightDestroyerComponent, InteractUsingEvent>(OnInteract);
+        SubscribeLocalEvent<LightDestroyerComponent, ContactInteractionEvent>(OnContanctInteract);
         SubscribeLocalEvent<DestroyedByLightDestroyerComponent, ComponentInit>(OnDestroyedInit);
     }
 
@@ -38,9 +39,9 @@ public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
         }
     }
 
-    public void OnInteract(Entity<LightDestroyerComponent> ent, ref InteractUsingEvent args)
+    public void OnContanctInteract(Entity<LightDestroyerComponent> ent, ref ContactInteractionEvent args)
     {
-        TryToFindAndDestroyLight(ent, args.Target);
+        TryToFindAndDestroyLight(ent, args.Other);
     }
 
     private void TryToFindAndDestroyLight(Entity<LightDestroyerComponent> ent, EntityUid? entity)
@@ -58,9 +59,7 @@ public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
             var inv = _inventorySystem.GetHandOrInventoryEntities((entity.Value, handsComp, invComp));
 
             foreach (var slot in inv)
-            {
                 TryToDestroyLight(ent, slot);
-            }
         }
     }
 
@@ -96,20 +95,17 @@ public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
             return;
 
         if (entToSpawn != null)
-        {
             Spawn(entToSpawn, Transform(ent.Value).Coordinates);
-        }
+
         if (soundToPlay != null)
-        {
             _audio.PlayPvs(soundToPlay, ent.Value);
-        }
 
         QueueDel(ent);
     }
 
     private void OnDestroyedInit(Entity<DestroyedByLightDestroyerComponent> ent, ref ComponentInit args)
     {
-        ent.Comp.timeToDestroy = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.timeNeedToDestroy);
+        ent.Comp.TimeToDestroy = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.TimeNeedToDestroy);
         _pointLight.SetEnabled(ent, false);
     }
 
@@ -121,7 +117,7 @@ public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
         var query = EntityQueryEnumerator<DestroyedByLightDestroyerComponent>();
         while (query.MoveNext(out var uid, out var comp))
         {
-            if (comp.timeToDestroy < curTime)
+            if (comp.TimeToDestroy < curTime)
                 RemComp(uid, comp);
         }
     }

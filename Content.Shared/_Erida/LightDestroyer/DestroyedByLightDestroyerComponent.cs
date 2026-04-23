@@ -6,7 +6,7 @@ namespace Content.Shared._Erida.LightDestroyer.Components;
 public sealed partial class DestroyedByLightDestroyerComponent : Component
 {
     [DataField]
-    public float timeNeedToDestroy = 300f;
+    public float TimeNeedToDestroy = 300f;
 
-    public TimeSpan? timeToDestroy;
+    public TimeSpan? TimeToDestroy;
 }

@@ -1,3 +1,2 @@
 ghost-role-information-nightmare-name = Кошмар
-ghost-role-information-nightmare-description = Вы кошмар
-ghost-role-information-nightmare-rules = Погрузите станцию во тьму
+ghost-role-information-nightmare-description = Вы кошмар. Ваша задача погрузить станцию во тьму. Помните, свет губителен для Вас!

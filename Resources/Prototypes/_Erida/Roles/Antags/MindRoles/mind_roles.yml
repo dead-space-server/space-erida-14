@@ -8,3 +8,14 @@
     roleType: Familiar
     subtype: role-subtype-inferior
   - type: InferiorRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleNightmare
+  name: Nightmare
+  components:
+  - type: MindRole
+    antagPrototype: Nightmare
+    roleType: SoloAntagonist
+    subtype: role-subtype-nightmare
+  - type: NightmareRole
