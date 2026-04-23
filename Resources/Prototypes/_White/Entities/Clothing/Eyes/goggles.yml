@@ -32,7 +32,6 @@
     sprite: _White/Clothing/Eyes/Goggles/snightvision.rsi
   - type: Clothing
     sprite: _White/Clothing/Eyes/Goggles/snightvision.rsi
-  - type: FlashImmunity # Erida-edit
 
 - type: entity
   parent: ClothingEyesNightVisionGogglesSyndie
