@@ -83,7 +83,6 @@
     interfaces:
       enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface #Goobstation end
-  - type: FlashImmunity   # Erida-edit
 
 - type: entity
   parent: ClothingEyesThermalVisionGogglesSyndie
