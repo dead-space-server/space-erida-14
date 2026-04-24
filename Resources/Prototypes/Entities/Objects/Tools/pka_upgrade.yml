@@ -30,14 +30,15 @@
       color: "#a71010"
     - state: overlay-3
       color: "#eb4c13"
+  # Erida start
   - type: GunUpgrade
-    tags: [ GunUpgradeDamage ]
-    examineText: gun-upgrade-examine-text-damage
+    name: gun-upgrade-damage-name
   - type: GunUpgradeDamage
-    damage:
-      types:
-        Blunt: 10
-        Structural: 15
+    modifier: 1.125
+    #damage:
+    #  types:
+    #    Blunt: 10
+  # Erida end
 
 - type: entity
   id: PKAUpgradeRange
@@ -53,11 +54,12 @@
       color: "#1012a7"
     - state: overlay-3
       color: "#1373eb"
+  # Erida start
   - type: GunUpgrade
-    tags: [ GunUpgradeRange ]
-    examineText: gun-upgrade-examine-text-range
+    name: gun-upgrade-range-name
   - type: GunUpgradeSpeed
-    coefficient: 1.5
+    coefficient: 1.25
+  # Erida end
 
 - type: entity
   id: PKAUpgradeFireRate
@@ -73,8 +75,9 @@
       color: "#07901b"
     - state: overlay-3
       color: "#9bf134"
+  # Erida start
   - type: GunUpgrade
-    tags: [ GunUpgradeReloadSpeed ]
-    examineText: gun-upgrade-examine-text-reload
+    name: gun-upgrade-reload-name
   - type: GunUpgradeFireRate
-    coefficient: 1.5
+    coefficient: 1.25
+  # Erida end

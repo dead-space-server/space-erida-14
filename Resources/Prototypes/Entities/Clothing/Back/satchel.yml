@@ -167,6 +167,9 @@
   components:
     - type: Sprite
       sprite: Clothing/Back/Satchels/salvage.rsi
+    - type: Construction # Erida-edit
+      graph: SatchelSalvage
+      node: start
 
 - type: entity
   parent: [ClothingBackpackSatchel, BaseHighlyIllegalContraband]

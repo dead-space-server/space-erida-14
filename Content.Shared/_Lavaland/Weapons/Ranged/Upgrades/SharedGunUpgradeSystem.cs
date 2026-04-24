@@ -41,6 +41,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Shared._Goobstation.Weapons;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Weapons.Ranged.Upgrades.Components;
 
 namespace Content.Shared._Lavaland.Weapons.Ranged.Upgrades;
 
@@ -71,7 +72,7 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
 
         SubscribeLocalEvent<UpgradeableWeaponComponent, GetItemActionsEvent>(RelayGetActionEvent);
 
-        SubscribeLocalEvent<GunUpgradeGoobComponent, ExaminedEvent>(OnUpgradeExamine);
+        SubscribeLocalEvent<GunUpgradeComponent, ExaminedEvent>(OnUpgradeExamine);
 
         InitializeUpgrades();
     }
@@ -123,7 +124,7 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
         }
     }
 
-    private void OnUpgradeExamine(Entity<GunUpgradeGoobComponent> ent, ref ExaminedEvent args)
+    private void OnUpgradeExamine(Entity<GunUpgradeComponent> ent, ref ExaminedEvent args)
     {
         if (ent.Comp.ExamineTextType != null) // TODO add a list of all weapon types that this gun upgrade can be inserted to
             args.PushMarkup(Loc.GetString(ent.Comp.ExamineTextType.Value, ("name", Loc.GetString(ent.Comp.Name))));
@@ -141,7 +142,7 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
 
     private void OnItemSlotInsertAttemptEvent(Entity<UpgradeableWeaponComponent> ent, ref ItemSlotInsertAttemptEvent args)
     {
-        if (!TryComp<GunUpgradeGoobComponent>(args.Item, out var upgradeComp)
+        if (!TryComp<GunUpgradeComponent>(args.Item, out var upgradeComp)
             || !TryComp<ItemSlotsComponent>(ent, out var itemSlots))
             return;
 
@@ -165,17 +166,17 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
         }
     }
 
-    public HashSet<Entity<GunUpgradeGoobComponent>> GetCurrentUpgrades(Entity<UpgradeableWeaponComponent> ent, ItemSlotsComponent? itemSlots = null)
+    public HashSet<Entity<GunUpgradeComponent>> GetCurrentUpgrades(Entity<UpgradeableWeaponComponent> ent, ItemSlotsComponent? itemSlots = null)
     {
         if (!Resolve(ent, ref itemSlots))
             return [];
 
-        var upgrades = new HashSet<Entity<GunUpgradeGoobComponent>>();
+        var upgrades = new HashSet<Entity<GunUpgradeComponent>>();
 
         foreach (var itemSlot in itemSlots.Slots.Values)
         {
             if (itemSlot is { HasItem: true, Item: { } item }
-                && TryComp<GunUpgradeGoobComponent>(item, out var upgradeComp))
+                && TryComp<GunUpgradeComponent>(item, out var upgradeComp))
                 upgrades.Add((item, upgradeComp));
         }
 

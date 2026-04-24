@@ -30,6 +30,11 @@ lathe-category-marble = Мрамор
 lathe-category-steel-tile = Стальная
 lathe-category-white-tile = Белая
 lathe-category-wood-tile = Деревянная
+lathe-category-shuttle-tile = Шаттл
+lathe-category-plastic-tile = Пластик
+lathe-category-precious-tile = Драгоценная
+lathe-category-industrial-tile = Промышленная
+
 # Science
 lathe-category-mechs = Мехи
 lathe-category-modules = Модули

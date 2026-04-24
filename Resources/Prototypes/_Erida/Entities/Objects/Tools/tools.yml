@@ -4,6 +4,54 @@
   name: Professional RCD
   description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
   components:
+  - type: RCD
+    isRpd: true
+    protoId: WallSolid
+    availablePrototypes:
+    - WallSolid
+    - FloorSteel
+    - Plating
+    - Catwalk
+    - Grille
+    - Window
+    - WindowDirectional
+    - WindowReinforcedDirectional
+    - ReinforcedWindow
+    - Airlock
+    - AirlockGlass
+    - Firelock
+    - TubeLight
+    - BulbLight
+    - LVCable
+    - MVCable
+    - HVCable
+    - CableTerminal
+    - PipeFourway
+    - PipeStraight
+    - PipeHalf
+    - PipeBend
+    - PipeTJunction
+    - PipeManifold
+    - PressurePump
+    - VolumetricPump
+    - ManualValve
+    - SignalValve
+    - PressureValve
+    - PressureRegulator
+    - PassiveGate
+    - OutletInjector
+    - VentScrubber
+    - VentGas
+    - DualPortVent
+    - VentPassive
+    - Radiator
+    - MixerGas
+    - FilterGas
+    - CanisterPort
+    - PipeSensor
+    - AirSensor
+    - AirAlarm
+    - Deconstruct
   - type: AutoRecharge
     rechargeDuration: 30
   - type: Sprite
@@ -19,3 +67,51 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: ProfessionalRCD
+
+- type: entity
+  id: RPD
+  parent: [RCD, BaseEngineeringContraband]
+  name: RPD
+  description: A rapid piping device for quickly laying atmos pipes and devices.
+  components:
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeHalf
+    - PipeBend
+    - PipeTJunction
+    - PipeManifold
+    - PressurePump
+    - VolumetricPump
+    - ManualValve
+    - SignalValve
+    - PressureValve
+    - PressureRegulator
+    - PassiveGate
+    - OutletInjector
+    - VentScrubber
+    - VentGas
+    - DualPortVent
+    - VentPassive
+    - Radiator
+    - MixerGas
+    - FilterGas
+    - CanisterPort
+    - PipeSensor
+    - AirSensor
+    - AirAlarm
+    - Deconstruct
+  - type: LimitedCharges
+    maxCharges: 90
+  - type: Sprite
+    sprite: _Erida/Objects/Tools/rpd.rsi
+    state: icon
+  - type: Item
+    sprite: _Erida/Objects/Tools/rpd.rsi
+  - type: Clothing
+    sprite: _Erida/Objects/Tools/rpd.rsi
+    quickEquip: false
+    slots:
+    - Belt

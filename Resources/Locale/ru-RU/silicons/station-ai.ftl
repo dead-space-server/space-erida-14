@@ -5,7 +5,7 @@ wire-name-ai-act-light = ИИД
 station-ai-takeover = ИИ захват
 station-ai-eye-name = Глаз ИИ - {$name}
 station-ai-has-no-power-for-upload = Ошибка загрузки - ядро ИИ обесточено.
-station-ai-is-too-damaged-for-upload = Ошибка загрузки - ядро ии неисправно и требует починки.
+station-ai-is-too-damaged-for-upload = Ошибка загрузки - ядро ИИ неисправно и требует починки.
 station-ai-core-losing-power = Недостаточно энергии. Ядро ИИ работает от резервного заряда.
 station-ai-core-critical-power = Заряд ядра находится на критически низком уровне. Внешнее питание должно быть восстановлено чтобы избежать повреждения данных!
 
@@ -23,9 +23,15 @@ electrify-door-on = Включить перегрузку
 electrify-door-off = Отключить перегрузку
 
 toggle-light = Переключить свет
+station-ai-borg-control = Взять под контроль
+station-ai-borg-lock = Заблокировать борга
+station-ai-borg-unlock = Разблокировать борга
 
 ai-device-not-responding = Устройство не отвечает
 ai-device-no-access = У вас нету доступа к этому устройству
+station-ai-borg-occupied = Этот борг уже занят.
+station-ai-borg-already-controlled = Этот борг уже находится под управлением ИИ.
+station-ai-borg-control-busy = Вы уже управляете другим боргом.
 
 ai-consciousness-download-warning = Ваше сознание начали загружать.
 

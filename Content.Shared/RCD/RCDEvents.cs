@@ -16,6 +16,15 @@ public sealed class RCDConstructionGhostRotationEvent(NetEntity netEntity, Direc
     public readonly Direction Direction = direction;
 }
 
+// Erida start
+[Serializable, NetSerializable]
+public sealed class RPDSelectedLayerEvent(NetEntity netEntity, byte layer) : EntityEventArgs
+{
+    public readonly NetEntity NetEntity = netEntity;
+    public readonly byte Layer = layer;
+}
+// Erida end
+
 [Serializable, NetSerializable]
 public enum RcdUiKey : byte
 {

@@ -4,7 +4,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Server.Botany.Components
 {
-    [RegisterComponent, Access(typeof(BotanySystem))]
+[RegisterComponent, Access(typeof(BotanySystem), typeof(Content.Server._Erida.Botany.Systems.SeedDnaConsoleSystem))]
     public sealed partial class SeedComponent : SharedSeedComponent
     {
         /// <summary>

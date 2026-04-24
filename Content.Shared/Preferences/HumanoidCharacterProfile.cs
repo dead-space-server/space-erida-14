@@ -120,10 +120,10 @@ namespace Content.Shared.Preferences
         // Erida-start
         [DataField]
         public string CustomSpecies { get; set; } = string.Empty;
-        // Erida end
 
         [DataField]
         public string Voice { get; set; } = HumanoidProfileSystem.DefaultVoice; // Corvax-TTS
+        // Erida end
 
         [DataField]
         public int Age { get; set; } = 18;

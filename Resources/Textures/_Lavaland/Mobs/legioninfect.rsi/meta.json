@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from yogstation at https://github.com/yogstation13/Yogstation/blob/HEAD/icons/mob/lavaland/lavaland_monsters.dmi modified by no_mad. for self purposes",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "legion",
+        "directions": 4
+    },
+    {
+        "name": "human",
+        "directions": 4
+    },
+    {
+        "name": "human-layer",
+        "directions": 4
+    },
+    {
+        "name": "human-scars",
+        "directions": 4
+    }
+  ]
+}

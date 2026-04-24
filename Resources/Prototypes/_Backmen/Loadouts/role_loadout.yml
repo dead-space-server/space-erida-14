@@ -12,7 +12,6 @@
   - Trinkets
   - SurvivalSecurity
   - GroupSpeciesBreathTool
-  - SecurityServiceWeapon # Erida
 
 - type: roleLoadout
   id: JobBrigmedic

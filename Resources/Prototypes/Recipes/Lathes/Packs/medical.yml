@@ -14,7 +14,9 @@
   - LargeBeaker
   - Syringe
   - PillCanister
+  - HandLabeler
   - ChemistryEmptyVial
+  - ChemistryEmptyVialSmall
   - Dropper
 
 - type: latheRecipePack

@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseItem
+  id: BotanicalSeedDnaDisk
+  name: plant seed DNA disk
+  description: Stores selected genetic traits from plant seeds.
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Misc/dna_disk.rsi
+    state: icon
+  - type: DnaDisk

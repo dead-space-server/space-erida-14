@@ -171,3 +171,47 @@
   name: lavaland-ruin-temple
   path: /Maps/Lavaland/temple.yml
   priority: 30
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaResearchFacility
+  name: lavaland-ruin-bmc-research-facility
+  path: /Maps/_Lavaland/UEG/researchfacility.yml
+  patchToPlanet: false
+  priority: 1
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaOutpost
+  name: lavaland-ruin-bmc-research-outpost
+  path: /Maps/_Lavaland/UEG/xenoutpost.yml
+  patchToPlanet: false
+  priority: 2
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaSpot
+  name: lavaland-ruin-bmc-research-spot
+  path: /Maps/_Lavaland/UEG/researchspot.yml
+  priority: 3
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaSpot2
+  name: lavaland-ruin-bmc-research-spot
+  path: /Maps/_Lavaland/UEG/researchspot2.yml
+  priority: 4
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaResearchOblom
+  name: lavaland-ruin-bmc-research-station
+  path: /Maps/_Lavaland/UEG/ZENrndOblom.yml
+  priority: 4
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaResearchShuttleCrush
+  name: lavaland-ruin-bmc-military-shuttle
+  path: /Maps/_Lavaland/UEG/ZENshuttle1.yml
+  priority: 4
+
+- type: lavalandGridRuin # erida-edit
+  id: BlackMesaTelega
+  name: lavaland-ruin-bmc-evacuation-shuttle
+  path: /Maps/_Lavaland/UEG/ZENtelega2.yml
+  priority: 4

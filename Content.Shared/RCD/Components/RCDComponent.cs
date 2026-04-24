@@ -1,8 +1,10 @@
 using Content.Shared.RCD.Systems;
+using Content.Shared.Atmos.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.RCD.Components;
 
@@ -33,6 +35,32 @@ public sealed partial class RCDComponent : Component
     [DataField, AutoNetworkedField]
     public ProtoId<RCDPrototype> ProtoId { get; set; } = "Invalid";
 
+    // Erida start
+    /// <summary>
+    /// Indicates whether this device is configured as an atmospherics RPD.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool IsRpd { get; set; }
+
+    /// <summary>
+    /// Current layer selection mode for atmos placement.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public RpdMode CurrentMode { get; set; } = RpdMode.Free;
+
+    /// <summary>
+    /// Last layer selected by the client while in free placement mode.
+    /// </summary>
+    [DataField]
+    public AtmosPipeLayer? LastSelectedLayer { get; set; }
+
+    /// <summary>
+    /// Sound played when switching RPD pipe mode.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier SoundSwitchMode { get; set; } = new SoundPathSpecifier("/Audio/Machines/quickbeep.ogg");
+    // Erida end
+
     /// <summary>
     /// The direction constructed entities will face upon spawning
     /// </summary>
@@ -57,4 +85,14 @@ public sealed partial class RCDComponent : Component
     /// </remarks>
     [ViewVariables(VVAccess.ReadOnly)]
     public Transform ConstructionTransform { get; private set; }
+}
+
+// Erida edit
+[Serializable, NetSerializable]
+public enum RpdMode : byte
+{
+    Primary,
+    Secondary,
+    Tertiary,
+    Free,
 }

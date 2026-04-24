@@ -19,6 +19,7 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly MarkingManager _marking = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     public override void Initialize()
     {
@@ -213,8 +214,8 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
     // Erida start
     private void ScaleProfile(EntityUid target)
     {
-        var humanoidProfile = EntityManager.GetComponent<HumanoidProfileComponent>(target);
-        var humanoidSprite = EntityManager.GetComponent<SpriteComponent>(target);
+        var humanoidProfile = _entityManager.GetComponent<HumanoidProfileComponent>(target);
+        var humanoidSprite = _entityManager.GetComponent<SpriteComponent>(target);
         var speciesPrototype = _prototype.Index(humanoidProfile.Species);
 
         var height = Math.Clamp(humanoidProfile.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);

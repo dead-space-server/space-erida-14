@@ -39,6 +39,14 @@ public sealed partial class PullableComponent : Component
     [AutoNetworkedField, DataField]
     public bool PrevFixedRotation;
 
+    /// <summary>
+    /// If false, directional movement input will not automatically break an active pull.
+    /// Used by leash-style restraints that should stay taut while the target resists.
+    /// </summary>
+    [Access(typeof(Systems.PullingSystem), Other = AccessPermissions.ReadWriteExecute)]
+    [AutoNetworkedField, DataField]
+    public bool BreakOnMove = true;
+
     [DataField]
     public ProtoId<AlertPrototype> PulledAlert = "Pulled";
 }

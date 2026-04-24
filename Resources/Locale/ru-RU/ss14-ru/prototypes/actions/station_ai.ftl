@@ -1,5 +1,7 @@
 ent-ActionJumpToCore = Перейти к ядру
     .desc = Возвращает ваш обзор к ядру.
+ent-ActionStationAiReturnToCore = Вернуться в ядро ИИ
+    .desc = Прекратить управление этим боргом и вернуться в своё ядро ИИ.
 ent-ActionSurvCameraLights = Переключить подсветку камеры
     .desc = Включает подсветку камеры наблюдения вблизи места, где вы находитесь.
 ent-ActionAIViewLaws = Просмотреть законы

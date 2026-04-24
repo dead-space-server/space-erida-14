@@ -36,4 +36,11 @@ public sealed partial class JointVisualsComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public Vector2 OffsetB;
+
+    // Erida edit
+    /// <summary>
+    /// Whether offsets should rotate with the attached entities.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool RotateOffsets = true;
 }

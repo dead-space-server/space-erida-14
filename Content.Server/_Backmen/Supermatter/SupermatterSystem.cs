@@ -67,7 +67,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
         protected override async Task<object?> Process()
         {
-            self.HandleOutput(ent,frameTime, ent, ent, gasMixture);
+            self.HandleOutput(ent, frameTime, ent, ent, gasMixture);
             return null;
         }
     }
@@ -85,13 +85,12 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
         protected override async Task<object?> Process()
         {
-            self.HandleDamage(ent,frameTime, ent, ent, gasMixture);
+            self.HandleDamage(ent, frameTime, ent, ent, gasMixture);
             return null;
         }
     }
 
     public sealed class HandleLightingJob(
-        float frameTime,
         SupermatterSystem self,
         Entity<BkmSupermatterComponent> ent,
         double maxTime,
@@ -120,7 +119,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
         while (q.MoveNext(out var owner, out var supermatter, out var xplode, out var rads, out var metaDataComponent))
         {
-            if(metaDataComponent.EntityPaused)
+            if (metaDataComponent.EntityPaused)
                 continue;
 
             var mixture = _atmosphere.GetContainingMixture(owner, true, true);
@@ -148,7 +147,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
                 if (supermatter.ZapAccumulator >= supermatter.ZapTimer)
                 {
                     supermatter.ZapAccumulator -= supermatter.ZapTimer;
-                    _pwrJobQueue.EnqueueJob(new HandleLightingJob(frameTime, this, (owner, supermatter), PwrJobTime));
+                    _pwrJobQueue.EnqueueJob(new HandleLightingJob(this, (owner, supermatter), PwrJobTime));
                 }
             }
             {
@@ -215,7 +214,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         //more moles of gases are harder to heat than fewer,
         //so let's scale heat damage around them
         sMcomponent.MoleHeatPenaltyThreshold =
-            (float) Math.Max(absorbedTotalMoles * sMcomponent.MoleHeatPenalty, 0.25);
+            (float)Math.Max(absorbedTotalMoles * sMcomponent.MoleHeatPenalty, 0.25);
 
         //Ramps up or down in increments of 0.02 up to the proportion of co2
         //Given infinite time, powerloss_dynamic_scaling = co2comp
@@ -290,7 +289,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
         _atmosphere.Merge(mixture, absorbedGas);
 
-        var powerReduction = (float) Math.Pow(sMcomponent.Power / 500, 3);
+        var powerReduction = (float)Math.Pow(sMcomponent.Power / 500, 3);
 
         //After this point power is lowered
         //This wraps around to the begining of the function
@@ -306,7 +305,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
     {
         // Divide power by its' threshold to get a value from 0-1, then multiply by the amount of possible lightnings
         var zapPower = sm.Comp.Power / sm.Comp.PowerPenaltyThreshold * sm.Comp.LightningPrototypes.Length;
-        var zapPowerNorm = (int) Math.Clamp(zapPower, 0, sm.Comp.LightningPrototypes.Length - 1);
+        var zapPowerNorm = (int)Math.Clamp(zapPower, 0, sm.Comp.LightningPrototypes.Length - 1);
         _lightning.ShootRandomLightnings(sm, 3.5f, sm.Comp.Power > sm.Comp.PowerPenaltyThreshold ? 3 : 1, sm.Comp.LightningPrototypes[zapPowerNorm]);
     }
 
@@ -343,7 +342,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
                 var absorbedTotalMoles = absorbedGas.TotalMoles;
 
                 //Mols start to have a positive effect on damage after 350
-                sMcomponent.Damage = (float) Math.Max(
+                sMcomponent.Damage = (float)Math.Max(
                     sMcomponent.Damage +
                     Math.Max(
                         Math.Clamp(absorbedTotalMoles / 200, 0.5, 1) * absorbedGas.Temperature -
@@ -391,7 +390,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
                         < 25 => 0.0009f,
                         < 45 => 0.005f,
                         < 75 => 0.002f,
-                        _    => 0f
+                        _ => 0f
                     };
 
                     sMcomponent.Damage += Math.Clamp(sMcomponent.Power * factor * sMcomponent.DamageIncreaseMultiplier,
@@ -414,7 +413,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
         }
         finally
         {
-            Dirty(uid,sMcomponent);
+            Dirty(uid, sMcomponent);
         }
     }
     #endregion
@@ -530,7 +529,7 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
     #region Chat
 
-        /// <summary>
+    /// <summary>
     ///     Handles core damage announcements
     /// </summary>
     private void AnnounceCoreDamage(EntityUid uid, BkmSupermatterComponent sm)
@@ -555,15 +554,15 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
 
             switch (sm.PreferredDelamType)
             {
-                case DelamType.Cascade: loc = "supermatter-delam-cascade";   break;
-                case DelamType.Singulo: loc = "supermatter-delam-overmass";  break;
-                case DelamType.Tesla:   loc = "supermatter-delam-tesla";     break;
-                default:                loc = "supermatter-delam-explosion"; break;
+                case DelamType.Cascade: loc = "supermatter-delam-cascade"; break;
+                case DelamType.Singulo: loc = "supermatter-delam-overmass"; break;
+                case DelamType.Tesla: loc = "supermatter-delam-tesla"; break;
+                default: loc = "supermatter-delam-explosion"; break;
             }
 
             var station = _station.GetOwningStation(uid);
             if (station != null)
-                _alert.SetLevel((EntityUid) station, sm.AlertCodeEnigmaId, true, true, true, false); // Delta => Enigma | Erida
+                _alert.SetLevel((EntityUid)station, sm.AlertCodeEnigmaId, true, true, true, false); // Delta => Enigma | Erida
 
             sb.AppendLine(Loc.GetString(loc));
             sb.AppendLine(Loc.GetString("supermatter-seconds-before-delam", ("seconds", sm.DelamTimer)));

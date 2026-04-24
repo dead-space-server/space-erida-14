@@ -38,6 +38,8 @@ alerts-knockdown-desc = You're [color=yellow]Knocked Down[/color]! Something has
 
 alerts-handcuffed-name = [color=yellow]Handcuffed[/color]
 alerts-handcuffed-desc = You're [color=yellow]handcuffed[/color] and can't use your hands. If anyone drags you, you won't be able to resist.
+alerts-collared-name = [color=yellow]Collared[/color]
+alerts-collared-desc = You're wearing a [color=yellow]collar[/color]. Click the alert to try to work it loose.
 
 alerts-ensnared-name = [color=yellow]Ensnared[/color]
 alerts-ensnared-desc = You're [color=yellow]ensnared[/color] and is impairing your ability to move.
@@ -122,3 +124,6 @@ alerts-rooted-desc = You are attached to the ground. You can't slip, but you abs
 
 alerts-stealthy-name = Pickpocketing
 alerts-stealthy-desc = Whether you are currently pickpocketing. Click to toggle.
+
+alerts-prying-name = Prying
+alerts-prying-desc = You can innately pry doors open using alternative interaction.

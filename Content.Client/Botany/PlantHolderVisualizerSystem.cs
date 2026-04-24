@@ -30,7 +30,7 @@ public sealed class PlantHolderVisualizerSystem : VisualizerSystem<PlantHolderVi
         if (AppearanceSystem.TryGetData<string>(uid, PlantHolderVisuals.PlantRsi, out var rsi, args.Component)
             && AppearanceSystem.TryGetData<string>(uid, PlantHolderVisuals.PlantState, out var state, args.Component))
         {
-            var valid = !string.IsNullOrWhiteSpace(state);
+            var valid = !string.IsNullOrWhiteSpace(rsi) && !string.IsNullOrWhiteSpace(state);
 
             SpriteSystem.LayerSetVisible((uid, args.Sprite), PlantHolderLayers.Plant, valid);
 

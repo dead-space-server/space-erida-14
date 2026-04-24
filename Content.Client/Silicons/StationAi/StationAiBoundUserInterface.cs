@@ -41,6 +41,8 @@ public sealed class StationAiBoundUserInterface(EntityUid owner, Enum uiKey) : B
 
     private void HandleRadialMenuClick(BaseStationAiAction p)
     {
-        SendPredictedMessage(new StationAiRadialMessage { Event = p });
+        // Use a regular UI message here because we immediately close the BUI after selection.
+        SendMessage(new StationAiRadialMessage { Event = p });
+        Close();
     }
 }

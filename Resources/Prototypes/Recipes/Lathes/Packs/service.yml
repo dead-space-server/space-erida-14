@@ -50,6 +50,7 @@
   - HydroponicsToolClippers
   - ClothingBeltPlant
   - PlantBag
+  - BotanicalSeedDnaDisk # Erida edit
 
 - type: latheRecipePack
   id: Janitor
@@ -78,4 +79,5 @@
   # Erida-start
   - HydroponicsTrayMachineCircuitboard
   - SeedExtractorMachineCircuitboard
+  - BotanicalSeedDnaManipulatorCircuitboard
   # Erida-end

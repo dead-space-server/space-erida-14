@@ -34,9 +34,8 @@ namespace Content.Server.Database
             IConfigurationManager cfg,
             ISawmill opsLog,
             ISawmill notifyLog,
-            ITaskManager taskManager,
             ISerializationManager serialization)
-            : base(opsLog, taskManager, serialization)
+            : base(opsLog, serialization)
         {
             var concurrency = cfg.GetCVar(CCVars.DatabasePgConcurrency);
 

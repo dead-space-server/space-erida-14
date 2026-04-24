@@ -306,7 +306,7 @@ public sealed class PullingSystem : EntitySystem
     private void OnPullableMoveInput(EntityUid uid, PullableComponent component, ref MoveInputEvent args)
     {
         // If someone moves then break their pulling.
-        if (!component.BeingPulled)
+        if (!component.BeingPulled || !component.BreakOnMove) // Erida BreakOnMove
             return;
 
         var entity = args.Entity;

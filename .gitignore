@@ -306,3 +306,5 @@ Resources/MapImages
 
 # Direnv stuff
 .direnv/
+Resources/Prototypes/_Erida/Entities/Mobs/mothroach_giant.yml
+Resources/Prototypes/_Erida/Entities/Mobs/lich.yml

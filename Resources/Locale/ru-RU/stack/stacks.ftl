@@ -401,7 +401,18 @@ stack-large-wood-floor = большой деревянный пол
 stack-red-circuit-floor = плитка красных микросхем
 stack-asteroid-astro-sand-floor = астро-песок астероида
 stack-desert-astro-sand-floor = пустынный астро-песок
-stack-white-marble-floor = white marble floor
-stack-dark-marble-floor = dark marble floor
-stack-plasma-marble-floor = plasmarble floor
-stack-uranium-marble-floor = uranium marble floor
+
+stack-white-marble-floor = белый мраморный пол
+stack-dark-marble-floor = тёмный мраморный пол
+stack-plasma-marble-floor = плазменный мраморный пол
+stack-uranium-marble-floor = урановый мраморный пол
+
+stack-steel-horizontal-slats-tile-bordered = стальная плитка с горизонтальными планками (с окантовкой)
+stack-steel-vertical-slats-tile-bordered = стальная плитка с вертикальными планками (с окантовкой)
+stack-steel-slats-tile-continuous = стальная плитка с непрерывными планками
+stack-white-steel-horizontal-slats-tile-bordered = белая стальная плитка с горизонтальными планками (с окантовкой)
+stack-white-steel-vertical-slats-tile-bordered = белая стальная плитка с вертикальными планками (с окантовкой)
+stack-white-steel-slats-tile-continuous = белая стальная плитка с непрерывными планками
+stack-dark-steel-horizontal-slats-tile-bordered = тёмная стальная плитка с горизонтальными планками (с окантовкой)
+stack-dark-steel-vertical-slats-tile-bordered = тёмная стальная плитка с вертикальными планками (с окантовкой)
+stack-dark-steel-slats-tile-continuous = тёмная стальная плитка с непрерывными планками

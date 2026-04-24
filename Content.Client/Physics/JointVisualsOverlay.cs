@@ -53,8 +53,10 @@ public sealed class JointVisualsOverlay : Overlay
             var rotA = xform.LocalRotation;
             var rotB = otherXform.LocalRotation;
 
-            coordsA = coordsA.Offset(rotA.RotateVec(visuals.OffsetA));
-            coordsB = coordsB.Offset(rotB.RotateVec(visuals.OffsetB));
+            // Erida start
+            coordsA = coordsA.Offset(visuals.RotateOffsets ? rotA.RotateVec(visuals.OffsetA) : visuals.OffsetA);
+            coordsB = coordsB.Offset(visuals.RotateOffsets ? rotB.RotateVec(visuals.OffsetB) : visuals.OffsetB);
+            // Erida end
 
             var posA = xformSystem.ToMapCoordinates(coordsA).Position;
             var posB = xformSystem.ToMapCoordinates(coordsB).Position;

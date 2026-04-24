@@ -27,9 +27,15 @@ electrify-door-on = Enable overcharge
 electrify-door-off = Disable overcharge
 
 toggle-light = Toggle light
+station-ai-borg-control = Take control
+station-ai-borg-lock = Lock borg
+station-ai-borg-unlock = Unlock borg
 
 ai-device-not-responding = Device is not responding
 ai-device-no-access = You have no access to this device
+station-ai-borg-occupied = This borg is already occupied.
+station-ai-borg-already-controlled = This borg is already under AI control.
+station-ai-borg-control-busy = You are already controlling another borg.
 
 ai-consciousness-download-warning = Your consciousness is being downloaded.
 

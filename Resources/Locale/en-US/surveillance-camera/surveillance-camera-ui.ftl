@@ -13,6 +13,8 @@ surveillance-camera-monitor-ui-legend-active = Active
 surveillance-camera-monitor-ui-legend-inactive = Inactive
 surveillance-camera-monitor-ui-legend-selected = Selected
 surveillance-camera-monitor-ui-legend-invalid = Invalid
+
 surveillance-camera-setup = Setup
 surveillance-camera-setup-ui-set = Set
+
 wire-name-camera-map = MAP

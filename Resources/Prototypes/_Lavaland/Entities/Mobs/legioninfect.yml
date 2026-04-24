@@ -1,0 +1,494 @@
+- type: entity
+  id: MobBaseNpcDungeon
+  parent:
+  - SimpleSpaceMobBase
+  - StripableInventoryBase
+  abstract: true
+  components:
+  - type: HTN
+    blackboard:
+      VisionRadius: !type:Single
+        36
+      AggroVisionRadius: !type:Single
+        30
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 300
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+      fix2:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        hard: false
+        mask:
+        - HighImpassable
+        layer:
+        - MobLayer
+      fix3:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 300
+        layer:
+        - Opaque
+        - BulletImpassable
+  - type: Inventory
+    templateId: carman
+  - type: UniversalLanguageSpeaker
+  - type: CombatMode
+  - type: Stripping
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: ComplexInteraction
+  - type: StatusEffects
+    allowed:
+      - Stun
+      - KnockedDown
+      - SlowedDown
+      - Stutter
+      - Electrocution
+      - ForcedSleep
+      - TemporaryBlindness
+      - StaminaModifier
+  - type: ZombieImmune
+  - type: Rotatable
+  - type: InputMover
+  - type: MobMover
+  - type: MeleeWeapon
+    range: 1.5
+    angle: 0
+    animation: WeaponArcFist
+    soundHit:
+        collection: Punch
+    damage:
+        types:
+          Blunt: 5
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: NpcFactionMember
+    factions:
+      - SimpleNeutral
+  - type: Hands
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      50: 0.5
+  - type: Stamina
+    baseCritThreshold: 100
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 30
+    bloodlossThreshold: 0
+  - type: Puller
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 5
+  - type: Tag
+    tags:
+      - CannotSuicide
+      - DoorBumpOpener
+      - FootstepSound
+      - CanPilot
+
+- type: entity
+  name: зомбированный
+  id: MobLegionZombie
+  parent:
+  - MobBaseNpcDungeon
+  - LavalandMobBase
+  suffix: Xen suppa Zombie Base
+  description: Zombie.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Lavaland/Mobs/legioninfect.rsi
+    layers:
+    - state: human
+    - state: human-scars
+    - state: human-layer
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: legion
+      Dead:
+        Base: null
+  - type: EmoteOnDamage
+    emotes:
+    - Pain
+    emoteChance: 1
+  - type: Emoting
+  - type: Vocal
+    sounds:
+      Male: ZombieHeadcrabed
+      Female: ZombieHeadcrabed
+      Unsexed: ZombieHeadcrabed
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: Prying
+    pryPowered: !type:Bool
+        true
+    force: !type:Bool
+      true
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Reactive
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcClaw
+    soundHit:
+        path: /Audio/_Lavaland/Mobs/Legion/claw_strike.ogg
+        params:
+          volume: 5
+    damage:
+        types:
+          Slash: 7
+          Structural: 15
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: NpcFactionMember
+    factions:
+      - Lavafauna
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: HeadcrabDeath
+      params:
+        volume: 3
+  - type: SpawnOnTrigger
+    proto: MobLegionSkull
+  - type: TemperatureProtection
+  - type: Temperature
+  - type: ReplacementAccent
+    accent: zombie
+
+- type: inventoryTemplate
+  id: carman
+  slots:
+    - name: pocket1
+      slotTexture: pocket
+      slotFlags: POCKET
+      stripTime: 5
+      uiWindowPos: 1,0
+      strippingWindowPos: 0,0
+      displayName: Pocket 1
+
+- type: emoteSounds
+  id: ZombieHeadcrabed
+  params:
+    variation: 0.125
+    volume: -5
+  sounds:
+    Pain:
+      collection: ZombiePain
+
+- type: emote
+  id: Pain
+  name: pain
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+   - pain
+
+- type: soundCollection
+  id: ZombiePain
+  files:
+    - /Audio/_Lavaland/Mobs/Legion/pain1.ogg
+    - /Audio/_Lavaland/Mobs/Legion/pain2.ogg
+    - /Audio/_Lavaland/Mobs/Legion/pain3.ogg
+    - /Audio/_Lavaland/Mobs/Legion/pain4.ogg
+    - /Audio/_Lavaland/Mobs/Legion/pain5.ogg
+    - /Audio/_Lavaland/Mobs/Legion/pain6.ogg
+
+- type: soundCollection
+  id: HeadcrabDeath
+  files:
+  - /Audio/_Lavaland/Mobs/Legion/die1.ogg
+  - /Audio/_Lavaland/Mobs/Legion/die2.ogg
+
+- type: soundCollection
+  id: HEVDeath
+  files:
+  - /Audio/_Lavaland/Mobs/Legion/hzv1.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv2.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv3.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv4.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv5.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv6.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv7.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv8.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv9.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv10.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv11.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv12.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv13.ogg
+  - /Audio/_Lavaland/Mobs/Legion/hzv14.ogg
+
+- type: entity
+  name: UEG marine
+  id: MobLegionZombieHecu
+  parent: MobLegionZombie
+  suffix: Xen suppa Zombie HECU
+  description: Infected United Earth Government marine, he is equipped with PCV and it seems that the infection has pretty much battered the equipment.
+  components:
+  - type: MeleeWeapon
+    damage:
+        types:
+          Slash: 12
+          Structural: 35
+  - type: Sprite
+    layers:
+    - state: human
+    - state: equipped-INNERCLOTHING
+      sprite: _Lavaland/Clothing/Uniforms/Jumpsuit/urbanCM.rsi
+    - state: equipped-HAND
+      sprite: Clothing/Hands/Gloves/Color/black.rsi
+    - state: equipped-FEET
+      sprite: Clothing/Shoes/Boots/combatboots.rsi
+    - state: equipped-OUTERCLOTHING
+      sprite: _Lavaland/Clothing/OuterClothing/Armor/PCV.rsi
+    - state: human-scars
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      250: 1
+  - type: Damageable
+    damageModifierSet: CombineArmor
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 4.5
+  - type: Loadout
+    prototypes: [NPCMarine]
+
+- type: entity
+  name: science
+  id: MobLegionZombieScience
+  parent: MobLegionZombie
+  suffix: Xen suppa ZombieSCIENCE
+  description: Infected, judging by the access card, a scientist from some research complex, his clothes are already gradually rotting, and his body is disfigured, but no traces of decomposition are visible.
+  components:
+  - type: Sprite
+    layers:
+    - state: human
+    - state: equipped-INNERCLOTHING
+      sprite: Clothing/Uniforms/Jumpsuit/scientist.rsi
+    - state: equipped-FEET
+      sprite: Clothing/Shoes/color.rsi
+    - state: equipped-OUTERCLOTHING
+      sprite: Clothing/OuterClothing/Coats/labcoat_sci.rsi
+    - state: human-scars
+    - state: human-layer
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Loadout
+    prototypes: [NPCScience]
+
+- type: entity
+  name: security
+  id: MobLegionZombieSecurity
+  parent: MobLegionZombie
+  suffix: Xen suppa Zombie Security
+  description: Infected, judging by the inscription on the remainder of the body armor, a security guard, a closed-type holster can be seen on his belt, green blisters can be seen from holes in his clothes.
+  components:
+  - type: Sprite
+    layers:
+    - state: human
+    - state: equipped-INNERCLOTHING
+      sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    - state: equipped-HAND
+      sprite: Clothing/Hands/Gloves/Color/black.rsi
+    - state: equipped-FEET
+      sprite: Clothing/Shoes/Boots/combatboots.rsi
+    - state: equipped-OUTERCLOTHING
+      sprite: Clothing/OuterClothing/Armor/security.rsi
+    - state: human-scars
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: Damageable
+    damageModifierSet: CombineArmorCP
+  - type: Loadout
+    prototypes: [NPCSecurity]
+
+- type: entity
+  name: security officer
+  id: MobLegionZombieSecurityRanger
+  parent: MobLegionZombieSecurity
+  suffix: Xen suppa Zombie Security Ranger
+  description: Infected, judging by the badge, he is from the black mesa guard division, he holds a revolver in his hand, clutching it with a death grip, if you look closely, as if it was stuck to the remains of his hand...
+  components:
+  - type: Sprite
+    layers:
+    - state: human
+    - state: equipped-INNERCLOTHING
+      sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    - state: equipped-HAND
+      sprite: Clothing/Hands/Gloves/Color/black.rsi
+    - state: equipped-FEET
+      sprite: Clothing/Shoes/Boots/combatboots.rsi
+    - state: equipped-OUTERCLOTHING
+      sprite: Clothing/OuterClothing/Armor/security.rsi
+    - state: human-scars
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+    - state: inhand-right
+      sprite: Objects/Weapons/Guns/Revolvers/inspector.rsi
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.5
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+      params:
+        volume: -100
+  - type: BasicEntityAmmoProvider
+    proto: BulletMagnum
+    capacity: 1
+    count: 1
+  - type: Gun
+    minAngle: 20
+    maxAngle: 22
+    fireRate: 0.5
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+  - type: Loadout
+    prototypes: [NPCSecurityRanger]
+
+- type: entity
+  name: security
+  id: MobLegionZombieSecurityHeavy
+  parent: MobLegionZombieSecurity
+  suffix: Xen suppa Zombie Security Heavy
+  description: The infected one, judging by the inscription on the armored suit, is from the black mesa guard; the armored suit completely covers his body, which greatly changed his appearance compared to the rest of the infected.
+  components:
+  - type: Sprite
+    layers:
+    - state: human
+    - state: equipped-INNERCLOTHING
+      sprite: Clothing/Uniforms/Jumpsuit/security_blue.rsi
+    - state: equipped-HAND
+      sprite: Clothing/Hands/Gloves/Color/black.rsi
+    - state: equipped-FEET
+      sprite: Clothing/Shoes/Boots/combatboots.rsi
+    - state: equipped-OUTERCLOTHING
+      sprite: Clothing/OuterClothing/Armor/heavy.rsi
+    - state: human-scars
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+  - type: Damageable
+    damageModifierSet: CombineArmorElite
+  - type: Loadout
+    prototypes: [NPCSecurityHeavy]
+
+- type: entity
+  name: H.E.V. unit
+  id: MobLegionZombieHEV
+  parent: MobLegionZombie
+  suffix: Xen suppa ZombieHEV
+  description: Infected in a HEV suit, the armor appears to still protect its wearer from most types of threats and attempts to reanimate him, the suit's drives aid in movement, which greatly helps the infected catch up with their victims.
+  components:
+  - type: Sprite
+    layers:
+    - state: human
+    - state: human-layer
+    - state: equipped-OUTERCLOTHING
+      sprite: _Lavaland/Equipment/hev_suit.rsi
+    - state: human-scars
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: legion
+  - type: MeleeWeapon
+    attackRate: 1.5
+    damage:
+        types:
+          Slash: 4
+          Structural: 25
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      140: 0.5
+      149: 0.5
+      150: 2
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:ExplodeBehavior
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          OrganAnimalHeart:
+            min: 1
+            max: 1
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: HEVDeath
+      params:
+        volume: 3
+  - type: TemperatureProtection
+  - type: Temperature
+  - type: NoSlip
+  - type: Damageable
+    damageModifierSet: HEVArmor
+  - type: Loadout
+    prototypes: [NPCHEV]

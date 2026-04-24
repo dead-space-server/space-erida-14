@@ -12,6 +12,8 @@ ent-KillRandomPersonObjective = { ent-BaseTraitorObjective }
     .desc = Сделайте это, как посчитаете нужным. Только убедитесь, что цель не покинет станцию.
 ent-KillRandomHeadObjective = { ent-BaseTraitorObjective }
     .desc = Заказчику нужно, чтобы этот глава исчез, и вы, вероятно, знаете, почему. Убедитесь, что глава не попадёт на Центком даже в мёртвом виде. Удачи, агент.
+ent-KillStationAiObjective = Уничтожьте станционный искуственный интелект.
+    .desc = Nanotrasen с гордостью заявляет о своей передовой технологии искусственного интеллекта. Напомните им, что это всего лишь игрушка, которую можно сломать.
 ent-RandomTraitorAliveObjective = { ent-BaseTraitorSocialObjective }
     .desc = Раскрывать себя или нет — решайте сами. Нам нужно, чтобы он выжил.
 ent-RandomTraitorProgressObjective = { ent-BaseTraitorSocialObjective }
@@ -50,3 +52,5 @@ ent-CaptainGunStealObjective = { ent-BaseCaptainObjective }
 # ent-NukeDiskStealObjective = { ent-BaseCaptainObjective }
 #     .desc = { ent-BaseCaptainObjective.desc }
 
+ent-HijackTradeStationObjective = Взломать торговый аванпост.
+    .desc = В вашем аплинке имеется один "маяк взлома". Разместите его на торговом аванпосте и защищайте его, пока он взламывает защиту аванпоста.

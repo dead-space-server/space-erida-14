@@ -112,12 +112,12 @@
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
   - type: Wieldable
     unwieldOnUse: false
-  - type: GunWieldBonus
-    minAngle: -19
-    maxAngle: -16
-  - type: Gun
-    minAngle: 21
-    maxAngle: 32
+  - type: GunWieldBonus # Erida-edit 
+    minAngle: -6 # -19 -> -6
+    maxAngle: -10 # -16 -> -10
+  - type: Gun # Erida-edit
+    minAngle: 12 # 21 -> 12
+    maxAngle: 18 # 32 -> 18
     shotsPerBurst: 5
     availableModes:
     - Burst

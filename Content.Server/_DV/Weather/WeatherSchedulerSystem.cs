@@ -36,18 +36,12 @@ public sealed class WeatherSchedulerSystem : EntitySystem
             comp.NextUpdate = now + TimeSpan.FromSeconds(duration);
 
             var mapId = Comp<MapComponent>(map).MapId;
-            if (stage.Weather is {} weather)
+            if (stage.Weather is { } weather)
             {
-                var ending = comp.NextUpdate;
-                // crossfade weather so as one ends the next starts
-                if (HasWeather(comp, comp.Stage - 1))
-                    ending += WeatherComponent.ShutdownTime;
-                if (HasWeather(comp, comp.Stage + 1))
-                    ending += WeatherComponent.StartupTime;
-                _weather.SetWeather(mapId, _proto.Index(weather), ending);
+                _weather.TrySetWeather(mapId, _proto.Index(weather), out var weatherEnt, TimeSpan.FromSeconds(duration));
             }
 
-            if (stage.Message is {} message)
+            if (stage.Message is { } message)
             {
                 var msg = Loc.GetString(message);
                 _chat.ChatMessageToManyFiltered(
@@ -61,15 +55,5 @@ public sealed class WeatherSchedulerSystem : EntitySystem
                     null);
             }
         }
-    }
-
-    private bool HasWeather(WeatherSchedulerComponent comp, int stage)
-    {
-        if (stage < 0)
-            stage = comp.Stages.Count + stage;
-        else if (stage >= comp.Stages.Count)
-            stage %= comp.Stages.Count;
-
-        return comp.Stages[stage].Weather != null;
     }
 }

@@ -46,6 +46,15 @@
     Ratvar: 1
     MiningPost: 3
     Hunter: 1
+    #erida-edit-start
+    BlackMesaResearchFacility: 1
+    BlackMesaOutpost: 2
+    BlackMesaSpot: 4
+    BlackMesaSpot2: 4
+    BlackMesaResearchOblom: 2
+    BlackMesaResearchShuttleCrush: 4
+    BlackMesaTelega: 4
+    #erida-edit-end
 #WIZDEN RUINS (only peak ones, rest are trash) man
     CargoWreck: 1
     Murder: 1

@@ -11,13 +11,13 @@
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
-  - type: Armor # provide more coverage than default ones. you know, it's a sec one
-    modifiers:
-      coefficients:
-        Heat: 0.9
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
+  #- type: Armor # provide more coverage than default ones. you know, it's a sec one
+  #  modifiers:
+  #     coefficients:
+  #      Heat: 0.9
+  #      Blunt: 0.9
+  #      Slash: 0.9
+  #     Piercing: 0.9
   - type: Tag
     tags:
     - Sunglasses

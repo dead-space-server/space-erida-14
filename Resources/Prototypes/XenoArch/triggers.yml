@@ -244,6 +244,7 @@
     - ZombieBlood
     - Sap
     - ShadowkinBlood # Erida-edit
+    - SulfurBlood
 
 - type: xenoArchTrigger
   id: TriggerThrow

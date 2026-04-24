@@ -1,0 +1,12 @@
+- type: latheRecipe
+  parent: BaseHydroToolRecipe
+  id: BotanicalSeedDnaDisk
+  result: BotanicalSeedDnaDisk
+  materials:
+    Steel: 500
+    Plastic: 100
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseServiceComputerRecipeCategory ]
+  id: BotanicalSeedDnaManipulatorCircuitboard
+  result: BotanicalSeedDnaManipulatorCircuitboard

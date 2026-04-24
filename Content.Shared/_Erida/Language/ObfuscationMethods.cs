@@ -36,6 +36,7 @@ public abstract partial class ObfuscationMethod
 ///     The most primitive method of obfuscation - replaces the entire message with one random replacement phrase.
 ///     Similar to ReplacementAccent. Base for all replacement-based obfuscation methods.
 /// </summary>
+[Virtual]
 public partial class ReplacementObfuscation : ObfuscationMethod
 {
     /// <summary>
@@ -69,7 +70,7 @@ public sealed partial class SyllableObfuscation : ReplacementObfuscation
 
     internal override void Obfuscate(StringBuilder builder, string message, SharedLanguageSystem context)
     {
-        const char eof = (char) 0; // Special character to mark the end of the message in the code below
+        const char eof = (char)0; // Special character to mark the end of the message in the code below
 
         var wordBeginIndex = 0;
         var hashCode = 0;
@@ -160,7 +161,7 @@ public sealed partial class PhraseObfuscation : ReplacementObfuscation
             var length = i - sentenceBeginIndex;
             if (length > 0)
             {
-                var newLength = (int) Math.Clamp(Math.Pow(length, Proportion) - 1, MinPhrases, MaxPhrases);
+                var newLength = (int)Math.Clamp(Math.Pow(length, Proportion) - 1, MinPhrases, MaxPhrases);
 
                 for (var j = 0; j < newLength; j++)
                 {

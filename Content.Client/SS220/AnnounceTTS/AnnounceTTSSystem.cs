@@ -63,7 +63,7 @@ public sealed class AnnounceTTSSystem : EntitySystem
                        (_currentlyPlaying.AudioStream != null && TerminatingOrDeleted(_currentlyPlaying.AudioStream!.Value))
                        || !(_currentlyPlaying.AudioStream?.Comp.Playing ?? false);
         }
-        catch (Exception err)
+        catch (Exception)
         {
             isDoNext = true;
         }
@@ -101,7 +101,7 @@ public sealed class AnnounceTTSSystem : EntitySystem
             AddEntityStreamToQueue(sourceAnnounce);
         if (ev.Data.Length > 0 && TryCreateAudioSource(ev.Data, volume, out var source))
         {
-            source.DelayMs = (int) audio.AudioStream.Length.TotalMilliseconds;
+            source.DelayMs = (int)audio.AudioStream.Length.TotalMilliseconds;
             AddEntityStreamToQueue(source);
         }
 
@@ -184,7 +184,7 @@ public sealed class AnnounceTTSSystem : EntitySystem
         {
             if (AudioStream != null)
             {
-                sys._audio.Stop(AudioStream.Value,AudioStream.Value);
+                sys._audio.Stop(AudioStream.Value, AudioStream.Value);
 
             }
             if (CacheFile != null)

@@ -32,7 +32,8 @@
     - state: base
     - state: kinetic-marker
   - type: GunUpgrade
-    examineText: gun-upgrade-crusher-kinetic-marker-name
+    name: gun-upgrade-crusher-kinetic-marker-name
+    uniqueGroup: mainUpgrade
   - type: GunUpgradeComponents
     components:
     - type: AmmoCounter
@@ -71,7 +72,8 @@
     - state: base
     - state: rude-buster
   - type: GunUpgrade
-    examineText: gun-upgrade-crusher-rude-buster-name
+    name: gun-upgrade-crusher-rude-buster-name
+    uniqueGroup: mainUpgrade
   - type: GunUpgradeComponents
     components:
     - type: AmmoCounter
@@ -158,7 +160,7 @@
   - type: Sprite
     state: ice-shard
   - type: GunUpgrade
-    examineText: gun-upgrade-crusher-ice-frost
+    name: gun-upgrade-crusher-ice-frost
   - type: WeaponUpgradeDamage
     bonusDamage:
       types:
@@ -184,7 +186,7 @@
   - type: Sprite
     state: black-shard
   - type: GunUpgrade
-    examineText: gun-upgrade-crusher-sharpness
+    name: gun-upgrade-crusher-sharpness
   - type: WeaponUpgradeDamage
     bonusDamage:
       types:
@@ -225,7 +227,7 @@
   - type: Sprite
     state: handle-weights
   - type: GunUpgrade
-    examineText: gun-upgrade-crusher-weights
+    name: gun-upgrade-crusher-weights
   - type: GunUpgradeComponents
     components:
     - type: MeleeThrowOnHit
@@ -245,7 +247,7 @@
   - type: Sprite
     state: handle-lightweight
   - type: GunUpgrade
-    examineText: gun-upgrade-crusher-lightweight
+    name: gun-upgrade-crusher-lightweight
   - type: WeaponUpgradeSpeed
     attackRateMultiplier: 1.3 # 30% faster
   - type: Tag
@@ -259,6 +261,23 @@
     children:
     - id: CrusherUpgradeMainMarker
     - id: CrusherUpgradeMainRudeBuster
+
+- type: entity
+  id: CrusherUpgradeHandleRange
+  parent: BaseCrusherUpgradeHandle
+  name: crusher handle upgrade (range)
+  description: A long handle replacement that allows you to make attacks more frequently.
+  components:
+  - type: Sprite
+    state: handle-spikes # Why spikes improve range? Cuz they're badass.
+  - type: GunUpgrade
+    name: gun-upgrade-crusher-range
+  - type: WeaponUpgradeRange
+    rangeMultiplier: 1.2 # 20% longer
+  - type: Tag
+    tags:
+    - CrusherUpgradeHandle
+    - CrusherUpgradeHandleRange
 
 # - type: entityTable
 #   id: CrusherUpgradesBlade
@@ -274,6 +293,7 @@
     children:
     - id: CrusherUpgradeHandleWeights
     - id: CrusherUpgradeHandleLight
+    - id: CrusherUpgradeHandleRange
 
 - type: entityTable
   id: CrusherUpgrades

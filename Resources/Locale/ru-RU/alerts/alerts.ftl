@@ -26,6 +26,8 @@ alerts-knockdown-name = [color=yellow]Knocked Down[/color]
 alerts-knockdown-desc = You're [color=yellow]Knocked Down[/color]! Something has slipped or pushed you over, encumbering your movement.
 alerts-handcuffed-name = [color=yellow]В наручниках[/color]
 alerts-handcuffed-desc = На вас [color=yellow]надели наручники[/color] и вы не можете использовать руки. Если кто-нибудь вас потащит, вы не сможете сопротивляться.
+alerts-collared-name = [color=yellow]Ошейник[/color]
+alerts-collared-desc = На вас надет [color=yellow]ошейник[/color]. Щёлкните по иконке, чтобы попытаться его снять.
 alerts-ensnared-name = [color=yellow]Опутаны[/color]
 alerts-ensnared-desc = Ваши конечности [color=yellow]чем-то опутаны[/color], и это мешает вам двигаться.
 alerts-buckled-name = [color=yellow]Пристёгнуты[/color]
