@@ -3,6 +3,9 @@
    name: trait-VulpJumpAbility-name
    description: trait-VulpJumpAbility-desc
    category: Species
+   conditions:
+   - !type:IsSpeciesCondition
+     species: Anthropomorph
    effects:
    - !type:AddCompsEffect
      components:
