@@ -1,0 +1,33 @@
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseNightmareObjective
+  components:
+  - type: Objective
+    difficulty: 1
+    issuer: objective-issuer-nightmare
+  - type: RoleRequirement
+    roles:
+    - NightmareRole
+
+- type: entity
+  parent: [BaseNightmareObjective, BaseSurviveObjective]
+  id: NightmareSurviveObjective
+  name: Survive
+  description: You should survive
+  components:
+  - type: Objective
+    icon:
+      sprite: _Erida/Mobs/Forgotten/parts.rsi
+      state: full
+
+- type: entity
+  parent: [BaseNightmareObjective, BaseFreeObjective]
+  id: NightmareLightDestroyObjective
+  name: Destroy light
+  description: Destroy all light on the station!
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/armblade.rsi
+      state: icon

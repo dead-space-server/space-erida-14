@@ -33,3 +33,7 @@
       - MindRoleGhostRoleSoloAntagonist
   - type: DynamicRuleCost
     cost: 60
+  - type: AntagObjectives
+    objectives:
+    - NightmareSurviveObjective
+    - NightmareLightDestroyObjective
