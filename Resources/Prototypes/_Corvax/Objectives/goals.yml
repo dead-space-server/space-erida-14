@@ -79,14 +79,9 @@
   id: Bunker
   text: station-goal-bunker
 
-# Special goals
 - type: stationGoal
-  id: FrameRepair
-  text: station-goal-frame-repair
-
-- type: stationGoal
-  id: XenobiologyRepair
-  text: station-goal-delta-xeno-repair
+  id: Transit
+  text: station-goal-transit
 
 - type: stationGoal
   id: VirusologyAmbusol
@@ -95,11 +90,20 @@
   - PillRomerol
   - PillRomerol
   - PillRomerol
+  minPlayers: 15
+
+# Special goals
+- type: stationGoal
+  id: FrameRepair
+  text: station-goal-frame-repair
+  isSpecialGoal: true
 
 - type: stationGoal
-  id: SectorSecurity
-  text: station-goal-split-secure
+  id: XenobiologyRepair
+  text: station-goal-delta-xeno-repair
+  isSpecialGoal: true
 
 - type: stationGoal
   id: AstraRepair
   text: station-goal-astra-repair
+  isSpecialGoal: true

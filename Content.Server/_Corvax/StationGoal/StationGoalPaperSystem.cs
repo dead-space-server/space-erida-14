@@ -38,19 +38,37 @@ namespace Content.Server._Corvax.StationGoal
             var query = EntityQueryEnumerator<StationGoalComponent>();
             while (query.MoveNext(out var uid, out var station))
             {
-                var tempGoals = new List<ProtoId<StationGoalPrototype>>(station.Goals);
+                var tempGoals = _proto.EnumeratePrototypes<StationGoalPrototype>().ToHashSet();
+                var whiteListedGoals = station.WhiteListedGoals.Select(id => _proto.Index(id)).ToHashSet();
+                var specialGoals = station.SpecialGoals.Select(id => _proto.Index(id)).ToHashSet();
+                if (whiteListedGoals.Count == 0)
+                {
+                    var blackListedGoals = station.BlackListedGoals.Select(id => _proto.Index(id)).ToHashSet();
+
+                    tempGoals.ExceptWith(blackListedGoals);
+                }
+                else
+                    tempGoals = whiteListedGoals;
+
                 StationGoalPrototype? selGoal = null;
                 while (tempGoals.Count > 0)
                 {
-                    var goalId = _random.Pick(tempGoals);
-                    var goalProto = _proto.Index(goalId);
+                    var goalProto = _random.Pick(tempGoals);
 
                     if (playerCount > goalProto.MaxPlayers ||
                         playerCount < goalProto.MinPlayers)
                     {
-                        tempGoals.Remove(goalId);
+                        tempGoals.Remove(goalProto);
                         continue;
                     }
+
+                    if (goalProto.SendOnlyWhenWhitelisted)
+                        if (!whiteListedGoals.Contains(goalProto))
+                            continue;
+
+                    if (goalProto.IsSpecialGoal)
+                        if (!specialGoals.Contains(goalProto))
+                            continue;
 
                     selGoal = goalProto;
                     break;

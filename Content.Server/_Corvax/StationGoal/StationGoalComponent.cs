@@ -9,6 +9,12 @@ namespace Content.Server._Corvax.StationGoal
     public sealed partial class StationGoalComponent : Component
     {
         [DataField]
-        public List<ProtoId<StationGoalPrototype>> Goals = new();
+        public List<ProtoId<StationGoalPrototype>> BlackListedGoals = new();
+
+        [DataField]
+        public List<ProtoId<StationGoalPrototype>> WhiteListedGoals = new();
+
+        [DataField]
+        public List<ProtoId<StationGoalPrototype>> SpecialGoals = new();
     }
 }
