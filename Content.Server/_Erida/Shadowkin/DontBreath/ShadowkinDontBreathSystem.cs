@@ -8,8 +8,6 @@ namespace Content.Server._Erida.DontBreath;
 
 public sealed partial class DontBreathSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
     public override void Initialize()
     {
         base.Initialize();
