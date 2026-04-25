@@ -34,9 +34,7 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
             || !_sharedGunSystem.CheckCanShootAndAmmo(args.User, (args.Equipped, compGun)))
             return;
 
-        var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(args.User);
-
-        compWeaponsContainer.gunList.Add((args.Equipped, compGun));
+        UpdateWeaponInList(args.User, (args.Equipped, compGun));
     }
 
     private void OnUnequipWeapon(EntityUid uid, DualWeaponsBonusComponent _, GotUnequippedHandEvent args)
@@ -44,9 +42,7 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
         if (!TryComp<GunComponent>(args.Unequipped, out var compGun))
             return;
 
-        var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(args.User);
-
-        compWeaponsContainer.gunList.Remove((args.Unequipped, compGun));
+        UpdateWeaponInList(args.User, (args.Unequipped, compGun));
     }
 
     private void OnUpdateWeaponInList(EntityUid uid, DualWeaponsBonusComponent comp, UpdateWeaponInListEvent args)
@@ -68,11 +64,9 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
 
     private void OnUpdateWeaponInListOnWielded(EntityUid uid, DualWeaponsBonusComponent comp, ItemWieldedEvent args)
     {
-        Log.Debug("Попытка обновить при OnWielded");
         if (!TryComp<GunComponent>(uid, out var gunComp)
             || gunComp == null)
             return;
-        Log.Debug("Переход к обновлению оружия в списке при OnWielded");
         UpdateWeaponInList(args.User, (uid, gunComp));
     }
 
@@ -89,9 +83,12 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
             return;
 
         var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(uid);
-        var weaponsList = compWeaponsContainer.gunList;
+        var weaponsList = compWeaponsContainer.GunList;
 
-        if (_sharedGunSystem.CheckCanShootAndAmmo(uid, gun))
+        Logger.Debug($"item: {uid.Id}, {Transform(gun).ParentUid.Id}");
+
+        if (_sharedGunSystem.CheckCanShootAndAmmo(uid, gun)
+            && Transform(gun).ParentUid == uid)
             weaponsList.Add(gun);
         else
             weaponsList.Remove(gun);
@@ -102,8 +99,8 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
             return;
 
         var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(uid);
-        compWeaponsContainer.gunList.Clear();
-        var weaponsList = compWeaponsContainer.gunList;
+        compWeaponsContainer.GunList.Clear();
+        var weaponsList = compWeaponsContainer.GunList;
 
         foreach (var (handString, handClass) in handsComp.Hands)
         {
@@ -116,6 +113,11 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
                 weaponsList.Add((heldItem.Value, gunComp));
             }
         }
+    }
+
+    public void CheckItemInHand()
+    {
+
     }
 }
 

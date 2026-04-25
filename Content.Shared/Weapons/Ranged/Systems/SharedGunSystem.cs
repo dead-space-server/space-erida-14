@@ -248,7 +248,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
         */
         var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(entity);
-        weaponsList = compWeaponsContainer.gunList;
+        weaponsList = compWeaponsContainer.GunList;
         return weaponsList.Count > 1;
     }
 
