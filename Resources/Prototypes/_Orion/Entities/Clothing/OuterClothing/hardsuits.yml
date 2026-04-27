@@ -64,5 +64,5 @@
         Radiation: 0.4
         Caustic: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1
+    walkModifier: 0.9
+    sprintModifier: 0.9
