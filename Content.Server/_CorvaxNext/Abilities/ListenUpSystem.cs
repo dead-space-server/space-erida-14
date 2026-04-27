@@ -9,7 +9,7 @@ namespace Content.Server._CorvaxNext.Resomi.Abilities;
 
 public sealed class ListenUpSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedPopupSystem _popup = default!;
+    [Dependency] public readonly SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         SubscribeLocalEvent<ListenUpComponent, ComponentStartup>(OnListenStartup);

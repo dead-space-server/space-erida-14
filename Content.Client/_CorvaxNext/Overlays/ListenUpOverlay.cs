@@ -24,8 +24,8 @@ public sealed class ListenUpOverlay : Overlay
 
     private Texture _texture;
 
-    protected float Radius;
-    protected SpriteSpecifier Sprite;
+    public float Radius;
+    public SpriteSpecifier Sprite;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
