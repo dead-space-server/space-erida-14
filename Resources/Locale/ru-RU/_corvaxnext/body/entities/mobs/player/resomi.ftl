@@ -1,2 +1,2 @@
-ent-BaseMobResomi = Урист МакРезоми
+ent-MobResomi = Урист МакРезоми
     .desc = { ent-BaseMobResomi.desc }

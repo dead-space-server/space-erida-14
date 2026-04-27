@@ -93,7 +93,7 @@
   parent:
   - AppearanceResomi
   - BaseSpeciesMobOrganic
-  id: BaseMobResomi
+  id: MobResomi
   components:
   - type: LanguageSpeaker #backmen: languages
     currentLanguage: TauCetiBasic
@@ -102,13 +102,13 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
-  #- type: WeaponsUseInability
-  #- type: AgillitySkill
-  #- type: ListenUpSkill
+  - type: WeaponsUseInability
+  - type: AgillitySkill
+  - type: ListenUpSkill
   - type: ChatModifier
     whisperListeningRange: 4
-  #- type: FlashModifier
-  #  modifier: 2
+  - type: FlashModifier
+    modifier: 2
   - type: ResomiAccent
   - type: DamageVisuals
     thresholds: [ 10, 30, 50, 70]

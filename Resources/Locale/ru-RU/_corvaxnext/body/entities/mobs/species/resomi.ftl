@@ -1,4 +1,4 @@
-ent-BaseMobResomi = { ent-BaseMobSpeciesOrganic }
+ent-BaseMobResomi = Урист МакРезоми
     .desc = { ent-BaseMobSpeciesOrganic.desc }
     .suffix = Резоми
 ent-BaseMobResomiDummy = { ent-BaseSpeciesDummy }

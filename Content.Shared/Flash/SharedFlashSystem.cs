@@ -162,6 +162,12 @@ public abstract class SharedFlashSystem : EntitySystem
         if (attempt.Cancelled)
             return;
 
+        // CorvaxNext duration modifier for resomi
+        if (TryComp<FlashModifierComponent>(target, out var flashModifier))
+        {
+            flashDuration *= flashModifier.Modifier;
+        }
+
         // don't paralyze, slowdown or convert to rev if the target is immune to flashes
         if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, flashDuration, true))
             return;
