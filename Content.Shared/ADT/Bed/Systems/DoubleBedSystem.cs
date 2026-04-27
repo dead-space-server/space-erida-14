@@ -9,7 +9,7 @@ using Robust.Shared.Map.Components;
 using System.Linq;
 using System.Numerics;
 
-namespace Content.Shared.ADT.Bed;
+namespace Content.Shared._ADT.Bed;
 
 /// <summary>
 /// Система для управления двуспальными кроватями с поддержкой двух позиций для пристёгивания и размещения постельного белья.
