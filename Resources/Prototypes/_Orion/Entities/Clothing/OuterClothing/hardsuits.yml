@@ -13,12 +13,12 @@
   - type: Armor
     modifiers:
       coefficients: # Erida
-        Blunt: 0.45
-        Slash: 0.45
-        Piercing: 0.40
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
         Heat: 0.2
         Radiation: 0.01
-        Caustic: 0.4
+        Caustic: 0.5
 
 - type: entity
   parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
@@ -35,12 +35,12 @@
   - type: Armor
     modifiers:
       coefficients: # Erida
-        Blunt: 0.40
-        Slash: 0.40
-        Piercing: 0.40
-        Heat: 0.40
-        Radiation: 0.4
-        Caustic: 0.4
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
 
 - type: entity
   parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
