@@ -139,7 +139,7 @@
       Lungs: OrganResomiLungs
       Heart: OrganResomiHeart
       Stomach: OrganResomiStomach
-      Liver: OrganHumanLiver
+      Liver: OrganResomiLiver
       Kidneys: OrganResomiKidneys
   - type: HumanoidProfile
     species: Resomi
@@ -237,10 +237,11 @@
       types:
         Slash: 5
   - type: Temperature
+    specificHeat: 42
+    currentTemperature: 310.15
+  - type: TemperatureDamage
     heatDamageThreshold: 325
     coldDamageThreshold: 230
-    currentTemperature: 310.15
-    specificHeat: 42
     coldDamage:
       types:
         Cold : 0.1 #per second, scales with temperature & other constants
@@ -402,7 +403,7 @@
 
 - type: entity
   parent: [ OrganBaseLiver, OrganResomiInternal, OrganResomiMetabolizer ]
-  id: OrganShadowkinLiver
+  id: OrganResomiLiver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganResomiInternal, OrganResomiMetabolizer ]
