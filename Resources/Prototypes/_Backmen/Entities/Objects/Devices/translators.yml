@@ -327,7 +327,7 @@
   id: WawaTranslator
   parent: [ TranslatorPoweredBase ]
   name: Wawa translator
-  description: Translates speech between Wawa and Tau-Ceti Basic. For talking to Shadowkin!
+  description: Translates speech between Wawa and Tau-Ceti Basic. For talking to Wawa!
   components:
   - type: HandheldTranslator
     spoken:
@@ -339,3 +339,21 @@
     requires:
     - TauCetiBasic
     - Wawa
+
+#Erida
+- type: entity
+  id: ResomiTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Resomi translator
+  description: Translates speech between Resomi and Tau-Ceti Basic. For talking to Resomi!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - Resomi
+    understood:
+    - TauCetiBasic
+    - Resomi
+    requires:
+    - TauCetiBasic
+    - Resomi

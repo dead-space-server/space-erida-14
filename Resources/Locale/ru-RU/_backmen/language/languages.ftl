@@ -143,3 +143,5 @@ language-Shark-description =
 language-Wawa-name = Вава
 language-Wawa-description =
     Язык состоящий из звуков "Ва" и используемый Слизеньками для общения.
+language-Resomi-name = Резоми
+language-Resomi-description = Щебет и короткие трели.

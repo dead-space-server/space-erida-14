@@ -100,8 +100,10 @@
   - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic
+    - Resomi
     understands:
     - TauCetiBasic
+    - Resomi
   - type: WeaponsUseInability
   - type: AgillitySkill
   - type: ListenUpSkill
