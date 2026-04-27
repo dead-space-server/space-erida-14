@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using System.Numerics;
 
-namespace Content.Shared.ADT.Bed.Components;
+namespace Content.Shared._ADT.Bed.Components;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DoubleBedComponent : Component
