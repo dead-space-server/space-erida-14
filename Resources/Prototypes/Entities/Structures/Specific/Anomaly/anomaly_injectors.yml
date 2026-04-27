@@ -66,7 +66,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: fire_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: fire_RESOMI
 
 - type: entity
@@ -107,7 +107,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: shock_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: shock_RESOMI
 
 - type: entity
@@ -148,7 +148,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: shadow_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: shadow_RESOMI
 
 - type: entity
@@ -189,7 +189,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: frost_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: frost_RESOMI
 
 - type: entity
@@ -230,7 +230,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: flora_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: flora_RESOMI
 
 - type: entity
@@ -271,7 +271,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: bluespace_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: bluespace_RESOMI
 
 - type: entity
@@ -312,7 +312,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: flesh_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: flesh_RESOMI
 
 - type: entity
@@ -354,7 +354,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: grav_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: grav_RESOMI
 
 - type: entity
@@ -395,7 +395,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: tech_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: tech_RESOMI
 
 - type: entity
@@ -437,7 +437,7 @@
             sprite: Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: rock_MOTH
           Resomi: # Corvax-Next-Resomi
-            sprite: _CorvaxNext/Structures/Specific/Anomalies/inner_anom_layer.rsi
+            sprite: _GoobStation/Structures/Specific/Anomalies/inner_anom_layer.rsi
             state: rock_RESOMI
 
 - type: entity

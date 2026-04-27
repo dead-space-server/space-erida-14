@@ -21,7 +21,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
-using Content.Shared._CorvaxNext.Resomi.Abilities; // resomi
+using Content.Shared._GoobStation.Resomi.Abilities; // resomi
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Collections;
 using Robust.Shared.Timing;
