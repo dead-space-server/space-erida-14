@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesResomiMale
+  values:
+    prefix: names_resomi_male-
+    count: 50

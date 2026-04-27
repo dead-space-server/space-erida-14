@@ -22,6 +22,7 @@
     # Erida-edit
     - Shadowkin
     # Erida-end
+    - Resomi #Corvax-Next
 
 - type: loadoutEffectGroup
   id: EffectSpeciesVox
