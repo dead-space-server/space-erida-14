@@ -671,13 +671,11 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
-<<<<<<< HEAD
 #start - backmen: languages
 - function: OpenLanguageMenu
   type: State
   key: L
 #end - backmen: languages
-=======
 # ADT-Tweak-start
 - function: OfferItem
   type: State
@@ -708,4 +706,3 @@ binds:
   type: State
   key: E
 # ADT-Tweak-end
->>>>>>> 11432e57d6 (Позирование (#2315))

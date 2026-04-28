@@ -1,280 +1,189 @@
+# The literal bare minimum needed to be a controllable mob. Cannot move but can interact.
 - type: entity
-  save: false
-  parent:
-  - BaseMob
-  - MobDamageable
-  - MobPolymorphable
-  - MobCombat
-  - StripableInventoryBase
-  id: BaseMobSpecies
   abstract: true
+  save: false
+  id: BaseControllable
   components:
   - type: Sprite
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    # ADT tweak start
-    # - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-    # - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: [ "underwearb" ]
-    - map: [ "underweart" ]
-    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "socks" ]
-    - map: ["jumpsuit"]
-    # ADT tweak start
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "ears" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "id" ]
-    - map: [ "outerClothing" ]
-    - map: [ "back" ]
-    - map: [ "neck" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "clownedon" ] # Dynamically generated
-      sprite: "Effects/creampie.rsi"
-      state: "creampie_human"
-      visible: false
-  - type: DamageVisuals
-    thresholds: [ 10, 20, 30, 50, 70, 100 ]
-    targetLayers:
-    - "enum.HumanoidVisualLayers.Chest"
-    - "enum.HumanoidVisualLayers.Head"
-    - "enum.HumanoidVisualLayers.LArm"
-    - "enum.HumanoidVisualLayers.LLeg"
-    - "enum.HumanoidVisualLayers.RArm"
-    - "enum.HumanoidVisualLayers.RLeg"
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#FF0000"
-      Burn:
-        sprite: Mobs/Effects/burn_damage.rsi
-  - type: GenericVisualizer
-    visuals:
-      enum.CreamPiedVisuals.Creamed:
-        clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
-          True: {visible: true}
-          False: {visible: false}
-  - type: StatusIcon
-    bounds: -0.5,-0.5,0.5,0.5
-  - type: RotationVisuals
-    defaultRotation: 90
-    horizontalRotation: 90
-  - type: HumanoidAppearance
-    species: Human
-  - type: SlowOnDamage
-    speedModifierThresholds:
-      60: 0.7
-      80: 0.5
+    noRot: true
+    drawdepth: Mobs
+  - type: GravityAffected
+  - type: Physics
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 185
-        restitution: 0.0
+        density: 50
         mask:
         - MobMask
         layer:
         - MobLayer
-  - type: FloorOcclusion
-  - type: RangedDamageSound
-    soundGroups:
-      Brute:
-        collection:
-          MeatBulletImpact
-    soundTypes:
-      Heat:
-        collection:
-          MeatLaserImpact
-  - type: Reactive
-    groups:
-      Flammable: [ Touch ]
-      Extinguish: [ Touch ]
-      Acidic: [Touch, Ingestion]
-    reactions:
-    - reagents: [Water, SpaceCleaner]
-      methods: [Touch]
-      effects:
-      - !type:WashCreamPieReaction
-  - type: StatusEffects
-    allowed:
-    - Stutter
-    - Electrocution
-    - Drunk
-    - SlurredSpeech
-    - RatvarianLanguage
-    - PressureImmunity
-    - Muted
-    - TemporaryBlindness
-    - Pacified
-    - StaminaModifier
-    - Flashed
-    - RadiationProtection
-    - Adrenaline
-    - ADTHallucinations # ADT-Tweak
-    - ADTStarvation # ADT-Tweak
-  - type: Body
-    prototype: Human
-    requiredLegs: 2
-  - type: Identity
-  - type: IdExaminable
-  - type: Hands
-  - type: ComplexInteraction
-  - type: Internals
-  - type: FloatingVisuals
-  - type: Climbing
-  - type: Cuffable
-  - type: Ensnareable
-    sprite: Objects/Misc/ensnare.rsi
-    state: icon
-  - type: AnimationPlayer
-  - type: Buckle
-  - type: CombatMode
-    canDisarm: true
-  - type: MeleeWeapon
-    soundHit:
-      collection: Punch
-    angle: 30
-    animation: WeaponArcFist
-    attackRate: 1
-    damage:
-      types:
-        Blunt: 5
-  - type: SleepEmitSound
-  - type: SSDIndicator
-  - type: StandingState
-  - type: Dna
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Input
+    context: "human"
+  - type: Actions
+  - type: Alerts
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: DoAfter
+  - type: Examiner
+  - type: Eye
+  - type: ContentEye
+  - type: CameraRecoil
   - type: MindContainer
-    showExamineInfo: true
-  - type: CanEnterCryostorage
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
-  - type: CanHostGuardian
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
-  - type: CreamPied
-  - type: Stripping
-  - type: UserInterface
-    interfaces:
-      enum.HumanoidMarkingModifierKey.Key:
-        type: HumanoidMarkingModifierBoundUserInterface
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
-      # Goobstation - changelings & heretics
-      enum.StoreUiKey.Key:
-        type: StoreBoundUserInterface
-      enum.HereticLivingHeartKey.Key: # goob edit - heretics
-        type: LivingHeartMenuBoundUserInterface
-  - type: Puller
-  - type: Speech
-    speechSounds: Alto
-  - type: DamageForceSay
-  - type: Vocal
-    sounds:
-      Male: MaleHuman
-      Female: FemaleHuman
-      Unsexed: MaleHuman
-  - type: Emoting
-  - type: BodyEmotes
-    soundsId: GeneralBodyEmotes
-  - type: Grammar
-    attributes:
-      proper: true
-  - type: MobPrice
-    price: 1500 # Kidnapping a living person and selling them for cred is a good move.
-    deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
-  - type: Tag
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
-    - AnomalyHost
-  # ADT tweak start
-  - type: LanguageSpeaker
-    languages:
-      GalacticCommon: Speak
-  - type: SpeechBarks
+  - type: RequireProjectileTarget
+    active: False
   - type: Posing
-  # ADT tweak end
+
+# The progenitor. This should only container the most basic components possible.
+# Only put things on here if every mob *must* have it. This includes ghosts.
+- type: entity
+  abstract: true
+  save: false
+  parent: BaseControllable
+  id: BaseMob
+  components:
+  - type: MobCollision
+  - type: Physics
+    bodyType: KinematicController
+  - type: InputMover
+  - type: MobMover
+  - type: MovementSpeedModifier
+  - type: LagCompensation
 
 - type: entity
   save: false
-  parent:
-  - MobBloodstream
-  - MobRespirator
-  - MobAtmosStandard
-  - MobFlammable
-  - BaseMobSpecies
-  id: BaseMobSpeciesOrganic
+  id: MobPolymorphable
   abstract: true
   components:
-  - type: MobState # ADT-Tweak
-  - type: OfferItem # ADT-Tweak
-  - type: RadiationPopup # ADT-Tweak
-  - type: PickupHumans # ADT-Tweak
-  - type: Barotrauma
+  - type: Polymorphable
+
+# Used for mobs that have health and can take damage.
+- type: entity
+  save: false
+  id: MobDamageable
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Biological
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 1500
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 40
+      behaviors:
+      - !type:VomitBehavior
+  - type: RadiationReceiver
+  - type: Stamina
+  - type: StunVisuals
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+      - ActionCritLastWords
+  - type: StoreDamageTakenOnMind
+  - type: Deathgasp
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+    - Cold
+    - Caustic
+    - Asphyxiation
+    - Radiation
+  - type: DamageOnHighSpeedImpact
     damage:
       types:
-        Blunt: 0.50 #per second, scales with pressure and other constants.
-        Heat: 0.1
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
-    allowedStates:
-    - Alive
-    damageCap: 20
+        Blunt: 5
+    soundHit:
+      path: /Audio/Effects/hit_kick.ogg
+  - type: Pullable
+  - type: LightningTarget
+    priority: 2
+    lightningExplode: false
+  - type: GhostOnMove
+    mustBeDead: true
+
+# Used for mobs that can enter combat mode and can attack.
+- type: entity
+  save: false
+  id: MobCombat
+  abstract: true
+  components:
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: MetalThud
     damage:
       types:
-        Heat: -0.07
-      groups:
-        Brute: -0.07
-  - type: Fingerprint
-  - type: Blindable
-  # Other
+        Blunt: 5
+
+# Used for mobs that are affected by atmospherics, pressure, and heat
+- type: entity
+  save: false
+  id: MobAtmosExposed
+  abstract: true
+  components:
+  - type: AtmosExposed
   - type: Temperature
-    heatDamageThreshold: 325
-    coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
-    coldDamage:
+  - type: TemperatureDamage
+    heatDamageThreshold: 325
+    coldDamageThreshold: 0
+    coldDamage: #per second, scales with temperature & other constants
       types:
-        Cold: 0.1 #per second, scales with temperature & other constants
-    heatDamage:
+        Cold : 0.1
+    heatDamage: #per second, scales with temperature & other constants
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants
-  - type: TemperatureSpeed
-    thresholds:
-      293: 0.9
-      260: 0.6 # ADT tweak
-      230: 0.4 # ADT tweak
+        Heat : 1.5
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -283,95 +192,83 @@
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
     thermalRegulationTemperatureThreshold: 2
-  - type: Perishable
-  - type: Butcherable
-    butcheringType: Spike # TODO human.
-    spawned:
-      - id: FoodMeat
-        amount: 5
+  - type: MovedByPressure
+
+# Used for mobs that require regular atmospheric conditions.
+- type: entity
+  parent: MobAtmosExposed
+  id: MobAtmosStandard
+  abstract: true
+  components:
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 250
+    sweatHeatRegulation: 500
+    shiveringHeatRegulation: 500
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 2
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
+    coldDamage:
+      types:
+        Cold: 1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 #per second, scales with temperature & other constants
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.15 #per second, scales with pressure and other constants.
+
+# Used for mobs that can be set on fire
+- type: entity
+  save: false
+  id: MobFlammable
+  abstract: true
+  components:
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage: #per second, scales with number of fire 'stacks'
+      types:
+        Heat: 1.5
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+
+# Used for mobs that need to breathe
+- type: entity
+  save: false
+  id: MobRespirator
+  abstract: true
+  components:
+  - type: Internals
   - type: Respirator
     damage:
       types:
-        Asphyxiation: 1.0
+        Asphyxiation: 2
     damageRecovery:
       types:
         Asphyxiation: -1.0
-  - type: FireVisuals
-    alternateState: Standing
-  - type: StunVisuals
-  # Start-ADT Tweak
-  - type: BloodCough
-    postingSayDamage: blood-cough
-  - type: TimeDespawnDamage
-  # End-ADT Tweak
 
+# Used for mobs that have a bloodstream
 - type: entity
   save: false
-  id: BaseSpeciesDummy
-  parent: InventoryBase
+  id: MobBloodstream
   abstract: true
   components:
-  - type: Hands
-  - type: ComplexInteraction
-  - type: ContainerContainer
-  - type: Icon
-    sprite: Mobs/Species/Human/parts.rsi
-    state: full
-  - type: Sprite
-    drawdepth: Mobs
-    noRot: true
-    # TODO BODY Turn these into individual body parts?
-    layers:
-    - map: [ "enum.HumanoidVisualLayers.Chest" ]
-    - map: [ "enum.HumanoidVisualLayers.Head" ]
-    - map: [ "enum.HumanoidVisualLayers.Snout" ]
-    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
-    - map: [ "enum.HumanoidVisualLayers.RArm" ]
-    - map: [ "enum.HumanoidVisualLayers.LArm" ]
-    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    # ADT tweak start
-    - map: [ "underwearb" ]
-    - map: [ "underweart" ]
-    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "socks" ]
-    - map: ["jumpsuit"]
-    # ADT tweak start
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
-    - map: [ "gloves" ]
-    - map: [ "shoes" ]
-    - map: [ "ears" ]
-    - map: [ "eyes" ]
-    - map: [ "belt" ]
-    - map: [ "id" ]
-    - map: [ "outerClothing" ]
-    - map: [ "back" ]
-    - map: [ "neck" ]
-    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
-    - map: [ "enum.HumanoidVisualLayers.Hair" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
-    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
-    - map: [ "enum.HumanoidVisualLayers.Tail" ]
-    - map: [ "mask" ]
-    - map: [ "head" ]
-    - map: [ "pocket1" ]
-    - map: [ "pocket2" ]
-  - type: Appearance
-  - type: HumanoidAppearance
-    species: Human
-  - type: Body
-    prototype: Human
-    requiredLegs: 2
-  - type: UserInterface
-    interfaces:
-      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
-        type: HumanoidMarkingModifierBoundUserInterface
+  - type: SolutionContainerManager
+  - type: InjectableSolution
+    solution: bloodstream
+  - type: Bloodstream
+    bloodlossDamage:
+      types:
+        Bloodloss: 0.5
+    bloodlossHealDamage:
+      types:
+        Bloodloss: -1
