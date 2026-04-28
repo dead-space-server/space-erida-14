@@ -37,7 +37,7 @@ public sealed partial class NightmareComponent : Component
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            { "Heat", 10 },
+            { "Heat", 15 },
         },
     };
 
