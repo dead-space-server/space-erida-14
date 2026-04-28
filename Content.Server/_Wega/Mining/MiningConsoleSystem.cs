@@ -92,10 +92,8 @@ public sealed class MiningConsoleSystem : EntitySystem
 
         if (account.Credits >= 1)
         {
-    var spawned = EntityManager.SpawnEntity(Credit, Transform(entity).Coordinates);
-    if (TryComp<StackComponent>(spawned, out var stackComp))
-        _stack.SetCount(spawned, (int)account.Credits, stackComp);
-    account.Credits = 0;
+            _stack.Spawn((int)account.Credits, Credit, Transform(entity).Coordinates);
+            account.Credits = 0;
         }
 
         if (account.ResearchPoints >= 1)
