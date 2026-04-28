@@ -45,6 +45,7 @@ gun-magazine-examine =
         [few] штуки
        *[other] штук
     }.
+gun-magazine-next-ammo = Следующий патрон: [color={$color}]{$ammo}[/color]
 # RevolverAmmoProvider
 gun-revolver-empty = Разрядить револьвер
 gun-revolver-full = Револьвер полностью заряжен
