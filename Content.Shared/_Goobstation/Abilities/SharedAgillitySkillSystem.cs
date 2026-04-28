@@ -9,7 +9,7 @@ using Content.Shared.Climbing.Systems;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Actions;
 
-namespace Content.Shared._GoobStation.Resomi.Abilities;
+namespace Content.Shared._Goobstation.Resomi.Abilities;
 
 public abstract class SharedAgillitySkillSystem : EntitySystem
 {

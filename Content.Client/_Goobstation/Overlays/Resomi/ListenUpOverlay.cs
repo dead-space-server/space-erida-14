@@ -10,7 +10,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs;
 
 
-namespace Content.Client._GoobStation.Overlays;
+namespace Content.Client._Goobstation.Overlays;
 
 public sealed class ListenUpOverlay : Overlay
 {

@@ -4,15 +4,15 @@ using Content.Shared.Maps;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
-using Content.Shared._GoobStation.Resomi;
+using Content.Shared._Goobstation.Resomi;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared._GoobStation.Resomi.Abilities;
+using Content.Shared._Goobstation.Resomi.Abilities;
 using Content.Shared.Damage.Components;
 using Robust.Shared.Physics;
 using Content.Shared.Actions.Components;
 
-namespace Content.Server._GoobStation.Resomi.Abilities;
+namespace Content.Server._Goobstation.Resomi.Abilities;
 
 public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
 {

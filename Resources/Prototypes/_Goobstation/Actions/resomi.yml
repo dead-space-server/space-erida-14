@@ -6,8 +6,8 @@
   - type: InstantAction
     event: !type:SwitchAgillityActionEvent
   - type: Action
-    icon: _GoobStation/Mobs/Species/Resomi/Abilities/Agility/AgilityOff.png
-    iconOn: _GoobStation/Mobs/Species/Resomi/Abilities/Agility/AgilityOn.png
+    icon: _Goobstation/Mobs/Species/Resomi/Abilities/Agility/AgilityOff.png
+    iconOn: _Goobstation/Mobs/Species/Resomi/Abilities/Agility/AgilityOn.png
 
 - type: entity
   id: SwitchListenUpAction
@@ -15,7 +15,7 @@
   description: Listen up
   components:
   - type: Action
-    icon: _GoobStation/Mobs/Species/Resomi/Abilities/ListenUp/EarsDown.png
-    iconOn: _GoobStation/Mobs/Species/Resomi/Abilities/ListenUp/EarsUp.png
+    icon: _Goobstation/Mobs/Species/Resomi/Abilities/ListenUp/EarsDown.png
+    iconOn: _Goobstation/Mobs/Species/Resomi/Abilities/ListenUp/EarsUp.png
   - type: InstantAction
     event: !type:ListenUpActionEvent

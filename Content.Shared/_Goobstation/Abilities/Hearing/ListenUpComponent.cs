@@ -1,6 +1,6 @@
 using Robust.Shared.Utility;
 
-namespace Content.Shared._GoobStation.Resomi.Abilities.Hearing;
+namespace Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 
 [RegisterComponent]
 public sealed partial class ListenUpComponent : Component
@@ -9,5 +9,5 @@ public sealed partial class ListenUpComponent : Component
     public float radius = 8f;
 
     [DataField]
-    public SpriteSpecifier Sprite = new SpriteSpecifier.Rsi(new("/Textures/_GoobStation/Mobs/Species/Resomi/Abilities/noise_effect.rsi"), "noise");
+    public SpriteSpecifier Sprite = new SpriteSpecifier.Rsi(new("/Textures/_Goobstation/Mobs/Species/Resomi/Abilities/noise_effect.rsi"), "noise");
 }

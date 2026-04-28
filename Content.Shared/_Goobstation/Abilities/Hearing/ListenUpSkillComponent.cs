@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Shared._GoobStation.Resomi.Abilities.Hearing;
+namespace Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 
 [RegisterComponent]
 public sealed partial class ListenUpSkillComponent : Component

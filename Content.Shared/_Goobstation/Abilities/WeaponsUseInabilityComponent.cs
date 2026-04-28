@@ -1,4 +1,4 @@
-namespace Content.Shared._GoobStation.Resomi.Abilities;
+namespace Content.Shared._Goobstation.Resomi.Abilities;
 
 
 /// <summary>

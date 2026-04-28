@@ -1,10 +1,10 @@
 using Robust.Client.Graphics;
 using Robust.Client.Player;
-using Content.Shared._GoobStation.Resomi.Abilities.Hearing;
+using Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 using Robust.Shared.Utility;
 using Robust.Shared.Player;
 
-namespace Content.Client._GoobStation.Overlays;
+namespace Content.Client._Goobstation.Overlays;
 
 public sealed class ListenUpSystem : SharedListenUpSkillSystem
 {

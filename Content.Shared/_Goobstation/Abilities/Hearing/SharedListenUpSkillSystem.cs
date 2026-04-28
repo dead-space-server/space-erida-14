@@ -3,7 +3,7 @@ using Content.Shared.DoAfter;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 
-namespace Content.Shared._GoobStation.Resomi.Abilities.Hearing;
+namespace Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 
 public abstract class SharedListenUpSkillSystem : EntitySystem
 {

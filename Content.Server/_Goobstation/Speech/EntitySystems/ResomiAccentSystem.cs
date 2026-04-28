@@ -1,9 +1,9 @@
 using System.Text.RegularExpressions;
-using Content.Server._GoobStation.Speech.Components;
+using Content.Server._Goobstation.Speech.Components;
 using Content.Shared.Speech;
 using Robust.Shared.Random;
 
-namespace Content.Server._GoobStation.Speech.EntitySystems;
+namespace Content.Server._Goobstation.Speech.EntitySystems;
 
 public sealed class ResomiAccentSystem : EntitySystem
 {

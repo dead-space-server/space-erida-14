@@ -3,7 +3,7 @@ using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
 using Content.Shared.Actions.Components;
 
-namespace Content.Shared._GoobStation.Resomi;
+namespace Content.Shared._Goobstation.Resomi;
 
 public sealed partial class SwitchAgillityActionEvent : InstantActionEvent;
 

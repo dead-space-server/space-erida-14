@@ -1,6 +1,6 @@
-using Content.Shared._GoobStation.Resomi.Abilities.Hearing;
+using Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 
-namespace Content.Server._GoobStation.Resomi.Abilities;
+namespace Content.Server._Goobstation.Resomi.Abilities;
 
 public sealed class ListenUpSkillSystem : SharedListenUpSkillSystem
 {

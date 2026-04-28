@@ -162,7 +162,7 @@ public abstract class SharedFlashSystem : EntitySystem
         if (attempt.Cancelled)
             return;
 
-        // CorvaxNext duration modifier for resomi
+        // duration modifier for resomi
         if (TryComp<FlashModifierComponent>(target, out var flashModifier))
         {
             flashDuration *= flashModifier.Modifier;

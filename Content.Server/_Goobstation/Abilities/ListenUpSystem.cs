@@ -1,11 +1,11 @@
-using Content.Shared._GoobStation.Resomi.Abilities.Hearing;
+using Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
 using Content.Shared.IdentityManagement;
 
-namespace Content.Server._GoobStation.Resomi.Abilities;
+namespace Content.Server._Goobstation.Resomi.Abilities;
 
 public sealed class ListenUpSystem : EntitySystem
 {
