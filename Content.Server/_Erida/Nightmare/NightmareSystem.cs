@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightIntension;
 using Content.Server._Erida.Nightmare.Components;
@@ -10,6 +11,7 @@ using Content.Server.Roles;
 using Content.Shared._Erida.Nightmare.Components;
 using Content.Shared._Erida.Roles.Components;
 using Content.Shared.Actions;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Maps;
@@ -21,8 +23,8 @@ using Content.Shared.Polymorph;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
@@ -46,7 +48,9 @@ public sealed class NightmareSystem : SharedNightmareSystem
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
-
+    [Dependency] private readonly FixtureSystem _fixture = default!;
+    [Dependency] private readonly IEntityManager _manager = default!;
+    [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -63,12 +67,26 @@ public sealed class NightmareSystem : SharedNightmareSystem
 
     private void OnInit(EntityUid uid, NightmareComponent component, MapInitEvent args)
     {
+        if (HasComp<CuffableComponent>(uid))
+            RemComp<CuffableComponent>(uid); // idk how to delete
+
         if (!HasComp<NightmarePolymorhedComponent>(uid))
         {
             _action.AddAction(uid, ref component.ShadowWalkActionEntity, component.ShadowWalkAction);
-        }
 
-        //Start(uid, component);
+            UpdateOldFixture(uid, component);
+
+            var xform = _manager.GetComponent<TransformComponent>(uid);
+
+            if (xform == null)
+                return;
+
+            var lightIntension = _lightIntension.TryGetLightLevel((uid, xform));
+            if (lightIntension <= component.RedLineOfLight)
+            {
+                ChangeLayerMask(uid, component);
+            }
+        }
     }
 
     public void OnShadowWalkActionEvent(Entity<NightmareComponent> ent, ref PolymorphActionEvent args)
@@ -154,6 +172,40 @@ public sealed class NightmareSystem : SharedNightmareSystem
             _antag.SendBriefing(session, Loc.GetString("nightmare-role-greeting"), null, null);
     }
 
+    private void ChangeLayerMask(EntityUid uid, NightmareComponent nmComp)
+    {
+        if (nmComp.OldLayerMask == null)
+            return;
+
+        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1");
+
+        if (currFixture == null)
+            return;
+
+        _physicsSystem.SetCollisionLayer(uid, "fix1", currFixture, nmComp.NewLayerMask);
+    }
+
+    private void ReturnOldFixture(EntityUid uid, NightmareComponent nmComp)
+    {
+        if (nmComp.OldLayerMask == null)
+            return;
+
+        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1");
+
+        if (currFixture == null)
+            return;
+
+        _physicsSystem.SetCollisionLayer(uid, "fix1", currFixture, nmComp.OldLayerMask.Value);
+    }
+
+    private void UpdateOldFixture(EntityUid uid, NightmareComponent nmComp)
+    {
+        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1");
+
+        if (currFixture != null)
+            nmComp.OldLayerMask = currFixture.CollisionLayer;
+    }
+
     public override void Update(float frameTime)
     {
         var curTime = _timing.CurTime;
@@ -169,8 +221,16 @@ public sealed class NightmareSystem : SharedNightmareSystem
                 nmComp.TimeToCheck = curTime + TimeSpan.FromSeconds(nmComp.TimeBetweenChecks);
 
                 var lightIntension = _lightIntension.TryGetLightLevel((uid, xform));
+                //Logger.Debug($"lightIntension: {lightIntension}");
                 if (lightIntension > nmComp.RedLineOfLight)
                 {
+                    if (nmComp.InTheDark)
+                    {
+                        nmComp.InTheDark = false;
+
+                        ReturnOldFixture(uid, nmComp);
+                    }
+
                     var scale = lightIntension - nmComp.RedLineOfLight;
                     _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
                     _audio.PlayPvs(nmComp.BurnSound, uid);
@@ -178,6 +238,14 @@ public sealed class NightmareSystem : SharedNightmareSystem
                 else
                 {
                     _damageable.TryChangeDamage(uid, nmComp.HealthFromDarkness, true, false);
+
+                    if (!nmComp.InTheDark)
+                    {
+                        nmComp.InTheDark = true;
+
+                        //UpdateOldFixture(uid, nmComp);
+                        ChangeLayerMask(uid, nmComp);
+                    }
                 }
             }
 

@@ -1,8 +1,7 @@
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using Content.Server.Administration.Logs;
+using Content.Server._Erida.LightIntension.Components;
 using Content.Shared.Physics;
+using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
@@ -14,6 +13,7 @@ public sealed class LightIntensionSystem : EntitySystem
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] private readonly ContainerSystem _containerSystem = default!;
 
     public override void Initialize()
     {
@@ -22,7 +22,30 @@ public sealed class LightIntensionSystem : EntitySystem
 
     public float TryGetLightLevel(Entity<TransformComponent> ent)
     {
+        float? maxCap = null;
+
+        if (TryComp<LightIntensionComponent>(ent, out var liComp))
+        {
+            maxCap = liComp.MaxLightCap;
+        }
+
         float totalIlluminance = 0;
+
+        if (_entityManager.TryGetComponent<MetaDataComponent>(ent, out var mdComp))
+            if (_containerSystem.TryGetContainingContainer((ent.Owner, ent.Comp, mdComp), out var container))
+            {
+                foreach (var item in container.ContainedEntities)
+                    if (TryComp<PointLightComponent>(item, out var plComp)
+                        && plComp.Enabled)
+                    {
+                        totalIlluminance += plComp.Energy;
+
+                        if (maxCap != null
+                            && maxCap < totalIlluminance)
+                            return maxCap.Value;
+                    }
+                return totalIlluminance;
+            }
 
         var entMapCoordsVector2d = _transformSystem.ToMapCoordinates(ent.Comp.Coordinates).Position;
 
@@ -94,6 +117,11 @@ public sealed class LightIntensionSystem : EntitySystem
             var normalizedDist = distance / lightComp.Radius;
             var attenuation = MathF.Pow(1 - normalizedDist, lightComp.Falloff);
             totalIlluminance += lightComp.Energy * attenuation;
+            //Logger.Debug($"light of {uid}: {1 - normalizedDist}, {lightComp.Falloff}, {lightComp.Energy}");
+
+            if (maxCap != null
+                && maxCap < totalIlluminance)
+                return maxCap.Value;
         }
 
         return totalIlluminance;

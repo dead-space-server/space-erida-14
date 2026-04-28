@@ -1,8 +1,10 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.Physics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Erida.Nightmare.Components;
@@ -11,6 +13,14 @@ namespace Content.Shared._Erida.Nightmare.Components;
 [AutoGenerateComponentState(true)]
 public sealed partial class NightmareComponent : Component
 {
+    [DataField]
+    public bool InTheDark = false;
+
+    [DataField]
+    public int? OldLayerMask;
+
+    public int NewLayerMask = (int)CollisionGroup.MidImpassable;
+
     [DataField]
     public float TimeBetweenChecks = 0.5f;
 
@@ -27,7 +37,7 @@ public sealed partial class NightmareComponent : Component
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            { "Heat", 20 },
+            { "Heat", 10 },
         },
     };
 
