@@ -122,7 +122,7 @@ public abstract class SharedWieldableSystem : EntitySystem
     private void OnGunRefreshModifiers(Entity<GunWieldBonusComponent> bonus, ref GunRefreshModifiersEvent args)
     {
         if (TryComp(bonus, out WieldableComponent? wield) &&
-            wield.Wielded && !HasComp<WeaponsUseInabilityComponent>(wield.User)) //Resomi)
+            wield.Wielded && !HasComp<WeaponsUseInabilityComponent>(wield.User)) // Corvax
         {
             args.MinAngle += bonus.Comp.MinAngle;
             args.MaxAngle += bonus.Comp.MaxAngle;

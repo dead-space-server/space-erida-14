@@ -1,4 +1,4 @@
- namespace Content.Shared.Flash.Components;
+namespace Content.Shared._Goobstation.FlashModifiers;
 
 
 /// <summary>
