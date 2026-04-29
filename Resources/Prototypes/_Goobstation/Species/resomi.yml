@@ -1,0 +1,19 @@
+- type: species
+  id: Resomi
+  name: species-name-resomi
+  roundStart: true
+  prototype: MobResomi
+  defaultSkinTone: "#FFFFFF"
+  dollPrototype: AppearanceResomi
+  skinColoration: Hues
+  maleFirstNames: NamesResomiMale
+  femaleFirstNames: NamesResomiFemale
+  naming: First
+  minAge: 18
+  maxAge: 50
+  youngAge: 20
+  oldAge: 40
+  sexes:
+    - Male
+    - Female
+    - Unsexed

@@ -19,7 +19,7 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: .50
+    reflectProb: .25
     spread: 90
   - type: Item
     storedSprite:
@@ -38,7 +38,7 @@
     # not putting a BlockMovement component here cause that's funny.
   - type: StealTarget
     stealGroup: CaptainSword
-    
+
 - type: entity
   name: syndicate rapier
   parent: [ BaseSword, BaseSyndicateContraband ]

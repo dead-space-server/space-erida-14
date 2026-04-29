@@ -522,3 +522,51 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/331
   avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
   title: Nightmare
+- author: Evgenimation
+  changes:
+    - type: Add
+      message: Лазерный карабин - повышение урона с 14 до 17
+  id: 47
+  time: '2026-04-27T19:45:17.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/345
+  avatar_url: https://avatars.githubusercontent.com/u/275415539?v=4
+  title: Баф лазерного карабина 14-17, добавление режима "АВТО"; Нёрф флота НТ.
+- author: Tiwulovoe
+  changes:
+    - type: Tweak
+      message: Скафандры InteQ равны синдикату
+    - type: Tweak
+      message: SyndieElite 40 40 40 -> 50 50 50, замедление 10 -> 5
+    - type: Fix
+      message: >-
+        Исправлены резисты скафандра и куртки бригмедика, шлем пилота CБ, шинель
+        ГСБ
+  id: 48
+  time: '2026-04-27T21:46:58.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/348
+  avatar_url: https://avatars.githubusercontent.com/u/250869396?v=4
+  title: Kk
+- author: xkttty
+  changes:
+    - type: Add
+      message: Раса Резоми
+    - type: Add
+      message: Способности Резоми
+    - type: Add
+      message: Система увеличивающая дальность слышимости шёпота
+    - type: Add
+      message: Система увеличивающая дальность от ослепления вспышкой
+  id: 49
+  time: '2026-04-28T09:31:50.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/347
+  avatar_url: https://avatars.githubusercontent.com/u/230472830?v=4
+  title: '[Add] Раса Резоми'
+- author: Sidzaru
+  changes:
+    - type: Add
+      message: 'Магазины патронов отображают в описании информацию о следующем патроне '
+  id: 50
+  time: '2026-04-28T12:16:01.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/349
+  avatar_url: https://avatars.githubusercontent.com/u/110207359?v=4
+  title: Next ammo description

@@ -33,7 +33,7 @@
 
 #NT Navy Engineering Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitCBURN
+  parent: ClothingOuterHardsuitERTEngineer
   id: ClothingOuterHardsuitNTNavyEngineering
   name: nanotrasen navy engineer hardsuit
   description: A protective hardsuit worn by crew members of an NanoTrasen naval vessels.

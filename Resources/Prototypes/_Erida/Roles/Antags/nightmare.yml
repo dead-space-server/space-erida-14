@@ -3,7 +3,7 @@
   name: role-antag-nightmare-name
   antagonist: true
   setPreference: false
-  objective: roles-antag-inferior-objective
+  objective: roles-antag-nightmare-objective
 
 - type: startingGear
   id: NightmareGear

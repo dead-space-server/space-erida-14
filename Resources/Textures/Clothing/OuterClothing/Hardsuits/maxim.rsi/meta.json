@@ -3,7 +3,7 @@
   "license": "CC-BY-SA-3.0",
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/6b3f58d7de4d4e374282819a7001eaa9bde1676d. Vox state made by Flareguy for SS14. Tail sprites by Tiniest Shark (github).",
   "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/6b3f58d7de4d4e374282819a7001eaa9bde1676d. Vox state made by Flareguy for SS14",
-  "copyright": "inhand resprited by inventor05(gh: inventor055, discord: qwerty05555)",
+  "copyright": "inhand resprited by inventor05(gh: inventor055, discord: qwerty05555), Resomi taked from https://github.com/space-syndicate/space-station-14-next",
   "size": {
     "x": 32,
     "y": 32
@@ -14,6 +14,10 @@
     },
     {
       "name": "equipped-OUTERCLOTHING",
+      "directions": 4
+    },
+    {
+      "name": "equipped-OUTERCLOTHING-resomi",
       "directions": 4
     },
     {

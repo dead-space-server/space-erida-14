@@ -1,57 +1,163 @@
-<div class="header" align="center">
-<img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg">
+<div align="center">
+    <h1>【 Erida 】</h1>
+    <h3></h3>
 </div>
 
-Space Station 14 — это ремейк SS13, работающий на [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), собственном движке, написанном на C#.
+<div align="center">
 
-Это форк репозитория по Space Station 14. Чтобы предотвратить создание форков RobustToolbox, клиентом и сервером загружается «контент-пак». Этот контент-пак содержит всё необходимое для игры на конкретном сервере.
-
-Если вы хотите разместить сервер или создавать контент для SS14, то вам нужен именно этот репозиторий. Он содержит как RobustToolbox, так и контент-пак для разработки новых контент-паков.
-
-## Ссылки
-
-<div class="header" align="center">
-
-[Веб-сайт](https://wiki.deadspace14.net/%D0%AD%D1%80%D0%B8%D0%B4%D0%B0:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0) | [Discord](https://discord.com/invite/erida)
+![](https://img.shields.io/github/last-commit/dead-space-server/space-erida-14?&style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/languages/top/dead-space-server/space-erida-14?&style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/repo-size/dead-space-server/space-erida-14?color=86dbce&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
+<a href="https://discord.gg/FC9EGuS7zm">
+  <img alt="Discord" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FFC9EGuS7zm%3Fwith_counts%3Dtrue&query=approximate_member_count&style=for-the-badge&logo=discord&logoColor=D9E0EE&label=discord&labelColor=%231E202B&color=86dbc0">
+</a>
 
 </div>
 
-## Документация / Вики
+<div align="center">
+    <h2>• overview •</h2>
+    <h3></h3>
+</div>
 
-На официальном [сайте документации](https://docs.spacestation14.com/) есть документация по контенту SS14, движку, игровому дизайну и многому другому.
-Дополнительно ознакомьтесь с этими ресурсами для получения информации о лицензиях и атрибуции:
-- [Robust Generic Attribution](https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html)
-- [Robust Station Image](https://docs.spacestation14.com/en/specifications/robust-station-image.html)
+<details>
+<summary>Contributing</summary>
 
-У нас также есть множество ресурсов для новых участников проекта.
+- We are happy to accept contributions from anybody.
+- Get in [Discord](https://discord.gg/FC9EGuS7zm) if you want to help.
 
-## Участие в разработке
+</details>
 
-Мы рады принимать вклад от любого человека. Заходите в Discord, если хотите помочь. У нас есть [список задач (issues)](https://github.com/dead-space-server/space-erida-14/issues), которые необходимо выполнить, и любой может взять их на себя. Не бойтесь просить о помощи!
-Просто убедитесь, что ваши изменения и pull request'ы соответствуют [рекомендациям по внесению вклада](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+<details>
+<summary>Links</summary>
 
-## Сборка
+- [Discord server](https://discord.gg/FC9EGuS7zm)
+- [Wiki](https://wiki.deadspace14.net/%D0%AD%D1%80%D0%B8%D0%B4%D0%B0:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0)
 
-1. Клонируйте этот репозиторий:
-```shell
-git clone https://github.com/space-wizards/space-station-14.git
-```
-2. Перейдите в директорию проекта и запустите `RUN_THIS.py` чтобы инициализировать Саб-Модули и скачать движок игры:
-```shell
-cd space-station-14
-python RUN_THIS.py
-```
-3. Соберите сервер:
+</details>
 
-Соберите сервер используя `dotnet build`.
+<details>
+<summary>How to connect (SS14)</summary>
 
-[Подробнее](https://docs.spacestation14.com/en/general-development/setup.html)
+- To connect to the server, use the following address: ```ss14s://erida.deadspace14.net```
+- Open Space Station 14 and paste this link into the server browser or use direct connect.
 
-## Лицензия
+</details>
 
-Весь код в этой кодовой базе выпущен под лицензией AGPL-3.0-or-later. Каждый файл содержит заголовки спецификации REUSE или отдельные файлы .license, которые указывают опцию двойного лицензирования. Это двойное лицензирование предоставлено для упрощения процесса для проектов, которые не используют AGPL, позволяя им использовать соответствующие части кода по альтернативной лицензии. Вы можете ознакомиться с полными текстами этих лицензий в каталоге LICENSES/.
+<div align="center">
+    <h2>• building •</h2>
+    <h3></h3>
+</div>
 
-Большинство медиа-ресурсов лицензированы под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) если не указано иное. Ресурсы имеют свою лицензию и информацию об авторских правах в файле метаданных. [Пример](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+<div align="center">
+  Refer to <a href="https://docs.spacestation14.com/en/general-development/setup/setting-up-a-development-environment.html">
+  the Space Wizards' guide</a> on setting up a development environment for general information.
+  <br><br>
+  We provide some scripts shown below to make the job easier.
+</div>
 
-> [!NOTE]
-> Некоторые ресурсы лицензированы по некоммерческой лицензии [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичным некоммерческим лицензиям, и их необходимо удалить, если вы хотите использовать этот проект в коммерческих целях.
+<details>
+<summary>Build dependencies</summary>
+
+- Git
+- .NET SDK 10.0
+
+</details>
+<details>
+<summary>Windows</summary>
+
+1. Clone this repository
+2. Run `Tools/RunScripts/bat/updateEngine.bat` in a terminal or file explorer to download the engine
+3. Run `Tools/RunScripts/bat/buildAllDebug.bat` after making any changes to the source
+4. Run `Tools/RunScripts/bat/runQuickAll.bat` to launch the client and the server
+5. Connect to localhost in the client and play
+
+</details>
+
+<details>
+<summary>Linux</summary>
+
+1. Clone this repository
+2. Run `Tools/RunScripts/sh/updateEngine.sh` in a terminal to download the engine
+3. Run `Tools/RunScripts/sh/buildAllDebug.sh` after making any changes to the source
+4. Run `Tools/RunScripts/sh/runQuickAll.sh` to launch the client and the server
+5. Connect to localhost in the client and play
+
+</details>
+
+<div align="center">
+    <h2>• license •</h2>
+    <h3></h3>
+</div>
+
+<details>
+<summary>License</summary>
+
+### Code
+This project is licensed under **AGPL-3.0-or-later**.
+
+Each file contains REUSE-compatible headers or `.license` files that may specify **dual licensing** options.
+This allows parts of the codebase to be reused under alternative licenses where applicable.
+
+Full license texts can be found in the `LICENSES/` directory.
+
+---
+
+### Assets
+Most media assets are licensed under **CC-BY-SA 3.0**, unless stated otherwise.
+
+- Assets include their own license and copyright information in metadata files
+- Example: [asset metadata](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json)
+
+---
+
+### Commercial use
+Some assets are licensed under **CC-BY-NC-SA 3.0** or similar non-commercial licenses.
+
+> These assets **must be removed** if you intend to use this project commercially.
+
+</details>
+
+<details>
+<summary> Attribution</summary>
+
+We organize borrowed content from other forks into dedicated subdirectories.
+
+This helps preserve proper attribution and reduces merge conflicts.
+
+Content inside these subdirectories originates from their respective forks and may include modifications.
+Changes are marked with comments around the edited lines.
+
+---
+
+### Fork sources
+
+| Subdirectory | Fork Name | Repository | License |
+|--------------|----------|------------|---------|
+| `_NF` | Frontier Station | https://github.com/new-frontiers-14/frontier-station-14 | AGPL 3.0 |
+| `_Corvax` | Corvax | https://github.com/space-syndicate/space-station-14 | MIT |
+| `_DV` | Delta-V | https://github.com/DeltaV-Station/Delta-v | AGPL 3.0 |
+| `_Erida` | Erida | https://github.com/dead-space-server/space-erida-14 | AGPL 3.0 |
+| `_EstacaoPirata` | Estacao Pirata | https://github.com/Day-OS/estacao-pirata-14 | AGPL 3.0 |
+| `_Goobstation` | Goob Station | https://github.com/Goob-Station/Goob-Station | AGPL 3.0 |
+| `_Lavaland` | Goob Station | https://github.com/Goob-Station/Goob-Station | AGPL 3.0 |
+| `_Lua` | Lua Frontier | https://github.com/Lua-Frontier/sector-frontier-14 | AGPL 3.0 |
+| `_Impstation` | Impstation | https://github.com/impstation/imp-station-14 | AGPL 3.0 |
+| `_NC14` | Nuclear 14 | https://github.com/Vault-Overseers/nuclear-14 | AGPL 3.0 |
+| `Nyanotrasen` | Nyanotrasen | https://github.com/Nyanotrasen/Nyanotrasen | MIT |
+| `Orion` | Orion Station | https://github.com/AtaraxiaSpaceFoundation/Orion-Station-14 | AGPL 3.0 |
+| `_White` | WhiteDream | https://github.com/WWhiteDreamProject/wwdpublic | AGPL 3.0 |
+
+---
+
+
+### Additional sources
+
+The following repositories were used without creating dedicated subdirectories:
+
+| Fork Name | Repository | License |
+|-----------|------------|---------|
+| Space Station 14 | https://github.com/space-wizards/space-station-14 | MIT |
+
+</details>
+
+![License](https://img.shields.io/badge/license-AGPL--3.0-blue?style=for-the-badge)

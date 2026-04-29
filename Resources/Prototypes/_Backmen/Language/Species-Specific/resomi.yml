@@ -1,0 +1,22 @@
+#Erida
+- type: language
+  id: Resomi
+  speech:
+    color: "#C0FFD9"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - чир
+    - чвик
+    - цвик
+    - цвир
+    - трив
+    - три
+    - пик
+    - пии
+    - пип
+    - пипи
+    - трр
+    - трии

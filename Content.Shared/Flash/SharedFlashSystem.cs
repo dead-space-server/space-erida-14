@@ -23,6 +23,7 @@ using System.Linq;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Clothing.Components;
+using Content.Shared._Goobstation.FlashModifiers;
 
 namespace Content.Shared.Flash;
 
@@ -161,6 +162,13 @@ public abstract class SharedFlashSystem : EntitySystem
 
         if (attempt.Cancelled)
             return;
+
+        // Corvax start
+        if (TryComp<FlashModifierComponent>(target, out var flashModifier))
+        {
+            flashDuration *= flashModifier.Modifier;
+        }
+        // Corvax end
 
         // don't paralyze, slowdown or convert to rev if the target is immune to flashes
         if (!_statusEffectsSystem.TryAddStatusEffect<FlashedComponent>(target, FlashedKey, flashDuration, true))

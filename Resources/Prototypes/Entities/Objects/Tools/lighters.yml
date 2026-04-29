@@ -4,6 +4,9 @@
   id: Lighter
   description: "A simple plastic cigarette lighter."
   components:
+  # Erida edit
+  - type: WelderHeating
+  # Erida edit
   - type: IgnitionSource
     ignited: false
   - type: ItemToggle

@@ -572,8 +572,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             var canUnderstandLanguage = _language.CanUnderstand(listener, language.ID); // backmen: language
             // How the entity perceives the message depends on whether it can understand its language
 
-
-            if (data.Range <= WhisperClearRange)
+            if (data.Range <= (TryComp<ChatModifierComponent>(listener, out var modifier) ? modifier.WhisperListeningRange : WhisperClearRange) || data.Observer) // Corvax-Next-Resomi
             {
                 var perceivedMessage = FormattedMessage.EscapeText(canUnderstandLanguage ? message : languageObfuscatedMessage); // backmen: language
                 var wrappedPerceivedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", nameIdentity, perceivedMessage, language);

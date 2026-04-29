@@ -21,11 +21,11 @@ jobs:
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: Tools/dump_github_contributors.ps1 > Resources/Credits/GitHub.txt
+        run: Tools/Wizards/dump_github_contributors.ps1 > Resources/Credits/GitHub.txt
 
       # TODO
       #- name: Get this week's Patreons
-      #  run: Tools/script2dumppatreons > Resources/Credits/Patrons.yml
+      #  run: Tools/Wizards/script2dumppatreons > Resources/Credits/Patrons.yml
 
       # MAKE SURE YOU ENABLED "Allow GitHub Actions to create and approve pull requests" IN YOUR ACTIONS, OTHERWISE IT WILL MOST LIKELY FAIL
 

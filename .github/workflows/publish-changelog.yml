@@ -17,7 +17,7 @@ jobs:
         ref: master
 
     - name: Publish changelog
-      run: Tools/actions_changelogs_since_last_run.py
+      run: Tools/Wizards/actions_changelogs_since_last_run.py
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DISCORD_WEBHOOK_URL_ERIDA: ${{ secrets.CHANGELOG_DISCORD_ERIDA_WEBHOOK }}
