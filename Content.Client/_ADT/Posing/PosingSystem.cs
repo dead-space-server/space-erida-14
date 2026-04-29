@@ -1,10 +1,10 @@
-using Content.Shared.ADT.Posing;
+using Content.Shared._ADT.Posing;
 using Content.Shared.Input;
 using Robust.Client.GameObjects;
 using Robust.Client.Input;
 using Robust.Client.Player;
 
-namespace Content.Client.ADT.Posing;
+namespace Content.Client._ADT.Posing;
 
 public sealed partial class PosingSystem : SharedPosingSystem
 {
