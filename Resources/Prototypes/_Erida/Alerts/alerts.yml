@@ -36,3 +36,11 @@
     state: icon
   name: alerts-collared-name
   description: alerts-collared-desc
+
+- type: alert
+  id: InShade
+  icons:
+  - sprite: /Textures/_Erida/Mobs/Forgotten/parts.rsi
+    state: full
+  name: alerts-inshade-name
+  description: alerts-inshade-desc

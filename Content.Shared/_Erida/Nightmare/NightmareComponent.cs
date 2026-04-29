@@ -1,3 +1,4 @@
+using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
@@ -42,6 +43,15 @@ public sealed partial class NightmareComponent : Component
     };
 
     [DataField]
+    public DamageSpecifier DamageFromGetFlashed = new()
+    {
+        DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
+        {
+            { "Heat", 30 },
+        },
+    };
+
+    [DataField]
     public DamageSpecifier HealthFromDarkness = new()
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
@@ -55,6 +65,9 @@ public sealed partial class NightmareComponent : Component
     };
 
     [DataField]
+    public bool PlayAudio = false;
+
+    [DataField]
     public SoundSpecifier BurnSound = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
 
     [DataField]
@@ -62,4 +75,7 @@ public sealed partial class NightmareComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? ShadowWalkActionEntity;
+
+    [DataField]
+    public ProtoId<AlertPrototype> Alert = "InShade";
 }

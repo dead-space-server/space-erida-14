@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightIntension;
@@ -11,9 +12,11 @@ using Content.Server.Roles;
 using Content.Shared._Erida.Nightmare.Components;
 using Content.Shared._Erida.Roles.Components;
 using Content.Shared.Actions;
+using Content.Shared.Alert;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Flash;
 using Content.Shared.Maps;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
@@ -52,6 +55,8 @@ public sealed class NightmareSystem : SharedNightmareSystem
     [Dependency] private readonly FixtureSystem _fixture = default!;
     [Dependency] private readonly IEntityManager _manager = default!;
     [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
+    [Dependency] private readonly AlertsSystem _alert = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -64,6 +69,8 @@ public sealed class NightmareSystem : SharedNightmareSystem
         SubscribeLocalEvent<NightmareRoleComponent, GetBriefingEvent>(OnGetBriefing);
         SubscribeLocalEvent<NightmareComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<NightmareComponent, MindRemovedMessage>(OnMindRemoved);
+
+        SubscribeLocalEvent<NightmareComponent, AfterFlashedEvent>(OnGetFlashed);
     }
 
     private void OnInit(EntityUid uid, NightmareComponent component, MapInitEvent args)
@@ -83,6 +90,8 @@ public sealed class NightmareSystem : SharedNightmareSystem
             if (lightIntension <= component.RedLineOfLight)
             {
                 ChangeLayerMask(uid, component);
+                component.InTheDark = true;
+                _alert.ShowAlert(uid, component.Alert);
             }
         }
     }
@@ -100,6 +109,11 @@ public sealed class NightmareSystem : SharedNightmareSystem
         if (_mindSystem.TryGetMind(ent, out var mindId, out var _)
         && _role.MindHasRole<NightmareRoleComponent>(mindId, out var nRole))
             nRole.Value.Comp2.PolymorphState = true;
+    }
+
+    private void OnGetFlashed(Entity<NightmareComponent> entity, ref AfterFlashedEvent args)
+    {
+        _damageable.TryChangeDamage(entity.Owner, entity.Comp.DamageFromGetFlashed, true);
     }
 
     public void OnRevertShadowWalkActionEvent(Entity<NightmareComponent> ent, ref RevertPolymorphActionEvent args)
@@ -236,11 +250,13 @@ public sealed class NightmareSystem : SharedNightmareSystem
                         nmComp.InTheDark = false;
 
                         ReturnOldFixture(uid, nmComp);
+                        _alert.ClearAlert(uid, nmComp.Alert);
                     }
 
                     var scale = lightIntension - nmComp.RedLineOfLight;
                     _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
-                    _audio.PlayPvs(nmComp.BurnSound, uid);
+                    if (nmComp.PlayAudio)
+                        _audio.PlayPvs(nmComp.BurnSound, uid);
                 }
                 else
                 {
@@ -250,6 +266,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
                     {
                         nmComp.InTheDark = true;
 
+                        _alert.ShowAlert(uid, nmComp.Alert);
                         //UpdateOldFixture(uid, nmComp);
                         ChangeLayerMask(uid, nmComp);
                     }
