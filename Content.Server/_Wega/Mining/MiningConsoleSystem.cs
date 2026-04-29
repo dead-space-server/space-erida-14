@@ -21,12 +21,14 @@ public sealed class MiningConsoleSystem : EntitySystem
     private static readonly EntProtoId Credit = "SpaceCash";
     private static readonly EntProtoId Disk = "ResearchDisk";
 
+    //Erida start
     private static readonly SortedList<int, string> ResearchDiskList = new()
     {
         { 10000, "ResearchDisk10000" },
         { 5000, "ResearchDisk5000" },
         { 1000, "ResearchDisk" }
     };
+    //Erida end
 
     public override void Initialize()
     {
@@ -98,6 +100,7 @@ public sealed class MiningConsoleSystem : EntitySystem
             return;
 
         if (account.Credits >= 1)
+        //Erida start
         {
             var ent = SpawnAtPosition(Credit, Transform(entity).Coordinates);
             _stack.SetCount((ent, null), (int)account.Credits);
@@ -116,6 +119,7 @@ public sealed class MiningConsoleSystem : EntitySystem
                 }
             }
         }
+        //Erida end
         UpdateUi(entity);
     }
 
