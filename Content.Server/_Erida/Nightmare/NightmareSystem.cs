@@ -23,6 +23,7 @@ using Content.Shared.Polymorph;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -67,9 +68,6 @@ public sealed class NightmareSystem : SharedNightmareSystem
 
     private void OnInit(EntityUid uid, NightmareComponent component, MapInitEvent args)
     {
-        if (HasComp<CuffableComponent>(uid))
-            RemComp<CuffableComponent>(uid); // idk how to delete
-
         if (!HasComp<NightmarePolymorhedComponent>(uid))
         {
             _action.AddAction(uid, ref component.ShadowWalkActionEntity, component.ShadowWalkAction);
@@ -174,10 +172,13 @@ public sealed class NightmareSystem : SharedNightmareSystem
 
     private void ChangeLayerMask(EntityUid uid, NightmareComponent nmComp)
     {
+        if (!TryComp<FixturesComponent>(uid, out var fComp))
+            return;
+
         if (nmComp.OldLayerMask == null)
             return;
 
-        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1");
+        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
 
         if (currFixture == null)
             return;
@@ -187,10 +188,13 @@ public sealed class NightmareSystem : SharedNightmareSystem
 
     private void ReturnOldFixture(EntityUid uid, NightmareComponent nmComp)
     {
+        if (!TryComp<FixturesComponent>(uid, out var fComp))
+            return;
+
         if (nmComp.OldLayerMask == null)
             return;
 
-        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1");
+        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
 
         if (currFixture == null)
             return;
@@ -200,7 +204,10 @@ public sealed class NightmareSystem : SharedNightmareSystem
 
     private void UpdateOldFixture(EntityUid uid, NightmareComponent nmComp)
     {
-        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1");
+        if (!TryComp<FixturesComponent>(uid, out var fComp))
+            return;
+
+        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
 
         if (currFixture != null)
             nmComp.OldLayerMask = currFixture.CollisionLayer;
