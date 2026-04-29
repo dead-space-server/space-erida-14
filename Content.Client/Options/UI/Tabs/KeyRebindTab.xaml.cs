@@ -195,7 +195,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
 
-
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
             AddButton(ContentKeyFunctions.SmartEquipBelt);
@@ -213,13 +212,14 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.RotateObjectCounterclockwise);
             AddButton(ContentKeyFunctions.FlipObject);
 
-            AddButton(ContentKeyFunctions.PosingOffsetLeft); // ADT-Tweak
-            AddButton(ContentKeyFunctions.PosingOffsetRight); // ADT-Tweak
-            AddButton(ContentKeyFunctions.PosingOffsetUp); // ADT-Tweak
-            AddButton(ContentKeyFunctions.PosingOffsetDown); // ADT-Tweak
-            AddButton(ContentKeyFunctions.PosingRotateNegative); // ADT-Tweak
-            AddButton(ContentKeyFunctions.PosingRotatePositive); // ADT-Tweak
-
+            // ADT start
+            AddButton(ContentKeyFunctions.PosingOffsetLeft);
+            AddButton(ContentKeyFunctions.PosingOffsetRight);
+            AddButton(ContentKeyFunctions.PosingOffsetUp);
+            AddButton(ContentKeyFunctions.PosingOffsetDown);
+            AddButton(ContentKeyFunctions.PosingRotateNegative);
+            AddButton(ContentKeyFunctions.PosingRotatePositive);
+            // ADT end
             AddHeader("ui-options-header-ui");
             AddButton(ContentKeyFunctions.FocusChat);
             AddButton(ContentKeyFunctions.FocusLocalChat);
