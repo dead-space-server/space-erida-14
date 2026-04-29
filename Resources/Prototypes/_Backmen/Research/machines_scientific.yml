@@ -89,3 +89,19 @@
   technologyPrerequisites:
   - XenoArcheologyMachines
   position: 4,0
+
+- type: technology
+  id: MiningServersTechnology
+  name: research-technology-mining-servers
+  icon:
+    sprite: _Wega/Structures/Machines/miningserver.rsi
+    state: mode1
+  discipline: Experimental
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+    - MiningServerCircuitboard
+    - MiningMonitoringComputerCircuitboard
+  technologyPrerequisites:
+    - ComprehensiveResearchDevelopmentSystem
+  position: 2,1

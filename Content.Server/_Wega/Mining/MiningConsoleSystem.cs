@@ -21,6 +21,13 @@ public sealed class MiningConsoleSystem : EntitySystem
     private static readonly EntProtoId Credit = "SpaceCash";
     private static readonly EntProtoId Disk = "ResearchDisk";
 
+    private static readonly SortedList<int, string> ResearchDiskList = new()
+    {
+        { 10000, "ResearchDisk10000" },
+        { 5000, "ResearchDisk5000" },
+        { 1000, "ResearchDisk" }
+    };
+
     public override void Initialize()
     {
         base.Initialize();
@@ -96,23 +103,19 @@ public sealed class MiningConsoleSystem : EntitySystem
             _stack.SetCount((ent, null), (int)account.Credits);
             account.Credits = 0;
         }
-
-        if (account.ResearchPoints >= 10000)
+        
+        if (account.ResearchPoints >= 1000)
         {
-            Spawn("ResearchDisk10000", Transform(entity).Coordinates);
-            account.ResearchPoints -= 10000;
+              foreach (var (threshold, protoId) in ResearchDiskList.Reverse())
+            {
+                if (account.ResearchPoints >= threshold)
+                {
+                    SpawnAtPosition(protoId, Transform(entity).Coordinates);
+                    account.ResearchPoints -= threshold;
+                    break; 
+                }
+            }
         }
-        else if (account.ResearchPoints >= 5000)
-        {  
-            Spawn("ResearchDisk5000", Transform(entity).Coordinates);
-            account.ResearchPoints -= 5000;
-        }
-        else if (account.ResearchPoints >= 1000)
-        {
-            Spawn("ResearchDisk", Transform(entity).Coordinates);
-            account.ResearchPoints -= 1000;
-        }
-
         UpdateUi(entity);
     }
 

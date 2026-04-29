@@ -179,7 +179,7 @@
   recipeUnlocks:
   - ClothingShoesBootsMagSci
   - ClothingShoesBootsMoon
-  position: 2,1
+  position: 3,2
 
 - type: technology
   id: QuantumMagneticBoots
