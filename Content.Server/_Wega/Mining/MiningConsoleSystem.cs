@@ -18,7 +18,7 @@ public sealed class MiningConsoleSystem : EntitySystem
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
-    private static readonly ProtoId<StackPrototype> Credit = "Credit";
+    private static readonly EntProtoId Credit = "SpaceCash";
     private static readonly EntProtoId Disk = "ResearchDisk";
 
     public override void Initialize()
@@ -97,11 +97,20 @@ public sealed class MiningConsoleSystem : EntitySystem
             account.Credits = 0;
         }
 
-        if (account.ResearchPoints >= 1)
+        if (account.ResearchPoints >= 10000)
         {
-            var disk = Spawn(Disk, Transform(entity).Coordinates);
-            EnsureComp<ResearchDiskComponent>(disk).Points = (int)account.ResearchPoints;
-            account.ResearchPoints = 0;
+            Spawn("ResearchDisk10000", Transform(entity).Coordinates);
+            account.ResearchPoints -= 10000;
+        }
+        else if (account.ResearchPoints >= 5000)
+        {  
+            Spawn("ResearchDisk5000", Transform(entity).Coordinates);
+            account.ResearchPoints -= 5000;
+        }
+        else if (account.ResearchPoints >= 1000)
+        {
+            Spawn("ResearchDisk", Transform(entity).Coordinates);
+            account.ResearchPoints -= 1000;
         }
 
         UpdateUi(entity);
