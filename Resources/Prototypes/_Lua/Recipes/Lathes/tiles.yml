@@ -29,38 +29,6 @@
   id: FloorTileItemGridDark
   result: FloorTileItemGridDark
 
-# Bee Station tiles
-
-- type: latheRecipe
-  parent: BaseSteelTileRecipe 
-  id: FloorTileItemSteelGreyMonoCommercial
-  result: FloorTileItemSteelGreyMonoCommercial
-
-- type: latheRecipe
-  parent: BaseSteelTileRecipe
-  id: FloorTileItemSteelMonoCommercial
-  result: FloorTileItemSteelMonoCommercial
-
-- type: latheRecipe
-  parent: BaseDarkTileRecipe
-  id: FloorTileItemSteelDarkMonoCommercial
-  result: FloorTileItemSteelDarkMonoCommercial
-
-- type: latheRecipe
-  parent: BaseDarkTileRecipe
-  id: FloorTileItemDarkSteelCommercial
-  result: FloorTileItemDarkSteelCommercial
-
-- type: latheRecipe
-  parent: BaseSteelTileRecipe
-  id: FloorTileItemGreySteelCommercial
-  result: FloorTileItemGreySteelCommercial
-
-- type: latheRecipe
-  parent: BaseSteelTileRecipe
-  id: FloorTileItemSteelCommercial
-  result: FloorTileItemSteelCommercial
-
 # LuaWorld
 
 - type: latheRecipe

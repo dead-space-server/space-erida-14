@@ -15,18 +15,6 @@
   - FloorTileItemGridDark
   - FloorTileItemGrid
 
-# Bee Station tiles
-
-- type: latheRecipePack
-  id: BeestationFloorTilesStatic
-  recipes:
-  - FloorTileItemSteelGreyMonoCommercial
-  - FloorTileItemGreySteelCommercial
-  - FloorTileItemSteelCommercial
-  - FloorTileItemSteelMonoCommercial
-  - FloorTileItemSteelDarkMonoCommercial
-  - FloorTileItemDarkSteelCommercial
-
 # LuaWorld
 
 - type: latheRecipePack
