@@ -708,11 +708,6 @@
     - PlasticTilesStatic
     - CarpetTilesStatic
     - PreciousTilesStatic
-    # Lua start
-    - ShiptestFloorTilesStatic 
-    - BeestationFloorTilesStatic
-    - LuaWorldFloorTilesStatic
-    # Lua end
     dynamicPacks:
     - FauxTiles
   - type: MaterialStorage
