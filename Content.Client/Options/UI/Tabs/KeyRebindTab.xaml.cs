@@ -278,6 +278,9 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.EditorGridPlace);
             AddButton(EngineKeyFunctions.EditorLinePlace);
             AddButton(EngineKeyFunctions.EditorRotateObject);
+            AddButton(ContentKeyFunctions.EditorNextObject);
+            AddButton(ContentKeyFunctions.EditorPreviousObject);
+
             AddButton(ContentKeyFunctions.EditorFlipObject);
             AddButton(ContentKeyFunctions.EditorCopyObject);
 
