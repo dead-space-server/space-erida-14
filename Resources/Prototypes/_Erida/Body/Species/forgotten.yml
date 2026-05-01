@@ -73,7 +73,6 @@
   - type: Inventory
     templateId: forgotten
   - type: Nightmare
-  - type: LightIntension
   - type: LightDestroyer
   - type: Insulated
   - type: ProtectedFromStepTriggers
@@ -251,22 +250,20 @@
         Blunt: 5
   - type: SleepEmitSound
   - type: SSDIndicator
-  - type: SSDAutoSendToCryostorage # Erida-edit
   - type: StandingState
   - type: Crawler
   - type: Dna
   - type: MindContainer
   - type: MindExaminable
-  - type: CanEnterCryostorage
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
   - type: CanHostGuardian
-  - type: NpcFactionMember
-    factions:
-    - NanoTrasen
+  #- type: NpcFactionMember
+  #  factions:
+  #  - NanoTrasen
   - type: CreamPied
     sprite:
       sprite: Effects/creampie.rsi
@@ -284,7 +281,6 @@
   - type: Puller
   - type: Speech
     speechSounds: Alto
-  - type: DamageForceSay
   - type: Vocal
     sounds:
       Male: MaleHuman
@@ -306,6 +302,5 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-    - AnomalyHost
+    #- AnomalyHost
   - type: TTS # Erida
-  - type: CardiopulmonaryResuscitation # Erida-edit

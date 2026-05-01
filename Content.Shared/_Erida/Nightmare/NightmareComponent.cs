@@ -5,7 +5,6 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Physics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Erida.Nightmare.Components;
@@ -14,10 +13,9 @@ namespace Content.Shared._Erida.Nightmare.Components;
 [AutoGenerateComponentState(true)]
 public sealed partial class NightmareComponent : Component
 {
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool InTheDark = false;
 
-    [DataField]
     public int? OldLayerMask;
 
     public int NewLayerMask = (int)CollisionGroup.MidImpassable;
@@ -32,6 +30,9 @@ public sealed partial class NightmareComponent : Component
 
     [DataField]
     public float RedLineOfLight = 0.01f;
+
+    [DataField]
+    public float MaxLightCap = 1f;
 
     [DataField]
     public DamageSpecifier DamageFromBurn = new()

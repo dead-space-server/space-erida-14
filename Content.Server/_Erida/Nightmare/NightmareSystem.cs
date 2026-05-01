@@ -1,6 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightIntension;
 using Content.Server._Erida.Nightmare.Components;
 using Content.Server.Antag;
@@ -13,7 +10,6 @@ using Content.Shared._Erida.Nightmare.Components;
 using Content.Shared._Erida.Roles.Components;
 using Content.Shared.Actions;
 using Content.Shared.Alert;
-using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Flash;
@@ -53,7 +49,6 @@ public sealed class NightmareSystem : SharedNightmareSystem
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly FixtureSystem _fixture = default!;
-    [Dependency] private readonly IEntityManager _manager = default!;
     [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
     [Dependency] private readonly AlertsSystem _alert = default!;
 
@@ -79,17 +74,21 @@ public sealed class NightmareSystem : SharedNightmareSystem
         {
             _action.AddAction(uid, ref component.ShadowWalkActionEntity, component.ShadowWalkAction);
 
-            UpdateOldFixture(uid, component);
-
-            var xform = _manager.GetComponent<TransformComponent>(uid);
-
-            if (xform == null)
+            if (!TryComp<FixturesComponent>(uid, out var fComp))
                 return;
 
-            var lightIntension = _lightIntension.TryGetLightLevel((uid, xform));
+            var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
+
+            if (currFixture != null)
+                component.OldLayerMask = currFixture.CollisionLayer;
+
+            if (!TryComp<TransformComponent>(uid, out var xform))
+                return;
+
+            var lightIntension = _lightIntension.TryGetLightLevel((uid, xform), component.MaxLightCap);
             if (lightIntension <= component.RedLineOfLight)
             {
-                ChangeLayerMask(uid, component);
+                ChangeLayerMask(uid, component.NewLayerMask);
                 component.InTheDark = true;
                 _alert.ShowAlert(uid, component.Alert);
             }
@@ -130,7 +129,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
             nRole.Value.Comp2.PolymorphState = false;
     }
 
-    private bool CheckCanTransformToPolymorph(EntityUid uid, NightmareComponent npComp, TransformComponent xform)
+    private bool CheckCanTransformToPolymorph(EntityUid uid, NightmareComponent nmComp, TransformComponent xform)
     {
         var gridUid = Transform(uid).GridUid;
 
@@ -141,9 +140,9 @@ public sealed class NightmareSystem : SharedNightmareSystem
             return false;
         }
 
-        var lightIntension = _lightIntension.TryGetLightLevel((uid, xform));
+        var lightIntension = _lightIntension.TryGetLightLevel((uid, xform), nmComp.MaxLightCap);
 
-        if (lightIntension > npComp.RedLineOfLight)
+        if (lightIntension > nmComp.RedLineOfLight)
             return false;
 
         return true;
@@ -158,7 +157,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
     {
         if (!_role.MindHasRole<NightmareRoleComponent>(args.Mind.Owner))
         {
-            Start(uid, component);
+            Start(uid);
         }
     }
 
@@ -171,7 +170,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
         _role.MindRemoveRole<NightmareRoleComponent>(args.Mind.Owner);
     }
 
-    public void Start(EntityUid uid, NightmareComponent comp)
+    public void Start(EntityUid uid)
     {
         if (!_mindSystem.TryGetMind(uid, out var mindId, out var mind))
         {
@@ -184,12 +183,12 @@ public sealed class NightmareSystem : SharedNightmareSystem
             _antag.SendBriefing(session, Loc.GetString("nightmare-role-greeting"), null, null);
     }
 
-    private void ChangeLayerMask(EntityUid uid, NightmareComponent nmComp)
+    private void ChangeLayerMask(EntityUid uid, int? layer)
     {
         if (!TryComp<FixturesComponent>(uid, out var fComp))
             return;
 
-        if (nmComp.OldLayerMask == null)
+        if (layer == null)
             return;
 
         var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
@@ -197,36 +196,25 @@ public sealed class NightmareSystem : SharedNightmareSystem
         if (currFixture == null)
             return;
 
-        _physicsSystem.SetCollisionLayer(uid, "fix1", currFixture, nmComp.NewLayerMask);
+        _physicsSystem.SetCollisionLayer(uid, "fix1", currFixture, layer.Value);
     }
-
-    private void ReturnOldFixture(EntityUid uid, NightmareComponent nmComp)
+    private void UpdateDarkState(EntityUid uid, NightmareComponent nmComp, bool ligth)
     {
-        if (!TryComp<FixturesComponent>(uid, out var fComp))
-            return;
+        if (ligth)
+        {
+            nmComp.InTheDark = false;
 
-        if (nmComp.OldLayerMask == null)
-            return;
+            ChangeLayerMask(uid, nmComp.OldLayerMask);
+            _alert.ClearAlert(uid, nmComp.Alert);
+        }
+        else
+        {
+            nmComp.InTheDark = true;
 
-        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
-
-        if (currFixture == null)
-            return;
-
-        _physicsSystem.SetCollisionLayer(uid, "fix1", currFixture, nmComp.OldLayerMask.Value);
+            ChangeLayerMask(uid, nmComp.NewLayerMask);
+            _alert.ShowAlert(uid, nmComp.Alert);
+        }
     }
-
-    private void UpdateOldFixture(EntityUid uid, NightmareComponent nmComp)
-    {
-        if (!TryComp<FixturesComponent>(uid, out var fComp))
-            return;
-
-        var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
-
-        if (currFixture != null)
-            nmComp.OldLayerMask = currFixture.CollisionLayer;
-    }
-
     public override void Update(float frameTime)
     {
         var curTime = _timing.CurTime;
@@ -241,17 +229,10 @@ public sealed class NightmareSystem : SharedNightmareSystem
             {
                 nmComp.TimeToCheck = curTime + TimeSpan.FromSeconds(nmComp.TimeBetweenChecks);
 
-                var lightIntension = _lightIntension.TryGetLightLevel((uid, xform));
-                //Logger.Debug($"lightIntension: {lightIntension}");
+                var lightIntension = _lightIntension.TryGetLightLevel((uid, xform), nmComp.MaxLightCap);
                 if (lightIntension > nmComp.RedLineOfLight)
                 {
-                    if (nmComp.InTheDark)
-                    {
-                        nmComp.InTheDark = false;
-
-                        ReturnOldFixture(uid, nmComp);
-                        _alert.ClearAlert(uid, nmComp.Alert);
-                    }
+                    UpdateDarkState(uid, nmComp, true);
 
                     var scale = lightIntension - nmComp.RedLineOfLight;
                     _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
@@ -262,14 +243,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
                 {
                     _damageable.TryChangeDamage(uid, nmComp.HealthFromDarkness, true, false);
 
-                    if (!nmComp.InTheDark)
-                    {
-                        nmComp.InTheDark = true;
-
-                        _alert.ShowAlert(uid, nmComp.Alert);
-                        //UpdateOldFixture(uid, nmComp);
-                        ChangeLayerMask(uid, nmComp);
-                    }
+                    UpdateDarkState(uid, nmComp, false);
                 }
             }
 
