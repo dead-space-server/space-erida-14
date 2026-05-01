@@ -82,7 +82,9 @@ public sealed class NightmareSystem : SharedNightmareSystem
             if (currFixture != null)
                 component.OldLayerMask = currFixture.CollisionLayer;
 
-            if (!TryComp<TransformComponent>(uid, out var xform))
+            var xform = Comp<TransformComponent>(uid);
+
+            if (xform == null)
                 return;
 
             var lightIntension = _lightIntension.TryGetLightLevel((uid, xform), component.MaxLightCap);
