@@ -67,3 +67,25 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingOuterBase
+  id: HelldiverArmor
+  name: B-01 "Тактик"
+  description: Это стандартная броня Супер-Земли, изготовленная из того же сплава, что и корпус эсминца.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Armor/Helldiver.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Armor/Helldiver.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.5

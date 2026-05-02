@@ -108,3 +108,17 @@
           - SyndicateRapier
   - type: Appearance
   
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  id: ClothingBeltHelldiver
+  name: Пояс B-01 "Тактик"
+  description: Это стандартный пояс солдата Супер-Земли.
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Belt/helldiver_belt.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Belt/helldiver_belt.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+  - type: StaticPrice
+    price: 500
