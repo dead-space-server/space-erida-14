@@ -50,6 +50,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly DualWeaponsContainerSystem _dwcSystem = default!;
     [Dependency] protected readonly DamageableSystem Damageable = default!;
     [Dependency] protected readonly ExamineSystemShared Examine = default!;
     [Dependency] protected readonly IGameTiming Timing = default!;
@@ -485,13 +486,15 @@ public abstract partial class SharedGunSystem : EntitySystem
             User = user,
             Used = gun
         };
+
         RaiseLocalEvent(gun, ref prevention);
         if (prevention.Cancelled)
+        {
+            _dwcSystem.RemoveFromWeaponInList(user, gun.Owner);
             return false;
+        }
 
-        RaiseLocalEvent(user, ref prevention);
-        if (prevention.Cancelled)
-            return false;
+        _dwcSystem.AddWeaponInList(user, gun.Owner);
 
         return true;
     }

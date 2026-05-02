@@ -77,6 +77,26 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
             return;
         UpdateWeaponInList(args.User, (uid, gunComp));
     }
+    public bool AddWeaponInList(Entity<DualWeaponsContainerComponent?> ent, Entity<GunComponent?, DualWeaponsBonusComponent?> gun)
+    {
+        if (!Resolve(gun.Owner, ref gun.Comp1, ref gun.Comp2)
+            || !Resolve(ent.Owner, ref ent.Comp))
+            return false;
+
+        ent.Comp.GunList.Add((gun.Owner, gun.Comp1));
+
+        return true;
+    }
+    public bool RemoveFromWeaponInList(Entity<DualWeaponsContainerComponent?> ent, Entity<GunComponent?, DualWeaponsBonusComponent?> gun)
+    {
+        if (!Resolve(gun.Owner, ref gun.Comp1, ref gun.Comp2)
+            || !Resolve(ent.Owner, ref ent.Comp))
+            return false;
+
+        ent.Comp.GunList.Remove((gun.Owner, gun.Comp1));
+
+        return true;
+    }
     public void UpdateWeaponInList(EntityUid uid, Entity<GunComponent> gun)
     {
         if (!HasComp<DualWeaponsBonusComponent>(gun))
@@ -113,11 +133,6 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
                 weaponsList.Add((heldItem.Value, gunComp));
             }
         }
-    }
-
-    public void CheckItemInHand()
-    {
-
     }
 }
 
