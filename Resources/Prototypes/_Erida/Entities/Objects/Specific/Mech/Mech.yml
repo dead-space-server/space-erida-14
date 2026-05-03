@@ -1,0 +1,127 @@
+  #Mech
+- type: damageModifierSet
+  id: HeavyArmor
+  coefficients:
+    Blunt: 0.6
+    Slash: 0.6
+    Piercing: 0.65
+    Shock: 1.4
+    Heat: 0.7
+  flatReductions:
+    Blunt: 8
+    Heat: 10
+
+- type: entity
+  id: MechRipley2
+  parent: BaseMech
+  name: Ripley APLU MK-II
+  description: The "MK-II" has a pressurized cabin for space operations, but the added weight has slowed it down.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/mecha.rsi
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: ripley
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: ripley
+    openState: ripley-open
+    brokenState: ripley-broken
+    mechToPilotDamageMultiplier: 0
+    maxIntegrity: 400
+    airtight: true
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: Damageable
+    damageModifierSet: HeavyArmor
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCellHigh
+
+#Mech-gun
+- type: entity
+  id: BulletCaselessRifle20
+  name: bullet (.20 rifle caseless)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 17
+
+- type: entity
+  id: CartridgeCaselessRifle20
+  name: cartridge (.20 rifle caseless)
+  parent: CartridgeCaselessRifle 
+  description: A .20 rifle caseless round.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletCaselessRifle20
+  - type: Tag
+    tags:
+    - CartridgeCaselessRifle20
+
+- type: entity
+  id: MagazineCaselessRifle20Box
+  name: ammo box (.20 rifle caseless)
+  parent: MagazineLightRifleBox
+  description: Mech-gun magazine
+  components:
+  - type: Tag
+    tags:
+    - MagazineCaselessRifle20
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeCaselessRifle20
+    proto: CartridgeCaselessRifle20
+    capacity: 1000
+  - type: Item
+    size: Huge
+
+- type: entity
+  id: WeaponLightMachineGunL6Mech
+  name: L6C-20 
+  parent: [ WeaponLightMachineGunL6, BaseMechEquipment ]
+  description: L6 for mech
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineCaselessRifle20Box
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineCaselessRifle20
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle20
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeCaselessRifle20
+
+- type: entity
+  name: RPG-220
+  parent: [ WeaponLauncherRocket, BaseMechEquipment ]
+  id: WeaponLauncherRocket220
+  description: A modified ancient rocket-propelled grenade launcher.
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRocket
+    proto: CartridgeRocket
+    capacity: 12
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
