@@ -4,8 +4,9 @@ using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Wieldable;
-using Content.Shared.Power;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Interaction.Events;
+using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Shared.Weapons.Ranged;
 
@@ -17,86 +18,96 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<DualWeaponsBonusComponent, GotEquippedHandEvent>(OnEquipWeapon);
+        //SubscribeLocalEvent<DualWeaponsBonusComponent, GotEquippedHandEvent>(OnEquipWeapon);
         SubscribeLocalEvent<DualWeaponsBonusComponent, GotUnequippedHandEvent>(OnUnequipWeapon);
-        SubscribeLocalEvent<DualWeaponsBonusComponent, UpdateWeaponInListEvent>(OnUpdateWeaponInList);
-        SubscribeLocalEvent<DualWeaponsContainerComponent, UpdateFullWeaponsListEvent>(OnUpdateFullWeaponsList);
 
-        SubscribeLocalEvent<DualWeaponsBonusComponent, OnEmptyGunShotEvent>(OnUpdateWeaponInListOnEmptyGun);
-
-        SubscribeLocalEvent<DualWeaponsBonusComponent, ItemWieldedEvent>(OnUpdateWeaponInListOnWielded);
+        //SubscribeLocalEvent<DualWeaponsBonusComponent, ItemWieldedEvent>(OnUpdateWeaponInListOnWielded);
         SubscribeLocalEvent<DualWeaponsBonusComponent, ItemUnwieldedEvent>(OnUpdateWeaponInListOnUnwielded);
+
+        SubscribeLocalEvent<DualWeaponsBonusComponent, OnEmptyGunShotEvent>(OnEmptyGunShot);
+        SubscribeLocalEvent<DualWeaponsBonusComponent, ContactInteractionEvent>(OnContactInteractionEvent);
     }
 
-    private void OnEquipWeapon(EntityUid uid, DualWeaponsBonusComponent _, GotEquippedHandEvent args)
+    private void OnEquipWeapon(EntityUid uid, DualWeaponsBonusComponent dwbComp, GotEquippedHandEvent args)
     {
         if (!TryComp<GunComponent>(args.Equipped, out var compGun)
             || !_sharedGunSystem.CheckCanShootAndAmmo(args.User, (args.Equipped, compGun)))
             return;
 
-        UpdateWeaponInList(args.User, (args.Equipped, compGun));
+        AddOrRemoveWeaponList(args.User, (args.Equipped, compGun, dwbComp), true);
     }
 
-    private void OnUnequipWeapon(EntityUid uid, DualWeaponsBonusComponent _, GotUnequippedHandEvent args)
+    private void OnUnequipWeapon(EntityUid uid, DualWeaponsBonusComponent dwbComp, GotUnequippedHandEvent args)
     {
         if (!TryComp<GunComponent>(args.Unequipped, out var compGun))
             return;
 
-        UpdateWeaponInList(args.User, (args.Unequipped, compGun));
+        AddOrRemoveWeaponList(args.User, (args.Unequipped, compGun, dwbComp), false);
     }
 
-    private void OnUpdateWeaponInList(EntityUid uid, DualWeaponsBonusComponent comp, UpdateWeaponInListEvent args)
-    {
-        UpdateWeaponInList(args.User, args.Gun);
-    }
-
-    private void OnUpdateFullWeaponsList(EntityUid uid, DualWeaponsContainerComponent comp, UpdateFullWeaponsListEvent args)
-    {
-        UpdateFullList(args.User);
-    }
-
-    private void OnUpdateWeaponInListOnEmptyGun(EntityUid uid, DualWeaponsBonusComponent comp, OnEmptyGunShotEvent args)
+    private void OnUpdateWeaponInListOnWielded(EntityUid uid, DualWeaponsBonusComponent dwbComp, ItemWieldedEvent args)
     {
         if (!TryComp<GunComponent>(uid, out var gunComp))
             return;
-        UpdateWeaponInList(args.User, (uid, gunComp));
-    }
 
-    private void OnUpdateWeaponInListOnWielded(EntityUid uid, DualWeaponsBonusComponent comp, ItemWieldedEvent args)
-    {
-        if (!TryComp<GunComponent>(uid, out var gunComp)
-            || gunComp == null)
+        if (!HasComp<GunRequiresWieldComponent>(uid))
             return;
-        UpdateWeaponInList(args.User, (uid, gunComp));
+
+        AddOrRemoveWeaponList(args.User, (uid, gunComp, dwbComp), true);
     }
 
-    private void OnUpdateWeaponInListOnUnwielded(EntityUid uid, DualWeaponsBonusComponent comp, ItemUnwieldedEvent args)
+    private void OnUpdateWeaponInListOnUnwielded(EntityUid uid, DualWeaponsBonusComponent dwbComp, ItemUnwieldedEvent args)
     {
-        if (!TryComp<GunComponent>(uid, out var gunComp)
-            || gunComp == null)
+        if (!TryComp<GunComponent>(uid, out var gunComp))
             return;
-        UpdateWeaponInList(args.User, (uid, gunComp));
+
+        if (!HasComp<GunRequiresWieldComponent>(uid))
+            return;
+
+        AddOrRemoveWeaponList(args.User, (uid, gunComp, dwbComp), false);
     }
-    public bool AddWeaponInList(Entity<DualWeaponsContainerComponent?> ent, Entity<GunComponent?, DualWeaponsBonusComponent?> gun)
+    private void OnEmptyGunShot(Entity<DualWeaponsBonusComponent> ent, ref OnEmptyGunShotEvent args)
     {
-        if (!Resolve(gun.Owner, ref gun.Comp1, ref gun.Comp2)
-            || !Resolve(ent.Owner, ref ent.Comp))
-            return false;
+        if (!TryComp<GunComponent>(ent, out var gunComp))
+            return;
 
-        ent.Comp.GunList.Add((gun.Owner, gun.Comp1));
-
-        return true;
+        AddOrRemoveWeaponList(args.User, (ent, gunComp, ent.Comp), false);
     }
-    public bool RemoveFromWeaponInList(Entity<DualWeaponsContainerComponent?> ent, Entity<GunComponent?, DualWeaponsBonusComponent?> gun)
+
+    private void OnContactInteractionEvent(Entity<DualWeaponsBonusComponent> ent, ref ContactInteractionEvent args)
     {
-        if (!Resolve(gun.Owner, ref gun.Comp1, ref gun.Comp2)
-            || !Resolve(ent.Owner, ref ent.Comp))
-            return false;
+        if (!TryComp<GunComponent>(ent, out var gunComp))
+            return;
 
-        ent.Comp.GunList.Remove((gun.Owner, gun.Comp1));
+        if (TryComp<HandsComponent>(args.Other, out var hComp))
+            if (!_hands.IsHolding((args.Other, hComp), ent))
+                return;
 
-        return true;
+        EnsureComp<DualWeaponsContainerComponent>(args.Other);
+        Logger.Debug(args.Other.ToString());
+
+        if (HasComp<DualWeaponsContainerComponent>(args.Other))
+            Logger.Debug("AAAAA");
+
+        AddOrRemoveWeaponList(args.Other, (ent, gunComp, ent.Comp), true);
     }
+
+    public void AddOrRemoveWeaponList(Entity<DualWeaponsContainerComponent?> ent, Entity<GunComponent?, DualWeaponsBonusComponent?> gun, bool add)
+    {
+        if (!Resolve(gun.Owner, ref gun.Comp1, ref gun.Comp2))
+            return;
+
+        if (!Resolve(ent.Owner, ref ent.Comp))
+            ent.Comp = EnsureComp<DualWeaponsContainerComponent>(ent);
+
+        if (add)
+            ent.Comp.GunList.Add(gun.Owner);
+        else
+            ent.Comp.GunList.Remove(gun.Owner);
+
+        Dirty(ent, ent.Comp);
+    }
+
     public void UpdateWeaponInList(EntityUid uid, Entity<GunComponent> gun)
     {
         if (!HasComp<DualWeaponsBonusComponent>(gun))
@@ -130,21 +141,8 @@ public sealed class DualWeaponsContainerSystem : EntitySystem
                 && HasComp<DualWeaponsContainerComponent>(heldItem.Value)
                 && _sharedGunSystem.CheckCanShootAndAmmo(uid, (heldItem.Value, gunComp)))
             {
-                weaponsList.Add((heldItem.Value, gunComp));
+                weaponsList.Add(heldItem.Value);
             }
         }
     }
-}
-
-[ByRefEvent]
-public struct UpdateWeaponInListEvent
-{
-    public EntityUid User;
-    public Entity<GunComponent> Gun;
-}
-
-[ByRefEvent]
-public struct UpdateFullWeaponsListEvent
-{
-    public EntityUid User;
 }

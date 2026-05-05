@@ -171,17 +171,18 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         foreach (var weapon in allGuns)
         {
-            if (TryComp<DualWeaponsBonusComponent>(weapon, out var dual))
-            {
-                dual.DualCurrent = true;
-                RefreshModifiers((weapon, weapon));
-            }
+            if (!TryComp<DualWeaponsBonusComponent>(weapon, out var dual)
+                || !TryComp<GunComponent>(weapon, out var gunComp))
+                continue;
 
-            weapon.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
-            weapon.Comp.Target = GetEntity(msg.Target);
-            AttemptShoot(user.Value, weapon);
+            dual.DualCurrent = true;
+            RefreshModifiers((weapon, gunComp));
+
+            gunComp.ShootCoordinates = GetCoordinates(msg.Coordinates);
+            gunComp.Target = GetEntity(msg.Target);
+            AttemptShoot(user.Value, (weapon, gunComp));
             if (msg.Continuous)
-                weapon.Comp.ShotCounter = 0;
+                gunComp.ShotCounter = 0;
         }
         // Erida-end
     }
@@ -211,12 +212,14 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         foreach (var weapon in allGuns)
         {
-            if (TryComp<DualWeaponsBonusComponent>(weapon, out var dual))
-            {
-                dual.DualCurrent = false;
-                RefreshModifiers((weapon, weapon));
-            }
-            StopShooting(weapon);
+            if (!TryComp<DualWeaponsBonusComponent>(weapon, out var dual)
+                || !TryComp<GunComponent>(weapon, out var gunComp))
+                continue;
+
+            dual.DualCurrent = false;
+            RefreshModifiers((weapon, gunComp));
+
+            StopShooting((weapon, gunComp));
         }
         // Erida-end
     }
@@ -230,24 +233,8 @@ public abstract partial class SharedGunSystem : EntitySystem
     }
 
     // Erida-start
-    private bool GetAllGuns(EntityUid entity, EntityUid activeGun, out HashSet<Entity<GunComponent>> weaponsList)
+    private bool GetAllGuns(EntityUid entity, EntityUid activeGun, out HashSet<EntityUid> weaponsList)
     {
-        /*
-        weaponsList = new List<Entity<GunComponent>>();
-
-        if (!TryComp<HandsComponent>(entity, out var handsComp))
-            return false;
-
-        foreach (var (handString, handClass) in handsComp.Hands)
-        {
-            if (!_hands.TryGetHeldItem(entity, handString, out var heldItem))
-                continue;
-            if (TryComp<GunComponent>(heldItem.Value, out var gunComp))
-            {
-                weaponsList.Add((heldItem.Value, gunComp));
-            }
-        }
-        */
         var compWeaponsContainer = EnsureComp<DualWeaponsContainerComponent>(entity);
         weaponsList = compWeaponsContainer.GunList;
         return weaponsList.Count > 1;
@@ -490,11 +477,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         RaiseLocalEvent(gun, ref prevention);
         if (prevention.Cancelled)
         {
-            _dwcSystem.RemoveFromWeaponInList(user, gun.Owner);
+            _dwcSystem.AddOrRemoveWeaponList(user, gun.Owner, false);
             return false;
         }
 
-        _dwcSystem.AddWeaponInList(user, gun.Owner);
+        _dwcSystem.AddOrRemoveWeaponList(user, gun.Owner, true);
 
         return true;
     }
