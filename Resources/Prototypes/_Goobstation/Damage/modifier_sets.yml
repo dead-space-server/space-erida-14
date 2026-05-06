@@ -8,14 +8,15 @@
     Piercing: 1.3
     Shock: 1.3
 
+#Erida
 - type: damageModifierSet
-  id: LightArmor
+  id: HeavyArmor
   coefficients:
-    Blunt: 0.75
-    Slash: 0.75
-    Piercing: 0.7
-    Shock: 1.2
-    Heat: 0.7
+    Blunt: 0.2
+    Slash: 0.2
+    Piercing: 0.2
+    Shock: 1.4
+    Heat: 0.2
   flatReductions:
-    Blunt: 5
-    Heat: 5
+    Blunt: 8
+    Heat: 10

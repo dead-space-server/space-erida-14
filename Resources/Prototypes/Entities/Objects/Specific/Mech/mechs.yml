@@ -86,6 +86,7 @@
       mech-battery-slot: !type:ContainerSlot
   - type: Damageable
     damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/mechmove03.ogg
@@ -96,7 +97,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000 # Goobstation
+        damage: 1000
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -108,7 +109,7 @@
 
 - type: entity
   id: MechRipley
-  parent: [ BaseMech, BaseCargoContraband ]
+  parent: BaseMech
   name: Ripley APLU
   description: Versatile and lightly armored, the Ripley is useful for almost any heavy work scenario. The "APLU" stands for Autonomous Power Loading Unit.
   components:
@@ -150,8 +151,9 @@
       mech-battery-slot:
       - PowerCellHigh
 
+# TODO: have a whitelist for honker equipment
 - type: entity
-  parent: [ BaseMech, BaseCivilianContraband ]
+  parent: BaseMech
   id: MechHonker
   name: H.O.N.K.
   description: "Produced by \"Tyranny of Honk, INC\", this exosuit is designed as heavy clown-support. Used to spread the fun and joy of life. HONK!"
@@ -173,7 +175,6 @@
     openState: honker-open
     brokenState: honker-broken
     mechToPilotDamageMultiplier: 0.5
-    airtight: true # Goobstation - Space Honk is real.
     pilotWhitelist:
       components:
       - HumanoidProfile
@@ -211,6 +212,9 @@
     mechToPilotDamageMultiplier: 0.2
     maxEquipmentAmount: 2
     airtight: true
+    equipmentWhitelist:
+      tags:
+      - SmallMech
     pilotWhitelist:
       tags:
       - Hamster

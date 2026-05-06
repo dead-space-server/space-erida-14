@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "T",
+  "size": {
+    "x": 64,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "Patriot",
+      "directions": 4
+    },
+    {
+      "name": "Patriot-broken"
+    }
+  ]
+}
