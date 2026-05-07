@@ -34,6 +34,7 @@
     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
+    pocket1: RubberStampIAA
     pocket2: BookSpaceLaw
 
 - type: chameleonOutfit

@@ -311,3 +311,16 @@
     stampState: "paper_stamp-wizard"
   - type: Sprite
     state: stamp-wizard
+
+- type: entity # Erida-edit
+  name: iaa's rubber stamp
+  parent: RubberStampBase
+  id: RubberStampIAA
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-iaa
+    stampedColor: "#2b5988"
+    stampState: "paper_stamp-iaa"
+  - type: Sprite
+    state: stamp-lawyer
