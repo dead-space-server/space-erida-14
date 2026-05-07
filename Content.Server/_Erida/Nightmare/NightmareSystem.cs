@@ -80,7 +80,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
             var currFixture = _fixture.GetFixtureOrNull(uid, "fix1", fComp);
 
             if (currFixture != null)
-                component.OldLayerMask = currFixture.CollisionLayer;
+                component.OldLayer = currFixture.CollisionLayer;
 
             var xform = Comp<TransformComponent>(uid);
 
@@ -90,7 +90,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
             var lightIntension = _lightIntension.TryGetLightLevel((uid, xform), component.MaxLightCap);
             if (lightIntension <= component.RedLineOfLight)
             {
-                ChangeLayerMask(uid, component.NewLayerMask);
+                ChangeLayer(uid, component.NewLayer);
                 component.InTheDark = true;
                 _alert.ShowAlert(uid, component.Alert);
             }
@@ -185,7 +185,7 @@ public sealed class NightmareSystem : SharedNightmareSystem
             _antag.SendBriefing(session, Loc.GetString("nightmare-role-greeting"), null, null);
     }
 
-    private void ChangeLayerMask(EntityUid uid, int? layer)
+    private void ChangeLayer(EntityUid uid, int? layer)
     {
         if (!TryComp<FixturesComponent>(uid, out var fComp))
             return;
@@ -206,14 +206,14 @@ public sealed class NightmareSystem : SharedNightmareSystem
         {
             nmComp.InTheDark = false;
 
-            ChangeLayerMask(uid, nmComp.OldLayerMask);
+            ChangeLayer(uid, nmComp.OldLayer);
             _alert.ClearAlert(uid, nmComp.Alert);
         }
         else
         {
             nmComp.InTheDark = true;
 
-            ChangeLayerMask(uid, nmComp.NewLayerMask);
+            ChangeLayer(uid, nmComp.NewLayer);
             _alert.ShowAlert(uid, nmComp.Alert);
         }
     }

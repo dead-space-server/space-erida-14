@@ -16,9 +16,9 @@ public sealed partial class NightmareComponent : Component
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public bool InTheDark = false;
 
-    public int? OldLayerMask;
+    public int? OldLayer;
 
-    public int NewLayerMask = (int)CollisionGroup.MidImpassable;
+    public int NewLayer = (int)CollisionGroup.None;
 
     [DataField]
     public float TimeBetweenChecks = 0.5f;
