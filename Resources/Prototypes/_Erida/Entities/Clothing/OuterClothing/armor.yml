@@ -69,7 +69,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterArmorBase
   id: HelldiverArmor
   name: B-01 "Тактик"
   description: Это стандартная броня Супер-Земли, изготовленная из того же сплава, что и корпус эсминца.
