@@ -113,7 +113,7 @@
     damage:
       types:
         Piercing: 3
-        Slash: 3
+        Slash: 5 # Erida-edit 3 -> 5
 
 - type: entity
   parent: PelletShotgunImprovised

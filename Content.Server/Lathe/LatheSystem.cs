@@ -36,6 +36,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 using Robust.Shared.Containers;
+using Content.Shared._Erida.Lathe;
 
 namespace Content.Server.Lathe
 {
@@ -96,6 +97,9 @@ namespace Content.Server.Lathe
             //Frontier: upgradeable parts
             SubscribeLocalEvent<LatheComponent, RefreshPartsEvent>(OnPartsRefresh);
             SubscribeLocalEvent<LatheComponent, UpgradeExamineEvent>(OnUpgradeExamine);
+
+            // Contraband Recipes
+            SubscribeLocalEvent<ContrabandLatheRecipesComponent, LatheGetRecipesEvent>(GetContrabandLatheRecipes);
         }
         public override void Update(float frameTime)
         {
@@ -640,6 +644,33 @@ namespace Content.Server.Lathe
             //args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / component.FinalTimeMultiplier); // Lua
             args.AddPercentageUpgrade("lathe-component-upgrade-speed", 1 / component.FinalTimeMultiplier, _reagentSpeed.GetTimeModifier(uid)); // Lua
             args.AddPercentageUpgrade("lathe-component-upgrade-material-use", component.FinalMaterialUseMultiplier);
+        }
+
+        private void GetContrabandLatheRecipes(Entity<ContrabandLatheRecipesComponent> ent, ref LatheGetRecipesEvent args)
+        {
+            if (ent.Owner != args.Lathe)
+                return;
+
+            if (!TryComp<LatheComponent>(ent.Owner, out var latheComp))
+                return;
+
+            if (!args.GetUnavailable
+                && !latheComp.Contraband)
+                return;
+
+            AddRecipesFromPacks(args.Recipes, ent.Comp.ContrabandStaticPacks);
+
+            if (TryComp<TechnologyDatabaseComponent>(ent.Owner, out var database))
+                AddRecipesFromDynamicPacks(ref args, database, ent.Comp.ContrabandDynamicPacks);
+        }
+
+        public void SetContraband(EntityUid uid, bool contraband, LatheComponent? component = null)
+        {
+            if (!Resolve(uid, ref component))
+                return;
+
+            component.Contraband = contraband;
+            Dirty(uid, component);
         }
     }
 }

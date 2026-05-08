@@ -287,7 +287,21 @@
   materials:
     Plastic: 300
     Uranium: 600
+# Erida-start
+- type: latheRecipe
+  parent: BaseEmptyAmmoRecipe
+  id: MagazinePistolHighCapacityEmpty
+  result: MagazinePistolHighCapacityEmpty
+  materials:
+    Steel: 30
 
+- type: latheRecipe
+  parent: BaseAmmoRecipe
+  id: MagazinePistolHighCapacity
+  result: MagazinePistolHighCapacity
+  materials:
+    Steel: 180
+# Erida-end
 # .45 Magnum
 - type: latheRecipe
   parent: BaseEmptyAmmoRecipe

@@ -42,6 +42,8 @@
         type: LatheBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
+      enum.WiresUiKey.Key: # Erida-edit
+        type: WiresBoundUserInterface
   - type: Transform
     anchored: true
   - type: Pullable
@@ -54,6 +56,9 @@
   - type: PowerState
     idlePowerDraw: 150
     workingPowerDraw: 1000
+  - type: Wires # Erida-edit
+    boardName: wires-board-name-lathe
+    layoutId: Lathe
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -142,6 +147,10 @@
     emagStaticPacks:
     - SecurityAmmoStatic
     - SyndicateAmmoStatic
+    - SecurityAmmo # Erida-edit
+  - type: ContrabandLatheRecipes # Erida-edit
+    contrabandDynamicPacks:
+    - SecurityAmmoStatic
   - type: BlueprintReceiver
     whitelist:
       tags:

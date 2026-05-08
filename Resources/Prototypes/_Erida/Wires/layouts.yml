@@ -1,0 +1,6 @@
+- type: wireLayout
+  id: Lathe
+  dummyWires: 3
+  wires:
+  - !type:PowerWireAction
+  - !type:LatheContrabandWireAction

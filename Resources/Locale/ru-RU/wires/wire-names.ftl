@@ -45,6 +45,8 @@ wires-board-name-holopad = Голопад
 wires-board-name-barsign = Барная вывеска
 wires-board-name-weapon-energy-turret = Охранная турель
 wires-board-name-turret-controls = Панель управления охранной турелью
+# Erida-edit
+wires-board-name-lathe = Станок
 
 # names that get displayed in the wire hacking hud & admin logs.
 
