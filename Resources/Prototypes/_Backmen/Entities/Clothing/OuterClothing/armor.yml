@@ -8,17 +8,17 @@
     sprite: _Backmen/Clothing/OuterClothing/Armor/armor_blueshield.rsi
   - type: Clothing
     sprite: _Backmen/Clothing/OuterClothing/Armor/armor_blueshield.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Heat: 0.75
-  - type: StaminaResistance
-    damageCoefficient: 0.8
-  - type: ExplosionResistance
-    damageCoefficient: 0.9
+  #- type: Armor # Erida-edit-Comment
+  #  modifiers:
+  #    coefficients:
+  #      Blunt: 0.6
+  #      Slash: 0.6
+  #      Piercing: 0.6
+  #      Heat: 0.75
+  #- type: StaminaResistance
+  #  damageCoefficient: 0.8
+  #- type: ExplosionResistance
+  #  damageCoefficient: 0.9
   - type: GroupExamine
   - type: Contraband
     allowedJobs: [ BlueShieldOfficer ]

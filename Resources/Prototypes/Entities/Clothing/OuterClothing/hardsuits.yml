@@ -268,17 +268,17 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
-  - type: Armor #Erida edit
+  - type: Armor #Erida-edit
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.65
-        Heat: 0.7
-        Caustic: 0.5
-  - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.75 # 0.7 -> 0.75
+        Heat: 0.8 # new
+        Caustic: 0.5 # new
+  - type: ClothingSpeedModifier # Erida-edit
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
@@ -489,9 +489,9 @@
         Heat: 0.8
         Radiation: 0.5
         Caustic: 0.6
-  - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
+  - type: ClothingSpeedModifier # Erida-edit 0.8 -> 0.75
+    walkModifier: 0.75
+    sprintModifier: 0.75
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
@@ -549,16 +549,16 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.75
-  - type: Armor
+    damageCoefficient: 0.25 # Erida-edit 0.75 -> 0.25
+  - type: Armor # Erida-edit buff 0.5 -> 0.4
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.5
-        Heat: 0.5
-        Radiation: 0.5
-        Caustic: 0.5
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.4
+        Radiation: 0.4
+        Caustic: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -614,7 +614,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+    damageCoefficient: 0.1 # Erida-edit 0.6 -> 0.1
   - type: Armor #Erida edit
     modifiers:
       coefficients:
@@ -654,7 +654,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.6
+    damageCoefficient: 0.2 # Erida-edit 0.6 -> 0.2
   - type: Armor
     modifiers:
       coefficients:

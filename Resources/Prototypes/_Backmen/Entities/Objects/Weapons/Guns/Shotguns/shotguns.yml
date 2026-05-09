@@ -12,13 +12,13 @@
   - type: Clothing
     sprite: _Backmen/Objects/Weapons/Gunsx64/Shotguns/guard-17/tiny.rsi
   - type: BallisticAmmoProvider
-    capacity: 12
+    capacity: 10 # Erida-edit 12 -> 10
   - type: Wieldable
   - type: UseDelay
     delay: 0.4
   - type: GunRequiresWield
   - type: Gun
-    fireRate: 2
+    fireRate: 1.6 # Erida-edit - 2 -> 1.6
     cameraRecoilScalar: 3
     soundGunshot:
       collection: GuardianShot
