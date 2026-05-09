@@ -129,6 +129,7 @@
   - type: Speech
     allowedEmotes: [ 'Mews', 'Meows', 'Purrs', 'Hiss' ]
     speechSounds: Alto
+  - type: OwOAccent
   - type: LanguageKnowledge #backmen: languages
     speaks:
     - TauCetiBasic

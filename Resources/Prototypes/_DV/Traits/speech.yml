@@ -108,6 +108,7 @@
       removes:
       - type: LizardAccent
       - type: MothAccent
+      - type: OwOAccent # Erida-edit
       - type: ReplacementAccent
         accent: scottish
 
