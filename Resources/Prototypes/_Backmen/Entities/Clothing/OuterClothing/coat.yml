@@ -8,15 +8,4 @@
     sprite: _Backmen/Clothing/OuterClothing/Coats/bluecoat.rsi
   - type: Clothing
     sprite: _Backmen/Clothing/OuterClothing/Coats/bluecoat.rsi
-  #- type: Armor # Erida-Edit-Comment
-  #  modifiers:
-  #    coefficients:
-  #      Blunt: 0.6
-  #      Slash: 0.6
-  #      Piercing: 0.6
-  #      Heat: 0.75
-  #- type: StaminaResistance
-  #  damageCoefficient: 0.8
-  #- type: ExplosionResistance
-  #  damageCoefficient: 0.9
   - type: GroupExamine
