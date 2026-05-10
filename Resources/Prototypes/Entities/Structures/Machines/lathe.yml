@@ -266,7 +266,7 @@
     dynamicPacks: # Static > Dynamic | Backmen-EDIT
     - ScienceBoardsStatic
     - ServiceBoardsStatic
-    - Botany
+    #- Botany # Erida-edit
     - CargoBoardsStatic
     - MedicalBoardsStatic
     - EngineeringBoardsStatic

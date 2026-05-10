@@ -57,22 +57,6 @@ public sealed class DecalCopySystem : EntitySystem
 
                 return true;
             }))
-            // RMB
-            .Bind(EngineKeyFunctions.EditorCancelPlace, command: new PointerStateInputCmdHandler(
-            (session, coords, uid) =>
-            {
-                if (!_isActive)
-                    return false;
-
-                SetActive(false);
-
-                _decalPlacementSystem.SetActive(true);
-
-                return true;
-            }, (session, coords, uid) =>
-            {
-                return true;
-            }))
             // NUM9
             .Bind(ContentKeyFunctions.EditorNextObject, new PointerStateInputCmdHandler(
             (session, coords, uid) =>

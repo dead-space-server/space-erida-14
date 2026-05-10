@@ -187,3 +187,14 @@
       sprite: _Erida/Clothing/Neck/Cloaks/nanotrasen_navy_officer_cloak.rsi
     - type: StealTarget
       stealGroup: HeadCloak
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakHelldiver
+  name: Плащ крушитель врагов
+  description: Эти прочные, водонепроницаемые и утепленные плащи пользуются популярностью у туристов в качестве материала для палаток.
+  components:
+    - type: Sprite
+      sprite: _Erida/Clothing/Neck/Cloaks/helldiver_neck.rsi
+    - type: StealTarget
+      stealGroup: HeadCloak

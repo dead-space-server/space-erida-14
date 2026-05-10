@@ -54611,13 +54611,6 @@ entities:
       text: Бассейн
     - type: WarpPoint
       location: Бассейн
-- proto: DefaultStationBeaconAICore
-  entities:
-  - uid: 7408
-    components:
-    - type: Transform
-      pos: 23.5,-299.5
-      parent: 2
 - proto: DefaultStationBeaconAISatellite
   entities:
   - uid: 7409
@@ -54655,20 +54648,21 @@ entities:
       parent: 2
 - proto: DefaultStationBeaconBar
   entities:
-  - uid: 7414
-    components:
-    - type: Transform
-      pos: -4.5,-195.5
-      parent: 2
-  - uid: 7415
-    components:
-    - type: Transform
-      pos: -1.5,-63.5
-      parent: 2
-    - type: NavMapBeacon
-      text: Бар
-    - type: WarpPoint
-      location: Бар
+  # - uid: 7414
+  #   components:
+  #   - type: Transform
+  #     pos: -4.5,-195.5
+  #     parent: 2
+  # - uid: 7415
+  #   components:
+  #   - type: Transform
+  #     pos: -1.5,-63.5
+  #     parent: 2
+  #   - type: NavMapBeacon
+  #     text: Бар
+  #   - type: WarpPoint
+  #     location: Бар
+  # Тут был кремирован бар который вёл на вирусологию
   - uid: 7416
     components:
     - type: Transform
@@ -54770,11 +54764,6 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-15.5
-      parent: 2
-  - uid: 7429
-    components:
-    - type: Transform
-      pos: 0.5,-113.5
       parent: 2
   - uid: 7430
     components:

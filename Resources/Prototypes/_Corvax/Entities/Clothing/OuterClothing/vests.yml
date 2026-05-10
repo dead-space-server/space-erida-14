@@ -21,7 +21,7 @@
       sprite: _Corvax/Clothing/OuterClothing/Vests/armor_sec_med.rsi
 
 - type: entity
-  parent: ClothingOuterBase
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterVestSecurityMedic
   name: security medic vest
   description: A lightweight vest worn by the Security Medic.
@@ -30,10 +30,10 @@
       sprite: _Corvax/Clothing/OuterClothing/Vests/vest_security_medic.rsi
     - type: Clothing
       sprite: _Corvax/Clothing/OuterClothing/Vests/vest_security_medic.rsi
-    - type: Armor
-      modifiers:
-        coefficients: # Erida
-          Blunt: 0.7
-          Slash: 0.7
-          Piercing: 0.7
-          Heat: 0.8
+    #- type: Armor
+    #  modifiers:
+    #    coefficients: # Erida
+    #      Blunt: 0.7
+    #      Slash: 0.7
+    #      Piercing: 0.7
+    #      Heat: 0.8

@@ -21,7 +21,7 @@
     maxAngle: 0
     angleIncrease: -6
   - type: Gun
-    fireRate: 5
+    fireRate: 6 # Erida-edit 5 -> 6
     angleDecay: 60
     angleIncrease: 8
     cameraRecoilScalar: 5

@@ -24,7 +24,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 20
+        Slash: 15 # Erida-edit 20 -> 15
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Prying

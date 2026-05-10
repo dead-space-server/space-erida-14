@@ -1,6 +1,8 @@
+using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.Physics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -11,6 +13,13 @@ namespace Content.Shared._Erida.Nightmare.Components;
 [AutoGenerateComponentState(true)]
 public sealed partial class NightmareComponent : Component
 {
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool InTheDark = false;
+
+    public int? OldLayer;
+
+    public int NewLayer = (int)CollisionGroup.None;
+
     [DataField]
     public float TimeBetweenChecks = 0.5f;
 
@@ -23,11 +32,23 @@ public sealed partial class NightmareComponent : Component
     public float RedLineOfLight = 0.01f;
 
     [DataField]
+    public float MaxLightCap = 1f;
+
+    [DataField]
     public DamageSpecifier DamageFromBurn = new()
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            { "Heat", 20 },
+            { "Heat", 15 },
+        },
+    };
+
+    [DataField]
+    public DamageSpecifier DamageFromGetFlashed = new()
+    {
+        DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
+        {
+            { "Heat", 30 },
         },
     };
 
@@ -45,6 +66,9 @@ public sealed partial class NightmareComponent : Component
     };
 
     [DataField]
+    public bool PlayAudio = false;
+
+    [DataField]
     public SoundSpecifier BurnSound = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
 
     [DataField]
@@ -52,4 +76,7 @@ public sealed partial class NightmareComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? ShadowWalkActionEntity;
+
+    [DataField]
+    public ProtoId<AlertPrototype> Alert = "InShade";
 }

@@ -4,7 +4,7 @@
   id: ShadowWalkJaunt
   components:
   - type: Eye
-    drawFov: false
+    drawFov: true
     visMask:
       - Normal
       - Ghost

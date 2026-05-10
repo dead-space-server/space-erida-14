@@ -1,0 +1,14 @@
+- type: entity
+  id: CartridgeCaselessRifle20
+  name: cartridge (.20 rifle caseless)
+  parent: CartridgeCaselessRifle 
+  description: A .20 rifle caseless round.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletCaselessRifle20
+  - type: Tag
+    tags:
+    - CartridgeCaselessRifle20
+
+- type: Tag
+  id: CartridgeCaselessRifle20
