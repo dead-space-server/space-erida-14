@@ -61,6 +61,10 @@
       enum.GeneralStationRecordConsoleKey.Key:
       # who the fuck named this bruh
         type: GeneralStationRecordConsoleBoundUserInterface
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
+      enum.PowerMonitoringConsoleUiKey.Key:
+        type: PowerMonitoringConsoleBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.SolarControlConsoleUiKey.Key:
@@ -75,6 +79,10 @@
         toggleAction: ActionAGhostShowCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
         toggleAction: ActionAGhostShowStationRecords
+      enum.AtmosAlertsComputerUiKey.Key:
+        toggleAction: ActionAGhostShowAlert
+      enum.PowerMonitoringConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowPowerMonitoring
   - type: SolarControlConsole # look ma i AM the computer!
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
@@ -84,6 +92,9 @@
     global: true
   - type: RadarConsole
     followEntity: true
+  - type: AtmosAlertsComputer
+  - type: PowerMonitoringConsole
+  - type: PowerMonitoringCableNetworks
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
@@ -211,3 +222,31 @@
     priority: -7
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
+
+- type: entity
+  parent: BaseAGhostAction
+  id: ActionAGhostShowAlert
+  name: Atmospheric alarm interface
+  description: Viewing the atmospheric alarm interface.
+  components:
+  - type: Action
+    icon: { sprite: _Corvax/Interface/adminactions.rsi, state: atmos } # _Corvax-Resprite
+    iconOn: { sprite: _Corvax/Interface/adminactions.rsi, state: atmos }
+    keywords: [ "AI", "console", "interface" ]
+    priority: -4
+  - type: InstantAction
+    event: !type:ToggleIntrinsicUIEvent { key: enum.AtmosAlertsComputerUiKey.Key }
+
+- type: entity
+  parent: BaseAGhostAction
+  id: ActionAGhostShowPowerMonitoring
+  name: Power control interface
+  description: Viewing the power control interface.
+  components:
+  - type: Action
+    icon: { sprite: _Corvax/Interface/adminactions.rsi, state: power } # _Corvax-Resprite
+    iconOn: { sprite: _Corvax/Interface/adminactions.rsi, state: power }
+    keywords: [ "AI", "console", "interface" ]
+    priority: -4
+  - type: InstantAction
+    event: !type:ToggleIntrinsicUIEvent { key: enum.PowerMonitoringConsoleUiKey.Key }

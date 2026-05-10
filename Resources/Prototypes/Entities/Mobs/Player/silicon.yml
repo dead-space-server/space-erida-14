@@ -50,6 +50,10 @@
         type: CommunicationsConsoleBoundUserInterface
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
+      enum.PowerMonitoringConsoleUiKey.Key:
+        type: PowerMonitoringConsoleBoundUserInterface
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -60,10 +64,17 @@
         toggleAction: ActionAGhostShowStationRecords
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
+      enum.AtmosAlertsComputerUiKey.Key:
+        toggleAction: ActionAGhostShowAlert
+      enum.PowerMonitoringConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowPowerMonitoring
   - type: CrewMonitoringConsole
   - type: Instrument
     allowPercussion: true
     allowProgramChange: true
+  - type: AtmosAlertsComputer
+  - type: PowerMonitoringConsole
+  - type: PowerMonitoringCableNetworks
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -214,11 +225,11 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 400
+        damage: 200
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          path: /Audio/_Erida/Effects/StationAi/sound_voice_borg_deathsound.ogg
       - !type:DoActsBehavior
         acts: [ "Breakage" ]
     - trigger:

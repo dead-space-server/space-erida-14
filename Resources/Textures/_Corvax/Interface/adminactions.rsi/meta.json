@@ -1,7 +1,7 @@
 {
     "version": 1,
 	"license": "CC-BY-3.0",
-	"copyright": "Taken from https://github.com/space-syndicate/space-station-14 | Created by Kuro & kxv",
+	"copyright": "Taken from https://github.com/space-syndicate/space-station-14 | Created by Kuro & kxv, power and atmosphere are redrawn from station_records for *Erida* | Created Cat_L", 
 	"size": {
 		"x": 32,
 		"y": 32
@@ -24,6 +24,12 @@
 		},
 		{
 			"name": "station_records"
+		},
+		{
+			"name": "power"
+		},
+		{
+			"name": "atmos"
 		}
 	]
 }
