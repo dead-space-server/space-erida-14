@@ -79,10 +79,10 @@
         toggleAction: ActionAGhostShowCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
         toggleAction: ActionAGhostShowStationRecords
-      enum.AtmosAlertsComputerUiKey.Key:
+      enum.AtmosAlertsComputerUiKey.Key: # Erida start
         toggleAction: ActionAGhostShowAlert
       enum.PowerMonitoringConsoleUiKey.Key:
-        toggleAction: ActionAGhostShowPowerMonitoring
+        toggleAction: ActionAGhostShowPowerMonitoring # Erida end
   - type: SolarControlConsole # look ma i AM the computer!
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
@@ -92,9 +92,9 @@
     global: true
   - type: RadarConsole
     followEntity: true
-  - type: AtmosAlertsComputer
+  - type: AtmosAlertsComputer # Erida start
   - type: PowerMonitoringConsole
-  - type: PowerMonitoringCableNetworks
+  - type: PowerMonitoringCableNetworks # Erida end
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
@@ -223,7 +223,7 @@
   - type: InstantAction
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
 
-- type: entity
+- type: entity # Erida start
   parent: BaseAGhostAction
   id: ActionAGhostShowAlert
   name: Atmospheric alarm interface
@@ -249,4 +249,4 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -4
   - type: InstantAction
-    event: !type:ToggleIntrinsicUIEvent { key: enum.PowerMonitoringConsoleUiKey.Key }
+    event: !type:ToggleIntrinsicUIEvent { key: enum.PowerMonitoringConsoleUiKey.Key } # Erida end
