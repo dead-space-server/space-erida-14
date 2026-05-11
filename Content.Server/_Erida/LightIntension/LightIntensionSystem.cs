@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Physics;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
@@ -48,6 +49,20 @@ public sealed class LightIntensionSystem : EntitySystem
 
             if (!ent.Comp.Coordinates.TryDistance(_entityManager, xform.Coordinates, out var distance)
                 || distance > lightComp.Radius)
+                continue;
+
+            if (TryComp<EyeComponent>(ent, out var eComp))
+            {
+                if (TryComp<VisibilityComponent>(uid, out var vComp)
+                    && vComp.Layer != eComp.VisibilityMask)
+                    continue;
+
+                if (TryComp<VisibilityComponent>(Transform(uid).ParentUid, out var vParentComp)
+                    && vParentComp.Layer != eComp.VisibilityMask)
+                    continue;
+            }
+
+            if (HasComp<ClothingComponent>(Transform(uid).ParentUid))
                 continue;
 
             var lightPointMapCoordsVector2d = _transformSystem.ToMapCoordinates(xform.Coordinates).Position;
