@@ -2,5 +2,16 @@
   id: HarpyTail
   bodyPart: Tail
   sprites:
-    - sprite: _Erida/Mobs/Customization/harpy_tails.rsi
-      state: harpy_tail
+  - sprite: _Erida/Mobs/Customization/harpy_tails.rsi
+    state: harpy_tail
+
+- type: marking
+  id: HarpyTailPartial
+  bodyPart: Tail
+  sprites:
+  - sprite: _Erida/Mobs/Customization/harpy_wings.rsi
+    state: harpy_wings1
+  - sprite: _Erida/Mobs/Customization/harpy_wings.rsi
+    state: harpy_wings2
+  - sprite: _Erida/Mobs/Customization/harpy_wings.rsi
+    state: harpy_wings3
