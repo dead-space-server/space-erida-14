@@ -35,6 +35,7 @@
     actions:
     - ActionJumpToCore
     - ActionAIViewLaws
+    - ActionPAIPlayMidi # Erida add
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -47,6 +48,12 @@
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+      enum.InstrumentUiKey.Key: # Erida start
+        type: InstrumentBoundUserInterface
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
+      enum.PowerMonitoringConsoleUiKey.Key:
+        type: PowerMonitoringConsoleBoundUserInterface # Erida end
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -55,9 +62,19 @@
         toggleAction: ActionAGhostShowCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
         toggleAction: ActionAGhostShowStationRecords
-      enum.CommunicationsConsoleUiKey.Key:
+      enum.CommunicationsConsoleUiKey.Key: # Erida start
         toggleAction: ActionAGhostShowCommunications
+      enum.AtmosAlertsComputerUiKey.Key:
+        toggleAction: ActionAGhostShowAlert
+      enum.PowerMonitoringConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowPowerMonitoring # Erida end
   - type: CrewMonitoringConsole
+  - type: Instrument # Erida start
+    allowPercussion: true
+    allowProgramChange: true
+  - type: AtmosAlertsComputer
+  - type: PowerMonitoringConsole
+  - type: PowerMonitoringCableNetworks # Erida end
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -206,15 +223,15 @@
     allowSelfRepair: false
   - type: Destructible
     thresholds:
-    - trigger:
+    - trigger: # Erida start
         !type:DamageTrigger
-        damage: 400
+        damage: 200
       behaviors:
       - !type:PlaySoundBehavior
         sound:
-          collection: MetalBreak
+          path: /Audio/_Erida/Effects/StationAi/sound_voice_borg_deathsound.ogg
       - !type:DoActsBehavior
-        acts: [ "Breakage" ]
+        acts: [ "Breakage" ] # Erida end
     - trigger:
         !type:DamageTrigger
         damage: 2000
