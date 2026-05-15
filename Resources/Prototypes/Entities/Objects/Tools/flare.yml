@@ -10,7 +10,7 @@
     - Trash
   - type: SpaceGarbage
   - type: ExpendableLight
-    glowDuration: 15
+    glowDuration: 225
     fadeOutDuration: 15
     iconStateOn: flare_unlit
     iconStateSpent: flare_spent

@@ -49,6 +49,7 @@
   - OffsetCane
   - OffsetCaneWood
   - JetInjector
+  - ClothingEyesHudMedical # Erida add
 
 - type: latheRecipePack
   id: RollerBedsStatic
