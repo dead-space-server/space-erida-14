@@ -550,15 +550,15 @@
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
     damageCoefficient: 0.25 # Erida-edit 0.75 -> 0.25
-  - type: Armor # Erida-edit buff 0.5 -> 0.4
+  - type: Armor 
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.4
-        Heat: 0.4
-        Radiation: 0.4
-        Caustic: 0.4
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
