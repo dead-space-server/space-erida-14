@@ -12,8 +12,8 @@
 - type: entity
   parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseSecurityContraband ]
   id: ClothingOuterCoatDetective
-  name: detective armored trenchcoat
-  description: An 18th-century multi-purpose trenchcoat. Someone who wears this means serious business.
+  name: detective's armored trenchcoat
+  description: An 20th-century trenchcoat with an armored underlay. Someone who wears this means serious business.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Coats/detective.rsi
@@ -64,13 +64,29 @@
   abstract: true
   parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase ]
   id: ClothingOuterArmorHoS
-  #components:
-
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.6
+        Heat: 0.7
+        Caustic: 0.75 # not the full 90% from ss13 because of the head
 
 - type: entity
   abstract: true
   parent: [ ClothingOuterArmorBase, ClothingOuterStorageBase ]
   id: ClothingOuterArmorWarden
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.9
 
 - type: entity
   parent: [BaseSecurityCommandContraband, ClothingOuterArmorHoS]
@@ -107,7 +123,7 @@
         id: SyndieHandyFlag
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: ClothingOuterStorageEdible
   id: ClothingOuterCoatTrench
   name: trench coat
   description: A comfy trench coat.
@@ -123,15 +139,6 @@
     modifiers:
       coefficients:
         Slash: 0.95
-  - type: Edible
-    requiresSpecialDigestion: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 20
 
 - type: entity
   parent: ClothingOuterStorageFoldableBase

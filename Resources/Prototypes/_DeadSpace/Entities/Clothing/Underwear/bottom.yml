@@ -17,13 +17,13 @@
           - state: equipped-UNDERWEARB
   - type: Edible
     requiresSpecialDigestion: true
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 5
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 5
   - type: Tag
     tags:
       - ClothMade

@@ -26,9 +26,9 @@ using Content.Shared.Advertise.Systems;
 
 namespace Content.Server._DV.VendingMachines;
 
-public sealed class ShopVendorSystem : SharedShopVendorSystem
+public sealed partial class ShopVendorSystem : SharedShopVendorSystem
 {
-    [Dependency] private readonly SharedSpeakOnUIClosedSystem _speakOnUIClosed = default!;
+    [Dependency] private SharedSpeakOnUIClosedSystem _speakOnUIClosed = default!;
 
     public override void Update(float frameTime)
     {

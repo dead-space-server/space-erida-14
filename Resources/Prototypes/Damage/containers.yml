@@ -8,6 +8,16 @@
     - Genetic
 
 - type: damageContainer
+  id: Shadowkin
+  supportedGroups:
+    - Brute
+    - Burn
+    - Toxin
+    - Genetic
+  supportedTypes:
+    - Bloodloss
+
+- type: damageContainer
   id: Inorganic
   supportedGroups:
     - Brute

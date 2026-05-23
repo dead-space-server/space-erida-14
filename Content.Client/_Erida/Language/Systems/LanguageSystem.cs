@@ -1,7 +1,6 @@
 using Content.Shared._Erida.Language;
 using Content.Shared._Erida.Language.Events;
 using Content.Shared._Erida.Language.Systems;
-using Robust.Client;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Erida.Language.Systems;
@@ -15,8 +14,6 @@ namespace Content.Client._Erida.Language.Systems;
 /// </remarks>
 public sealed class LanguageSystem : SharedLanguageSystem
 {
-    [Dependency] private readonly IBaseClient _client = default!;
-
     /// <summary>
     ///   The current language of the entity currently possessed by the player.
     /// </summary>
@@ -37,7 +34,6 @@ public sealed class LanguageSystem : SharedLanguageSystem
         base.Initialize();
 
         SubscribeNetworkEvent<LanguagesUpdatedMessage>(OnLanguagesUpdated);
-        _client.RunLevelChanged += OnRunLevelChanged;
     }
 
     private void OnLanguagesUpdated(LanguagesUpdatedMessage message)
@@ -49,13 +45,6 @@ public sealed class LanguageSystem : SharedLanguageSystem
         UnderstoodLanguages = message.Understood;
 
         OnLanguagesChanged?.Invoke(this, message);
-    }
-
-    private void OnRunLevelChanged(object? sender, RunLevelChangedEventArgs args)
-    {
-        // Request an update when entering a game
-        if (args.NewLevel == ClientRunLevel.InGame)
-            RequestStateUpdate();
     }
 
     /// <summary>

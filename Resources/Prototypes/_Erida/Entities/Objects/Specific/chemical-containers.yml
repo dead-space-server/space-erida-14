@@ -5,9 +5,9 @@
   components:
   - type: Label
     currentLabel: reagent-name-plasma
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
-        - ReagentId: Plasma
-          Quantity: 200
+  - type: Solution
+    id: beaker
+    solution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 200

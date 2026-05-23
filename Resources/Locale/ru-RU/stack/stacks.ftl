@@ -327,6 +327,12 @@ stack-mono-tile = моно плитка
 stack-filled-brass-plate = заполненная латунная плитка
 stack-smooth-brass-plate = гладкая латунная плитка
 stack-linoleum-floor = линолеум
+stack-conveyor-belt =
+    { $amount ->
+        [1] конвейерная лента
+        [few] конвейерные ленты
+       *[other] конвейерных лент
+    }
 stack-hydro-tile = гидро плитка
 stack-lime-tile = лаймовая плитка
 stack-dirty-tile = грязная плитка

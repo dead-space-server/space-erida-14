@@ -18,13 +18,13 @@ namespace Content.Server._DV.Traits;
 /// <summary>
 /// Server system that validates and applies traits to players on spawn.
 /// </summary>
-public sealed class TraitSystem : EntitySystem
+public sealed partial class TraitSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private IComponentFactory _factory = default!;
+    [Dependency] private IConfigurationManager _config = default!;
+    [Dependency] private ILogManager _log = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
 
     private int _maxTraitCount;
     private int _maxTraitPoints;

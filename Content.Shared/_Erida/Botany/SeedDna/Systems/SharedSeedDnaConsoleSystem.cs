@@ -5,9 +5,9 @@ using JetBrains.Annotations;
 namespace Content.Shared._Erida.Botany.SeedDna.Systems;
 
 [UsedImplicitly]
-public abstract class SharedSeedDnaConsoleSystem : EntitySystem
+public abstract partial class SharedSeedDnaConsoleSystem : EntitySystem
 {
-    [Dependency] private readonly ItemSlotsSystem _itemSlotsSystem = default!;
+    [Dependency] private ItemSlotsSystem _itemSlotsSystem = default!;
 
     public override void Initialize()
     {

@@ -21,6 +21,12 @@ public record struct FlashAttemptEvent(EntityUid Target, EntityUid? User, Entity
 public record struct AfterFlashedEvent(EntityUid Target, EntityUid? User, EntityUid? Used, bool Melee);
 
 /// <summary>
+/// Raised once on the flash entity when it was used, regardless of the flashed status being applied or not.
+/// </summary>
+[ByRefEvent]
+public record struct AfterFlashActivatedEvent(EntityUid? Target, EntityUid? User);
+
+/// <summary>
 /// Goob edit
 /// </summary>
 public sealed class FlashDurationMultiplierEvent : EntityEventArgs, IInventoryRelayEvent

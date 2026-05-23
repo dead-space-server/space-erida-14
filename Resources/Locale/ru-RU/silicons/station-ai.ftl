@@ -8,6 +8,7 @@ station-ai-has-no-power-for-upload = Ошибка загрузки - ядро И
 station-ai-is-too-damaged-for-upload = Ошибка загрузки - ядро ИИ неисправно и требует починки.
 station-ai-core-losing-power = Недостаточно энергии. Ядро ИИ работает от резервного заряда.
 station-ai-core-critical-power = Заряд ядра находится на критически низком уровне. Внешнее питание должно быть восстановлено чтобы избежать повреждения данных!
+station-ai-core-taking-damage = Ваше ядро ИИ получает физические повреждения.
 
 # Radial actions
 ai-open = Открыть действия

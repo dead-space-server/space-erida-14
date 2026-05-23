@@ -7,7 +7,7 @@ namespace Content.Client._Erida.DirectionalEmote;
 
 public sealed partial class DirectionalEmoteSystem : EntitySystem
 {
-    [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
+    [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
 
     public override void Initialize()
     {

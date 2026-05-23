@@ -18,12 +18,12 @@ using Content.Shared.Weapons.Melee.Events;
 // ReSharper disable EnforceForStatementBraces
 namespace Content.Shared._Lavaland.Anger.Systems;
 
-public sealed class AngerSystem : EntitySystem
+public sealed partial class AngerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly MobThresholdSystem _threshold = default!;
-    [Dependency] private readonly MobPhasesSystem _phases = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private MobThresholdSystem _threshold = default!;
+    [Dependency] private MobPhasesSystem _phases = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     private EntityQuery<AngerPlayerScalingComponent> _scalingQuery;
 

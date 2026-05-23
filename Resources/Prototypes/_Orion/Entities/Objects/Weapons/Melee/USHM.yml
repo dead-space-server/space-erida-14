@@ -19,10 +19,10 @@
       types:
         Slash: 4
         Structural: 4
-  - type: SolutionContainerManager
-    solutions:
-      Welder:
-        reagents:
-        - ReagentId: Plasma
-          Quantity: 300
-        maxVol: 300
+  - type: Solution
+    id: Welder
+    solution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 300
+      maxVol: 300

@@ -6,9 +6,9 @@ using Content.Shared.Power;
 
 namespace Content.Server._Erida.AirtightRequiresPower;
 
-public sealed class AirtightRequiresPowerSystem : EntitySystem
+public sealed partial class AirtightRequiresPowerSystem : EntitySystem
 {
-    [Dependency] private readonly AirtightSystem _airtightSystem = default!;
+    [Dependency] private AirtightSystem _airtightSystem = default!;
 
     public override void Initialize()
     {

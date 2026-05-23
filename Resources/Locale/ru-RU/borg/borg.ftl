@@ -1,4 +1,4 @@
-﻿borg-player-not-allowed = Мозг не помещается!
+borg-player-not-allowed = Мозг не помещается!
 borg-player-not-allowed-eject = Мозг был извлечён из корпуса!
 borg-panel-not-open = Панель киборга не открыта...
 borg-mind-added = { CAPITALIZE($name) } включается!
@@ -6,6 +6,8 @@ borg-mind-removed = { CAPITALIZE($name) } выключается!
 borg-module-too-many = Для ещё одного модуля не хватает места...
 borg-module-duplicate = Этот модуль уже установлен в этого киборга.
 borg-module-whitelist-deny = Этот модуль не подходит для данного типа киборгов...
+borg-module-incompatible = Этот модуль не совместим с { THE($existing) }.
+borg-module-prerequisite-unfulfilled = Для работы этого модуля требуется другой модуль...
 borg-construction-guide-string = Конечности и туловище киборга должны быть прикреплены к эндоскелету.
 borg-ui-menu-title = Интерфейс киборга
 borg-ui-charge-label = Заряд: { $charge }%

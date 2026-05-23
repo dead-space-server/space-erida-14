@@ -1,6 +1,7 @@
 ## EntitySpawnWindow
 
 entity-spawn-window-title = Панель спавна сущностей
+entity-spawn-window-no-description = Нет описания
 entity-spawn-window-replace-button-text = Заменить
 entity-spawn-window-override-menu-tooltip = Перезапись размещения
 

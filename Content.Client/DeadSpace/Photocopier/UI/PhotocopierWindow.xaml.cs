@@ -20,7 +20,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
     public event Action? CopyModeButtonPressed;
     public event Action? PrintModeButtonPressed;
 
-    private readonly List<string> _categoryStrings = new();
+    private readonly List<string> _categoryIds = new(); // Erida edit
 
     private string? _category;
     private PhotocopierMode _mode;
@@ -103,7 +103,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
                 search.Length != 0 && Loc.GetString(prototype.Name).ToLowerInvariant().Contains(search) ||
                 search.Length == 0 && _category != null && prototype.Category.Equals(_category))
             {
-                if (_categoryStrings.Contains(prototype.Category))
+                if (_categoryIds.Contains(prototype.Category)) // Erida edit
                 {
                     var button = new Button();
                     button.AddStyleClass("OpenLeft");
@@ -118,13 +118,13 @@ public sealed partial class PhotocopierWindow : FancyWindow
 
     public void PopulateCategories()
     {
-        _categoryStrings.Clear();
+        _categoryIds.Clear(); // Erida edit
         PaperworkCategories.DisposeAllChildren();
 
         // Please do not read code below, that's shitcode that I will fix someday
         foreach (var prototype in PaperworkFormPrototypes)
         {
-            if (!_categoryStrings.Contains(prototype.Category))
+            if (!_categoryIds.Contains(prototype.Category)) // Erida edit
             {
                 if (_wasEmagged)
                 {
@@ -132,7 +132,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
                     {
                         continue;
                     }
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
+                    _categoryIds.Add(prototype.Category); // Erida edit
                 }
                 else if (_type == PhotocopierType.Centcomm)
                 {
@@ -140,7 +140,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
                     {
                         continue;
                     }
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
+                    _categoryIds.Add(prototype.Category); // Erida edit
                 }
                 else if (_type == PhotocopierType.Syndicate)
                 {
@@ -148,7 +148,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
                     {
                         continue;
                     }
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
+                    _categoryIds.Add(prototype.Category); // Erida edit
                 }
                 else if (_type == PhotocopierType.Nukeops)
                 {
@@ -156,7 +156,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
                     {
                         continue;
                     }
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
+                    _categoryIds.Add(prototype.Category); // Erida edit
                 }
                 else if (_type == PhotocopierType.Command)
                 {
@@ -164,7 +164,7 @@ public sealed partial class PhotocopierWindow : FancyWindow
                     {
                         continue;
                     }
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
+                    _categoryIds.Add(prototype.Category); // Erida edit
                 }
                 else if (_type == PhotocopierType.Default)
                 {
@@ -172,23 +172,30 @@ public sealed partial class PhotocopierWindow : FancyWindow
                     {
                         continue;
                     }
-                    _categoryStrings.Add(Loc.GetString(prototype.Category));
+                    _categoryIds.Add(prototype.Category); // Erida edit
                 }
             }
         }
 
-        _categoryStrings.Sort();
+        _categoryIds.Sort((a, b) => string.Compare(GetCategoryTitle(a), GetCategoryTitle(b), StringComparison.CurrentCultureIgnoreCase)); // Erida edit
 
-        foreach (var str in _categoryStrings)
+        foreach (var categoryId in _categoryIds) // Erida edit
         {
             var button = new Button();
             button.AddStyleClass("OpenRight");
-            button.Text = Loc.GetString("photocopier-ui-categorie-title-" + str);
+            button.Text = GetCategoryTitle(categoryId); // Erida edit
             button.ToggleMode = false;
-            button.OnPressed += args => OnCategorySelected(args, str);
+            button.OnPressed += args => OnCategorySelected(args, categoryId); // Erida edit
             PaperworkCategories.AddChild(button);
         }
     }
+
+    // Erida start
+    private static string GetCategoryTitle(string categoryId)
+    {
+        return Loc.GetString($"photocopier-ui-categorie-title-{categoryId}");
+    }
+    // Erida end
 
     public void OnCategorySelected(BaseButton.ButtonEventArgs args, string str)
     {

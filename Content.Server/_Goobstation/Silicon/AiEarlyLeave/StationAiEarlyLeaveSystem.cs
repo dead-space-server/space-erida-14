@@ -13,14 +13,14 @@ using Content.Shared.Ghost;
 using Content.Shared._Goobstation.Silicon;
 using Content.Server._Goobstation.Silicons;
 
-public sealed class StationAiEarlyLeaveSystem : SharedStationAiEarlyLeaveSystem
+public sealed partial class StationAiEarlyLeaveSystem : SharedStationAiEarlyLeaveSystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly EuiManager _euiManager = default!;
-    [Dependency] private readonly StationJobsSystem _jobs = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private EuiManager _euiManager = default!;
+    [Dependency] private StationJobsSystem _jobs = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     private readonly string _alertChannelName = "Command";
 

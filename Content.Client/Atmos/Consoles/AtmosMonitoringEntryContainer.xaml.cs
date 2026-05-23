@@ -57,11 +57,12 @@ public sealed partial class AtmosMonitoringEntryContainer : BoxContainer
         var normalFont = new VectorFont(_cache.GetResource<FontResource>("/Fonts/NotoSansDisplay/NotoSansDisplay-Regular.ttf"), 11);
 
         // Update name and values
+        var entityName = LocalizeOrRaw(updatedData.EntityName); // Erida edit
         if (!string.IsNullOrEmpty(updatedData.Address))
-            NetworkNameLabel.Text = Loc.GetString("atmos-alerts-window-alarm-label", ("name", updatedData.EntityName), ("address", updatedData.Address));
+            NetworkNameLabel.Text = Loc.GetString("atmos-alerts-window-alarm-label", ("name", entityName), ("address", updatedData.Address)); // Erida edit
 
         else
-            NetworkNameLabel.Text = Loc.GetString(updatedData.EntityName);
+            NetworkNameLabel.Text = entityName; // Erida edit
 
         Data = updatedData;
 
@@ -166,4 +167,11 @@ public sealed partial class AtmosMonitoringEntryContainer : BoxContainer
         ArrowTexture.TexturePath = "/Textures/Interface/Nano/triangle_right.png";
         FocusContainer.Visible = false;
     }
+
+    // Erida start
+    private static string LocalizeOrRaw(string text)
+    {
+        return Loc.TryGetString(text, out var localized) ? localized : text;
+    }
+    // Erida end
 }

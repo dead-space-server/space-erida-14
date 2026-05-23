@@ -4,9 +4,9 @@ using Content.Shared.Whitelist;
 
 namespace Content.Server._Lavaland.Trigger;
 
-public sealed class TriggerBlockerSystem : EntitySystem
+public sealed partial class TriggerBlockerSystem : EntitySystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

@@ -11,12 +11,12 @@ using Content.Shared.Hands.Components;
 
 namespace Content.Server._Erida.Tools.WelderHeating;
 
-public sealed class WelderHeatingSystem : EntitySystem
+public sealed partial class WelderHeatingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedHandsSystem _sharedHandsSystem = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedHandsSystem _sharedHandsSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -37,7 +37,7 @@ public sealed class WelderHeatingSystem : EntitySystem
         if (!HasComp<ItemComponent>(args.Target))
             return;
 
-        if (!TryComp<SolutionContainerManagerComponent>(target, out var container))
+        if (!TryComp<SolutionManagerComponent>(target, out var container))
             return;
 
         if (!TryComp<HandsComponent>(args.User, out var hands) || !_sharedHandsSystem.IsHolding((args.User, hands), args.Target))
@@ -64,7 +64,7 @@ public sealed class WelderHeatingSystem : EntitySystem
             return;
 
         var target = args.Args.Target.Value;
-        if (!TryComp<SolutionContainerManagerComponent>(target, out var container))
+        if (!TryComp<SolutionManagerComponent>(target, out var container))
             return;
 
         foreach (var (_, soln) in _solutionContainer.EnumerateSolutions((target, container)))

@@ -14,10 +14,10 @@ using Content.Shared.Actions.Components;
 
 namespace Content.Server._Goobstation.Resomi.Abilities;
 
-public sealed class AgillitySkillSystem : SharedAgillitySkillSystem
+public sealed partial class AgillitySkillSystem : SharedAgillitySkillSystem
 {
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
 
     private Entity<ActionComponent> action;
 

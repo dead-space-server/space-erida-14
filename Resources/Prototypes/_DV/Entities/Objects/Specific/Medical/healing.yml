@@ -9,13 +9,13 @@
     state: pill15
   - type: Label
     currentLabel: soretizone 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Soretizone
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Soretizone
+        Quantity: 10
 
 - type: entity
   parent: PillCanister
@@ -41,13 +41,13 @@
     pillType: 9
   - type: Label
     currentLabel: serenitol 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Serenitol
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Serenitol
+        Quantity: 10
 
 - type: entity
   parent: PillCanister
@@ -73,13 +73,13 @@
     pillType: 7
   - type: Label
     currentLabel: neurozenium 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Neurozenium
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Neurozenium
+        Quantity: 10
 
 - type: entity
   parent: PillCanister
@@ -105,13 +105,13 @@
     pillType: 1
   - type: Label
     currentLabel: equilibrazine 5u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Equilibrazine
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Equilibrazine
+        Quantity: 5
 
 - type: entity
   parent: PillCanister
@@ -137,13 +137,13 @@
     pillType: 6
   - type: Label
     currentLabel: blissifylovene 5u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Blissifylovene
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Blissifylovene
+        Quantity: 5
 
 - type: entity
   parent: PillCanister
@@ -169,13 +169,13 @@
     pillType: 14
   - type: Label
     currentLabel: calmafluxine 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Calmafluxine
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Calmafluxine
+        Quantity: 10
 
 - type: entity
   parent: PillCanister
@@ -201,13 +201,13 @@
     pillType: 15
   - type: Label
     currentLabel: tranquinase 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Tranquinase
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Tranquinase
+        Quantity: 10
 
 - type: entity
   parent: PillCanister
@@ -233,13 +233,13 @@
     pillType: 2
   - type: Label
     currentLabel: stubantazine 10u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Stubantazine
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Stubantazine
+        Quantity: 10
 
 - type: entity
   parent: PillCanister
@@ -265,13 +265,13 @@
     pillType: 19
   - type: Label
     currentLabel: agonolexyne 5u
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Agonolexyne
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Agonolexyne
+        Quantity: 5
 
 - type: entity
   parent: PillCanister

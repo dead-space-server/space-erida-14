@@ -15,10 +15,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Goobstation.Silo;
 
-public abstract class SharedSiloSystem : EntitySystem
+public abstract partial class SharedSiloSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedDeviceLinkSystem DeviceLink = default!;
-    [Dependency] protected readonly SharedMaterialStorageSystem _materialStorage = default!;
+    [Dependency] protected SharedDeviceLinkSystem DeviceLink = default!;
+    [Dependency] protected SharedMaterialStorageSystem _materialStorage = default!;
 
     protected ProtoId<SourcePortPrototype> SourcePort = "MaterialSilo";
     protected ProtoId<SinkPortPrototype> SinkPort = "MaterialSiloUtilizer";

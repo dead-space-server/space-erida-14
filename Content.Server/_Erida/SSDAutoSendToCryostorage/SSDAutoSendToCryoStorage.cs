@@ -18,15 +18,15 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Erida.SSDAutoSendToCryostorage;
 
-public sealed class SSDAutoSendToCryostorageSystem : EntitySystem
+public sealed partial class SSDAutoSendToCryostorageSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private EntityManager _entityManager = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
 
     private bool _icSsdSendToCryostorage;
     private float _icSsdSendToCryostorageTime;

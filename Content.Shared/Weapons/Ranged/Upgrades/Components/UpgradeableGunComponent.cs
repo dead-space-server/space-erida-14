@@ -7,7 +7,7 @@ namespace Content.Shared.Weapons.Ranged.Upgrades.Components;
 /// <summary>
 /// Component that stores and manages <see cref="GunUpgradeComponent"/> that modify a given weapon.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, Access(typeof(GunUpgradeSystem))]
 public sealed partial class UpgradeableGunComponent : Component
 {
     /// <summary>

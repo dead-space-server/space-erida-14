@@ -42,6 +42,7 @@
     state: crystal
   - type: GunUpgrade
     name: gun-upgrade-vampirism-name
+    examineText: gun-upgrade-examine-text-vampirism
   - type: GunUpgradeVampirism
     damageOnHit:
       types:

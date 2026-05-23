@@ -20,7 +20,7 @@ public sealed partial class SlotBlockSystem : EntitySystem
         SubscribeLocalEvent<SlotBlockComponent, ClothingGotEquippedEvent>(EquippedAttempt);
     }
 
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private InventorySystem _inventorySystem = default!;
 
     private void UpdateSlotsBlocking(EntityUid uid)
     {
@@ -86,7 +86,7 @@ public sealed partial class SlotBlockSystem : EntitySystem
 
     private void UnequippedAttempt(Entity<SlotBlockComponent> ent, ref GotUnequippedEvent args)
     {
-        UpdateSlotsBlocking(args.Equipee);
+        UpdateSlotsBlocking(args.EquipTarget);
     }
     // Erida end
 }

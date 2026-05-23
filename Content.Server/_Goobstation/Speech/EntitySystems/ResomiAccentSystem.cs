@@ -5,7 +5,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Goobstation.Speech.EntitySystems;
 
-public sealed class ResomiAccentSystem : EntitySystem
+public sealed partial class ResomiAccentSystem : EntitySystem
 {
     // Erida-start
      private static readonly Regex Regex1 = new("ш+");
@@ -16,7 +16,7 @@ public sealed class ResomiAccentSystem : EntitySystem
     private static readonly Regex Regex6 = new("Р+");
     // Erida-end
 
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {

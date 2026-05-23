@@ -37,16 +37,16 @@ namespace Content.Server._Orion.ServerProtection.Chat;
 // License-Identifier: AGPL-3.0-or-later
 //
 
-public sealed class ChatProtectionSystem : EntitySystem
+public sealed partial class ChatProtectionSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IBanManager _banManager = default!;
-    [Dependency] private readonly IPlayerLocator _locator = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly ISharedAdminManager _admin = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly GhostKickManager _ghostKickManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IBanManager _banManager = default!;
+    [Dependency] private IPlayerLocator _locator = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
+    [Dependency] private ISharedAdminManager _admin = default!;
+    [Dependency] private IChatManager _chat = default!;
+    [Dependency] private GhostKickManager _ghostKickManager = default!;
 
     private ISawmill _log = default!;
     private readonly HashSet<string> _icWords = new();

@@ -7,7 +7,6 @@
   startingGear: CentcomHoSGear
   icon: "JobIconSergant"
   supervisors: job-supervisors-coscc
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

@@ -20,11 +20,10 @@ namespace Content.IntegrationTests.Tests.Chemistry
 - type: entity
   id: TestSolutionContainer
   components:
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        maxVol: 50
-        canMix: true";
+  - type: Solution
+    id: beaker
+    solution:
+      maxVol: 120";
 
         private static string[] _reactions = GameDataScrounger.PrototypesOfKind<ReactionPrototype>();
 
@@ -49,39 +48,39 @@ namespace Content.IntegrationTests.Tests.Chemistry
             Solution solution = null;
             Entity<SolutionComponent>? solutionEnt = default!;
 
-            await server.WaitAssertion(() =>
-            {
-                beaker = entityManager.SpawnEntity("TestSolutionContainer", coordinates);
-                Assert.That(solutionContainerSystem
-                    .TryGetSolution(beaker, "beaker", out solutionEnt, out solution));
-                solutionContainerSystem.SetCanReact(solutionEnt!.Value, false);
-                foreach (var (id, reactant) in reactionPrototype.Reactants)
+                await server.WaitAssertion(() =>
                 {
+                    beaker = entityManager.SpawnEntity("TestSolutionContainer", coordinates);
+                    Assert.That(solutionContainerSystem
+                        .TryGetSolution(beaker, "beaker", out solutionEnt, out solution));
+                    solutionContainerSystem.SetCanReact(solutionEnt!.Value, false);
+                    foreach (var (id, reactant) in reactionPrototype.Reactants)
+                    {
 #pragma warning disable NUnit2045
                     Assert.That(solutionContainerSystem
-                            .TryAddReagent(solutionEnt.Value,
-                                id,
-                                reactant.Amount,
-                                out var quantity,
-                                reactionPrototype.MinimumTemperature));
+                        .TryAddReagent(solutionEnt.Value,
+                            id,
+                            reactant.Amount,
+                            out var quantity,
+                            reactionPrototype.MinimumTemperature));
                     Assert.That(reactant.Amount, Is.EqualTo(quantity));
 #pragma warning restore NUnit2045
                 }
 
                 //Get all possible reactions with the current reagents
                 var possibleReactions = prototypeManager.EnumeratePrototypes<ReactionPrototype>()
-                        .Where(x => x.Reactants.All(id => solution.Contents.Any(s => s.Reagent.Prototype == id.Key)))
-                        .ToList();
+                    .Where(x => x.Reactants.All(id => solution.Contents.Any(s => s.Reagent.Prototype == id.Key)))
+                    .ToList();
 
                 //Check if the reaction is the first to occur when heated
                 foreach (var possibleReaction in possibleReactions.OrderBy(r => r.MinimumTemperature))
                 {
                     if (possibleReaction.Priority >= reactionPrototype.Priority &&
-                            possibleReaction.MinimumTemperature < reactionPrototype.MinimumTemperature &&
-                            possibleReaction.MixingCategories == reactionPrototype.MixingCategories)
+                        possibleReaction.MinimumTemperature < reactionPrototype.MinimumTemperature &&
+                        possibleReaction.MixingCategories == reactionPrototype.MixingCategories)
                     {
                         Assert.Fail(
-                                $"The {possibleReaction.ID} reaction may occur before {reactionPrototype.ID} when heated.");
+                            $"The {possibleReaction.ID} reaction may occur before {reactionPrototype.ID} when heated.");
                     }
                 }
 
@@ -89,17 +88,17 @@ namespace Content.IntegrationTests.Tests.Chemistry
                 foreach (var possibleReaction in possibleReactions.OrderBy(r => r.MaximumTemperature))
                 {
                     if (possibleReaction.Priority >= reactionPrototype.Priority &&
-                            possibleReaction.MaximumTemperature > reactionPrototype.MaximumTemperature &&
-                            possibleReaction.MixingCategories == reactionPrototype.MixingCategories)
+                        possibleReaction.MaximumTemperature > reactionPrototype.MaximumTemperature &&
+                        possibleReaction.MixingCategories == reactionPrototype.MixingCategories)
                     {
                         Assert.Fail(
-                                $"The {possibleReaction.ID} reaction may occur before {reactionPrototype.ID} when freezing.");
+                            $"The {possibleReaction.ID} reaction may occur before {reactionPrototype.ID} when freezing.");
                     }
                 }
 
-                //Now safe set the temperature and mix the reagents
-                solutionContainerSystem.SetTemperature(solutionEnt.Value, reactionPrototype.MinimumTemperature);
-                solutionContainerSystem.SetCanReact(solutionEnt.Value, true);
+                    //Now safe set the temperature and mix the reagents
+                    solutionContainerSystem.SetTemperature(solutionEnt.Value, reactionPrototype.MinimumTemperature);
+                    solutionContainerSystem.SetCanReact(solutionEnt.Value, true);
 
                 if (reactionPrototype.MixingCategories != null)
                 {

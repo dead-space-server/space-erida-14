@@ -29,9 +29,9 @@ using Robust.Shared.Console;
 namespace Content.Server._Lavaland.Commands;
 
 [AdminCommand(AdminFlags.Admin)]
-public sealed class LavalandListingCommand : IConsoleCommand
+public sealed partial class LavalandListingCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     public string Command => "listlavaland";
 

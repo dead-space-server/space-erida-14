@@ -48,6 +48,7 @@
     factions:
       - InteQHostile
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: MovementSpeedModifier
     baseWalkSpeed: 2

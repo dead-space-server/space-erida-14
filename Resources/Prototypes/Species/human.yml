@@ -5,29 +5,3 @@
   prototype: MobHuman
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
-
-# Here belongs DB fix for felinids
-- type: species
-  id: Oni
-  name: species-name-human
-  roundStart: false
-  prototype: MobHuman
-  dollPrototype: AppearanceHuman
-  skinColoration: HumanToned
-
-- type: species
-  id: ArachneClassic
-  name: species-name-human
-  roundStart: false
-  prototype: MobHuman
-  dollPrototype: AppearanceHuman
-  skinColoration: HumanToned
-
-- type: species
-  id: Harpy
-  name: species-name-human
-  roundStart: false
-  prototype: MobHuman
-  dollPrototype: AppearanceHuman
-  skinColoration: HumanToned
-

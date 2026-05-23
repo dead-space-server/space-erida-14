@@ -8,7 +8,7 @@ namespace Content.Server._Lavaland.EntityEffects.Conditions;
 /// <inheritdoc cref="EntityConditionSystem{T, TCon}"/>
 public sealed partial class PressureThresholdEntityConditionSystem : EntityConditionSystem<TransformComponent, PressureThreshold>
 {
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
 
     protected override void Condition(Entity<TransformComponent> entity, ref EntityConditionEvent<PressureThreshold> args)
     {

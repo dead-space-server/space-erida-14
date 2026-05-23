@@ -3,9 +3,9 @@ using Content.Shared.Whitelist;
 
 namespace Content.Shared._Lavaland.Weapons.Ranged.Restricted;
 
-public sealed class MapRestrictedGunSystem : EntitySystem
+public sealed partial class MapRestrictedGunSystem : EntitySystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

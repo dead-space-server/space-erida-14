@@ -19,13 +19,13 @@ public sealed partial class BorgSystem
 {
     private const string ReturnToCoreAction = "ActionStationAiReturnToCore";
 
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedAccessSystem _access = default!; //Fix Access borg StationAI from Erida
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly LockSystem _lock = default!;
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedAccessSystem _access = default!; //Fix Access borg StationAI from Erida
+    [Dependency] private IAdminLogManager _adminLogger = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private LockSystem _lock = default!;
+    [Dependency] private SharedMindSystem _mindSystem = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
 
     private void InitializeStationAiControl()
     {

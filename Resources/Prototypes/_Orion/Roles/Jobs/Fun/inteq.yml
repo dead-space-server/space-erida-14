@@ -6,7 +6,6 @@
   setPreference: false
   icon: "JobIconInteQ"
   supervisors: job-supervisors-hire
-  canBeAntag: false
   access:
   - InteQVanguard
   - InteQVanguardLeader
@@ -20,7 +19,6 @@
   setPreference: false
   icon: "JobIconInteQ"
   supervisors: job-supervisors-hire
-  canBeAntag: false
   access:
   - InteQVanguard
   - Maintenance

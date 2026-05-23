@@ -16,6 +16,10 @@ store-category-objective = Цели
 store-discounted-items = Скидки
 # Revenant
 store-category-abilities = Способности
+# Changeling
+store-category-combat = Бой
+store-category-utility = Утилиты
+store-category-stealth = Скрытность
 # Wizard
 store-caregory-spellbook-offensive = Атакующие заклинания
 store-caregory-spellbook-defensive = Защитные заклинания

@@ -7,7 +7,6 @@
   startingGear: CentcomOperatorGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-centcom-officer
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

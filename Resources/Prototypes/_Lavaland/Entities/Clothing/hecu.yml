@@ -30,8 +30,7 @@
     sprintModifier: 1.0
   - type: ClothingGrant
     component:
-    - type: SolutionRegeneration
-      solution: bloodstream
+    - type: BloodstreamRegeneration
       generated:
         reagents:
         - ReagentId: TranexamicAcidPlus

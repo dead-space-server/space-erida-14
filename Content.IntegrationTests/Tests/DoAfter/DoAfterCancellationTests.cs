@@ -1,7 +1,5 @@
 using System.Linq;
-using Content.IntegrationTests.Tests.Construction.Interaction;
 using Content.IntegrationTests.Tests.Interaction;
-using Content.IntegrationTests.Tests.Weldable;
 using Content.Shared.Tools.Components;
 
 namespace Content.IntegrationTests.Tests.DoAfter;
@@ -12,26 +10,31 @@ namespace Content.IntegrationTests.Tests.DoAfter;
 /// </summary>
 public sealed class DoAfterCancellationTests : InteractionTest
 {
+    private const string Girder = "Girder";
+    private const string Locker = "LockerFreezer";
+    private const string Wall = "Wall";
+    private const string WallSolid = "WallSolid";
+
     [Test]
     public async Task CancelWallDeconstruct()
     {
-        await StartDeconstruction(WallConstruction.WallSolid);
+        await StartDeconstruction(WallSolid);
         await InteractUsing(Weld, awaitDoAfters: false);
 
         // Failed do-after has no effect
         await CancelDoAfters();
-        AssertPrototype(WallConstruction.WallSolid);
+        AssertPrototype(WallSolid);
 
         // Second attempt works fine
         await InteractUsing(Weld);
-        AssertPrototype(WallConstruction.Girder);
+        AssertPrototype(Girder);
 
         // Repeat for wrenching interaction
         AssertAnchored();
         await InteractUsing(Wrench, awaitDoAfters: false);
         await CancelDoAfters();
         AssertAnchored();
-        AssertPrototype(WallConstruction.Girder);
+        AssertPrototype(Girder);
         await InteractUsing(Wrench);
         AssertAnchored(false);
 
@@ -47,18 +50,18 @@ public sealed class DoAfterCancellationTests : InteractionTest
     [Test]
     public async Task CancelWallConstruct()
     {
-        await StartConstruction(WallConstruction.Wall);
+        await StartConstruction(Wall);
         await InteractUsing(Steel, 5, awaitDoAfters: false);
         await CancelDoAfters();
 
         await InteractUsing(Steel, 5);
-        ClientAssertPrototype(WallConstruction.Girder, Target);
+        ClientAssertPrototype(Girder, Target);
         await InteractUsing(Steel, 5, awaitDoAfters: false);
         await CancelDoAfters();
-        AssertPrototype(WallConstruction.Girder);
+        AssertPrototype(Girder);
 
         await InteractUsing(Steel, 5);
-        AssertPrototype(WallConstruction.WallSolid);
+        AssertPrototype(WallSolid);
     }
 
     [Test]
@@ -96,7 +99,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
     [Test]
     public async Task CancelRepeatedWeld()
     {
-        await SpawnTarget(WeldableTests.Locker);
+        await SpawnTarget(Locker);
         var comp = Comp<WeldableComponent>();
 
         Assert.That(comp.IsWelded, Is.False);

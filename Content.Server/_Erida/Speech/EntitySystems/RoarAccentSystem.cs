@@ -5,9 +5,9 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Erida.Speech.EntitySystems;
 
-public sealed class RoarAccentSystem : EntitySystem
+public sealed partial class RoarAccentSystem : EntitySystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private IRobustRandom _random = default!;
     private static readonly Regex RegexR = new("Р");
     private static readonly Regex Regexr = new("р");
 

@@ -1,6 +1,7 @@
 using Content.Server.Construction.Components;
 using Content.Server.Stack;
 using Content.Shared.Construction.Components;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Stacks;
@@ -11,13 +12,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Construction;
 
-public sealed class MachineFrameSystem : EntitySystem
+public sealed partial class MachineFrameSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _container = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly StackSystem _stack = default!;
-    [Dependency] private readonly ConstructionSystem _construction = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private StackSystem _stack = default!;
+    [Dependency] private ConstructionSystem _construction = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
@@ -59,6 +60,15 @@ public sealed class MachineFrameSystem : EntitySystem
         }
 
         // If this changes in the future, then RegenerateProgress() also needs to be updated.
+        if (TryComp<MachinePartComponent>(args.Used, out var machinePart))
+        {
+            if (TryInsertMachinePart(uid, args.Used, component, machinePart))
+            {
+                args.Handled = true;
+                return;
+            }
+        }
+
         // Note that one entity is ALLOWED to satisfy more than one kind of component or tag requirements. This is
         // necessary in order to avoid weird entity-ordering shenanigans in RegenerateProgress().
         if (TryComp<StackComponent>(args.Used, out var stack))
@@ -155,6 +165,67 @@ public sealed class MachineFrameSystem : EntitySystem
     }
 
     /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
+    private bool TryInsertMachinePart(EntityUid uid, EntityUid used, MachineFrameComponent component, MachinePartComponent part)
+    {
+        var type = part.PartType;
+
+        if (!component.Requirements.ContainsKey(type))
+            return false;
+
+        var progress = component.Progress[type];
+        var requirement = component.Requirements[type];
+        var needed = requirement - progress;
+
+        if (needed <= 0)
+            return false;
+
+        if (TryComp<StackComponent>(used, out var stack))
+        {
+            var count = stack.Count;
+            if (count < needed)
+            {
+                if (!_container.TryRemoveFromContainer(used))
+                    return false;
+
+                if (!_container.Insert(used, component.PartContainer))
+                    return true;
+
+                component.Progress[type] += count;
+                if (IsComplete(component))
+                    _popupSystem.PopupEntity(Loc.GetString("machine-frame-component-on-complete"), uid);
+
+                return true;
+            }
+
+            var splitStack = _stack.Split((used, stack), needed, Transform(uid).Coordinates);
+
+            if (splitStack == null)
+                return false;
+
+            if (!_container.Insert(splitStack.Value, component.PartContainer))
+                return true;
+
+            component.Progress[type] += needed;
+            if (IsComplete(component))
+                _popupSystem.PopupEntity(Loc.GetString("machine-frame-component-on-complete"), uid);
+
+            return true;
+        }
+
+        if (!_container.TryRemoveFromContainer(used))
+            return false;
+
+        if (!_container.Insert(used, component.PartContainer))
+            return true;
+
+        component.Progress[type]++;
+        if (IsComplete(component))
+            _popupSystem.PopupEntity(Loc.GetString("machine-frame-component-on-complete"), uid);
+
+        return true;
+    }
+
+    /// <returns>Whether or not the function had any effect. Does not indicate success.</returns>
     private bool TryInsertStack(EntityUid uid, EntityUid used, MachineFrameComponent component, StackComponent stack)
     {
         var type = stack.StackTypeId;
@@ -202,6 +273,12 @@ public sealed class MachineFrameSystem : EntitySystem
         if (!component.HasBoard)
             return false;
 
+        foreach (var (type, amount) in component.Requirements)
+        {
+            if (component.Progress[type] < amount)
+                return false;
+        }
+
         foreach (var (type, amount) in component.MaterialRequirements)
         {
             if (component.MaterialProgress[type] < amount)
@@ -225,13 +302,20 @@ public sealed class MachineFrameSystem : EntitySystem
 
     public void ResetProgressAndRequirements(MachineFrameComponent component, MachineBoardComponent machineBoard)
     {
+        component.Requirements = new Dictionary<ProtoId<MachinePartPrototype>, int>(machineBoard.Requirements);
         component.MaterialRequirements = new Dictionary<ProtoId<StackPrototype>, int>(machineBoard.StackRequirements);
         component.ComponentRequirements = new Dictionary<string, GenericPartInfo>(machineBoard.ComponentRequirements);
         component.TagRequirements = new Dictionary<ProtoId<TagPrototype>, GenericPartInfo>(machineBoard.TagRequirements);
 
+        component.Progress.Clear();
         component.MaterialProgress.Clear();
         component.ComponentProgress.Clear();
         component.TagProgress.Clear();
+
+        foreach (var (partType, _) in component.Requirements)
+        {
+            component.Progress[partType] = 0;
+        }
 
         foreach (var (stackType, _) in component.MaterialRequirements)
         {
@@ -253,10 +337,11 @@ public sealed class MachineFrameSystem : EntitySystem
     {
         if (!component.HasBoard)
         {
-            component.TagRequirements.Clear();
+            component.Requirements.Clear();
             component.MaterialRequirements.Clear();
             component.ComponentRequirements.Clear();
             component.TagRequirements.Clear();
+            component.Progress.Clear();
             component.MaterialProgress.Clear();
             component.ComponentProgress.Clear();
             component.TagProgress.Clear();
@@ -275,6 +360,17 @@ public sealed class MachineFrameSystem : EntitySystem
 
         foreach (var part in component.PartContainer.ContainedEntities)
         {
+            if (TryComp<MachinePartComponent>(part, out var machinePart) &&
+                component.Requirements.ContainsKey(machinePart.PartType))
+            {
+                var count = TryComp<StackComponent>(part, out var partStack) ? partStack.Count : 1;
+
+                if (!component.Progress.TryAdd(machinePart.PartType, count))
+                    component.Progress[machinePart.PartType] += count;
+
+                continue;
+            }
+
             if (TryComp<StackComponent>(part, out var stack))
             {
                 var type = stack.StackTypeId;

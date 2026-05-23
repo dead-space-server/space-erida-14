@@ -7,8 +7,75 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <LangVersion>14</LangVersion>
     <Nullable>disable</Nullable>
+    <IntegrationTestShard Condition="'$(IntegrationTestShard)' == ''">all</IntegrationTestShard>
   </PropertyGroup>
   <Import Project="../MSBuild/Content.props" />
+
+  <Target Name="ValidateIntegrationTestShard" BeforeTargets="PrepareForBuild">
+    <Error
+      Condition="'$(IntegrationTestShard)' != 'all' and '$(IntegrationTestShard)' != 'core-systems' and '$(IntegrationTestShard)' != 'content-construction' and '$(IntegrationTestShard)' != 'maps-load' and '$(IntegrationTestShard)' != 'maps-systems' and '$(IntegrationTestShard)' != 'game-rules' and '$(IntegrationTestShard)' != 'round-admin-db' and '$(IntegrationTestShard)' != 'entity-core' and '$(IntegrationTestShard)' != 'entity-damage' and '$(IntegrationTestShard)' != 'entity-systems' and '$(IntegrationTestShard)' != 'misc'"
+      Text="Unknown IntegrationTestShard '$(IntegrationTestShard)'." />
+  </Target>
+
+  <ItemGroup>
+    <AssignedIntegrationShardCompile Include="Tests\Access\**\*.cs;Tests\Actions\**\*.cs;Tests\Administration\**\*.cs;Tests\Atmos\**\*.cs;Tests\Backmen\**\*.cs;Tests\Body\**\*.cs;Tests\Buckle\**\*.cs;Tests\Chameleon\**\*.cs;Tests\Chasm\**\*.cs;Tests\Chemistry\**\*.cs;Tests\Cleanup\**\*.cs;Tests\Climbing\**\*.cs;Tests\Cloning\**\*.cs;Tests\Commands\**\*.cs;Tests\Construction\**\*.cs;Tests\Damageable\**\*.cs;Tests\Destructible\**\*.cs;Tests\DeviceLinking\**\*.cs;Tests\DeviceNetwork\**\*.cs;Tests\Disposal\**\*.cs;Tests\DoAfter\**\*.cs;Tests\Doors\**\*.cs;Tests\Embedding\**\*.cs;Tests\EncryptionKeys\**\*.cs;Tests\Engineering\**\*.cs;Tests\Explosion\**\*.cs;Tests\Fluids\**\*.cs;Tests\GameObjects\**\*.cs;Tests\GameRules\**\*.cs;Tests\GameTestTests\**\*.cs;Tests\Gibbing\**\*.cs;Tests\Gravity\**\*.cs;Tests\Guidebook\**\*.cs;Tests\Hands\**\*.cs;Tests\Helpers\**\*.cs;Tests\Holosign\**\*.cs;Tests\Humanoid\**\*.cs;Tests\Interaction\**\*.cs;Tests\Internals\**\*.cs;Tests\Lathe\**\*.cs;Tests\Linter\**\*.cs;Tests\Lobby\**\*.cs;Tests\Localization\**\*.cs;Tests\Mapping\**\*.cs;Tests\Markings\**\*.cs;Tests\Materials\**\*.cs;Tests\Medical\**\*.cs;Tests\Minds\**\*.cs;Tests\Mousetrap\**\*.cs;Tests\Movement\**\*.cs;Tests\Networking\**\*.cs;Tests\NPC\**\*.cs;Tests\Nutrition\**\*.cs;Tests\Payload\**\*.cs;Tests\Physics\**\*.cs;Tests\Power\**\*.cs;Tests\Preferences\**\*.cs;Tests\Procedural\**\*.cs;Tests\PrototypeTests\**\*.cs;Tests\Puller\**\*.cs;Tests\Replays\**\*.cs;Tests\Respirator\**\*.cs;Tests\Roles\**\*.cs;Tests\Round\**\*.cs;Tests\Serialization\**\*.cs;Tests\Shuttle\**\*.cs;Tests\SmartFridge\**\*.cs;Tests\Sprite\**\*.cs;Tests\Station\**\*.cs;Tests\Storage\**\*.cs;Tests\Strip\**\*.cs;Tests\Tag\**\*.cs;Tests\Tiles\**\*.cs;Tests\Tools\**\*.cs;Tests\Toolshed\**\*.cs;Tests\UserInterface\**\*.cs;Tests\Utility\**\*.cs;Tests\Vending\**\*.cs;Tests\Weapons\**\*.cs;Tests\Weldable\**\*.cs;Tests\Wires\**\*.cs;Tests\WizdenContentFreeze\**\*.cs;Tests\Zombie\**\*.cs" />
+    <AssignedIntegrationShardCompile Include="Tests\CargoTest.cs;Tests\ClickableTest.cs;Tests\ContainerOcclusionTest.cs;Tests\ContrabandTest.cs;Tests\DeleteInventoryTest.cs;Tests\DummyIconTest.cs;Tests\EntityTest.cs;Tests\FillLevelSpriteTest.cs;Tests\GravityGridTest.cs;Tests\HumanInventoryUniformSlotsTest.cs;Tests\InventoryHelpersTest.cs;Tests\MachineBoardTest.cs;Tests\MagazineVisualsSpriteTest.cs;Tests\MappingEditorTest.cs;Tests\MaterialArbitrageTest.cs;Tests\PostMapInitTest.cs;Tests\PrototypeSaveTest.cs;Tests\ResearchTest.cs;Tests\RestartRoundTest.cs;Tests\RoundEndTest.cs;Tests\SalvageTest.cs;Tests\SaveLoadMapTest.cs;Tests\SaveLoadSaveTest.cs;Tests\ShuttleTest.cs;Tests\StartTest.cs;Tests\StoreTests.cs;Tests\VendingMachineRestockTest.cs;Tests\XenoArtifactTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' != 'all'">
+    <Compile Remove="Tests\**\*.cs" />
+    <Compile Include="Tests\Interaction\InteractionTest.cs;Tests\Interaction\InteractionTest.Constants.cs;Tests\Interaction\InteractionTest.EntitySpecifier.cs;Tests\Interaction\InteractionTest.EntitySpecifierCollection.cs;Tests\Interaction\InteractionTest.Helpers.cs;Tests\Interaction\InteractionTestSystem.cs;Tests\Movement\MovementTest.cs;Tests\Helpers\**\*.cs;Tests\Destructible\TestDestructibleListenerSystem.cs;Tests\DeviceNetwork\DeviceNetworkTestSystem.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'core-systems'">
+    <Compile Include="Tests\Atmos\**\*.cs;Tests\Chemistry\**\*.cs;Tests\Buckle\**\*.cs;Tests\Chameleon\**\*.cs;Tests\Chasm\**\*.cs;Tests\Climbing\**\*.cs;Tests\SmartFridge\**\*.cs;Tests\Storage\**\*.cs;Tests\Strip\**\*.cs;Tests\Vending\**\*.cs;Tests\Weapons\**\*.cs" />
+    <Compile Include="Tests\Interaction\**\*.cs" Exclude="Tests\Interaction\InteractionTest.cs;Tests\Interaction\InteractionTest.Constants.cs;Tests\Interaction\InteractionTest.EntitySpecifier.cs;Tests\Interaction\InteractionTest.EntitySpecifierCollection.cs;Tests\Interaction\InteractionTest.Helpers.cs;Tests\Interaction\InteractionTestSystem.cs" />
+    <Compile Include="Tests\ClickableTest.cs;Tests\ContainerOcclusionTest.cs;Tests\DeleteInventoryTest.cs;Tests\HumanInventoryUniformSlotsTest.cs;Tests\InventoryHelpersTest.cs;Tests\StoreTests.cs;Tests\VendingMachineRestockTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'content-construction'">
+    <Compile Include="Tests\Cloning\**\*.cs;Tests\Construction\**\*.cs;Tests\Doors\**\*.cs;Tests\Guidebook\**\*.cs;Tests\Linter\**\*.cs;Tests\Localization\**\*.cs;Tests\Materials\**\*.cs;Tests\PrototypeTests\**\*.cs;Tests\Roles\**\*.cs;Tests\Sprite\**\*.cs;Tests\Tiles\**\*.cs;Tests\Tools\**\*.cs;Tests\Weldable\**\*.cs;Tests\WizdenContentFreeze\**\*.cs" />
+    <Compile Include="Tests\CargoTest.cs;Tests\ContrabandTest.cs;Tests\DummyIconTest.cs;Tests\FillLevelSpriteTest.cs;Tests\MagazineVisualsSpriteTest.cs;Tests\MaterialArbitrageTest.cs;Tests\PrototypeSaveTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'maps-load'">
+    <Compile Include="Tests\PostMapInitTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'maps-systems'">
+    <Compile Include="Tests\Mapping\**\*.cs;Tests\Procedural\**\*.cs;Tests\Shuttle\**\*.cs" />
+    <Compile Include="Tests\MappingEditorTest.cs;Tests\SalvageTest.cs;Tests\SaveLoadMapTest.cs;Tests\SaveLoadSaveTest.cs;Tests\ShuttleTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'game-rules'">
+    <Compile Include="Tests\GameRules\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'round-admin-db'">
+    <Compile Include="Tests\Administration\**\*.cs;Tests\Cleanup\**\*.cs;Tests\Commands\**\*.cs;Tests\Lobby\**\*.cs;Tests\Networking\**\*.cs;Tests\Preferences\**\*.cs;Tests\Replays\**\*.cs;Tests\Round\**\*.cs;Tests\Serialization\**\*.cs;Tests\Station\**\*.cs;Tests\Toolshed\**\*.cs;Tests\UserInterface\**\*.cs" />
+    <Compile Include="Tests\RestartRoundTest.cs;Tests\RoundEndTest.cs;Tests\StartTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'entity-core'">
+    <Compile Include="Tests\Access\**\*.cs;Tests\Backmen\**\*.cs" />
+    <Compile Include="Tests\EntityTest.cs;Tests\GravityGridTest.cs;Tests\MachineBoardTest.cs;Tests\ResearchTest.cs;Tests\XenoArtifactTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'entity-damage'">
+    <Compile Include="Tests\Body\**\*.cs;Tests\Damageable\**\*.cs;Tests\Explosion\**\*.cs;Tests\Fluids\**\*.cs" />
+    <Compile Include="Tests\Destructible\**\*.cs" Exclude="Tests\Destructible\TestDestructibleListenerSystem.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'entity-systems'">
+    <Compile Include="Tests\Actions\**\*.cs;Tests\DeviceLinking\**\*.cs;Tests\Disposal\**\*.cs;Tests\DoAfter\**\*.cs;Tests\Embedding\**\*.cs;Tests\EncryptionKeys\**\*.cs;Tests\Engineering\**\*.cs;Tests\GameObjects\**\*.cs;Tests\GameTestTests\**\*.cs;Tests\Gibbing\**\*.cs;Tests\Gravity\**\*.cs;Tests\Hands\**\*.cs;Tests\Holosign\**\*.cs;Tests\Humanoid\**\*.cs;Tests\Internals\**\*.cs;Tests\Lathe\**\*.cs;Tests\Markings\**\*.cs;Tests\Medical\**\*.cs;Tests\Minds\**\*.cs;Tests\Mousetrap\**\*.cs;Tests\NPC\**\*.cs;Tests\Nutrition\**\*.cs;Tests\Payload\**\*.cs;Tests\Physics\**\*.cs;Tests\Power\**\*.cs;Tests\Puller\**\*.cs;Tests\Respirator\**\*.cs;Tests\Tag\**\*.cs;Tests\Utility\**\*.cs;Tests\Wires\**\*.cs;Tests\Zombie\**\*.cs" />
+    <Compile Include="Tests\DeviceNetwork\**\*.cs" Exclude="Tests\DeviceNetwork\DeviceNetworkTestSystem.cs" />
+    <Compile Include="Tests\Movement\**\*.cs" Exclude="Tests\Movement\MovementTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(IntegrationTestShard)' == 'misc'">
+    <Compile Include="Tests\**\*.cs" Exclude="@(AssignedIntegrationShardCompile)" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="NUnit" />
     <PackageReference Include="NUnit3TestAdapter" />

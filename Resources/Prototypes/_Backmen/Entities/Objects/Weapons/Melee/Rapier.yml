@@ -21,10 +21,10 @@
 #    enabled: true
     reflectProb: .6
     spread: 90
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 15
+  - type: Solution
+    id: melee
+    solution:
+      maxVol: 15
   - type: MeleeChemicalInjector
     solution: melee
   - type: RefillableSolution

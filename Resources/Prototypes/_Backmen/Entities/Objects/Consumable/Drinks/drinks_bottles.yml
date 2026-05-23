@@ -4,11 +4,11 @@
   name: soju bottle
   description: It's like sake but if you're trying to get FUCKED. UP.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      digestion:
-        reagents:
-        - ReagentId: Soju
-          Quantity: 100
+  - type: Solution
+    id: digestion
+    solution:
+      reagents:
+      - ReagentId: Soju
+        Quantity: 100
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Drinks/sojubottle.rsi

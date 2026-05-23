@@ -7,7 +7,6 @@
   startingGear: CoSCCGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-ccsa
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

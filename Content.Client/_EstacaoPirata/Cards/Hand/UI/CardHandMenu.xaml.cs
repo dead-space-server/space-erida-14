@@ -22,8 +22,8 @@ namespace Content.Client._EstacaoPirata.Cards.Hand.UI;
 // [GenerateTypedNameReference]
 public sealed partial class CardHandMenu : RadialMenu
 {
-    [Dependency] private readonly EntityManager _entManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private EntityManager _entManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     private readonly SpriteSystem _spriteSystem;
     private readonly SharedPopupSystem _popup;

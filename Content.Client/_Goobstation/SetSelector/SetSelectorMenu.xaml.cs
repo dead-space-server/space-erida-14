@@ -14,7 +14,7 @@ namespace Content.Client._Goobstation.SetSelector;
 [GenerateTypedNameReferences]
 public sealed partial class SetSelectorMenu : FancyWindow
 {
-    [Dependency] private readonly IEntitySystemManager _sysMan = default!;
+    [Dependency] private IEntitySystemManager _sysMan = default!;
     private readonly SpriteSystem _spriteSystem;
 
     public event Action? OnApprove;

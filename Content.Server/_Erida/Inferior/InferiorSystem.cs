@@ -30,16 +30,16 @@ using System.Linq;
 
 namespace Content.Server._Erida.Inferior;
 
-public sealed class InferiorSystem : SharedInferiorSystem
+public sealed partial class InferiorSystem : SharedInferiorSystem
 {
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedStunSystem _sharedStun = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedStunSystem _sharedStun = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private RoleSystem _role = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private IAdminLogManager _adminLogManager = default!;
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
     public ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
     public override void Initialize()

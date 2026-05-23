@@ -31,22 +31,22 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Erida.Leash.Systems;
 
-public sealed class LeashSystem : EntitySystem
+public sealed partial class LeashSystem : EntitySystem
 {
     private static readonly SpriteSpecifier.Rsi LeashVisualSprite =
         new(new ResPath("/Textures/_Erida/Objects/Fun/ERP/leash_line.rsi"), "line");
     private static readonly Vector2 LeashHolderOffset = Vector2.Zero;
     private static readonly Vector2 LeashWearerOffset = new(0f, 0.08f);
 
-    [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private AlertsSystem _alerts = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private readonly HashSet<EntityUid> _allowedCollarUnequips = new();
 
@@ -92,16 +92,16 @@ public sealed class LeashSystem : EntitySystem
         if (args.Slot != "neck")
             return;
 
-        component.Wearer = args.Equipee;
-        var wearer = EnsureComp<CollarWearerComponent>(args.Equipee);
+        component.Wearer = args.EquipTarget;
+        var wearer = EnsureComp<CollarWearerComponent>(args.EquipTarget);
         wearer.Collar = uid;
-        _alerts.ShowAlert(args.Equipee, component.Alert);
+        _alerts.ShowAlert(args.EquipTarget, component.Alert);
     }
 
     private void OnCollarUnequipAttempt(EntityUid uid, CollarComponent component, BeingUnequippedAttemptEvent args)
     {
         if (args.Slot != "neck" ||
-            args.UnEquipTarget != args.Unequipee ||
+            args.UnEquipTarget != args.User ||
             component.Wearer != args.UnEquipTarget ||
             _allowedCollarUnequips.Contains(uid))
         {
@@ -117,14 +117,14 @@ public sealed class LeashSystem : EntitySystem
     {
         DetachLeashFromCollar(uid, component);
 
-        if (TryComp<CollarWearerComponent>(args.Equipee, out var wearer) &&
+        if (TryComp<CollarWearerComponent>(args.EquipTarget, out var wearer) &&
             wearer.Collar == uid)
         {
-            RemCompDeferred<CollarWearerComponent>(args.Equipee);
+            RemCompDeferred<CollarWearerComponent>(args.EquipTarget);
         }
 
         component.Wearer = null;
-        _alerts.ClearAlert(args.Equipee, component.Alert);
+        _alerts.ClearAlert(args.EquipTarget, component.Alert);
     }
 
     private void OnCollarTerminating(EntityUid uid, CollarComponent component, ref EntityTerminatingEvent args)

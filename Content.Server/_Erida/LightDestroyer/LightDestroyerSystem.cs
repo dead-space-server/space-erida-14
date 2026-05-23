@@ -16,12 +16,12 @@ using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Server._Erida.LightDestroyer;
 
-public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
+public sealed partial class LightDestroyerSystem : SharedLightDestroyerSystem
 {
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly PointLightSystem _pointLight = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private InventorySystem _inventorySystem = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private PointLightSystem _pointLight = default!;
+    [Dependency] private IGameTiming _timing = default!;
     public override void Initialize()
     {
         base.Initialize();

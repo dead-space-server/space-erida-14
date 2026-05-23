@@ -9,10 +9,10 @@
     state: hypoblueshield
   - type: Item
     sprite: _Erida/Objects/Specific/Medical/hypospray.rsi
-  - type: SolutionContainerManager
-    solutions:
-      hypospray:
-        maxVol: 15
+  - type: Solution
+    id: hypospray
+    solution:
+      maxVol: 15
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution

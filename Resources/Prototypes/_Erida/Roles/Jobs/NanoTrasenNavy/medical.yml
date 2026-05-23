@@ -12,7 +12,6 @@
   icon: "JobIconNTNavyMedical"
   joinNotifyCrew: true
   supervisors: job-supervisors-navy-wo-officer-medical
-  canBeAntag: false
   access:
   - NTNavy
   - NTNavyMedical

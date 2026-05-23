@@ -67,7 +67,7 @@ public sealed partial class DeltaPressureComponent : Component
     [DataField]
     public DamageSpecifier BaseDamage = new()
     {
-        DamageDict = new()
+        DamageDict = new ()
         {
             { "Structural", 10 },
         },

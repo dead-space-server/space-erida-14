@@ -1,5 +1,5 @@
 uniform sampler2D SCREEN_TEXTURE;
-uniform highp float desaturation = 0.1;
+uniform highp float desaturation;
 
 void fragment() {
     highp vec4 color = texture(SCREEN_TEXTURE, UV);

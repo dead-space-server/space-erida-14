@@ -2,8 +2,8 @@
 const fs = require("fs");
 
 // Regexes
-const HeaderRegex = /^\s*(?::cl:|🆑) *([a-z0-9_\-, ]+)?/img; // :cl: or 🆑 [0] followed by optional author name [1]
-const EntryRegex = /^ *[*-]? *(\w+): *([^\n\r]+)\r?$/img; // * or - followed by change type [0] and change message [1]
+const HeaderRegex = /^\s*(?::cl:|🆑) *([a-z0-9а-яё_\-,& ]+)?/img; // :cl: or 🆑 [0] followed by optional author name [1]
+const EntryRegex = /^ *[*-]? *([^:\n\r]+): *([^\n\r]+)\r?$/img; // * or - followed by change type [0] and change message [1]
 const CommentRegex = /<!--.*?-->/gs; // HTML comments
 
 // Main function
@@ -34,7 +34,7 @@ async function main() {
     const body = event.pull_request && event.pull_request.body ? event.pull_request.body : '';
 
     // Remove comments from the body
-    commentlessBody = body.replace(CommentRegex, '');
+    let commentlessBody = body.replace(CommentRegex, '');
 
     // Get author
     const headerMatch = HeaderRegex.exec(commentlessBody);
@@ -56,7 +56,7 @@ async function main() {
 
     if (results.entries.length <= 0)
     {
-        console.log("PR has a changelog header but no valid entries. Either remove the changelog completely, or use entries of the format '- add: text', '- remove: text', '- tweak: text', or '- fix: text'.");
+        console.log("PR has a changelog header but no valid entries. Either remove the changelog completely, or use entries like '- Добавлено: текст' / '- add: text'.");
         return process.exit(1);
     }
 
@@ -98,17 +98,21 @@ function getChanges(body) {
     matches.forEach((entry) => {
         let type;
 
-        switch (entry[0].toLowerCase()) {
+        switch (entry[0].trim().toLowerCase()) {
             case "add":
+            case "добавлено":
                 type = "Add";
                 break;
             case "remove":
+            case "удалено":
                 type = "Remove";
                 break;
             case "tweak":
+            case "изменено":
                 type = "Tweak";
                 break;
             case "fix":
+            case "исправлено":
                 type = "Fix";
                 break;
             default:

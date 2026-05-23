@@ -10,11 +10,11 @@ using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 
-public sealed class ReadminLogging : EntitySystem
+public sealed partial class ReadminLogging : EntitySystem
 {
-    [Dependency] private readonly DiscordWebhook _discord = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IAdminManager _adminManager = default!;
+    [Dependency] private DiscordWebhook _discord = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
     private WebhookIdentifier? _webhookId = null;
     private Color _webhookEmbedColor;
     private Color _webhookEmbedColorDebug;

@@ -135,12 +135,12 @@
         Base: dead
   - type: Extractable
     grindableSolutionName: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: GroundBee
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      reagents:
+      - ReagentId: GroundBee
+        Quantity: 1
   - type: Butcherable
     spawned:
     - id: null # Should give nothing when you butcher it so we set the item id it needs to spawn to null
@@ -428,18 +428,19 @@
     baseDecayRate: 0.25
   - type: Extractable
     grindableSolutionName: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Slime
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      reagents:
+      - ReagentId: Slime
+        Quantity: 5
   - type: Butcherable
     spawned:
     - id: FoodMeatSlime
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Cockroach
+  - type: Injurable
+    damageContainer: Biological
   - type: Tag
     tags:
     - Trash
@@ -577,8 +578,9 @@
     weightlessFriction: 1
     baseWeightlessModifier: 1
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Moth
+  - type: Injurable
+    damageContainer: Biological
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
@@ -867,12 +869,12 @@
         Base: dead
   - type: Extractable
     grindableSolutionName: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 1
   - type: Butcherable
     spawned:
     - id: null # Should give nothing when you butcher it so we set the item id it needs to spawn to null
@@ -942,13 +944,9 @@
         Base: dead
       Dead:
         Base: dead
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      udder:
-        maxVol: 250
-        reagents:
-        - ReagentId: Milk
-          Quantity: 30
+    - SolutionUdder
   - type: Udder
     reagentId: Milk
     quantityPerUpdate: 25
@@ -981,6 +979,18 @@
     guides:
     - Chef
     - FoodRecipes
+
+- type: entity
+  parent: SolutionLarge
+  id: SolutionUdder
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: udder # TODO This should really use a different id...
+    solution:
+      reagents:
+      - ReagentId: Milk
+        Quantity: 30
 
 - type: entity
   name: crab
@@ -1104,15 +1114,10 @@
         Base: dead
       Dead:
         Base: dead
-  - type: SolutionContainerManager
+  - type: SolutionManager
     solutions:
-      udder:
-        maxVol: 250
-        reagents:
-        - ReagentId: MilkGoat
-          Quantity: 30
-      wool:
-        maxVol: 250
+    - SolutionUdderGoat
+    - SolutionWool
   - type: Udder
     reagentId: MilkGoat
     quantityPerUpdate: 25
@@ -1159,6 +1164,25 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
+
+- type: entity
+  parent: SolutionUdder
+  id: SolutionUdderGoat
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MilkGoat
+        Quantity: 30
+
+- type: entity
+  parent: SolutionLarge
+  id: SolutionWool
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: wool
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1883,12 +1907,12 @@
     baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
   - type: Extractable
     grindableSolutionName: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 3
+  - type: Solution
+    id: food
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 3
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
@@ -1964,6 +1988,17 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+
+- type: entity
+  abstract: true
+  parent: [SolutionFood, SolutionTiny]
+  id: SolutionVermin
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 15
 
 - type: entity
   parent: MobMouse
@@ -2082,14 +2117,14 @@
       reagents:
       - ReagentId: UnstableMutagen
         Quantity: 50
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 3
-        - ReagentId: Uranium
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      reagents:
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 3
+      - ReagentId: Uranium
+        Quantity: 10
   - type: Butcherable
     spawned:
     - id: FoodMeatRat
@@ -2097,9 +2132,10 @@
     - id: SheetUranium1
       amount: 1
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Zombie
 
+  - type: Injurable
+    damageContainer: Biological
 - type: entity
   name: lizard #Weh
   parent: SimpleMobBase
@@ -2150,8 +2186,9 @@
       - ReagentId: Blood
         Quantity: 150
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Scale
+  - type: Injurable
+    damageContainer: Biological
   - type: Tag
     tags:
     - VimPilot
@@ -2560,8 +2597,9 @@
       - ReagentId: Blood
         Quantity: 50
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Scale
+  - type: Injurable
+    damageContainer: Biological
   - type: LanguageSpeaker # Erida-edit
     currentLanguage: TauCetiBasic
   - type: LanguageKnowledge # Erida-edit
@@ -2599,12 +2637,11 @@
     thresholds:
       0: Alive
       90: Dead
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 30
+  - type: Solution
+    id: melee
+    solution:
+      maxVol: 30
   - type: SolutionRegeneration
-    solution: melee
     generated:
       reagents:
       - ReagentId: Mechanotoxin
@@ -3140,8 +3177,9 @@
       - ReagentId: DemonsBlood
         Quantity: 150
   - type: Damageable
-    damageContainer: BiologicalMetaphysical
     damageModifierSet: Infernal
+  - type: Injurable
+    damageContainer: BiologicalMetaphysical
   - type: Temperature
     currentTemperature: 310.15
     specificHeat: 42
@@ -3620,16 +3658,16 @@
     baseDecayRate: 0.3
   - type: Extractable
     grindableSolutionName: food
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
-        - ReagentId: Blood
-          Quantity: 55
-        - ReagentId: Fat
-          Quantity: 5
+  - type: Solution
+    id: food
+    solution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 55
+      - ReagentId: Fat
+        Quantity: 5
   - type: Butcherable
     spawned:
     - id: FoodMeat

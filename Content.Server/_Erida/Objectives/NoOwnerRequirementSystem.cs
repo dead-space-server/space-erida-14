@@ -8,12 +8,12 @@ using System.Linq;
 
 namespace Content.Server._Erida.Objectives;
 
-public sealed class NoOwnerRequirementSystem : EntitySystem
+public sealed partial class NoOwnerRequirementSystem : EntitySystem
 {
-    [Dependency] private readonly CrewManifestSystem _crewManifest = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly TargetSystem _target = default!;
+    [Dependency] private CrewManifestSystem _crewManifest = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private TargetSystem _target = default!;
 
     public override void Initialize()
     {

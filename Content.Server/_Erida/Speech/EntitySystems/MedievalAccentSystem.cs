@@ -4,9 +4,9 @@ using Content.Shared.Speech;
 
 namespace Content.Server._Erida.Speech.EntitySystems
 {
-    public sealed class MedievalAccentSystem : EntitySystem
+    public sealed partial class MedievalAccentSystem : EntitySystem
     {
-        [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+        [Dependency] private ReplacementAccentSystem _replacement = default!;
 
         public override void Initialize()
         {

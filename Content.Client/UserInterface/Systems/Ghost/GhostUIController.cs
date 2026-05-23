@@ -14,10 +14,10 @@ using Robust.Shared.Configuration; // Frontier
 namespace Content.Client.UserInterface.Systems.Ghost;
 
 // TODO hud refactor BEFORE MERGE fix ghost gui being too far up
-public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
+public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
 {
-    [Dependency] private readonly IEntityNetworkManager _net = default!;
-    [Dependency] private readonly IConsoleHost _consoleHost = default!; // Frontier
+    [Dependency] private IEntityNetworkManager _net = default!;
+    [Dependency] private IConsoleHost _consoleHost = default!; // Frontier
     [UISystemDependency] private readonly GhostSystem? _system = default;
     [UISystemDependency] private readonly RespawnSystem? _respawn = default; // Frontier
 

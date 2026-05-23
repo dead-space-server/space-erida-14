@@ -11,10 +11,10 @@ using Robust.Shared.Timing;
 namespace Content.Server._Lua.Tick
 {
     [UsedImplicitly]
-    public sealed class TickrateSystem : EntitySystem
+    public sealed partial class TickrateSystem : EntitySystem
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly IGameTiming _time = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        [Dependency] private IGameTiming _time = default!;
 
         private TimeSpan? _lowFpsSince;
         private TimeSpan _lastLowFps;

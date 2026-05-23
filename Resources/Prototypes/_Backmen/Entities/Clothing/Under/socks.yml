@@ -6,13 +6,13 @@
   components:
     - type: Edible
       requiresSpecialDigestion: true
-    - type: SolutionContainerManager
-      solutions:
-        food:
-          maxVol: 10
-          reagents:
-          - ReagentId: Fiber
-            Quantity: 10
+    - type: Solution
+      id: food
+      solution:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
     - type: Tag
       tags:
       - ClothMade

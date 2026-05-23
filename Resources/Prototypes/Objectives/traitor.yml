@@ -37,7 +37,7 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleObjective
-  name: Escape to centcomm alive and unrestrained.
+  name: Escape to CentComm alive and unrestrained via the escape shuttle.
   description: One of our undercover agents will debrief you when you arrive. Don't show up in cuffs.
   components:
   - type: Objective
@@ -222,9 +222,6 @@
     jobs: [ ChiefMedicalOfficer ]
   - type: StealCondition
     owner: job-name-cmo
-  - type: NoOwnerRequirement
-    job:
-    - ChiefMedicalOfficer
 
 - type: entity
   parent: BaseCMOStealObjective
@@ -251,9 +248,6 @@
     jobs: [ ResearchDirector ]
   - type: StealCondition
     owner: job-name-rd
-  - type: NoOwnerRequirement
-    job:
-    - ResearchDirector
 
 - type: entity
   parent: BaseRDStealObjective
@@ -286,9 +280,6 @@
   - type: StealCondition
     stealGroup: WeaponEnergyMagnum
     owner: job-name-hos
-  - type: NoOwnerRequirement
-    job:
-    - HeadOfSecurity
 
 ## ce
 
@@ -301,9 +292,6 @@
   - type: StealCondition
     stealGroup: ClothingShoesBootsMagAdv
     owner: job-name-ce
-  - type: NoOwnerRequirement
-    job:
-    - ChiefEngineer
 
 ## qm
 
@@ -316,9 +304,6 @@
   - type: StealCondition
     stealGroup: BoxFolderQmClipboard
     owner: job-name-qm
-  - type: NoOwnerRequirement
-    job:
-    - Quartermaster
 
 - type: entity
   parent: BaseTraitorStealObjective
@@ -329,9 +314,6 @@
   - type: StealCondition
     stealGroup: ClothingHandsKnuckleDustersQM
     owner: job-name-qm
-  - type: NoOwnerRequirement
-    job:
-    - Quartermaster
 
 ## hop
 
@@ -346,9 +328,6 @@
   - type: StealCondition
     stealGroup: FoodMeatCorgi
     owner: objective-condition-steal-Ian
-  - type: NoOwnerRequirement
-    job:
-    - HeadOfPersonnel
 
 ## cap
 
@@ -399,6 +378,25 @@
     stealGroup: NukeDisk
     owner: objective-condition-steal-station
 
+# sabotage
+- type: entity
+  parent: BaseTraitorObjective
+  id: SupercritAnomaliesObjective
+  description: Nanotrasen is very interested in anomalies with potentially catastrophic consequences. Introduce them to the fire they're playing with.
+  components:
+  - type: Objective
+    difficulty: 2
+    icon:
+      sprite: Structures/Specific/anomaly.rsi
+      state: anom1
+  - type: SupercriticalAnomaliesCondition
+  - type: NumberObjective
+    min: 3
+    max: 4
+    title: objective-condition-supercrit-anomalies-title
+  - type: ObjectiveLimit
+    limit: 1
+
 # other
 - type: entity
   parent: BaseTraitorObjective
@@ -414,4 +412,22 @@
   - type: HijackTradeStationCondition
   - type: ObjectiveLimit
     # There is only one trade station so there should never be more than one of these objectives.
+    limit: 1
+
+- type: entity
+  parent: [BaseTraitorObjective, BaseCounterObjective]
+  id: MailFraudObjective
+  description: We're interested in Nanotrasen's correspondence. Letter opener not provided.
+  components:
+  - type: Objective
+    difficulty: 0.5
+    icon:
+      sprite: Objects/Specific/Cargo/mail_bag.rsi
+      state: icon
+  - type: MailFraudCondition
+  - type: NumberObjective
+    min: 8
+    max: 12
+    title: objective-condition-mail-fraud-title
+  - type: ObjectiveLimit
     limit: 1

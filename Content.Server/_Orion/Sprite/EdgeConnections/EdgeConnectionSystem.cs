@@ -6,10 +6,10 @@ namespace Content.Server._Orion.Sprite.EdgeConnections;
 /// <summary>
 /// Calculates edge-connection masks for anchored entities on grids.
 /// </summary>
-public sealed class EdgeConnectionSystem : EntitySystem
+public sealed partial class EdgeConnectionSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     private static readonly (Vector2i Offset, EdgeConnectionDirections Direction, EdgeConnectionDirections Opposite)[] CardinalOffsets =
     [

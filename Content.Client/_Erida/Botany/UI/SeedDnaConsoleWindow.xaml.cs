@@ -11,8 +11,8 @@ namespace Content.Client._Erida.Botany.UI;
 [GenerateTypedNameReferences]
 public sealed partial class SeedDnaConsoleWindow : DefaultWindow
 {
-    [Dependency] private readonly ILocalizationManager _localizationManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ILocalizationManager _localizationManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
 
     private readonly List<SeedDnaConsoleWindowRow> _allRows = [];
     private readonly SeedDnaConsoleBoundUserInterface _owner;

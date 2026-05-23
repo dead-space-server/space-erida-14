@@ -6,10 +6,10 @@ using Robust.Shared.Player;
 
 namespace Content.Client._DV.ChronicPain.EntitySystems;
 
-public sealed class ChronicPainSystem : SharedChronicPainSystem
+public sealed partial class ChronicPainSystem : SharedChronicPainSystem
 {
-    [Dependency] private readonly IOverlayManager _overlayMan = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
+    [Dependency] private IOverlayManager _overlayMan = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
 
     private ChronicPainOverlay _overlay = default!;
 

@@ -4,9 +4,9 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Erida.LightDestroyer;
 
-public sealed class LightDestroyerSystem : SharedLightDestroyerSystem
+public sealed partial class LightDestroyerSystem : SharedLightDestroyerSystem
 {
-    [Dependency] private readonly PointLightSystem _pointLight = default!;
+    [Dependency] private PointLightSystem _pointLight = default!;
     public override void Initialize()
     {
         base.Initialize();

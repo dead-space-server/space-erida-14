@@ -114,13 +114,13 @@
     tags:
     - Burnt
     - Trash
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 50
-        reagents:
-        - ReagentId: Ash
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 50
+      reagents:
+      - ReagentId: Ash
+        Quantity: 10
   - type: SolutionSpiker
     sourceSolution: food
     ignoreEmpty: true
@@ -143,15 +143,15 @@
       tags:
         - Trash
         - Ectoplasm
-    - type: SolutionContainerManager
-      solutions:
-        food:
-          maxVol: 50
-          reagents:
-            - ReagentId: Ash
-              Quantity: 25
-            - ReagentId: Arcryox
-              Quantity: 25
+    - type: Solution
+      id: food
+      solution:
+        maxVol: 50
+        reagents:
+          - ReagentId: Ash
+            Quantity: 25
+          - ReagentId: Arcryox
+            Quantity: 25
     - type: GuideHelp
       guides:
       - MinorAntagonists
