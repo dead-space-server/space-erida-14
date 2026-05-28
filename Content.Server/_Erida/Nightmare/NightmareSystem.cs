@@ -30,27 +30,27 @@ using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Server._Erida.Nightmare;
 
-public sealed class NightmareSystem : SharedNightmareSystem
+public sealed partial class NightmareSystem : SharedNightmareSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly LightIntensionSystem _lightIntension = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
-    [Dependency] private readonly SharedActionsSystem _action = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly FixtureSystem _fixture = default!;
-    [Dependency] private readonly PhysicsSystem _physicsSystem = default!;
-    [Dependency] private readonly AlertsSystem _alert = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private LightIntensionSystem _lightIntension = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private PolymorphSystem _polymorphSystem = default!;
+    [Dependency] private SharedActionsSystem _action = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private MapSystem _mapSystem = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private EntityManager _entityManager = default!;
+    [Dependency] private RoleSystem _role = default!;
+    [Dependency] private MindSystem _mindSystem = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private FixtureSystem _fixture = default!;
+    [Dependency] private PhysicsSystem _physicsSystem = default!;
+    [Dependency] private AlertsSystem _alert = default!;
 
     public override void Initialize()
     {

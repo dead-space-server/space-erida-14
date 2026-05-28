@@ -7,6 +7,7 @@ using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Enums;
+using Robust.Shared.Maths;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
@@ -198,8 +199,13 @@ public sealed partial class HumanoidProfileEditor
     // Erida-start
     private void SetCustomSpecies(string newSpecies)
     {
+        // Erida start
+        if (Profile?.CustomSpecies == newSpecies)
+            return;
+        // Erida end
+
         Profile = Profile?.WithCustomSpecies(newSpecies);
-        IsDirty = true;
+        SetDirty(); // Erida edit
     }
     // Erida-end
 
@@ -407,24 +413,37 @@ public sealed partial class HumanoidProfileEditor
 
     private void SetProfileHeight(float height)
     {
+        // Erida start
+        if (Profile == null || MathHelper.CloseTo(Profile.Height, height))
+            return;
+        // Erida end
+
         Profile = Profile?.WithHeight(height);
         ReloadProfilePreview();
-        IsDirty = true;
     }
 
     private void SetProfileWidth(float width)
     {
+        // Erida start
+        if (Profile == null || MathHelper.CloseTo(Profile.Width, width))
+            return;
+        // Erida end
+
         Profile = Profile?.WithWidth(width);
         ReloadProfilePreview();
-        IsDirty = true;
     }
     // end Goobstation: port EE height/width sliders
 
     // Corvax-TTS-Start
     private void SetVoice(string newVoice)
     {
+        // Erida start
+        if (Profile?.Voice == newVoice)
+            return;
+        // Erida end
+
         Profile = Profile?.WithVoice(newVoice);
-        IsDirty = true;
+        SetDirty(); // Erida edit
     }
     // Corvax-TTS-End
 }

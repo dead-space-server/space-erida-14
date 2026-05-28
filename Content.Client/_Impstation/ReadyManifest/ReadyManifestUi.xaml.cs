@@ -53,7 +53,7 @@ public sealed partial class ReadyManifestUi : DefaultWindow
 
         foreach (var department in departments)
         {
-            var departmentName = Loc.GetString($"department-{department.ID}");
+            var departmentName = Loc.GetString(department.Name); // Erida edit
 
             if (!_jobCategories.TryGetValue(department.ID, out var category))
             {
@@ -69,7 +69,7 @@ public sealed partial class ReadyManifestUi : DefaultWindow
                 category.AddChild(new Label()
                 {
                     StyleClasses = { "LabelBig" },
-                    Text = Loc.GetString($"department-{department.ID}")
+                    Text = departmentName // Erida edit
                 });
 
                 _jobCategories[department.ID] = category;

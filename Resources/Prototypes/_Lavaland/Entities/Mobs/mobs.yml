@@ -59,11 +59,12 @@
       0: Alive
       300: Dead
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
   # - type: CombatPower # Goobstation
   #   factor: 4 # times more dangerous than a crew-member
 
+  - type: Injurable
+    damageContainer: Inorganic
 - type: entity
   name: Brimdemon
   id: LavalandMobBrimdemon
@@ -141,11 +142,12 @@
       0: Alive
       300: Dead
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
   # - type: CombatPower # Goobstation
   #   factor: 4 # times more dangerous than a crew-member
 
+  - type: Injurable
+    damageContainer: Inorganic
 - type: entity
   name: Rabble
   id: LavalandMobLegionMonkey
@@ -207,7 +209,8 @@
             sound:
               path: /Audio/Effects/gib1.ogg
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
   # - type: CombatPower # Goobstation
   #   factor: 4 # times more dangerous than a crew-member
+  - type: Injurable
+    damageContainer: Inorganic

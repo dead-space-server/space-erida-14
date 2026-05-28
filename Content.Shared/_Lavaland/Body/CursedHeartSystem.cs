@@ -15,15 +15,15 @@ using Robust.Shared.Timing;
 namespace Content.Shared._Lavaland.Body;
 
 // TODO: Use Shitmed instead of Shitcode
-public sealed class CursedHeartSystem : EntitySystem
+public sealed partial class CursedHeartSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private DamageableSystem _damage = default!;
     //[Dependency] private readonly BloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     private const string AirlossDamageGroup = "Airloss";
     private const string ActionPumpCursedHeart = "ActionPumpCursedHeart";

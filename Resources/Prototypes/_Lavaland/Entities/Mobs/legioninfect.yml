@@ -222,7 +222,7 @@
 
 - type: emote
   id: Pain
-  name: pain
+  name: lavaland-emote-pain-name # Erida edit
   chatMessages: ["chat-emote-msg-gasp"]
   chatTriggers:
    - pain

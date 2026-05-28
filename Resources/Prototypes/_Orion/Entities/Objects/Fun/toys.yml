@@ -11,6 +11,7 @@
     size: Small
     sprite: _Orion/Objects/Fun/inteq_balloon.rsi
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Tag
     tags:

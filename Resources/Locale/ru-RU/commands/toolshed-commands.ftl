@@ -552,3 +552,7 @@ command-description-inventory-query =
     Gets the entities in the inventory slots of the piped entities and passes them along.
 command-description-storage-query =
     Gets the entities in the storagebase of the piped entities and passes them along.
+command-description-inventory-contents =
+    Получает сущности в слотах инвентаря переданных сущностей и передаёт их дальше.
+command-description-storage-contents =
+    Получает сущности в хранилище переданных сущностей и передаёт их дальше.

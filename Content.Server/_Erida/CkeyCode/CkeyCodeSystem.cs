@@ -12,10 +12,10 @@ namespace Content.Server._Erida.CkeyCode;
 
 public sealed partial class CkeyCodeSystem : EntitySystem
 {
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
-    [Dependency] private readonly GibbingSystem _gibbingSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private ExplosionSystem _explosionSystem = default!;
+    [Dependency] private GibbingSystem _gibbingSystem = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
 
     public override void Initialize()
     {
@@ -37,7 +37,7 @@ public sealed partial class CkeyCodeSystem : EntitySystem
 
     private void OnEquip(EntityUid uid, CkeyCodeComponent component, GotEquippedEvent args)
     {
-        if (TryComp<ActorComponent>(args.Equipee, out var actor) && component.Ckeys.Contains(actor.PlayerSession.Name))
+        if (TryComp<ActorComponent>(args.EquipTarget, out var actor) && component.Ckeys.Contains(actor.PlayerSession.Name))
         {
             _chatSystem.TrySendInGameICMessage(uid, Loc.GetString("identification-success"), InGameICChatType.Speak, true);
             _audioSystem.PlayPvs(component.AcceptedSound, uid);
@@ -49,7 +49,7 @@ public sealed partial class CkeyCodeSystem : EntitySystem
 
         EnsureComp<UnremoveableComponent>(uid);
 
-        component.Wearer = args.Equipee;
+        component.Wearer = args.EquipTarget;
         component.IsArmed = true;
     }
 

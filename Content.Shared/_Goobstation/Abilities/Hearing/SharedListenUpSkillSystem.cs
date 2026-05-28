@@ -5,11 +5,11 @@ using Content.Shared.Popups;
 
 namespace Content.Shared._Goobstation.Resomi.Abilities.Hearing;
 
-public abstract class SharedListenUpSkillSystem : EntitySystem
+public abstract partial class SharedListenUpSkillSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] protected readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] protected readonly SharedPopupSystem _popup = default!;
+    [Dependency] protected SharedActionsSystem _actionsSystem = default!;
+    [Dependency] protected SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] protected SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         SubscribeLocalEvent<ListenUpSkillComponent, ListenUpActionEvent>(OnActivateListenUp);

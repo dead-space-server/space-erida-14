@@ -7,7 +7,6 @@
   startingGear: CentcomSecGear
   icon: "JobIconPrivate"
   supervisors: job-supervisors-centcom-sec-hos
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

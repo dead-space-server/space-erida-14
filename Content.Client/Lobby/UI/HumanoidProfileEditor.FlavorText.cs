@@ -67,7 +67,7 @@ public sealed partial class HumanoidProfileEditor
             _flavorText.OnNSFWTextChanged += OnNSFWFlavorTextChange;
 
             _flavorText.OnNSFWLinksTextChanged += OnNSFWLinksFlavorTextChange;
-            _flavorText.OnNSFWFlavorOOCTextChanged += OnNSFWFlavorTextChange;
+            _flavorText.OnNSFWFlavorOOCTextChanged += OnFlavorNSFWOOCTextChange;
             _flavorText.OnNSFWTagsTextChanged += OnNSFWTagsFlavorTextChange;
 
             _flavorText.OnFlavorTabChanged += OnTabChanged;

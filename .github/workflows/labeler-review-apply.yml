@@ -1,0 +1,48 @@
+# Erida edit
+name: "Labels: Approved Apply"
+
+on:
+  workflow_run:
+    workflows: ["Labels: Approved"]
+    types: [completed]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  add_label:
+    if: >
+      github.repository == 'dead-space-server/space-erida-14' &&
+      github.event.workflow_run.event == 'pull_request_review' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add approved label
+      env:
+        GH_TOKEN: ${{ github.token }}
+        HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        LABEL: "S: Approved"
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        pr_number="$(
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${GITHUB_REPOSITORY}/commits/${HEAD_SHA}/pulls" \
+            --jq '[.[] | select(.base.repo.full_name == env.GITHUB_REPOSITORY)] | sort_by(.updated_at) | reverse | .[0].number // empty'
+        )"
+
+        if [[ -z "$pr_number" ]]; then
+          echo "No pull request found for reviewed commit ${HEAD_SHA}."
+          exit 0
+        fi
+
+        gh api \
+          --method POST \
+          "/repos/${GITHUB_REPOSITORY}/issues/${pr_number}/labels" \
+          -f "labels[]=${LABEL}"
+
+        echo "Added ${LABEL} to PR #${pr_number}."

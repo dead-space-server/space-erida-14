@@ -8,11 +8,11 @@ using Robust.Shared.Player;
 namespace Content.Server.Administration.Commands
 {
     [AdminCommand(AdminFlags.Stealth)]
-    public sealed class ForceDeadminCommand : LocalizedEntityCommands
+    public sealed partial class ForceDeadminCommand : LocalizedEntityCommands
     {
-        [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly ISharedPlayerManager _players = default!;
-        [Dependency] private readonly ISharedAdminLogManager _sharedAdminLogManager = default!;
+        [Dependency] private IAdminManager _adminManager = default!;
+        [Dependency] private ISharedPlayerManager _players = default!;
+        [Dependency] private ISharedAdminLogManager _sharedAdminLogManager = default!;
 
         public override string Command => "forceDeadmin";
 

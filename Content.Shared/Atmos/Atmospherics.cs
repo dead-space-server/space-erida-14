@@ -104,6 +104,21 @@ namespace Content.Shared.Atmos
         public const float OxygenMolesGasMiner = MolesCellGasMiner * OxygenStandard;
         public const float NitrogenMolesGasMiner = MolesCellGasMiner * NitrogenStandard;
 
+        /// <summary>
+        /// Converts Grams to Kilograms.
+        /// </summary>
+        public const float gToKg = 0.001f;
+
+        /// <summary>
+        /// Convert kPa to Kg/m^2
+        /// </summary>
+        public const float kPaToKg_m2 = 0.00980665f;
+
+        /// <summary>
+        /// Convert Kg/m^2 to kPa
+        /// </summary>
+        public const float Kg_m2TokPa = 101.9716212978f;
+
         #endregion
 
         /// <summary>
@@ -219,7 +234,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Amount of heat released per mole of burnt hydrogen or tritium (hydrogen isotope)
         /// </summary>
-        public const float FireHydrogenEnergyReleased = 284e4f;
+        public const float FireHydrogenEnergyReleased = 284e3f;
         public const float FireMinimumTemperatureToExist = T0C + 100f;
         public const float FireMinimumTemperatureToSpread = T0C + 150f;
         public const float FireSpreadRadiosityScale = 0.85f;
@@ -252,6 +267,83 @@ namespace Content.Shared.Atmos
         public const float FrezonCoolMidTemperature = 373.15f;
 
         public const float FrezonCoolMaximumEnergyModifier = 10f;
+
+        #region ADT-Gas
+        /// <summary>
+        ///     Defines energy released in BZ formation.
+        /// </summary>
+        public const float BZFormationEnergy = 10000f;
+
+        /// <summary>
+        ///     Defines the multiplier to penalty high pressure.
+        /// </summary>
+        public const float BZFormationPressurePenalty = 0.1f;
+
+        /// <summary>
+        ///     Defines energy released in N2O decomposition reaction.
+        /// </summary>
+        public const float NitrousOxideDecompositionEnergy = 200000f;
+
+        /// <summary>
+        ///     Defines energy released in Pluoxium formation.
+        /// </summary>
+        public const float PluoxiumFormationEnergy = 750f;
+
+        /// <summary>
+        ///     The maximum amount of pluoxium that can form per reaction tick.
+        /// </summary>
+        public const float PluoxiumMaxRate = 3f;
+
+        /// <summary>
+        ///     Amount of tritium that will be converted to Hydrogen during Pluoxium creation.
+        /// </summary>
+        public const float PluoxiumTritiumConversion = 0.1f;
+
+        /// <summary>
+        ///     Amount of releasing heat per every mole of Hydrogen.
+        /// </summary>
+        public const float FireH2EnergyReleased = 852e3f;
+
+        public const float H2OxygenFullBurn = 10f;
+
+        public const float FireH2BurnRateDelta = 2f;
+
+        public const float NitriumFormationTempDivisor = (T0C + 100f) * 8f;
+
+        public const float NitriumDecompositionTempDivisor = (T0C + 100f) * 8f;
+
+        /// <summary>
+        ///     Energy released during Nitrium formation.
+        /// </summary>
+        public const float NitriumFormationEnergy = 10000f;
+
+        /// <summary>
+        ///     Energy released during Nitrium decomposion.
+        /// </summary>
+        public const float NitriumDecompositionEnergy = 30000f;
+
+        /// <summary>
+        ///     Energy released during Nobilium formation.
+        ///     Gets lower when more BZ is added.
+        /// </summary>
+        public const float NobliumFormationEnergy = 200e3f;
+
+        /// <summary>
+        ///     Scales Nobilium formation speed per lower temperature.
+        /// </summary>
+        public const float NobliumFormationTemperatureBonus = 0.08f;
+
+        public const float HealiumFormationEnergy = 9000f;
+
+        public const float ZaukerFormationEnergy = 5000f;
+
+        public const float ZaukerFormationTemperatureScale = 0.000005f;
+
+        public const float ZaukerDecompositionMaxRate = 20f;
+
+        public const float ZaukerDecompositionEnergy = 460f;
+
+        #endregion
 
         /// <summary>
         ///     Remove X mol of nitrogen for each mol of frezon.
@@ -356,83 +448,6 @@ namespace Content.Shared.Atmos
         public const float MaxTransferRate = 200;
 
         #endregion
-
-        #region ADT-Gas
-        /// <summary>
-        ///     Defines energy released in BZ formation.
-        /// </summary>
-        public const float BZFormationEnergy = 10000f;
-
-        /// <summary>
-        ///     Defines the multiplier to penalty high pressure.
-        /// </summary>
-        public const float BZFormationPressurePenalty = 0.1f;
-
-        /// <summary>
-        ///     Defines energy released in N2O decomposition reaction.
-        /// </summary>
-        public const float NitrousOxideDecompositionEnergy = 200000f;
-
-        /// <summary>
-        ///     Defines energy released in Pluoxium formation.
-        /// </summary>
-        public const float PluoxiumFormationEnergy = 750f;
-
-        /// <summary>
-        ///     The maximum amount of pluoxium that can form per reaction tick.
-        /// </summary>
-        public const float PluoxiumMaxRate = 3f;
-
-        /// <summary>
-        ///     Amount of tritium that will be converted to Hydrogen during Pluoxium creation.
-        /// </summary>
-        public const float PluoxiumTritiumConversion = 0.1f;
-
-        /// <summary>
-        ///     Amount of releasing heat per every mole of Hydrogen.
-        /// </summary>
-        public const float FireH2EnergyReleased = 852e3f; // 3 times stronger than tritium (maybe should be equal instead?)
-
-        public const float H2OxygenFullBurn = 10f;
-
-        public const float FireH2BurnRateDelta = 2f;
-
-        public const float NitriumFormationTempDivisor = (T0C + 100f) * 8f;
-
-        public const float NitriumDecompositionTempDivisor = (T0C + 100f) * 8f;
-
-        /// <summary>
-        ///     Energy released during Nitrium formation.
-        /// </summary>
-        public const float NitriumFormationEnergy = 10000f;
-
-        /// <summary>
-        ///     Energy released during Nitrium decomposion.
-        /// </summary>
-        public const float NitriumDecompositionEnergy = 30000f;
-
-        /// <summary>
-        ///     Energy released during Nobilium formation.
-        ///     Gets lower when more BZ is added.
-        /// </summary>
-        public const float NobliumFormationEnergy = 200e3f; // Is actually close to tritium energy release
-
-        /// <summary>
-        ///     Scales Nobilium formation speed per lower temperature.
-        /// </summary>
-        public const float NobliumFormationTemperatureBonus = 0.08f;
-
-        public const float HealiumFormationEnergy = 9000f;
-
-        public const float ZaukerFormationEnergy = 5000f;
-
-        public const float ZaukerFormationTemperatureScale = 0.000005f;
-
-        public const float ZaukerDecompositionMaxRate = 20f;
-
-        public const float ZaukerDecompositionEnergy = 460f;
-
-        #endregion
     }
 
     /// <summary>
@@ -450,7 +465,7 @@ namespace Content.Shared.Atmos
         Ammonia = 6,
         NitrousOxide = 7,
         Frezon = 8,
-        //ADT-Gas-Start
+        // ADT-Gas-Start
         Pluoxium = 9,
         Hydrogen = 10,
         BZ = 11,
@@ -458,6 +473,6 @@ namespace Content.Shared.Atmos
         Nitrium = 13,
         HyperNoblium = 14,
         Zauker = 15
-        //ADT-Gas-End
+        // ADT-Gas-End
     }
 }

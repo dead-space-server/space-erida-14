@@ -276,3 +276,13 @@
     Plastic: 250
     Silver: 400
     Gold: 50 # A bit of gold for the gold ornaments on it!
+
+- type: latheRecipe # Erida start
+  id: ClothingEyesHudMedical
+  result: ClothingEyesHudMedical
+  categories:
+  - Clothing
+  completetime: 2
+  materials:
+    Steel: 300
+    Glass: 200 # Erida end

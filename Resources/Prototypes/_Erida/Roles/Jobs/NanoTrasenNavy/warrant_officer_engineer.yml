@@ -20,7 +20,6 @@
   icon: "JobIconNTNavyWOEngi"
   joinNotifyCrew: true
   supervisors: job-supervisors-nanotrasen-navy-officer
-  canBeAntag: false
   access:
   - NTNavyWOEngineering
   - NTNavyEngineering

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client.DisplacementMap;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid.Markings;
@@ -13,13 +14,14 @@ using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Client.Body;
 
-public sealed class VisualBodySystem : SharedVisualBodySystem
+public sealed partial class VisualBodySystem : SharedVisualBodySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly MarkingManager _marking = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private DisplacementMapSystem _displacement = default!;
+    [Dependency] private MarkingManager _marking = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     public override void Initialize()
     {
@@ -170,8 +172,11 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
         }
     }
 
-    private void ApplyMarkings(Entity<VisualOrganMarkingsComponent> ent, EntityUid target)
+    private void ApplyMarkings(Entity<VisualOrganMarkingsComponent> ent, Entity<SpriteComponent?> target)
     {
+        if (!Resolve(target, ref target.Comp))
+            return;
+
         var applied = new List<Marking>();
         foreach (var marking in AllMarkings(ent))
         {
@@ -180,6 +185,8 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
 
             if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, true))
                 continue;
+
+            ent.Comp.MarkingsDisplacement.TryGetValue(proto.BodyPart, out var displacement);
 
             for (var i = 0; i < proto.Sprites.Count; i++)
             {
@@ -193,17 +200,20 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
 
                 if (!_sprite.LayerMapTryGet(target, layerId, out _, false))
                 {
-                    var layer = _sprite.AddLayer(target, sprite, index + i + 1);
-                    _sprite.LayerMapSet(target, layerId, layer);
+                    var spriteLayer = _sprite.AddLayer(target, sprite, index + i + 1);
+                    _sprite.LayerMapSet(target, layerId, spriteLayer);
                     _sprite.LayerSetSprite(target, layerId, rsi);
                 }
 
-                ScaleProfile(target); // Erida edit
+                ScaleProfile(target.Owner, target.Comp); // Erida edit
 
                 if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
                     _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
                 else
                     _sprite.LayerSetColor(target, layerId, Color.White);
+
+                if (displacement != null && proto.CanBeDisplaced)
+                    _displacement.TryAddDisplacement(displacement, (target, target.Comp), index + i + 1, layerId, out _);
             }
 
             applied.Add(marking);
@@ -212,10 +222,9 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
     }
 
     // Erida start
-    private void ScaleProfile(EntityUid target)
+    private void ScaleProfile(EntityUid target, SpriteComponent humanoidSprite)
     {
         var humanoidProfile = _entityManager.GetComponent<HumanoidProfileComponent>(target);
-        var humanoidSprite = _entityManager.GetComponent<SpriteComponent>(target);
         var speciesPrototype = _prototype.Index(humanoidProfile.Species);
 
         var height = Math.Clamp(humanoidProfile.Height, speciesPrototype.MinHeight, speciesPrototype.MaxHeight);
@@ -225,8 +234,11 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
     }
     // Erida end
 
-    private void RemoveMarkings(Entity<VisualOrganMarkingsComponent> ent, EntityUid target)
+    private void RemoveMarkings(Entity<VisualOrganMarkingsComponent> ent, Entity<SpriteComponent?> target)
     {
+        if (!Resolve(target, ref target.Comp))
+            return;
+
         foreach (var marking in ent.Comp.AppliedMarkings)
         {
             if (!_marking.TryGetMarking(marking, out var proto))
@@ -239,6 +251,9 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                     continue;
 
                 var layerId = $"{proto.ID}-{rsi.RsiState}";
+
+                if (proto.CanBeDisplaced)
+                    _displacement.EnsureDisplacementIsNotOnSprite((target, target.Comp), layerId);
 
                 if (!_sprite.LayerMapTryGet(target, layerId, out var index, false))
                     continue;

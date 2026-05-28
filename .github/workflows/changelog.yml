@@ -17,7 +17,8 @@ jobs:
       contents: write
     steps:
       - name: Checkout Master
-        uses: actions/checkout@v3
+        # Erida edit: v6 actions avoid the Node 20 deprecation path on GitHub runners.
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.CHANGELOG_BOT_TOKEN }}
           ref: master
@@ -29,7 +30,8 @@ jobs:
         shell: bash
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        # Erida edit: keep the workflow on a supported action runtime.
+        uses: actions/setup-node@v6
         with:
           node-version: 18.x
 
@@ -47,9 +49,13 @@ jobs:
 
       - name: Commit Changelog
         run: |
-          git pull origin master
-          git add *.yml
+          # Erida edit: commit generated changelog changes before rebasing, otherwise pull fails on a dirty tree.
+          git add "$CHANGELOG_DIR"
+          if git diff --cached --quiet; then
+            echo "No changelog changes to commit."
+            exit 0
+          fi
           git commit -m "${{ vars.CHANGELOG_MESSAGE }} (#${{ env.PR_NUMBER }})"
+          git pull --rebase origin master
           git push
         shell: bash
-        continue-on-error: true

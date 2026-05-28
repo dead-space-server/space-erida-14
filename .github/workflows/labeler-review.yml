@@ -1,18 +1,20 @@
 name: "Labels: Approved"
+
 on:
   pull_request_review:
     types: [submitted]
+
+permissions:
+  contents: read
+
 jobs:
-  add_label:
+  approved_review:
     # Change the repository name after you've made sure the team name is correct for your fork!
-    if: ${{ (github.repository == 'dead-space-server/space-erida-14') && (github.event.review.state == 'APPROVED') }}
-    permissions:
-      contents: read
-      pull-requests: write
+    if: ${{ (github.repository == 'dead-space-server/space-erida-14') && (github.event.review.state == 'approved') }}
     runs-on: ubuntu-latest
     steps:
-    - name: Add label
-      if: ${{ steps.checkPerm.outputs.allowed == 'true' }}
-      uses: actions-ecosystem/action-add-labels@v1
-      with:
-        labels: "S: Approved"
+    - name: Record approved review
+      # Erida edit: fork PR review events have a read-only token; a workflow_run follow-up applies the label.
+      run: |
+        echo "Approved review for PR #${{ github.event.pull_request.number }}"
+        echo "Reviewed commit: ${{ github.event.review.commit_id }}"

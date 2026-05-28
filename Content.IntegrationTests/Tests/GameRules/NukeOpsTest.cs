@@ -263,6 +263,6 @@ public sealed class NukeOpsTest : GameTest
                 "All nukies were deleted, but the round didn't end!");
         });
 
-        ticker.SetGamePreset((GamePresetPrototype?)null);
+        ticker.SetGamePreset((GamePresetPrototype?) null);
     }
 }

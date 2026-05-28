@@ -5,9 +5,9 @@ using Content.Shared.Nutrition.EntitySystems;
 
 namespace Content.Shared._Erida.Leash.Systems;
 
-public sealed class SharedCollarSystem : EntitySystem
+public sealed partial class SharedCollarSystem : EntitySystem
 {
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     public override void Initialize()
     {

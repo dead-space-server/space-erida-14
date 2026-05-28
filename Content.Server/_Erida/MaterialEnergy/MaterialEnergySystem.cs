@@ -8,10 +8,10 @@ using Content.Shared.Power.Components;
 
 namespace Content.Erida.Server.MaterialEnergy
 {
-    public sealed class MaterialEnergySystem : EntitySystem
+    public sealed partial class MaterialEnergySystem : EntitySystem
     {
-        [Dependency] private readonly BatterySystem _batterySystem = default!;
-        [Dependency] private readonly StackSystem _stack = default!;
+        [Dependency] private BatterySystem _batterySystem = default!;
+        [Dependency] private StackSystem _stack = default!;
 
         public override void Initialize()
         {

@@ -23,6 +23,16 @@ guidebook-reagent-effects-metabolites = Metabolizes into { $items }.
 guidebook-reagent-plant-metabolisms-header = Plant Metabolism
 guidebook-reagent-plant-metabolisms-rate = [bold]Plant Metabolism[/bold] [color=gray](1 unit every 3 seconds as base)[/color]
 guidebook-reagent-physical-description = [italic]Seems to be {$description}.[/italic]
+reagent-effect-guidebook-addicted =
+    { $chance ->
+        [1] Causes
+        *[other] cause
+    } addiction
+reagent-effect-guidebook-addiction-suppression =
+    { $chance ->
+        [1] Suppresses
+        *[other] suppress
+    } addiction
 guidebook-reagent-recipes-mix-info = {$minTemp ->
     [0] {$hasMax ->
             [true] {CAPITALIZE($verb)} below {NATURALFIXED($maxTemp, 2)}K

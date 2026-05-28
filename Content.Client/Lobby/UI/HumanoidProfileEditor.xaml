@@ -258,10 +258,13 @@
     <BoxContainer Orientation="Vertical"
                   VerticalExpand="True"
                   VerticalAlignment="Center">
+        <!-- Erida start -->
         <profile:ProfilePreviewSpriteView Name="SpriteView"
-                                          Scale="8 8"
-                                          Margin="4"
-                                          SizeFlagsStretchRatio="1"/>
+                                           Scale="8 8"
+                                           SetSize="320 320"
+                                           Margin="4"
+                                           SizeFlagsStretchRatio="1"/>
+        <!-- Erida end -->
         <BoxContainer Orientation="Horizontal"
                       HorizontalAlignment="Center"
                       Margin="0 5">

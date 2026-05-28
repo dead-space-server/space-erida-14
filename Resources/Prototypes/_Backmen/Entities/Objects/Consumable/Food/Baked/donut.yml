@@ -7,17 +7,17 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-creek
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Desoxyephedrine
-          Quantity: 5
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: Desoxyephedrine
+        Quantity: 5
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
 
 - type: entity
   name: Jelly slug artificer
@@ -28,20 +28,20 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-artificer
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Potassium
-          Quantity: 2.5
-        - ReagentId: Water
-          Quantity: 2.5
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
-        canReact: false
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: Potassium
+        Quantity: 2.5
+      - ReagentId: Water
+        Quantity: 2.5
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
+      canReact: false
 
 - type: entity
   name: Jelly slug gourmet
@@ -55,13 +55,13 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-gourmet
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 10
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 10
 
 - type: entity
   name: Jelly slug hunter
@@ -72,17 +72,17 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-hunter
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: UnstableMutagen
-          Quantity: 5
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: UnstableMutagen
+        Quantity: 5
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
 
 - type: entity
   name: Jelly Slug Monk
@@ -96,17 +96,17 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-monk
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Pax
-          Quantity: 5
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: Pax
+        Quantity: 5
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
 
 - type: entity
   name: Jelly slug saint
@@ -117,15 +117,15 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-saint
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
 
 - type: entity
   name: Jelly slug spear master
@@ -136,15 +136,15 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-spear_master
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 7
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1
 
 - type: entity
   name: Jelly slug UwU
@@ -158,12 +158,12 @@
   - type: Sprite
     sprite: _Backmen/Objects/Consumable/Food/Baked/donut.rsi
     state: jelly-slug-UwU
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 1
-        - ReagentId: Vitamin
-          Quantity: 1
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 10
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 1
+      - ReagentId: Vitamin
+        Quantity: 1

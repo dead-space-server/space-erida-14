@@ -37,21 +37,21 @@ using Content.Shared._Goobstation.Weapons.Ranged;
 using Content.Shared.Actions;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Upgrades.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Shared._Goobstation.Weapons;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Weapons.Ranged.Upgrades.Components;
 
 namespace Content.Shared._Lavaland.Weapons.Ranged.Upgrades;
 
 public abstract partial class SharedGunUpgradeSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
-    [Dependency] private readonly SharedGunSystem _gun = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private ActionContainerSystem _actionContainer = default!;
+    [Dependency] private SharedGunSystem _gun = default!;
+    [Dependency] private DamageableSystem _damage = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -113,8 +113,8 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
         {
             foreach (var upgrade in GetCurrentUpgrades(ent))
             {
-                if (upgrade.Comp.InsertedTextType != null)
-                    args.PushMarkup(Loc.GetString(upgrade.Comp.InsertedTextType.Value, ("name", Loc.GetString(upgrade.Comp.Name))));
+                if (upgrade.Comp.InsertedTextType != null && upgrade.Comp.Name != null)
+                    args.PushMarkup(Loc.GetString(upgrade.Comp.InsertedTextType.Value, ("name", Loc.GetString(upgrade.Comp.Name.Value))));
                 if (upgrade.Comp.CapacityCost != null)
                     usedCapacity += upgrade.Comp.CapacityCost.Value;
             }
@@ -126,8 +126,8 @@ public abstract partial class SharedGunUpgradeSystem : EntitySystem
 
     private void OnUpgradeExamine(Entity<GunUpgradeComponent> ent, ref ExaminedEvent args)
     {
-        if (ent.Comp.ExamineTextType != null) // TODO add a list of all weapon types that this gun upgrade can be inserted to
-            args.PushMarkup(Loc.GetString(ent.Comp.ExamineTextType.Value, ("name", Loc.GetString(ent.Comp.Name))));
+        if (ent.Comp.ExamineTextType != null && ent.Comp.Name != null) // TODO add a list of all weapon types that this gun upgrade can be inserted to
+            args.PushMarkup(Loc.GetString(ent.Comp.ExamineTextType.Value, ("name", Loc.GetString(ent.Comp.Name.Value))));
 
         if (ent.Comp.CapacityCost != null)
             args.PushMarkup(Loc.GetString("gun-upgrade-capacity-cost", ("value", ent.Comp.CapacityCost.Value)));

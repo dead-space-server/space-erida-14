@@ -7,9 +7,9 @@ using Content.Shared.IdentityManagement;
 
 namespace Content.Server._Goobstation.Resomi.Abilities;
 
-public sealed class ListenUpSystem : EntitySystem
+public sealed partial class ListenUpSystem : EntitySystem
 {
-    [Dependency] public readonly SharedPopupSystem _popup = default!;
+    [Dependency] public SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         SubscribeLocalEvent<ListenUpComponent, ComponentStartup>(OnListenStartup);

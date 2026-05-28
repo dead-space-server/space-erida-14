@@ -1,4 +1,4 @@
-﻿- type: job
+- type: job
   id: Brigmedic
   name: job-name-brigmedic
   description: job-description-brigmedic
@@ -13,7 +13,6 @@
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   access:
     - Medical
     - Security

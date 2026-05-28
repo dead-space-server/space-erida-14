@@ -5,13 +5,13 @@
   name: condensed milk can
   description: Instruction says that if you heat up the can, you will get more delicious variant... Worth a try.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      digestion:
-        maxVol: 30
-        reagents:
-        - ReagentId: CondensedMilk
-          Quantity: 30
+  - type: Solution
+    id: digestion
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: CondensedMilk
+        Quantity: 30
   - type: Tag
     tags:
     - DrinkCan

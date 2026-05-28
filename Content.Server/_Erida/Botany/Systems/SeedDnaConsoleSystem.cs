@@ -13,10 +13,10 @@ using System.Linq;
 namespace Content.Server._Erida.Botany.Systems;
 
 [UsedImplicitly]
-public sealed class SeedDnaConsoleSystem : SharedSeedDnaConsoleSystem
+public sealed partial class SeedDnaConsoleSystem : SharedSeedDnaConsoleSystem
 {
-    [Dependency] private readonly BotanySystem _botany = default!;
-    [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
+    [Dependency] private BotanySystem _botany = default!;
+    [Dependency] private UserInterfaceSystem _userInterface = default!;
 
     public override void Initialize()
     {

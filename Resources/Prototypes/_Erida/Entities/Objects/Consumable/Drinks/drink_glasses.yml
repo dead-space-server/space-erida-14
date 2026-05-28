@@ -3,13 +3,13 @@
   id: DrinkKarmotrineGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Karmotrine
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Karmotrine
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/karmotrine.rsi
     state: icon
@@ -19,13 +19,13 @@
   id: DrinkSugarRushGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SugarRush
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: SugarRush
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/sugarrushglass.rsi
     state: icon
@@ -35,13 +35,13 @@
   id: DrinkSparkleStarGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SparkleStar
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: SparkleStar
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/sparklestar.rsi
     state: icon
@@ -51,13 +51,13 @@
   id: DrinkFringeFeaverGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: FringeFeaver
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: FringeFeaver
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/fringefeaver.rsi
     state: icon
@@ -67,13 +67,13 @@
   id: DrinkBrandtiniGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Brandtini
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Brandtini
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/brandtini.rsi
     state: icon
@@ -83,13 +83,13 @@
   id: DrinkBlueFairyGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BlueFairy
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: BlueFairy
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/bluefairy.rsi
     state: icon
@@ -99,13 +99,13 @@
   id: DrinkMarsblastGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Marsblast
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Marsblast
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/marsblast.rsi
     state: icon
@@ -115,13 +115,13 @@
   id: DrinkMoonblastGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Moonblast
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Moonblast
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/moonblast.rsi
     state: icon
@@ -131,13 +131,13 @@
   id: DrinkMercuryblastGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Mercuryblast
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Mercuryblast
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/mercuryblast.rsi
     state: icon
@@ -147,13 +147,13 @@
   id: DrinkGrizzlyTempleGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: GrizzlyTemple
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: GrizzlyTemple
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/grizzlytemple.rsi
     state: icon
@@ -163,13 +163,13 @@
   id: DrinkSunshineCloudGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SunshineCloud
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: SunshineCloud
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/sunshinecloud.rsi
     state: icon
@@ -179,13 +179,13 @@
   id: DrinkFluffyDreamGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: FluffyDream
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: FluffyDream
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/fluffydream.rsi
     state: icon
@@ -195,13 +195,13 @@
   id: DrinkCobaltVelvetGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CobaltVelvet
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: CobaltVelvet
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/cobaltvelvet.rsi
     state: icon
@@ -211,13 +211,13 @@
   id: DrinkBadTouchGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BadTouch
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: BadTouch
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/badtouch.rsi
     state: icon
@@ -227,13 +227,13 @@
   id: DrinkBleedingJaneGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BleedingJane
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: BleedingJane
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/bleedingjane.rsi
     state: icon
@@ -243,13 +243,13 @@
   id: DrinkGutPunchGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: GutPunch
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: GutPunch
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/gutpunch.rsi
     state: icon
@@ -259,13 +259,13 @@
   id: DrinkCreviceSpikeGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: CreviceSpike
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: CreviceSpike
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/crevicespike.rsi
     state: icon
@@ -275,13 +275,13 @@
   id: DrinkZenStarGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: ZenStar
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: ZenStar
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/zenstar.rsi
     state: icon
@@ -291,13 +291,13 @@
   id: DrinkPileDriverGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: PileDriver
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: PileDriver
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/piledriver.rsi
     state: icon
@@ -307,13 +307,13 @@
   id: DrinkSuplexGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Suplex
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Suplex
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/suplex.rsi
     state: icon
@@ -323,13 +323,13 @@
   id: DrinkPianomanGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Pianoman
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Pianoman
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/pianoman.rsi
     state: icon
@@ -339,13 +339,13 @@
   id: DrinkPianowomanGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Pianowoman
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Pianowoman
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/pianowoman.rsi
     state: icon
@@ -355,13 +355,13 @@
   id: DrinkFrothyWaterGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: FrothyWater
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: FrothyWater
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/frothywater.rsi
     state: icon
@@ -371,13 +371,13 @@
   id: DrinkBloomLightGlass
   suffix: VA-11 Hall-A
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: BloomLight
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: BloomLight
+        Quantity: 30
   - type: Icon
     sprite: _Erida/VA11_HallA/bloomlight.rsi
     state: icon

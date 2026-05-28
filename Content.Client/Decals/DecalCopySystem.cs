@@ -9,12 +9,12 @@ using Robust.Shared.Input.Binding;
 
 namespace Content.Client.Decals;
 
-public sealed class DecalCopySystem : EntitySystem
+public sealed partial class DecalCopySystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlayManager = default!;
-    [Dependency] private readonly DecalPlacementSystem _decalPlacementSystem = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly InputSystem _inputSystem = default!;
+    [Dependency] private IOverlayManager _overlayManager = default!;
+    [Dependency] private DecalPlacementSystem _decalPlacementSystem = default!;
+    [Dependency] private IInputManager _inputManager = default!;
+    [Dependency] private InputSystem _inputSystem = default!;
 
     public Action<Color> UpdateClientColorAction = default!;
     public Action UpdateClientCopyButtonAction = default!;

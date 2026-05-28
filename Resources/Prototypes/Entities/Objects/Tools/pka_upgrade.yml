@@ -10,6 +10,7 @@
   - type: Item
     size: Small
   - type: GunUpgrade
+    examineText: gun-upgrade-examine-text-generic
   - type: StaticPrice
     price: 750
   - type: Tag
@@ -33,6 +34,7 @@
   # Erida start
   - type: GunUpgrade
     name: gun-upgrade-damage-name
+    examineText: gun-upgrade-examine-text-damage
   - type: GunUpgradeDamage
     modifier: 1.125
     #damage:
@@ -57,6 +59,7 @@
   # Erida start
   - type: GunUpgrade
     name: gun-upgrade-range-name
+    examineText: gun-upgrade-examine-text-range
   - type: GunUpgradeSpeed
     coefficient: 1.25
   # Erida end
@@ -78,6 +81,7 @@
   # Erida start
   - type: GunUpgrade
     name: gun-upgrade-reload-name
+    examineText: gun-upgrade-examine-text-reload
   - type: GunUpgradeFireRate
     coefficient: 1.25
   # Erida end

@@ -3,7 +3,6 @@
   name: job-name-blueshield
   description: job-description-blueshield
   playTimeTracker: JobBlueShieldOfficer
-  canBeAntag: false
   requireAdminNotify: true
   joinNotifyCrew: true
   requirements:

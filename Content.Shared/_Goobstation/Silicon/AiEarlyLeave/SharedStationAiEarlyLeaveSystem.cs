@@ -8,7 +8,7 @@ namespace Content.Shared._Goobstation.Silicon;
 
 public abstract partial class SharedStationAiEarlyLeaveSystem : EntitySystem
 {
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
+    [Dependency] private SharedContainerSystem _containers = default!;
 
     public override void Initialize()
     {

@@ -32,15 +32,14 @@
     fuelLitCost: 1.5
   - type: RefillableSolution
     solution: plasma
-  - type: SolutionContainerManager
-    solutions:
-      plasma:
-        reagents:
-        - ReagentId: Plasma
-          Quantity: 250
-        maxVol: 250
+  - type: Solution
+    id: plasma
+    solution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 250
+      maxVol: 250
   - type: SolutionRegeneration
-    solution: plasma
     generated:
       reagents:
       - ReagentId: Plasma
@@ -94,13 +93,13 @@
     sprite: _Orion/Objects/Weapons/Melee/plasma_sword_double.rsi
   - type: Item
     sprite: _Orion/Objects/Weapons/Melee/plasma_sword_double-inhands.rsi
-  - type: SolutionContainerManager
-    solutions:
-      plasma:
-        reagents:
-        - ReagentId: Plasma
-          Quantity: 300
-        maxVol: 300
+  - type: Solution
+    id: plasma
+    solution:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 300
+      maxVol: 300
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/_Orion/Weapons/Melee/plasma/plasma_hit.ogg

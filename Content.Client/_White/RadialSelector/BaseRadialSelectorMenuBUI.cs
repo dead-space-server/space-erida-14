@@ -15,10 +15,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._White.RadialSelector;
 
-public abstract class BasedRadialSelectorMenuBUI : BoundUserInterface
+public abstract partial class BasedRadialSelectorMenuBUI : BoundUserInterface
 {
-    [Dependency] protected readonly IPrototypeManager ProtoManager = default!;
-    [Dependency] protected readonly IResourceCache Resources = default!;
+    [Dependency] protected IPrototypeManager ProtoManager = default!;
+    [Dependency] protected IResourceCache Resources = default!;
 
     protected readonly ConstructionSystem _constructionSystem;
     protected readonly SpriteSystem _spriteSystem;

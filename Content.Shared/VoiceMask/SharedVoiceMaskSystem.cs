@@ -1,4 +1,5 @@
 using Robust.Shared.Serialization;
+using Content.Shared.Inventory;
 
 namespace Content.Shared.VoiceMask;
 
@@ -63,3 +64,15 @@ public sealed class VoiceMaskToggleMessage : BoundUserInterfaceMessage;
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class VoiceMaskAccentToggleMessage : BoundUserInterfaceMessage;
+
+/// <summary>
+/// Fired when a voice mask is toggled.
+/// </summary>
+public sealed class VoiceMaskToggledEvent(EntityUid mask, EntityUid source, bool active) : IInventoryRelayEvent
+{
+    public EntityUid Mask = mask;
+    public EntityUid Source = source;
+    public bool Active = active;
+
+    SlotFlags IInventoryRelayEvent.TargetSlots => SlotFlags.WITHOUT_POCKET;
+}

@@ -11,13 +11,13 @@ using Content.Shared.Actions;
 
 namespace Content.Shared._Goobstation.Resomi.Abilities;
 
-public abstract class SharedAgillitySkillSystem : EntitySystem
+public abstract partial class SharedAgillitySkillSystem : EntitySystem
 {
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly SharedPopupSystem _popup = default!;
-    [Dependency] protected readonly ClimbSystem _climb = default!;
-    [Dependency] protected readonly SharedStaminaSystem _stamina = default!;
-    [Dependency] protected readonly SharedActionsSystem _actions = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected SharedPopupSystem _popup = default!;
+    [Dependency] protected ClimbSystem _climb = default!;
+    [Dependency] protected SharedStaminaSystem _stamina = default!;
+    [Dependency] protected SharedActionsSystem _actions = default!;
 
     protected const int BaseCollisionGroup = (int)(CollisionGroup.MobMask);
 

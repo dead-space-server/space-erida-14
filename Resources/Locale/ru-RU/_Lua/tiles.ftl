@@ -31,8 +31,6 @@ tiles-woodDark = пол из тёмной древесины
 tiles-woodred = пол из красной древесины
 tiles-soft = мягкий пол
 
-tiles-techmaint-floor-dark = тёмный технический пол
-
 ent-FloorTileItemTechmaintSterile = линейный стерильный технический пол
 ent-FloorTileItemMaintSterile = квадратный стерильный технический пол
 ent-FloorTileItemMaintMonoSterile = стерильные моно плиты

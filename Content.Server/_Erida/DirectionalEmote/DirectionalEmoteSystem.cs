@@ -11,10 +11,10 @@ namespace Content.Server._Erida.DirectionalEmote;
 
 public sealed partial class DirectionalEmoteSystem : EntitySystem
 {
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IGameTiming _gameTicking = default!;
-    [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private IGameTiming _gameTicking = default!;
+    [Dependency] private ExamineSystemShared _examineSystem = default!;
+    [Dependency] private IAdminLogManager _adminLogger = default!;
 
     public override void Initialize()
     {

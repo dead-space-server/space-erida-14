@@ -1,6 +1,6 @@
 - type: antag
   id: Inferior
-  name: role-antag-inferior-name
+  name: roles-antag-inferior-name
   antagonist: true
   setPreference: false
   objective: roles-antag-inferior-objective

@@ -16,14 +16,14 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Erida.CPR;
 
-public sealed class CardiopulmonaryResuscitationSystem : EntitySystem
+public sealed partial class CardiopulmonaryResuscitationSystem : EntitySystem
 {
-    [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IngestionSystem _ingestionSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private EntityManager _entityManager = default!;
+    [Dependency] private MobStateSystem _mobStateSystem = default!;
+    [Dependency] private DoAfterSystem _doAfterSystem = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private IngestionSystem _ingestionSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {

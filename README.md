@@ -98,7 +98,7 @@ This project is licensed under **AGPL-3.0-or-later**.
 Each file contains REUSE-compatible headers or `.license` files that may specify **dual licensing** options.
 This allows parts of the codebase to be reused under alternative licenses where applicable.
 
-Full license texts can be found in the `LICENSES/` directory.
+Full license texts can be found in `LICENSE-AGPLv3.TXT`, `LICENSE-GPLv3.TXT`, and `LICENSE-MIT.TXT`.
 
 ---
 

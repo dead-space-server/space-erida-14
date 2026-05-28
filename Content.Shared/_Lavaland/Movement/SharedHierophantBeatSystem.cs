@@ -5,9 +5,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lavaland.Movement;
 
-public sealed class HierophantBeatSystem : EntitySystem
+public sealed partial class HierophantBeatSystem : EntitySystem
 {
-    [Dependency] private readonly AlertsSystem _alertsSystem = default!;
+    [Dependency] private AlertsSystem _alertsSystem = default!;
 
     public override void Initialize()
     {

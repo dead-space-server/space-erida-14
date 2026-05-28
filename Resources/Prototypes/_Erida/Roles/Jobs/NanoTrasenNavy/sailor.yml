@@ -13,7 +13,6 @@
   icon: "JobIconNTNavySailor"
   joinNotifyCrew: true
   supervisors: job-supervisors-nanotrasen-navy-officer
-  canBeAntag: false
   access:
   - NTNavy
   - Security

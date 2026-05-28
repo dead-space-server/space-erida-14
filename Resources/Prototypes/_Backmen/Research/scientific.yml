@@ -54,6 +54,7 @@
    - ClothingEyesHudSecurity
    - ClothingEyesGlassesChemical
    - ClothingEyesHudDiagnostic
+   - ClothingEyesHudMedical # Erida add
   position: 4,2
 
 # Erida-start

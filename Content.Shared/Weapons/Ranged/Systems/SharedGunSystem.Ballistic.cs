@@ -9,16 +9,15 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
 public abstract partial class SharedGunSystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedStackSystem _stack = null!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedStackSystem _stack = null!;
 
     [MustCallBase]
     protected virtual void InitializeBallistic()
@@ -68,7 +67,6 @@ public abstract partial class SharedGunSystem
     {
         if (args.Handled ||
             !component.MayTransfer ||
-            !Timing.IsFirstTimePredicted ||
             args.Target == null ||
             args.Used == args.Target ||
             Deleted(args.Target) ||
@@ -185,29 +183,6 @@ public abstract partial class SharedGunSystem
             return;
 
         args.PushMarkup(Loc.GetString("gun-magazine-examine", ("color", AmmoExamineColor), ("count", GetBallisticShots(ent.Comp))));
-
-        if (TryGetNextAmmoName(ent, out var ammoName))
-            args.PushMarkup(Loc.GetString("gun-magazine-next-ammo", ("color", AmmoExamineColor), ("ammo", ammoName)));
-    }
-
-    private bool TryGetNextAmmoName(Entity<BallisticAmmoProviderComponent> entity, out string ammoName)
-    {
-        ammoName = string.Empty;
-
-        if (entity.Comp.Container.Count + entity.Comp.UnspawnedCount == 0)
-            return false;
-
-        if (entity.Comp.Container.Count == 0)
-        {
-            if (entity.Comp.Proto == null)
-                return false;
-
-            ammoName = ProtoManager.Index<EntityPrototype>(entity.Comp.Proto).Name;
-        }
-        else
-            ammoName = Name(entity.Comp.Entities[^1]);
-
-        return true;
     }
 
     private void ManualCycle(Entity<BallisticAmmoProviderComponent> ent, MapCoordinates coordinates, EntityUid? user = null, GunComponent? gunComp = null)
@@ -380,11 +355,8 @@ public abstract partial class SharedGunSystem
 
     public void UpdateBallisticAppearance(Entity<BallisticAmmoProviderComponent> ent)
     {
-        if (!Timing.IsFirstTimePredicted || !TryComp<AppearanceComponent>(ent, out var appearance))
-            return;
-
-        Appearance.SetData(ent, AmmoVisuals.AmmoCount, GetBallisticShots(ent.Comp), appearance);
-        Appearance.SetData(ent, AmmoVisuals.AmmoMax, ent.Comp.Capacity, appearance);
+        Appearance.SetData(ent, AmmoVisuals.AmmoCount, GetBallisticShots(ent.Comp));
+        Appearance.SetData(ent, AmmoVisuals.AmmoMax, ent.Comp.Capacity);
     }
 
     public void SetBallisticUnspawned(Entity<BallisticAmmoProviderComponent> entity, int count)

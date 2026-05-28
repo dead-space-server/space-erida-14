@@ -10,13 +10,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Decals.Overlays;
 
-public sealed class DecalCopyOverlay : Overlay
+public sealed partial class DecalCopyOverlay : Overlay
 {
-    [Dependency] private readonly IEyeManager _eyeManager = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IEyeManager _eyeManager = default!;
+    [Dependency] private IInputManager _inputManager = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
     private readonly SharedTransformSystem _transform;
     private readonly SpriteSystem _sprite;
     private readonly SharedDecalSystem _sharedDecalSystem;

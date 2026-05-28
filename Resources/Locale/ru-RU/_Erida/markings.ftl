@@ -22,6 +22,8 @@ marking-VulpTailHusky = Вульпканин, хвост хаски
 marking-VulpTailLong = Вульпканин, длинный хвост
 marking-VulpTailVulp = Вульпканин, хвост лисы
 marking-VulpTailVulpFade = Вульпканин, хвост лисы, градиент
+marking-VulpTailCoyote = Вульпканин, хвост койота
+marking-VulpTailCoyote-coyote = Хвост койота (основа)
 marking-HarpyTail = Гарпия, хвост
 marking-HarpyTailPartial = Гарпия, хвост (трёхцветный)
 # Head, head markings

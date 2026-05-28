@@ -7,7 +7,6 @@
   startingGear: OSOGear
   icon: "JobIconNanotrasenOSO"
   supervisors: job-supervisors-shosoc
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:

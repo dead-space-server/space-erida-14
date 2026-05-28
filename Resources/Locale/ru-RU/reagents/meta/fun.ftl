@@ -7,6 +7,9 @@ reagent-desc-fiber = Сырьё, обычно извлекаемое из шер
 reagent-name-buzzochloric-bees = жужжехлориновые пчёлы
 reagent-desc-buzzochloric-bees = Жидкие пчёлы. О боже, это ЖИДКИЕ ПЧЁЛЫ, нет...
 
+reagent-name-brass = латунь
+reagent-desc-brass = Пахнет заводным механизмом.
+
 reagent-name-ground-bee = молотые пчёлы
 reagent-desc-ground-bee = Молотые пчёлы. Мерзость.
 

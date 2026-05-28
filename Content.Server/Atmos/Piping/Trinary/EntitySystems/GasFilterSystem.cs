@@ -1,5 +1,4 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Atmos.Commands;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Atmos.Piping.Trinary.Components;
 using Content.Server.NodeContainer.EntitySystems;
@@ -20,15 +19,15 @@ using Robust.Shared.Player;
 namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 {
     [UsedImplicitly]
-    public sealed class GasFilterSystem : EntitySystem
+    public sealed partial class GasFilterSystem : EntitySystem
     {
         [Dependency] private UserInterfaceSystem _userInterfaceSystem = default!;
         [Dependency] private IAdminLogManager _adminLogger = default!;
-        [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
-        [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;
-        [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
-        [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-        [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
+        [Dependency] private AtmosphereSystem _atmosphereSystem = default!;
+        [Dependency] private SharedAmbientSoundSystem _ambientSoundSystem = default!;
+        [Dependency] private SharedAppearanceSystem _appearanceSystem = default!;
+        [Dependency] private SharedPopupSystem _popupSystem = default!;
+        [Dependency] private NodeContainerSystem _nodeContainer = default!;
 
         public override void Initialize()
         {
@@ -75,17 +74,18 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             if (filter.FilteredGas.HasValue)
             {
                 // Make sure we don't pump over the pressure limit.
-                var filteredGasMixture = new GasMixture { Temperature = removed.Temperature };
                 var limitMolesFilter =
                     AtmosphereSystem.MolesToMaxPressure(removed, filterNode.Air, Atmospherics.MaxOutputPressure);
 
                 var availableMoles = removed.GetMoles(filter.FilteredGas.Value);
                 var filteredMoles = Math.Max(Math.Min(limitMolesFilter, availableMoles), 0);
+                var filteredGasMixture = new GasMixture { Temperature = removed.Temperature };
 
                 filteredGasMixture.SetMoles(filter.FilteredGas.Value, filteredMoles);
                 removed.AdjustMoles(filter.FilteredGas.Value, -filteredMoles);
 
                 _atmosphereSystem.Merge(filterNode.Air, filteredGasMixture);
+
                 _ambientSoundSystem.SetAmbience(uid, filteredMoles > 0f);
             }
 

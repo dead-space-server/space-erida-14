@@ -13,7 +13,7 @@ namespace Content.Shared.EntityConditions.Conditions;
 /// <inheritdoc cref="EntityConditionSystem{T, TCondition}"/>
 public sealed partial class DamageTypeEntityConditionSystem : EntityConditionSystem<DamageableComponent, DamageTypeCondition>
 {
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
     protected override void Condition(Entity<DamageableComponent> entity, ref EntityConditionEvent<DamageTypeCondition> args)
     {
         var value = _damageableSystem.GetAllDamage((entity.Owner, entity.Comp))

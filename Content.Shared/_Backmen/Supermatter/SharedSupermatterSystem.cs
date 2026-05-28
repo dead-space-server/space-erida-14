@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Backmen.Supermatter;
 
-public abstract class SharedSupermatterSystem : EntitySystem
+public abstract partial class SharedSupermatterSystem : EntitySystem
 {
     public override void Initialize()
     {
@@ -72,8 +72,8 @@ public abstract class SharedSupermatterSystem : EntitySystem
     protected const string Ash = "Ash";
 
 
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
 
     private EntityQuery<ProjectileComponent> _projectileQuery;
     protected EntityQuery<BkmSupermatterImmuneComponent> _supermatterImmuneQuery;

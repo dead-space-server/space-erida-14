@@ -18,6 +18,10 @@
                 <ui:OptionSlider Name="SliderTtsVolume" Title="{Loc 'ui-options-tts-volume'}" />
                 <ui:OptionSlider Name="SliderTtsAnnounceVolume" Title="{Loc 'ui-options-tts-announce-volume'}"
                                  Margin="0 0 0 8" />
+                <CheckBox Name="HrtfCheckBox" Text="{Loc 'ui-options-hrtf'}" />
+                <Label Text="{Loc 'ui-options-hrtf-description'}"
+                       StyleClasses="LabelSubText"
+                       Margin="24 0 0 8" />
                 <CheckBox Name="LobbyMusicCheckBox" Text="{Loc 'ui-options-lobby-music'}" />
                 <CheckBox Name="RestartSoundsCheckBox" Text="{Loc 'ui-options-restart-sounds'}" />
                 <CheckBox Name="EventMusicCheckBox" Text="{Loc 'ui-options-event-music'}" />

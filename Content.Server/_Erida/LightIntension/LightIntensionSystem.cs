@@ -8,12 +8,12 @@ using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Server._Erida.LightIntension;
 
-public sealed class LightIntensionSystem : EntitySystem
+public sealed partial class LightIntensionSystem : EntitySystem
 {
-    [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly PhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
-    [Dependency] private readonly ContainerSystem _containerSystem = default!;
+    [Dependency] private EntityManager _entityManager = default!;
+    [Dependency] private PhysicsSystem _physics = default!;
+    [Dependency] private SharedTransformSystem _transformSystem = default!;
+    [Dependency] private ContainerSystem _containerSystem = default!;
 
     public override void Initialize()
     {

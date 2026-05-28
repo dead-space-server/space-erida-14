@@ -7,7 +7,7 @@
     layers:
     - state: purple
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         BZ: 1871.71051
@@ -47,7 +47,7 @@
     layers:
     - state: darkblue
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         Pluoxium: 1871.71051
@@ -87,7 +87,7 @@
     layers:
     - state: h2
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         Hydrogen: 1871.71051
@@ -127,7 +127,7 @@
     layers:
     - state: brown
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         Nitrium: 1871.71051
@@ -167,7 +167,7 @@
     layers:
     - state: nob
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         HyperNoblium: 1871.71051  # hyper-noblium
@@ -207,7 +207,7 @@
     layers:
     - state: zauker
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         Zauker: 1871.71051
@@ -247,7 +247,7 @@
     layers:
     - state: healium
   - type: GasCanister
-    gasMixture:
+    air:
       volume: 1000
       moles:
         Healium: 1871.71051

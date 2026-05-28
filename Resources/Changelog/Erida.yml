@@ -1,3 +1,4 @@
+Order: -1
 Entries:
 - author: Sidzaru
   changes:
@@ -789,3 +790,54 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/372
   avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
   title: Nightmare Bug Fixes
+- author: Kat_L
+  changes:
+    - type: Fix
+      message: Доработка локализации
+    - type: Fix
+      message: Доступно возведение направленных уран. окон и бронированного варианта
+    - type: Fix
+      message: Возвращена возможность крафта мед-охранного визора
+    - type: Fix
+      message: Медицинский визор возвращён в "Интегрированные интерфейсы"
+    - type: Fix
+      message: Аварийная сигнальная ракета горит корректно дольше
+  id: 69
+  time: '2026-05-15T21:31:12.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/373
+  avatar_url: https://avatars.githubusercontent.com/u/215692115?v=4
+  title: '[Fix] Omega fixs'
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Возвращены старые текстуры кастомизации унатхов
+  id: 70
+  time: '2026-05-23T13:50:03.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/375
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Return of Old Textures Customization Lizard
+- author: Spectrum2k
+  changes:
+    - type: Tweak
+      message: Дракон немного ослаблен.
+    - type: Add
+      message: >-
+        Добавлена возможность отключить HRTF Audio в настройках (нужно если вам
+        не нравится звук после обновления).
+    - type: Fix
+      message: Автозамена сокращений снова работает.
+    - type: Fix
+      message: Черты внешности снова работают.
+    - type: Fix
+      message: >-
+        Меню персонализации теперь нормально сохраняется, и не запрашивает
+        сохранение при каждом закрытии.
+    - type: Fix
+      message: >-
+        Меню персонализации теперь не меняет размер превью персонажа во время
+        его настройки.
+  id: 71
+  time: '2026-05-23T16:47:21.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/377
+  avatar_url: https://avatars.githubusercontent.com/u/49170788?v=4
+  title: Upstream fixes

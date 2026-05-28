@@ -5,7 +5,7 @@ namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class AtmosphereSystem
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
 
         public bool SpaceWind { get; private set; }
         public float SpaceWindPressureForceDivisorThrow { get; private set; }
@@ -56,6 +56,9 @@ namespace Content.Server.Atmos.EntitySystems
             Subs.CVar(_cfg, CCVars.AtmosSpeedup, value => Speedup = value, true);
             Subs.CVar(_cfg, CCVars.ExcitedGroups, value => ExcitedGroups = value, true);
             Subs.CVar(_cfg, CCVars.ExcitedGroupsSpaceIsAllConsuming, value => ExcitedGroupsSpaceIsAllConsuming = value, true);
+            Subs.CVar(_cfg, CCVars.DeltaPressureDamage, value => DeltaPressureDamage = value, true);
+            Subs.CVar(_cfg, CCVars.DeltaPressureParallelToProcessPerIteration, value => DeltaPressureParallelProcessPerIteration = value, true);
+            Subs.CVar(_cfg, CCVars.DeltaPressureParallelBatchSize, value => DeltaPressureParallelBatchSize = value, true);
         }
     }
 }

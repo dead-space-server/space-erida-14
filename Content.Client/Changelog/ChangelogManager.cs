@@ -13,13 +13,13 @@ namespace Content.Client.Changelog
 {
     public sealed partial class ChangelogManager : IPostInjectInit
     {
-        [Dependency] private readonly ILogManager _logManager = default!;
-        [Dependency] private readonly IResourceManager _resource = default!;
-        [Dependency] private readonly ISerializationManager _serialization = default!;
-        [Dependency] private readonly IConfigurationManager _configManager = default!;
+        [Dependency] private ILogManager _logManager = default!;
+        [Dependency] private IResourceManager _resource = default!;
+        [Dependency] private ISerializationManager _serialization = default!;
+        [Dependency] private IConfigurationManager _configManager = default!;
 
         private const string SawmillName = "changelog";
-        public const string MainChangelogName = "Changelog";
+        public const string MainChangelogName = "Erida"; // Erida edit
 
         private ISawmill _sawmill = default!;
 
@@ -69,7 +69,7 @@ namespace Content.Client.Changelog
                 return;
             }
 
-            var changelog = changelogs[0];
+            var changelog = mainChangelogs[0]; // Erida edit
             if (mainChangelogs.Length > 1)
             {
                 _sawmill.Error($"More than one file found in Resource/Changelog with name {MainChangelogName}");

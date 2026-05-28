@@ -140,8 +140,9 @@
       types:
         Heat: 0.75 # burn more
   - type: Damageable
-    damageContainer: Biological # Shadowkin
     damageModifierSet: Shadowkin
+  - type: Injurable
+    damageContainer: Shadowkin
   - type: Barotrauma
     damage:
       types:

@@ -61,6 +61,7 @@
     <File Path="RobustToolbox/Imports/WebView.props" />
   </Folder>
   <Folder Name="/RobustToolbox/MSBuild/">
+    <File Path="RobustToolbox/MSBuild/MacOSAppBundle.targets" />
     <File Path="RobustToolbox/MSBuild/Robust.Analyzers.targets" />
     <File Path="RobustToolbox/MSBuild/Robust.CompNetworkGenerator.targets" />
     <File Path="RobustToolbox/MSBuild/Robust.Configurations.props" />
@@ -73,6 +74,7 @@
     <File Path="RobustToolbox/MSBuild/Robust.Properties.targets" />
     <File Path="RobustToolbox/MSBuild/Robust.Trimming.targets" />
     <File Path="RobustToolbox/MSBuild/XamlIL.targets" />
+    <File Path="RobustToolbox/MSBuild/WebView.targets" />
   </Folder>
   <Folder Name="/RobustToolbox/NetSerializer/">
     <Project Path="RobustToolbox/NetSerializer/NetSerializer/NetSerializer.csproj">

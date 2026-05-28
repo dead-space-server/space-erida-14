@@ -67,8 +67,9 @@
   - type: CombatMode
   - type: MobState
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
   - type: NoSlip
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5

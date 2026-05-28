@@ -1,4 +1,6 @@
 using Content.Shared.Administration.Logs;
+using Content.Shared.Atmos.Components;
+using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Construction;
 using Content.Shared.Database;
@@ -9,8 +11,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
-using Content.Shared.Atmos.Components;
-using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.RCD.Components;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
@@ -30,26 +30,26 @@ using System.Numerics;
 
 namespace Content.Shared.RCD.Systems;
 
-public sealed class RCDSystem : EntitySystem
+public sealed partial class RCDSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefMan = default!;
-    [Dependency] private readonly FloorTileSystem _floors = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedChargesSystem _sharedCharges = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
-    [Dependency] private readonly TileSystem _tile = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly TagSystem _tags = default!;
-    [Dependency] private readonly SharedAtmosPipeLayersSystem _pipeLayers = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private ISharedAdminLogManager _adminLogger = default!;
+    [Dependency] private ITileDefinitionManager _tileDefMan = default!;
+    [Dependency] private FloorTileSystem _floors = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedChargesSystem _sharedCharges = default!;
+    [Dependency] private SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private TileSystem _tile = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private TagSystem _tags = default!;
+    [Dependency] private SharedAtmosPipeLayersSystem _pipeLayers = default!;
     private const float RpdCenterDeadzoneRadius = 0.25f;
 
     private readonly int _instantConstructionDelay = 0;
@@ -67,10 +67,10 @@ public sealed class RCDSystem : EntitySystem
         SubscribeLocalEvent<RCDComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<RCDComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RCDComponent, AfterInteractEvent>(OnAfterInteract);
+        SubscribeLocalEvent<RCDComponent, GetVerbsEvent<UtilityVerb>>(OnGetUtilityVerb);
         SubscribeLocalEvent<RCDComponent, RCDDoAfterEvent>(OnDoAfter);
         SubscribeLocalEvent<RCDComponent, DoAfterAttemptEvent<RCDDoAfterEvent>>(OnDoAfterAttempt);
         SubscribeLocalEvent<RCDComponent, RCDSystemMessage>(OnRCDSystemMessage);
-        SubscribeLocalEvent<RCDComponent, GetVerbsEvent<UtilityVerb>>(OnGetUtilityVerb);
         SubscribeNetworkEvent<RCDConstructionGhostRotationEvent>(OnRCDconstructionGhostRotationEvent);
         SubscribeNetworkEvent<RPDSelectedLayerEvent>(OnRpdSelectedLayerEvent);
     }
@@ -79,19 +79,10 @@ public sealed class RCDSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, RCDComponent component, MapInitEvent args)
     {
-        if (component.ProtoId != "Invalid" &&
-            component.AvailablePrototypes.Contains(component.ProtoId))
-        {
-            Dirty(uid, component);
-            return;
-        }
-
         // On init, set the RCD to its first available recipe
         if (component.AvailablePrototypes.Count > 0)
         {
-            component.ProtoId = component.IsRpd && component.AvailablePrototypes.Contains("PipeStraight")
-                ? "PipeStraight"
-                : component.AvailablePrototypes.ElementAt(0);
+            component.ProtoId = component.AvailablePrototypes.ElementAt(0);
             Dirty(uid, component);
 
             return;
@@ -212,7 +203,7 @@ public sealed class RCDSystem : EntitySystem
             component.CurrentMode == RpdMode.Free &&
             TryGetNetEntity(uid, out var netEntity))
         {
-            RaiseNetworkEvent(new RPDSelectedLayerEvent(netEntity!.Value, (byte) pipeLayer));
+            RaiseNetworkEvent(new RPDSelectedLayerEvent(netEntity.Value, (byte) pipeLayer));
         }
 
         if (!IsRCDOperationStillValid(uid, component, gridUid.Value, mapGrid, tile, position, component.ConstructionDirection, pipeLayer, args.Target, args.User))
@@ -288,6 +279,7 @@ public sealed class RCDSystem : EntitySystem
             GetNetEntity(effect));
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, ev, uid, target: args.Target, used: uid)
         {
+            NeedHand = true,
             BreakOnDamage = true,
             BreakOnHandChange = true,
             BreakOnMove = true,
@@ -502,7 +494,7 @@ public sealed class RCDSystem : EntitySystem
             // Check rule: Respect baseTurf and baseWhitelist
             if (prototype.Prototype != null && _tileDefMan.TryGetDefinition(prototype.Prototype, out var replacementDef))
             {
-                var replacementContentDef = (ContentTileDefinition)replacementDef;
+                var replacementContentDef = (ContentTileDefinition) replacementDef;
 
                 if (replacementContentDef.BaseTurf != tileDef.ID && !replacementContentDef.BaseWhitelist.Contains(tileDef.ID))
                 {
@@ -575,7 +567,7 @@ public sealed class RCDSystem : EntitySystem
                 foreach (var fixture in fixtures.Fixtures.Values)
                 {
                     // Continue if no collision is possible
-                    if (!fixture.Hard || fixture.CollisionLayer <= 0 || (fixture.CollisionLayer & (int)prototype.CollisionMask) == 0)
+                    if (!fixture.Hard || fixture.CollisionLayer <= 0 || (fixture.CollisionLayer & (int) prototype.CollisionMask) == 0)
                         continue;
 
                     // Continue if our custom collision bounds are not intersected
@@ -666,13 +658,12 @@ public sealed class RCDSystem : EntitySystem
                 if (!_tileDefMan.TryGetDefinition(prototype.Prototype, out var tileDef))
                     return;
 
-                _tile.ReplaceTile(tile, (ContentTileDefinition)tileDef, gridUid, mapGrid);
+                _tile.ReplaceTile(tile, (ContentTileDefinition) tileDef, gridUid, mapGrid);
                 _adminLogger.Add(LogType.RCD, LogImpact.High, $"{ToPrettyString(user):user} used RCD to set grid: {gridUid} {position} to {prototype.Prototype}");
                 break;
 
             case RcdMode.ConstructObject:
                 var buildProto = ResolveConstructedEntityPrototype(component, prototype, pipeLayer);
-
                 var ent = Spawn(buildProto, _mapSystem.GridTileToLocal(gridUid, mapGrid, position));
 
                 switch (prototype.Rotation)
@@ -813,7 +804,7 @@ public sealed partial class RCDDoAfterEvent : DoAfterEvent
     public NetCoordinates Location { get; private set; }
 
     [DataField(required: true)]
-    public NetEntity TargetGridId { get; private set; }
+    public NetEntity TargetGridId {get ; private set; }
 
     [DataField]
     public Direction Direction { get; private set; }

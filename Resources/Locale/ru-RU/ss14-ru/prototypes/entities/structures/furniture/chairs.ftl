@@ -50,3 +50,5 @@ ent-WoodenBench = деревянная скамейка
     .desc = Получили занозу? По крайней мере, она экологически чистая.
 ent-ChairXeno = ксеностул
     .desc = { ent-StoolBase.desc }
+ent-ComfyDarkChair = удобное кресло
+    .desc = Выглядит удобным.

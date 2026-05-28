@@ -4,13 +4,13 @@
   name: karmotrine can
   description: A can of pure and tasteless alcohol
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Karmotrine
-          Quantity: 30
+  - type: Solution
+    id: drink
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Karmotrine
+        Quantity: 30
   - type: Sprite
     sprite: _Erida/VA11_HallA/drinkkarmotrinecan.rsi
   - type: Item

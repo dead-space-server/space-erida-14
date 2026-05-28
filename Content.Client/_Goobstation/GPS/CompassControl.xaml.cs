@@ -12,7 +12,7 @@ namespace Content.Client._Goobstation.GPS;
 [GenerateTypedNameReferences]
 public sealed partial class CompassControl : LayoutContainer
 {
-    [Dependency] private readonly IEyeManager _eyeManager = default!;
+    [Dependency] private IEyeManager _eyeManager = default!;
 
     private MapCoordinates _gpsCoordinates;
     private NetEntity? _trackedEntity;

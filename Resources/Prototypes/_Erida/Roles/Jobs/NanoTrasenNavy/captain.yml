@@ -26,7 +26,6 @@
   icon: "JobIconNTNavyCaptain"
   joinNotifyCrew: true
   supervisors: job-supervisors-admiral
-  canBeAntag: false
   accessGroups:
   - AllAccess
   - NTNavyAllAccess

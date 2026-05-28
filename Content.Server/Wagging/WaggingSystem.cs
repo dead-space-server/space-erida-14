@@ -13,11 +13,11 @@ namespace Content.Server.Wagging;
 /// <summary>
 /// Adds an action to toggle wagging animation for tails markings that supporting this
 /// </summary>
-public sealed class WaggingSystem : EntitySystem
+public sealed partial class WaggingSystem : EntitySystem
 {
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
@@ -59,7 +59,7 @@ public sealed class WaggingSystem : EntitySystem
         if (args.Handled)
             return;
 
-        TryToggleWagging(ent.AsNullable());
+        args.Handled = TryToggleWagging(ent.AsNullable()); // Erida edit
     }
 
     private void OnMobStateChanged(Entity<WaggingComponent> ent, ref MobStateChangedEvent args)

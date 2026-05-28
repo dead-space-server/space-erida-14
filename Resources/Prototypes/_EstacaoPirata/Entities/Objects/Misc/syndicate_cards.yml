@@ -700,19 +700,18 @@
     damage:
       types:
         Slash: 6
-  - type: SolutionContainerManager
-    solutions:
-      injector:
-        maxVol: 7
-        reagents:
-        - ReagentId: Bananadine
-          Quantity: 1.5
-        - ReagentId: Honk
-          Quantity: 0.5
-        - ReagentId: Laughter
-          Quantity: 2
+  - type: Solution
+    id: injector
+    solution:
+      maxVol: 7
+      reagents:
+      - ReagentId: Bananadine
+        Quantity: 1.5
+      - ReagentId: Honk
+        Quantity: 0.5
+      - ReagentId: Laughter
+        Quantity: 2
   - type: SolutionRegeneration
-    solution: injector
     duration: 5.5
     generated:
       reagents:

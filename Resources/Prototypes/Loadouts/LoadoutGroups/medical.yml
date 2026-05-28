@@ -8,6 +8,17 @@
   - SterileMask
 
 - type: loadoutGroup
+  id: MedicalEyewear
+  name: loadout-group-medical-glasses
+  minLimit: 0
+  loadouts:
+  - MedicalHud
+  - MedicalEyePatchHud
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
+
+- type: loadoutGroup
   id: MedicalBackpack
   name: loadout-group-medical-doctor-backpack
   loadouts:
@@ -95,7 +106,6 @@
   - PurpleSurgeryCap
   - NurseHat
 
-
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
   name: loadout-group-medical-doctor-jumpsuit
@@ -117,14 +127,12 @@
   - MedicalDoctorWintercoat
   - SeniorPhysicianLabCoat
 
-
 - type: loadoutGroup
   id: MedicalDoctorPDA
   name: loadout-group-medical-doctor-id
   loadouts:
   - MedicalDoctorPDA
   - SeniorPhysicianPDA
-
 
 #- type: loadoutGroup
 #  id: MedicalDoctorJobTrinkets
@@ -181,7 +189,6 @@
 
 # Paramedic
 
-
 - type: loadoutGroup
   id: ParamedicHead
   name: loadout-group-paramedic-head
@@ -217,14 +224,3 @@
 #  name: loadout-group-jobtrinkets
 #  minLimit: 0
 #  loadouts:
-
-- type: loadoutGroup
-  id: MedicalEyewear
-  name: loadout-group-medical-glasses
-  minLimit: 0
-  loadouts:
-  - MedicalHud
-  - MedicalEyePatchHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen

@@ -11,13 +11,13 @@ using Robust.Shared.Player;
 
 namespace Content.Server._DV.Paper;
 
-public sealed class SignatureSystem : EntitySystem
+public sealed partial class SignatureSystem : EntitySystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly IdCardSystem _idCard = default!;
-    [Dependency] private readonly PaperSystem _paper = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly TagSystem _tags = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private IdCardSystem _idCard = default!;
+    [Dependency] private PaperSystem _paper = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private TagSystem _tags = default!;
 
     private const string WriteTag = "Write";
 
