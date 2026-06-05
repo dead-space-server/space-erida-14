@@ -1,0 +1,9 @@
+- type: cargoProduct
+  id: GlovesCombat
+  icon:
+    sprite: Clothing/Hands/Gloves/combat.rsi
+    state: icon
+  product: CrateSecurityGlovesCombat
+  cost: 6750
+  category: cargoproduct-category-name-security
+  group: market

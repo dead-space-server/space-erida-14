@@ -305,3 +305,4 @@
     - StunImmune
     #- AnomalyHost
   - type: TTS # Erida
+  - type: BigFingers

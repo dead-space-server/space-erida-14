@@ -97,6 +97,8 @@
       prob: 0.02
     - id: PlushieLizardJobSecurityofficer
       prob: 0.02
+    - id: ClothingHandsGlovesCombat # Erida-edit
+      prob: 0.1
 
 - type: entity
   id: LockerBrigmedicFilled

@@ -338,6 +338,7 @@
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-yellow
+  - type: BigFingers # Erida-edit
 
 # Budget Insulated Gloves
 - type: entity
