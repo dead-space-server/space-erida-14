@@ -8,7 +8,7 @@ namespace Content.Shared._Erida.BigFingers;
 
 public sealed partial class BigFingersSystem : EntitySystem
 {
-    [Dependency] protected SharedPopupSystem Popup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IGameTiming _timing = default!;
     public override void Initialize()
     {
@@ -24,7 +24,7 @@ public sealed partial class BigFingersSystem : EntitySystem
         if (_timing.CurTime > uid.Comp.NextPopupTime
             || uid.Comp.NextPopupTime == null)
         {
-            Popup.PopupClient(Loc.GetString("too-big-fingers"), uid, uid);
+            _popup.PopupClient(Loc.GetString("too-big-fingers"), uid, uid);
             uid.Comp.NextPopupTime = _timing.CurTime + uid.Comp.PopupCooldown;
         }
 
