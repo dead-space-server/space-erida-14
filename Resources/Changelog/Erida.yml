@@ -841,3 +841,33 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/377
   avatar_url: https://avatars.githubusercontent.com/u/49170788?v=4
   title: Upstream fixes
+- author: Cat_L
+  changes:
+    - type: Fix
+      message: Звуковой вывод эмоции рас
+    - type: Fix
+      message: Отображение спрайтов написанных / заштампованных бумаг
+    - type: Fix
+      message: раздвижные окна снова могут закрываться внутри объекта
+    - type: Tweak
+      message: >-
+        РСУ устройства способны демонтировать атмос трубы, датчики воздуха и
+        сигнализации
+    - type: Tweak
+      message: Доступ ГСБ способен разблокировать РСУ техника СБ
+  id: 72
+  time: '2026-05-30T20:41:23.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/379
+  avatar_url: https://avatars.githubusercontent.com/u/215692115?v=4
+  title: '[Fix] Bug report response №1'
+- author: Tiwulovoe
+  changes:
+    - type: Tweak
+      message: Кроваво-красный скафандр теперь имеет адекватные резисты 60 -> 50
+    - type: Tweak
+      message: Резисты скафандра БЩ немного повышены
+  id: 73
+  time: '2026-05-30T20:45:25.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/374
+  avatar_url: https://avatars.githubusercontent.com/u/250869396?v=4
+  title: f

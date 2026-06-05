@@ -29,6 +29,10 @@
       collection: Snores
     Sigh:
       collection: MaleSigh
+# Erida start
+    Moan:
+      collection: MaleMoan
+# Erida end
 
 - type: emoteSounds
   id: FemaleResomi
@@ -61,4 +65,8 @@
       collection: Snores
     Sigh:
       collection: FemaleSigh
+# Erida start
+    Moan:
+      collection: FemaleMoan
+# Erida end
 

@@ -226,7 +226,7 @@
     thresholds:
     - trigger: # Erida start
         !type:DamageTrigger
-        damage: 200
+        damage: 800 # Erida 200 -> 800
       behaviors:
       - !type:PlaySoundBehavior
         sound:

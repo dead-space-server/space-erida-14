@@ -111,6 +111,12 @@
     guides:
     - AirAlarms
     - DeviceMonitoringAndControl
+# Erida start
+  - type: RCDDeconstructable
+    cost: 2
+    delay: 2
+    fx: EffectRCDDeconstruct2
+# Erida end
 
 - type: entity
   parent: BaseWallmountMetallic

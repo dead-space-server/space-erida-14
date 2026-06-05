@@ -40,6 +40,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+# Erida start
+    Moan:
+      collection: MaleMoan
+# Erida end
 
 - type: emoteSounds
   id: FemaleHuman
@@ -82,6 +86,10 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+# Erida start
+    Moan:
+      collection: FemaleMoan
+# Erida end
 
 - type: emoteSounds
   id: MaleReptilian
@@ -110,6 +118,22 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+# Erida start
+    Snore: 
+      collection: Snores
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes 
+    Cough:
+      collection: MaleCoughs
+    Sigh:
+      collection: MaleSigh
+    Yawn:
+      collection: MaleYawn
+    Moan:
+      collection: MaleMoan
+# Erida end
 
 - type: emoteSounds
   id: FemaleReptilian
@@ -138,6 +162,22 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+# Erida start
+    Snore:
+      collection: Snores
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes 
+    Cough:
+      collection: FemaleCoughs
+    Sigh:
+      collection: FemaleSigh
+    Yawn:
+      collection: FemaleYawn
+    Moan:
+      collection: FemaleMoan
+# Erida end
 
 - type: emoteSounds
   id: MaleSlime
@@ -180,6 +220,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+# Erida start
+    Moan:
+      collection: MaleMoan
+# Erida end
   params:
     variation: 0.125
 
@@ -224,6 +268,10 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+# Erida start
+    Moan: 
+      collection: FemaleMoan
+# Erida end
   params:
     variation: 0.125
 
@@ -256,6 +304,14 @@
       path: /Audio/Effects/Gasp/vox_gasp.ogg
     DefaultDeathgasp:
       path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
+# Erida start
+    Moan:
+      path: /Audio/Voice/Vox/vox_chitter.ogg
+    Yawn:
+      path: /Audio/Voice/Vox/vox_sigh.ogg
+    Whistle:
+      path: /Audio/Voice/Vox/vox_cough.ogg
+# Erida end
   params:
     variation: 0.125
     # TODO: We need vox sounds for the other emotes
@@ -281,6 +337,24 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+# Erida start
+    Wink:
+      collection: Wink
+    Crying:
+      path: /Audio/Voice/Diona/diona_scream.ogg
+    Whistle:
+      path: /Audio/Voice/Diona/diona_sneeze.ogg
+    Snore:
+      path: /Audio/Voice/Diona/diona_sneeze.ogg
+    Cough:
+      collection: MaleCoughs
+    Sigh:
+      path: /Audio/Animals/nymph_chirp.ogg  
+    Yawn:
+      path: /Audio/Voice/Diona/diona_sneeze.ogg
+    Moan:
+      path: /Audio/Voice/Diona/diona_scream.ogg
+# Erida end
   params:
     variation: 0.125
 
@@ -307,6 +381,24 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+# Erida start
+    Whistle:
+      collection: Whistles
+    Crying:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+    Snore:
+      collection: Snores
+    Sneeze:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
+    Cough:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
+    Sigh:
+      path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+    Yawn:
+      path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+    Moan:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+# Erida end
 
 - type: emoteSounds
   id: UnisexDwarf
@@ -347,6 +439,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+# Erida start
+    Moan:
+      collection: MaleMoan
+# Erida end
   params:
     variation: 0.125
     pitch: 0.75
@@ -390,6 +486,10 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+# Erida start
+    Moan:
+      collection: FemaleMoan
+# Erida end
   params:
     variation: 0.125
     pitch: 0.75
@@ -419,6 +519,24 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MothDeathGasp
+# Erida start
+    Cough:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Sneeze:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Yawn:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Snore:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Sigh:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Crying:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Whistle:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Moan:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+# Erida end
 
 - type: emoteSounds
   id: UnisexSilicon
@@ -526,6 +644,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+# Erida start
+    Moan:
+      collection: MaleMoan
+# Erida end
 
 - type: emoteSounds
   id: FemaleVulpkanin
@@ -568,6 +690,10 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+# Erida start
+    Moan:
+      collection: FemaleMoan
+# Erida end
 
 # body emotes
 - type: emoteSounds
@@ -581,12 +707,12 @@
       collection: Snaps
       params:
         volume: -6
-    # Erida start
+# Erida start
     Salute:
       collection: Salutes
     Wink:
       collection: Wink
-    # Erida end
+# Erida end
 
 - type: emoteSounds
   id: DionaBodyEmotes

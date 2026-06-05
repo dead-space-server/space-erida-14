@@ -66,6 +66,12 @@
     bodyType: static
   - type: StaticPrice
     price: 30
+# Erida start
+  - type: RCDDeconstructable
+    cost: 2
+    delay: 2
+    fx: EffectRCDDeconstruct2
+# Erida end
 
 - type: entity
   abstract: true
@@ -78,6 +84,12 @@
         Primary: Structures/Piping/Atmospherics/pipe.rsi
         Secondary: Structures/Piping/Atmospherics/pipe_alt1.rsi
         Tertiary: Structures/Piping/Atmospherics/pipe_alt2.rsi
+# Erida start
+  - type: RCDDeconstructable
+    cost: 2
+    delay: 2
+    fx: EffectRCDDeconstruct2
+# Erida end
 
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 

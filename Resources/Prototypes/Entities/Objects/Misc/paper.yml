@@ -78,6 +78,7 @@
   - type: Item
     size: Tiny
   - type: PhysicalComposition
+  - type: PaperVisualizer # Erida add
 
 - type: entity
   name: paper
