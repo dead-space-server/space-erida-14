@@ -28,12 +28,30 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 
-- type: entity
+- type: entity # Erida-edit
   id: HoloFan
-  parent: HolosignWetFloor
   name: holofan
   description: A barrier of hard light that blocks air, but nothing else.
+  placement:
+    mode: SnapgridCenter
   components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Clickable
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
   - type: Sprite
     sprite: Structures/Holo/holofan.rsi
     state: icon
