@@ -157,3 +157,6 @@ construction-graph-tag-backpack = backpack
 
 # chemistry
 construction-graph-tag-centrifuge-compatible = centrifugable container
+
+# Erida
+construction-graph-tag-energy-sword = energy sword

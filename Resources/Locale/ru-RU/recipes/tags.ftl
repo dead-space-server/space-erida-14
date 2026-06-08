@@ -134,3 +134,5 @@ construction-graph-tag-fire-helmet = пожарный шлем
 construction-graph-tag-spationaut-hardsuit = лёгкий скафандр утилизатора
 # clothing
 construction-graph-tag-backpack = рюкзак
+# Erida
+construction-graph-tag-energy-sword = Лазерный меч

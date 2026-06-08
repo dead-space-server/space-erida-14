@@ -92,6 +92,13 @@
     sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
   - type: StaticPrice
     price: 2500
+  - type: Construction # WD EDIT
+    deconstructionTarget: null
+    graph: EnergyDoubleSwordGraph
+    node: esword
+  - type: Tag # WD EDIT
+    tags:
+    - EnergySword
 
 - type: entity
   name: energy dagger
@@ -343,6 +350,10 @@
   - type: Reflect
     reflectProb: .75
     spread: 75
+  - type: Construction # WD EDIT
+    deconstructionTarget: null
+    graph: EnergyDoubleSwordGraph
+    node: desword
 
 # Item will look weird in handslot. Will need to adjust handstorage visuals in a future PR
 - type: entity
