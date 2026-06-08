@@ -57,9 +57,8 @@
     price: 1000 # Living critters are valuable in space.
   - type: Perishable
   - type: Reflect
-    reflectProb: 0.7
-    reflects:
-      - Energy
+    reflectsProb:
+      Energy: 0.7
   - type: Fixtures
     fixtures:
       fix1:

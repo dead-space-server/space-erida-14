@@ -66,9 +66,8 @@
     speechVerb: LargeMob
   - type: Perishable
   - type: Reflect
-    reflectProb: 0.7
-    reflects:
-      - Energy
+    reflectsProb:
+      Energy: 0.7
   - type: Fixtures
     fixtures:
       fix1:

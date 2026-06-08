@@ -13,10 +13,10 @@ namespace Content.Shared.Weapons.Reflect;
 public sealed partial class ReflectComponent : Component
 {
     /// <summary>
-    /// What we reflect.
+    /// What we reflect and probability for a projectile to be reflected
     /// </summary>
-    [DataField]
-    public ReflectType Reflects = ReflectType.Energy | ReflectType.NonEnergy;
+    [DataField, AutoNetworkedField]
+    public Dictionary<ReflectType, float> ReflectsProb = new Dictionary<ReflectType, float>() { { ReflectType.Energy, 0.25f }, { ReflectType.NonEnergy, 0.25f } };
 
     /// <summary>
     /// Select in which inventory slots it will reflect.
@@ -36,12 +36,6 @@ public sealed partial class ReflectComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool InRightPlace;
-
-    /// <summary>
-    /// Probability for a projectile to be reflected.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float ReflectProb = 0.25f;
 
     /// <summary>
     /// Probability for a projectile to be reflected.

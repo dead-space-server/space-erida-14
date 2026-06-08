@@ -185,7 +185,9 @@
     soundHit:
       path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: .1
+    reflectsProb:
+      Energy: 0.1
+      NonEnergy: 0.1
     spread: 90
   - type: Item
     sprite: _Backmen/Objects/Weapons/Melee/yamato.rsi

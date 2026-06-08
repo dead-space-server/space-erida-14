@@ -19,7 +19,9 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: .25
+    reflectsProb:
+      Energy: 0.25
+      NonEnergy: 0.25
     spread: 90
   - type: Item
     storedSprite:
@@ -62,7 +64,9 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: 0.15
+    reflectsProb:
+      Energy: 0.15
+      NonEnergy: 0.15
     spread: 90
   - type: Item
     sprite: _Erida/Objects/Weapons/Melee/syndicate_rapier.rsi

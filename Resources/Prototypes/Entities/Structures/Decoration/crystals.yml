@@ -11,9 +11,8 @@
       color: "#52ff39"
       noRot: true
     - type: Reflect
-      reflectProb: 0.5
-      reflects:
-      - Energy
+      reflectsProb:
+        Energy: 0.5
       spread: 75
     - type: Anchorable
       delay: 2

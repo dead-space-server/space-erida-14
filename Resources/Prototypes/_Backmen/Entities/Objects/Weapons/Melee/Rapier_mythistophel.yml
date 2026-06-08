@@ -21,7 +21,9 @@
         path: /Audio/Weapons/Rapier.ogg
   - type: Reflect
 #    enabled: true
-    reflectProb: .7
+    reflectsProb:
+      Energy: 0.7
+      NonEnergy: 0.7
     spread: 90
   - type: Solution
     id: melee

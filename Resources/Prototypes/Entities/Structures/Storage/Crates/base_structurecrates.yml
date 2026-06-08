@@ -156,9 +156,8 @@
     containers:
     - entity_storage
   - type: Reflect
-    reflects:
-    - Energy
-    reflectProb: 0.2
+    reflectsProb:
+      Energy: 0.2
     spread: 90
   - type: Paintable
     group: CrateSecure

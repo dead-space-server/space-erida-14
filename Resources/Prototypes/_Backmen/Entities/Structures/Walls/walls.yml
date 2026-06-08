@@ -56,7 +56,9 @@
     key: walls
     base: riveted
   - type: Reflect
-    reflectProb: 1
+    reflectsProb:
+      Energy: 1
+      NonEnergy: 1
 
 - type: entity
   parent: BaseWall

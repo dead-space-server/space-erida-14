@@ -24,9 +24,8 @@
     #  tools:
     #    - id: EnergySword
     - type: Reflect
-      reflectProb: 0.85
-      reflects:
-        - Energy
+      reflectsProb:
+        Energy: 0.85
     - type: MeleeWeapon
       angle: 0
       animation: WeaponArcSmash

@@ -89,7 +89,9 @@
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
-    reflectProb: .1
+    reflectsProb:
+      Energy: 0.1
+      NonEnergy: 0.1
     spread: 90
   - type: Item
     storedSprite:
@@ -223,7 +225,9 @@
       soundHit:
         path: /Audio/Effects/explosion_small1.ogg
     - type: Reflect
-      reflectProb: .25
+      reflectsProb:
+        Energy: 0.25
+        NonEnergy: 0.25
       spread: 90
     - type: Item
       size: Ginormous

@@ -402,9 +402,8 @@
     - type: Item
       heldPrefix: mirror
     - type: Reflect
-      reflectProb: 0.95
-      reflects:
-        - Energy
+      reflectsProb:
+        Energy: 0.95
     - type: Blocking #Mirror shield reflects heat/laser, but is relatively weak to everything else.
       passiveBlockModifier:
         coefficients:
@@ -491,9 +490,8 @@
       color: blue
     - type: ItemTogglePointLight
     - type: Reflect
-      reflectProb: 0.95
-      reflects:
-        - Energy
+      reflectsProb:
+        Energy: 0.95
     - type: Blocking
       passiveBlockModifier:
         coefficients:

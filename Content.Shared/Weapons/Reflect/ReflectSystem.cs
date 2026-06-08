@@ -17,6 +17,8 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Content.Shared.Examine;
 using Content.Shared.Localizations;
+using System.Linq;
+using Robust.Shared.Toolshed.Commands.Values;
 
 namespace Content.Shared.Weapons.Reflect;
 
@@ -101,9 +103,9 @@ public sealed partial class ReflectSystem : EntitySystem
     private bool TryReflectProjectile(Entity<ReflectComponent> reflector, EntityUid user, Entity<ProjectileComponent?> projectile)
     {
         if (!TryComp<ReflectiveComponent>(projectile, out var reflective) ||
-            (reflector.Comp.Reflects & reflective.Reflective) == 0x0 ||
             !_toggle.IsActivated(reflector.Owner) ||
-            !_random.Prob(reflector.Comp.ReflectProb) ||
+            !reflector.Comp.ReflectsProb.TryGetValue(reflective.Reflective, out var reflectProb) || // Erida-edit
+            !_random.Prob(reflectProb) || // Erida-edit
             !TryComp<PhysicsComponent>(projectile, out var physics))
         {
             return false;
@@ -149,9 +151,9 @@ public sealed partial class ReflectSystem : EntitySystem
         ReflectType hitscanReflectType,
         [NotNullWhen(true)] out Vector2? newDirection)
     {
-        if ((reflector.Comp.Reflects & hitscanReflectType) == 0x0 ||
+        if (!reflector.Comp.ReflectsProb.TryGetValue(hitscanReflectType, out var reflectProb) || // Eriad-edit
             !_toggle.IsActivated(reflector.Owner) ||
-            !_random.Prob(reflector.Comp.ReflectProb))
+            !_random.Prob(reflectProb)) // Erida-edit
         {
             newDirection = null;
             return false;
@@ -205,28 +207,70 @@ public sealed partial class ReflectSystem : EntitySystem
     }
 
     #region Examine
-    private void OnExamine(Entity<ReflectComponent> ent, ref ExaminedEvent args)
+    private float? SameProb(Dictionary<ReflectType, float> reflectsProb)
     {
-        // This isn't examine verb or something just because it looks too much bad.
-        // Trust me, universal verb for the potential weapons, armor and walls looks awful.
-        var value = MathF.Round(ent.Comp.ReflectProb * 100, 1);
+        var probs = reflectsProb.Values.ToArray();
+        var count = probs.Count();
 
-        if (!_toggle.IsActivated(ent.Owner) || value == 0 || ent.Comp.Reflects == ReflectType.None)
+        if (count < 2) return null;
+
+        for (int i = 0; i < count - 1; i++)
+        {
+            if (probs[i] != probs[i + 1])
+                return null;
+        }
+
+        return probs[0];
+    }
+
+    private void Examine(Entity<ReflectComponent> ent, float prob, ref ExaminedEvent args, ReflectType reflect = ReflectType.None)
+    {
+        var value = MathF.Round(prob * 100, 1);
+
+        if (value == 0) // Erida-edit
             return;
 
-        var compTypes = ent.Comp.Reflects.ToString().Split(", ");
+        List<string> typeList = new();
 
-        List<string> typeList = new(compTypes.Length);
-
-        for (var i = 0; i < compTypes.Length; i++)
+        if (reflect == ReflectType.None)
         {
-            var type = Loc.GetString(("reflect-component-" + compTypes[i]).ToLower());
+            var typeNames = ent.Comp.ReflectsProb.Keys.Select(t => t.ToString()).ToArray();
+
+            foreach (var typeName in typeNames)
+            {
+                var type = Loc.GetString(("reflect-component-" + typeName).ToLower());
+                typeList.Add(type);
+            }
+        }
+        else
+        {
+            var type = Loc.GetString(("reflect-component-" + reflect.ToString()).ToLower());
             typeList.Add(type);
         }
 
         var msg = ContentLocalizationManager.FormatList(typeList);
 
         args.PushMarkup(Loc.GetString("reflect-component-examine", ("value", value), ("type", msg)));
+    }
+
+    private void OnExamine(Entity<ReflectComponent> ent, ref ExaminedEvent args)
+    {
+        // This isn't examine verb or something just because it looks too much bad.
+        // Trust me, universal verb for the potential weapons, armor and walls looks awful.
+        if (!_toggle.IsActivated(ent.Owner) || ent.Comp.ReflectsProb.Count == 0)
+            return;
+
+        var sProb = SameProb(ent.Comp.ReflectsProb);
+        if (sProb.HasValue)
+        {
+            Examine(ent, sProb.Value, ref args);
+            return;
+        }
+
+        foreach (var (type, prob) in ent.Comp.ReflectsProb)
+        {
+            Examine(ent, prob, ref args, type);
+        }
     }
     #endregion
 }

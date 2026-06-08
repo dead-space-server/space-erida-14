@@ -419,9 +419,8 @@
       NavSmash: !type:Bool
         true
   - type: Reflect
-    reflectProb: 1
-    reflects:
-    - Energy
+    reflectsProb:
+      Energy: 1
   - type: Butcherable
     spawned:
     - id: DiamondOre1
