@@ -70,7 +70,8 @@
       - state: inhand-right-blade
         shader: unshaded
   - type: Reflect
-    Energy: 0.75
+    reflectsProb:
+      Energy: 0.75
   - type: IgnitionSource
     temperature: 700
 
