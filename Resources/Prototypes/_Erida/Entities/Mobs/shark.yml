@@ -77,7 +77,7 @@
       Ears: OrganSharkEars
       Lungs: OrganSharkLungs
       Heart: OrganSharkHeart
-      Stomach: OrganSharkyStomach
+      Stomach: OrganSharkStomach
       Liver: OrganSharkLiver
       Kidneys: OrganSharkKidneys
   - type: HumanoidProfile
@@ -116,7 +116,7 @@
   abstract: true
   components:
   - type: Metabolizer
-    metabolizerTypes: [ Human ]
+    metabolizerTypes: [ Animal ]
 
 - type: entity
   parent: OrganShark
@@ -219,7 +219,8 @@
 
 - type: entity
   parent: [ OrganBaseStomach, OrganSharkInternal, OrganSharkMetabolizer ]
-  id: OrganSharkyStomach
+  id: OrganSharkStomach
+  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSharkInternal, OrganSharkMetabolizer ]
