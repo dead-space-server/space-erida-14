@@ -61,7 +61,7 @@
       - !type:GroupSelector
         conditions:
         - !type:RoundDurationCondition
-          min: 2400 # minimum 40 minutes Erida edit
+          min: 300 # minimum 5 minutes Erida edit
         children:
         - id: SleeperAgents
           weight: 15
@@ -69,21 +69,21 @@
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
-            min: 2400 # minimum 40 minutes Erida edit
+            min: 900 # minimum 15 minutes Erida edit
         - id: DragonSpawn
           weight: 15
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
-            min: 4800 # 80 minutes Erida edit
+            min: 900 # 15 minutes Erida edit
         - id: NinjaSpawn
           weight: 20
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
-            min: 2400 # minimum 40 minutes Erida edit
+            min: 900 # minimum 15 minutes Erida edit
         - id: ParadoxCloneSpawn
           weight: 25
           conditions:
@@ -109,11 +109,11 @@
           - !type:PlayerCountCondition
             min: 20
           - !type:RoundDurationCondition
-            min: 4800 # 80 minutes Erida edit
+            min: 2100 # 35 minutes Erida edit
         # - id: NightmareSpawn # Erida-edit
         #   weight: 15
         #   conditions:
         #   - !type:HasBudgetCondition
         #   - !type:MaxRuleOccurenceCondition
         #   - !type:RoundDurationCondition
-        #     min: 3600 # 60 minutes Erida edit
+        #     min: 1200 # 20 minutes
