@@ -202,7 +202,6 @@
   sprites:
   - sprite: Mobs/Customization/gauze.rsi
     state: gauze_head
-
 # Lizard Specific Markings
 - type: marking
   id: GauzeLizardLefteyePatch
@@ -263,7 +262,6 @@
   sprites:
   - sprite: Mobs/Customization/gauze.rsi
     state: gauze_lizard_blindfold
-
 # Moth Specific Markings
 - type: marking
   id: GauzeMothBlindfold
@@ -420,7 +418,6 @@
   sprites:
   - sprite: Mobs/Customization/gauze.rsi
     state: gauze_moth_lowerleg_l
-
 # Vulpkanin Specific Markings
 - type: marking
   id: GauzeVulpStomach

@@ -133,7 +133,6 @@
     state: underwing_primary
   - sprite: Mobs/Customization/Moth/moth_antennas.rsi
     state: underwing_secondary
-
 # Wings
 - type: marking
   id: MothWingsDefault
@@ -200,7 +199,6 @@
 - type: marking
   id: MothWingsGothic
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: gothic
@@ -208,7 +206,6 @@
 - type: marking
   id: MothWingsJungle
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: jungle
@@ -216,7 +213,6 @@
 - type: marking
   id: MothWingsLadybug
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: ladybug
@@ -224,7 +220,6 @@
 - type: marking
   id: MothWingsMaple
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: maple_primary
@@ -234,7 +229,6 @@
 - type: marking
   id: MothWingsMoffra
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: moffra_primary
@@ -244,7 +238,6 @@
 - type: marking
   id: MothWingsOakworm
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: oakworm
@@ -252,7 +245,6 @@
 - type: marking
   id: MothWingsPlasmafire
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: plasmafire_primary
@@ -262,7 +254,6 @@
 - type: marking
   id: MothWingsPointy
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: pointy
@@ -270,7 +261,6 @@
 - type: marking
   id: MothWingsRoyal
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: royal_primary
@@ -280,7 +270,6 @@
 - type: marking
   id: MothWingsStellar
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: stellar
@@ -288,7 +277,6 @@
 - type: marking
   id: MothWingsStriped
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: striped
@@ -296,7 +284,6 @@
 - type: marking
   id: MothWingsSwirly
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: swirly
@@ -304,7 +291,6 @@
 - type: marking
   id: MothWingsWhitefly
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: whitefly
@@ -312,7 +298,6 @@
 - type: marking
   id: MothWingsWitchwing
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: witchwing
@@ -320,19 +305,16 @@
 - type: marking
   id: MothWingsUnderwing
   bodyPart: Tail
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: underwing_primary
   - sprite: Mobs/Customization/Moth/moth_wings.rsi
     state: underwing_secondary
-
 # Body markings:
 # Charred
 - type: marking
   id: MothChestCharred
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: charred_chest
@@ -340,7 +322,6 @@
 - type: marking
   id: MothHeadCharred
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: charred_head
@@ -348,7 +329,6 @@
 - type: marking
   id: MothLLegCharred
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: charred_l_leg
@@ -356,7 +336,6 @@
 - type: marking
   id: MothRLegCharred
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: charred_r_leg
@@ -364,7 +343,6 @@
 - type: marking
   id: MothLArmCharred
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: charred_l_arm
@@ -372,16 +350,13 @@
 - type: marking
   id: MothRArmCharred
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: charred_r_arm
-
 # Death's-Head
 - type: marking
   id: MothChestDeathhead
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: deathhead_chest
@@ -389,7 +364,6 @@
 - type: marking
   id: MothHeadDeathhead
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: deathhead_head
@@ -397,7 +371,6 @@
 - type: marking
   id: MothLLegDeathhead
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: deathhead_l_leg
@@ -405,7 +378,6 @@
 - type: marking
   id: MothRLegDeathhead
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: deathhead_r_leg
@@ -413,7 +385,6 @@
 - type: marking
   id: MothLArmDeathhead
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: deathhead_l_arm
@@ -421,16 +392,13 @@
 - type: marking
   id: MothRArmDeathhead
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: deathhead_r_arm
-
 # Fan
 - type: marking
   id: MothChestFan
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_chest
@@ -438,7 +406,6 @@
 - type: marking
   id: MothHeadFan
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_head
@@ -446,7 +413,6 @@
 - type: marking
   id: MothLLegFan
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_l_leg
@@ -454,7 +420,6 @@
 - type: marking
   id: MothRLegFan
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_r_leg
@@ -462,7 +427,6 @@
 - type: marking
   id: MothLArmFan
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_l_arm
@@ -470,16 +434,13 @@
 - type: marking
   id: MothRArmFan
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: fan_r_arm
-
 # Firewatch
 - type: marking
   id: MothChestFirewatch
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: firewatch_chest
@@ -487,7 +448,6 @@
 - type: marking
   id: MothHeadFirewatch
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: firewatch_head
@@ -495,7 +455,6 @@
 - type: marking
   id: MothLLegFirewatch
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: firewatch_l_leg
@@ -503,7 +462,6 @@
 - type: marking
   id: MothRLegFirewatch
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: firewatch_r_leg
@@ -511,7 +469,6 @@
 - type: marking
   id: MothLArmFirewatch
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: firewatch_l_arm
@@ -519,16 +476,13 @@
 - type: marking
   id: MothRArmFirewatch
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: firewatch_r_arm
-
 # Gothic
 - type: marking
   id: MothChestGothic
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: gothic_chest
@@ -536,7 +490,6 @@
 - type: marking
   id: MothHeadGothic
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: gothic_head
@@ -544,7 +497,6 @@
 - type: marking
   id: MothLLegGothic
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: gothic_l_leg
@@ -552,7 +504,6 @@
 - type: marking
   id: MothRLegGothic
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: gothic_r_leg
@@ -560,7 +511,6 @@
 - type: marking
   id: MothLArmGothic
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: gothic_l_arm
@@ -568,16 +518,13 @@
 - type: marking
   id: MothRArmGothic
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: gothic_r_arm
-
 # Jungle
 - type: marking
   id: MothChestJungle
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: jungle_chest
@@ -585,7 +532,6 @@
 - type: marking
   id: MothHeadJungle
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: jungle_head
@@ -593,7 +539,6 @@
 - type: marking
   id: MothLLegJungle
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: jungle_l_leg
@@ -601,7 +546,6 @@
 - type: marking
   id: MothRLegJungle
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: jungle_r_leg
@@ -609,7 +553,6 @@
 - type: marking
   id: MothLArmJungle
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: jungle_l_arm
@@ -617,16 +560,13 @@
 - type: marking
   id: MothRArmJungle
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: jungle_r_arm
-
 # Moonfly
 - type: marking
   id: MothChestMoonfly
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: moonfly_chest
@@ -634,7 +574,6 @@
 - type: marking
   id: MothHeadMoonfly
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: moonfly_head
@@ -642,7 +581,6 @@
 - type: marking
   id: MothLLegMoonfly
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: moonfly_l_leg
@@ -650,7 +588,6 @@
 - type: marking
   id: MothRLegMoonfly
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: moonfly_r_leg
@@ -658,7 +595,6 @@
 - type: marking
   id: MothLArmMoonfly
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: moonfly_l_arm
@@ -666,16 +602,13 @@
 - type: marking
   id: MothRArmMoonfly
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: moonfly_r_arm
-
 # Oak Worm
 - type: marking
   id: MothChestOakworm
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: oakworm_chest
@@ -683,7 +616,6 @@
 - type: marking
   id: MothHeadOakworm
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: oakworm_head
@@ -691,7 +623,6 @@
 - type: marking
   id: MothLLegOakworm
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: oakworm_l_leg
@@ -699,7 +630,6 @@
 - type: marking
   id: MothRLegOakworm
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: oakworm_r_leg
@@ -707,7 +637,6 @@
 - type: marking
   id: MothLArmOakworm
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: oakworm_l_arm
@@ -715,16 +644,13 @@
 - type: marking
   id: MothRArmOakworm
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: oakworm_r_arm
-
 # Pointy
 - type: marking
   id: MothChestPointy
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: pointy_chest
@@ -732,7 +658,6 @@
 - type: marking
   id: MothHeadPointy
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: pointy_head
@@ -740,7 +665,6 @@
 - type: marking
   id: MothLLegPointy
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: pointy_l_leg
@@ -748,7 +672,6 @@
 - type: marking
   id: MothRLegPointy
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: pointy_r_leg
@@ -756,7 +679,6 @@
 - type: marking
   id: MothLArmPointy
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: pointy_l_arm
@@ -764,16 +686,13 @@
 - type: marking
   id: MothRArmPointy
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: pointy_r_arm
-
 # Ragged
 - type: marking
   id: MothChestRagged
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: ragged_chest
@@ -781,7 +700,6 @@
 - type: marking
   id: MothHeadRagged
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: ragged_head
@@ -789,7 +707,6 @@
 - type: marking
   id: MothLLegRagged
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: ragged_l_leg
@@ -797,7 +714,6 @@
 - type: marking
   id: MothRLegRagged
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: ragged_r_leg
@@ -805,7 +721,6 @@
 - type: marking
   id: MothLArmRagged
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: ragged_l_arm
@@ -813,16 +728,13 @@
 - type: marking
   id: MothRArmRagged
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: ragged_r_arm
-
 # Royal
 - type: marking
   id: MothChestRoyal
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: royal_chest
@@ -830,7 +742,6 @@
 - type: marking
   id: MothHeadRoyal
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: royal_head
@@ -838,7 +749,6 @@
 - type: marking
   id: MothLLegRoyal
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: royal_l_leg
@@ -846,7 +756,6 @@
 - type: marking
   id: MothRLegRoyal
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: royal_r_leg
@@ -854,7 +763,6 @@
 - type: marking
   id: MothLArmRoyal
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: royal_l_arm
@@ -862,16 +770,13 @@
 - type: marking
   id: MothRArmRoyal
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: royal_r_arm
-
 # White Fly
 - type: marking
   id: MothChestWhitefly
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: whitefly_chest
@@ -879,7 +784,6 @@
 - type: marking
   id: MothHeadWhitefly
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: whitefly_head
@@ -887,7 +791,6 @@
 - type: marking
   id: MothLLegWhitefly
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: whitefly_l_leg
@@ -895,7 +798,6 @@
 - type: marking
   id: MothRLegWhitefly
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: whitefly_r_leg
@@ -903,7 +805,6 @@
 - type: marking
   id: MothLArmWhitefly
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: whitefly_l_arm
@@ -911,16 +812,13 @@
 - type: marking
   id: MothRArmWhitefly
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: whitefly_r_arm
-
 # Witch Wing
 - type: marking
   id: MothChestWitchwing
   bodyPart: Chest
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_chest
@@ -928,7 +826,6 @@
 - type: marking
   id: MothHeadWitchwing
   bodyPart: Head
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_head
@@ -936,7 +833,6 @@
 - type: marking
   id: MothLLegWitchwing
   bodyPart: LLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_l_leg
@@ -944,7 +840,6 @@
 - type: marking
   id: MothRLegWitchwing
   bodyPart: RLeg
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_r_leg
@@ -952,7 +847,6 @@
 - type: marking
   id: MothLArmWitchwing
   bodyPart: LArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_l_arm
@@ -960,7 +854,6 @@
 - type: marking
   id: MothRArmWitchwing
   bodyPart: RArm
-
   sprites:
   - sprite: Mobs/Customization/Moth/moth_parts.rsi
     state: witchwing_r_arm

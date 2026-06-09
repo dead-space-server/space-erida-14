@@ -1,7 +1,6 @@
 - type: marking
   id: VulpClawsHandLeft
   bodyPart: LHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: claws_l_hand
@@ -14,7 +13,6 @@
 - type: marking
   id: VulpClawsHandRight
   bodyPart: RHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: claws_r_hand
@@ -27,7 +25,6 @@
 - type: marking
   id: VulpClawsFootLeft
   bodyPart: LFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: claws_l_foot
@@ -40,7 +37,6 @@
 - type: marking
   id: VulpClawsFootRight
   bodyPart: RFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: claws_r_foot
@@ -49,14 +45,11 @@
       type:
         !type:SimpleColoring
           color: "#e5e3d1"
-
 # Crest
-
 ## Left Side
 - type: marking
   id: VulpPointsCrestLegLeft
   bodyPart: LLeg
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-leg-l
@@ -69,7 +62,6 @@
 - type: marking
   id: VulpPointsCrestArmLeft
   bodyPart: LArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-arm-l
@@ -82,7 +74,6 @@
 - type: marking
   id: VulpPointsCrestFootLeft
   bodyPart: LFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-foot-l
@@ -95,7 +86,6 @@
 - type: marking
   id: VulpPointsCrestHandLeft
   bodyPart: LHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-hand-l
@@ -104,13 +94,11 @@
       type:
         !type:SimpleColoring
           color: "#e5e3d1"
-
 ## Right Side
 
 - type: marking
   id: VulpPointsCrestLegRight
   bodyPart: RLeg
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-leg-r
@@ -123,7 +111,6 @@
 - type: marking
   id: VulpPointsCrestArmRight
   bodyPart: RArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-arm-r
@@ -136,7 +123,6 @@
 - type: marking
   id: VulpPointsCrestFootRight
   bodyPart: RFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-foot-r
@@ -149,7 +135,6 @@
 - type: marking
   id: VulpPointsCrestHandRight
   bodyPart: RHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: crest-hand-r
@@ -158,15 +143,12 @@
       type:
         !type:SimpleColoring
           color: "#e5e3d1"
-
 # Fade
-
 ## Left Side
 
 - type: marking
   id: VulpPointsFadeLegLeft
   bodyPart: LLeg
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-leg-l
@@ -179,7 +161,6 @@
 - type: marking
   id: VulpPointsFadeArmLeft
   bodyPart: LArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-arm-l
@@ -192,7 +173,6 @@
 - type: marking
   id: VulpPointsFadeFootLeft
   bodyPart: LFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-foot-l
@@ -205,7 +185,6 @@
 - type: marking
   id: VulpPointsFadeHandLeft
   bodyPart: LHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-hand-l
@@ -214,13 +193,11 @@
       type:
         !type:SimpleColoring
           color: "#e5e3d1"
-
 ## Right Side
 
 - type: marking
   id: VulpPointsFadeLegRight
   bodyPart: RLeg
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-leg-r
@@ -233,7 +210,6 @@
 - type: marking
   id: VulpPointsFadeArmRight
   bodyPart: RArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-arm-r
@@ -246,7 +222,6 @@
 - type: marking
   id: VulpPointsFadeFootRight
   bodyPart: RFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-foot-r
@@ -259,7 +234,6 @@
 - type: marking
   id: VulpPointsFadeHandRight
   bodyPart: RHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_fade-hand-r
@@ -268,15 +242,12 @@
       type:
         !type:SimpleColoring
           color: "#e5e3d1"
-
 # Sharp
-
 ## Left Side
 
 - type: marking
   id: VulpPointsSharpLegLeft
   bodyPart: LLeg
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-leg-l
@@ -289,7 +260,6 @@
 - type: marking
   id: VulpPointsSharpArmLeft
   bodyPart: LArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-arm-l
@@ -302,7 +272,6 @@
 - type: marking
   id: VulpPointsSharpLongArmLeft
   bodyPart: LArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-arm-long-l
@@ -315,7 +284,6 @@
 - type: marking
   id: VulpPointsSharpFootLeft
   bodyPart: LFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-foot-l
@@ -328,7 +296,6 @@
 - type: marking
   id: VulpPointsSharpHandLeft
   bodyPart: LHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-hand-l
@@ -337,13 +304,11 @@
       type:
         !type:SimpleColoring
           color: "#e5e3d1"
-
 ## Right Side
 
 - type: marking
   id: VulpPointsSharpLegRight
   bodyPart: RLeg
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-leg-r
@@ -356,7 +321,6 @@
 - type: marking
   id: VulpPointsSharpArmRight
   bodyPart: RArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-arm-r
@@ -369,7 +333,6 @@
 - type: marking
   id: VulpPointsSharpLongArmRight
   bodyPart: RArm
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-arm-long-r
@@ -382,7 +345,6 @@
 - type: marking
   id: VulpPointsSharpFootRight
   bodyPart: RFoot
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-foot-r
@@ -395,7 +357,6 @@
 - type: marking
   id: VulpPointsSharpHandRight
   bodyPart: RHand
-
   sprites:
     - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
       state: points_sharp-hand-r

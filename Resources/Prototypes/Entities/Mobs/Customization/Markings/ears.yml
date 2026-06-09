@@ -2,7 +2,6 @@
   id: HumanLongEars
   bodyPart: HeadTop
   forcedColoring: true
-
   sprites:
   - sprite: Mobs/Customization/ears.rsi
     state: long_ears_standard
@@ -11,7 +10,6 @@
   id: LongEarsWide
   bodyPart: HeadTop
   forcedColoring: true
-
   sprites:
   - sprite: Mobs/Customization/ears.rsi
     state: long_ears_wide
@@ -20,7 +18,6 @@
   id: LongEarsSmall
   bodyPart: HeadTop
   forcedColoring: true
-
   sprites:
   - sprite: Mobs/Customization/ears.rsi
     state: long_ears_small
@@ -29,7 +26,6 @@
   id: LongEarsUpwards
   bodyPart: HeadTop
   forcedColoring: true
-
   sprites:
   - sprite: Mobs/Customization/ears.rsi
     state: long_ears_upwards
@@ -38,7 +34,6 @@
   id: LongEarsTall
   bodyPart: HeadTop
   forcedColoring: true
-
   sprites:
   - sprite: Mobs/Customization/ears.rsi
     state: long_ears_tall
@@ -47,7 +42,6 @@
   id: LongEarsThin
   bodyPart: HeadTop
   forcedColoring: true
-
   sprites:
   - sprite: Mobs/Customization/ears.rsi
     state: long_ears_thin

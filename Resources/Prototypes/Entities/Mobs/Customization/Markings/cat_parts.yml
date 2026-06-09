@@ -1,7 +1,6 @@
 - type: marking
   id: CatEars
   bodyPart: Special
-
   coloring:
     default:
       type:
@@ -23,7 +22,6 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-
   coloring:
     default:
       type:
