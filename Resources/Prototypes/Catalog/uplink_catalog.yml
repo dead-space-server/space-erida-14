@@ -1071,11 +1071,6 @@
   name: uplink-toolbox-name
   description: uplink-toolbox-desc
   productEntity: ToolboxSyndicateFilled
-  #discountCategory: rareDiscounts
-  #discountDownTo:
-  #  Telecrystal: 1
-  #cost:
-  #  Telecrystal: 2
   conditions: # Erida-edit
   - !type:ListingLimitedStockCondition
     stock: 1

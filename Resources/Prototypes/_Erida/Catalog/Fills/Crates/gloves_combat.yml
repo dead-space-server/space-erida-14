@@ -1,7 +1,6 @@
 - type: entity
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
   id: CrateSecurityGlovesCombat
-  suffix: Frag
   description:
   components:
   - type: EntityTableContainerFill
