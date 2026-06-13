@@ -1,0 +1,100 @@
+# Loadout cases
+
+## Base
+- type: entity
+  parent: BaseItem
+  id: Box_gamma
+  name: кейс неопределённости
+  description: Прочный военный кейс для оружия.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _Erida/Objects/Сase_of_uncertainty/Gamma/box.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 1
+    possibleSets:
+    - undbox_gamma1
+    - undbox_gamma2
+    - undbox_gamma3
+    - undbox_gamma4
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+
+# Sets
+
+
+## Primary
+### тяжко
+- type: thiefBackpackSet
+  id: undbox_gamma1
+  name: набор с Вт550 и пистолетом
+  description: Набор содержит вт, щит , магазина для вт , коробки с патронов , пистолет с патронами к нему.
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    state: icon
+  content:
+  - WeaponSubMachineGunWt550
+  - TelescopicShield
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazineBoxPistol
+  - MagazineBoxPistol
+  - MagazineBoxPistolUranium
+  - MagazineBoxPistolIncendiary
+  - WeaponPistolMk58
+  - MagazinePistolHighCapacityEmpty
+  - MagazinePistolHighCapacityEmpty
+  - MagazineBoxPistol
+
+- type: thiefBackpackSet
+  id: undbox_gamma2
+  name: Набор с лектором и револьвером
+  description: Набор содержит лектор ,  магазина ,  коробки с патронов  , револьвер с патронами и спидлоадером.
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+  - WeaponRifleLecter
+  - MagazineRifleEmpty
+  - MagazineRifleEmpty
+  - MagazineRifleEmpty
+  - MagazineRifleEmpty
+  - MagazineBoxRifleIncendiary
+  - MagazineBoxRifleUranium
+  - MagazineBoxRifle
+  - WeaponRevolverDeckard
+  - SpeedLoaderMagnumEmpty
+  - MagazineBoxMagnum
+
+- type: thiefBackpackSet
+  id: undbox_gamma3
+  name: набор лазерного вооружения
+  description: Набор содержит лазерный карабин, неви , переносной зарядник. 
+  sprite:
+    sprite: _Erida/Objects/Weapons/Guns/Battery/nanotrasen_navy_rifle/big.rsi
+    state: icon
+  content:
+  - WeaponNTNavyEnergyGun
+  - WeaponNTNavyCarabine
+  - PortableRecharger
+
+- type: thiefBackpackSet
+  id: undbox_gamma4
+  name: набор дробавика 
+  description: Набор содержит бульдог , патроны и барабан.
+  sprite: 
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    state: icon
+  content:
+  - WeaponShotgunBulldog
+  - MagazineBoxShotgunInteQ
+  - MagazineShotgunEmpty
+  - MagazineShotgunSlug

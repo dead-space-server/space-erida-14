@@ -1,0 +1,85 @@
+# Loadout cases
+
+## Base
+- type: entity
+  parent: BaseItem
+  id: Box_omega
+  name: кейс неопределённости
+  description: Прочный военный кейс для оружия.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _Erida/Objects/Сase_of_uncertainty/Rhbzz/box.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 1
+    possibleSets:
+    - undbox_omega1
+    - undbox_omega2
+    - undbox_omega3
+    - undbox_omega4
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+
+# Sets
+
+
+## Primary
+### тяжко
+- type: thiefBackpackSet
+  id: undbox_omega1
+  name: набор с Вт550 и пистолетом
+  description: Набор содержит вт, магазины для вт , коробки с патронов .
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/wt550.rsi
+    state: icon
+  content:
+  - WeaponSubMachineGunWt550
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazinePistolSubMachineGunTopMountedEmpty
+  - MagazineBoxPistolIncendiary
+  - MagazineBoxPistolIncendiary
+
+- type: thiefBackpackSet
+  id: undbox_omega2
+  name: Набор с Дрозд
+  description: Набор содержит Дрозд , коробки с патронов и магазины .
+  sprite:
+    sprite: Objects/Weapons/Guns/SMGs/drozd.rsi
+    state: icon
+  content:
+  - WeaponSubMachineGunDrozd
+  - MagazinePistolSubMachineGunIncendiary
+  - MagazinePistolSubMachineGunIncendiary
+  - MagazineBoxPistolIncendiary
+  - MagazineBoxPistolIncendiary
+  - MagazineBoxPistolIncendiary
+
+- type: thiefBackpackSet
+  id: undbox_omega3
+  name: набор лазерного вооружения
+  description: Набор содержит лазерную пушку и продвнутый лазерный пистолет
+  sprite:
+    sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
+    state: icon
+  content:
+  - WeaponLaserCannon
+  - WeaponAdvancedLase
+
+- type: thiefBackpackSet
+  id: undbox_omega4
+  name: набор дробавика 
+  description: Набор содержит Силовик и патроны.
+  sprite: 
+    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+    state: icon
+  content:
+  - WeaponShotgunEnforcer
+  - BoxShotgunIncendiary
+  - BoxShotgunIncendiary
+  - BoxShotgunIncendiary

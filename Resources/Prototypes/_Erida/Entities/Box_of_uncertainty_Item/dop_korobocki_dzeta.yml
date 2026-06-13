@@ -1,0 +1,84 @@
+# Loadout cases
+
+## Base
+- type: entity
+  parent: BaseItem
+  id: Box_dzeta_sup
+  name: коробка неопределённости
+  description: Прочный военная коробка для медекомтов.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _Erida/Objects/Сase_of_uncertainty/Rhbzz/secondary.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 2
+    possibleSets:
+    - undbox_dzeta1sup
+    - undbox_dzeta2sup
+    - undbox_dzeta3sup
+    - undbox_dzeta4sup
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+
+# Sets
+
+
+## Primary
+### тяжко
+- type: thiefBackpackSet
+  id: undbox_dzeta1sup
+  name: набор боевой аптечки
+  description: Набор содержит 2 аптечки 
+  sprite:
+    sprite: Objects/Specific/Medical/medical.rsi
+    state: brutepack
+  content:
+  - MedkitCombatFilled
+  - MedkitAdvancedFilled
+
+- type: thiefBackpackSet
+  id: undbox_dzeta2sup
+  name: Набор мидипенов от термических ожгов
+  description: Набор содержит медипены
+  sprite:
+    sprite: Objects/Specific/Medical/medipen.rsi
+    state: icon
+  content:
+  - BurnAutoInjector
+  - BurnAutoInjector
+  - PyraAutoInjector
+  - CombatMedipen
+
+- type: thiefBackpackSet
+  id: undbox_dzeta3sup
+  name: набор от физических травм
+  description: Набор содержит медипены. 
+  sprite:
+    sprite: Objects/Specific/Medical/medipen.rsi
+    state: icon
+  content:
+  - CombatMedipen
+  - BruteAutoInjector
+  - BruteAutoInjector
+  - PunctAutoInjector
+
+- type: thiefBackpackSet
+  id: undbox_dzeta4sup
+  name: набор мидипенов на все случаи жизни
+  description: Набор содержит различные мидипены.
+  sprite: 
+    sprite: Objects/Specific/Medical/medipen.rsi
+    state: icon
+  content:  
+  - AirlossAutoInjector
+  - AntiPoisonMedipen
+  - RadAutoInjector
+  - EmergencyMedipen
+  - BurnAutoInjector
+  - BruteAutoInjector

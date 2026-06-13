@@ -1,0 +1,74 @@
+# Loadout cases
+
+## Base
+- type: entity
+  parent: BaseItem
+  id: Box_dzeta
+  name: кейс неопределённости
+  description: Прочный военный кейс для оружия.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: _Erida/Objects/Сase_of_uncertainty/Rhbzz/leader.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 1
+    possibleSets:
+    - undbox_dzeta1
+    - undbox_dzeta2
+    - undbox_dzeta3
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+
+# Sets
+
+
+## Primary
+### тяжко
+- type: thiefBackpackSet
+  id: undbox_dzeta1
+  name: Набор с лектором
+  description: Набор содержит лектор.
+  sprite:
+    sprite: Objects/Weapons/Guns/Rifles/lecter.rsi
+    state: icon
+  content:
+  - WeaponRifleLecter
+  - MagazineRifleIncendiary
+  - MagazineRifleIncendiary
+  - MagazineBoxRifleIncendiary
+  - MagazineBoxRifleIncendiary
+  - MagazineBoxRifleIncendiary
+
+
+- type: thiefBackpackSet
+  id: undbox_dzeta2
+  name: набор лазерного вооружения
+  description: Набор содержит лазерное вооружение. 
+  sprite:
+    sprite: _Erida/Objects/Weapons/Guns/Battery/nanotrasen_navy_rifle/big.rsi
+    state: icon
+  content:
+  - WeaponNTNavyEnergyGun
+  - WeaponNTNavyCarabine
+  - PortableRecharger
+
+- type: thiefBackpackSet
+  id: undbox_dzeta3
+  name: набор дробавика 
+  description: Набор содержит бульдог.
+  sprite: 
+    sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
+    state: icon
+  content:
+  - WeaponShotgunBulldog
+  - BoxShotgunIncendiary
+  - BoxShotgunIncendiary
+  - MagazineShotgunIncendiary
+  - MagazineShotgunIncendiary
+  - BoxMagazineShotgunIncendiary
