@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 CyberBobeks contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: EffectHealPlusTripleYellow
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: Sprite
+    noRot: true
+    drawdepth: Effects
+    sprite: _Goobstation/Blob/heals.rsi
+    state: triple
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
