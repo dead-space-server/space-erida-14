@@ -36,6 +36,8 @@
       normalState: 1
     - type: Damageable
       damageModifierSet: BaseBlob
+    - type: Injurable
+      damageContainer: Blob
     - type: Appearance
     - type: Physics
     - type: Clickable
