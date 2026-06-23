@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2026 CorvaxGoob Contributors
+# SPDX-FileCopyrightText: 2026 Yaroslav Yudaev <ydaevy10@gmail.com>
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: listing
+  id: UplinkPlasmaSword
+  name: uplink-plasma-sword-name
+  description: uplink-plasma-sword-desc
+  icon: { sprite: _Orion/Objects/Weapons/Melee/plasma_sword.rsi, state: uplink }
+  productEntity: PlasmaSword
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 7
+  categories:
+  - UplinkWeaponry
+
+- type: listing
+  id: UplinkPlasmaScythe
+  name: uplink-plasma-scythe-name
+  description: uplink-plasma-scythe-desc
+  icon: { sprite: _Orion/Objects/Weapons/Melee/plasma_sword_double.rsi, state: uplink }
+  productEntity: PlasmaScythe
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 12
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
