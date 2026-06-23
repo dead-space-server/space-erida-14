@@ -342,6 +342,7 @@
     - Firelock
     - TubeLight
     - BulbLight
+    - SurveillanceCamera # Erida edit - Port CorvaxGoob PR 763
     - LVCable
     - MVCable
     - HVCable
