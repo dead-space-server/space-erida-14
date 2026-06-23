@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _ADT/Clothing/Hands/Rings/RingBlood.rsi
   - type: Clothing
-    sprite: _ADT/Clothing/Hands/RingBlood.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingBlood.rsi
   - type: Item
     size: Tiny
   - type: StaticPrice
