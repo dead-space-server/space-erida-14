@@ -456,6 +456,7 @@ public abstract partial class SharedAnomalySystem : EntitySystem
             }
 
             resultList.Add(tileref);
+            tilerefs.Remove(tileref); // Erida edit - CorvaxGoob PR 795
         }
         return resultList;
     }
