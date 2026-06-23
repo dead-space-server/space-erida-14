@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterArmorHoS, ClothingOuterStorageBase, AllowSuitStorageClothing, BaseBlueShieldContraband]
+  parent: [ClothingOuterArmorBlueshield, ClothingOuterStorageBase, BaseBlueShieldContraband]
   id: ClothingOuterCoatArmorBlueShield
   name: armored overcoat officer "Blueshield"
   description: An armored overcoat produced for elite Blueshield officers.
