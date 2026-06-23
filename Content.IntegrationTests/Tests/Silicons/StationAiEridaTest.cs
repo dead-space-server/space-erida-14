@@ -27,16 +27,14 @@ public sealed class StationAiEridaTest : GameTest
 
 - type: entity
   id: StationAiControllableBorgTest
+  parent: BorgChassisSelectable
   name: test controllable borg
   components:
-  - type: BorgChassis
-    active: true
-  - type: BorgControl
-  - type: Actions
-  - type: ContainerContainer
-    containers:
-      borg_brain: !type:ContainerSlot { }
-      borg_module: !type:Container { }
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 ";
 
     [Test]
