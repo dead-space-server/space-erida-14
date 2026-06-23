@@ -149,6 +149,18 @@ class LicenseHeaderCheckTest(unittest.TestCase):
         self.assertIn("missing SPDX-FileCopyrightText", report)
         self.assertEqual(result.warnings, [])
 
+    def test_formats_sticky_pr_comment_for_error_report(self):
+        self.write_file("Content.Server/_Erida/MissingHeader.cs", "namespace Content.Server._Erida;\n")
+
+        result = self.check_added_files()
+        report = self.checker.format_report(result)
+        comment = self.checker.format_comment(result, report)
+
+        self.assertIn("<!-- erida-license-metadata-check -->", comment)
+        self.assertIn("## License metadata check", comment)
+        self.assertIn("❌ License metadata check failed.", comment)
+        self.assertIn("Content.Server/_Erida/MissingHeader.cs", comment)
+
     def test_skips_modified_file_without_spdx_metadata(self):
         self.write_file("Content.Server/Existing.cs", "namespace Content.Server;\n")
         self.commit_all("add existing file")

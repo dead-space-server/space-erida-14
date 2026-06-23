@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 HEADER_LINE_LIMIT = 40
+COMMENT_MARKER = "<!-- erida-license-metadata-check -->"
 SPDX_LICENSE_RE = re.compile(r"\bSPDX-License-Identifier\s*:\s*(.+)")
 SPDX_COPYRIGHT_RE = re.compile(r"\bSPDX-FileCopyrightText\s*:\s*(.+)")
 
@@ -335,6 +336,27 @@ def format_report(result: CheckResult) -> str:
     return "\n\n".join(sections)
 
 
+def format_comment(result: CheckResult, report: str) -> str:
+    if result.errors:
+        status = "❌ License metadata check failed."
+    elif result.warnings:
+        status = "⚠️ License metadata check passed with advisory warnings."
+    else:
+        status = "✅ License metadata check passed."
+
+    return (
+        f"{COMMENT_MARKER}\n"
+        "## License metadata check\n\n"
+        f"{status}\n\n"
+        "<details>\n"
+        "<summary>Details</summary>\n\n"
+        "```text\n"
+        f"{report.rstrip()}\n"
+        "```\n\n"
+        "</details>\n"
+    )
+
+
 def escape_github_command(value: str, property_value: bool = False) -> str:
     value = value.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
     if property_value:
@@ -383,6 +405,12 @@ def write_github_summary(report: str):
         summary.write("\n")
 
 
+def write_comment(path: str, result: CheckResult, report: str):
+    comment_path = Path(path)
+    comment_path.parent.mkdir(parents=True, exist_ok=True)
+    comment_path.write_text(format_comment(result, report), encoding="utf-8")
+
+
 def parse_args(argv: list[str]):
     parser = argparse.ArgumentParser(description="Check REUSE/SPDX metadata for changed files.")
     parser.add_argument("--repo", default=".", help="Repository root. Defaults to current directory.")
@@ -393,6 +421,10 @@ def parse_args(argv: list[str]):
         choices=("text", "github"),
         default="text",
         help="Use github to emit workflow annotations and a step summary.",
+    )
+    parser.add_argument(
+        "--comment-path",
+        help="Write a sticky PR comment body to this path.",
     )
     return parser.parse_args(argv)
 
@@ -406,6 +438,9 @@ def main(argv: list[str]) -> int:
     if args.format == "github":
         print_github_annotations(result)
         write_github_summary(report)
+
+    if args.comment_path:
+        write_comment(args.comment_path, result, report)
 
     print(report)
     return 1 if result.errors else 0
