@@ -196,7 +196,7 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
     }
 
 
-    public void ToggleOpen(EntityUid user, EntityUid target, EntityStorageComponent? component = null)
+    public void ToggleOpen(EntityUid user, EntityUid target, EntityStorageComponent? component = null, bool requireHands = true) // Erida edit - Station AI borg charger
     {
         if (!Resolve(target, ref component))
             return;
@@ -207,7 +207,7 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         }
         else
         {
-            TryOpenStorage(user, target);
+            TryOpenStorage(user, target, component: component, requireHands: requireHands); // Erida edit - Station AI borg charger
         }
     }
 
@@ -381,12 +381,12 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         return _whitelistSystem.CheckBoth(toInsert, component.Blacklist, component.Whitelist);
     }
 
-    public bool TryOpenStorage(EntityUid user, EntityUid target, bool silent = false)
+    public bool TryOpenStorage(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null, bool requireHands = true) // Erida edit - Station AI borg charger
     {
-        if (!CanOpen(user, target, silent))
+        if (!CanOpen(user, target, silent, component, requireHands)) // Erida edit - Station AI borg charger
             return false;
 
-        OpenStorage(target);
+        OpenStorage(target, component); // Erida edit - Station AI borg charger
         return true;
     }
 
@@ -409,12 +409,12 @@ public abstract partial class SharedEntityStorageSystem : EntitySystem
         return component.Open;
     }
 
-    public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null)
+    public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null, bool requireHands = true) // Erida edit - Station AI borg charger
     {
         if (!Resolve(target, ref component))
             return false;
 
-        if (!HasComp<HandsComponent>(user))
+        if (requireHands && !HasComp<HandsComponent>(user)) // Erida edit - Station AI borg charger
             return false;
 
         if (_weldable.IsWelded(target))

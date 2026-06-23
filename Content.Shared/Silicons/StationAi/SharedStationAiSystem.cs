@@ -666,7 +666,7 @@ public abstract partial class SharedStationAiSystem
             ShowDeviceNotRespondingPopup(args.User);
             return;
         }
-        _entityStorage.ToggleOpen(user: args.User, ent.Owner, ent.Comp);
+        _entityStorage.ToggleOpen(args.User, ent.Owner, ent.Comp, requireHands: false); // Erida edit - Station AI borg charger
     }
 }
 // Erida end

@@ -42,6 +42,8 @@ public sealed partial class BorgSystem : SharedBorgSystem
         base.Initialize();
 
         InitializeTransponder();
+
+        InitializeStationAiControl(); // Erida edit - Station AI borg control
     }
 
     public override bool CanPlayerBeBorged(ICommonSession session)

@@ -1,6 +1,8 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared.Silicons.Borgs.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent] // Erida edit - Station AI borg control
 public sealed partial class BorgControlComponent : Component
 {
     /// <summary>
