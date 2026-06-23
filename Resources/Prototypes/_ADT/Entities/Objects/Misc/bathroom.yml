@@ -5,13 +5,13 @@
   description: A broom made of dried leaves.
   components:
     - type: Sprite
-      sprite: ADT/Objects/Misc/bathbroom.rsi
+      sprite: _ADT/Objects/Misc/bathbroom.rsi
       state: icon
     - type: StaminaDamageOnHit
       damage: 10
     - type: Item
       size: Small
-      sprite: ADT/Objects/Misc/bathbroom.rsi
+      sprite: _ADT/Objects/Misc/bathbroom.rsi
     - type: MeleeWeapon
       damage:
         types:

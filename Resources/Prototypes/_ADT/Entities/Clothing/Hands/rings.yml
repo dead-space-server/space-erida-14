@@ -5,9 +5,9 @@
   description: Good ring.
   components:
   - type: Sprite
-    sprite: ADT/Clothing/Hands/Rings/RingBlood.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingBlood.rsi
   - type: Clothing
-    sprite: ADT/Clothing/Hands/RingBlood.rsi
+    sprite: _ADT/Clothing/Hands/RingBlood.rsi
   - type: Item
     size: Tiny
   - type: StaticPrice
@@ -20,9 +20,9 @@
   description: Good ring.
   components:
   - type: Sprite
-    sprite: ADT/Clothing/Hands/Rings/RingEmerald.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingEmerald.rsi
   - type: Clothing
-    sprite: ADT/Clothing/Hands/Rings/RingEmerald.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingEmerald.rsi
   - type: Item
     size: Tiny
   - type: StaticPrice
@@ -35,9 +35,9 @@
   description: Good ring.
   components:
   - type: Sprite
-    sprite: ADT/Clothing/Hands/Rings/RingPlazma.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingPlazma.rsi
   - type: Clothing
-    sprite: ADT/Clothing/Hands/Rings/RingPlazma.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingPlazma.rsi
   - type: Item
     size: Tiny
   - type: StaticPrice
@@ -50,9 +50,9 @@
   description: Good ring.
   components:
   - type: Sprite
-    sprite: ADT/Clothing/Hands/Rings/RingTurk.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingTurk.rsi
   - type: Clothing
-    sprite: ADT/Clothing/Hands/Rings/RingTurk.rsi
+    sprite: _ADT/Clothing/Hands/Rings/RingTurk.rsi
   - type: Item
     size: Tiny
   - type: StaticPrice
