@@ -15,7 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mark PR as needing review
-        uses: actions/labeler@v6.1.0
+        uses: step-security/action-add-labels@v1.1.1
         with:
-          configuration-path: .github/labeler-review-state.yml
-          sync-labels: true
+          number: ${{ github.event.pull_request.number }}
+          labels: "S: Needs Review"
+
+      - name: Remove stale review state labels
+        uses: step-security/action-remove-labels@v1.3.1
+        with:
+          number: ${{ github.event.pull_request.number }}
+          labels: |
+            S: Awaiting Changes
+            S: Approved
