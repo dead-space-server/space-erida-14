@@ -3,6 +3,7 @@ using Content.Shared.GameTicking;
 using Content.Server.Station.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Utility;
 using System.Text;
 
 namespace Content.Server.GameTicking
@@ -40,6 +41,13 @@ namespace Content.Server.GameTicking
             RaiseNetworkEvent(GetInfoMsg(), Filter.Empty().AddPlayers(_playerManager.NetworkedSessions));
         }
 
+        // Erida start - escape lobby info values inserted into a trusted markup template.
+        internal static string EscapeLobbyInfoMarkupValue(string value)
+        {
+            return FormattedMessage.EscapeText(value);
+        }
+        // Erida end
+
         private string GetInfoText()
         {
             var preset = CurrentPreset ?? Preset;
@@ -63,17 +71,25 @@ namespace Content.Server.GameTicking
                 if (stationNames.Length > 0)
                     stationNames.Append('\n');
 
-                stationNames.Append(meta.EntityName);
+                stationNames.Append(EscapeLobbyInfoMarkupValue(meta.EntityName)); // Erida edit
             }
 
             if (!foundOne)
             {
-                stationNames.Append(_gameMapManager.GetSelectedMap()?.MapName ??
-                                    Loc.GetString("game-ticker-no-map-selected"));
+                // Erida start - escape selected map names before inserting them into markup.
+                var selectedMap = _gameMapManager.GetSelectedMap();
+                stationNames.Append(selectedMap != null
+                    ? EscapeLobbyInfoMarkupValue(selectedMap.MapName)
+                    : Loc.GetString("game-ticker-no-map-selected"));
+                // Erida end
             }
 
-            var gmTitle = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
-            var desc = (Decoy == null) ? Loc.GetString(preset.Description) : Loc.GetString(Decoy.Description);
+            // Erida start - escape game mode text before inserting it into markup.
+            var title = Decoy == null ? preset.ModeTitle : Decoy.ModeTitle;
+            var description = Decoy == null ? preset.Description : Decoy.Description;
+            var gmTitle = EscapeLobbyInfoMarkupValue(Loc.GetString(title));
+            var desc = EscapeLobbyInfoMarkupValue(Loc.GetString(description));
+            // Erida end
             return Loc.GetString(
                 RunLevel == GameRunLevel.PreRoundLobby
                     ? "game-ticker-get-info-preround-text"
