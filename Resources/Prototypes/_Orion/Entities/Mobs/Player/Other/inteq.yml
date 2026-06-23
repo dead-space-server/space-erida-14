@@ -92,6 +92,117 @@
   - type: Loadout
     prototypes: [ InteQVanguardMedicGear ]
 
+# Erida start - humanoids spawned by InteQ sleeper ghost roles.
+- type: entity
+  parent: MobHuman
+  abstract: true
+  id: MobInteQVanguardBase
+  name: InteQ Vanguard
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: AntagImmune
+  - type: RandomMetadata
+    nameSegments:
+    - InteQVanguardNamesPrefix
+    - NamesMilitaryLast
+    nameFormat: name-format-standard
+  - type: NpcFactionMember
+    factions:
+    - InteQ
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - OldFastCodes
+    understands:
+    - TauCetiBasic
+    - OldFastCodes
+
+- type: entity
+  parent: MobInteQVanguardBase
+  id: MobInteQVanguardLeader
+  name: InteQ Vanguard Leader
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardLeaderGear ]
+  - type: RandomMetadata
+    nameSegments:
+    - InteQVanguardLeaderNamesPrefix
+    - NamesMilitaryLast
+    nameFormat: name-format-standard
+
+- type: entity
+  parent: MobInteQVanguardBase
+  id: MobInteQVanguardOperative
+  name: InteQ Vanguard Operative
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardOperativeGear ]
+
+- type: entity
+  parent: MobInteQVanguardBase
+  id: MobInteQVanguardSoldier
+  name: InteQ Vanguard Soldier
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardSoldierGear ]
+
+- type: entity
+  parent: MobInteQVanguardBase
+  id: MobInteQVanguardMedic
+  name: InteQ Vanguard Medic
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardMedicGear ]
+
+- type: entity
+  parent: MobInteQVanguardLeader
+  id: MobInteQVanguardLeaderSizo37
+  suffix: Sizo-73
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardLeaderSizoGear ]
+  - type: AutoImplant
+    implants:
+    - DeathRattleImplantInteQ
+
+- type: entity
+  parent: MobInteQVanguardOperative
+  id: MobInteQVanguardOperativeSizo37
+  suffix: Sizo-73
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardOperativeSizoGear ]
+  - type: AutoImplant
+    implants:
+    - DeathRattleImplantInteQ
+
+- type: entity
+  parent: MobInteQVanguardSoldier
+  id: MobInteQVanguardSoldierSizo37
+  suffix: Sizo-73
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardSoldierSizoGear ]
+  - type: AutoImplant
+    implants:
+    - DeathRattleImplantInteQ
+
+- type: entity
+  parent: MobInteQVanguardMedic
+  id: MobInteQVanguardMedicSizo37
+  suffix: Sizo-73
+  components:
+  - type: Loadout
+    prototypes: [ InteQVanguardMedicSizoGear ]
+  - type: AutoImplant
+    implants:
+    - DeathRattleImplantInteQ
+# Erida end
+
 # Spawners
 - type: entity
   id: RandomHumanoidSpawnerInteQVanguardLeader

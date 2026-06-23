@@ -111,6 +111,7 @@
 
 # Ghost Roles with Player Apperance
 
+# Erida: sleepers must spawn a humanoid mob; GhostTakeoverAvailable possesses the sleeper structure itself.
 - type: entity
   parent: [ BaseStructure, MarkerBase ]
   abstract: true
@@ -118,7 +119,6 @@
   name: InteQ sleeper
   suffix: Spawner, Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     raffle:
       settings: default
@@ -153,11 +153,16 @@
   name: InteQ Vanguard Leader sleeper
   suffix: Spawner, Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-leader
     description: ghost-role-information-inteq-vanguard-description
     rules: ghost-role-information-rules-team-antagonist
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardLeader
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardLeaderGear
 #    components:
@@ -173,11 +178,16 @@
   name: InteQ Vanguard Operative sleeper
   suffix: Spawner, Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-operative
     description: ghost-role-information-inteq-vanguard-description
     rules: ghost-role-information-rules-team-antagonist
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardOperative
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardOperativeGear
 #    components:
@@ -193,11 +203,16 @@
   name: InteQ Vanguard Soldier sleeper
   suffix: Spawner, Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-soldier
     description: ghost-role-information-inteq-vanguard-description
     rules: ghost-role-information-rules-team-antagonist
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardSoldier
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardSoldierGear
 #    components:
@@ -213,11 +228,16 @@
   name: InteQ Vanguard Medic sleeper
   suffix: Spawner, Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-medic
     description: ghost-role-information-inteq-vanguard-description
     rules: ghost-role-information-rules-team-antagonist
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardMedic
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardMedicGear
 #    components:
@@ -235,11 +255,16 @@
   name: InteQ Vanguard Leader sleeper
   suffix: Spawner, Sizo-73 Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-leader
     description: ghost-role-information-inteq-vanguard-leader-SIZO-description
     rules: ghost-role-information-inteq-SIZO-rules
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardLeaderSizo37
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardLeaderSizoGear
 #    components:
@@ -258,11 +283,16 @@
   name: InteQ Vanguard Operative sleeper
   suffix: Spawner, Sizo-73 Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-operative
     description: ghost-role-information-inteq-vanguard-SIZO-description
     rules: ghost-role-information-inteq-SIZO-rules
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardOperativeSizo37
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardOperativeSizoGear
 #    components:
@@ -281,11 +311,16 @@
   name: InteQ Vanguard Soldier sleeper
   suffix: Spawner, Sizo-73 Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-soldier
     description: ghost-role-information-inteq-vanguard-SIZO-description
     rules: ghost-role-information-inteq-SIZO-rules
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardSoldierSizo37
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardSoldierSizoGear
 #    components:
@@ -304,11 +339,16 @@
   name: InteQ Vanguard Medic sleeper
   suffix: Spawner, Sizo-73 Ghost Role, Player Appearance
   components:
-  - type: GhostTakeoverAvailable
   - type: GhostRole
     name: ghost-role-information-inteq-vanguard-medic
     description: ghost-role-information-inteq-vanguard-SIZO-description
     rules: ghost-role-information-inteq-SIZO-rules
+    raffle:
+      settings: default
+    mindRoles:
+    - MindRoleGhostRoleInteQAntagonist
+  - type: GhostRoleMobSpawner
+    prototype: MobInteQVanguardMedicSizo37
 #  - type: CloningAppearance
 #    startingGear: InteQVanguardMedicSizoGear
 #    components:
