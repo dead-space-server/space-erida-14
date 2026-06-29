@@ -71,7 +71,8 @@
         shader: unshaded
   - type: Reflect
     reflectsProb:
-      Energy: 0.75
+      Energy: 0.5
+      NonEnergy: 0.25
   - type: IgnitionSource
     temperature: 700
 
@@ -165,6 +166,10 @@
     energy: 2.7
     color: white
     netsync: false
+  - type: Reflect
+    reflectsProb:
+      Energy: 0.25
+      NonEnergy: 0.25
 
 - type: entity
   name: pen
@@ -245,6 +250,10 @@
   - type: Tag
     tags:
     - Write
+  - type: Reflect
+    reflectsProb:
+      Energy: 0.25
+      NonEnergy: 0.25
 
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]
@@ -351,8 +360,8 @@
     sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
   - type: Reflect
     reflectsProb:
-      Energy: 1
-      NonEnergy: 0.5
+      Energy: 0.75
+      NonEnergy: 0.45
     spread: 75
   - type: Construction # WD EDIT
     deconstructionTarget: null

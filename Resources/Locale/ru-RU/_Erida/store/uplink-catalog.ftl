@@ -278,3 +278,6 @@ uplink-night-vision-goggles-nukie-desc = Включают в себя медци
 
 uplink-thermal-vision-goggles-nukie-name = Тепловизионные очки
 uplink-thermal-vision-goggles-nukie-desc = Позволяют видеть врагов сквозь стены. Оснащены системой хамелеон и распознавателем свой-чужой.
+
+uplink-syndicate-jug-plasma-name = Кувшин плазмы
+uplink-syndicate-jug-plasma-desk = Кувшин плазмы для заправки вашего плазменного оружия. 

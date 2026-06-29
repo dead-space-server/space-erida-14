@@ -43,7 +43,7 @@
     generated:
       reagents:
       - ReagentId: Plasma
-        Quantity: 0.005
+        Quantity: 0.05
 #  - type: ComponentToggler
 #    components:
 #    - type: Cautery # Shitmed
@@ -84,7 +84,7 @@
     sprite: _Orion/Objects/Weapons/Melee/plasma_sword_alt-inhands.rsi
 
 - type: entity
-  parent: [ BaseMeleeWeaponPlasma, EnergySwordDouble ]
+  parent: [ EnergySwordDouble, BaseMeleeWeaponPlasma ]
   id: PlasmaScythe
   name: plasma scythe
   description: This can be stored in pockets.
