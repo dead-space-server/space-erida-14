@@ -135,8 +135,3 @@
       params:
         variation: 0.125
         volume: -3
-    activatedDamage:
-        types:
-            Slash: 17.5
-            Heat: 17.5
-            Structural: 20
