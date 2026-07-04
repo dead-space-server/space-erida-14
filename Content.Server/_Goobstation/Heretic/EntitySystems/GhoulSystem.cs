@@ -48,7 +48,6 @@ using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.RatKing;
 using Robust.Server.Audio;
-using Content.Goobstation.Shared.Religion;
 using Content.Shared._Goobstation.Religion;
 using Content.Server.GameTicking.Rules;
 using Content.Server._Goobstation.Heretic.Abilities;
