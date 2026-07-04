@@ -28,7 +28,6 @@ using Content.Server._Goobstation.Heretic.Abilities;
 using Content.Server.Medical;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Medical;
@@ -90,7 +89,7 @@ public sealed class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
                     },
                 };
 
-                _damageable.TryChangeDamage(target, dmg, origin: user, targetPart: TargetBodyPart.All);
+                _damageable.TryChangeDamage(target, dmg, origin: user);
                 break;
 
             case "Blade":

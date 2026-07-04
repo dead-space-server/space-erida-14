@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Numerics;
-using Content.Goobstation.Common.Physics;
+using Content.Shared._Goobstation.Physics;
 using Content.Server.Chat.Systems;
 using Content.Server.Ghost;
 using Content.Server.Ghost.Roles;

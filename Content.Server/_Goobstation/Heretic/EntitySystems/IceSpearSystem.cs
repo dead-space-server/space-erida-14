@@ -1,4 +1,4 @@
-using Content.Goobstation.Common.Religion;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.Damage.Systems;
 using Content.Server.Temperature.Components;
 using Content.Shared._Goobstation.Wizard.Traps;

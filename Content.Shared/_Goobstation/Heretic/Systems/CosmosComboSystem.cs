@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Damage;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mobs;
@@ -112,18 +111,14 @@ public sealed class CosmosComboSystem : EntitySystem
                 case 1:
                     _damageable.TryChangeDamage(dictHit.Key,
                         combo.DamageToSecondTargets,
-                        origin: uid,
-                        targetPart: TargetBodyPart.Chest,
-                        canMiss: false);
+                        origin: uid);
                     _audio.PlayPvs(combo.Sound, dictHit.Key);
                     Spawn(combo.SecondTargetEffect, Transform(dictHit.Key).Coordinates);
                     break;
                 case 2:
                     _damageable.TryChangeDamage(dictHit.Key,
                         combo.DamageToThirdTargets,
-                        origin: uid,
-                        targetPart: TargetBodyPart.Chest,
-                        canMiss: false);
+                        origin: uid);
                     _audio.PlayPvs(combo.Sound, dictHit.Key);
                     Spawn(combo.ThirdTargetEffect, Transform(dictHit.Key).Coordinates);
                     break;

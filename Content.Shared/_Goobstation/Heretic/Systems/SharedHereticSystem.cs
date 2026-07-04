@@ -1,6 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Goobstation.Common.Conversion;
-using Content.Goobstation.Common.Heretic;
+using Content.Shared._Goobstation.Conversion;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mind;
 

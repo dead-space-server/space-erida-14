@@ -13,7 +13,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.Weapons.DelayedKnockdown;
+using Content.Shared._Goobstation.Weapons.DelayedKnockdown;
 using Content.Server._Goobstation.Heretic.Components.PathSpecific;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Components;

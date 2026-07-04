@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Goobstation.Common.Physics;
-using Content.Goobstation.Common.Religion;
+using Content.Shared._Goobstation.Physics;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Stunnable;

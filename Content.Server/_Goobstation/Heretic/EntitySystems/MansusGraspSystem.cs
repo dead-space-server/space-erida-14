@@ -20,7 +20,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Common.Religion;
+using Content.Shared._Goobstation.Religion;
 using Content.Server.Chat.Systems;
 using Content.Server._Goobstation.Heretic.Abilities;
 using Content.Server._Goobstation.Heretic.Components;

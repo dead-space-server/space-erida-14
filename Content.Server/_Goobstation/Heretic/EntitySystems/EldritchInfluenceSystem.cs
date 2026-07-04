@@ -10,7 +10,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text.RegularExpressions;
-using Content.Goobstation.Common.Heretic;
 using Content.Server.Chat.Managers;
 using Content.Server.EntityEffects;
 using Content.Server._Goobstation.Heretic.Components;

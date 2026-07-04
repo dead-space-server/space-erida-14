@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Goobstation.Common.BlockTeleport;
+using Content.Shared._Goobstation.BlockTeleport;
 using Content.Shared._Shitmed.Targeting;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Interaction;

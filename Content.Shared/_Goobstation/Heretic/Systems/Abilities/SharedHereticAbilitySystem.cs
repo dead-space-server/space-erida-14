@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Goobstation.Common.Religion;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared._Goobstation.Religion;
+using Content.Shared.FixedPoint;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Shitmed.Body;

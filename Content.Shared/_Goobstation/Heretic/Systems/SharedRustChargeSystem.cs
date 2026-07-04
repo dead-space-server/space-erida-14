@@ -5,7 +5,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
@@ -110,10 +109,8 @@ public abstract class SharedRustChargeSystem : EntitySystem
 
             _damageable.TryChangeDamage(other,
                 ent.Comp.Damage,
-                false,
-                true,
-                damageable,
-                targetPart: TargetBodyPart.Chest);
+                ignoreResistances: false,
+                interruptsDoAfters: true);
 
             return;
         }

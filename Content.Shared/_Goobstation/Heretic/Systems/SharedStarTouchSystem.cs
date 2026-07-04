@@ -1,6 +1,6 @@
 using System.Linq;
-using Content.Goobstation.Common.BlockTeleport;
-using Content.Goobstation.Common.Physics;
+using Content.Shared._Goobstation.BlockTeleport;
+using Content.Shared._Goobstation.Physics;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems.Abilities;
 using Content.Shared.Bed.Sleep;

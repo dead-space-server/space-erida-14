@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Goobstation.Common.Religion;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Physics.Events;

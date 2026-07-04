@@ -16,10 +16,10 @@
 using System.Linq;
 using System.Numerics;
 using System.Text;
-using Content.Goobstation.Common.BlockTeleport;
-using Content.Goobstation.Common.Physics;
-using Content.Goobstation.Common.SecondSkin;
-using Content.Goobstation.Common.Weapons;
+using Content.Shared._Goobstation.BlockTeleport;
+using Content.Shared._Goobstation.Physics;
+using Content.Shared._Goobstation.SecondSkin;
+using Content.Shared._Goobstation.Weapons;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared._Goobstation.Wizard.SanguineStrike;

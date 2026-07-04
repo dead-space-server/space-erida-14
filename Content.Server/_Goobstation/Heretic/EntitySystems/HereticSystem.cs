@@ -20,7 +20,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Store.Systems;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.FixedPoint;
 using Content.Shared.Eye;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mind;
@@ -32,7 +32,7 @@ using Content.Server._Goobstation.Heretic.Components;
 using Content.Server.Antag;
 using Robust.Shared.Random;
 using System.Linq;
-using Content.Goobstation.Common.CCVar;
+using Content.Shared._Goobstation.CCVar;
 using Content.Server._Goobstation.Objectives.Components;
 using Content.Server.Actions;
 using Content.Server.Chat.Managers;

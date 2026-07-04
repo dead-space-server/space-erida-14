@@ -1,9 +1,7 @@
-using Content.Goobstation.Common.Heretic;
-using Content.Goobstation.Common.Identity;
-using Content.Goobstation.Common.Speech;
+using Content.Shared._Goobstation.Heretic;
+using Content.Shared._Goobstation.Identity;
+using Content.Shared._Goobstation.Speech;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Shitmed.DoAfter;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.Coordinates;
@@ -46,7 +44,6 @@ public abstract class SharedShadowCloakSystem : EntitySystem
 
         SubscribeLocalEvent<ShadowCloakedComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<ShadowCloakedComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<ShadowCloakedComponent, GetDoAfterDelayMultiplierEvent>(OnGetDoAfterSpeed);
         SubscribeLocalEvent<ShadowCloakedComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<ShadowCloakedComponent, TransformSpeakerNameEvent>(OnTransformName);
         SubscribeLocalEvent<ShadowCloakedComponent, TryGetIdentityShortInfoEvent>(OnGetIdentity);
@@ -139,10 +136,7 @@ public abstract class SharedShadowCloakSystem : EntitySystem
         _dmg.TryChangeDamage(user,
             dmg,
             origin: args.Origin,
-            interruptsDoAfters: args.InterruptsDoAfters,
-            ignoreBlockers: args.IgnoreBlockers,
-            targetPart: TargetBodyPart.Vital,
-            canMiss: false);
+            interruptsDoAfters: args.InterruptsDoAfters);
     }
 
     private void OnDamageChanged(Entity<ShadowCloakedComponent> ent, ref DamageChangedEvent args)
@@ -181,12 +175,6 @@ public abstract class SharedShadowCloakSystem : EntitySystem
 
         if (!RemoveShadowCloak(parent))
             PredictedQueueDel(ent.Owner);
-    }
-
-    private void OnGetDoAfterSpeed(Entity<ShadowCloakedComponent> ent, ref GetDoAfterDelayMultiplierEvent args)
-    {
-        if (GetShadowCloakEntity(ent) is { } cloak)
-            args.Multiplier *= cloak.Comp.DoAfterSlowdown;
     }
 
     /// <summary>

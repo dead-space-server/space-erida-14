@@ -23,8 +23,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Goobstation.Common.Weapons.DelayedKnockdown;
-using Content.Goobstation.Shared.Overlays;
+using Content.Shared._Goobstation.Weapons.DelayedKnockdown;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Chat.Systems;
 using Content.Server.Flash;
@@ -67,8 +66,8 @@ using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems.Abilities;
 using Content.Shared.Damage.Components;
-using Content.Goobstation.Maths.FixedPoint;
-using Content.Goobstation.Shared.MartialArts.Components;
+using Content.Shared.FixedPoint;
+using Content.Shared._Goobstation.MartialArts;
 using Content.Server.Cloning;
 using Content.Server.Database.Migrations.Sqlite;
 using Content.Shared.Chat;

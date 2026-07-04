@@ -11,7 +11,7 @@
 
 using System.Linq;
 using System.Numerics;
-using Content.Goobstation.Shared.SecondSkin;
+using Content.Shared._Goobstation.SecondSkin;
 using Content.Server._Goobstation.Heretic.Components.PathSpecific;
 using Content.Server.Spreader;
 using Content.Shared._Goobstation.Heretic.Components;
