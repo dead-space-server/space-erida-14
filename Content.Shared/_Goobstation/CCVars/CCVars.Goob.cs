@@ -23,4 +23,7 @@ public sealed partial class GoobCVars
     public static readonly CVarDef<string> LastReadRoundEndNoEorgPopup =
         CVarDef.Create("game.last_read_end_eorg_popup_time", "", CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    public static readonly CVarDef<bool> AscensionRequiresObjectives =
+        CVarDef.Create("heretic.ascension_requires_objectives", true, CVar.SERVERONLY);
+
 }
