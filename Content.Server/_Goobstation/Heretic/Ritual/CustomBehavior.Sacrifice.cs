@@ -13,7 +13,6 @@
 
 using System.Linq;
 using Content.Server._Goobstation.Objectives.Components;
-using Content.Server.Body.Systems;
 using Content.Server._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Prototypes;
 using Content.Shared.Mobs.Components;
@@ -23,7 +22,7 @@ using Content.Server.Revolutionary.Components;
 using Content.Shared.Mind;
 using Content.Shared._Goobstation.Heretic;
 using Content.Server._Goobstation.Heretic.EntitySystems;
-using Content.Shared.Gibbing.Events;
+using Content.Shared.Gibbing;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Store.Components;
 
@@ -63,7 +62,7 @@ namespace Content.Server._Goobstation.Heretic.Ritual;
     // this is awful but it works so i'm not complaining
     protected SharedMindSystem _mind = default!;
     protected HereticSystem _heretic = default!;
-    protected BodySystem _body = default!;
+    protected GibbingSystem _gibbing = default!;
     protected EntityLookupSystem _lookup = default!;
     [Dependency] protected IPrototypeManager _proto = default!;
     [Dependency] protected ILogManager _log = default!;
@@ -76,7 +75,7 @@ namespace Content.Server._Goobstation.Heretic.Ritual;
     {
         _mind = args.EntityManager.System<SharedMindSystem>();
         _heretic = args.EntityManager.System<HereticSystem>();
-        _body = args.EntityManager.System<BodySystem>();
+        _gibbing = args.EntityManager.System<GibbingSystem>();
         _lookup = args.EntityManager.System<EntityLookupSystem>();
         _proto = IoCManager.Resolve<IPrototypeManager>();
         _log = IoCManager.Resolve<ILogManager>();
@@ -145,7 +144,7 @@ namespace Content.Server._Goobstation.Heretic.Ritual;
             try
             {
                 // YES!!! GIB!!!
-                _body.GibBody(uid);
+                _gibbing.Gib(uid);
             }
             catch (Exception e)
             {

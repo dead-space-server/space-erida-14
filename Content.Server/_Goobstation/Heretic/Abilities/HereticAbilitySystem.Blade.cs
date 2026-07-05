@@ -21,7 +21,6 @@ using Content.Shared.Damage.Components;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.CombatMode.Pacification;
 using Robust.Shared.Timing;
-using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Goobstation.Heretic.Components.PathSpecific;
 using Content.Shared.Stunnable;
 
@@ -34,7 +33,6 @@ public sealed partial class HereticAbilitySystem
         base.SubscribeBlade();
 
         SubscribeLocalEvent<EventHereticRealignment>(OnRealignment);
-        SubscribeLocalEvent<HereticChampionStanceEvent>(OnChampionStance);
         SubscribeLocalEvent<EventHereticFuriousSteel>(OnFuriousSteel);
     }
 
@@ -67,18 +65,6 @@ public sealed partial class HereticAbilitySystem
             _statusEffect.TryAddStatusEffect<RealignmentComponent>(ent, "Realignment", TimeSpan.FromSeconds(10f), true);
 
         args.Handled = true;
-    }
-
-    private void OnChampionStance(HereticChampionStanceEvent args)
-    {
-        foreach (var part in _body.GetBodyChildren(args.Heretic))
-        {
-            if (!TryComp(part.Id, out WoundableComponent? woundable))
-                continue;
-
-            woundable.CanRemove = args.Negative;
-            Dirty(part.Id, woundable);
-        }
     }
 
     private void OnFuriousSteel(EventHereticFuriousSteel args)

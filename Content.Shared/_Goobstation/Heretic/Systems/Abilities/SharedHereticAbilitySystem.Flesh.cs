@@ -1,7 +1,5 @@
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Shitmed.Surgery;
 using Content.Shared.DoAfter;
-using Content.Shared.Hands;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Interaction;
 
@@ -16,8 +14,6 @@ public abstract partial class SharedHereticAbilitySystem
 
         SubscribeLocalEvent<FleshPassiveComponent, ImmuneToPoisonDamageEvent>(OnPoisonImmune);
 
-        SubscribeLocalEvent<FleshSurgeryComponent, HeldRelayedEvent<SurgeryPainEvent>>(OnPain);
-        SubscribeLocalEvent<FleshSurgeryComponent, HeldRelayedEvent<SurgeryIgnorePreviousStepsEvent>>(OnIgnore);
         SubscribeLocalEvent<FleshSurgeryComponent, AfterInteractEvent>(OnAfterInteract);
     }
 
@@ -50,16 +46,6 @@ public abstract partial class SharedHereticAbilitySystem
 
         if (DoAfter.TryStartDoAfter(dargs))
             args.Handled = true;
-    }
-
-    private void OnIgnore(Entity<FleshSurgeryComponent> ent, ref HeldRelayedEvent<SurgeryIgnorePreviousStepsEvent> args)
-    {
-        args.Args.Handled = true;
-    }
-
-    private void OnPain(Entity<FleshSurgeryComponent> ent, ref HeldRelayedEvent<SurgeryPainEvent> args)
-    {
-        args.Args.Cancel();
     }
 
     private void OnFleshSurgery(EventHereticFleshSurgery args)

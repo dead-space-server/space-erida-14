@@ -9,10 +9,7 @@ using Content.Server.Popups;
 using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
-using Content.Shared._Shitmed.Damage;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Database;
 using Content.Shared._Goobstation.Heretic;
@@ -44,7 +41,6 @@ public sealed class StarGazerSystem : SharedStarGazerSystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly GhostRoleSystem _ghostRole = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
 
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ISharedAdminLogManager _admin = default!;
@@ -396,10 +392,8 @@ public sealed class StarGazerSystem : SharedStarGazerSystem
 
                 _mark.TryApplyStarMark((noob, mobState));
                 _dmg.TryChangeDamage(noob,
-                    starGaze.Damage * _body.GetVitalBodyPartRatio(noob),
-                    origin: uid,
-                    targetPart: TargetBodyPart.All,
-                    splitDamage: SplitDamageBehavior.SplitEnsureAll);
+                    starGaze.Damage,
+                    origin: uid);
 
                 if (_random.Prob(starGaze.ScreamProb))
                     _chat.TryEmoteWithChat(noob, "Scream");

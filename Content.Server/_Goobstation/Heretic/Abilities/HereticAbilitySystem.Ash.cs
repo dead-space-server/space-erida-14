@@ -23,8 +23,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Shared._Shitmed.Damage;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Atmos.Components;
 
 namespace Content.Server._Goobstation.Heretic.Abilities;
@@ -80,10 +78,8 @@ public sealed partial class HereticAbilitySystem
 
             _flammable.AdjustFireStacks(look, args.FireStacks, flam, true, args.FireProtectionPenetration);
             _dmg.TryChangeDamage(look,
-                args.Damage * _body.GetVitalBodyPartRatio(look),
-                true,
-                targetPart: TargetBodyPart.All,
-                splitDamage: SplitDamageBehavior.SplitEnsureAll);
+                args.Damage,
+                true);
         }
 
         if (toHeal >= 0)

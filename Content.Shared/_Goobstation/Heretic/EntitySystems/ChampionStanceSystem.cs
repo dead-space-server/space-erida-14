@@ -14,14 +14,12 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.Bloodstream;
-using Content.Shared.Body.Part;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
-using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Goobstation.Heretic.Components.PathSpecific; // Shitmed Change
 namespace Content.Shared._Goobstation.Heretic.EntitySystems.PathSpecific;
 
@@ -40,10 +38,6 @@ public sealed class ChampionStanceSystem : EntitySystem
         SubscribeLocalEvent<ChampionStanceComponent, ComponentStartup>(OnChampionStartup);
         SubscribeLocalEvent<ChampionStanceComponent, ComponentShutdown>(OnChampionShutdown);
         SubscribeLocalEvent<ChampionStanceComponent, ModifySlowOnDamageSpeedEvent>(OnChampionModifySpeed);
-
-        // if anyone is reading through and does not have EE newmed you can remove these handlers
-        SubscribeLocalEvent<ChampionStanceComponent, BodyPartAddedEvent>(OnBodyPartAdded);
-        SubscribeLocalEvent<ChampionStanceComponent, BodyPartRemovedEvent>(OnBodyPartRemoved);
     }
 
     private void OnChampionModifySpeed(Entity<ChampionStanceComponent> ent, ref ModifySlowOnDamageSpeedEvent args)
@@ -96,24 +90,5 @@ public sealed class ChampionStanceSystem : EntitySystem
             return;
 
         args.Value *= 0.4f;
-    }
-
-    private void OnBodyPartAdded(Entity<ChampionStanceComponent> ent, ref BodyPartAddedEvent args)
-    {
-        // can't touch this
-        if (!TryComp(args.Part, out WoundableComponent? woundable))
-            return;
-
-        woundable.CanRemove = false;
-        Dirty(args.Part);
-    }
-    private void OnBodyPartRemoved(Entity<ChampionStanceComponent> ent, ref BodyPartRemovedEvent args)
-    {
-        // can touch this
-        if (!TryComp(args.Part, out WoundableComponent? woundable))
-            return;
-
-        woundable.CanRemove = true;
-        Dirty(args.Part);
     }
 }

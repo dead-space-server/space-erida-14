@@ -6,10 +6,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Stunnable;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
-using Content.Shared._Shitmed.Damage;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mobs.Components;
@@ -83,14 +80,10 @@ public sealed class FireBlastSystem : SharedFireBlastSystem
             if (!dmgQuery.TryComp(uid, out var dmg))
                 continue;
 
-            Dmg.TryChangeDamage(uid,
-                origin.Comp.FireBlastBonusDamage * Body.GetVitalBodyPartRatio(uid),
+            Dmg.TryChangeDamage((uid, dmg),
+                origin.Comp.FireBlastBonusDamage,
                 false,
-                false,
-                dmg,
-                targetPart: TargetBodyPart.All,
-                splitDamage: SplitDamageBehavior.SplitEnsureAll,
-                canMiss: false);
+                false);
         }
     }
 
@@ -171,11 +164,8 @@ public sealed class FireBlastSystem : SharedFireBlastSystem
         _flammable.AdjustFireStacks(target, origin.Comp.FireStacks, flam, true, origin.Comp.FireProtectionPenetration);
 
         Dmg.TryChangeDamage(target,
-            origin.Comp.FireBlastDamage * Body.GetVitalBodyPartRatio(target),
-            origin: origin,
-            targetPart: TargetBodyPart.All,
-            splitDamage: SplitDamageBehavior.SplitEnsureAll,
-            canMiss: false);
+            origin.Comp.FireBlastDamage,
+            origin: origin);
 
         return true;
     }
@@ -217,14 +207,10 @@ public sealed class FireBlastSystem : SharedFireBlastSystem
             if (!dmgQuery.TryComp(ent.HitEntity, out var dmg))
                 continue;
 
-            Dmg.TryChangeDamage(ent.HitEntity,
-                origin.Comp.FireBlastBeamCollideDamage * Body.GetVitalBodyPartRatio(ent.HitEntity),
+            Dmg.TryChangeDamage((ent.HitEntity, dmg),
+                origin.Comp.FireBlastBeamCollideDamage,
                 false,
-                false,
-                dmg,
-                targetPart: TargetBodyPart.All,
-                splitDamage: SplitDamageBehavior.SplitEnsureAll,
-                canMiss: false);
+                false);
         }
     }
 

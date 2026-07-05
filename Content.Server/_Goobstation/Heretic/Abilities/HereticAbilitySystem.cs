@@ -41,7 +41,6 @@ using Content.Shared.Store.Components;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
-using Content.Shared.Body.Systems;
 using Robust.Server.GameObjects;
 using Robust.Server.GameStates;
 using Content.Shared.Stunnable;
@@ -75,7 +74,6 @@ using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Standing;
-using Content.Shared._Starlight.CollectiveMind;
 using Content.Shared.Body.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared._Goobstation.Heretic.Prototypes;
@@ -100,7 +98,6 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly PhysicsSystem _phys = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ThrowingSystem _throw = default!;
@@ -142,9 +139,6 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
 
         SubscribeLocalEvent<EventHereticLivingHeart>(OnLivingHeart);
         SubscribeLocalEvent<EventHereticLivingHeartActivate>(OnLivingHeartActivate);
-
-        SubscribeLocalEvent<EventHereticMansusLink>(OnMansusLink);
-        SubscribeLocalEvent<HereticMansusLinkDoAfter>(OnMansusLinkDoafter);
 
         SubscribeLock();
     }
@@ -354,49 +348,6 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
         _aud.PlayGlobal(new SoundPathSpecifier("/Audio/_Goobstation/Heretic/heartbeat.ogg"), uid, AudioParams.Default.WithVolume(-3f));
     }
 
-    public static ProtoId<CollectiveMindPrototype> MansusLinkMind = "MansusLink";
-    private void OnMansusLink(EventHereticMansusLink args)
-    {
-        if (!TryUseAbility(args))
-            return;
-
-        var ent = args.Performer;
-
-        if (!HasComp<MindContainerComponent>(args.Target))
-        {
-            Popup.PopupEntity(Loc.GetString("heretic-manselink-fail-nomind"), ent, ent);
-            return;
-        }
-
-        if (TryComp<CollectiveMindComponent>(args.Target, out var mind) && mind.Channels.Contains(MansusLinkMind))
-        {
-            Popup.PopupEntity(Loc.GetString("heretic-manselink-fail-exists"), ent, ent);
-            return;
-        }
-
-        var dargs = new DoAfterArgs(EntityManager, ent, 5f, new HereticMansusLinkDoAfter(args.Target), ent, args.Target)
-        {
-            BreakOnDamage = true,
-            BreakOnMove = true,
-            BreakOnWeightlessMove = true,
-            MultiplyDelay = false
-        };
-        Popup.PopupEntity(Loc.GetString("heretic-manselink-start"), ent, ent);
-        Popup.PopupEntity(Loc.GetString("heretic-manselink-start-target"), args.Target, args.Target, PopupType.MediumCaution);
-        DoAfter.TryStartDoAfter(dargs);
-    }
-    private void OnMansusLinkDoafter(HereticMansusLinkDoAfter args)
-    {
-        if (args.Cancelled)
-            return;
-
-        EnsureComp<CollectiveMindComponent>(args.Target).Channels.Add(MansusLinkMind);
-
-        // this "* 1000f" (divided by 1000 in FlashSystem) is gonna age like fine wine :clueless:
-        // updated: get upstream'ed you clanker
-        _flash.Flash(args.Target, null, null, TimeSpan.FromSeconds(2f), 0f, false, true, stunDuration: TimeSpan.FromSeconds(1f));
-    }
-
     private float GetFleshHealMultiplier(Entity<MartialArtModifiersComponent> ent)
     {
         var mult = 1f;
@@ -444,7 +395,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
             var bloodHeal = realMult * flesh.BloodHealMultiplier;
             var bleedHeal = -realMult * flesh.BleedReductionMultiplier;
 
-            IHateWoundMed((uid, dmg, null, null), toHeal, boneHeal, painHeal, woundHeal, bloodHeal, bleedHeal);
+            IHateWoundMed((uid, dmg), toHeal, boneHeal, painHeal, woundHeal, bloodHeal, bleedHeal);
         }
 
         var rustChargeQuery = EntityQueryEnumerator<RustObjectsInRadiusComponent, TransformComponent>();
@@ -518,10 +469,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
                         }
 
                         if (damageable != null && damageable.TotalDamage < FixedPoint2.Epsilon)
-                        {
-                            _body.RestoreBody(uid);
                             shouldHeal = false;
-                        }
                     }
                     else
                         multiplier = 3f;
@@ -540,7 +488,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
 
             if (shouldHeal && damageable != null)
             {
-                IHateWoundMed((uid, damageable, null, null),
+                IHateWoundMed((uid, damageable),
                     toHeal,
                     boneHeal,
                     otherHeal,

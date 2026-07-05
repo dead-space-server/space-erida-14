@@ -16,7 +16,6 @@ using Content.Server._Goobstation.Heretic.Components.PathSpecific;
 using Content.Server.Spreader;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Wizard;
-using Content.Shared._Shitmed.Targeting;
 using Content.Shared.Flash;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Maps;
@@ -296,7 +295,7 @@ public sealed partial class HereticAbilitySystem
             _throw.TryThrow(entity, dir.Normalized() * args.ThrowRange, args.ThrowSpeed);
             _stun.KnockdownOrStun(entity, args.KnockdownTime, true);
             if (entity != args.Performer)
-                _dmg.TryChangeDamage(entity, args.Damage, targetPart: TargetBodyPart.All);
+                _dmg.TryChangeDamage(entity, args.Damage);
         }
 
         args.Handled = true;

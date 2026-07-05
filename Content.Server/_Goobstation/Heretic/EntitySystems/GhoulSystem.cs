@@ -28,8 +28,7 @@ using Content.Server.Humanoid;
 using Content.Server.Mind.Commands;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Temperature.Components;
-using Content.Shared._White.Xenomorphs.Xenomorph;
-using Content.Shared.Body.Systems;
+using Content.Shared.Body;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Examine;
@@ -56,18 +55,14 @@ using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.Roles;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Shitmed.Medical.Surgery.Consciousness.Components;
-using Content.Shared._Starlight.CollectiveMind;
-using Content.Shared.Body.Components;
 using Content.Shared.Coordinates;
-using Content.Shared.Gibbing.Events;
+using Content.Shared.Gibbing;
 using Content.Shared.Roles;
 using Content.Shared.Species.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Content.Shared.Polymorph;
 using Content.Server.Polymorph.Systems;
-using Content.Shared._Shitcode.Roles;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Roles.Components;
 using Content.Shared.Temperature.Components;
@@ -85,7 +80,8 @@ public sealed class GhoulSystem : EntitySystem
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly NpcFactionSystem _faction = default!;
     [Dependency] private readonly MobThresholdSystem _threshold = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly BodySystem _body = default!;
+    [Dependency] private readonly GibbingSystem _gibbing = default!;
     [Dependency] private readonly StorageSystem _storage = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
@@ -164,14 +160,10 @@ public sealed class GhoulSystem : EntitySystem
         RemComp<ReproductiveComponent>(ent);
         RemComp<ReproductivePartnerComponent>(ent);
         RemComp<TemperatureComponent>(ent);
-        RemComp<ConsciousnessComponent>(ent);
         RemComp<PacifiedComponent>(ent);
-        RemComp<XenomorphComponent>(ent);
         RemComp<RatKingComponent>(ent);
         RemComp<DragonComponent>(ent);
         EnsureComp<CombatModeComponent>(ent);
-
-        EnsureComp<CollectiveMindComponent>(ent).Channels.Add(HereticAbilitySystem.MansusLinkMind);
 
         if (TryComp(ent.Owner, out HereticMinionComponent? minion) && minion.BoundHeretic is { } heretic)
             SetBoundHeretic((ent.Owner, minion), heretic, false);
@@ -317,13 +309,12 @@ public sealed class GhoulSystem : EntitySystem
         if (!TryComp(ent, out BodyComponent? body))
             return;
 
-        foreach (var nymph in _body.GetBodyOrganEntityComps<NymphComponent>((ent, body)))
+        if (_body.TryGetOrgansWithComponent<NymphComponent>((ent, body), out var nymphs))
         {
-            RemComp(nymph.Owner, nymph.Comp1);
+            foreach (var nymph in nymphs)
+                RemComp(nymph.Owner, nymph.Comp);
         }
 
-        _body.GibBody(ent,
-            body: body,
-            contents: ent.Comp.DropOrgansOnDeath ? GibContentsOption.Drop : GibContentsOption.Skip);
+        _gibbing.Gib(ent, ent.Comp.DropOrgansOnDeath);
     }
 }

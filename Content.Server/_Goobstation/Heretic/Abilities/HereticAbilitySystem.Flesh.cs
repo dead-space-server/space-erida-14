@@ -13,18 +13,9 @@
 
 using Content.Shared.FixedPoint;
 using Content.Shared._Goobstation.Clothing.Components;
-using Content.Shared._Goobstation.MartialArts;
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
 using Content.Server.Ghost.Roles.Components;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared.Body.Components;
-using Content.Shared.Body.Organ;
-using Content.Shared.Body.Part;
-using Content.Shared.Body.Systems;
-using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Cloning;
-using Content.Shared.Coordinates;
 using Content.Shared.Damage;
 using Content.Shared.Hands.Components;
 using Content.Shared._Goobstation.Heretic;
@@ -50,143 +41,6 @@ public sealed partial class HereticAbilitySystem
         base.SubscribeFlesh();
 
         SubscribeLocalEvent<FleshPassiveComponent, DamageChangedEvent>(OnDamageChanged);
-        SubscribeLocalEvent<FleshPassiveComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<FleshPassiveComponent, GetBodyOrganOverrideEvent<StomachComponent>>(OnGetStomach);
-        SubscribeLocalEvent<FleshPassiveComponent, ConsumingFoodEvent>(OnConsumingFood);
-        SubscribeLocalEvent<FleshPassiveComponent, ExcludeMetabolismGroupsEvent>(OnExclude);
-        SubscribeLocalEvent<FleshPassiveComponent, ComponentShutdown>(OnShutdown);
-    }
-
-    private void OnShutdown(Entity<FleshPassiveComponent> ent, ref ComponentShutdown args)
-    {
-        if (TerminatingOrDeleted(ent.Comp.FleshStomach))
-            return;
-
-        QueueDel(ent.Comp.FleshStomach);
-    }
-
-    private void OnExclude(Entity<FleshPassiveComponent> ent, ref ExcludeMetabolismGroupsEvent args)
-    {
-        var stomach = ResolveStomach(ent);
-        ent.Comp.FleshStomach = stomach;
-        if (args.Metabolizer == stomach.Owner)
-            return;
-
-        args.Groups ??= [];
-        args.Groups.Add("Food");
-        args.Groups.Add("Drink");
-    }
-
-    private void OnConsumingFood(Entity<FleshPassiveComponent> ent, ref ConsumingFoodEvent args)
-    {
-        if (args.Volume <= FixedPoint2.Zero)
-            return;
-
-        if (!Heretic.TryGetHereticComponent(ent, out var heretic, out _) || heretic.PathStage <= 0)
-            return;
-
-        var multiplier = GetMultiplier((ent.Owner, ent.Comp), heretic, ref args, out var stage, out var multipliersApplied);
-        if (!multipliersApplied)
-            return;
-
-        var time = TimeSpan.FromMinutes(1) * stage;
-        if (heretic.Ascended)
-            time += TimeSpan.FromMinutes(1);
-
-        ApplyMultiplier(ent, multiplier * ent.Comp.BaseHealingPerFlesh, time, MartialArtModifierType.Healing);
-        ApplyMultiplier(ent, multiplier * ent.Comp.BaseAttackRatePerFlesh, time, MartialArtModifierType.AttackRate);
-        ApplyMultiplier(ent, multiplier * ent.Comp.BaseMoveSpeedPerFlesh, time, MartialArtModifierType.MoveSpeed);
-        _modifier.RefreshMovementSpeedModifiers(ent.Owner);
-    }
-
-    private float GetMultiplier(Entity<FleshPassiveComponent> ent,
-        HereticComponent heretic,
-        ref ConsumingFoodEvent args,
-        out float stage,
-        out bool multipliersApplied)
-    {
-        stage = MathF.Pow(heretic.PathStage, 0.3f);
-        var multiplier = args.Volume.Float() * stage;
-        var oldMult = multiplier;
-
-        if (HasComp<MobStateComponent>(args.Food))
-            multiplier *= ent.Comp.MobMultiplier;
-        if (HasComp<BrainComponent>(args.Food))
-            multiplier *= ent.Comp.BrainMultiplier;
-        if (HasComp<BodyPartComponent>(args.Food))
-            multiplier *= ent.Comp.BodyPartMultiplier;
-        if (HasComp<OrganComponent>(args.Food))
-            multiplier *= ent.Comp.OrganMultiplier;
-        if (HasComp<HumanOrganComponent>(args.Food))
-            multiplier *= ent.Comp.HumanMultiplier;
-        if (_tag.HasTag(args.Food, ent.Comp.MeatTag))
-            multiplier *= ent.Comp.MeatMultiplier;
-        if (heretic.Ascended)
-            multiplier *= ent.Comp.AscensionMultiplier;
-
-        multipliersApplied = oldMult < multiplier;
-        return multiplier;
-    }
-
-    // Martial arts cuz yeah
-    private void ApplyMultiplier(EntityUid uid, float multiplier, TimeSpan time, MartialArtModifierType type)
-    {
-        if (Math.Abs(multiplier) < 0.01f || time <= TimeSpan.Zero)
-            return;
-
-        var multComp = EnsureComp<MartialArtModifiersComponent>(uid);
-        multComp.Data.Add(new MartialArtModifierData
-        {
-            Type = type,
-            Multiplier = multiplier + 1f,
-            EndTime = Timing.CurTime + time,
-        });
-
-        Dirty(uid, multComp);
-    }
-
-    private void OnGetStomach(Entity<FleshPassiveComponent> ent, ref GetBodyOrganOverrideEvent<StomachComponent> args)
-    {
-        var stomach = ResolveStomach(ent);
-        ent.Comp.FleshStomach = stomach;
-        args.Organ = stomach;
-    }
-
-    private void OnMapInit(Entity<FleshPassiveComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.FleshStomach = ResolveStomach(ent);
-    }
-
-    private Entity<StomachComponent, OrganComponent> ResolveStomach(Entity<FleshPassiveComponent> ent)
-    {
-        if (Exists(ent.Comp.FleshStomach) && TryComp(ent.Comp.FleshStomach.Value, out StomachComponent? stomach) &&
-            TryComp(ent.Comp.FleshStomach.Value, out OrganComponent? organ))
-            return (ent.Comp.FleshStomach.Value, stomach, organ);
-
-        QueueDel(ent.Comp.FleshStomach);
-
-        var solName = StomachSystem.DefaultSolutionName;
-
-        var fleshStomach = SpawnAttachedTo(null, ent.Owner.ToCoordinates());
-        var solutionContainer = EnsureComp<SolutionContainerManagerComponent>(fleshStomach);
-        _solution.EnsureSolutionPrototype((fleshStomach, solutionContainer), solName, 1984, null, out _);
-        _solution.EnsureAllSolutions((fleshStomach, solutionContainer));
-        stomach = EnsureComp<StomachComponent>(fleshStomach);
-        stomach.DigestionDelay = TimeSpan.FromSeconds(5);
-        organ = EnsureComp<OrganComponent>(fleshStomach);
-        organ.IntegrityCap = 1984;
-        organ.OrganIntegrity = 1984;
-        organ.Body = ent;
-        Dirty(fleshStomach, organ);
-        var metabolizer = EnsureComp<MetabolizerComponent>(fleshStomach);
-        metabolizer.UpdateInterval = TimeSpan.FromMilliseconds(100);
-        metabolizer.MaxPoisonsProcessable = 10;
-        metabolizer.MetabolismGroups = new() { new() { Id = "Food" }, new() { Id = "Drink" } };
-        metabolizer.MetabolizerTypes = new() { "Vox" };
-        metabolizer.SolutionOnBody = false;
-        metabolizer.RemoveEmpty = true;
-        metabolizer.SolutionName = solName;
-        return (fleshStomach, stomach, organ);
     }
 
     private void OnDamageChanged(Entity<FleshPassiveComponent> ent, ref DamageChangedEvent args)
