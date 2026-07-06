@@ -15,6 +15,7 @@ using Content.Shared._Goobstation.SecondSkin;
 using Content.Server._Goobstation.Heretic.Components.PathSpecific;
 using Content.Server.Spreader;
 using Content.Shared._Goobstation.Heretic.Components;
+using Content.Shared._Goobstation.Heretic.Systems.Abilities;
 using Content.Shared._Goobstation.Wizard;
 using Content.Shared.Flash;
 using Content.Shared._Goobstation.Heretic;

@@ -14,11 +14,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Goobstation.Heretic.Effects;
 
-public sealed partial class VoidCurseSystemEffect : EntityEffectSystem<HumanoidAppearanceComponent, VoidCurse> // HumanoidAppearanceComponent here is ass but i cba
+public sealed partial class VoidCurseSystemEffect : EntityEffectSystem<HumanoidProfileComponent, VoidCurse>
 {
     [Dependency] private readonly VoidCurseSystem _voidCurse = default!;
 
-    protected override void Effect(Entity<HumanoidAppearanceComponent> entity, ref EntityEffectEvent<VoidCurse> args)
+    protected override void Effect(Entity<HumanoidProfileComponent> entity, ref EntityEffectEvent<VoidCurse> args)
     {
         _voidCurse.DoCurse(entity.Owner, args.Effect.Stacks);
     }

@@ -599,7 +599,7 @@ namespace Content.Server.Ghost
     public sealed class GhostAttemptHandleEvent(MindComponent mind, bool canReturnGlobal) : HandledEntityEventArgs
     {
         public MindComponent Mind { get; } = mind;
-        public bool CanReturnGlobal { get; } = canReturnGlobal;
+        public bool CanReturnGlobal { get; set; } = canReturnGlobal;
         public bool Result { get; set; }
     }
 }

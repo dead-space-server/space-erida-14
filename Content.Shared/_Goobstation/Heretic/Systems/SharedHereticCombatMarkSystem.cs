@@ -3,9 +3,9 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public abstract class SharedHereticCombatMarkSystem : EntitySystem
+public abstract partial class SharedHereticCombatMarkSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     public virtual bool ApplyMarkEffect(EntityUid target,
         HereticCombatMarkComponent mark,

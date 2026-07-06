@@ -13,6 +13,7 @@
 using Content.Server._Goobstation.Heretic.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Follower;
 using Content.Shared.Follower.Components;
 using Content.Shared._Goobstation.Heretic;
@@ -156,7 +157,6 @@ public sealed class ProtectiveBladeSystem : EntitySystem
                     args.SourceItem,
                     args.Direction,
                     args.Reflective,
-                    args.Damage,
                     out var dir))
                 continue;
 

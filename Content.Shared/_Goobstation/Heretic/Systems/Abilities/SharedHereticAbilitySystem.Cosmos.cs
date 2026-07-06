@@ -1,5 +1,5 @@
 using Content.Shared._Goobstation.Wizard;
-using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
+using Content.Shared._Goobstation.FadingTimedDespawn;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared._Goobstation.Heretic;
@@ -226,3 +226,5 @@ public abstract partial class SharedHereticAbilitySystem
         }
     }
 }
+
+public sealed class StopTargetingEvent : EntityEventArgs;

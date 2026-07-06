@@ -6,10 +6,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared._Goobstation.Heretic.Prototypes;
+using Content.Shared.Silicons.Borgs.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 
@@ -29,7 +29,7 @@ public sealed partial class RitualRustAscendBehavior : RitualSacrificeBehavior
         foreach (var uid in uids)
         {
             if (args.EntityManager.HasComponent<RottingComponent>(uid) ||
-                args.EntityManager.HasComponent<SiliconComponent>(uid))
+                args.EntityManager.HasComponent<BorgChassisComponent>(uid))
                 targets.Add(uid);
 
             if (targets.Count >= Max)

@@ -2,6 +2,7 @@ using System.Linq;
 using Content.Shared._Goobstation.Physics;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
@@ -9,14 +10,14 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public abstract class SharedFireBlastSystem : EntitySystem
+public abstract partial class SharedFireBlastSystem : EntitySystem
 {
-    [Dependency] protected readonly SharedTransformSystem Xform = default!;
-    [Dependency] protected readonly StatusEffectsSystem Status = default!;
-    [Dependency] protected readonly DamageableSystem Dmg = default!;
+    [Dependency] protected SharedTransformSystem Xform = default!;
+    [Dependency] protected StatusEffectsSystem Status = default!;
+    [Dependency] protected DamageableSystem Dmg = default!;
 
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedStaminaSystem _stam = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedStaminaSystem _stam = default!;
 
     public static readonly EntProtoId FireBlastStatusEffect = "StatusEffectFireBlasted";
 

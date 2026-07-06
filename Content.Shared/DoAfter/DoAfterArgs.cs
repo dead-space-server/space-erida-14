@@ -46,6 +46,22 @@ public sealed partial class DoAfterArgs
     [DataField]
     public bool Hidden;
 
+    /// <summary>
+    /// Goobstation - The entity that should see doafter progress bar except doAfter entity
+    /// </summary>
+    [NonSerialized]
+    [DataField]
+    public EntityUid? ShowTo;
+
+    public NetEntity? NetShowTo;
+
+    /// <summary>
+    /// Goobstation
+    /// Whether the delay multiplier event should be raised
+    /// </summary>
+    [DataField]
+    public bool MultiplyDelay = true;
+
     #region Event options
     /// <summary>
     ///     The event that will get raised when the DoAfter has finished. If null, this will simply raise a <see cref="SimpleDoAfterEvent"/>
@@ -199,7 +215,8 @@ public sealed partial class DoAfterArgs
         DoAfterEvent @event,
         EntityUid? eventTarget,
         EntityUid? target = null,
-        EntityUid? used = null)
+        EntityUid? used = null,
+        EntityUid? showTo = null) // Goobstation - Show doAfter popup to another entity
     {
         User = user;
         Delay = delay;
@@ -207,10 +224,12 @@ public sealed partial class DoAfterArgs
         Used = used;
         EventTarget = eventTarget;
         Event = @event;
+        ShowTo = showTo; // Goobstation
 
         NetUser = entManager.GetNetEntity(User);
         NetTarget = entManager.GetNetEntity(Target);
         NetUsed = entManager.GetNetEntity(Used);
+        NetShowTo = entManager.GetNetEntity(ShowTo); // Goobstation - Show doAfter popup to another entity
     }
 
     private DoAfterArgs()
@@ -233,8 +252,9 @@ public sealed partial class DoAfterArgs
         DoAfterEvent @event,
         EntityUid? eventTarget,
         EntityUid? target = null,
-        EntityUid? used = null)
-        : this(entManager, user, TimeSpan.FromSeconds(seconds), @event, eventTarget, target, used)
+        EntityUid? used = null,
+        EntityUid? showTo = null) // Goobstation - Show doAfter popup to another entity
+        : this(entManager, user, TimeSpan.FromSeconds(seconds), @event, eventTarget, target, used, showTo)
     {
     }
 
@@ -248,6 +268,8 @@ public sealed partial class DoAfterArgs
         Target = other.Target;
         Used = other.Used;
         Hidden = other.Hidden;
+        ShowTo = other.ShowTo; // Goobstation - Show doAfter popup to another entity
+        MultiplyDelay = other.MultiplyDelay; // Goobstation
         EventTarget = other.EventTarget;
         Broadcast = other.Broadcast;
         NeedHand = other.NeedHand;
@@ -269,6 +291,7 @@ public sealed partial class DoAfterArgs
         NetUser = other.NetUser;
         NetTarget = other.NetTarget;
         NetUsed = other.NetUsed;
+        NetShowTo = other.NetShowTo; // Goobstation - Show doAfter popup to another entity
         NetEventTarget = other.NetEventTarget;
 
         Event = other.Event.Clone();

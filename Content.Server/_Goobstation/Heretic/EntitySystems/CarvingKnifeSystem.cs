@@ -16,7 +16,6 @@ using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Wizard.Traps;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Systems;
@@ -174,8 +173,7 @@ public sealed class CarvingKnifeSystem : EntitySystem
             default,
             false,
             actor.PlayerSession.Channel,
-            Color.DarkGreen,
-            canCoalesce: false);
+            Color.DarkGreen);
         _audio.PlayGlobal(ent.Comp.AlertSound, actor.PlayerSession);
         if (_statusNew.TryUpdateStatusEffectDuration(ent.Comp.User.Value,
                 AlertEffect,

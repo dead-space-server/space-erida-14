@@ -95,6 +95,12 @@ namespace Content.Shared.Atmos.Components
         public bool CanExtinguish = true;
 
         /// <summary>
+        ///     ArmorPenetration but for fire resistance
+        /// </summary>
+        [DataField]
+        public float FireProtectionPenetration;
+
+        /// <summary>
         ///     How many firestacks should be applied to component when being set on fire?
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]

@@ -310,6 +310,11 @@ public sealed class DamageChangedEvent : EntityEventArgs
     public readonly DamageSpecifier? DamageDelta;
 
     /// <summary>
+    ///     Damage before clamp of excessive heal and damage cap was applied
+    /// </summary>
+    public readonly DamageSpecifier? UncappedDamage;
+
+    /// <summary>
     ///     Was any of the damage change dealing damage, or was it all healing?
     /// </summary>
     public readonly bool DamageIncreased;
@@ -330,7 +335,8 @@ public sealed class DamageChangedEvent : EntityEventArgs
         DamageableComponent damageable,
         DamageSpecifier? damageDelta,
         bool interruptsDoAfters,
-        EntityUid? origin
+        EntityUid? origin,
+        DamageSpecifier? uncapped = null // Goobstation
     )
     {
         Damageable = damageable;
@@ -339,6 +345,8 @@ public sealed class DamageChangedEvent : EntityEventArgs
 
         if (DamageDelta is null)
             return;
+
+        UncappedDamage = uncapped ?? damageDelta; // Goobstation
 
         foreach (var damageChange in DamageDelta.DamageDict.Values)
         {

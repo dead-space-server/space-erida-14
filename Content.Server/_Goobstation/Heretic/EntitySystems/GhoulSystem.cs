@@ -24,7 +24,6 @@ using Content.Server.Dragon;
 using Content.Server.Ghost.Roles.Components;
 using Content.Shared.Hands.Components;
 using Content.Server.Hands.Systems;
-using Content.Server.Humanoid;
 using Content.Server.Mind.Commands;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.Temperature.Components;
@@ -34,7 +33,6 @@ using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Examine;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared._Goobstation.Heretic;
-using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
@@ -76,7 +74,6 @@ public sealed class GhoulSystem : EntitySystem
 
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
     [Dependency] private readonly RejuvenateSystem _rejuvenate = default!;
     [Dependency] private readonly NpcFactionSystem _faction = default!;
     [Dependency] private readonly MobThresholdSystem _threshold = default!;
@@ -186,15 +183,6 @@ public sealed class GhoulSystem : EntitySystem
             var htn = EnsureComp<HTNComponent>(ent);
             htn.RootTask = new HTNCompoundTask { Task = Compound };
             _htn.Replan(htn);
-        }
-
-        if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
-        {
-            // make them "have no eyes" and grey
-            // this is clearly a reference to grey tide
-            var greycolor = Color.FromHex("#505050");
-            _humanoid.SetSkinColor(ent, greycolor, true, false, humanoid);
-            _humanoid.SetBaseLayerColor(ent, HumanoidVisualLayers.Eyes, greycolor, true, humanoid);
         }
 
         _rejuvenate.PerformRejuvenate(ent);

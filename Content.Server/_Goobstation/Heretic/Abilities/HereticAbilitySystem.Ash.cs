@@ -23,7 +23,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Shared.Atmos.Components;
 
 namespace Content.Server._Goobstation.Heretic.Abilities;
 

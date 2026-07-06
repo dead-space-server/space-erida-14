@@ -15,9 +15,9 @@ using Content.Shared.Inventory.Events;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public sealed class HereticMagicItemSystem : EntitySystem
+public sealed partial class HereticMagicItemSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHereticSystem _heretic = default!;
+    [Dependency] private SharedHereticSystem _heretic = default!;
 
     public override void Initialize()
     {
@@ -39,7 +39,7 @@ public sealed class HereticMagicItemSystem : EntitySystem
 
     private void OnUnequip(Entity<HereticMagicItemComponent> ent, ref GotUnequippedEvent args)
     {
-        RaiseLostFocusEvent(args.Equipee);
+        RaiseLostFocusEvent(args.EquipTarget);
     }
 
     private void OnShutdown(Entity<HereticMagicItemComponent> ent, ref ComponentShutdown args)

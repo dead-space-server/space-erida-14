@@ -17,6 +17,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Cloning;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Interaction.Components;

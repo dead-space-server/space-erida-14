@@ -5,9 +5,9 @@ using Content.Shared.Mind;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public abstract class SharedHereticSystem : EntitySystem
+public abstract partial class SharedHereticSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
     private EntityQuery<HereticComponent> _hereticQuery;
     private EntityQuery<GhoulComponent> _ghoulQuery;

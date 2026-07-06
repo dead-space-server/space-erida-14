@@ -16,7 +16,6 @@
 using Content.Shared._Goobstation.Weapons.DelayedKnockdown;
 using Content.Server._Goobstation.Heretic.Components.PathSpecific;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.CombatMode.Pacification;

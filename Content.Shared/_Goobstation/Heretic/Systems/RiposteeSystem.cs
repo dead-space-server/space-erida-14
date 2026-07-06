@@ -28,21 +28,21 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public sealed class RiposteeSystem : EntitySystem
+public sealed partial class RiposteeSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMeleeWeaponSystem _melee = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ActionBlockerSystem _blocker = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly StandingStateSystem _standing = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private SharedMeleeWeaponSystem _melee = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedCombatModeSystem _combatMode = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private ActionBlockerSystem _blocker = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private StandingStateSystem _standing = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -198,9 +198,6 @@ public sealed class RiposteeSystem : EntitySystem
         var nextAttack = weapon.Comp.NextAttack;
         weapon.Comp.NextAttack = TimeSpan.Zero;
 
-        RaiseLocalEvent(user, new SaveLastAttacksEvent());
-        RaiseLocalEvent(user, new ResetLastAttacksEvent(false));
-
         var inCombat = _combatMode.IsInCombatMode(user);
         if (!inCombat)
             _combatMode.SetInCombatMode(user, true);
@@ -217,8 +214,6 @@ public sealed class RiposteeSystem : EntitySystem
 
         if (!inCombat)
             _combatMode.SetInCombatMode(user, false);
-
-        RaiseLocalEvent(user, new LoadLastAttacksEvent());
 
         weapon.Comp.NextAttack = nextAttack;
         Dirty(weapon);

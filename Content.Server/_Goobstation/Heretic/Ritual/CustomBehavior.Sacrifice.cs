@@ -95,7 +95,7 @@ namespace Content.Server._Goobstation.Heretic.Ritual;
         foreach (var look in lookup)
         {
             if (!args.EntityManager.TryGetComponent<MobStateComponent>(look, out var mobstate) // only mobs
-            || OnlyHumanoid && !args.EntityManager.HasComponent<HumanoidAppearanceComponent>(look) // only humans
+            || OnlyHumanoid && !args.EntityManager.HasComponent<HumanoidProfileComponent>(look) // only humans
             || args.EntityManager.HasComponent<BorgChassisComponent>(look) // no borgs
             || OnlyTargets
                 && hereticComp.SacrificeTargets.All(x => x.Entity != args.EntityManager.GetNetEntity(look)) // only targets

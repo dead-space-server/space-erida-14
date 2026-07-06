@@ -100,7 +100,7 @@ public sealed partial class ReflectSystem : EntitySystem
         }
     }
 
-    private bool TryReflectProjectile(Entity<ReflectComponent> reflector, EntityUid user, Entity<ProjectileComponent?> projectile)
+    public bool TryReflectProjectile(Entity<ReflectComponent> reflector, EntityUid user, Entity<ProjectileComponent?> projectile)
     {
         if (!TryComp<ReflectiveComponent>(projectile, out var reflective) ||
             !_toggle.IsActivated(reflector.Owner) ||
@@ -142,7 +142,7 @@ public sealed partial class ReflectSystem : EntitySystem
 
         return true;
     }
-    private bool TryReflectHitscan(
+    public bool TryReflectHitscan(
         Entity<ReflectComponent> reflector,
         EntityUid user,
         EntityUid? shooter,

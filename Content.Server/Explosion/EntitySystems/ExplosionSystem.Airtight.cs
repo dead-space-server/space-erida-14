@@ -90,7 +90,7 @@ public sealed partial class ExplosionSystem
 
         while (anchoredEnumerator.MoveNext(out var uid))
         {
-            if (!_airtightQuery.TryGetComponent(uid, out var airtight) || !airtight.AirBlocked)
+            if (!_airtightQuery.TryGetComponent(uid, out var airtight) || !airtight.AirBlocked && !airtight.BlockExplosions)
                 continue;
 
             blockedDirections |= airtight.AirBlockedDirection;
@@ -193,7 +193,7 @@ public sealed partial class ExplosionSystem
     private void OnAirtightDamaged(EntityUid uid, AirtightComponent airtight, DamageChangedEvent args)
     {
         // do we need to update our explosion blocking map?
-        if (!airtight.AirBlocked)
+        if (!airtight.AirBlocked && !airtight.BlockExplosions)
             return;
 
         if (!TryComp(uid, out TransformComponent? transform) || !transform.Anchored)

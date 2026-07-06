@@ -18,6 +18,7 @@ using Content.Shared.Projectiles;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Temperature;
 using Content.Shared.Throwing;
+using Robust.Shared.Maths;
 using Content.Shared.Timing;
 using Content.Shared.Toggleable;
 using Content.Shared.Weapons.Melee.Events;
@@ -276,19 +277,26 @@ namespace Content.Server.Atmos.EntitySystems
             _appearance.SetData(uid, ToggleableVisuals.Enabled, flammable.OnFire, appearance);
         }
 
-        public void AdjustFireStacks(EntityUid uid, float relativeFireStacks, FlammableComponent? flammable = null, bool ignite = false)
+        public void AdjustFireStacks(EntityUid uid, float relativeFireStacks, FlammableComponent? flammable = null, bool ignite = false, float fireProtectionPenetration = 0f)
         {
             if (!Resolve(uid, ref flammable))
                 return;
 
-            SetFireStacks(uid, flammable.FireStacks + relativeFireStacks, flammable, ignite);
+            SetFireStacks(uid, flammable.FireStacks + relativeFireStacks, flammable, ignite, fireProtectionPenetration);
         }
 
-        public void SetFireStacks(EntityUid uid, float stacks, FlammableComponent? flammable = null, bool ignite = false)
+        public void SetFireStacks(EntityUid uid, float stacks, FlammableComponent? flammable = null, bool ignite = false, float fireProtectionPenetration = 0f)
         {
             if (!Resolve(uid, ref flammable))
                 return;
 
+            if (stacks <= flammable.FireStacks)
+                fireProtectionPenetration = MathF.Max(flammable.FireProtectionPenetration, fireProtectionPenetration);
+
+            if (stacks > 0)
+                fireProtectionPenetration = MathHelper.Lerp(flammable.FireProtectionPenetration, fireProtectionPenetration, 1f - flammable.FireStacks / stacks);
+
+            flammable.FireProtectionPenetration = Math.Clamp(fireProtectionPenetration, 0f, 1f);
             flammable.FireStacks = MathF.Min(MathF.Max(flammable.MinimumFireStacks, stacks), flammable.MaximumFireStacks);
 
             if (flammable.FireStacks <= 0)
@@ -313,6 +321,7 @@ namespace Content.Server.Atmos.EntitySystems
             _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):entity} stopped being on fire damage");
             flammable.OnFire = false;
             flammable.FireStacks = 0;
+            flammable.FireProtectionPenetration = 0f;
 
             _ignitionSourceSystem.SetIgnited(uid, false);
 
@@ -451,14 +460,16 @@ namespace Content.Server.Atmos.EntitySystems
                     if (TryComp(uid, out TemperatureComponent? temp))
                         _temperatureSystem.ChangeHeat(uid, 12500 * flammable.FireStacks, false, temp);
 
-                    var ev = new GetFireProtectionEvent();
+                    var ev = new GetFireProtectionEvent(uid);
                     // let the thing on fire handle it
                     RaiseLocalEvent(uid, ref ev);
                     // and whatever it's wearing
                     if (_inventoryQuery.TryComp(uid, out var inv))
                         _inventory.RelayEvent((uid, inv), ref ev);
 
-                    _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * ev.Multiplier, interruptsDoAfters: false);
+                    var multiplier = Math.Clamp(ev.Multiplier + flammable.FireProtectionPenetration, 0f, 1f);
+
+                    _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * multiplier, interruptsDoAfters: false);
 
                     AdjustFireStacks(uid, flammable.FirestackFade * (flammable.Resisting ? 15f : 1f), flammable, flammable.OnFire);
                 }

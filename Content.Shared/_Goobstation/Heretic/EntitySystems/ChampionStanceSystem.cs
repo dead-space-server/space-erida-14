@@ -15,7 +15,9 @@
 
 using Content.Shared._Goobstation.Bloodstream;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -23,10 +25,11 @@ using Content.Shared.Movement.Systems;
 using Content.Shared._Goobstation.Heretic.Components.PathSpecific; // Shitmed Change
 namespace Content.Shared._Goobstation.Heretic.EntitySystems.PathSpecific;
 
-public sealed class ChampionStanceSystem : EntitySystem
+public sealed partial class ChampionStanceSystem : EntitySystem
 {
-    [Dependency] private readonly MobThresholdSystem _threshold = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifierSystem = default!;
+    [Dependency] private MobThresholdSystem _threshold = default!;
+    [Dependency] private MovementSpeedModifierSystem _movementSpeedModifierSystem = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
 
     public override void Initialize()
     {
@@ -73,7 +76,7 @@ public sealed class ChampionStanceSystem : EntitySystem
 
         if (!_threshold.TryGetThresholdForState(ent, MobState.Critical, out var threshold, thresholdComp))
             threshold = _threshold.GetThresholdForState(ent, MobState.Dead, thresholdComp);
-        return dmg.TotalDamage >= threshold.Value.Float() / 2f;
+        return _damageable.GetTotalDamage((ent.Owner, dmg)) >= threshold.Value.Float() / 2f;
     }
 
     private void OnDamageModify(Entity<ChampionStanceComponent> ent, ref DamageModifyEvent args)

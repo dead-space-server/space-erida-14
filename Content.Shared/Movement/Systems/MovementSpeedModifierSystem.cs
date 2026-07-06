@@ -188,15 +188,15 @@ namespace Content.Shared.Movement.Systems
         public float WalkSpeedModifier { get; private set; } = 1.0f;
         public float SprintSpeedModifier { get; private set; } = 1.0f;
 
-        public void ModifySpeed(float walk, float sprint)
+        public void ModifySpeed(float walk, float sprint, bool bypassImmunity = false) // Goobstation
         {
             WalkSpeedModifier *= walk;
             SprintSpeedModifier *= sprint;
         }
 
-        public void ModifySpeed(float mod)
+        public void ModifySpeed(float mod, bool bypassImmunity = false) // Goobstation
         {
-            ModifySpeed(mod, mod);
+            ModifySpeed(mod, mod, bypassImmunity);
         }
     }
 

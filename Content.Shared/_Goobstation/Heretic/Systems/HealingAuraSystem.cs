@@ -1,19 +1,20 @@
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems.Abilities;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Timing;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public sealed class HealingAuraSystem : EntitySystem
+public sealed partial class HealingAuraSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IComponentFactory _compFact = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IComponentFactory _compFact = default!;
 
-    [Dependency] private readonly SharedHereticAbilitySystem _heretic = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private SharedHereticAbilitySystem _heretic = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
 
     public override void Update(float frameTime)
     {
@@ -39,7 +40,7 @@ public sealed class HealingAuraSystem : EntitySystem
                 if (multiplier == 0f)
                     continue;
 
-                _heretic.IHateWoundMed((ent, damageable),
+                _heretic.IHateWoundMed(new Entity<DamageableComponent?>(ent, damageable),
                     aura.ToHeal * multiplier,
                     aura.BoneHeal * multiplier,
                     aura.PainHeal * multiplier,

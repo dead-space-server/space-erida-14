@@ -4,16 +4,16 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared._Goobstation.Heretic;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -31,25 +31,29 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public abstract class SharedMansusGraspSystem : EntitySystem
+public abstract partial class SharedMansusGraspSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
+    private static readonly ProtoId<TagPrototype> HereticBladeBladeTag = "HereticBladeBlade";
+    private static readonly ProtoId<TagPrototype> WallTag = "Wall";
+    private static readonly ProtoId<TagPrototype> CatwalkTag = "Catwalk";
+    private static readonly ProtoId<TagPrototype> MeatTag = "Meat";
+    private static readonly ProtoId<TagPrototype> BotTag = "Bot";
+    private static readonly ProtoId<DamageGroupPrototype> BruteDamageGroup = "Brute";
 
-    [Dependency] private readonly SharedDoorSystem _door = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly StatusEffectNew.StatusEffectsSystem _statusNew = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedVoidCurseSystem _voidCurse = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedStarMarkSystem _starMark = default!;
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IComponentFactory _compFactory = default!;
+    [Dependency] private INetManager _net = default!;
+
+    [Dependency] private SharedDoorSystem _door = default!;
+    [Dependency] private DamageableSystem _damage = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedVoidCurseSystem _voidCurse = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedStarMarkSystem _starMark = default!;
 
     public bool TryApplyGraspEffectAndMark(EntityUid user,
         HereticComponent hereticComp,
@@ -115,7 +119,7 @@ public abstract class SharedMansusGraspSystem : EntitySystem
 
             case "Blade":
             {
-                if (grasp != null && heretic.PathStage >= 7 && _tag.HasTag(target, "HereticBladeBlade"))
+                if (grasp != null && heretic.PathStage >= 7 && _tag.HasTag(target, HereticBladeBladeTag))
                 {
                     // empowering blades and shit
                     var infusion = EnsureComp<MansusInfusedComponent>(target);
@@ -181,21 +185,21 @@ public abstract class SharedMansusGraspSystem : EntitySystem
 
             case "Rust":
             {
-                if (TryComp(target, out StationAiHolderComponent? aiHolder)) // Kill AI
+                if (TryComp(target, out StationAiHolderComponent? aiHolder))
                     QueueDel(aiHolder.Slot.ContainerSlot?.ContainedEntity);
-                else if (HasComp<RustGraspComponent>(grasp) && _tag.HasAnyTag(target, "Wall", "Catwalk") ||
+                else if (HasComp<RustGraspComponent>(grasp) && _tag.HasAnyTag(target, WallTag, CatwalkTag) ||
                          HasComp<HereticRitualRuneComponent>(
-                             target)) // If we have rust grasp and targeting a wall (or a catwalk) - do nothing, let other methods handle that. Also don't damage transmutation rune.
+                             target))
                     return false;
-                else if (TryComp(target, out DamageableComponent? damageable) && // Is it even damageable?
-                         !_tag.HasTag(target, "Meat") && // Is it not organic body part or organ?
-                         !HasComp<ShadowCloakEntityComponent>(target) && // No instakilling shadow cloak heretics
-                         (!HasComp<MobStateComponent>(target) || HasComp<SiliconComponent>(target) ||
+                else if (TryComp(target, out DamageableComponent? damageable) &&
+                         !_tag.HasTag(target, MeatTag) &&
+                         !HasComp<ShadowCloakEntityComponent>(target) &&
+                         (!HasComp<MobStateComponent>(target) ||
                           HasComp<BorgChassisComponent>(target) ||
-                          _tag.HasTag(target, "Bot"))) // Check for ingorganic target
+                          _tag.HasTag(target, BotTag)))
                 {
                     _damage.TryChangeDamage(target,
-                        new DamageSpecifier(_proto.Index<DamageGroupPrototype>("Brute"), 500),
+                        new DamageSpecifier(_proto.Index<DamageGroupPrototype>(BruteDamageGroup), 500),
                         ignoreResistances: true,
                         origin: performer);
                 }

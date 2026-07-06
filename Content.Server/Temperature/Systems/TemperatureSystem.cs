@@ -66,6 +66,14 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
         var lastTemp = temperature.CurrentTemperature;
         var delta = temperature.CurrentTemperature - temp;
+
+        // Goobstation start
+        var attemptEv = new TemperatureChangeAttemptEvent(temp, lastTemp, delta);
+        RaiseLocalEvent(uid, attemptEv);
+        if (attemptEv.Cancelled)
+            return;
+        // Goobstation end
+
         temperature.CurrentTemperature = temp;
         RaiseLocalEvent(uid, new OnTemperatureChangeEvent(temperature.CurrentTemperature, lastTemp, delta), broadcast: true);
     }
@@ -77,15 +85,23 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
         if (!ignoreHeatResistance)
         {
-            var ev = new ModifyChangedTemperatureEvent(heatAmount);
+            var ev = new ModifyChangedTemperatureEvent(heatAmount, uid);
             RaiseLocalEvent(uid, ev);
             heatAmount = ev.TemperatureDelta;
         }
 
         float lastTemp = temperature.CurrentTemperature;
-        temperature.CurrentTemperature += heatAmount / GetHeatCapacity(uid, temperature);
-        float delta = temperature.CurrentTemperature - lastTemp;
+        float newTemp = temperature.CurrentTemperature + heatAmount / GetHeatCapacity(uid, temperature);
+        float delta = newTemp - lastTemp;
 
+        // Goobstation start
+        var attemptEv = new TemperatureChangeAttemptEvent(newTemp, lastTemp, delta);
+        RaiseLocalEvent(uid, attemptEv);
+        if (attemptEv.Cancelled)
+            return;
+        // Goobstation end
+
+        temperature.CurrentTemperature = newTemp;
         RaiseLocalEvent(uid, new OnTemperatureChangeEvent(temperature.CurrentTemperature, lastTemp, delta), broadcast: true);
     }
 

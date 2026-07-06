@@ -15,11 +15,11 @@ namespace Content.Shared._Goobstation.Teleportation.Systems;
 [Virtual]
 public partial class SharedRandomTeleportSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     private EntityQuery<PhysicsComponent> _physicsQuery;
 

@@ -71,7 +71,7 @@ public sealed class EldritchInfluenceSystem : EntitySystem
         var size = ent.Comp.FontSize;
         var loc = Loc.GetString(baseMessage, ("size", size), ("text", message));
         SharedChatSystem.UpdateFontSize(size, ref message, ref loc);
-        _chatMan.ChatMessageToOne(ChatChannel.Server, message, loc, default, false, session.Channel, canCoalesce: false);
+        _chatMan.ChatMessageToOne(ChatChannel.Server, message, loc, default, false, session.Channel);
 
         var effects = _random.Pick(ent.Comp.PossibleExamineEffects);
         foreach (var effect in effects)

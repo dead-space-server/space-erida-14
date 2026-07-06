@@ -7,15 +7,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Goobstation.Wizard;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared.Inventory.Events;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public sealed class HereticClothingSystem : EntitySystem
+public sealed partial class HereticClothingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHereticSystem _heretic = default!;
+    [Dependency] private SharedHereticSystem _heretic = default!;
 
     public override void Initialize()
     {
@@ -26,7 +25,7 @@ public sealed class HereticClothingSystem : EntitySystem
 
     private void OnEquipAttempt(Entity<HereticClothingComponent> ent, ref BeingEquippedAttemptEvent args)
     {
-        if (IsTargetValid(args.EquipTarget) && (args.EquipTarget == args.Equipee || IsTargetValid(args.Equipee)))
+        if (IsTargetValid(args.EquipTarget) && (args.EquipTarget == args.User || IsTargetValid(args.User)))
             return;
 
         args.Cancel();
@@ -35,7 +34,6 @@ public sealed class HereticClothingSystem : EntitySystem
 
     private bool IsTargetValid(EntityUid target)
     {
-        return _heretic.IsHereticOrGhoul(target) || HasComp<WizardComponent>(target) ||
-               HasComp<ApprenticeComponent>(target);
+        return _heretic.IsHereticOrGhoul(target);
     }
 }

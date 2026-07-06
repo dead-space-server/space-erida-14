@@ -13,10 +13,10 @@ using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Shared._Goobstation.Heretic.Systems;
 
-public sealed class ToggleAnimationSystem : EntitySystem
+public sealed partial class ToggleAnimationSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private INetManager _net = default!;
 
     public override void Initialize()
     {

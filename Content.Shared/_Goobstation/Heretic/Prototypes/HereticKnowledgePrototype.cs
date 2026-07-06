@@ -12,7 +12,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Goobstation.Heretic.Prototypes;
 
-[Prototype("hereticKnowledge")]
+[Prototype]
 public sealed partial class HereticKnowledgePrototype : IPrototype
 {
     [IdDataField] public string ID { get; private set; } = default!;

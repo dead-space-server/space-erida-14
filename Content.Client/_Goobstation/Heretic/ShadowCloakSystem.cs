@@ -6,7 +6,6 @@
 using Content.Client._Goobstation.Heretic.SpriteOverlay;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Wizard.Traps;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.SpriteOverlay;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared._Goobstation.Heretic;

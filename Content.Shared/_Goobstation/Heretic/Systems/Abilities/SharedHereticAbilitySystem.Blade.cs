@@ -7,7 +7,6 @@
 
 using Content.Shared._Goobstation.Stunnable;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.EntitySystems;
@@ -20,7 +19,7 @@ namespace Content.Shared._Goobstation.Heretic.Systems.Abilities;
 
 public abstract partial class SharedHereticAbilitySystem
 {
-    [Dependency] private readonly SharedStaminaSystem _stam = default!;
+    [Dependency] private SharedStaminaSystem _stam = default!;
 
     protected virtual void SubscribeBlade()
     {

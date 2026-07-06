@@ -246,6 +246,29 @@ public abstract partial class SharedChatSystem : EntitySystem
         return message;
     }
 
+    public static void UpdateFontSize(int fontSize, ref string message, ref string wrappedMessage)
+    {
+        var newLines = GetChatNewLines(message);
+        var ratio = GetFontRatio(fontSize);
+        for (var i = 1; i < newLines * (int) MathF.Round(ratio); i++)
+        {
+            message += '\n';
+            wrappedMessage += '\n';
+        }
+    }
+
+    public static int GetChatNewLines(string message)
+    {
+        const string pattern = @"\r\n|\n|\r";
+        return new Regex(pattern).Matches(message).Count + 1;
+    }
+
+    public static float GetFontRatio(int fontSize)
+    {
+        const int defaultFontSize = 12;
+        return (float) fontSize / defaultFontSize;
+    }
+
     public static string SanitizeAnnouncement(string message, int maxLength = 0, int maxNewlines = 2)
     {
         var trimmed = message.Trim();

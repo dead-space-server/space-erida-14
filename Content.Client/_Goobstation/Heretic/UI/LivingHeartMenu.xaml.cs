@@ -10,12 +10,15 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
-using Content.Client.Lobby;
 using Content.Client.UserInterface.Controls;
 using Content.Shared._Goobstation.Heretic;
+using Content.Shared.Body;
+using Content.Shared.Humanoid.Prototypes;
+using Content.Shared.Preferences;
 using Robust.Client.Player;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.Client._Goobstation.Heretic.UI;
@@ -25,8 +28,6 @@ public sealed class LivingHeartMenu : RadialMenu
     [Dependency] private readonly EntityManager _ent = default!;
     [Dependency] private readonly IPrototypeManager _prot = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
-
-    private readonly LobbyUIController _controller;
 
     private readonly HereticSystem _heretic;
 
@@ -39,8 +40,15 @@ public sealed class LivingHeartMenu : RadialMenu
         IoCManager.InjectDependencies(this);
         RobustXamlLoader.Load(this);
 
-        _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
         _heretic = _ent.System<HereticSystem>();
+    }
+
+    private EntityUid LoadProfileEntity(HumanoidCharacterProfile profile)
+    {
+        var dummy = _prot.Index(profile.Species).DollPrototype;
+        var entity = _ent.SpawnEntity(dummy, MapCoordinates.Nullspace);
+        _ent.System<SharedVisualBodySystem>().ApplyProfileTo(entity, profile);
+        return entity;
     }
 
     public void SetEntity(EntityUid ent)
@@ -62,7 +70,7 @@ public sealed class LivingHeartMenu : RadialMenu
         foreach (var target in heretic.SacrificeTargets)
         {
             if (!_ent.TryGetEntity(target.Entity, out var ent) || !_ent.EntityExists(ent))
-                ent = _controller.LoadProfileEntity(target.Profile, _prot.Index(target.Job), true);
+                ent = LoadProfileEntity(target.Profile);
 
             var button = new EmbeddedEntityMenuButton
             {

@@ -1,0 +1,31 @@
+- type: entity
+  id: TouchSpellFleshSurgery
+  name: knit flesh
+  description: Let's go practice medicine.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Unremoveable
+  - type: Item
+  - type: UnholyItem
+  - type: Sprite
+    sprite: _Goobstation/Heretic/Entities/flesh_surgery.rsi
+    state: icon
+  - type: Appearance
+  - type: PointLight
+    enabled: true
+    radius: 2
+    energy: 1
+    color: "#911500"
+  - type: FleshSurgery
+    delay: 0.8 # Hand picked to not trigger health analyzer UI
+  - type: ShowHealthBars
+    worksInHands: true
+  - type: ShowHealthIcons
+    worksInHands: true
+  - type: HealthAnalyzer
+    scanningEndSound:
+      path: /Audio/Items/welder.ogg
+  - type: UserInterface
+    interfaces:
+      enum.HealthAnalyzerUiKey.Key:
+        type: HealthAnalyzerBoundUserInterface

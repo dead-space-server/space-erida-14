@@ -6,11 +6,12 @@ using Content.Server.Ghost;
 using Content.Server.Ghost.Roles;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Popups;
-using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
+using Content.Shared._Goobstation.FadingTimedDespawn;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared._Goobstation.Heretic.Systems;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mind.Components;
@@ -420,10 +421,8 @@ public sealed class StarGazerSystem : SharedStarGazerSystem
                 if (aLen <= 0.01f || bLen <= 0.01f)
                     continue;
 
-                var angleac = Goobstation.Maths.Vectors.GoobVector3.CalculateAngle(new Goobstation.Maths.Vectors.GoobVector3(-a),
-                    new Goobstation.Maths.Vectors.GoobVector3(-c));
-                var anglebc = Goobstation.Maths.Vectors.GoobVector3.CalculateAngle(new Goobstation.Maths.Vectors.GoobVector3(-b),
-                    new Goobstation.Maths.Vectors.GoobVector3(c));
+                var angleac = GoobVector3.CalculateAngle(new GoobVector3(-a), new GoobVector3(-c));
+                var anglebc = GoobVector3.CalculateAngle(new GoobVector3(-b), new GoobVector3(c));
 
                 var sinac = MathF.Sin(angleac);
                 var sinbc = MathF.Sin(anglebc);

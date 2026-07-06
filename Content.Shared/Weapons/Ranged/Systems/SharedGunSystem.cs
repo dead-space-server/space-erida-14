@@ -545,6 +545,18 @@ public abstract partial class SharedGunSystem : EntitySystem
         TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
     }
 
+    // Goobstation
+    public void SetTarget(EntityUid projectile,
+        EntityUid? target,
+        out TargetedProjectileComponent targeted,
+        bool dirty = true)
+    {
+        targeted = EnsureComp<TargetedProjectileComponent>(projectile);
+        targeted.Target = TerminatingOrDeleted(target) ? null : target; // Goobstation - set to null if deleted
+        if (dirty)
+            Dirty(projectile, targeted);
+    }
+
     protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);
 
     /// <summary>

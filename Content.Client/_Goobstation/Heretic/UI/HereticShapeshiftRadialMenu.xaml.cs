@@ -54,10 +54,7 @@ public sealed class HereticShapeshiftRadialMenu : RadialMenu
 
             var config = polymorphPrototype.Configuration;
 
-            if (config.Entity == null)
-                continue;
-
-            var ent = _prototypeManager.Index(config.Entity.Value);
+            var ent = _prototypeManager.Index(config.Entity);
 
             var button = new HereticPolymorphMenuButton
             {

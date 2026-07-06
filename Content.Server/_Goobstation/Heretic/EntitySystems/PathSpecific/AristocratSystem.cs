@@ -23,6 +23,7 @@ using Content.Shared.Atmos;
 using Content.Shared.Audio;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Maps;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -39,7 +40,6 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared._Goobstation.Wizard.Projectiles;
 using Content.Shared._Goobstation.Heretic.Components;
-using Content.Shared.Atmos.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Effects;
 using Content.Shared._Goobstation.Heretic;
@@ -228,7 +228,7 @@ public sealed class AristocratSystem : EntitySystem
 
         // the fog (snow) is coming
         var xform = Transform(ent);
-        _weather.SetWeather(xform.MapID, _prot.Index<WeatherPrototype>("SnowfallMagic"), null);
+        _weather.TrySetWeather(xform.MapID, "WeatherSnowfallMagic", out _);
     }
 
     private void EndWaltz(Entity<AristocratComponent> ent)
@@ -239,7 +239,7 @@ public sealed class AristocratSystem : EntitySystem
         _globalSound.StopStationEventMusic(ent, StationEventMusicType.VoidAscended);
 
         var xform = Transform(ent);
-        _weather.SetWeather(xform.MapID, null, null);
+        _weather.TrySetWeather(xform.MapID, null, out _);
     }
 
     private void OnMobStateChange(Entity<AristocratComponent> ent, ref MobStateChangedEvent args)
