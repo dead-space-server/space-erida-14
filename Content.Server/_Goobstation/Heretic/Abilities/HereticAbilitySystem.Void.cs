@@ -17,6 +17,7 @@ using Content.Server.Atmos.Components;
 using Content.Server._Goobstation.Heretic.Components.PathSpecific;
 using Content.Server.Magic;
 using Content.Shared._Goobstation.Heretic;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Movement.Components;
 using Content.Shared.Slippery;
 using Robust.Shared.Physics.Components;

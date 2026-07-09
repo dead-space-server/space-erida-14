@@ -18,10 +18,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Goobstation.Heretic;
 
-public sealed class RustRuneSystem : EntitySystem
+public sealed partial class RustRuneSystem : EntitySystem
 {
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private SpriteSystem _spriteSystem = default!;
 
     public override void Initialize()
     {

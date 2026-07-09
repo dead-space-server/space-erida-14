@@ -64,7 +64,7 @@ public sealed partial class HereticAbilitySystem
         // change this behavior if this ability is ever given to heretic
         if (TryComp(user, out DamageableComponent? userDamage) &&
             TryComp(polymorphed.Value, out DamageableComponent? polymorphedDamage))
-            _dmg.SetDamage((polymorphed.Value, polymorphedDamage), userDamage.Damage);
+            _dmg.SetDamage((polymorphed.Value, polymorphedDamage), _dmg.GetAllDamage((user, userDamage)));
 
         _npcFaction.AddFaction(polymorphed.Value, HereticSystem.HereticFactionId);
 

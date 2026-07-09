@@ -1,0 +1,77 @@
+- type: Tag
+  id: SheetGlass
+
+- type: Tag
+  id: Eyes
+
+- type: Tag
+  id: Heart
+
+- type: Tag
+  id: Chair
+
+- type: Tag
+  id: Mask
+
+- type: Tag
+  id: Ash
+
+- type: Tag
+  id: Stunbaton
+
+- type: Tag
+  id: Muzzle
+
+- type: Tag
+  id: Stomach
+
+- type: Tag
+  id: Lungs
+
+- type: Tag
+  id: GasMask
+
+- type: Tag
+  id: Table
+
+- type: Tag
+  id: WaterTank
+
+- type: Tag
+  id: WinterCoat
+
+- type: Tag
+  id: Liver
+
+- type: Tag
+  id: SheetPlasma
+
+- type: Tag
+  id: Steel
+
+- type: Tag
+  id: ShadowCloakAction
+
+- type: Tag
+  id: HereticBlade
+
+- type: Tag
+  id: HereticBladeBlade
+
+- type: Tag
+  id: HereticItem
+
+- type: Tag
+  id: HereticCarving
+
+- type: Tag
+  id: WideSwingIgnore
+
+- type: Tag
+  id: FollowerStayOnPolymorph
+
+- type: Tag
+  id: RoundstartAntag
+
+- type: Tag
+  id: CalmAntag

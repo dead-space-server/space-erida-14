@@ -40,6 +40,7 @@
     - HideContextMenu
     - HereticCarving
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -110,7 +111,7 @@
       components: []
     targetedEntityWhitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
       - BorgChassis
   - type: AlertCarving
 

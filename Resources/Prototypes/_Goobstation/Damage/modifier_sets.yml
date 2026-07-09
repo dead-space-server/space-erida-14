@@ -8,6 +8,17 @@
     Piercing: 1.3
     Shock: 1.3
 
+- type: damageModifierSet
+  id: FireShark
+  coefficients:
+    Heat: 0.25
+    Cold: 0.25
+    Poison: 0.0
+    Radiation: 0.0
+    Asphyxiation: 0.0
+    Cellular: 0.0
+  ignoreArmorPierceFlags: All
+
 #Erida
 - type: damageModifierSet
   id: HeavyArmor

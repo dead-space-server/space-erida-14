@@ -140,6 +140,7 @@
   - type: Clickable
   - type: InteractionOutline
   - type: Damageable
+  - type: Injurable
   - type: Trail
     lifetime: 3.2
     frequency: 0.1
@@ -317,6 +318,7 @@
   - type: InteractionOutline
   - type: Clickable
   - type: Damageable
+  - type: Injurable
     damageContainer: InorganicMetaphysical
   - type: Destructible
     thresholds:

@@ -23,11 +23,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Goobstation.Heretic.UI;
 
-public sealed class LivingHeartMenu : RadialMenu
+public sealed partial class LivingHeartMenu : RadialMenu
 {
-    [Dependency] private readonly EntityManager _ent = default!;
-    [Dependency] private readonly IPrototypeManager _prot = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private EntityManager _ent = default!;
+    [Dependency] private IPrototypeManager _prot = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     private readonly HereticSystem _heretic;
 

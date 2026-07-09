@@ -78,7 +78,8 @@ public abstract partial class SharedCloningSystem : EntitySystem
         EntityUid original,
         EntityCoordinates coords,
         EntityWhitelist? whitelist = null,
-        EntityWhitelist? blacklist = null)
+        EntityWhitelist? blacklist = null,
+        bool copyStorage = true)
     {
         return null;
     }

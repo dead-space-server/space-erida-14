@@ -33,3 +33,5 @@ role-subtype-wizard = Волшебник
 role-subtype-changeling = Генокрад
 role-subtype-xenoborg = Ксеноборг
 role-subtype-xenoborg-core = Ядро Ксеноборгов
+role-subtype-heretic = Еретик
+role-subtype-ghoul = Упырь

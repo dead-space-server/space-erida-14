@@ -15,10 +15,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Goobstation.Heretic;
 
-public sealed class HereticRitualRuneBoundUserInterface : BoundUserInterface
+public sealed partial class HereticRitualRuneBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IClyde _displayManager = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
+    [Dependency] private IClyde _displayManager = default!;
+    [Dependency] private IInputManager _inputManager = default!;
 
     private HereticRitualRuneRadialMenu? _hereticRitualMenu;
 

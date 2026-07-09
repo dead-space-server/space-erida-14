@@ -1,0 +1,17 @@
+- type: soundCollection
+  id: bloodCrawl
+  files:
+  - /Audio/_Goobstation/Hallucinations/behind_you1.ogg
+  - /Audio/_Goobstation/Hallucinations/i_see_you1.ogg
+  - /Audio/_Goobstation/Hallucinations/im_here1.ogg
+  - /Audio/_Goobstation/Hallucinations/turn_around1.ogg
+
+- type: soundCollection
+  id: Curse
+  files:
+  - /Audio/_Goobstation/Heretic/curse/curse1.ogg
+  - /Audio/_Goobstation/Heretic/curse/curse2.ogg
+  - /Audio/_Goobstation/Heretic/curse/curse3.ogg
+  - /Audio/_Goobstation/Heretic/curse/curse4.ogg
+  - /Audio/_Goobstation/Heretic/curse/curse5.ogg
+  - /Audio/_Goobstation/Heretic/curse/curse6.ogg

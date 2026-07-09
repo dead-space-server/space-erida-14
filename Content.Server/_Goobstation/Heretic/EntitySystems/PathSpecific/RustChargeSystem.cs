@@ -3,9 +3,9 @@ using Content.Shared._Goobstation.Heretic.Systems;
 
 namespace Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
 
-public sealed class RustChargeSystem : SharedRustChargeSystem
+public sealed partial class RustChargeSystem : SharedRustChargeSystem
 {
-    [Dependency] private readonly DestructibleSystem _destructible = default!;
+    [Dependency] private DestructibleSystem _destructible = default!;
 
     protected override void DestroyStructure(EntityUid uid, EntityUid user)
     {

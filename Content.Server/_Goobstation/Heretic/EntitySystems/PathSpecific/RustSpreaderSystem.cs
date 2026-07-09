@@ -10,15 +10,15 @@ using Robust.Shared.Map.Components;
 
 namespace Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
 
-public sealed class RustSpreaderSystem : EntitySystem
+public sealed partial class RustSpreaderSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDefinitionManager = default!;
+    [Dependency] private IMapManager _mapManager = default!;
+    [Dependency] private ITileDefinitionManager _tileDefinitionManager = default!;
 
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly HereticAbilitySystem _ability = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private HereticAbilitySystem _ability = default!;
+    [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
 
     private const float RustSpreadInterval = 2f;
     private float _accumulator;

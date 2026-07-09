@@ -13,9 +13,9 @@ using Content.Shared._Goobstation.Heretic.Components;
 
 namespace Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
 
-public sealed class SilverMaelstromSystem : EntitySystem
+public sealed partial class SilverMaelstromSystem : EntitySystem
 {
-    [Dependency] private readonly ProtectiveBladeSystem _pblade = default!;
+    [Dependency] private ProtectiveBladeSystem _pblade = default!;
 
     public override void Initialize()
     {

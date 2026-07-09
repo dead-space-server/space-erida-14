@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Goobstation.Heretic.EntitySystems;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Stack;
@@ -7,6 +8,7 @@ using Content.Shared.Actions;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Store;
@@ -27,6 +29,7 @@ public sealed partial class StoreSystem
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private StackSystem _stack = default!;
     [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private HereticSystem _heretic = default!;
 
     private void InitializeUi()
     {
@@ -127,6 +130,16 @@ public sealed partial class StoreSystem
         {
             if (Proto.Resolve(listing.ProductComponents, out var productComponentsEntity))
                 EntityManager.AddComponents(buyer, productComponentsEntity.Components);
+        }
+
+        //grant heretic knowledge
+        if (listing.ProductHereticKnowledge != null)
+        {
+            var mindId = buyer;
+            var mind = CompOrNull<MindComponent>(mindId);
+
+            if (mind != null || Mind.TryGetMind(buyer, out mindId, out mind))
+                _heretic.TryAddKnowledge(mindId, listing.ProductHereticKnowledge.Value, mind.CurrentEntity);
         }
 
         //spawn entity

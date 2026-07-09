@@ -15,7 +15,7 @@ namespace Content.Server._Goobstation.Objectives.Systems;
 
 public sealed partial class HereticObjectiveSystem : EntitySystem
 {
-    [Dependency] private readonly NumberObjectiveSystem _number = default!;
+    [Dependency] private NumberObjectiveSystem _number = default!;
 
     public override void Initialize()
     {

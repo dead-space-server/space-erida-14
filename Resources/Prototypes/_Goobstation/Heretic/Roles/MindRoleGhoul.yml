@@ -1,0 +1,27 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleGhoul
+  name: Ghoul Role
+  components:
+  - type: MindRole
+    antagPrototype: Ghoul
+    exclusiveAntag: false
+    roleType: Familiar
+    subtype: role-subtype-ghoul
+  - type: GhoulRole
+
+- type: entity
+  parent: BaseMindRole
+  id: BaseMindRoleAntagGhostGoob
+  abstract: true
+  components:
+  - type: MindRole
+    antag: true
+    antagPrototype: GenericGhostAntagonistGoob
+    roleType: SoloAntagonist
+    sortWeight: 50
+
+- type: entity
+  parent: [ BaseMindRoleAntagGhostGoob, MindRoleGhostRoleNeutral ]
+  id: MindRoleGhostRoleSoloAntagonistGoob
+  name: Ghost Role (Solo Antagonist)

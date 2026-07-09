@@ -14,11 +14,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Goobstation.Heretic.UI;
 
-public sealed class HereticShapeshiftRadialMenu : RadialMenu
+public sealed partial class HereticShapeshiftRadialMenu : RadialMenu
 {
-    [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private EntityManager _entityManager = default!;
+    [Dependency] private IEntitySystemManager _entitySystem = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
     private readonly SpriteSystem _spriteSystem;
 
     public event Action<ProtoId<PolymorphPrototype>>? SendHereticShapeshiftMessageAction;

@@ -260,18 +260,6 @@
     - component: LanguageSpeaker
     - component: Grammar
     - component: Ghoul
-
-- type: polymorph
-  id: ShapeshiftBingle
-  configuration:
-    entity: MobBingle
-    transferDamage: true
-    revertOnCrit: true
-    revertOnDeath: true
-    skipRevertConfirmation: true
-    componentsToTransfer:
-    - component: LanguageKnowledge
-    - component: LanguageSpeaker
     - component: Grammar
     - component: Ghoul
 

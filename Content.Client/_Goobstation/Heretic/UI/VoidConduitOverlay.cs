@@ -8,18 +8,20 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Goobstation.Heretic.UI;
 
-public sealed class VoidConduitOverlay : Overlay
+public sealed partial class VoidConduitOverlay : Overlay
 {
     public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
 
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private readonly TransformSystem _xform;
     private readonly SpriteSystem _sprite;
 
     private readonly ShaderInstance _unshadedShader;
+
+    private readonly string _unshadedShaderId = "unshaded";
 
     public VoidConduitOverlay()
     {
@@ -29,7 +31,7 @@ public sealed class VoidConduitOverlay : Overlay
         _xform = _entMan.System<TransformSystem>();
         _sprite = _entMan.System<SpriteSystem>();
 
-        _unshadedShader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
+        _unshadedShader = _prototype.Index<ShaderPrototype>(_unshadedShaderId).Instance();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

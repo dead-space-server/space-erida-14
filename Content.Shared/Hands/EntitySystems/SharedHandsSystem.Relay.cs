@@ -1,3 +1,4 @@
+using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Atmos;
 using Content.Shared.Camera;
 using Content.Shared.Cuffs;
@@ -13,6 +14,7 @@ public abstract partial class SharedHandsSystem
 {
     private void InitializeRelay()
     {
+        SubscribeLocalEvent<HandsComponent, CheckMagicItemEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, GetEyeOffsetRelayedEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, GetEyePvsScaleRelayedEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, RefreshMovementSpeedModifiersEvent>(RelayEvent);

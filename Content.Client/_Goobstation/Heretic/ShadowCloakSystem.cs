@@ -13,10 +13,10 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Goobstation.Heretic;
 
-public sealed class ShadowCloakSystem : SharedShadowCloakSystem
+public sealed partial class ShadowCloakSystem : SharedShadowCloakSystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private AppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {

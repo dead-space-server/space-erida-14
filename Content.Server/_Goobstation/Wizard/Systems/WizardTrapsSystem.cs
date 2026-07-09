@@ -11,9 +11,9 @@ using Content.Shared.Atmos.Components;
 
 namespace Content.Server._Goobstation.Wizard.Systems;
 
-public sealed class WizardTrapsSystem : SharedWizardTrapsSystem
+public sealed partial class WizardTrapsSystem : SharedWizardTrapsSystem
 {
-    [Dependency] private readonly FlammableSystem _flammable = default!;
+    [Dependency] private FlammableSystem _flammable = default!;
 
     public override void Initialize()
     {

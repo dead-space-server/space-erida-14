@@ -4,9 +4,9 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client._Goobstation.Heretic.SpriteOverlay;
 
-public abstract class SpriteOverlaySystem<T> : EntitySystem where T : BaseSpriteOverlayComponent
+public abstract partial class SpriteOverlaySystem<T> : EntitySystem where T : BaseSpriteOverlayComponent
 {
-    [Dependency] protected readonly SpriteSystem Sprite = default!;
+    [Dependency] protected SpriteSystem Sprite = default!;
 
     public override void Initialize()
     {

@@ -64,8 +64,8 @@ namespace Content.Server._Goobstation.Heretic.Ritual;
     protected HereticSystem _heretic = default!;
     protected GibbingSystem _gibbing = default!;
     protected EntityLookupSystem _lookup = default!;
-    [Dependency] protected IPrototypeManager _proto = default!;
-    [Dependency] protected ILogManager _log = default!;
+    protected IPrototypeManager _proto = default!;
+    protected ILogManager _log = default!;
 
     private ISawmill? _sawmill;
 

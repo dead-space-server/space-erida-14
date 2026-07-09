@@ -290,7 +290,7 @@
     damage:
       types:
         Blunt: 20
-        Ion: 20
+        Shock: 20
         Structural: 80
   - type: Physics
     bodyType: KinematicController
@@ -349,6 +349,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: HealthExaminable
     examinableTypes:

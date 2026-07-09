@@ -13,7 +13,7 @@ using Content.Shared._Goobstation.Heretic.Prototypes;
 
 namespace Content.Server._Goobstation.Heretic.Ritual;
 
-[Virtual] public sealed partial class RitualTemperatureBehavior : RitualCustomBehavior
+public sealed partial class RitualTemperatureBehavior : RitualCustomBehavior
 {
     /// <summary>
     ///     Min temp in celsius

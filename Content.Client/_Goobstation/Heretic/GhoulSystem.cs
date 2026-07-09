@@ -18,10 +18,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Goobstation.Heretic;
 
-public sealed class GhoulSystem : EntitySystem
+public sealed partial class GhoulSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IPlayerManager _player = default!;
 
     public override void Initialize()
     {

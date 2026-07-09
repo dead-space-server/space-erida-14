@@ -1,0 +1,12 @@
+ent-PolymorphAshJauntAnimation = неизвестно
+    .desc = Вы не можете понять, что это такое.
+    .suffix = Эффект, Полиморф, Пепел, Начало
+ent-PolymorphAshJauntEndAnimation = неизвестно
+    .desc = Вы не можете понять, что это такое.
+    .suffix = Эффект, Полиморф, Пепел, Конец
+ent-PolymorphAshJaunt = неизвестно
+    .desc = Вы не можете понять, что это такое.
+    .suffix = Эффект, Полиморф, Пепел
+ent-MobHereticFleshAscend = мясная куча
+    .desc = Непонятная путаница конечностей и глаз. Вы чувствуете, как оно смотрит вам в душу.
+    .suffix = НЕ МАППИТЬ

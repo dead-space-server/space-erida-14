@@ -11,10 +11,10 @@ using Content.Shared.Whitelist;
 
 namespace Content.Shared._Goobstation.Wizard.UserInterface;
 
-public sealed class ActivatableUiUserWhitelistSystem : EntitySystem
+public sealed partial class ActivatableUiUserWhitelistSystem : EntitySystem
 {
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
 
     public override void Initialize()

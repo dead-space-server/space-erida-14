@@ -55,9 +55,8 @@
       NerveDamage: 0.0
   - type: ExplosionResistance
     damageCoefficient: 0.25
-  - type: ToggleableClothing # Goobstation - Modsuits change
-    clothingPrototypes:
-      head: ClothingHeadHatHoodHeretic
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodHeretic
   - type: ModifyDelayedKnockdown
     delayDelta: 3
     knockdownTimeDelta: -3
@@ -83,8 +82,7 @@
   - type: Clothing
     sprite: _Goobstation/Heretic/Clothing/OuterClothing/void_armor.rsi
   - type: ToggleableClothing
-    clothingPrototypes:
-      head: ClothingHeadHatHoodHereticVoid
+    clothingPrototype: ClothingHeadHatHoodHereticVoid
 
 - type: entity
   parent: ClothingOuterArmorHeretic
@@ -97,8 +95,7 @@
   - type: Clothing
     sprite: _Goobstation/Heretic/Clothing/OuterClothing/ashen_armor.rsi
   - type: ToggleableClothing
-    clothingPrototypes:
-      head: ClothingHeadHatHoodHereticAsh
+    clothingPrototype: ClothingHeadHatHoodHereticAsh
 
 - type: entity
   parent: ClothingOuterArmorHeretic
@@ -111,8 +108,7 @@
   - type: Clothing
     sprite: _Goobstation/Heretic/Clothing/OuterClothing/flesh_armor.rsi
   - type: ToggleableClothing
-    clothingPrototypes:
-      head: ClothingHeadHatHoodHereticFlesh
+    clothingPrototype: ClothingHeadHatHoodHereticFlesh
 
 - type: entity
   parent: ClothingOuterArmorHeretic
@@ -125,8 +121,7 @@
   - type: Clothing
     sprite: _Goobstation/Heretic/Clothing/OuterClothing/blade_armor.rsi
   - type: ToggleableClothing
-    clothingPrototypes:
-      head: ClothingHeadHatHoodHereticBlade
+    clothingPrototype: ClothingHeadHatHoodHereticBlade
 
 - type: entity
   parent: ClothingOuterArmorHeretic
@@ -139,8 +134,7 @@
   - type: Clothing
     sprite: _Goobstation/Heretic/Clothing/OuterClothing/cosmos_armor.rsi
   - type: ToggleableClothing
-    clothingPrototypes:
-      head: ClothingHeadHatHoodHereticCosmos
+    clothingPrototype: ClothingHeadHatHoodHereticCosmos
 
 - type: entity
   parent: [ ClothingOuterBaseMedium, ClothingOuterStorageToggleableBase, AllowSuitStorageClothing, BaseMagicalContraband ]
@@ -182,10 +176,9 @@
       NerveDamage: 0.0
   - type: ExplosionResistance
     damageCoefficient: 0.7
-  - type: ToggleableClothing # Goobstation - Modsuits change
+  - type: ToggleableClothing
     stripDelay: null
-    clothingPrototypes:
-      head: ClothingHeadHatHoodVoidCloakHeretic
+    clothingPrototype: ClothingHeadHatHoodVoidCloakHeretic
   - type: ModifyDelayedKnockdown
     delayDelta: 2
     knockdownTimeDelta: -2
@@ -209,7 +202,6 @@
       - Meat
       components:
       - Organ
-      - BodyPart
       - HereticBlade
       - CarvingKnife
       - HereticMagicItem

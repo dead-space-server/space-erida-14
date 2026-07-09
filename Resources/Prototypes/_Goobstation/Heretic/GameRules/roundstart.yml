@@ -30,20 +30,16 @@
     - HereticSacrificeObjective
     - HereticSacrificeHeadObjective
   - type: AntagSelection
-    selectionTime: IntraPlayerSpawn
+    selectionTime: JobsAssigned
     agentName: heretic-roundend-name
-    definitions:
-    - prefRoles: [ Heretic ]
-      max: 3
+    lateJoinAdditional: true
+    antags:
+    - !type:LinearAntagCount
+      proto: Heretic
       playerRatio: 15
-      chaosScore: 250
-      lateJoinAdditional: true
-      jobBlacklist: [ Chaplain, ] # GOOBSTATION
-      blacklist:
-        components:
-        - CommandStaff
-      mindRoles:
-      - MindRoleHeretic
+      range:
+        min: 1
+        max: 3
   - type: Tag
     tags:
       - RoundstartAntag
@@ -61,19 +57,16 @@
     - HereticSacrificeObjective
     - HereticSacrificeHeadObjective
   - type: AntagSelection
-    selectionTime: IntraPlayerSpawn
+    selectionTime: JobsAssigned
     agentName: heretic-roundend-name
-    definitions:
-    - prefRoles: [ Heretic ]
-      max: 2
+    lateJoinAdditional: true
+    antags:
+    - !type:LinearAntagCount
+      proto: Heretic
       playerRatio: 20
-      lateJoinAdditional: true
-      jobBlacklist: [ Chaplain ] # GOOBSTATION
-      blacklist:
-        components:
-        - CommandStaff
-      mindRoles:
-      - MindRoleHeretic
+      range:
+        min: 1
+        max: 2
   - type: Tag
     tags:
       - CalmAntag

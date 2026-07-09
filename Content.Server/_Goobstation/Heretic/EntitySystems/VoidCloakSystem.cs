@@ -13,9 +13,9 @@ using Content.Shared.Inventory;
 
 namespace Content.Server._Goobstation.Heretic.EntitySystems;
 
-public sealed class VoidCloakSystem : SharedVoidCloakSystem
+public sealed partial class VoidCloakSystem : SharedVoidCloakSystem
 {
-    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private InventorySystem _inventory = default!;
 
     public override void Initialize()
     {

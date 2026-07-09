@@ -18,8 +18,8 @@ namespace Content.Server._Goobstation.Heretic.Effects;
 
 public sealed partial class SpillBloodSystem : EntityEffectSystem<BloodstreamComponent, SpillBlood>
 {
-    [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly PuddleSystem _puddle = default!;
+    [Dependency] private SharedSolutionContainerSystem _solution = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
 
     protected override void Effect(Entity<BloodstreamComponent> entity, ref EntityEffectEvent<SpillBlood> args)
     {

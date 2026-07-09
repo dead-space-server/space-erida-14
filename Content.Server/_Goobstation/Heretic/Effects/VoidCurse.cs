@@ -16,7 +16,7 @@ namespace Content.Server._Goobstation.Heretic.Effects;
 
 public sealed partial class VoidCurseSystemEffect : EntityEffectSystem<HumanoidProfileComponent, VoidCurse>
 {
-    [Dependency] private readonly VoidCurseSystem _voidCurse = default!;
+    [Dependency] private VoidCurseSystem _voidCurse = default!;
 
     protected override void Effect(Entity<HumanoidProfileComponent> entity, ref EntityEffectEvent<VoidCurse> args)
     {

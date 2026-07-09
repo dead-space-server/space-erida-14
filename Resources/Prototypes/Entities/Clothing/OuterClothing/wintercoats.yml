@@ -26,6 +26,7 @@
     - ClothMade
     - Recyclable
     - WhitelistChameleon
+    - WinterCoat
   - type: StaticPrice
     price: 50
 

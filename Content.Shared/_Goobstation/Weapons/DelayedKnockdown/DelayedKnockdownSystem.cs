@@ -19,10 +19,10 @@ using Content.Shared.Stunnable;
 
 namespace Content.Shared._Goobstation.Weapons.DelayedKnockdown;
 
-public sealed class DelayedKnockdownSystem : EntitySystem
+public sealed partial class DelayedKnockdownSystem : EntitySystem
 {
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly ChampionStanceSystem _champion = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private ChampionStanceSystem _champion = default!;
 
     public override void Initialize()
     {

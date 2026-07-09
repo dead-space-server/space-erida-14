@@ -28,8 +28,8 @@ namespace Content.Server._Goobstation.Heretic.Abilities;
 
 public sealed partial class HereticAbilitySystem
 {
-    [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly TransformSystem _xform = default!;
+    [Dependency] private MapSystem _map = default!;
+    [Dependency] private TransformSystem _xform = default!;
 
     protected override void SubscribeAsh()
     {
@@ -75,8 +75,8 @@ public sealed partial class HereticAbilitySystem
 
             toHeal += args.HealAmount;
 
-            _flammable.AdjustFireStacks(look, args.FireStacks, flam, true, args.FireProtectionPenetration);
-            _dmg.TryChangeDamage(look,
+            _flammable.AdjustFireStacks(look.Owner, args.FireStacks, flam, true, args.FireProtectionPenetration);
+            _dmg.TryChangeDamage(look.Owner,
                 args.Damage,
                 true);
         }
@@ -102,7 +102,7 @@ public sealed partial class HereticAbilitySystem
         if (!Transform(args.Performer).GridUid.HasValue || !TryUseAbility(args))
             return;
 
-        CombustArea(args.Performer, 9, false);
+        _ = CombustArea(args.Performer, 9, false);
     }
 
     #region Helper methods
@@ -120,7 +120,7 @@ public sealed partial class HereticAbilitySystem
             await Task.Delay((int) 500f);
         }
 
-        EntityManager.DeleteEntity(beacon); // cleanup
+        Del(beacon); // cleanup
     }
 
     public void SpawnFireBox(EntityUid relative, int range = 0, bool hollow = true)

@@ -17,8 +17,8 @@ namespace Content.Server._Goobstation.Heretic.Effects;
 
 public sealed partial class RemoveAccessSystem : EntityEffectSystem<AccessReaderComponent, RemoveAccess>
 {
-    [Dependency] private readonly SharedIdCardSystem _id = default!;
-    [Dependency] private readonly SharedAccessSystem _access = default!;
+    [Dependency] private SharedIdCardSystem _id = default!;
+    [Dependency] private SharedAccessSystem _access = default!;
 
     protected override void Effect(Entity<AccessReaderComponent> entity, ref EntityEffectEvent<RemoveAccess> args)
     {

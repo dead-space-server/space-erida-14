@@ -8,6 +8,12 @@ reagent-desc-eldritch = A strange liquid that defies the laws of physics. It re-
 
 reagent-comp-condition-heretic-or-ghoul = heretic or ghoul
 
+reagent-effect-condition-guidebook-has-component =
+    the target { $invert ->
+                 [true] is not
+                 *[false] is
+                } {$comp}
+
 reagent-physical-desc-eldritch = eldritch
 
 flavor-complex-eldritch = Ag'hsj'saje'sh

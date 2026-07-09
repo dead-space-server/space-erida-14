@@ -19,10 +19,10 @@ using Content.Shared.Temperature.Components;
 
 namespace Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
 
-public sealed class VoidCurseSystem : SharedVoidCurseSystem
+public sealed partial class VoidCurseSystem : SharedVoidCurseSystem
 {
-    [Dependency] private readonly TemperatureSystem _temp = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private TemperatureSystem _temp = default!;
+    [Dependency] private StatusEffectsSystem _statusEffect = default!;
 
     public override void Update(float frameTime)
     {

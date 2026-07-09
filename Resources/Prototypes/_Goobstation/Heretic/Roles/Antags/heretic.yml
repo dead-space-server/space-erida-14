@@ -27,3 +27,13 @@
   setPreference: false
   objective: roles-antag-ghoul-description
   guides: [ Heretics ]
+
+- type: antagSpecifier
+  id: Heretic
+  prefRoles: [ Heretic ]
+  jobBlacklist: [ Chaplain ] # GOOBSTATION
+  blacklist:
+    components:
+    - CommandStaff
+  mindRoles:
+  - MindRoleHeretic
