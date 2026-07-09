@@ -968,3 +968,34 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/396
   avatar_url: https://avatars.githubusercontent.com/u/275415539?v=4
   title: Fix gan bs
+- author: DefinitelyNotMori
+  changes:
+    - type: Tweak
+      message: Возвращены старые статы стимуляторов
+  id: 81
+  time: '2026-07-08T07:12:50.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/403
+  avatar_url: https://avatars.githubusercontent.com/u/92030026?v=4
+  title: MakeStimulantsGreatAgain
+- author: DefinitelyNotMori
+  changes:
+    - type: Tweak
+      message: Рефлекты у рапиры теперь 40%
+    - type: Tweak
+      message: Скафы синдиката больше не имеют огромный резист на стамину
+    - type: Tweak
+      message: Теперь можно купить только 1 меч
+  id: 82
+  time: '2026-07-08T07:13:47.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/402
+  avatar_url: https://avatars.githubusercontent.com/u/92030026?v=4
+  title: Rebalance
+- author: DefinitelyNotMori
+  changes:
+    - type: Add
+      message: Дробовики можно теперь заряжать на ходу
+  id: 83
+  time: '2026-07-08T15:22:36.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/405
+  avatar_url: https://avatars.githubusercontent.com/u/92030026?v=4
+  title: Shotgun reload doesn't break anymore

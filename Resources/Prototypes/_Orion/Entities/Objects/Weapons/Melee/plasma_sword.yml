@@ -43,7 +43,7 @@
     generated:
       reagents:
       - ReagentId: Plasma
-        Quantity: 0.005
+        Quantity: 0.05
 #  - type: ComponentToggler
 #    components:
 #    - type: Cautery # Shitmed
@@ -84,11 +84,31 @@
     sprite: _Orion/Objects/Weapons/Melee/plasma_sword_alt-inhands.rsi
 
 - type: entity
-  parent: [ BaseMeleeWeaponPlasma, EnergySwordDouble ]
+  parent: EnergySwordDouble
   id: PlasmaScythe
   name: plasma scythe
   description: This can be stored in pockets.
   components:
+  - type: ItemToggle
+    soundActivate:
+      path: /Audio/_Orion/Weapons/Melee/plasma/plasma_on.ogg
+      params:
+        volume: 3
+    soundDeactivate:
+      path: /Audio/_Orion/Weapons/Melee/plasma/plasma_off.ogg
+      params:
+        volume: 3
+  - type: Welder
+    fuelSolutionName: plasma
+    fuelReagent: Plasma
+    fuelLitCost: 1.5
+  - type: RefillableSolution
+    solution: plasma
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: Plasma
+        Quantity: 0.05
   - type: Sprite
     sprite: _Orion/Objects/Weapons/Melee/plasma_sword_double.rsi
   - type: Item
@@ -114,9 +134,4 @@
       path: /Audio/_Orion/Weapons/Melee/plasma/plasma_swing.ogg
       params:
         variation: 0.125
-        volume: -10
-    activatedDamage:
-        types:
-            Slash: 17.5
-            Heat: 17.5
-            Structural: 20
+        volume: -3

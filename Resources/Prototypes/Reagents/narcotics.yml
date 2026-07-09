@@ -17,7 +17,7 @@
         damage:
           types:
             Poison: 0.55
-            Blunt: 1.1 # meant to be slightly more than tricordrazine heals
+            Blunt: 1 # erida edit, tricometh might be a good variant here
       # OD
       - !type:HealthChange
         conditions:
@@ -31,8 +31,8 @@
 
       # Main effects
       - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.15 # Erida-edit 1.20 - > 1.15
-        sprintSpeedModifier: 1.15 # Erida-edit 1.20 - > 1.15
+        walkSpeedModifier: 1.20 # Erida-edit 1.20 - > 1.15 -> 1.20
+        sprintSpeedModifier: 1.20 # Erida-edit 1.20 - > 1.15 -> 1.20
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDesoxyStamina # You are on meth. You keep going.
         time: 3
@@ -80,8 +80,8 @@
       effects:
       # Main effects
       - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.08 # Erida-edit 1.15 -> 1.08
-        sprintSpeedModifier: 1.08 # Erida-edit 1.15 -> 1.08
+        walkSpeedModifier: 1.15 # Erida-edit 1.15 -> 1.08 -> 1.15
+        sprintSpeedModifier: 1.15 # Erida-edit 1.15 -> 1.08 -> 1.15
       - !type:ModifyStatusEffect
         effectProto: StatusEffectStunned
         time: 1
@@ -153,8 +153,8 @@
       effects:
       # Main effects
       - !type:MovementSpeedModifier
-        walkSpeedModifier: 1.20 # Erida-edit 1.25 -> 1.20
-        sprintSpeedModifier: 1.20 # Erida-edit 1.25 -> 1.20
+        walkSpeedModifier: 1.25 # Erida-edit 1.25 -> 1.20 -> 1.25 
+        sprintSpeedModifier: 1.25 # Erida-edit 1.25 -> 1.20 -> 1.25
       - !type:ModifyStatusEffect
         effectProto: StatusEffectStimulantsStamina # You are on meth. You keep going.
         time: 3

@@ -549,7 +549,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.25 # Erida-edit 0.75 -> 0.25
+    damageCoefficient: 0.6 # Erida-edit 0.75 -> 0.25 -> 0.6
   - type: Armor 
     modifiers:
       coefficients:
@@ -614,7 +614,7 @@
   - type: FireProtection
     reduction: 0.8
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.1 # Erida-edit 0.6 -> 0.1
+    damageCoefficient: 0.5 # Erida edit 0.6 -> 0.1 -> 0.5
   - type: Armor #Erida edit
     modifiers:
       coefficients:
@@ -654,7 +654,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
-    damageCoefficient: 0.2 # Erida-edit 0.6 -> 0.2
+    damageCoefficient: 0.4 # Erida-edit 0.6 -> 0.2 -> 0.4
   - type: Armor
     modifiers:
       coefficients:

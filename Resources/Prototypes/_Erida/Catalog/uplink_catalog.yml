@@ -101,3 +101,14 @@
     whitelist:
       tags:
       - NukeOpsUplink
+
+- type: listing
+  id: UplinkSyndicateJugPlasma
+  name: uplink-syndicate-jug-plasma-name
+  description: uplink-syndicate-jug-plasma-desk
+  icon: { sprite: Objects/Specific/Chemistry/jug.rsi, state: icon_empty }
+  productEntity: JugPlasma
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkChemicals

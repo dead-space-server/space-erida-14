@@ -6,8 +6,7 @@
   - type: Label
     currentLabel: reagent-name-plasma
   - type: Solution
-    id: beaker
     solution:
       reagents:
       - ReagentId: Plasma
-        Quantity: 200
+        Quantity: 240

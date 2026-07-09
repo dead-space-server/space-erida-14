@@ -65,8 +65,8 @@
         path: /Audio/Weapons/bladeslice.ogg
   - type: Reflect
     reflectsProb:
-      Energy: 0.15
-      NonEnergy: 0.15
+      Energy: 0.4
+      NonEnergy: 0.4
     spread: 90
   - type: Item
     sprite: _Erida/Objects/Weapons/Melee/syndicate_rapier.rsi
