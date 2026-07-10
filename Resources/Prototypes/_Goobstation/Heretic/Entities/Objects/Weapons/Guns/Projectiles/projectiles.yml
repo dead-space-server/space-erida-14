@@ -60,7 +60,7 @@
       types:
         Heat: 0
     soundHit:
-      path: /Audio/_Goobstation/Heretic/cosmic_energy.ogg
+      path: /Audio/_GoobStation/Heretic/cosmic_energy.ogg
     forceSound: true
   - type: TimedDespawn
     lifetime: 15

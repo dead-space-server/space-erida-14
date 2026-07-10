@@ -63,16 +63,15 @@
   - type: Icon
     sprite: _Goobstation/Heretic/items.rsi
     state: eldritch_flask
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        # it's a cryostasis flash filled with healing goodies what could possibly go wrong?
-        # i will certainly not abuse it as a heretic chemist
-        maxVol: 100
-        canReact: false
-        reagents:
-        - ReagentId: EldritchEssence
-          Quantity: 100
+  - type: Solution
+    solution:
+      # it's a cryostasis flash filled with healing goodies what could possibly go wrong?
+      # i will certainly not abuse it as a heretic chemist
+      maxVol: 100
+      canReact: false
+      reagents:
+      - ReagentId: EldritchEssence
+        Quantity: 100
   - type: Tag
     tags:
     - HereticItem
@@ -101,12 +100,11 @@
     tags:
     - FollowerStayOnPolymorph
   - type: Reflect
-    reflectProb: 1
     spread: 360
-    reflects:
-    - Energy
-    - NonEnergy
-    - Magic
+    reflectsProb:
+      Energy: 1
+      NonEnergy: 1
+      Magic: 1
 
 - type: entity
   parent: BaseBullet

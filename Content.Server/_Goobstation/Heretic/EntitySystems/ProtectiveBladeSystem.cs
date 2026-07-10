@@ -67,7 +67,7 @@ public sealed partial class ProtectiveBladeSystem : EntitySystem
     public static readonly EntProtoId BladeProjecilePrototype = "HereticProtectiveBladeProjectile";
     public static readonly SoundSpecifier BladeAppearSound = new SoundPathSpecifier("/Audio/Items/unsheath.ogg");
     public static readonly SoundSpecifier BladeBlockSound =
-        new SoundPathSpecifier("/Audio/_Goobstation/Heretic/parry.ogg");
+        new SoundPathSpecifier("/Audio/_GoobStation/Heretic/parry.ogg");
 
     public override void Initialize()
     {

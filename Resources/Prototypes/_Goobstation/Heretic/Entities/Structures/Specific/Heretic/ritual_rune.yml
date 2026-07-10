@@ -58,7 +58,7 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_Goobstation/Heretic/runebreak.ogg
+          path: /Audio/_GoobStation/Heretic/runebreak.ogg
 
 - type: entity
   id: HereticRuneRitualDrawAnimation

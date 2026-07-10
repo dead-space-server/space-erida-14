@@ -32,7 +32,7 @@ public sealed partial class CarvingKnifeComponent : Component
     public TimeSpan RuneDrawTime = TimeSpan.FromSeconds(3f);
 
     [DataField]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/sheath.ogg");
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/sheath.ogg");
 
     [DataField]
     public EntProtoId RunebreakAction = "ActionRunebreak";

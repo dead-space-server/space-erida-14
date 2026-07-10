@@ -45,10 +45,10 @@ public sealed partial class HereticRuleSystem : GameRuleSystem<HereticRuleCompon
     [Dependency] private PopupSystem _popup = default!;
 
     public static readonly SoundSpecifier BriefingSound =
-        new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
+        new SoundPathSpecifier("/Audio/_GoobStation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
 
     public static readonly SoundSpecifier BriefingSoundIntense =
-        new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain_intense.ogg");
+        new SoundPathSpecifier("/Audio/_GoobStation/Heretic/Ambience/Antag/Heretic/heretic_gain_intense.ogg");
 
     public static readonly ProtoId<CurrencyPrototype> Currency = "KnowledgePoint";
 

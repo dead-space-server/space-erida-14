@@ -24,5 +24,5 @@ public sealed partial class AristocratComponent : Component
     public float UpdateTimer = 0f;
     public bool HasDied = false;
 
-    public SoundSpecifier VoidsEmbrace = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/VoidsEmbrace.ogg");
+    public SoundSpecifier VoidsEmbrace = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/Ambience/Antag/Heretic/VoidsEmbrace.ogg");
 }

@@ -1,3 +1,14 @@
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: ActionHereticCosmicRune
   name: Cosmic Rune
@@ -49,7 +60,7 @@
     useDelay: 1
     itemIconStyle: NoItem
     sound:
-      path: /Audio/_Goobstation/Heretic/cosmic_energy.ogg
+      path: /Audio/_GoobStation/Heretic/cosmic_energy.ogg
     icon:
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: star_blast
@@ -75,7 +86,7 @@
     useDelay: 15
     itemIconStyle: NoItem
     sound:
-      path: /Audio/_Goobstation/Heretic/cosmic_expansion.ogg
+      path: /Audio/_GoobStation/Heretic/cosmic_expansion.ogg
     icon:
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: cosmic_domain

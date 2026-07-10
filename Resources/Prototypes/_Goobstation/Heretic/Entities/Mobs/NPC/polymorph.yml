@@ -121,6 +121,7 @@
     speedModifierThresholds:
       0: 1.0 # it's an unstoppable flesh abomination
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: StatusEffects
     allowed:
@@ -156,9 +157,7 @@
     solutionOnBody: false
     updateInterval: 0.25
     metabolizerTypes: [ Dragon ]
-    groups:
-    - id: Medicine
-    - id: Poison
+    stages: [ Digestion, Bloodstream ]
   - type: Butcherable
     spawned:
     - id: RandomAnomalySpawner
@@ -170,9 +169,8 @@
   - type: Examiner
   - type: Pullable
   - type: Reflect
-    reflectProb: 0.7
-    reflects:
-      - Energy
+    reflectsProb:
+      Energy: 0.7
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepThud

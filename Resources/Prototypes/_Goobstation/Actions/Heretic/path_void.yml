@@ -43,7 +43,7 @@
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: void_phase
     sound: !type:SoundPathSpecifier
-      path: /Audio/_Goobstation/Heretic/voidblink.ogg
+      path: /Audio/_GoobStation/Heretic/voidblink.ogg
   - type: TargetAction
     checkCanAccess: false
     range: 16
@@ -62,7 +62,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    predicted: false
     checkCanInteract: false
     useDelay: 30
     itemIconStyle: NoItem
@@ -97,7 +96,7 @@
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: void_pull
     sound: !type:SoundPathSpecifier
-      path: /Audio/_Goobstation/Heretic/voidblink.ogg
+      path: /Audio/_GoobStation/Heretic/voidblink.ogg
   - type: InstantAction
     event: !type:HereticVoidPullEvent
   - type: HereticAction

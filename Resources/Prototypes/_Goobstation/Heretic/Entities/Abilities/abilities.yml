@@ -44,7 +44,6 @@
   - type: Projectile
     impactEffect: null
     deleteOnCollide: false
-    penetrate: true
     damage:
       types:
         Heat: 0
@@ -330,11 +329,12 @@
         acts: [ "Destruction" ]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_Goobstation/Heretic/runebreak.ogg
+          path: /Audio/_GoobStation/Heretic/runebreak.ogg
   - type: AmbientSound
-    sound: /Audio/_Goobstation/Heretic/ambiatm1.ogg
     volume: 10
     range: 10
+    sound:
+      path: /Audio/_GoobStation/Heretic/ambiatm1.ogg
   - type: VoidConduit
   - type: TimedDespawn
     lifetime: 60

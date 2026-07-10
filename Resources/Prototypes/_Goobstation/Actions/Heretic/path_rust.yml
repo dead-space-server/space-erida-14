@@ -36,7 +36,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    predicted: false
     useDelay: 30
     itemIconStyle: NoItem
     sound:
@@ -63,11 +62,10 @@
   components:
   - type: Action
     checkCanInteract: false
-    predicted: false
     useDelay: 30
     itemIconStyle: NoItem
     sound:
-      path: /Audio/_Goobstation/Wizard/smoke.ogg
+      path: /Audio/_GoobStation/Wizard/smoke.ogg
     icon:
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: entropic_plume
@@ -124,6 +122,5 @@
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ProjectileWaveRust
-      speed: 2.8
   - type: SpeakOnAction
     sentence: heretic-speech-rust-wave

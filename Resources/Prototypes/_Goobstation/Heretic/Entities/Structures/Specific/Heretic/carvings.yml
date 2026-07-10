@@ -52,7 +52,7 @@
         acts: ["Destruction"]
       - !type:PlaySoundBehavior
         sound:
-          path: /Audio/_Goobstation/Heretic/runebreak.ogg
+          path: /Audio/_GoobStation/Heretic/runebreak.ogg
 
 - type: entity
   parent: BaseCarving
@@ -67,7 +67,7 @@
   - type: WizardTrap
     timeBetweenTriggers: 45
     triggerSound:
-      path: /Audio/_Goobstation/Heretic/demon_attack1.ogg
+      path: /Audio/_GoobStation/Heretic/demon_attack1.ogg
     stunTime: 5
   - type: DamageTrap
     damage:
@@ -88,7 +88,7 @@
     timeBetweenTriggers: 20
     charges: 2
     triggerSound:
-      path: /Audio/_Goobstation/Heretic/blind.ogg
+      path: /Audio/_GoobStation/Heretic/blind.ogg
   - type: MadCarving
 
 - type: entity

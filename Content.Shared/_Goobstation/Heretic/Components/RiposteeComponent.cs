@@ -44,7 +44,7 @@ public sealed partial class RiposteData(
         true,
         new() { Tags = new() { "HereticBlade", }, },
         true,
-        new SoundPathSpecifier("/Audio/_Goobstation/Heretic/parry.ogg"),
+        new SoundPathSpecifier("/Audio/_GoobStation/Heretic/parry.ogg"),
         TimeSpan.FromSeconds(1),
         TimeSpan.Zero,
         true,

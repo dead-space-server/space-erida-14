@@ -17,7 +17,6 @@
     Radiation: 0.0
     Asphyxiation: 0.0
     Cellular: 0.0
-  ignoreArmorPierceFlags: All
 
 #Erida
 - type: damageModifierSet

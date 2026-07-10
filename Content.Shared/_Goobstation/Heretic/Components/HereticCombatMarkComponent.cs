@@ -32,7 +32,7 @@ public sealed partial class HereticCombatMarkComponent : BaseSpriteOverlayCompon
     public TimeSpan Timer = TimeSpan.Zero;
 
     [DataField]
-    public SoundSpecifier? TriggerSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/repulse.ogg");
+    public SoundSpecifier? TriggerSound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/repulse.ogg");
 
     [DataField]
     public override SpriteSpecifier? Sprite { get; set; } =

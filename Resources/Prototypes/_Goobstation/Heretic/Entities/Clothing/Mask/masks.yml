@@ -20,8 +20,6 @@
   - type: BreathMask
   - type: IdentityBlocker
   - type: Armor
-    coverage:
-    - Head
     modifiers:
       coefficients:
         Holy: 1.25

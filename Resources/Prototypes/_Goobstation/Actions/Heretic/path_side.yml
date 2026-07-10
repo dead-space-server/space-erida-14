@@ -19,7 +19,7 @@
     useDelay: 5
     itemIconStyle: NoItem
     sound:
-      path: /Audio/_Goobstation/Heretic/ice_shovel.ogg
+      path: /Audio/_GoobStation/Heretic/ice_shovel.ogg
     icon:
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: ice_spear

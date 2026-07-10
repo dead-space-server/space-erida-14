@@ -243,7 +243,7 @@ public sealed partial class GhoulSystem : EntitySystem
         if (Exists(master))
             brief = Loc.GetString("heretic-ghoul-greeting", ("ent", Identity.Entity(master.Value, EntityManager)));
 
-        var sound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
+        var sound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/Ambience/Antag/Heretic/heretic_gain.ogg");
         _antag.SendBriefing(ent, brief, Color.MediumPurple, sound);
     }
 

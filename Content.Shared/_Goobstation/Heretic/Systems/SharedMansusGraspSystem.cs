@@ -139,7 +139,7 @@ public abstract partial class SharedMansusGraspSystem : EntitySystem
                     _door.SetBoltsDown((target, doorBolt), false);
 
                 _door.StartOpening(target, door);
-                _audio.PlayPredicted(new SoundPathSpecifier("/Audio/_Goobstation/Heretic/hereticknock.ogg"),
+                _audio.PlayPredicted(new SoundPathSpecifier("/Audio/_GoobStation/Heretic/hereticknock.ogg"),
                     target,
                     performer);
                 break;

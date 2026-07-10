@@ -44,7 +44,8 @@
     transferName: false
     transferDamage: false
     duration: 10
-    polymorphSound: /Audio/_Goobstation/Heretic/voidblink.ogg
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/_GoobStation/Heretic/voidblink.ogg
     showPopup: false
     attachToGridOrMap: true
     allowRepeatedMorphs: true

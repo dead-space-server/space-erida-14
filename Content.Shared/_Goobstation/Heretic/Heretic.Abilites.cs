@@ -267,7 +267,7 @@ public sealed partial class EventHereticRustConstruction : WorldTargetActionEven
     public EntProtoId RustedWall = "WallSolidRust";
 
     [DataField]
-    public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/constructform.ogg");
+    public SoundSpecifier? Sound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/constructform.ogg");
 
     [DataField]
     public float ObstacleCheckRange = 0.05f;
@@ -376,7 +376,7 @@ public sealed partial class StarGazeEvent : InstantActionEvent // Giga lazor
     public EntProtoId OrbEffect = "EffectGazerOrb";
 
     [DataField]
-    public SoundSpecifier BeamStartSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/stargazer/beam_open.ogg");
+    public SoundSpecifier BeamStartSound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/stargazer/beam_open.ogg");
 }
 
 public sealed partial class ResetStarGazerConsciousnessEvent : InstantActionEvent;
@@ -410,7 +410,7 @@ public sealed partial class EventHereticCleave : WorldTargetActionEvent
     public EntProtoId Effect = "EffectCleave";
 
     [DataField]
-    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/blood3.ogg");
+    public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/blood3.ogg");
 }
 
 public sealed partial class EventHereticRustCharge : WorldTargetActionEvent

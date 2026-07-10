@@ -33,13 +33,20 @@
           guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
       - !type:HealthChange
         damage:
-          groups:
-            Burn: -3
-            Toxin: -3
-            Airloss: -3
-            Brute: -3
-            Genetic: -3
-            Metaphysical: -5
+          types:
+            Heat: -0.75
+            Shock: -0.75
+            Cold: -0.75
+            Caustic: -0.75
+            Poison: -1.5
+            Radiation: -1.5
+            Asphyxiation: -1.5
+            Bloodloss: -1.5
+            Blunt: -1
+            Slash: -1
+            Piercing: -1
+            Cellular: -3
+            Holy: -5
         conditions:
         - !type:HasComponentCondition
           checkMind: true

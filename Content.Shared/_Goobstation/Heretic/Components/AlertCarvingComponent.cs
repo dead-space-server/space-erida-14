@@ -18,7 +18,7 @@ public sealed partial class AlertCarvingComponent : Component
     public EntityUid? User;
 
     [DataField]
-    public SoundSpecifier? AlertSound = new SoundPathSpecifier("/Audio/_Goobstation/Heretic/curse.ogg");
+    public SoundSpecifier? AlertSound = new SoundPathSpecifier("/Audio/_GoobStation/Heretic/curse.ogg");
 
     [DataField]
     public int TeleportDelay = 5000;
