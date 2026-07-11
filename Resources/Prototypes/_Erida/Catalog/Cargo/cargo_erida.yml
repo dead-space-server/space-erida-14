@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 vanomorodellefake <53963119+vanomorodellefake@users.noreply.github.com>
+# SPDX-License-Identifier: MIT
+
 - type: cargoProduct
   id: GlovesCombat
   icon:

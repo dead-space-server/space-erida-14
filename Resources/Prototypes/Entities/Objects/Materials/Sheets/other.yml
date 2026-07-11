@@ -80,6 +80,8 @@
   - type: Tag
     tags:
     - SheetPlasma
+    - Sheet
+    - ConstructionMaterial
 
 - type: entity
   parent: SheetPlasma
