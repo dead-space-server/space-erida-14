@@ -46,8 +46,6 @@
     size: Tiny
   - type: Appearance
   - type: PointLight
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
     enabled: false
     color: "#FF8080"
     radius: 1.0
