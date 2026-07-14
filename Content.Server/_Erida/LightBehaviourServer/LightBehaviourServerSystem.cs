@@ -1,5 +1,6 @@
-using System.Linq;
-using System.Runtime.CompilerServices;
+// SPDX-FileCopyrightText: 2026 vanomorodellefake <vanomorodellefake29@gmail.com>
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Light.Components;
 using Content.Shared.IgnitionSource;
 using Content.Shared.Light.Components;

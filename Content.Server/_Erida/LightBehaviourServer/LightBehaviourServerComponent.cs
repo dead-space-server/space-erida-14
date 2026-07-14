@@ -1,9 +1,8 @@
-using System.Numerics;
+// SPDX-FileCopyrightText: 2026 vanomorodellefake <vanomorodellefake29@gmail.com>
+// SPDX-License-Identifier: MIT
+
 using JetBrains.Annotations;
-using Robust.Server.GameObjects;
 using Robust.Shared.Animations;
-using Content.Shared.Light.Components;
-using Robust.Shared.Timing;
 
 namespace Content.Server._Erida.LightBehaviourServer;
 
