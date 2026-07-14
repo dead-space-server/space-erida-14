@@ -105,6 +105,7 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
         {
             args.Handled = true;
             _popup.PopupEntity(Loc.GetString("nightmare-failed-to-shadowwalk"), ent, ent);
+            return;
         }
 
         if (_mindSystem.TryGetMind(ent, out var mindId, out var _)
@@ -259,14 +260,14 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
             }
         }
 
-        var query2 = EntityQueryEnumerator<NightmareComponent, PolymorphedEntityComponent, TransformComponent>();
-        while (query2.MoveNext(out var uid, out var npComp, out var peComp, out var xform))
+        var query2 = EntityQueryEnumerator<NightmareComponent, NightmarePolymorhedComponent, PolymorphedEntityComponent, TransformComponent>();
+        while (query2.MoveNext(out var uid, out var nComp, out var _, out var peComp, out var xform))
         {
-            if (npComp.TimeToCheck < curTime)
+            if (nComp.TimeToCheck < curTime)
             {
-                npComp.TimeToCheck = curTime + TimeSpan.FromSeconds(npComp.TimeBetweenChecksForShadowWalk);
+                nComp.TimeToCheck = curTime + TimeSpan.FromSeconds(nComp.TimeBetweenChecksForShadowWalk);
 
-                if (!CheckCanTransformToPolymorph(uid, npComp, xform))
+                if (!CheckCanTransformToPolymorph(uid, nComp, xform))
                     _polymorphSystem.Revert((uid, peComp));
             }
         }

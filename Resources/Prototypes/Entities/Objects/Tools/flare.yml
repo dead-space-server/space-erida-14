@@ -46,6 +46,8 @@
     size: Tiny
   - type: Appearance
   - type: PointLight
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
     enabled: false
     color: "#FF8080"
     radius: 1.0
@@ -74,6 +76,18 @@
         maxDuration: 15.0
         startValue: 10.0
         endValue: 1.0
+  - type: LightBehaviourServer # Erida-edit
+    behaviours:
+      - !type:FadeBehaviourServer
+        id: turn_on
+        maxDuration: 45.0
+        startValue: 2.5
+        endValue: 10.0
+      - !type:FadeBehaviourServer
+        id: fade_out
+        maxDuration: 15.0
+        startValue: 10.0
+        endValue: 1.0
   - type: Extractable
     grindableSolutionName: composite
   - type: Solution
@@ -94,3 +108,4 @@
         Quantity: 4
       - ReagentId: Sulfur
         Quantity: 4
+  - type: DestroyableByLightDestroyer # Erida-edit
