@@ -229,12 +229,6 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
             if (HasComp<PolymorphedEntityComponent>(uid))
                 continue;
 
-            if (TryComp<DamageableComponent>(uid, out var dComp))
-            {
-                if (_damageable.TryGetDamageGreaterThan((uid, dComp), nmComp.MaxDamageFromBurn, out var _, "Burn"))
-                    continue;
-            }
-
             if (nmComp.TimeToCheck < curTime)
             {
                 nmComp.TimeToCheck = curTime + TimeSpan.FromSeconds(nmComp.TimeBetweenChecks);
@@ -245,7 +239,11 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
                     UpdateDarkState(uid, nmComp, true);
 
                     var scale = lightIntension - nmComp.RedLineOfLight;
-                    _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
+                    if (TryComp<DamageableComponent>(uid, out var dComp))
+                    {
+                        if (!_damageable.TryGetDamageGreaterThan((uid, dComp), nmComp.MaxDamageFromBurn, out var _, "Burn"))
+                            _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
+                    }
                     if (nmComp.PlayAudio)
                         _audio.PlayPvs(nmComp.BurnSound, uid);
                 }
