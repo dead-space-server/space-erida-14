@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightIntension;
 using Content.Server._Erida.Nightmare.Components;
 using Content.Server.Antag;
@@ -227,6 +228,12 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
         {
             if (HasComp<PolymorphedEntityComponent>(uid))
                 continue;
+
+            if (TryComp<DamageableComponent>(uid, out var dComp))
+            {
+                if (_damageable.TryGetDamageGreaterThan((uid, dComp), nmComp.MaxDamageFromBurn, out var _, "Burn"))
+                    continue;
+            }
 
             if (nmComp.TimeToCheck < curTime)
             {

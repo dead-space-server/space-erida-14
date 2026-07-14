@@ -44,6 +44,9 @@ public sealed partial class NightmareComponent : Component
     };
 
     [DataField]
+    public FixedPoint2 MaxDamageFromBurn = 200;
+
+    [DataField]
     public DamageSpecifier DamageFromGetFlashed = new()
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
