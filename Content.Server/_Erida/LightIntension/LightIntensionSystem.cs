@@ -46,7 +46,7 @@ public sealed partial class LightIntensionSystem : EntitySystem
 
         var entMapCoordsVector2d = _transformSystem.ToMapCoordinates(ent.Comp.Coordinates).Position;
 
-        var query = _entityLookupSystem.GetEntitiesInRange<PointLightComponent>(_transformSystem.GetMapCoordinates(ent, ent.Comp), 1f);
+        var query = _entityLookupSystem.GetEntitiesInRange<PointLightComponent>(_transformSystem.GetMapCoordinates(ent, ent.Comp), 15f);
         foreach (var uid in query)
         {
             var lightComp = uid.Comp;
