@@ -52,6 +52,10 @@ trait-condition-department-not = Вы не должны состоять в от
 ## HasComp borg conditions
 trait-condition-borg-not = Вы не должны быть [color=yellow]боргом[/color]
 
+# Antag conditions
+trait-condition-antag-is = Необходимо соответствовать требованиям для роли [color=red]{$antag}[/color].
+trait-condition-antag-not = Необходимо соответствовать требованиям для роли [color=red]{$antag}[/color].
+
 # DeltaV - Custom traits; Moved to _DV to be next to the description
 trait-category-disabilities = Инвалидность
 trait-category-speech = Речевые черты

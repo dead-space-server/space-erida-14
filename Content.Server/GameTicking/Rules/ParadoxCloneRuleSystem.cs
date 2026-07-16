@@ -34,6 +34,7 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
 
         // check if we got enough potential cloning targets, otherwise cancel the gamerule so that the ghost role does not show up
         var allHumans = _target.GetAliveHumans();
+        FilterTargets(allHumans);
 
         if (allHumans.Count == 0)
         {
@@ -82,9 +83,11 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
         var targetComp = EnsureComp<TargetOverrideComponent>(clone.Value);
         targetComp.Target = ent.Comp.OriginalMind; // set the kill target
 
+        /* DeltaV - no forced killing, players have a choice
         var gibComp = EnsureComp<GibOnRoundEndComponent>(clone.Value);
         gibComp.SpawnProto = ent.Comp.GibProto;
         gibComp.PreventGibbingObjectives = new() { "ParadoxCloneKillObjective" }; // don't gib them if they killed the original.
+        */
 
         // turn their suit sensors off so they don't immediately get noticed
         _sensor.SetAllSensors(clone.Value, SuitSensorMode.SensorOff);

@@ -6,6 +6,7 @@ using Content.Server.Revolutionary.Components;
 using Robust.Shared.Random;
 using System.Linq;
 using Content.Shared.Objectives.Systems;
+using Content.Server._DV.Objectives.Components;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -52,6 +53,14 @@ public sealed partial class PickObjectiveTargetSystem : EntitySystem
             return;
         }
 
+        // DeltaV - TargetObjectiveImmune
+        if (HasComp<TargetObjectiveImmuneComponent>(targetComp.Target))
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // END DeltaV
+
         _objective.SetTarget(ent.Owner, targetComp.Target.Value);
     }
 
@@ -74,6 +83,16 @@ public sealed partial class PickObjectiveTargetSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
+
+        // DeltaV - TargetObjectiveImmune
+        // Pretty much just a back-up check. Ideally, we should have filtered out all the minds
+        // with this comp with the mind filter TargetObjectiveMindFilter.
+        if (HasComp<TargetObjectiveImmuneComponent>(picked))
+        {
+            args.Cancelled = true;
+            return;
+        }
+        // END DeltaV
 
         _objective.SetTarget(ent, picked, target);
     }
