@@ -125,6 +125,11 @@
         NameColor = 1 << 21,
 
         /// <summary>
+        ///     Lets you change users play time.
+        /// </summary>
+        PlayTime = 1 << 23,
+
+        /// <summary>
         ///     Dangerous host permissions like scsi.
         /// </summary>
         Host = 1u << 31,

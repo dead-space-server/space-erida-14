@@ -2637,15 +2637,9 @@
     thresholds:
       0: Alive
       90: Dead
-  - type: Solution
-    id: melee
-    solution:
-      maxVol: 30
-  - type: SolutionRegeneration
-    generated:
-      reagents:
-      - ReagentId: Mechanotoxin
-        Quantity: 1
+  - type: SolutionManager
+    solutions:
+    - SolutionVenomSpider
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
@@ -2709,6 +2703,17 @@
     understands:
     - TauCetiBasic
     - Spider
+
+- type: entity
+  parent: [SolutionWeapon, SolutionTiny]
+  id: SolutionVenomSpider
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionRegeneration
+    generated:
+      reagents:
+      - ReagentId: Mechanotoxin
+        Quantity: 1
 
 - type: entity
   parent: MobSpiderBase

@@ -141,6 +141,12 @@
     understands:
     - TauCetiBasic
     - Mouse
+  - type: ChangeSprite # Erida-edit
+    sprites:
+    - ratqueen
+    - ringmaster
+    - ratqueen_fat
+    - regalrat
 
 - type: entity
   id: MobRatKingBuff

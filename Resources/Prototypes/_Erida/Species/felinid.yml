@@ -5,3 +5,9 @@
   prototype: MobFelinid
   dollPrototype: AppearanceFelinid
   skinColoration: HumanToned
+  minHeight: 0.80
+  defaultHeight: 1
+  maxHeight: 1.20
+  minWidth: 0.80
+  defaultWidth: 1
+  maxWidth: 1.10

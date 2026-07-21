@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["attackblob.ogg", "blobattack.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Imported in Goob Station Blob port by fishbait."
+  source: "https://github.com/Goob-Station/Goob-Station/commit/b745c29be570c1e106825edc7ddc49d54068e1e8"

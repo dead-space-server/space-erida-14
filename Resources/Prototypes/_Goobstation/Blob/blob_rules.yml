@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Erida edit: playable Blob game rules adapted from GoobStation antag
+# definitions to Erida antagSpecifier/event scheduler semantics.
+
+- type: entity
+  id: BlobRule
+  parent: BaseGameRule
+  components:
+  - type: BlobRule
+
+- type: entity
+  id: BlobGameMode
+  parent: [ BaseGameRule, BaseRoundstartAntagRule ]
+  components:
+  - type: GameRule
+    minPlayers: 20
+  - type: BlobRule
+  - type: AntagSelection
+    agentName: blob-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: Blob
+      count: 1
+  - type: DynamicRuleCost
+    cost: 200
+
+- type: entity
+  id: BlobSpawn
+  parent: BaseGameRule
+  components:
+  - type: StationEvent
+    weight: 1
+    earliestStart: 50
+    minimumPlayers: 20
+    duration: 1
+    maxOccurrences: 2
+    occursDuringRoundEnd: false
+  - type: BlobSpawnRule
+    carrierBlobProtos:
+    - SpawnPointGhostBlobRat
+    playersPerCarrierBlob: 30
+    maxCarrierBlob: 1
+  - type: DynamicRuleCost
+    cost: 200

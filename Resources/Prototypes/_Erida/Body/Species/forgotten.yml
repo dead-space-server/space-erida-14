@@ -43,6 +43,7 @@
   parent: BaseSpeciesAppearance
   id: AppearanceForgotten
   name: forgotten appearance
+  categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
   - type: InitialBody

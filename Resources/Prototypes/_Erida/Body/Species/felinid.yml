@@ -54,6 +54,7 @@
   parent: BaseSpeciesAppearance
   id: AppearanceFelinid
   name: Felinid appearance
+  categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
     femaleDisplacements:
@@ -86,8 +87,6 @@
       Kidneys: OrganFelinidKidneys
   - type: HumanoidProfile
     species: Felinid
-  - type: ScaleVisuals
-    scale: 0.85, 0.85
 
 - type: entity
   parent:

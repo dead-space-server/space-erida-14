@@ -999,3 +999,45 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/405
   avatar_url: https://avatars.githubusercontent.com/u/92030026?v=4
   title: Shotgun reload doesn't break anymore
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: новые спрайты для короля крыс и возможность менять спрайты при спавне
+  id: 84
+  time: '2026-07-20T12:00:11.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/400
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Base of changesprite
+- author: Lytheriia
+  changes:
+    - type: Tweak
+      message: Все роли вновь имеют ограничения по времени
+    - type: Fix
+      message: Г.О.Р.И.Л.Л.А толкает аномалии
+    - type: Fix
+      message: Пульты шлюзов снова открывают гермозатворы
+    - type: Fix
+      message: Швабракан получил воду
+  id: 85
+  time: '2026-07-20T14:25:27.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/410
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Fix] Minor fixes'
+- author: Lytheriia
+  changes:
+    - type: Fix
+      message: 'Изменение роста дворфов, феленидов, резоми '
+  id: 86
+  time: '2026-07-20T18:07:10.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/412
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Fix] Height bug fix'
+- author: CyberBobeks
+  changes:
+    - type: Add
+      message: Блоб.
+  id: 87
+  time: '2026-07-21T15:01:08.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/390
+  avatar_url: https://avatars.githubusercontent.com/u/89313903?v=4
+  title: Блёбовое
