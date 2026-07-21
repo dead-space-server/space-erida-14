@@ -31,7 +31,7 @@ namespace Content.Server.Atmos.Components
 
         [DataField]
         [Access(Other = AccessPermissions.ReadWriteExecute)]
-        public bool BlockExplosions { get; set; } = true;
+        public bool BlockExplosions { get; set; } = true; // Goobstation
 
         /// <summary>
         /// If true, entities on this tile will attempt to draw air from surrounding tiles when they become unblocked

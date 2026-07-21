@@ -5,8 +5,6 @@
 
 namespace Content.Shared._Goobstation.Religion;
 
-public sealed class TouchSpellDenialRelayEvent : CancellableEntityEventArgs;
-
 public sealed class BeforeCastTouchSpellEvent(EntityUid target, bool doEffects = true) : CancellableEntityEventArgs
 {
     /// <summary>

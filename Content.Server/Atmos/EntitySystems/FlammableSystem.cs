@@ -277,6 +277,7 @@ namespace Content.Server.Atmos.EntitySystems
             _appearance.SetData(uid, ToggleableVisuals.Enabled, flammable.OnFire, appearance);
         }
 
+        // Goobstation start
         public void AdjustFireStacks(EntityUid uid, float relativeFireStacks, FlammableComponent? flammable = null, bool ignite = false, float fireProtectionPenetration = 0f)
         {
             if (!Resolve(uid, ref flammable))
@@ -309,6 +310,7 @@ namespace Content.Server.Atmos.EntitySystems
                 UpdateAppearance(uid, flammable);
             }
         }
+        // Goobstation end
 
         public void Extinguish(EntityUid uid, FlammableComponent? flammable = null)
         {
@@ -321,7 +323,7 @@ namespace Content.Server.Atmos.EntitySystems
             _adminLogger.Add(LogType.Flammable, $"{ToPrettyString(uid):entity} stopped being on fire damage");
             flammable.OnFire = false;
             flammable.FireStacks = 0;
-            flammable.FireProtectionPenetration = 0f;
+            flammable.FireProtectionPenetration = 0f; // Goobstation
 
             _ignitionSourceSystem.SetIgnited(uid, false);
 
@@ -460,14 +462,14 @@ namespace Content.Server.Atmos.EntitySystems
                     if (TryComp(uid, out TemperatureComponent? temp))
                         _temperatureSystem.ChangeHeat(uid, 12500 * flammable.FireStacks, false, temp);
 
-                    var ev = new GetFireProtectionEvent(uid);
+                    var ev = new GetFireProtectionEvent(uid); // Goobstation
                     // let the thing on fire handle it
                     RaiseLocalEvent(uid, ref ev);
                     // and whatever it's wearing
                     if (_inventoryQuery.TryComp(uid, out var inv))
                         _inventory.RelayEvent((uid, inv), ref ev);
 
-                    var multiplier = Math.Clamp(ev.Multiplier + flammable.FireProtectionPenetration, 0f, 1f);
+                    var multiplier = Math.Clamp(ev.Multiplier + flammable.FireProtectionPenetration, 0f, 1f); // Goobstation
 
                     _damageableSystem.TryChangeDamage(uid, flammable.Damage * flammable.FireStacks * multiplier, interruptsDoAfters: false);
 

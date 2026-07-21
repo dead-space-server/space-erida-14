@@ -1,22 +1,22 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Station.Components;
-using Content.Server.Station.Systems;
+using Content.Server.Station.Systems; // Goobstation
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Maps;
+using Content.Shared.Maps; // Goobstation
 using Content.Shared.Random.Helpers;
 using Content.Shared.Station.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Utility;
+using Robust.Shared.Utility; // Goobstation
 
 namespace Content.Server.GameTicking.Rules;
 
 public abstract partial class GameRuleSystem<T> where T: IComponent
 {
-    [Dependency] private StationSystem _station = default!;
-    [Dependency] private TurfSystem _turf = default!;
+    [Dependency] private StationSystem _station = default!; // Goobstation
+    [Dependency] private TurfSystem _turf = default!; // Goobstation
 
     protected EntityQueryEnumerator<ActiveGameRuleComponent, T, GameRuleComponent> QueryActiveRules()
     {
@@ -135,6 +135,7 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
         return found;
     }
 
+    // Goobstation start
     protected Entity<MapGridComponent>? GetStationMainGrid(StationDataComponent station)
     {
         if ((station.Grids.FirstOrNull(HasComp<BecomesStationComponent>) ?? _station.GetLargestGrid(station.Owner)) is not
@@ -175,6 +176,7 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
 
         return false;
     }
+    // Goobstation end
 
     protected void ForceEndSelf(EntityUid uid, GameRuleComponent? component = null)
     {

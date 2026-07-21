@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2026 vanomorodellefake <53963119+vanomorodellefake@users.noreply.github.com>
-// SPDX-License-Identifier: MIT
-
 namespace Content.Shared._Erida.BigFingers.Components;
 
 [RegisterComponent, AutoGenerateComponentPause]

@@ -1,6 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+﻿# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
@@ -24,7 +22,6 @@
   name: ominous armor
   description: A ragged, dusty set of robes. Strange eyes line the inside.
   components:
-  - type: UnholyItem
   - type: Sprite
     sprite: _Goobstation/Heretic/Clothing/OuterClothing/eldritch_armor.rsi
     state: icon
@@ -48,9 +45,6 @@
     knockdownTimeDelta: -3
   - type: StaminaResistance
     damageCoefficient: 0.5
-  - type: HideClothingLayerClothing
-    hiddenSlots:
-    - jumpsuit
   - type: FireProtection
     reduction: 0.4
   - type: TemperatureProtection

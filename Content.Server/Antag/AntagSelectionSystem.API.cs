@@ -74,6 +74,7 @@ public sealed partial class AntagSelectionSystem
         return session.Status is SessionStatus.Disconnected or SessionStatus.Zombie;
     }
 
+    // Goobstation start
     public List<ICommonSession> GetAliveConnectedPlayers(IList<ICommonSession> pool)
     {
         var l = new List<ICommonSession>();
@@ -85,6 +86,7 @@ public sealed partial class AntagSelectionSystem
         }
         return l;
     }
+    // Goobstation end
 
     /// <summary>
     /// Gets the total number of antags a game rule wishes to spawn.

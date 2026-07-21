@@ -828,7 +828,7 @@ public sealed partial class GhostRoleSystem : EntitySystem
 
         var mind = EnsureComp<MindContainerComponent>(uid);
 
-        if (mind.HasMind && !component.IgnoreMindCheck)
+        if (mind.HasMind && !component.IgnoreMindCheck) // Goobstation
         {
             args.TookRole = false;
             return;
@@ -915,10 +915,12 @@ public sealed partial class GhostRoleSystem : EntitySystem
         SetMode(entity.Owner, ghostRoleProto, ghostRoleProto.Name, entity.Comp);
     }
 
+    // Goobstation start
     public void SetTaken(GhostRoleComponent role, bool taken)
     {
         role.Taken = taken;
     }
+    // Goobstation end
 }
 
 [AnyCommand]

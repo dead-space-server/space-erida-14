@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+﻿# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
@@ -16,8 +16,6 @@
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -43,8 +41,6 @@
     energy: 1.5
     softness: 1
     castShadows: false
-  # - type: RustRequiresPathStage
-  #   pathStage: 11 # Can't rust
 
 - type: entity
   parent: BaseWall
@@ -66,8 +62,6 @@
     shader: unshaded
   - type: Occluder
     enabled: false
-  # - type: RustRequiresPathStage
-  #   pathStage: 11 # Can't rust
 
 - type: entity
   parent: BaseWall
@@ -83,5 +77,3 @@
     key: walls
     base: necropolis
   - type: Destructible
-  # - type: RustRequiresPathStage
-  #   pathStage: 11 # Can't rust

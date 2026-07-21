@@ -109,7 +109,7 @@ namespace Content.Server.Ghost
             if (ent.Comp.LifeStage <= ComponentLifeStage.Running)
             {
                 args.VisibilityMask |= (int)VisibilityFlags.Ghost;
-                args.VisibilityMask |= (int)(VisibilityFlags.EldritchInfluence | VisibilityFlags.EldritchInfluenceSpent);
+                args.VisibilityMask |= (int)(VisibilityFlags.EldritchInfluence | VisibilityFlags.EldritchInfluenceSpent); // Goobstation
             }
         }
 
@@ -600,7 +600,7 @@ namespace Content.Server.Ghost
     public sealed class GhostAttemptHandleEvent(MindComponent mind, bool canReturnGlobal) : HandledEntityEventArgs
     {
         public MindComponent Mind { get; } = mind;
-        public bool CanReturnGlobal { get; set; } = canReturnGlobal;
+        public bool CanReturnGlobal { get; set; } = canReturnGlobal; // Goobstation
         public bool Result { get; set; }
     }
 }

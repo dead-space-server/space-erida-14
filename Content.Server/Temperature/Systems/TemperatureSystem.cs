@@ -85,7 +85,7 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
         if (!ignoreHeatResistance)
         {
-            var ev = new ModifyChangedTemperatureEvent(heatAmount, uid);
+            var ev = new ModifyChangedTemperatureEvent(heatAmount, uid); // Goobstation
             RaiseLocalEvent(uid, ev);
             heatAmount = ev.TemperatureDelta;
         }

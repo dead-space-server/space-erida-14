@@ -183,7 +183,7 @@ public sealed partial class CloningSystem : SharedCloningSystem
         EntityCoordinates coords,
         EntityWhitelist? whitelist = null,
         EntityWhitelist? blacklist = null,
-        bool copyStorage = true)
+        bool copyStorage = true) // Goobstation
     {
         // we use a whitelist and blacklist to be sure to exclude any problematic entities
         if (!_whitelist.CheckBoth(original, blacklist, whitelist))
@@ -200,7 +200,7 @@ public sealed partial class CloningSystem : SharedCloningSystem
         RaiseLocalEvent(original, ref ev);
 
         // if the original has items inside its storage, copy those as well
-        if (copyStorage && TryComp<StorageComponent>(original, out var originalStorage) && TryComp<StorageComponent>(spawned, out var spawnedStorage))
+        if (copyStorage && TryComp<StorageComponent>(original, out var originalStorage) && TryComp<StorageComponent>(spawned, out var spawnedStorage)) // Goobstation
         {
             // remove all items that spawned with the entity inside its storage
             // this ignores other containers, but this should be good enough for our purposes
