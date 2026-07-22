@@ -22,5 +22,8 @@ trait-catligaments-desc = Вы способны издавать кошачьи 
 trait-dogligaments-name = Собачьи свзяки
 trait-dogligments-desc = Так или иначе, теперь вы способны издавать собачьи звуки
 
-trait-VulpJumpAbility-name = Прыжок вульпы 
+trait-VulpJumpAbility-name = Прыжок вульпы
 trait-VulpJumpAbility-desc = Теперь вы можете кидаться на других существ, как настоящая вульпа
+
+trait-lactation-name = Лактация
+trait-lactation-desc = Возможно стать поваром не так уж и поздно

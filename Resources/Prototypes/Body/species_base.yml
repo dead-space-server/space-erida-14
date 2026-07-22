@@ -198,6 +198,8 @@
         Slash: -0.05
   - type: Fingerprint
   - type: Blindable
+  - type: InteractionWhitelist
+    lactation: true
   - type: Temperature
     currentTemperature: 310.15
     specificHeat: 42
