@@ -5,5 +5,5 @@
 lactation-verb-collect = Доить
 lactation-verb-drink = Высосать молоко
 lactation-verb-not-enough = Внутри недостаточно жидкости
-lactation-trying-collect = { $name } Пытается доить
-lactation-trying-drink = { $name } Пытается пить из вашей груди
+lactation-trying-collect = { $name } пытается доить вас
+lactation-trying-drink = { $name } пытается пить из вашей груди

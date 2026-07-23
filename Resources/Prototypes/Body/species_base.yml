@@ -198,8 +198,10 @@
         Slash: -0.05
   - type: Fingerprint
   - type: Blindable
+  # Erida start
   - type: InteractionWhitelist
     lactation: true
+  # Erida end
   - type: Temperature
     currentTemperature: 310.15
     specificHeat: 42

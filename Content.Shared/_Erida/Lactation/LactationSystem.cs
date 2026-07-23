@@ -9,7 +9,6 @@ using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.DoAfter;
-using Content.Shared.Fluids.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
@@ -36,11 +35,10 @@ public sealed partial class LactationSystem : EntitySystem
     [Dependency] private HungerSystem _hungerSystem = default!;
     [Dependency] private IngestionSystem _ingestionSystem = default!;
     [Dependency] private BodySystem _bodySystem = default!;
-    [Dependency] private DrainSystem _drainSystem = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _containerSystem = default!;
 
-    private readonly string _underwearTopSlotName = "UNDERSHIRT";
+    private readonly string _underwearTopSlotName = "undershirt";
 
 
     public override void Initialize()
@@ -70,6 +68,7 @@ public sealed partial class LactationSystem : EntitySystem
             ent.Comp.IsMilkIncreased = ent.Comp.IncreasedMilkRaces.Contains(profileComponent.Species);
     }
 
+    #region Verbs
     private void VerbInit(Entity<LactationComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
         if (!args.CanInteract || !args.CanAccess)
@@ -78,10 +77,14 @@ public sealed partial class LactationSystem : EntitySystem
         if (!TryComp<InteractionWhitelistComponent>(args.User, out var interactionWhitelistComponent))
             return;
 
-        if (!_mobStateSystem.IsAlive(ent.Owner) || !interactionWhitelistComponent.Lactation)
+        if (!interactionWhitelistComponent.Lactation)
             return;
 
-        if (!_inventorySystem.TryGetSlotContainer(ent.Owner, "undershirt", out var slotContainer, out var slotDef)
+        if (!_mobStateSystem.IsAlive(ent.Owner) || _mobStateSystem.IsCritical(ent.Owner))
+            return;
+
+        // Checks whether the target body is accessible
+        if (!_inventorySystem.TryGetSlotContainer(ent.Owner, _underwearTopSlotName, out var slotContainer, out var slotDef)
             || slotContainer.Count != 0
             || slotDef.StripHiddenForce
             || slotDef.StripBlocked)
@@ -92,6 +95,7 @@ public sealed partial class LactationSystem : EntitySystem
         var user = args.User;
         SolutionComponent? solutionComponent = null;
 
+        // isContainerValid is indicator of whether we drinking or collecting
         var isContainerValid = used != null
             && HasComp<RefillableSolutionComponent>(used)
             && TryComp(used, out solutionComponent);
@@ -99,7 +103,7 @@ public sealed partial class LactationSystem : EntitySystem
         if (!isContainerValid
             && args.Target == args.User
             || !_ingestionSystem.HasMouthAvailable(ent.Owner, args.Target)
-            || !_bodySystem.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var stomachs))
+            || !_bodySystem.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var _))
             return;
 
         AlternativeVerb verb = new()
@@ -136,11 +140,14 @@ public sealed partial class LactationSystem : EntitySystem
 
         var name = Identity.Entity(user, EntityManager);
 
-        _popupSystem.PopupClient(Loc.GetString(isContainerValid ? "lactation-trying-collect" : "lactation-trying-milk", ("user", name)),
+        _popupSystem.PopupClient(Loc.GetString(isContainerValid ? "lactation-trying-collect" : "lactation-trying-milk", ("name", name)),
             ent.Owner, PopupType.Medium);
 
         _doAfterSystem.TryStartDoAfter(doArgs);
     }
+    #endregion
+
+    #region DoAfter
     private void OnDoAfterAttempt(Entity<LactationComponent> entity, ref DoAfterAttemptEvent<LactationDoAfterEvent> args)
     {
         TryComp<LactationComponent>(args.Event.Target!.Value, out var comp);
@@ -175,9 +182,10 @@ public sealed partial class LactationSystem : EntitySystem
         if (args.Handled || args.Cancelled)
             return;
 
-        var lactationComp = Comp<LactationComponent>(args.Target!.Value);
-
         args.Handled = true;
+
+        if (!TryComp<LactationComponent>(args.Target!.Value, out var lactationComp))
+            return;
 
         if (!_solutionContainerSystem.ResolveSolution(args.Target!.Value, lactationComp.SolutionName, ref lactationComp.Solution, out var solution))
             return;
@@ -199,10 +207,7 @@ public sealed partial class LactationSystem : EntitySystem
         }
         else
         {
-            _audio.PlayPredicted(lactationComp.DrinkSound, args.Target!.Value, args.User);
-
-            // WHY EATING CANT BE FORCED
-            // I REALLY WANT EAT FOOD FROM FUCKING NULLSPACE
+            // After wizden refactor, eating from nullspace cant be forced with othet methods
             var doAfterArgs = new DoAfterArgs(EntityManager, args.User, TimeSpan.Zero, new EatingDoAfterEvent(), args.User, lactationComp.Solution.Value)
             {
                 BreakOnHandChange = false,
@@ -216,7 +221,9 @@ public sealed partial class LactationSystem : EntitySystem
             _doAfterSystem.TryStartDoAfter(doAfterArgs);
         }
     }
+    #endregion
 
+    #region Update
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -251,4 +258,5 @@ public sealed partial class LactationSystem : EntitySystem
             _solutionContainerSystem.TryAddReagent(comp.Solution.Value, comp.ReagentId, quantityToAdd, out _);
         }
     }
+    #endregion
 }

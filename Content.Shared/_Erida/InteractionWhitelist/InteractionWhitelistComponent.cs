@@ -7,8 +7,10 @@ namespace Content.Shared._Erida.Lactation;
 /// <summary>
 /// List of allowed interactions for entity.
 /// This will eliminate the need to create a new whitelist component for each system.
-/// All new fields shoud be `= false`
 /// </summary>
+/// <remarks>
+/// All new fields should default to <c>false</c>.
+/// </remarks>
 [RegisterComponent]
 public sealed partial class InteractionWhitelistComponent : Component
 {
