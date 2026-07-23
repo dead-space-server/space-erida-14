@@ -23,7 +23,7 @@ public abstract class SharedTurbineSystem : EntitySystem
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] protected SharedAudioSystem _audio = default!;
-    [Dependency] private partialSharedPopupSystem _popupSystem = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private SharedToolSystem _toolSystem = default!;
     [Dependency] private EntityManager _entityManager = default!;
     [Dependency] private DamageableSystem _damageableSystem = default!;
