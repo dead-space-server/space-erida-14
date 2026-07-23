@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/commit/675848058e3894b433a139035c3d62bfc53b04db and https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/commit/55550cb5248d33aab21ad5c34ed2dcd04d367da7 ",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "ratqueen",
+            "directions": 4
+        },
+        {
+            "name": "ringmaster",
+            "directions": 4
+        },
+        {
+            "name": "ratqueen_fat",
+            "directions": 4
+        },
+        {
+            "name": "dead"
+        }
+    ]
+}

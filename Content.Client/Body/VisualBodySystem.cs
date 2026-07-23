@@ -205,8 +205,6 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
                     _sprite.LayerSetSprite(target, layerId, rsi);
                 }
 
-                ScaleProfile(target.Owner, target.Comp); // Erida edit
-
                 if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
                     _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
                 else
@@ -218,6 +216,8 @@ public sealed partial class VisualBodySystem : SharedVisualBodySystem
 
             applied.Add(marking);
         }
+
+        ScaleProfile(target.Owner, target.Comp); // Erida edit
         ent.Comp.AppliedMarkings = applied;
     }
 

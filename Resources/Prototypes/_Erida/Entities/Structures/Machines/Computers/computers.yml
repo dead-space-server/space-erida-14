@@ -59,3 +59,124 @@
     color: "#fda502"
   - type: Computer
     board: InteQShuttleConsoleCircuitboard
+
+- type: entity
+  parent: BaseComputerAiAccess
+  id: ComputerBigRadar
+  name: advanced mass scanner computer
+  description: A computer for detecting nearby bodies, displaying them by position and mass.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      sprite: _Erida/Structures/Machines/computers.rsi
+      state: eris_control
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: RadarConsole
+    maxRange: 512
+  - type: ActivatableUI
+    key: enum.RadarConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+        enum.RadarConsoleUiKey.Key:
+          type: RadarConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
+  - type: Computer
+    board: BigRadarConsoleCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 4.0
+    color: "#0033ff"
+
+- type: entity
+  parent: BaseComputerShuttle
+  id: ComputerShuttleWizard
+  name: wizard shuttle console
+  description: Used to pilot a wizard shuttle.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerKeys"]
+      state: wizard_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+    - map: ["computerLayerScreen"]
+      sprite: _Erida/Structures/Machines/computers.rsi
+      state: shuttle_wizard
+  - type: RadarConsole
+    maxRange: 384
+  - type: PointLight
+    radius: 1.5
+    energy: 4.0
+    color: "#ff00ff"
+  - type: Computer
+    board: WizardShuttleConsoleCircuitboard
+
+- type: entity
+  parent: BaseComputerShuttle
+  id: ComputerShuttleXenoborgs
+  name: xenoborgs shuttle console
+  description: Used to pilot a xenoborgs shuttle.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerKeys"]
+      state: security_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+    - map: ["computerLayerScreen"]
+      sprite: _Erida/Structures/Machines/computers.rsi
+      state: shuttle_xenorobot
+  - type: RadarConsole
+    maxRange: 384
+  - type: PointLight
+    radius: 1.5
+    energy: 4.0
+    color: "#0033ff"
+  - type: Computer
+    board: XenoborgsShuttleConsoleCircuitboard
+
+- type: entity
+  parent: BaseComputerShuttle
+  id: ComputerShuttleRogue
+  name: shuttle console
+  description: Used to pilot a shuttle.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerKeys"]
+      sprite: _Erida/Structures/Machines/computers.rsi
+      state: rogue_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+    - map: ["computerLayerScreen"]
+      sprite: _Erida/Structures/Machines/computers.rsi
+      state: rogue
+  - type: RadarConsole
+    maxRange: 384
+  - type: PointLight
+    radius: 1.5
+    energy: 4.0
+    color: "#503131"
+  - type: Computer
+    board: RogueShuttleConsoleCircuitboard

@@ -17,9 +17,9 @@
     - id: ClothingHeadHatNTNavyCapcap
     - id: ClothingHeadHatNTNavyCaptain
     - id: ClothingShoesBootsMagNTNavy
-    - id: ClothingBeltNTNavyWebbingFilled
+    # - id: ClothingBeltNTNavyCaptainWebbingFilled
     - id: WeaponNTNavyEnergyGun
-    - id: ClothingBeltNTNavySheathFilled
+    - id: ClothingBeltNTNavySheath
     - id: ClothingHeadsetAltNTNavyHighCommand
     - id: DoorRemoteCustom
     - id: JetpackVoidFilled

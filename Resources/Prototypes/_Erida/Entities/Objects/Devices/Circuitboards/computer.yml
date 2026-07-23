@@ -6,3 +6,46 @@
     state: cpu_syndicate
   - type: ComputerBoard
     prototype: InteQComputerComms
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: BigRadarConsoleCircuitboard
+  name: advanced mass scanner computer
+  components:
+  - type: Sprite
+    state: cpu_supply
+  - type: ComputerBoard
+    prototype: ComputerBigRadar
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseMagicalContraband ]
+  id: WizardShuttleConsoleCircuitboard
+  name: wizard shuttle console board
+  description: A computer printed circuit board for a wizard shuttle console.
+  components:
+  - type: Sprite
+    state: cpu_wizard
+  - type: ComputerBoard
+    prototype: ComputerShuttleWizard
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseXenoborgContraband ]
+  id: XenoborgsShuttleConsoleCircuitboard
+  name: xenoborgs shuttle console board
+  description: A computer printed circuit board for a xenoborgs shuttle console.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerShuttleXenoborgs
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseMajorContraband ]
+  id: RogueShuttleConsoleCircuitboard
+  name: shuttle console board
+  description: A computer printed circuit board for a shuttle console.
+  components:
+  - type: Sprite
+    state: cpu_science
+  - type: ComputerBoard
+    prototype: ComputerShuttleRogue

@@ -58,6 +58,7 @@
   parent: BaseSpeciesAppearance
   id: AppearanceAnthropomorph
   name: Anthropomorph appearance
+  categories: [ HideSpawnMenu ]
   components:
   - type: InitialBody
     organs:

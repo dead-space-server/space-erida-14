@@ -38,6 +38,17 @@ public abstract class SharedExplosionSystem : EntitySystem
         args.Msg.AddMarkupOrThrow(Loc.GetString(ent.Comp.Examine, ("value", value)));
     }
 
+    // Erida start - expose controlled mutation for systems that need runtime explosion resistance changes.
+    public void SetExplosionResistance(EntityUid uid, float damageCoefficient, ExplosionResistanceComponent? component = null)
+    {
+        if (!Resolve(uid, ref component, false))
+            return;
+
+        component.DamageCoefficient = damageCoefficient;
+        Dirty(uid, component);
+    }
+    // Erida end
+
     /// <summary>
     ///     Given an entity with an explosive component, spawn the appropriate explosion.
     /// </summary>

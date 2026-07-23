@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 vanomorodellefake <vanomorodellefake29@gmail.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: BaseAction
+  id: ActionChangeSprite
+  name: Change Sprite
+  description: Just change your sprite to another one
+  components:
+  - type: Action
+    useDelay: 1
+  - type: InstantAction
+    event: !type:ChangeSpriteActionEvent
+  - type: TimedDespawn
+    lifetime: 120 # 2 minutes. 2 minutes is all I can spare for you

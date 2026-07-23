@@ -94,6 +94,12 @@ public sealed partial class InjectorComponent : Component
     [DataField]
     public float MovementThreshold = 0.1f;
 
+    // Erida start
+    /// <inheritdoc cref="DoAfterArgs.BreakOnMove"/>
+    [DataField]
+    public bool BreakOnMove = true;
+    // Erida end
+
     #endregion
 }
 

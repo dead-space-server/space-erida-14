@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2026 Evgenimation <jickson900@gmail.com>
+# SPDX-License-Identifier: MIT
+
+- type: entity
+  parent: WallPlastitaniumDiagonalIndestructible
+  id: WallRivetedDiagonal
+  name: riveted wall
+  suffix: diagonal
+  components:
+  - type: Sprite
+    drawdepth: Walls
+    sprite:  _Erida/Structures/Walls/riveted_diagonal.rsi
+    state: state0
+  - type: Icon
+    sprite:  _Erida/Structures/Walls/riveted_diagonal.rsi
+    state: state0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1000
+      behaviors:
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            Girder:
+              min: 1
+              max: 1
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:PlaySoundBehavior
+          sound:
+            collection: MetalSlam

@@ -1144,6 +1144,19 @@
     containers:
       board: [ DoorElectronicsXenoborg ]
 
+ # Erida start
+- type: entity
+  parent: AirlockGlassXenoborg
+  id: AirlockGlassXenoborgLocked
+  suffix: Xenoborg, Locked, Glass
+  components:
+  - type: StationAiWhitelist
+    enabled: false
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsXenoborg ]
+ # Erida end
+
 - type: entity
   parent: AirlockGlassShuttleXenoborg
   id: AirlockGlassShuttleXenoborgLocked

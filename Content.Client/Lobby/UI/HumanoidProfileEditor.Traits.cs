@@ -174,7 +174,7 @@ public sealed partial class HumanoidProfileEditor
         }
 
         Traits.SetSelectedTraits(selectedTraits);
-        Traits.UpdateConditions(Profile.Species);
+        Traits.UpdateConditions(Profile);
     }
     // End DeltaV - Traits Integration
 }

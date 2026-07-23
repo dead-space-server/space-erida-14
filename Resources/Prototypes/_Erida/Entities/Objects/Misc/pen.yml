@@ -1,0 +1,48 @@
+## SPDX-FileCopyrightText: 2026 Erida Contributor
+## SPDX-License-Identifier: MIT Evgenimation <jickson900@gmail.com>
+
+- type: entity
+  name: HoS's fountain pen
+  parent: PenEmbeddable
+  id: PenHos
+  description: A luxurious fountain pen for the HoS of the station.
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Misc/pens.rsi
+    state: pen_hos
+
+- type: entity
+  name: QM's gel pen
+  parent: PenHos
+  id: PenQm
+  description: A luxurious gel pen for the QM of the station.
+  components:
+  - type: Sprite
+    state: pen_qm
+
+- type: entity
+  name: CE's gel pen
+  parent: PenHos
+  id: PenCe
+  description: A luxurious gel pen for the CE of the station.
+  components:
+  - type: Sprite
+    state: pen_ce
+
+- type: entity
+  name: CMO's gel pen
+  parent: PenHos
+  id: PenCmo
+  description: A luxurious gel pen for the CMO of the station.
+  components:
+  - type: Sprite
+    state: pen_cmo
+
+- type: entity
+  name: RD's fountain pen
+  parent: PenHos
+  id: PenRd
+  description: A luxurious fountain pen for the RD of the station.
+  components:
+  - type: Sprite
+    state: pen_rd

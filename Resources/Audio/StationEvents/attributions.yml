@@ -17,3 +17,9 @@
   license: "CC-BY-3.0"
   copyright: "Created by mrjajkes"
   source: "https://www.youtube.com/watch?v=f5URIS00IIc"
+
+# Erida edit - Goob Blob port audio attribution.
+- files: ["blobin_time.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Created by mrjajkes"
+  source: "https://www.youtube.com/watch?v=nxJOCDh-M3s"

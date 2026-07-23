@@ -5,3 +5,10 @@
   prototype: MobDwarf
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
+  sizeRatio: 1.3
+  minHeight: 0.8
+  defaultHeight: 0.8
+  maxHeight: 1
+  minWidth: 1
+  defaultWidth: 1
+  maxWidth: 1.3
