@@ -281,7 +281,7 @@ public sealed partial class TraitsTab : BoxContainer
         foreach (var (_, categoryUi) in _categoryUis)
         {
             // If some fork wants to use the top selected job as well, just add that to the UpdateConditions method in the editor
-            categoryUi.UpdateConditions(null, _profile?.Species, _profile?.AntagPreferences);
+            categoryUi.UpdateConditions(null, _profile?.Species, _profile?.AntagPreferences, _profile?.Gender);
         }
 
         RecalculateStats();

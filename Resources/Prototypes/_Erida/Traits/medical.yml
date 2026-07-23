@@ -42,13 +42,17 @@
   name: trait-lactation-name
   description: trait-lactation-desc
   category: Medical
+  conditions:
+  - !type:IsGenderCondition
+    genders:
+    - Female
   effects:
   - !type:AddCompsEffect
     removeExisting: true
     components:
     - type: Lactation
       drinkSound: !type:SoundPathSpecifier
-      params:
-        variation: 0.25
-        volume: -2
-      path: /Audio/Items/drink.ogg
+        params:
+          variation: 0.25
+          volume: -2
+        path: /Audio/Items/drink.ogg

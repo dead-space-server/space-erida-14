@@ -66,3 +66,11 @@ trait-category-accents = Акценты
 trait-category-meta = Мета
 trait-category-species = Расовые
 trait-category-language = Знание языка
+
+gender-male = мужского
+gender-female = женского
+gender-neuter = среднего
+gender-epicene = неопределённого
+
+trait-condition-gender-is = Вы должны быть [color=yellow]{$gender}[/color] пола.
+trait-condition-gender-not = Вы не должны быть [color=yellow]{$gender}[/color] пола.

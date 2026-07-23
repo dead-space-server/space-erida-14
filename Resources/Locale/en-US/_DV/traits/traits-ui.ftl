@@ -54,3 +54,11 @@ trait-condition-borg-not = You must not be a [color=yellow]borg[/color].
 # Antag conditions
 trait-condition-antag-is = Must be eligible for [color=red]{$antag}[/color] antag role.
 trait-condition-antag-not = Must not be eligible for [color=red]{$antag}[/color] antag role.
+
+gender-male = male
+gender-female = female
+gender-neuter = neuter
+gender-epicene = indeterminate
+
+trait-condition-gender-is = You must be of [color=yellow]{$gender}[/color] gender.
+trait-condition-gender-not = You must not be of [color=yellow]{$gender}[/color] gender.
