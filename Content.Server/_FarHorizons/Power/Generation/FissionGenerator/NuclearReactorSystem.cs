@@ -8,12 +8,14 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.Radio.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Server.Radiation.Systems;
 using Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 using Content.Shared.Atmos;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Radiation.Components;
 using Content.Shared.Radio;
+using Content.Shared.Atmos.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
@@ -70,7 +72,7 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
     [Dependency] private readonly SharedPointLightSystem _lightSystem = default!;
     [Dependency] private readonly AmbientSoundSystem _ambientSoundSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-
+    [Dependency] private readonly RadiationSystem _radiation = default!;
     private sealed class LogData
     {
         public TimeSpan CreationTime;
@@ -78,6 +80,7 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
     }
 
     private readonly Dictionary<KeyValuePair<EntityUid, EntityUid>, LogData> _logQueue = [];
+    private static readonly ReactorPartComponent?[] _neighborBuffer = new ReactorPartComponent?[4];
 
     public override void Initialize()
     {
@@ -302,8 +305,7 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
                 if (gas != null)
                     _atmosphereSystem.Merge(outlet.Air, gas);
 
-                _partSystem.ProcessHeat(ReactorComp, ent, GetGridNeighbors(comp, x, y), this);
-                comp.TemperatureGrid[x, y] = ReactorComp.Temperature;
+                _partSystem.ProcessHeat(ReactorComp, (uid, comp), GetGridNeighbors(comp, x, y, _neighborBuffer), this);
 
                 if (ReactorComp.HasRodType(ReactorPartComponent.RodTypes.ControlRod) && ReactorComp.IsControlRod)
                 {
@@ -405,6 +407,15 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
 
         UpdateUI(uid, comp);
     }
+    private static ReactorPartComponent?[] GetGridNeighbors(NuclearReactorComponent reactor, int x, int y, ReactorPartComponent?[] buffer)
+    {
+        buffer[0] = x - 1 < 0 ? null : reactor.ComponentGrid[x - 1, y];
+        buffer[1] = x + 1 >= reactor.ReactorGridWidth ? null : reactor.ComponentGrid[x + 1, y];
+        buffer[2] = y - 1 < 0 ? null : reactor.ComponentGrid[x, y - 1];
+        buffer[3] = y + 1 >= reactor.ReactorGridHeight ? null : reactor.ComponentGrid[x, y + 1];
+        return buffer;
+    }
+
 
     private void ProcessCaseRadiation(Entity<NuclearReactorComponent> ent)
     {
@@ -412,8 +423,12 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
         var comp = EnsureComp<RadiationSourceComponent>(ent.Owner);
 
         // Linear scaling up to maximum, logarithmic beyond that
-        comp.Intensity = (float)Math.Max(reactor.RadiationLevel <= reactor.MaximumRadiation ? reactor.RadiationLevel : reactor.MaximumRadiation + Math.Log(reactor.RadiationLevel - reactor.MaximumRadiation + 1), reactor.Melted ? reactor.MeltdownRadiation : 0);
-        reactor.RadiationLevel /= Math.Max(reactor.RadiationStability, 1);
+        _radiation.SetIntensity(reactor.Owner, (float)Math.Max(
+            reactor.RadiationLevel <= reactor.MaximumRadiation
+                ? reactor.RadiationLevel
+                : reactor.MaximumRadiation + Math.Log(reactor.RadiationLevel - reactor.MaximumRadiation + 1),
+            reactor.Melted ? reactor.MeltdownRadiation : 0
+        ));
     }
 
     private static List<ReactorPartComponent?> GetGridNeighbors(NuclearReactorComponent reactor, int x, int y)
