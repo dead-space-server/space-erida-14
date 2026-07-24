@@ -246,6 +246,7 @@ public abstract partial class SharedChatSystem : EntitySystem
         return message;
     }
 
+    // Goobstation start
     public static void UpdateFontSize(int fontSize, ref string message, ref string wrappedMessage)
     {
         var newLines = GetChatNewLines(message);
@@ -268,6 +269,7 @@ public abstract partial class SharedChatSystem : EntitySystem
         const int defaultFontSize = 12;
         return (float) fontSize / defaultFontSize;
     }
+    // Goobstation end
 
     public static string SanitizeAnnouncement(string message, int maxLength = 0, int maxNewlines = 2)
     {

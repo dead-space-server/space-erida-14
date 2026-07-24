@@ -132,7 +132,7 @@ public sealed partial class StoreSystem
                 EntityManager.AddComponents(buyer, productComponentsEntity.Components);
         }
 
-        //grant heretic knowledge
+        // Erida edit: grant heretic knowledge
         if (listing.ProductHereticKnowledge != null)
         {
             var mindId = buyer;

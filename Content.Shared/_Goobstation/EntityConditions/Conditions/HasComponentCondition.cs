@@ -2,15 +2,17 @@
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 OpenWendor <https://github.com/OpenWendor>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Shared.EntityConditions;
 using Content.Shared.Mind;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.EntityConditions.Conditions;
+namespace Content.Shared._Goobstation.EntityConditions.Conditions;
 
 public sealed partial class HasComponentConditionSystem : EntityConditionSystem<MetaDataComponent, HasComponentCondition>
 {

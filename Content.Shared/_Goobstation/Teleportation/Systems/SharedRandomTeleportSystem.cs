@@ -10,7 +10,7 @@ using System.Numerics;
 using Content.Shared._Goobstation.BlockTeleport;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Physics;
-using Content.Shared.Teleportation;
+using Content.Shared._Goobstation.Teleportation;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;

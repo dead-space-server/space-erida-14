@@ -12,7 +12,7 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
-using Content.Shared.Eye.Blinding.Systems;
+using Content.Shared._Goobstation.Eye.Blinding.Systems;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;

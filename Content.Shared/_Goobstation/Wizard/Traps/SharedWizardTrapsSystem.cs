@@ -13,6 +13,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Electrocution;
 using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared._Goobstation.Eye.Blinding.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Components;

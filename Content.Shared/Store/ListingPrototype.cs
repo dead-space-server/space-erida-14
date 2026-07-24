@@ -175,11 +175,13 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public EntProtoId? ProductAction;
 
+    // Erida edit start
     /// <summary>
     /// The heretic knowledge that is granted when the listing is purchased.
     /// </summary>
     [DataField]
     public ProtoId<HereticKnowledgePrototype>? ProductHereticKnowledge;
+    // Erida edit end
 
     /// <summary>
     /// The listing ID of the related upgrade listing. Can be used to link a <see cref="ProductAction"/> to an

@@ -50,8 +50,9 @@ public sealed partial class StaminaComponent : Component
     [ViewVariables, AutoNetworkedField]
     public float CritThreshold = 100f;
 
+    // Goobstation start
     /// <summary>
-    /// Goob Edit: A dictionary of active stamina drains, with the key being the source of the drain,
+    /// A dictionary of active stamina drains, with the key being the source of the drain,
     /// DrainRate how much it changes per tick, and ModifiesSpeed if it should slow down the user.
     /// </summary>
     /// <remarks>
@@ -59,6 +60,7 @@ public sealed partial class StaminaComponent : Component
     /// </remarks>
     [DataField, AutoNetworkedField]
     public Dictionary<string, (float DrainRate, bool ModifiesSpeed, NetEntity? Source, bool ApplyResistances)> ActiveDrains = new();
+    // Goobstation end
 
     /// <summary>
     /// How long will this mob be stunned for?

@@ -46,6 +46,7 @@ public partial class InventorySystem
         return TryGetSlot(container.Owner, container.ID, out slot);
     }
 
+    // Goobstation start
     public bool TryGetContainingEntity(Entity<TransformComponent?, MetaDataComponent?> entity, [NotNullWhen(true)] out EntityUid? containingEntity)
     {
         if (!_containerSystem.TryGetContainingContainer(entity, out var container) || !HasComp<InventoryComponent>(container.Owner))
@@ -57,6 +58,7 @@ public partial class InventorySystem
         containingEntity = container.Owner;
         return true;
     }
+    // Goobstation end
 
     /// <summary>
     /// Returns true if the given entity is equipped to an inventory slot with exactly matching inventory slot flags.

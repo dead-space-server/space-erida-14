@@ -398,7 +398,8 @@ public abstract partial class SharedMagicSystem : EntitySystem
         _gibbing.Gib(ev.Target);
     }
 
-    public bool IsTouchSpellDenied(EntityUid target) // Goob edit
+    // Goobstation
+    public bool IsTouchSpellDenied(EntityUid target)
     {
         var ev = new BeforeCastTouchSpellEvent(target);
         RaiseLocalEvent(target, ev, true);

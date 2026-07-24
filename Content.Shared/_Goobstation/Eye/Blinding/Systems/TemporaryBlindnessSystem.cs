@@ -2,14 +2,17 @@
 // SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 OpenWendor <https://github.com/OpenWendor>
 //
 // SPDX-License-Identifier: MIT
 
 using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Eye.Blinding.Systems;
+using Content.Shared._Goobstation.Eye.Blinding.Components;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Eye.Blinding.Systems;
+namespace Content.Shared._Goobstation.Eye.Blinding.Systems;
 
 public sealed partial class TemporaryBlindnessSystem : EntitySystem
 {

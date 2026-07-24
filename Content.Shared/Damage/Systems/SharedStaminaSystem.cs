@@ -263,7 +263,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         return true;
     }
 
-    // goob edit - stunmeta
+    // Goobstation start
     public void TakeOvertimeStaminaDamage(EntityUid uid, float value)
     {
         // do this only on server side because otherwise shit happens
@@ -278,6 +278,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         overtime!.Amount = hasComp ? overtime.Amount + value : value;
         overtime!.Damage = hasComp ? overtime.Damage + value : value;
     }
+    // Goobstation end
 
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
         EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool ignoreResist = false)
@@ -285,7 +286,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         if (!Resolve(uid, ref component, false))
             return;
 
-        var ev = new BeforeStaminaDamageEvent(value, source); // Goob change: Added source param.
+        var ev = new BeforeStaminaDamageEvent(value, source); // Goobstation: Added source param.
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
             return;
@@ -365,7 +366,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         }
     }
 
-    // Goob edit - stamina drains
+    // Goobstation start
     public void ToggleStaminaDrain(EntityUid target, float drainRate, bool enabled, bool modifiesSpeed, string key, EntityUid? source = null, bool applyResistances = false)
     {
         if (!TryComp<StaminaComponent>(target, out var stamina))
@@ -387,6 +388,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
         Dirty(target, stamina);
     }
+    // Goobstation end
 
     public override void Update(float frameTime)
     {
@@ -405,7 +407,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
                 continue;
             }
 
-            // Goob edit - stamina drains
+            // Goobstation start
             if (comp.ActiveDrains.Count > 0)
                 foreach (var (drainRate, _, source, applyResistances) in comp.ActiveDrains.Values)
                     TakeStaminaDamage(uid,
@@ -413,7 +415,8 @@ public abstract partial class SharedStaminaSystem : EntitySystem
                         comp,
                         source: GetEntity(source),
                         visual: false,
-                        ignoreResist: !applyResistances); // todo unfuck this shit. goob.
+                        ignoreResist: !applyResistances); // Goobstation: todo unfuck this shit
+            // Goobstation end
 
             // Shouldn't need to consider paused time as we're only iterating non-paused stamina components.
             var nextUpdate = comp.NextUpdate;
@@ -427,7 +430,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
             comp.NextUpdate += TimeSpan.FromSeconds(1f);
 
-            // Goob - If theres no active drains, recover stamina.
+            // Goobstation: If theres no active drains, recover stamina.
             if (!comp.ActiveDrains.Values.Any(x => x.DrainRate > 0))
                 TakeStaminaDamage(
                     uid,
@@ -458,6 +461,7 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} entered stamina crit");
     }
 
+    // Goobstation: made public
     public void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
     {
         if (!Resolve(uid, ref component) ||

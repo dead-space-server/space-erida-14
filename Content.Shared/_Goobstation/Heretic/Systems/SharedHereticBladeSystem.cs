@@ -33,7 +33,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
-using Content.Shared.Teleportation;
+using Content.Shared._Goobstation.Teleportation;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio.Systems;

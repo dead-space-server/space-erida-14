@@ -21,7 +21,7 @@ using Content.Shared.Chat;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.Eye.Blinding.Components;
+using Content.Shared._Goobstation.Eye.Blinding.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Movement.Pulling.Systems;

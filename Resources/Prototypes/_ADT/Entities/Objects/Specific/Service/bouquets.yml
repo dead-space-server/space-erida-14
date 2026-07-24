@@ -1,9 +1,6 @@
-# SPDX-FileCopyrightText: 2026 Tiwulovoe <250869396+Tiwulovoe@users.noreply.github.com>
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 - type: entity
   parent: BaseItem
-  id: ADTObjectWhiteBouquet
+  id: ADTObjectWhiteBouquet  
   name: White bouquet
   description: Bouquet of white roses. Classic!
   components:

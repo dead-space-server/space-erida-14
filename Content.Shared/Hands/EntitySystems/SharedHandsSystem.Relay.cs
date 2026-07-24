@@ -14,7 +14,7 @@ public abstract partial class SharedHandsSystem
 {
     private void InitializeRelay()
     {
-        SubscribeLocalEvent<HandsComponent, CheckMagicItemEvent>(RelayEvent);
+        SubscribeLocalEvent<HandsComponent, CheckMagicItemEvent>(RelayEvent); // Erida edit
         SubscribeLocalEvent<HandsComponent, GetEyeOffsetRelayedEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, GetEyePvsScaleRelayedEvent>(RelayEvent);
         SubscribeLocalEvent<HandsComponent, RefreshMovementSpeedModifiersEvent>(RelayEvent);

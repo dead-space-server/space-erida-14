@@ -15,7 +15,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.CombatMode;
 using Content.Shared.Examine;
-using Content.Shared.Eye.Blinding.Components;
+using Content.Shared._Goobstation.Eye.Blinding.Components;
 using Content.Shared._Goobstation.Heretic;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
