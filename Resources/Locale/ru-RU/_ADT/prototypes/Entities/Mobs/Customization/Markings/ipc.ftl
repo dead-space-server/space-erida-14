@@ -69,6 +69,7 @@ marking-ADTIPCScreenPacifist1 = Пацифист 1
 marking-ADTIPCScreenPacifist2 = Пацифист 2
 marking-ADTIPCScreenAscended = Вознесённый
 marking-ADTIPCScreenMonoeyeAlt = Циклоп (альт.)
+marking-ADTIPCScreenBroken = Разбитый
 
 marking-ADTIPCAntennaTv = ТВ
 marking-ADTIPCAntennaTesla = Тесла

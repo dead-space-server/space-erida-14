@@ -1,6 +1,7 @@
-- type: markingsGroup
+- type: markingsGroup # erida edit - only allow IPC-specific markings (no furry/etc.)
   parent: Undergarments
   id: Ipc
+  onlyGroupWhitelisted: true
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 10
