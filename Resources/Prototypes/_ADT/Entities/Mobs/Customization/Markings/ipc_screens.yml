@@ -1,0 +1,645 @@
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenStatic
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_static
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBlue
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_blue
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBreakout
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_breakout
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenEight
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eight
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenGoggles
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_goggles
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenExclaim
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_exclaim
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenHeart
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_heart
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenMonoeye
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_monoeye
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenNature
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_nature
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenOrange
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_orange
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenPink
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_pink
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenQuestion
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_question
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenShower
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_shower
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenYellow
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_yellow
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenScroll
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_scroll
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenConsole
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_console
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenRgb
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rgb
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenGlider
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_glider
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenRainbowhoriz
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rainbowhoriz
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBsod
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_bsod
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenText
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_text
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenSinewave
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_sinewave
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenSquarewave
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_squarewave
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenEcgwave
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_ecgwave
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenEyes
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eyes
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenEyestall
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eyestall
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenEyesangry
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_eyesangry
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenLoading
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_loading
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenWindowsxp
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_windowsxp
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenTetris
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_tetris
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenTv
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_tv
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenTextdrop
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_textdrop
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenStars
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_stars
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenRainbowdiag
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rainbowdiag
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBlank
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_blank
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenSmile
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_smile
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenFrown
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_frown
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenRing
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_ring
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenL
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_l
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenPoxui
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_poxui
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenAbsolutepoxui
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_absolute_poxui
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenAwesome
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_awesome
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBestfriend
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_best_friend
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBigsmile
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_bigsmile
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenBoredom
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_boredom
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenClown
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_clown
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCreeper
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_creeper
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenDealmaker
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_dealmaker
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenMime
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_mime
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenMonkey
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_monkey
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenMrgutsy
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_mr_gutsy
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenNerd
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_nerd
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenNya
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_nya
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenOko
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_oko
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenRock
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_rock
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenSkull
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_skull
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenTenna
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_tenna
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteNeutral
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_neutral
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteEyes
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_eyes
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteAngry
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_angry
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteSuspicious
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_suspicious
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteWorried
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_worried
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteSmirking
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_smirking
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteCryed
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_cryed
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteLaughing
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_laughing
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteQuestioningly
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_questioningly
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenCuteUnsurprised
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_cute_unsurprised
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenPacifist1
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_pacifist_1
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenPacifist2
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_pacifist_2
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenAscended
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_ascended
+
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCScreenMonoeyeAlt
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_monoeye_alt
+
+
+- type: marking
+  id: ADTIPCScreenBroken
+  groupWhitelist: [Ipc]
+  bodyPart: FacialHair
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_screens.rsi
+      state: ipc_screen_broken

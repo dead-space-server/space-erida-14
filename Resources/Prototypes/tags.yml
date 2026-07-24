@@ -1607,4 +1607,10 @@
 
 - type: Tag
   id: invisible
+
+- type: Tag
+  id: ChangelingBlacklist # erida edit
+
+- type: Tag
+  id: SiliconFootstepSound # erida edit
 # Erida Edit end

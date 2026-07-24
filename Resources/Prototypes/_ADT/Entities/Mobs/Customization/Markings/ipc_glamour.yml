@@ -1,0 +1,125 @@
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCChestGlamour
+  bodyPart: Chest
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLArmGlamour
+  bodyPart: LArm
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_arm_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_arm_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRArmGlamour
+  bodyPart: RArm
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_arm_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_arm_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLLegGlamour
+  bodyPart: LLeg
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_leg_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_leg_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_leg_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRLegGlamour
+  bodyPart: RLeg
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_leg_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_leg_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_leg_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLFootGlamour
+  bodyPart: LFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_foot_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_foot_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRFootGlamour
+  bodyPart: RFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_foot_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_foot_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartChestGlamourLines
+  bodyPart: Chest
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_line_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_line_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_line_third
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: chest_line_fourth
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartLLegGlamourLines
+  bodyPart: LLeg
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_leg_line_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_leg_line_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartRLegGlamourLines
+  bodyPart: RLeg
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_leg_line_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_leg_line_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartLFootGlamourLines
+  bodyPart: LFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: l_foot_line_prime
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartRFootGlamourLines
+  bodyPart: RFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_glamour.rsi
+      state: r_foot_line_prime

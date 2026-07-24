@@ -1,0 +1,9 @@
+- type: wireLayout
+  id: IPC
+  wires:
+  - !type:PowerWireAction
+  - !type:SpeechWireAction
+  - !type:AccessWireAction
+  - !type:LogWireAction
+  - !type:AiInteractWireAction
+  - !type:PowerWireAction

@@ -1,0 +1,73 @@
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartChestCore
+  bodyPart: Chest
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_core
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartChestDefaultLines
+  bodyPart: Chest
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_third
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: chest_line_fourth
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartLArmDefaultLines
+  bodyPart: LArm
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_arm_line_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_arm_line_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartRArmDefaultLines
+  bodyPart: RArm
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_arm_line_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_arm_line_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartLHandDefaultLines
+  bodyPart: LHand
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_hand_line_prime
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartRHandDefaultLines
+  bodyPart: RHand
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_hand_line_prime
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartLFootDefaultLines
+  bodyPart: LFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: l_foot_line_prime
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCPartRFootDefaultLines
+  bodyPart: RFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_parts.rsi
+      state: r_foot_line_prime

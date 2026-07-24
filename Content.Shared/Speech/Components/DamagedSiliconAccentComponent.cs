@@ -1,4 +1,5 @@
 ﻿using Content.Shared.FixedPoint;
+using Robust.Shared.Audio; // erida edit
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Speech.Components;
@@ -78,4 +79,12 @@ public sealed partial class DamagedSiliconAccentComponent : Component
     /// </summary>
     [DataField]
     public float ProbToCorruptDotFromPower = 0.6f;
+
+    // erida edit start
+    [DataField]
+    public SoundSpecifier SpeechGlitchSounds = new SoundCollectionSpecifier("SiliconGlitches");
+
+    [DataField]
+    public float SpeechGlitchVolume = -1.0f;
+    // erida edit end
 }

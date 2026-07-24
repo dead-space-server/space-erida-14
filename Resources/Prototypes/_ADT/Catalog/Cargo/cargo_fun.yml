@@ -1,4 +1,4 @@
-- type: cargoProduct
+﻿- type: cargoProduct
   id: ADTFunCrateWedding
   icon:
     sprite: _ADT/Objects/Specific/Service/white_bouquet.rsi
@@ -6,7 +6,7 @@
   product: ADTCrateWedding
   category: cargoproduct-category-name-fun
   cost: 1500
-  
+
 - type: cargoProduct
   id: FunRingBox
   icon:
