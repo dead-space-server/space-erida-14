@@ -18,7 +18,7 @@ public sealed partial class NightmareComponent : Component
 
     public int? OldLayer;
 
-    public int NewLayer = (int)CollisionGroup.None;
+    public int NewLayer = (int)CollisionGroup.Opaque;
 
     [DataField]
     public float TimeBetweenChecks = 0.5f;
@@ -44,6 +44,9 @@ public sealed partial class NightmareComponent : Component
     };
 
     [DataField]
+    public FixedPoint2 MaxDamageFromBurn = 200;
+
+    [DataField]
     public DamageSpecifier DamageFromGetFlashed = new()
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
@@ -57,11 +60,20 @@ public sealed partial class NightmareComponent : Component
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            { "Blunt", -2.5 },
-            { "Slash", -2.5 },
-            { "Piercing", -2.5 },
-            { "Heat", -2.5 },
-            { "Shock", -2.5 },
+            { "Blunt", -1.25 },
+            { "Slash", -1.25 },
+            { "Piercing", -1.25 },
+
+            { "Heat", -1.25 },
+            { "Shock", -1.25 },
+            { "Cold", -1.25 },
+            { "Caustic", -1.25 },
+
+            { "Poison", -1.25 },
+            { "Radiation", -1.25 },
+
+            { "Asphyxiation", -1.25 },
+            { "Bloodloss", -1.25 },
         },
     };
 

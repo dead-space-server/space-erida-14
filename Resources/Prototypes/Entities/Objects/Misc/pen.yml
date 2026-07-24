@@ -5,10 +5,10 @@
   description: A dark ink pen.
   components:
   - type: Sprite
-    sprite: Objects/Misc/pens.rsi
+    sprite: _Erida/Objects/Misc/pens.rsi # Erida edit
     state: pen
   - type: Item
-    sprite: Objects/Misc/pens.rsi
+    sprite: _Erida/Objects/Misc/pens.rsi # Erida edit
     heldPrefix: pen
     size: Tiny
   - type: Tag

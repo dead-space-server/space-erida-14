@@ -1,4 +1,7 @@
 using System.Linq;
+using System.Runtime.CompilerServices;
+using Content.Server._Erida.LightBehaviourServer;
+using Content.Server.Light.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Physics;
 using Robust.Server.Containers;
@@ -14,6 +17,8 @@ public sealed partial class LightIntensionSystem : EntitySystem
     [Dependency] private PhysicsSystem _physics = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
     [Dependency] private ContainerSystem _containerSystem = default!;
+    [Dependency] private LightBehaviourServerSystem _behaviourSystem = default!;
+    [Dependency] private EntityLookupSystem _entityLookupSystem = default!;
 
     public override void Initialize()
     {
@@ -41,15 +46,43 @@ public sealed partial class LightIntensionSystem : EntitySystem
 
         var entMapCoordsVector2d = _transformSystem.ToMapCoordinates(ent.Comp.Coordinates).Position;
 
-        var query = EntityQueryEnumerator<PointLightComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var lightComp, out var xform))
+        var query = _entityLookupSystem.GetEntitiesInRange<PointLightComponent>(_transformSystem.GetMapCoordinates(ent, ent.Comp), 15f);
+        foreach (var uid in query)
         {
-            if (!lightComp.Enabled)
+            var lightComp = uid.Comp;
+
+            var xform = _entityManager.GetComponent<TransformComponent>(uid);
+
+            TryComp<ExpendableLightComponent>(uid, out var elComp);
+            TryComp<LightBehaviourServerComponent>(uid, out var lbsComp);
+
+            if (!lightComp.Enabled
+                && (elComp == null || elComp.Activated == false
+                || lbsComp == null))
                 continue;
 
-            if (!ent.Comp.Coordinates.TryDistance(_entityManager, xform.Coordinates, out var distance)
-                || distance > lightComp.Radius)
+            if (!ent.Comp.Coordinates.TryDistance(_entityManager, xform.Coordinates, out var distance))
                 continue;
+
+            float lightRadius;
+
+            if (lbsComp != null)
+            {
+                _behaviourSystem.TryGetRadius(uid, out var lbsRadius, lbsComp);
+
+                if (lbsRadius == null
+                    || distance > lbsRadius)
+                    continue;
+
+                lightRadius = lbsRadius.Value;
+            }
+            else
+            {
+                if (distance > lightComp.Radius)
+                    continue;
+
+                lightRadius = lightComp.Radius;
+            }
 
             if (TryComp<EyeComponent>(ent, out var eComp))
             {
@@ -76,7 +109,7 @@ public sealed partial class LightIntensionSystem : EntitySystem
             direction = direction.Normalized();
 
             var mask = (int)CollisionGroup.Opaque;
-            var ray = new CollisionRay(entMapCoordsVector2d, direction, mask); // ent.Comp.Coordinates.Position xform.Coordinates.Position
+            var ray = new CollisionRay(entMapCoordsVector2d, direction, mask);
             var results = _physics.IntersectRay(ent.Comp.MapID, ray, distance, null, false);
 
             if (results.Any(r => HasComp<OccluderComponent>(r.HitEntity)))
@@ -85,7 +118,7 @@ public sealed partial class LightIntensionSystem : EntitySystem
             if (lightComp.MaskPath is { } maskPath)
             {
                 var relative = direction * -1;
-                var rotation = xform.WorldRotation;
+                var rotation = _transformSystem.GetWorldRotation(uid);
 
                 var local = (-rotation).RotateVec(relative);
 
@@ -107,7 +140,7 @@ public sealed partial class LightIntensionSystem : EntitySystem
                 }
             }
 
-            var normalizedDist = distance / lightComp.Radius;
+            var normalizedDist = distance / lightRadius;
             var attenuation = MathF.Pow(1 - normalizedDist, lightComp.Falloff);
             totalIlluminance += lightComp.Energy * attenuation;
 

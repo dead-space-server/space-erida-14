@@ -353,10 +353,10 @@
     - type: Damageable
       damageModifierSet: BlobReflective
     - type: Reflect
-      reflectProb: 1
+      reflectsProb:
+        Energy: 0.85
       spread: 20
-      reflects:
-        - Energy
+
     - type: Sprite
       sprite: _Goobstation/Blob/Mobs/blob.rsi
       drawdepth: BlobTiles

@@ -38,3 +38,9 @@
   accentColor: "#1356f2"  # blue
   maxTraits: 2
   maxPoints: 3
+
+- type: traitCategory
+  id: Meta
+  name: trait-category-meta
+  priority: 60
+  accentColor: "#eab308"  # Yellow

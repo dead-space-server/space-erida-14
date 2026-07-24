@@ -1,7 +1,7 @@
-﻿# SPDX-FileCopyrightText: 2025 Space Wizards Federation
+# SPDX-FileCopyrightText: 2025 Space Wizards Federation
+#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# The file was lost:
 name: "Labels: Awaiting Changes"
 
 on:

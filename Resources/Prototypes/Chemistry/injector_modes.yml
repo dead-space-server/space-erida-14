@@ -122,7 +122,7 @@
 - type: injectorMode
   parent: HyposprayDynamicMode
   id: HypopenDynamicMode
-  containerDrawTime: 0.75
+  containerDrawTime: 0.35 # Erida 0.75 >> 0.35
 
 - type: injectorMode
   abstract: true

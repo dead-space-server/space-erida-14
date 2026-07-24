@@ -1041,3 +1041,78 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/390
   avatar_url: https://avatars.githubusercontent.com/u/89313903?v=4
   title: Блёбовое
+- author: Lytheriia
+  changes:
+    - type: Tweak
+      message: Ребаланс ноктюрина и гипоручки
+  id: 88
+  time: '2026-07-21T21:42:07.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/414
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: Hypopen and nocturine changes
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: >-
+        новые черты, которые убирают вас из пулла целей для агентов и
+        парадоксальных клонов
+    - type: Tweak
+      message: >-
+        парадоксальный клон больше не умирает в конце раунда, так что
+        необязательно убивать цель, попытка популизировать
+    - type: Tweak
+      message: >-
+        Синий Щит теперь считается игрой комманд стаффом, на него чаще будут
+        падать цели агентов и он становится целью ревы
+    - type: Fix
+      message: нюкеры больше не будут целями агентов
+    - type: Fix
+      message: >-
+        щитспавн персонажи на АА больше не должны ставновиться целями агентов и
+        парадоксальных клонов
+  id: 89
+  time: '2026-07-22T21:48:57.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/408
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: NoTarget+NoClone+BlueShieldCommandStaff
+- author: Evgenimation
+  changes:
+    - type: Add
+      message: Новые двигатели и консоли управления.
+    - type: Add
+      message: Новые ручки для каждой главы отдела
+    - type: Tweak
+      message: Убраны вайтлисты на черты внешности.
+  id: 90
+  time: '2026-07-22T23:39:34.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/413
+  avatar_url: https://avatars.githubusercontent.com/u/275415539?v=4
+  title: Uppdate thruster
+- author: Lytheriia
+  changes:
+    - type: Add
+      message: Черта лактации
+  id: 91
+  time: '2026-07-23T14:30:06.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/415
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Add] Lactation system'
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Кошмар теперь получает урон от лазерного оружия
+    - type: Tweak
+      message: Кошмар в 2 раза хуже лечится
+    - type: Tweak
+      message: Кошмара больше нельзя гибнуть, просто оставив его под лампой
+    - type: Tweak
+      message: Кошмар теперь должен получать урон от факелов, флаеров и глоу стиков
+    - type: Tweak
+      message: >-
+        Кошмару теперь труднее резать провода, так как он лишь частично
+        изолирован от ударов электроэнергии
+  id: 92
+  time: '2026-07-23T16:12:16.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/407
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: NightmareUpdate
