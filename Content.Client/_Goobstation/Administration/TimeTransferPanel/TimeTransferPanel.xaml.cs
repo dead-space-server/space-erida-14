@@ -1,4 +1,5 @@
-// SPDX-FileCopyrightText: 2025 kiro-r <289052288+kiro-r@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 kiro-r <289052288+kiro-r@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 OpenWendor <https://github.com/OpenWendor>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
