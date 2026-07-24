@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 ADT Development
+// SPDX-FileCopyrightText: 2026 OpenWendor
+// SPDX-License-Identifier: MIT
+
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._ADT.Silicon.BatterySlot;
 using Content.Server._ADT.Silicon.Charge;

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 ADT Development
+// SPDX-FileCopyrightText: 2026 OpenWendor
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;

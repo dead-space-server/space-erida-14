@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 ADT Development
+// SPDX-FileCopyrightText: 2026 OpenWendor
+// SPDX-License-Identifier: MIT
+
 using Content.Server.Power.Components;
 using Content.Shared._ADT.Silicon.Systems;
 using Content.Shared.Bed.Sleep;

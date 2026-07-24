@@ -1,4 +1,8 @@
-﻿- type: cargoProduct
+# SPDX-FileCopyrightText: 2026 ADT Development
+# SPDX-FileCopyrightText: 2026 OpenWendor
+# SPDX-License-Identifier: MIT
+
+- type: cargoProduct
   id: ADTFunCrateWedding
   icon:
     sprite: _ADT/Objects/Specific/Service/white_bouquet.rsi

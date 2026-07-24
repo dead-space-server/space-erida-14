@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 ADT Development
+// SPDX-FileCopyrightText: 2026 OpenWendor
+// SPDX-License-Identifier: MIT
+
 using Content.Server._ADT.Silicon.BatterySlot;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Lock;

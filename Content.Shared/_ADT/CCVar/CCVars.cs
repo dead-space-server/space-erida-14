@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 ADT Development
+// SPDX-FileCopyrightText: 2026 OpenWendor
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Configuration;
 
 namespace Content.Shared._ADT.CCVar;
