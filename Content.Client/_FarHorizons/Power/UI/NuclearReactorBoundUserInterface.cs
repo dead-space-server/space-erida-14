@@ -1,4 +1,4 @@
-﻿using Robust.Client.UserInterface;
+using Robust.Client.UserInterface;
 using JetBrains.Annotations;
 using Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 
@@ -10,7 +10,7 @@ namespace Content.Client._FarHorizons.Power.UI;
 [UsedImplicitly]
 public sealed class NuclearReactorBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     [ViewVariables]
     private NuclearReactorWindow? _window;
@@ -54,7 +54,7 @@ public sealed class NuclearReactorBoundUserInterface : BoundUserInterface
         _window?.Update(reactorState);
     }
 
-    private void OnActionButtonPressed(Vector2d vector)
+    private void OnActionButtonPressed(Vector2i vector)
     {
         if (_window is null ) return;
 

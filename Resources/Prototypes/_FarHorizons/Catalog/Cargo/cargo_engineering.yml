@@ -1,7 +1,7 @@
-﻿- type: cargoProduct
+- type: cargoProduct
   id: NuclearReactorFlatpackPurchase
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/cargo_icons.rsi
+    sprite: _FarHorizons/Interface/FissionGenerator/cargo_icons.rsi
     state: reactor
   product: NuclearReactorFlatpack
   cost: 15000
@@ -11,7 +11,7 @@
 - type: cargoProduct
   id: GasTurbineFlatpackPurchase
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/cargo_icons.rsi
+    sprite: _FarHorizons/Interface/FissionGenerator/cargo_icons.rsi
     state: turbine
   product: GasTurbineFlatpack
   cost: 10000
@@ -21,7 +21,7 @@
 - type: cargoProduct
   id: CerenkiteFuelRodPurchase
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_parts.rsi
+    sprite: _FarHorizons/Objects/Power/FissionGenerator/reactor_parts.rsi
     state: default_rod
   product: CrateCerenkiteFuelRod
   cost: 4000
@@ -31,29 +31,29 @@
 - type: cargoProduct
   id: BohrumControlRodPurchase
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_parts.rsi
+    sprite: _FarHorizons/Objects/Power/FissionGenerator/reactor_parts.rsi
     state: default_rod
   product: CrateBohrumControlRod
-  cost: 2000
+  cost: 1000 # LP Edit 2000 -> 1000
   category: cargoproduct-category-name-engineering
   group: market
 
 - type: cargoProduct
   id: SteelGasChannelPurchase
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_parts.rsi
+    sprite: _FarHorizons/Objects/Power/FissionGenerator/reactor_parts.rsi
     state: default_rod
   product: CrateSteelGasChannel
-  cost: 1000
+  cost: 600 # LP Edit 1000 -> 600
   category: cargoproduct-category-name-engineering
   group: market
 
 - type: cargoProduct
   id: SteelHeatExhangerPurchase
   icon:
-    sprite: _FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_parts.rsi
+    sprite: _FarHorizons/Objects/Power/FissionGenerator/reactor_parts.rsi
     state: default_rod
   product: CrateSteelHeatExhanger
-  cost: 1000
+  cost: 750 # LP Edit 1000 -> 750
   category: cargoproduct-category-name-engineering
   group: market

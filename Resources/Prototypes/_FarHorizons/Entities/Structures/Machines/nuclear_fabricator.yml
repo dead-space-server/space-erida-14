@@ -1,11 +1,11 @@
-﻿- type: entity
+- type: entity
   id: NuclearFabricator
   parent: BaseLatheLube
   name: nuclear fabricator
   description: It makes nuclear parts.
   components:
   - type: Sprite
-    sprite: Structures/Machines/protolathe.rsi
+    sprite: _StarLight/Structures/Machines/nuclear_fabricator.rsi #SL Edit
     snapCardinals: true
     layers:
     - state: icon
@@ -25,7 +25,7 @@
         - Sheet
         - RawMaterial
         - Ingot
-  - type: OreSiloClient
+  # - type: OreSiloClient # LP Edit
   - type: Lathe
     idleState: icon
     runningState: building
