@@ -10,7 +10,6 @@ using Content.Shared.Tools.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
-using Content.Shared.Popups;
 
 namespace Content.Shared._FarHorizons.Power.Generation.FissionGenerator;
 
