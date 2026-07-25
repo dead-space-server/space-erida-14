@@ -17,7 +17,7 @@
     - ReactorPart
   - type: GuideHelp
     guides:
-    - NuclearReactorIDk
+    - NuclearReactor
     - Power
 
 - type: entity

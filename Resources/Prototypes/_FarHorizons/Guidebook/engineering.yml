@@ -3,12 +3,12 @@
   name: guide-entry-nuclear-generator
   text: "/ServerInfo/_FarHorizons/Guidebook/Engineering/NuclearGenerator.xml"
   children:
-  - NuclearReactorIDk
+  - NuclearReactor
   - GasTurbine
   - NuclearMaterials
 
 - type: guideEntry
-  id: NuclearReactorIDk # Test shitfix
+  id: NuclearReactor
   name: guide-entry-nuclear-reactor
   text: "/ServerInfo/_FarHorizons/Guidebook/Engineering/NuclearReactor.xml"
 
