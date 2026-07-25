@@ -29,7 +29,7 @@ public sealed partial class NightmareComponent : Component
     public TimeSpan TimeToCheck = TimeSpan.Zero;
 
     [DataField]
-    public float RedLineOfLight = 0.01f;
+    public float RedLineOfLight = 0.0085f;
 
     [DataField]
     public float MaxLightCap = 1f;
@@ -39,7 +39,7 @@ public sealed partial class NightmareComponent : Component
     {
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            { "Heat", 15 },
+            { "Heat", 0 },
         },
     };
 

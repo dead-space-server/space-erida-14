@@ -10,7 +10,10 @@ namespace Content.Server._Erida.LightBehaviourServer;
 public sealed partial class LightBehaviourServerComponent : Component
 {
     [DataField]
-    public float? TimeOfStart = null;
+    public TimeSpan? TimeOfStart = null;
+
+    [DataField]
+    public TimeSpan? TimeToStartFadeOut = null;
 
     [DataField]
     public List<LightBehaviourAnimationTrackServer> Behaviours = new();
@@ -33,8 +36,8 @@ public abstract partial class LightBehaviourAnimationTrackServer
     public abstract float CalculateCurrentRadius(
         float startValue,
         float endValue,
-        float startTime,
-        float curTime,
+        TimeSpan startTime,
+        TimeSpan curTime,
         bool reverseWhenFinished = false);
 }
 
@@ -47,12 +50,16 @@ public sealed partial class FadeBehaviourServer : LightBehaviourAnimationTrackSe
     public override float CalculateCurrentRadius(
         float startValue,
         float endValue,
-        float startTime,
-        float curTime,
+        TimeSpan startTime,
+        TimeSpan curTime,
         bool reverseWhenFinished = false)
     {
-        var playingTime = curTime - startTime;
-        var interpolateValue = playingTime / MaxDuration;
+        var playingTime = (float)(curTime - startTime).TotalSeconds;
+        Single interpolateValue;
+        if (playingTime >= MaxDuration)
+            interpolateValue = 1;
+        else
+            interpolateValue = playingTime / MaxDuration;
 
         if (reverseWhenFinished)
         {

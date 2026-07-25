@@ -22,7 +22,12 @@ public sealed partial class LightBehaviourServerSystem : EntitySystem
 
     private void OnIgnition(Entity<LightBehaviourServerComponent> entity, ref IgnitionEvent args)
     {
-        entity.Comp.TimeOfStart = (float)_timing.CurTime.TotalSeconds;
+        entity.Comp.TimeOfStart = _timing.CurTime;
+
+        if (!TryComp<ExpendableLightComponent>(entity, out var elComp))
+            return;
+
+        entity.Comp.TimeToStartFadeOut = entity.Comp.TimeOfStart + elComp.GlowDuration;
     }
 
     public bool TryGetRadius(EntityUid entity, out float? radius, LightBehaviourServerComponent? lbsComp = null)
@@ -40,27 +45,18 @@ public sealed partial class LightBehaviourServerSystem : EntitySystem
             return false;
 
         var currentState = elComp.CurrentState;
-        string id = default!;
-
-        switch (currentState)
-        {
-            case ExpendableLightState.Lit:
-                id = elComp.TurnOnBehaviourID;
-                break;
-            case ExpendableLightState.Fading:
-                id = elComp.FadeOutBehaviourID;
-                break;
-            default:
-                return false;
-        }
+        if (!TryGetCurrentId(currentState, elComp, out var id)
+            || id == null)
+            return false;
 
         if (!GetCurrentBehaviours(lbsComp, id, currentState, out var currentBehaviour)
             || currentBehaviour == null)
             return false;
 
-        var curTime = (float)_timing.CurTime.TotalSeconds;
+        var curTime = _timing.CurTime;
+        var startOfAnimationTrack = lbsComp.TimeToStartFadeOut != null && curTime >= lbsComp.TimeToStartFadeOut ? lbsComp.TimeToStartFadeOut.Value : lbsComp.TimeOfStart.Value;
 
-        radius = currentBehaviour.CalculateCurrentRadius(currentBehaviour.StartValue, currentBehaviour.EndValue, lbsComp.TimeOfStart.Value, curTime);
+        radius = currentBehaviour.CalculateCurrentRadius(currentBehaviour.StartValue, currentBehaviour.EndValue, startOfAnimationTrack, curTime);
 
         if (radius != null)
             return true;
@@ -68,21 +64,34 @@ public sealed partial class LightBehaviourServerSystem : EntitySystem
         return false;
     }
 
-    private bool GetCurrentBehaviours(LightBehaviourServerComponent comp, string id, ExpendableLightState state, out LightBehaviourAnimationTrackServer? resultBehaviour)
+    private bool GetCurrentBehaviours(LightBehaviourServerComponent comp, string id, ExpendableLightState currentState, out LightBehaviourAnimationTrackServer? resultBehaviour, float? curTime = null)
     {
         resultBehaviour = null;
 
         foreach (var behaviour in comp.Behaviours)
-        {
             if (behaviour.ID == id)
-            {
                 resultBehaviour = behaviour;
-            }
-        }
 
         if (resultBehaviour != null)
             return true;
 
         return false;
+    }
+
+    private bool TryGetCurrentId(ExpendableLightState currentState, ExpendableLightComponent elComp, out string? id)
+    {
+        id = null;
+
+        switch (currentState)
+        {
+            case ExpendableLightState.Lit:
+                id = elComp.TurnOnBehaviourID;
+                return true;
+            case ExpendableLightState.Fading:
+                id = elComp.FadeOutBehaviourID;
+                return true;
+            default:
+                return false;
+        }
     }
 }
