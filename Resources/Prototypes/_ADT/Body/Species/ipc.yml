@@ -112,10 +112,8 @@
     lockTime: 5
     unlockTime: 5
     breakOnAccessBreaker: false
-  - type: BatterySlotRequiresLock
+  - type: BatterySlotRequiresLock # erida edit: removed MobIpc component
     itemSlot: cell_slot
-  - type: MobIpc
-    disablePointLightOnDeath: true
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: hugging-success-generic

@@ -8,8 +8,8 @@ using Content.Shared.Stunnable;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Eye.Blinding.Systems;
-using Content.Shared._ADT.Silicon.Components;
-using Content.Shared._ADT.Silicon.Systems;
+// erida edit: removed SeeingStatic usings
+using Content.Shared._ADT.Silicon.Components; // erida edit
 using Content.Shared.Speech.EntitySystems;
 using Content.Shared.Speech.Muting;
 using Content.Shared.StatusEffect;
@@ -26,7 +26,7 @@ public sealed partial class SiliconEmpSystem : EntitySystem
 {
     private static readonly ProtoId<DamageTypePrototype> DamageType = "Shock";
 
-    [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private StatusEffectsSystem _status = default!; // erida edit
     [Dependency] private StunSystem _stun = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedStutteringSystem _stuttering = default!;
@@ -58,8 +58,7 @@ public sealed partial class SiliconEmpSystem : EntitySystem
 
         _status.TryAddStatusEffect<StunnedStatusEffectComponent>(uid, "SlowedDown", TimeSpan.FromSeconds(duration.TotalSeconds), false);
 
-        _status.TryAddStatusEffect<SeeingStaticComponent>(uid, SharedSeeingStaticSystem.StaticKey, duration, true, statusComp);
-
+        // erida edit: removed SeeingStatic status effect
         if (_random.Prob(0.8f))
             _slurredSystem.DoSlur(uid, duration * 2, statusComp);
 

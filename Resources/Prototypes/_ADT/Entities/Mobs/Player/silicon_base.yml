@@ -14,8 +14,7 @@
       context: "human"
     - type: InputMover
     - type: ZombieImmune
-    - type: IgnoreHealOnBuckle
-    - type: IgnoreCryopods
+    # erida edit: removed IgnoreHealOnBuckle, IgnoreCryopods
     - type: DamagedSiliconAccent
     - type: MobMover
     - type: DamageOnHighSpeedImpact
@@ -183,8 +182,8 @@
           sprite: "Effects/creampie.rsi"
           state: "creampie_human"
           visible: false
-    - type: Repairable
-      fuelCost: 3
+    - type: Repairable # erida edit: fuelCost 20, added Heat/Cold/Shock healing
+      fuelCost: 20
       selfRepairPenalty: 2
       doAfterDelay: 2
       damage:
@@ -192,6 +191,9 @@
           Blunt: -10
           Slash: -10
           Piercing: -10
+          Heat: -10
+          Cold: -10
+          Shock: -10
     - type: Bloodstream
       damageBleedModifiers: BloodlossHuman
       bleedReductionAmount: 0
@@ -322,7 +324,7 @@
       deathPenalty: 0.01
     - type: Pullable
     - type: Puller
-    - type: Grabbable
+    # erida edit: removed Grabbable
     - type: Reactive
       groups:
         Flammable: [Touch]
@@ -370,5 +372,5 @@
         - SlurredSpeech
         - Muted
         - Pacified
-        - SeeingStatic
+        # erida edit: removed SeeingStatic
     - type: Blindable
