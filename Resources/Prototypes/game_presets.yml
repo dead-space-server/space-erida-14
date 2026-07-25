@@ -90,7 +90,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: false
+  showInVote: true
   description: greenshift-description
   rules:
   - BasicRoundstartVariation
