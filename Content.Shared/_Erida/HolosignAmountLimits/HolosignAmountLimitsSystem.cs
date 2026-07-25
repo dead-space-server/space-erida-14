@@ -6,7 +6,7 @@ using Content.Shared.Storage;
 using Robust.Shared.Network;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
-namespace Content.Server._Erida.HolosignAmountLimits;
+namespace Content.Shared._Erida.HolosignAmountLimits;
 
 public sealed partial class HolosignAmountLimitsSystem : EntitySystem
 {
@@ -60,6 +60,7 @@ public sealed partial class HolosignAmountLimitsSystem : EntitySystem
             var comp = EnsureComp<HolosignAmountLimitsSignComponent>(holosign);
             comp.Overlord = ent;
             ent.Comp.CurrentAmount++;
+            DirtyField(ent.Owner, ent.Comp, nameof(ent.Comp.CurrentAmount));
             ent.Comp.SpawnedSigns.Add(holosign);
         }
 
@@ -80,6 +81,7 @@ public sealed partial class HolosignAmountLimitsSystem : EntitySystem
         {
             haComp.SpawnedSigns.Remove(ent.Owner);
             haComp.CurrentAmount--;
+            DirtyField(ent.Owner, haComp, nameof(haComp.CurrentAmount));
         }
     }
 }

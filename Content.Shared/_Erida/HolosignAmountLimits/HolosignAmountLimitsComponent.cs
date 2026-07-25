@@ -3,12 +3,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Erida.HolosignAmountLimits.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true, true)]
 public sealed partial class HolosignAmountLimitsComponent : Component
 {
     [DataField]
     public int MaxAmount = 6;
 
+    [DataField, AutoNetworkedField]
     public int CurrentAmount = 0;
 
     /// <summary>
