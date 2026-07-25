@@ -51,6 +51,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: TargetObjectiveImmune # Erida-edit - Nukies are no longer targets of kill objectives.
 
 - type: antagSpecifier
   parent: BaseNukeops

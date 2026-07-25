@@ -850,10 +850,10 @@
   components:
   - type: Sprite
     drawdepth: Walls
-    sprite: Structures/Walls/shuttle_diagonal.rsi
+    sprite: _Erida/Structures/Walls/shuttle_diagonal.rsi # Erida edit
     state: state0
   - type: Icon
-    sprite: Structures/Walls/shuttle_diagonal.rsi
+    sprite: _Erida/Structures/Walls/shuttle_diagonal.rsi # Erida edit
     state: state0
 # Erida edit start
 # - type: Reflect

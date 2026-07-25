@@ -50,6 +50,7 @@
   parent: BaseSpeciesAppearance
   id: AppearanceShark
   name: Shark appearance
+  categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
     femaleDisplacements:

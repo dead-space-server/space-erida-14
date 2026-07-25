@@ -248,6 +248,23 @@
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 
+# Erida start
+- type: gamePreset
+  id: Blob
+  alias:
+  - blob
+  - blab
+  name: blob-title
+  description: blob-description
+  showInVote: false
+  rules:
+  - BlobGameMode
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+# Erida end
+
 - type: gamePreset
   id: Zombieteors
   alias:

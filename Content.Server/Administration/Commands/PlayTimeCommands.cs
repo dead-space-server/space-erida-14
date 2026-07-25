@@ -1,12 +1,102 @@
-﻿using Content.Server.Players.PlayTimeTracking;
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration;
 using Content.Shared.Players.PlayTimeTracking;
 using Robust.Server.Player;
 using Robust.Shared.Console;
+using System.Text.RegularExpressions;
 
 namespace Content.Server.Administration.Commands;
 
-[AdminCommand(AdminFlags.Host)] // Erida edit
+public sealed class PlayTimeCommandUtilities
+{
+    private readonly static Dictionary<string, int> Units = new() {
+        { "y", 525960 },
+        { "mo", 43800 },
+        { "w", 10080 },
+        { "d", 1440 },
+        { "h", 60 },
+        { "m", 1 },
+    };
+
+    public struct TimeUnit
+    {
+        public int TimeValue { get; }
+        public string Unit { get; }
+
+        public TimeUnit(int timeValue)
+        {
+            TimeValue = timeValue;
+            Unit = "m";
+        }
+
+        public TimeUnit(int timeValue, string unit)
+        {
+            TimeValue = timeValue;
+            Unit = unit;
+        }
+        public int ToMinutes()
+        {
+            var unitExists = Units.TryGetValue(Unit, out int minutes);
+
+            if (!unitExists)
+                return TimeValue;
+
+            return TimeValue * minutes;
+        }
+    }
+
+    private static readonly Regex TimeRegex = new(
+        "(\\d+)([A-Za-z]+)",
+        RegexOptions.Compiled);
+
+    public static List<TimeUnit> ConvertToTimeUnits(string timeString)
+    {
+        // Searching for something similar to 365d24h, etc.
+        List<TimeUnit> result = new();
+
+        // We want to support plain numbers as a translation to just minutes, just in case people don't know things like 30d or 1d are an option.
+        if (int.TryParse(timeString, out int timeValue))
+        {
+            result.Add(new TimeUnit(timeValue, "m"));
+            return result;
+        }
+
+        var timeRegex = TimeRegex.Matches(timeString);
+
+        foreach (Match match in timeRegex)
+        {
+            bool isTimeAmountNumber = int.TryParse(match.Groups[1].Value, out int amountOfTime);
+            string timeUnit = match.Groups[2].Value;
+
+            if (!isTimeAmountNumber)
+                continue;
+
+            if (!Units.ContainsKey(timeUnit))
+                continue;
+
+            result.Add(new TimeUnit(amountOfTime, timeUnit));
+        }
+
+        return result;
+    }
+
+    public static int CountMinutes(string timeString)
+    {
+        List<TimeUnit> timeUnits = ConvertToTimeUnits(timeString);
+        int total = 0;
+
+        foreach (var timeUnit in timeUnits)
+        {
+            total += timeUnit.ToMinutes();
+        }
+
+        return total;
+    }
+}
+
+[AdminCommand(AdminFlags.PlayTime)]
 public sealed partial class PlayTimeAddOverallCommand : IConsoleCommand
 {
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -24,11 +114,7 @@ public sealed partial class PlayTimeAddOverallCommand : IConsoleCommand
             return;
         }
 
-        if (!int.TryParse(args[1], out var minutes))
-        {
-            shell.WriteError(Loc.GetString("parse-minutes-fail", ("minutes", args[1])));
-            return;
-        }
+        var minutes = PlayTimeCommandUtilities.CountMinutes(args[1]);
 
         if (!_playerManager.TryGetSessionByUsername(args[0], out var player))
         {
@@ -58,7 +144,7 @@ public sealed partial class PlayTimeAddOverallCommand : IConsoleCommand
     }
 }
 
-[AdminCommand(AdminFlags.Host)] // Erida edit
+[AdminCommand(AdminFlags.PlayTime)]
 public sealed partial class PlayTimeAddRoleCommand : IConsoleCommand
 {
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -85,14 +171,9 @@ public sealed partial class PlayTimeAddRoleCommand : IConsoleCommand
 
         var role = args[1];
 
-        var m = args[2];
-        if (!int.TryParse(m, out var minutes))
-        {
-            shell.WriteError(Loc.GetString("parse-minutes-fail", ("minutes", minutes)));
-            return;
-        }
+        var m = PlayTimeCommandUtilities.CountMinutes(args[2]);
 
-        _playTimeTracking.AddTimeToTracker(player, role, TimeSpan.FromMinutes(minutes));
+        _playTimeTracking.AddTimeToTracker(player, role, TimeSpan.FromMinutes(m));
         var time = _playTimeTracking.GetPlayTimeForTracker(player, role);
         shell.WriteLine(Loc.GetString("cmd-playtime_addrole-succeed",
             ("username", userName),
@@ -123,7 +204,7 @@ public sealed partial class PlayTimeAddRoleCommand : IConsoleCommand
     }
 }
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.PlayTime)]
 public sealed partial class PlayTimeGetOverallCommand : IConsoleCommand
 {
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -168,7 +249,7 @@ public sealed partial class PlayTimeGetOverallCommand : IConsoleCommand
     }
 }
 
-[AdminCommand(AdminFlags.Moderator)]
+[AdminCommand(AdminFlags.PlayTime)]
 public sealed partial class PlayTimeGetRoleCommand : IConsoleCommand
 {
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -247,7 +328,7 @@ public sealed partial class PlayTimeGetRoleCommand : IConsoleCommand
 /// <summary>
 /// Saves the timers for a particular player immediately
 /// </summary>
-[AdminCommand(AdminFlags.Host)] // Erida edit
+[AdminCommand(AdminFlags.PlayTime)]
 public sealed partial class PlayTimeSaveCommand : IConsoleCommand
 {
     [Dependency] private IPlayerManager _playerManager = default!;
@@ -289,7 +370,7 @@ public sealed partial class PlayTimeSaveCommand : IConsoleCommand
     }
 }
 
-[AdminCommand(AdminFlags.Host)] // Erida edit
+[AdminCommand(AdminFlags.PlayTime)]
 public sealed partial class PlayTimeFlushCommand : IConsoleCommand
 {
     [Dependency] private IPlayerManager _playerManager = default!;

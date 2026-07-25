@@ -1,0 +1,52 @@
+## SPDX-FileCopyrightText: 2026 DeltaV Contributors
+##
+## SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: trait
+  id: MarkedAsProtected
+  name: trait-protected-name
+  description: trait-protected-desc
+  category: Meta
+  conditions:
+  - !type:InDepartmentCondition
+    department: Command
+    invert: true
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
+  - !type:InDepartmentCondition # Erida-edit
+    department: CentCom
+    invert: true
+  - !type:IsAntagEligibleCondition
+    antag: Thief
+    invert: true
+  - !type:IsAntagEligibleCondition
+    antag: Traitor
+    invert: true
+  - !type:IsAntagEligibleCondition
+    antag: TraitorSleeper
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: TargetObjectiveImmune
+
+- type: trait
+  id: NoParadoxClone
+  name: trait-no-paradox-clone-name
+  description: trait-no-paradox-clone-desc
+  category: Meta
+  conditions:
+  - !type:InDepartmentCondition
+    department: Command
+    invert: true
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
+  - !type:InDepartmentCondition # Erida-edit
+    department: CentCom
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: NoParadoxClone

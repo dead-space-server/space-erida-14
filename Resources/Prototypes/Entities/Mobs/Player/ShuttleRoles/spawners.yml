@@ -88,7 +88,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Decoration/banner.rsi
+      - sprite: _Erida/Structures/Decoration/banner.rsi # Erida edit
         state: banner_security
   - type: RandomSpawner
     prototypes:
@@ -132,7 +132,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Decoration/banner.rsi
+      - sprite: _Erida/Structures/Decoration/banner.rsi # Erida edit
         state: banner_security
   - type: RandomSpawner
     prototypes:
@@ -152,7 +152,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Decoration/banner.rsi
+      - sprite: _Erida/Structures/Decoration/banner.rsi # Erida edit
         state: banner_security
   - type: RandomSpawner
     prototypes:
@@ -166,7 +166,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Decoration/banner.rsi
+      - sprite: _Erida/Structures/Decoration/banner.rsi # Erida edit
         state: banner_security
   - type: RandomSpawner
     prototypes:
@@ -180,7 +180,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Decoration/banner.rsi
+      - sprite: _Erida/Structures/Decoration/banner.rsi # Erida edit
         state: banner_security
   - type: RandomSpawner
     prototypes:
@@ -194,7 +194,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: Structures/Decoration/banner.rsi
+      - sprite: _Erida/Structures/Decoration/banner.rsi # Erida edit
         state: banner_security
   - type: RandomSpawner
     prototypes:

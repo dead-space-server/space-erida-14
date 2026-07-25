@@ -185,6 +185,7 @@ public sealed partial class HumanoidProfileEditor
     {
         Profile = Profile?.WithSpecies(newSpecies);
         OnSkinColorOnValueChanged(); // Species may have special color prefs, make sure to update it.
+        _markingsModel.Markings.Clear(); // Erida edit
         _markingsModel.OrganData = _markingManager.GetMarkingData(newSpecies);
         _markingsModel.ValidateMarkings();
         // In case there's job restrictions for the species
@@ -406,9 +407,6 @@ public sealed partial class HumanoidProfileEditor
         }
         else // Whelp, the fixture doesn't exist, guesstimate it instead
             WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int)71));
-
-        if (SpriteView.Sprite != null)
-            _sharedScaleVisualsSystem.SetSpriteScale(SpriteView.PreviewDummy, new Vector2(Profile.Width, Profile.Height));
     }
 
     private void SetProfileHeight(float height)

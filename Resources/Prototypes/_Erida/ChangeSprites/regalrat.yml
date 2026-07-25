@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2026 vanomorodellefake <vanomorodellefake29@gmail.com>
+# SPDX-License-Identifier: MIT
+
+- type: changeSprite
+  id: ratqueen
+  name: changesprite-ratqueen-name
+  icon: { sprite: "/Textures/_Erida/Mobs/Animals/ratqueen.rsi", state: ratqueen }
+  layers:
+    - sprite: { sprite: "/Textures/_Erida/Mobs/Animals/ratqueen.rsi", state: ratqueen }
+      layerKey: Base
+      visible: true
+      stateId: ratqueen
+  damageStateVisualLayers:
+    Alive:
+      Base: "ratqueen"
+    Critical:
+      Base: "dead"
+    Dead:
+      Base: "dead"
+
+- type: changeSprite
+  id: ringmaster
+  name: changesprite-ringmaster-name
+  icon: { sprite: "/Textures/_Erida/Mobs/Animals/ratqueen.rsi", state: ringmaster }
+  layers:
+    - sprite: { sprite: "/Textures/_Erida/Mobs/Animals/ratqueen.rsi", state: ringmaster }
+      layerKey: Base
+      visible: true
+      stateId: ringmaster
+  damageStateVisualLayers:
+    Alive:
+      Base: "ringmaster"
+    Critical:
+      Base: "dead"
+    Dead:
+      Base: "dead"
+
+- type: changeSprite
+  id: ratqueen_fat
+  name: changesprite-ratqueen_fat-name
+  icon: { sprite: "/Textures/_Erida/Mobs/Animals/ratqueen.rsi", state: ratqueen_fat }
+  layers:
+    - sprite: { sprite: "/Textures/_Erida/Mobs/Animals/ratqueen.rsi", state: ratqueen_fat }
+      layerKey: Base
+      visible: true
+      stateId: ratqueen_fat
+  damageStateVisualLayers:
+    Alive:
+      Base: "ratqueen_fat"
+    Critical:
+      Base: "dead"
+    Dead:
+      Base: "dead"
+
+- type: changeSprite
+  id: regalrat
+  name: changesprite-regalrat-name
+  icon: { sprite: "/Textures/_Erida/Mobs/Animals/ratking.rsi", state: alive }
+  layers:
+    - sprite: { sprite: "/Textures/_Erida/Mobs/Animals/ratking.rsi", state: alive }
+      layerKey: Base
+      visible: true
+      stateId: alive
+  damageStateVisualLayers:
+    Alive:
+      Base: "alive"
+    Critical:
+      Base: "dead"
+    Dead:
+      Base: "dead"

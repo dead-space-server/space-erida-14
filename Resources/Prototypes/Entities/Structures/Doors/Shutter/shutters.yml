@@ -42,6 +42,7 @@
   - type: Tag
     tags:
     - ForceNoFixRotations # Don't want the fixrotations command to target these
+    - DoorRemoteWhitelist # Erida edit
   - type: Door
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
@@ -107,6 +108,9 @@
   - type: WeldingSparksAnimation # Goobstation
     startingOffset: -0.5, -0.5
     endingOffset: 0.5, -0.5
+  # Erida edit
+  - type: AccessReader
+    containerAccessProvider: board
 
 - type: entity
   id: ShuttersNormal

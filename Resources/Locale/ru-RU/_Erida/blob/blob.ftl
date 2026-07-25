@@ -51,6 +51,8 @@ blob-alert-detect = На станции была обнаружена биоло
 blob-alert-critical = Биологическая угроза достигла критической массы, вам отправлены коды от ядерной боеголовки, вы должны немедленно взорвать станцию.
 blob-alert-critical-NoNukeCode = Биологическая угроза достигла критической массы, отправка кодов от ядерной боеголовки не удалась.
 
+blob-alert-shuttle-arrived = На борту обнаружена биологическая угроза. Всем членам экипажа немедленно эвакуироваться.
+
 # Actions
 blob-create-factory-action-name = Создать блоб фабрику (60)
 blob-create-factory-action-desc = Превращает выбраного нормального блоба в фабрику, которая способна произвести 3 споры и блоббернаута, если рядом есть узел или ядро.
@@ -86,6 +88,7 @@ ghost-role-information-blob-description = Ядро блоба
 ghost-role-information-blob-rules = Вы антагонист. Захватите всю станцию.
 ghost-role-information-blobbernaut-name = Блобернаут
 ghost-role-information-blobbernaut-desc = Главный танк блоба
+ghost-role-information-blobbernaut-description = Блоббернаут. Защищайте ядро блоба и помогайте ему захватить станцию.
 ghost-role-information-blobbernaut-rules = Вы антагонист. Защищайте и помогайте блобу захватить станцию. Помните, вы умираете если стоите не на тайлах блоба.
 
 # Verbs
@@ -122,6 +125,8 @@ blob-user-was-a-blob = [color=gray]{$user}[/color] был блобом.
 blob-user-was-a-blob-named = [color=White]{$name}[/color] ([color=gray]{$user}[/color]) был блобом.
 blob-was-a-blob-named = [color=White]{$name}[/color] был блобом.
 
+blob-round-end-agent-name = блоб
+
 preset-blob-objective-issuer-blob = [color=#33cc00]Блоб[/color]
 
 blob-user-was-a-blob-with-objectives = [color=gray]{$user}[/color] был блобом и имел следующие цели:
@@ -137,6 +142,8 @@ objective-condition-blob-capture-title = Захватить станцию
 objective-condition-blob-capture-description = Ваша единственная цель - полное и безоговорочное поглощение станции. Вам необходимо владеть как минимум {$count} тайлами блоба.
 
 # Game and admins
+admin-verb-make-blob = Сделать цель носителем блоба.
+chat-language-Blob-name = Блоб
 blob-title = Блоб
 blob-description = На станции обнаружен 5ый уровень биологической угрозы.
 blob-alert-out-off-station = Блоб раскрылся.

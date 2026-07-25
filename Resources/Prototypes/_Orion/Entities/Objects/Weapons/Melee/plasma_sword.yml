@@ -44,6 +44,8 @@
       reagents:
       - ReagentId: Plasma
         Quantity: 0.05
+  - type: MeleeWeapon # Erida add
+    wideAnimationRotation: 135
 #  - type: ComponentToggler
 #    components:
 #    - type: Cautery # Shitmed
@@ -135,3 +137,5 @@
       params:
         variation: 0.125
         volume: -3
+  - type: MeleeWeapon # Erida add
+    wideAnimationRotation: 45

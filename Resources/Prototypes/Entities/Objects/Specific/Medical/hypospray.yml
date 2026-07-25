@@ -662,11 +662,12 @@
   - type: Injector
     solutionName: hypospray
     activeModeProtoId: HypopenDynamicMode
+    breakOnMove: false # Erida edit
     allowedModes:
     - HyposprayInjectMode
     - HypopenDynamicMode
   - type: UseDelay
-    delay: 0.5
+    delay: 0.25 # Erida edit
   - type: StaticPrice # A new shitcurity meta
     price: 75
   - type: EmitSoundOnUse

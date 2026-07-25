@@ -68,14 +68,50 @@
         whitelist:
           tags:
           - CaptainNTNavySabre
+          - CaptainSabre
   - type: ItemMapper
     mapLayers:
       sheath-sabre:
         whitelist:
           tags:
           - CaptainNTNavySabre
+          - CaptainSabre
   - type: Appearance
-  
+
+# - type: entity
+#   parent: [ClothingBeltNTNavyWebbing, ClothingSlotBase, BaseCommandContraband]
+#   id: ClothingBeltNTNavyCaptainWebbing
+#   name: nanotrasen navy captain webbing
+#   description:
+#   components:
+#   - type: Sprite
+#     sprite: _Erida/Clothing/Belt/nanotarsen_navy_websheath.rsi
+#     state: sheath
+#   - type: Clothing
+#     sprite: _Erida/Clothing/Belt/nanotarsen_navy_websheath.rsi
+#   - type: Item
+#     size: Ginormous
+#   - type: ItemSlots
+#     slots:
+#       item:
+#         name: Sabre
+#         insertVerbText: sheath-insert-verb
+#         ejectVerbText: sheath-eject-verb
+#         insertSound: /Audio/Items/sheath.ogg
+#         ejectSound: /Audio/Items/unsheath.ogg
+#         whitelist:
+#           tags:
+#           - CaptainNTNavySabre
+#           - CaptainSabre
+#   - type: ItemMapper
+#     mapLayers:
+#       sheath-sabre:
+#         whitelist:
+#           tags:
+#           - CaptainNTNavySabre
+#           - CaptainSabre
+#   - type: Appearance
+
 - type: entity
   parent: [ClothingBeltBase, ClothingSlotBase, BaseSyndicateContraband]
   id: ClothingBeltSheathSyndicate
@@ -107,7 +143,7 @@
           tags:
           - SyndicateRapier
   - type: Appearance
-  
+
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
   id: ClothingBeltHelldiver

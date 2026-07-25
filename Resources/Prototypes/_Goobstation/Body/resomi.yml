@@ -60,6 +60,7 @@
   parent: BaseSpeciesAppearance
   id: AppearanceResomi
   name: Resomi appearance
+  categories: [ HideSpawnMenu ]
   components:
   - type: Inventory
     speciesId: resomi
@@ -143,8 +144,6 @@
       Kidneys: OrganResomiKidneys
   - type: HumanoidProfile
     species: Resomi
-  - type: ScaleVisuals
-    scale: 0.85, 0.85
 
 - type: entity
   name: Urist McRaptor

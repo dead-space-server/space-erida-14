@@ -170,6 +170,18 @@
   - type: Paintable
     group: null
 
+ # Erida start
+- type: entity
+  parent: Airlock
+  id: AirlockGlassXenoborg
+  name: xenoborg airlock
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Glass/xenoborg.rsi
+  - type: Paintable
+    group: null
+ # Erida end
+
 - type: entity
   parent: Airlock
   id: AirlockHatchMaintenance

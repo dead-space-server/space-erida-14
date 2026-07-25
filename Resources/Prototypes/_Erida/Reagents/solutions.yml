@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2026 Lytheriia
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SolutionLarge
+  id: lactation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: lactation
+  - type: Edible
+    edible: Drink
+    solution: lactation
+    delay: 0
+    destroyOnEmpty: false
+    utensil: None
+    forceFeedDelay: 0
+    requiresSpecialDigestion: false
