@@ -142,6 +142,7 @@
     guides:
     - NuclearReactor
     - Power
+  - type: Injurable #Erida shitfix
 
 - type: entity
   id: BaseNuclearReactorSmall
