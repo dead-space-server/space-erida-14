@@ -119,6 +119,7 @@
     guides:
     - GasTurbine
     - Power
+  - type: Injurable #Erida shitfix
 
 - type: entity
   id: BaseGasTurbineSmall
