@@ -1,3 +1,6 @@
+// SPDX-FileCopyrightText: 2026 vanomorodellefake <vanomorodellefake29@gmail.com>
+// SPDX-License-Identifier: MIT
+
 using Content.Shared._Erida.HolosignAmountLimits.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
