@@ -679,7 +679,7 @@ public sealed partial class BiomeSystem : SharedBiomeSystem
 
             if (groupSize > 0)
             {
-                Log.Warning($"Found remaining group size for ore veins!");
+                Log.Debug($"Found remaining group size for ore veins!");
             }
         }
 
