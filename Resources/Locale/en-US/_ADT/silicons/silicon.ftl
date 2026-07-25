@@ -1,0 +1,9 @@
+silicon-overheating = You feel your circuits overheating!
+battery-electrocute-charge = The battery fills with energy!
+silicon-power-low = Low battery charge!
+batteryslotrequireslock-component-alert-owner = {$user} interferes with your maintenance panel!
+battery-drinker-verb-drink = Recharge
+battery-drinker-empty = {$target} is empty!
+battery-drinker-error = Failed to charge!
+battery-drinker-no-battery = No battery to charge!
+battery-drinker-no-source = Cannot draw power from this

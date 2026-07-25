@@ -331,6 +331,13 @@
           - SpookyFog
       range: 4
 
+- type: soundCollection # ADT edit
+  id: SiliconGlitches
+  files:
+    - /Audio/_ADT/Effects/Synt/Glitch_1.ogg
+    - /Audio/_ADT/Effects/Synt/Glitch_2.ogg
+    - /Audio/_ADT/Effects/Synt/Glitch_3.ogg
+
 - type: rules
   id: OnMapGrid
   rules:

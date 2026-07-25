@@ -141,6 +141,7 @@
         sound:
           collection: MetalGlassBreak
   - type: StationInfiniteBatteryTarget
+  - type: BatteryDrinkerSource # erida edit
   - type: Electrified
     onHandInteract: false
     onInteractUsing: false

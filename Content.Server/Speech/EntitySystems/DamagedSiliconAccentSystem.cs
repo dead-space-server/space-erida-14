@@ -7,6 +7,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell;
 using Content.Shared.Speech;
+using Robust.Shared.Audio.Systems; // erida edit
 using Robust.Shared.Random;
 
 namespace Content.Server.Speech.EntitySystems;
@@ -14,6 +15,7 @@ namespace Content.Server.Speech.EntitySystems;
 public sealed partial class DamagedSiliconAccentSystem : EntitySystem
 {
     [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedAudioSystem _audio = default!; // erida edit
     [Dependency] private SharedBatterySystem _battery = default!;
     [Dependency] private PowerCellSystem _powerCell = default!;
     [Dependency] private DestructibleSystem _destructibleSystem = default!;
@@ -59,6 +61,13 @@ public sealed partial class DamagedSiliconAccentSystem : EntitySystem
             // Corrupt due to damage (drop, repeat, replace with symbols)
             args.Message = CorruptDamage(args.Message, damage, ent);
         }
+
+        // erida edit start
+        if (args.Message.Length > 0 && (ent.Comp.EnableChargeCorruption || ent.Comp.EnableDamageCorruption))
+        {
+            _audio.PlayPvs(ent.Comp.SpeechGlitchSounds, ent);
+        }
+        // erida edit end
     }
 
     public string CorruptPower(string message, float chargeLevel, DamagedSiliconAccentComponent comp)

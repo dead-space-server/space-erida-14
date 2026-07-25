@@ -232,7 +232,7 @@ public abstract partial class SharedVirtualItemSystem : EntitySystem
     {
         var pos = Transform(user).Coordinates;
         virtualItem = PredictedSpawnAttachedTo(VirtualItem, pos);
-        var virtualItemComp = Comp<VirtualItemComponent>(virtualItem.Value);
+        var virtualItemComp = EnsureComp<VirtualItemComponent>(virtualItem.Value);
         virtualItemComp.BlockingEntity = blockingEnt;
         Dirty(virtualItem.Value, virtualItemComp);
         return true;
@@ -243,10 +243,10 @@ public abstract partial class SharedVirtualItemSystem : EntitySystem
     /// </summary>
     public void DeleteVirtualItem(Entity<VirtualItemComponent> item, EntityUid user)
     {
-        var userEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user);
+        var userEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user, item.Owner); // Goobstation
         RaiseLocalEvent(user, userEv);
 
-        var targEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user);
+        var targEv = new VirtualItemDeletedEvent(item.Comp.BlockingEntity, user, item.Owner); // Goobstation
         RaiseLocalEvent(item.Comp.BlockingEntity, targEv);
 
         if (TerminatingOrDeleted(item))

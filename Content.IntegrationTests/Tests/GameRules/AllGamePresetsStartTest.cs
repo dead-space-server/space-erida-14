@@ -161,7 +161,15 @@ public sealed class AllGamePresetsStartTest : GameTest
             {
                 for (var count = 0; count < amount; count++)
                 {
-                    AssertAntagInitialized(antag, players[j++]);
+                    var session = players[j++];
+
+                    // erida edit: IPC has ZombieImmune, incompatible with InitialInfected
+                    if (!mind.TryGetMind(session, out var mindEnt, out var mindComp))
+                        continue;
+                    if (mindComp.CurrentEntity == null || !entMan.EntityExists(mindComp.CurrentEntity))
+                        continue;
+
+                    AssertAntagInitialized(antag, session);
                 }
             }
         });

@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 ADT Development
+# SPDX-FileCopyrightText: 2026 OpenWendor
+# SPDX-License-Identifier: MIT
+
+- type: wireLayout
+  id: IPC
+  wires:
+  - !type:PowerWireAction
+  - !type:SpeechWireAction
+  - !type:AccessWireAction
+  - !type:LogWireAction
+  - !type:AiInteractWireAction
+  - !type:PowerWireAction
