@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightDestroyer.Components;
+using Content.Server.Light.Components;
 using Content.Shared._Erida.LightDestroyer;
 using Content.Shared._Erida.LightDestroyer.Components;
 using Content.Shared.Hands.Components;
@@ -83,7 +84,9 @@ public sealed partial class LightDestroyerSystem : SharedLightDestroyerSystem
     private bool CheckLight(EntityUid? entity)
     {
         if (TryComp<PointLightComponent>(entity, out var comp)
-            && comp.Enabled)
+            && comp.Enabled
+            || TryComp<ExpendableLightComponent>(entity, out var elComp)
+                && elComp.Activated)
             return true;
 
         return false;
