@@ -35,7 +35,7 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Sheet
     - ConstructionMaterial

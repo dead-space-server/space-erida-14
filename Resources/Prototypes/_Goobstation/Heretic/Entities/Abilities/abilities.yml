@@ -228,7 +228,7 @@
   - type: FadingTimedDespawn
     fadeOutTime: 0.5
     lifetime: 0
-  - type: RandomRotation
+  # - type: RandomRotation
   - type: Sprite
     drawdepth: Effects
     layers:
@@ -246,7 +246,7 @@
   components:
   - type: TimedDespawn
     lifetime: 0.5
-  - type: RandomRotation
+  # - type: RandomRotation
   - type: Sprite
     layers:
     - shader: unshaded

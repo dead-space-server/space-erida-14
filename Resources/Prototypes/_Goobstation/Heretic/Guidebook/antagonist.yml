@@ -9,3 +9,8 @@
   id: Heretics
   name: guide-entry-heretics
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Heretics.xml"
+
+- type: guideEntry
+  id: Blob
+  name: guide-entry-blob
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Blob.xml"

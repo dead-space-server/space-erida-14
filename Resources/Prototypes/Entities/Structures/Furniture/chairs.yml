@@ -50,7 +50,7 @@
           collection: MetalBreak
   - type: StaticPrice
     price: 50
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Chair
 
@@ -242,7 +242,7 @@
   - type: Tag
     tags:
     - Wooden
-    - Chair
+    - Chair # Goobstation
   - type: StaticPrice
     price: 75
 

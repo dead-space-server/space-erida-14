@@ -141,6 +141,7 @@ public sealed partial class StoreSystem
             if (mind != null || Mind.TryGetMind(buyer, out mindId, out mind))
                 _heretic.TryAddKnowledge(mindId, listing.ProductHereticKnowledge.Value, mind.CurrentEntity);
         }
+        // Erida end
 
         //spawn entity
         if (listing.ProductEntity != null)
@@ -293,9 +294,9 @@ public sealed partial class StoreSystem
         foreach (var value in sortedCashValues)
         {
             var cashId = proto.Cash[value];
-            var amountToSpawn = (int) MathF.Floor((float) (amountRemaining / value));
+            var amountToSpawn = (int)MathF.Floor((float)(amountRemaining / value));
             var ents = _stack.SpawnMultipleAtPosition(cashId, amountToSpawn, coordinates);
-            if (ents.FirstOrDefault() is {} ent)
+            if (ents.FirstOrDefault() is { } ent)
                 _hands.PickupOrDrop(buyer, ent);
             amountRemaining -= value * amountToSpawn;
         }

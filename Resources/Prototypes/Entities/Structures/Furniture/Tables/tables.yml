@@ -202,7 +202,7 @@
   - type: Construction
     graph: Table
     node: Table
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Table
 
@@ -569,7 +569,7 @@
   - type: Tag
     tags:
     - Wooden
-    - Table
+    - Table # Goobstation
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
@@ -622,7 +622,7 @@
   - type: Tag
     tags:
     - Wooden
-    - Table
+    - Table # Goobstation
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepCarpet
@@ -757,7 +757,7 @@
   - type: Tag
     tags:
     - Wooden
-    - Table
+    - Table # Goobstation
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepCarpet

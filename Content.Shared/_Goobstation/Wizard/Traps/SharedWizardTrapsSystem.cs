@@ -54,9 +54,9 @@ public abstract partial class SharedWizardTrapsSystem : EntitySystem
         SubscribeLocalEvent<WizardTrapComponent, PreventCollideEvent>(OnPreventCollide);
         SubscribeLocalEvent<WizardTrapComponent, StartCollideEvent>(OnStartCollide);
 
-        SubscribeLocalEvent<StunTrapComponent, TrapTriggeredEvent>(OnStunTriggered);
-        SubscribeLocalEvent<ChillTrapComponent, TrapTriggeredEvent>(OnChillTriggered);
-        SubscribeLocalEvent<BlindingTrapComponent, TrapTriggeredEvent>(OnBlindTriggered);
+        // SubscribeLocalEvent<StunTrapComponent, TrapTriggeredEvent>(OnStunTriggered);
+        // SubscribeLocalEvent<ChillTrapComponent, TrapTriggeredEvent>(OnChillTriggered);
+        // SubscribeLocalEvent<BlindingTrapComponent, TrapTriggeredEvent>(OnBlindTriggered);
         SubscribeLocalEvent<DamageTrapComponent, TrapTriggeredEvent>(OnDamageTriggered);
     }
 
@@ -67,38 +67,38 @@ public abstract partial class SharedWizardTrapsSystem : EntitySystem
             Spawn(toSpawn, _transform.GetMapCoordinates(ent));
     }
 
-    private void OnBlindTriggered(Entity<BlindingTrapComponent> ent, ref TrapTriggeredEvent args)
-    {
-        var (_, comp) = ent;
+    // private void OnBlindTriggered(Entity<BlindingTrapComponent> ent, ref TrapTriggeredEvent args)
+    // {
+    //     var (_, comp) = ent;
 
-        if (!TryComp(args.Victim, out StatusEffectsComponent? status))
-            return;
+    //     if (!TryComp(args.Victim, out StatusEffectsComponent? status))
+    //         return;
 
-        _status.TryAddStatusEffect<TemporaryBlindnessComponent>(args.Victim,
-            "TemporaryBlindness",
-            comp.BlindDuration,
-            true,
-            status);
+    //     _status.TryAddStatusEffect<TemporaryBlindnessComponent>(args.Victim,
+    //         "TemporaryBlindness",
+    //         comp.BlindDuration,
+    //         true,
+    //         status);
 
-        _status.TryAddStatusEffect<BlurryVisionComponent>(args.Victim,
-            "BlurryVision",
-            comp.BlurDuration,
-            true,
-            status);
-    }
+    //     _status.TryAddStatusEffect<BlurryVisionComponent>(args.Victim,
+    //         "BlurryVision",
+    //         comp.BlurDuration,
+    //         true,
+    //         status);
+    // }
 
-    private void OnChillTriggered(Entity<ChillTrapComponent> ent, ref TrapTriggeredEvent args)
-    {
-        EnsureComp<IceCubeComponent>(args.Victim);
-    }
+    // private void OnChillTriggered(Entity<ChillTrapComponent> ent, ref TrapTriggeredEvent args)
+    // {
+    //     EnsureComp<IceCubeComponent>(args.Victim);
+    // }
 
-    private void OnStunTriggered(Entity<StunTrapComponent> ent, ref TrapTriggeredEvent args)
-    {
-        var (uid, comp) = ent;
-        var victim = args.Victim;
+    // private void OnStunTriggered(Entity<StunTrapComponent> ent, ref TrapTriggeredEvent args)
+    // {
+    //     var (uid, comp) = ent;
+    //     var victim = args.Victim;
 
-        _electrocution.TryDoElectrocution(victim, uid, comp.Damage, comp.StunTime, true, ignoreInsulation: true);
-    }
+    //     _electrocution.TryDoElectrocution(victim, uid, comp.Damage, comp.StunTime, true, ignoreInsulation: true);
+    // }
 
     private void OnStartCollide(Entity<WizardTrapComponent> ent, ref StartCollideEvent args)
     {

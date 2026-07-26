@@ -11,7 +11,6 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Goobstation.Bloodstream;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Events;
@@ -35,7 +34,7 @@ public sealed partial class ChampionStanceSystem : EntitySystem
 
         SubscribeLocalEvent<ChampionStanceComponent, DamageModifyEvent>(OnDamageModify);
         SubscribeLocalEvent<ChampionStanceComponent, BeforeStaminaDamageEvent>(OnBeforeStaminaDamage);
-        SubscribeLocalEvent<ChampionStanceComponent, GetBloodlossDamageMultiplierEvent>(OnGetBloodlossMultiplier);
+        // SubscribeLocalEvent<ChampionStanceComponent, GetBloodlossDamageMultiplierEvent>(OnGetBloodlossMultiplier);
         SubscribeLocalEvent<ChampionStanceComponent, ComponentStartup>(OnChampionStartup);
         SubscribeLocalEvent<ChampionStanceComponent, ComponentShutdown>(OnChampionShutdown);
         SubscribeLocalEvent<ChampionStanceComponent, ModifySlowOnDamageSpeedEvent>(OnChampionModifySpeed);
@@ -61,11 +60,11 @@ public sealed partial class ChampionStanceSystem : EntitySystem
         _movementSpeedModifierSystem.RefreshMovementSpeedModifiers(ent);
     }
 
-    private void OnGetBloodlossMultiplier(Entity<ChampionStanceComponent> ent,
-        ref GetBloodlossDamageMultiplierEvent args)
-    {
-        args.Multiplier *= 0.5f;
-    }
+    // private void OnGetBloodlossMultiplier(Entity<ChampionStanceComponent> ent,
+    //     ref GetBloodlossDamageMultiplierEvent args)
+    // {
+    //     args.Multiplier *= 0.5f;
+    // }
 
     public bool Condition(Entity<ChampionStanceComponent> ent)
     {

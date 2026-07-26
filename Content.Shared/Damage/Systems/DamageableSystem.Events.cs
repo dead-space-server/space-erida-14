@@ -312,7 +312,7 @@ public sealed class DamageChangedEvent : EntityEventArgs
     /// <summary>
     ///     Damage before clamp of excessive heal and damage cap was applied
     /// </summary>
-    public readonly DamageSpecifier? UncappedDamage;
+    public readonly DamageSpecifier? UncappedDamage; // Goobstation
 
     /// <summary>
     ///     Was any of the damage change dealing damage, or was it all healing?

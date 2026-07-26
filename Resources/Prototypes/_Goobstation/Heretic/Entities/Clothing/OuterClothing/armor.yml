@@ -150,8 +150,6 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance
     damageCoefficient: 0.7
-  - type: HideContrabandContent #Goobstation Contraband detector
-  - type: UndetectableContraband #Goobstation Contraband detector
   - type: Storage
     storageOpenSound: null
     maxItemSize: Normal

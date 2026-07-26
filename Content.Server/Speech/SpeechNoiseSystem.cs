@@ -1,3 +1,4 @@
+using Content.Shared._Goobstation.Speech;
 using Content.Shared.Chat;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
@@ -27,9 +28,27 @@ namespace Content.Server.Speech
             if (ent.Comp.SpeechSounds == null)
                 return null;
 
+            // Goobstation start
+            var getSpeechSoundEv = new GetSpeechSoundEvent();
+            RaiseLocalEvent(ent, ref getSpeechSoundEv);
+            SpeechSoundsPrototype? prototype;
+            if (getSpeechSoundEv.Handled)
+            {
+                if (getSpeechSoundEv.SpeechSoundProtoId is not { } protoId ||
+                    !_protoManager.TryIndex(protoId, out prototype))
+                    return null;
+            }
+            else
+            {
+                if (ent.Comp.SpeechSounds == null)
+                    return null;
+
+                prototype = _protoManager.Index<SpeechSoundsPrototype>(ent.Comp.SpeechSounds);
+            }
+            // Goobstation end
+
             // Play speech sound
             SoundSpecifier? contextSound;
-            var prototype = _protoManager.Index<SpeechSoundsPrototype>(ent.Comp.SpeechSounds);
 
             // Different sounds for ask/exclaim based on last character
             contextSound = message[^1] switch
@@ -51,7 +70,7 @@ namespace Content.Server.Speech
                 contextSound = prototype.ExclaimSound;
             }
 
-            var scale = (float) _random.NextGaussian(1, prototype.Variation);
+            var scale = (float)_random.NextGaussian(1, prototype.Variation);
             contextSound.Params = ent.Comp.AudioParams.WithPitchScale(scale);
             return contextSound;
         }

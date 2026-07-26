@@ -19,8 +19,8 @@
   id: BaseMobGhoul
   abstract: true
   components:
-  - type: WeakToHoly
-    alwaysTakeHoly: true
+  # - type: WeakToHoly
+  #   alwaysTakeHoly: true
   - type: Ghoul
   - type: MovementSpeedModifier
     baseWalkSpeed: 5

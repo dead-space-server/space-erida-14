@@ -15,8 +15,8 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - GasMask
-    - Mask
+    - GasMask # Goobstation
+    - Mask # Goobstation
   - type: HideLayerClothing
     layers:
       Snout: Mask
@@ -365,7 +365,7 @@
   - type: Construction
     graph: Muzzle
     node: muzzle
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Mask
     - Muzzle
@@ -416,8 +416,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask
-    - Mask
+    - GasMask # Goobstation
+    - Mask # Goobstation
   - type: HideLayerClothing
     slots:
     - Hair
@@ -464,8 +464,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask
-    - Mask
+    - GasMask # Goobstation
+    - Mask # Goobstation
   - type: HideLayerClothing
     slots:
     - Hair

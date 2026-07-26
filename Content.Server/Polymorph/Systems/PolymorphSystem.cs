@@ -275,7 +275,7 @@ public sealed partial class PolymorphSystem : EntitySystem
         {
             _visualBody.CopyAppearanceFrom(uid, child);
         }
-
+        // Goobstation start
         if (configuration.ComponentsToTransfer.Count > 0) // Goobstation
         {
             foreach (var data in configuration.ComponentsToTransfer)
@@ -306,6 +306,7 @@ public sealed partial class PolymorphSystem : EntitySystem
                 AddComp(child, (Component) temp!, true);
             }
         }
+        // Goobstation end
 
         if (_mindSystem.TryGetMind(uid, out var mindId, out var mind))
             _mindSystem.TransferTo(mindId, child, mind: mind);
@@ -411,13 +412,13 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (component.Configuration.EffectProto != null)
             SpawnAttachedTo(component.Configuration.EffectProto, parent.ToCoordinates());
 
-        string? popup = null;
+        string? popup = null; // Goobstation
         if (component.Configuration.ExitPolymorphPopup != null)
             popup = Loc.GetString(component.Configuration.ExitPolymorphPopup,
                 ("parent", Identity.Entity(uid, EntityManager)),
                 ("child", Identity.Entity(parent, EntityManager)));
 
-        if (component.Configuration.ShowPopup)
+        if (component.Configuration.ShowPopup) // Gobostation
             _popup.PopupEntity(popup, parent);
         QueueDel(uid);
 

@@ -53,7 +53,7 @@ public abstract partial class SharedHereticBladeSystem : EntitySystem
     [Dependency] private SharedHereticCombatMarkSystem _combatMark = default!;
     [Dependency] private SharedRottingSystem _rotting = default!;
     [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private SharedSanguineStrikeSystem _sanguine = default!;
+    [Dependency] private SanguineStrikeSystem _sanguine = default!;
     [Dependency] private CosmosComboSystem _combo = default!;
     [Dependency] private SharedStarMarkSystem _starMark = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -177,7 +177,7 @@ public abstract partial class SharedHereticBladeSystem : EntitySystem
         var normalized = new Vector2(dir.X / len, dir.Y / len);
         var ray = new CollisionRay(coords,
             normalized,
-            (int) (CollisionGroup.Impassable | CollisionGroup.InteractImpassable));
+            (int)(CollisionGroup.Impassable | CollisionGroup.InteractImpassable));
         var result = _physics.IntersectRay(xform.MapID, ray, len, user).FirstOrNull();
         if (result != null && result.Value.HitEntity != target)
             return false;
@@ -231,11 +231,11 @@ public abstract partial class SharedHereticBladeSystem : EntitySystem
             case "Rust":
                 if (_mobState.IsDead(target))
                     _rotting.ReduceAccumulator(target, -TimeSpan.FromMinutes(1f));
-                else
-                {
-                    var ev = new ModifyDisgustEvent(20f);
-                    RaiseLocalEvent(target, ref ev);
-                }
+                // else
+                // {
+                //     var ev = new ModifyDisgustEvent(20f);
+                //     RaiseLocalEvent(target, ref ev);
+                // }
                 break;
 
             default:

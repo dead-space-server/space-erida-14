@@ -21,7 +21,7 @@
   # handling sounds edit end
   - type: StaticPrice
     price: 25
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Mask
 

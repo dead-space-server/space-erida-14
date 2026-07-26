@@ -152,7 +152,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
 
         if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
-           user = mechPilot.Mech;
+            user = mechPilot.Mech;
 
         if (!TryGetGun(user.Value, out var gun))
             return;
@@ -160,7 +160,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (gun.Owner != GetEntity(msg.Gun))
             return;
 
-         // Erida-start
+        // Erida-start
         if (!GetAllGuns(user.Value, gun, out var allGuns))
         {
             gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
@@ -205,7 +205,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (gunEntity.Owner != gunUid)
             return;
 
-         EntityUid ent = gunEntity.Owner; 
+        EntityUid ent = gunEntity.Owner;
 
         // Erida-start
         if (!GetAllGuns(user.Value, gunEntity, out var allGuns))
@@ -295,7 +295,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         gun = default!;
-         return false;
+        return false;
     }
 
     private void StopShooting(Entity<GunComponent> ent)
@@ -556,6 +556,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (dirty)
             Dirty(projectile, targeted);
     }
+    // Goobstation end
 
     protected abstract void Popup(string message, EntityUid? uid, EntityUid? user);
 

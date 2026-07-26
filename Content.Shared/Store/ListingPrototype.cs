@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Shared._Goobstation.Heretic.Prototypes;
+using Content.Shared._Goobstation.Heretic.Prototypes; // Goobstation
 using Content.Shared.FixedPoint;
 using Content.Shared.Store.Components;
 using Content.Shared.StoreDiscount.Components;
@@ -44,7 +44,7 @@ public partial class ListingData : IEquatable<ListingData>
         other.DiscountDownTo,
         other.DisableRefund,
         other.ApplyToMob,
-        other.ProductHereticKnowledge
+        other.ProductHereticKnowledge // Goobstation
     )
     {
 
@@ -72,7 +72,7 @@ public partial class ListingData : IEquatable<ListingData>
         Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> dataDiscountDownTo,
         bool disableRefund,
         bool applyToMob,
-        ProtoId<HereticKnowledgePrototype>? productHereticKnowledge = null
+        ProtoId<HereticKnowledgePrototype>? productHereticKnowledge = null // Goobstation
     )
     {
         Name = name;
@@ -248,7 +248,7 @@ public partial class ListingData : IEquatable<ListingData>
             ProductEntity != listing.ProductEntity ||
             ProductComponents != listing.ProductComponents ||
             ProductAction != listing.ProductAction ||
-            ProductHereticKnowledge != listing.ProductHereticKnowledge ||
+            ProductHereticKnowledge != listing.ProductHereticKnowledge || // Goobstation
             ProductEvent?.GetType() != listing.ProductEvent?.GetType() ||
             RestockTime != listing.RestockTime ||
             DisableRefund != listing.DisableRefund ||
@@ -336,7 +336,7 @@ public sealed partial class ListingDataWithCostModifiers : ListingData
             listingData.DiscountDownTo,
             listingData.DisableRefund,
             listingData.ApplyToMob,
-            listingData.ProductHereticKnowledge
+            listingData.ProductHereticKnowledge // Goobstation
         )
     {
     }

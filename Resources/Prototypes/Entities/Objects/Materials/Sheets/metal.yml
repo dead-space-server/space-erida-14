@@ -50,7 +50,7 @@
         Quantity: 9
       - ReagentId: Carbon
         Quantity: 1
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Sheet
     - Metal

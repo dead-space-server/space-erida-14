@@ -196,7 +196,7 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - Eyes
 

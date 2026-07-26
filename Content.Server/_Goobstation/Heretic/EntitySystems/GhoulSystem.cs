@@ -248,8 +248,8 @@ public sealed partial class GhoulSystem : EntitySystem
     private void OnStartup(Entity<GhoulComponent> ent, ref ComponentStartup args)
     {
         GhoulifyEntity(ent);
-        var unholy = EnsureComp<WeakToHolyComponent>(ent);
-        unholy.AlwaysTakeHoly = true;
+        // var unholy = EnsureComp<WeakToHolyComponent>(ent);
+        // unholy.AlwaysTakeHoly = true;
     }
 
     private void OnShutdown(Entity<GhoulComponent> ent, ref ComponentShutdown args)

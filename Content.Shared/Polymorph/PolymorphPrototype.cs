@@ -165,6 +165,7 @@ public sealed partial record PolymorphConfiguration
     [DataField]
     public LocId? ExitPolymorphPopup = "polymorph-revert-popup-generic";
 
+    // Goobstation start
     /// <summary>
     /// Goobstation.
     /// Transfers these components on polymorph.
@@ -206,6 +207,7 @@ public sealed partial record PolymorphConfiguration
     [DataField]
     public bool SkipRevertConfirmation;
 }
+// Goobstation end
 
 public enum PolymorphInventoryChange : byte
 {
@@ -214,6 +216,8 @@ public enum PolymorphInventoryChange : byte
     Transfer,
 }
 
+
+// Goobstation start
 [DataDefinition]
 public sealed partial class ComponentTransferData(string component, bool @override = true, bool mirror = false)
 {
@@ -231,3 +235,4 @@ public sealed partial class ComponentTransferData(string component, bool @overri
 
     public ComponentTransferData() : this(string.Empty, true, false) { }
 }
+// Goobstation end

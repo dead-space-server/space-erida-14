@@ -6,7 +6,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.Heretic;
-using Content.Shared._Goobstation.Identity;
 using Content.Shared._Goobstation.Speech;
 using Content.Shared._Goobstation.Heretic.Components;
 using Content.Shared.Actions;
@@ -55,10 +54,10 @@ public abstract partial class SharedShadowCloakSystem : EntitySystem
         SubscribeLocalEvent<ShadowCloakedComponent, DamageChangedEvent>(OnDamageChanged);
         SubscribeLocalEvent<ShadowCloakedComponent, TransformSpeakerNameEvent>(OnTransformName);
         SubscribeLocalEvent<ShadowCloakedComponent, TryGetIdentityShortInfoEvent>(OnGetIdentity);
-        SubscribeLocalEvent<ShadowCloakedComponent, GetIdentityRepresentationEntityEvent>(OnGetIdentityEntity);
+        // SubscribeLocalEvent<ShadowCloakedComponent, GetIdentityRepresentationEntityEvent>(OnGetIdentityEntity);
         SubscribeLocalEvent<ShadowCloakedComponent, GetSpeechSoundEvent>(OnGetSpeechSound);
         SubscribeLocalEvent<ShadowCloakedComponent, GetEmoteSoundsEvent>(OnGetEmoteSound);
-        SubscribeLocalEvent<ShadowCloakedComponent, GetBarkSourceEntityEvent>(OnGetBark);
+        // SubscribeLocalEvent<ShadowCloakedComponent, GetBarkSourceEntityEvent>(OnGetBark);
         SubscribeLocalEvent<ShadowCloakedComponent, GetVirtualItemBlockingEntityEvent>(OnGetBlockingEntity);
         SubscribeLocalEvent<ShadowCloakedComponent, DownedEvent>(OnDowned);
         SubscribeLocalEvent<ShadowCloakedComponent, StoodEvent>(OnStand);
@@ -88,11 +87,11 @@ public abstract partial class SharedShadowCloakSystem : EntitySystem
             args.Uid = cloak;
     }
 
-    private void OnGetBark(Entity<ShadowCloakedComponent> ent, ref GetBarkSourceEntityEvent args)
-    {
-        if (GetShadowCloakEntity(ent) is { } cloak)
-            args.Ent = cloak;
-    }
+    // private void OnGetBark(Entity<ShadowCloakedComponent> ent, ref GetBarkSourceEntityEvent args)
+    // {
+    //     if (GetShadowCloakEntity(ent) is { } cloak)
+    //         args.Ent = cloak;
+    // }
 
     private void OnGetEmoteSound(Entity<ShadowCloakedComponent> ent, ref GetEmoteSoundsEvent args)
     {
@@ -112,11 +111,11 @@ public abstract partial class SharedShadowCloakSystem : EntitySystem
         args.SpeechSoundProtoId = cloak.Comp.SpeechSounds;
     }
 
-    private void OnGetIdentityEntity(Entity<ShadowCloakedComponent> ent, ref GetIdentityRepresentationEntityEvent args)
-    {
-        if (GetShadowCloakEntity(ent) is { } cloak)
-            args.Uid = cloak;
-    }
+    // private void OnGetIdentityEntity(Entity<ShadowCloakedComponent> ent, ref GetIdentityRepresentationEntityEvent args)
+    // {
+    //     if (GetShadowCloakEntity(ent) is { } cloak)
+    //         args.Uid = cloak;
+    // }
 
     private void OnGetIdentity(Entity<ShadowCloakedComponent> ent, ref TryGetIdentityShortInfoEvent args)
     {
@@ -135,7 +134,7 @@ public abstract partial class SharedShadowCloakSystem : EntitySystem
 
     private void OnDamage(Entity<ShadowCloakEntityComponent> ent, ref DamageChangedEvent args)
     {
-        if (ent.Comp.User is not {} user)
+        if (ent.Comp.User is not { } user)
             return;
 
         if ((args.UncappedDamage ?? args.DamageDelta) is not { } dmg)

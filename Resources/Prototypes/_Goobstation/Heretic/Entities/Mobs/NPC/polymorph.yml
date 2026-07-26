@@ -214,13 +214,13 @@
         - MobMask
         layer:
         - WallLayer
-  - type: SpawnAnimation
-    animationLength: 1.2
+  # - type: SpawnAnimation
+  #   animationLength: 1.2
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.SpawnAnimationVisuals.Spawned:
-        base:
-          True: { state: voidball_effect }
-          False: { state: voidball_opening }
+  # - type: GenericVisualizer
+  #   visuals:
+  #     enum.SpawnAnimationVisuals.Spawned:
+  #       base:
+  #         True: { state: voidball_effect }
+  #         False: { state: voidball_opening }
   - type: VoidPrison

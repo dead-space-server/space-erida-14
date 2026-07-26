@@ -11,6 +11,7 @@
   - Wizard
   - Zombies
   - Blob
+  - Heretic
   - Xenoborgs
   - MinorAntagonists
 
@@ -53,11 +54,6 @@
   id: Wizard
   name: guide-entry-wizard
   text: "/ServerInfo/Guidebook/Antagonist/Wizard.xml"
-
-- type: guideEntry
-  id: Blob
-  name: guide-entry-blob
-  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Blob.xml"
 
 - type: guideEntry
   id: Xenoborgs

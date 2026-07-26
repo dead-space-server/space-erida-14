@@ -143,7 +143,7 @@ public sealed partial class DungeonJob
 
                 if (groupSize > 0)
                 {
-                    _sawmill.Debug($"Found remaining group size for ore veins of {gen.Replacement ?? "null"}!");
+                    _sawmill.Debug($"Found remaining group size for ore veins of {gen.Replacement ?? "null"}!"); // Erida edit
                 }
             }
         }

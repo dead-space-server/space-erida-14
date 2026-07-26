@@ -923,6 +923,7 @@ public sealed partial class PullingSystem : EntitySystem
         Dirty(target, targetComp);
     }
 
+    // Gobstation start
     public void StopAllPulls(EntityUid uid, bool stopPullable = true, bool stopPuller = true) // Goobstation
     {
         if (stopPullable && TryComp<PullableComponent>(uid, out var pullable) && IsPulled(uid, pullable))
@@ -932,6 +933,7 @@ public sealed partial class PullingSystem : EntitySystem
             TryComp(puller.Pulling, out PullableComponent? pullableEnt))
             TryStopPull(puller.Pulling.Value, pullableEnt);
     }
+    // Gobstation end
 
     // Goobstation start
     /// <summary>

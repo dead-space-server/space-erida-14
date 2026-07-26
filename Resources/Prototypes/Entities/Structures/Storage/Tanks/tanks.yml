@@ -82,7 +82,7 @@
   description: A water tank. It's used to store high amounts of water.
   suffix: Empty
   components:
-  - type: Tag
+  - type: Tag # Goobstation
     tags:
     - WaterTank
   - type: StaticPrice

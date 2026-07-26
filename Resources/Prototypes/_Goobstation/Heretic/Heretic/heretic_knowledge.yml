@@ -28,9 +28,9 @@
   actionPrototypes:
   - ActionHereticOpenStore
   - ActionHereticMansusGrasp
-  event: !type:HereticStartupEvent
-    addedComponents:
-    - type: WeakToHoly
+  # event: !type:HereticStartupEvent
+  #   addedComponents:
+  #   - type: WeakToHoly
 
 - type: hereticKnowledge
   id: HeartbeatOfMansus

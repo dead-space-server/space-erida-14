@@ -15,7 +15,7 @@ namespace Content.Shared._Goobstation.Wizard.Projectiles;
 public sealed partial class LifeStealOnProjectileHitSystem : EntitySystem
 {
     [Dependency] private EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private SharedSanguineStrikeSystem _sanguine = default!;
+    [Dependency] private SanguineStrikeSystem _sanguine = default!;
     [Dependency] private MobStateSystem _mobState = default!;
 
     public override void Initialize()

@@ -79,7 +79,7 @@ public abstract partial class SharedCloningSystem : EntitySystem
         EntityCoordinates coords,
         EntityWhitelist? whitelist = null,
         EntityWhitelist? blacklist = null,
-        bool copyStorage = true)
+        bool copyStorage = true) // Goobstation
     {
         return null;
     }

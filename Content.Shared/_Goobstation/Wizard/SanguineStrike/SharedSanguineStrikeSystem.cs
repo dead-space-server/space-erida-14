@@ -12,6 +12,11 @@ using Content.Shared.FixedPoint;
 
 namespace Content.Shared._Goobstation.Wizard.SanguineStrike;
 
+public sealed partial class SanguineStrikeSystem : SharedSanguineStrikeSystem;
+
+/// <summary>
+/// Use <see cref="SanguineStrikeSystem"/> instead that system. Its fucking abstract
+/// </summary>
 public abstract partial class SharedSanguineStrikeSystem : EntitySystem
 {
     [Dependency] private DamageableSystem _damageable = default!;

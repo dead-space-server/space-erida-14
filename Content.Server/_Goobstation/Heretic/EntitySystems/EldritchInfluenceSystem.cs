@@ -52,7 +52,7 @@ public sealed partial class EldritchInfluenceSystem : EntitySystem
     private void OnExamine(Entity<EldritchInfluenceComponent> ent, ref ExaminedEvent args)
     {
         if (HasComp<SpectralComponent>(args.Examiner) || HasComp<GhostComponent>(args.Examiner) ||
-            HasComp<WizardComponent>(args.Examiner) || HasComp<ApprenticeComponent>(args.Examiner) ||
+            // HasComp<WizardComponent>(args.Examiner) ||
             _heretic.IsHereticOrGhoul(args.Examiner))
             return;
 
