@@ -300,10 +300,18 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganReptilianInternal, OrganReptilianMetabolizer ]
@@ -318,10 +326,17 @@
       - Pill
       - Crayon
       - Paper
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
   id: OrganReptilianLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]

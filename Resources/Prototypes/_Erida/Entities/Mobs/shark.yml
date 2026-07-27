@@ -216,19 +216,35 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganSharkInternal, OrganSharkMetabolizer ]
   id: OrganSharkLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganSharkInternal, OrganSharkMetabolizer ]
   id: OrganSharkHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganSharkInternal, OrganSharkMetabolizer ]
   id: OrganSharkStomach
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSharkInternal, OrganSharkMetabolizer ]
   id: OrganSharkLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSharkInternal, OrganSharkMetabolizer ]

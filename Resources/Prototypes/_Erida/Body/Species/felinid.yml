@@ -247,18 +247,34 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganFelinidInternal, OrganFelinidMetabolizer ]
   id: OrganFelinidLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganFelinidInternal, OrganFelinidMetabolizer ]
   id: OrganFelinidHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganFelinidInternal, OrganFelinidMetabolizer ]
   id: OrganFelinidStomach
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganFelinidInternal, OrganFelinidMetabolizer ]
   id: OrganFelinidLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganFelinidInternal, OrganFelinidMetabolizer ]

@@ -297,3 +297,6 @@
   components:
   - type: Lung
     alert: LowNitrogen
+  - type: Tag # erida edit
+    tags:
+    - Lungs

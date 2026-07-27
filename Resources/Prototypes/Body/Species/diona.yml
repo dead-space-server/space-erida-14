@@ -284,6 +284,9 @@
   - type: Sprite
     layers:
     - state: lungs
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseStomach, OrganDionaInternal, OrganDionaMetabolizer ]
@@ -292,6 +295,9 @@
   - type: Metabolizer
     maxReagents: 6
     stages: [ Digestion, Bloodstream, Metabolites ]
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: OrganDionaBrain
