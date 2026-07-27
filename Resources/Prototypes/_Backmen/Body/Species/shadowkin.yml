@@ -311,6 +311,9 @@
   - type: VisualOrgan
     data:
       sprite: _Backmen/Mobs/Species/Shadowkin/parts.rsi
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganShadowkinInternal ]

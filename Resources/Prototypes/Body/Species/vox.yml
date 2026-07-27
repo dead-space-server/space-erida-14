@@ -368,6 +368,10 @@
 - type: entity
   parent: [ OrganVoxVisual, OrganBaseEyes, OrganVoxInternal ]
   id: OrganVoxEyes
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganVoxInternal ]

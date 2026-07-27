@@ -307,7 +307,7 @@
     - type: Speech
       speechSounds: Pai
       audioParams:
-        volume: -2
+        volume: -3,5
         rolloffFactor: 1.5
     - type: Vocal
       sounds:

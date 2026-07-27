@@ -197,6 +197,9 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganSharkInternal ]

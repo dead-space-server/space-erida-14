@@ -273,6 +273,9 @@
     data:
       sprite: Mobs/Customization/eyes.rsi
       state: diona
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseLungs, OrganDionaInternal, OrganDionaMetabolizer ]
