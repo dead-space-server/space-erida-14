@@ -31,7 +31,7 @@
     - label: nukeops-title
       answerData:
         action: GameModeStart
-        gamePresetProto: NukeOps
+        gamePresetProto: Nukeops
 
     - label: rev-title
       answerData:
