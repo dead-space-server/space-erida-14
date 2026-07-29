@@ -196,6 +196,9 @@ public sealed partial class AutoVotesSystem : EntitySystem
         if (_gameTicker.RunLevel != GameRunLevel.PreRoundLobby)
             return;
 
+        if (_playerManager.PlayerCount == 0)
+            return;
+
         if (_voteTriggered)
             return;
 
