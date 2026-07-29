@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2026 Lytheriia
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+### Next votes
+
+- type: autoVotes
+  id: mainGR
+  title: autovote-gamerules-title
+  shouldBeInFirstVote: true
+  options:
+    - label: autovote-main-gamerules-dynamic
+      answerData:
+        action: NextVote
+        nextVoteProto:
+          - GameRuleDynamic
+
+    - label: autovote-main-gamerules-greenshift
+      answerData:
+        action: NextVote
+        nextVoteProto:
+          - GameRuleGreenshift
+
+
+### Game mode votes
+
+- type: autoVotes
+  id: GameRuleDynamic
+  title: autovote-gamerules-title
+  options:
+    - label: nukeops-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: NukeOps
+
+    - label: rev-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: Revolutionary
+
+    - label: secret-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: Secret
+
+    - label: survival-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: Survival
+
+    - label: traitor-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: Traitor
+
+    - label: zombie-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: Zombie
+
+- type: autoVotes
+  id: GameRuleGreenshift
+  title: autovote-gamerules-title
+  options:
+    - label: extended-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: Extended
