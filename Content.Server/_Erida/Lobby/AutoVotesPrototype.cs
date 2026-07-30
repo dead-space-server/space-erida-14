@@ -43,7 +43,7 @@ public partial struct AutoVoteOptionAnswerData
     public List<ProtoId<AutoVotesPrototype>> NextVoteProto = [];
 
     [DataField]
-    public ProtoId<GamePresetPrototype> GamePresetProto;
+    public ProtoId<GamePresetPrototype>? GamePresetProto;
 }
 
 public enum AutoVoteOptionAction
