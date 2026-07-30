@@ -15,7 +15,7 @@ public sealed partial class CCVars
         CVarDef.Create("autovote.duration", TimeSpan.FromSeconds(30), CVar.SERVERONLY);
 
     public static readonly CVarDef<TimeSpan> AutomaticVoteStartAt =
-        CVarDef.Create("autovote.startat", TimeSpan.FromSeconds(55), CVar.SERVERONLY);
+        CVarDef.Create("autovote.startat", TimeSpan.FromSeconds(120), CVar.SERVERONLY);
 
     public static readonly CVarDef<int> AutomaticVoteMinPlayersForForce =
             CVarDef.Create("autovote.minplayerceforce", 15, CVar.SERVERONLY);
