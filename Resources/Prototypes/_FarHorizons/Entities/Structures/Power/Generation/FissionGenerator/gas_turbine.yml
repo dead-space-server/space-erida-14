@@ -119,7 +119,7 @@
     - GasTurbine
     - Power
   - type: Injurable
-  - damageContainer: StructuralInorganic
+    damageContainer: StructuralInorganic
 
 - type: entity
   id: BaseGasTurbineSmall
