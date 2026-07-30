@@ -2,11 +2,11 @@ name: Build & Test Debug
 
 on:
   push:
-    branches: [ master, staging, stable ]
+    branches: [master, staging, stable]
   merge_group:
   pull_request:
-    types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ master, staging, stable ]
+    types: [opened, reopened, synchronize, ready_for_review]
+    branches: [master, staging, stable]
 
 jobs:
   build:
@@ -19,45 +19,45 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout Master
-      uses: actions/checkout@v7.0.0
+      - name: Checkout Master
+        uses: actions/checkout@v7.0.0
 
-    - name: Setup Submodule
-      run: |
-        git submodule update --init --recursive
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
 
-    - name: Pull engine updates
-      uses: space-wizards/submodule-dependency@v0.1.5
+      - name: Pull engine updates
+        uses: space-wizards/submodule-dependency@v0.1.5
 
-    - name: Update Engine Submodules
-      run: |
-        cd RobustToolbox/
-        git submodule update --init --recursive
+      - name: Update Engine Submodules
+        run: |
+          cd RobustToolbox/
+          git submodule update --init --recursive
 
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v5.3.0
-      with:
-        dotnet-version: 10.0.x
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v5.3.0
+        with:
+          dotnet-version: 10.0.x
 
-    - name: Install dependencies
-      run: dotnet restore
+      - name: Install dependencies
+        run: dotnet restore
 
-    - name: Build Project
-      run: dotnet build --configuration DebugOpt --no-restore /m
+      - name: Build Project
+        run: dotnet build --configuration DebugOpt --no-restore /m
 
-    - name: Run Content.Tests
-      shell: bash
-      run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0 NUnit.TestOutputXml=logs NUnit.WorkDirectory="$(pwd)/test_results/content-tests"
+      - name: Run Content.Tests
+        shell: bash
+        run: dotnet test --property:WarningLevel=0 --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0 NUnit.TestOutputXml=logs NUnit.WorkDirectory="$(pwd)/test_results/content-tests"
 
-    - name: Archive NUnit3 Content.Tests results.
-      if: always()
-      uses: actions/upload-artifact@v7.0.1
-      with:
-        name: nunit3-results-content-tests-${{ matrix.os }}
-        path: test_results/content-tests/*
-        if-no-files-found: warn
-        retention-days: 7
-        compression-level: 9
+      - name: Archive NUnit3 Content.Tests results.
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: nunit3-results-content-tests-${{ matrix.os }}
+          path: test_results/content-tests/*
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
 
   integration-tests:
     name: Content.IntegrationTests (${{ matrix.shard }})
@@ -67,68 +67,68 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         shard:
-        - core-systems
-        - content-construction
-        - maps-load
-        - maps-systems
-        - game-rules
-        - round-admin-db
-        - entity-core
-        - entity-damage
-        - entity-systems
-        - misc
+          - core-systems
+          - content-construction
+          - maps-load
+          - maps-systems
+          - game-rules
+          - round-admin-db
+          - entity-core
+          - entity-damage
+          - entity-systems
+          - misc
 
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout Master
-      uses: actions/checkout@v7.0.0
+      - name: Checkout Master
+        uses: actions/checkout@v7.0.0
 
-    - name: Setup Submodule
-      run: |
-        git submodule update --init --recursive
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
 
-    - name: Pull engine updates
-      uses: space-wizards/submodule-dependency@v0.1.5
+      - name: Pull engine updates
+        uses: space-wizards/submodule-dependency@v0.1.5
 
-    - name: Update Engine Submodules
-      run: |
-        cd RobustToolbox/
-        git submodule update --init --recursive
+      - name: Update Engine Submodules
+        run: |
+          cd RobustToolbox/
+          git submodule update --init --recursive
 
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v5.3.0
-      with:
-        dotnet-version: 10.0.x
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v5.3.0
+        with:
+          dotnet-version: 10.0.x
 
-    - name: Install dependencies
-      run: dotnet restore
+      - name: Install dependencies
+        run: dotnet restore
 
-    - name: Run Content.IntegrationTests shard
-      shell: bash
-      run: |
-        export DOTNET_gcServer=1
-        mkdir -p "test_results/integration-${{ matrix.shard }}"
-        dotnet test Content.IntegrationTests/Content.IntegrationTests.csproj \
-          --configuration DebugOpt \
-          --no-restore \
-          -p:IntegrationTestShard="${{ matrix.shard }}" \
-          -m:2 /nr:false \
-          -- \
-          NUnit.ConsoleOut=0 \
-          NUnit.MapWarningTo=Failed \
-          NUnit.TestOutputXml=logs \
-          NUnit.WorkDirectory="$(pwd)/test_results/integration-${{ matrix.shard }}"
+      - name: Run Content.IntegrationTests shard
+        shell: bash
+        run: |
+          export DOTNET_gcServer=1
+          mkdir -p "test_results/integration-${{ matrix.shard }}"
+          dotnet test Content.IntegrationTests/Content.IntegrationTests.csproj \
+            --configuration DebugOpt \
+            --no-restore \
+            -p:IntegrationTestShard="${{ matrix.shard }}" \
+            -m:2 /nr:false \
+            -- \
+            NUnit.ConsoleOut=0 \
+            NUnit.MapWarningTo=Failed \
+            NUnit.TestOutputXml=logs \
+            NUnit.WorkDirectory="$(pwd)/test_results/integration-${{ matrix.shard }}"
 
-    - name: Archive NUnit3 integration results.
-      if: always()
-      uses: actions/upload-artifact@v7.0.1
-      with:
-        name: nunit3-results-integration-${{ matrix.shard }}-${{ matrix.os }}
-        path: test_results/integration-${{ matrix.shard }}/*
-        if-no-files-found: warn
-        retention-days: 7
-        compression-level: 9
+      - name: Archive NUnit3 integration results.
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: nunit3-results-integration-${{ matrix.shard }}-${{ matrix.os }}
+          path: test_results/integration-${{ matrix.shard }}/*
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 9
 
   ci-success:
     name: Build & Test Debug
