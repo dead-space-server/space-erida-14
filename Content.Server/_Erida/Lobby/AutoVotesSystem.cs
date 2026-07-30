@@ -6,6 +6,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
+using Content.Server.GameTicking.Presets;
 using Content.Server.Voting;
 using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
@@ -82,7 +83,6 @@ public sealed partial class AutoVotesSystem : EntitySystem
                             continue;
 
                         options.Options.Add((Loc.GetString(x.Label), x));
-                        break;
                     }
                     break;
                 }
@@ -123,8 +123,6 @@ public sealed partial class AutoVotesSystem : EntitySystem
                 Loc.GetString("ui-vote-gamemode-win", ("winner", Loc.GetString(winner.Label))));
         }
 
-        _previousChoosedMainOption = winner;
-
         _adminLog.Add(LogType.Vote, LogImpact.Medium, $"Preset vote finished: {winner.Label}");
 
         switch (winner.AnswerData.Action)
@@ -153,7 +151,7 @@ public sealed partial class AutoVotesSystem : EntitySystem
             Duration = _cfg.GetCVar(CCVars.AutomaticVoteDuration),
         };
 
-        foreach (var proto in data.NextVoteProto!)
+        foreach (var proto in data.NextVoteProto)
         {
             var protoData = _prototypeManager.Index(proto);
             options.Title = Loc.GetString(protoData.Title);
@@ -163,8 +161,7 @@ public sealed partial class AutoVotesSystem : EntitySystem
             {
                 if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
                     && _previousGamerules.Count != 0
-                    && option.AnswerData.GamePresetProto is not { } protot
-                    && protot == _previousGamerules[_previousGamerules.Count - 1])
+                    && option.AnswerData.GamePresetProto.Id == _previousGamerules[_previousGamerules.Count - 1])
                     continue;
 
                 options.Options.Add((Loc.GetString(option.Label), option));
@@ -182,18 +179,57 @@ public sealed partial class AutoVotesSystem : EntitySystem
         if (_previousGamerules.Count >= 3)
             _previousGamerules.RemoveAt(0);
 
-        if (data.GamePresetProto is not { } proto)
-            return;
-
-        _previousGamerules.Add(proto);
+        _previousGamerules.Add(data.GamePresetProto.Id);
 
         var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
-        ticker.SetGamePreset(proto);
+        ticker.SetGamePreset(data.GamePresetProto);
     }
 
     private void OnRoundStarting(RoundStartingEvent _)
     {
         _voteTriggered = false;
+
+        if (_gameTicker.CurrentPreset == null)
+            return;
+
+
+        foreach (var main in _prototypeManager.EnumeratePrototypes<AutoVotesPrototype>())
+        {
+            if (!main.ShouldBeInFirstVote)
+                continue;
+
+            foreach (var option in main.Options)
+                if (DoesOptionLeadToPreset(option, _gameTicker.CurrentPreset.ID))
+                {
+                    _previousChoosedMainOption = option;
+                    break;
+                }
+        }
+    }
+
+    private bool DoesOptionLeadToPreset(AutoVoteOptionData option, ProtoId<GamePresetPrototype> presetId)
+    {
+        switch (option.AnswerData.Action)
+        {
+            case AutoVoteOptionAction.GameModeStart:
+                return option.AnswerData.GamePresetProto.Id == presetId.Id;
+
+            case AutoVoteOptionAction.NextVote:
+                foreach (var nextProtoId in option.AnswerData.NextVoteProto)
+                {
+                    if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
+                        continue;
+
+                    foreach (var childOption in nextProto.Options)
+                        if (DoesOptionLeadToPreset(childOption, presetId))
+                            return true;
+                }
+
+                return false;
+
+            default:
+                return false;
+        }
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent _)
