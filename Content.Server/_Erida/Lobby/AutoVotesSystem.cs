@@ -161,9 +161,12 @@ public sealed partial class AutoVotesSystem : EntitySystem
 
             foreach (var option in protoData.Options)
             {
+                if (option.AnswerData.GamePresetProto == null)
+                    continue;
+
                 if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
                     && _previousGamerules.Count != 0
-                    && option.AnswerData.GamePresetProto!.Value.Id == _previousGamerules[_previousGamerules.Count - 1])
+                    && option.AnswerData.GamePresetProto.Value.Id == _previousGamerules[_previousGamerules.Count - 1])
                     continue;
 
                 options.Options.Add((Loc.GetString(option.Label), option));
@@ -181,10 +184,13 @@ public sealed partial class AutoVotesSystem : EntitySystem
         if (_previousGamerules.Count >= 3)
             _previousGamerules.RemoveAt(0);
 
-        _previousGamerules.Add(data.GamePresetProto!.Value.Id);
+        if (data.GamePresetProto == null)
+            return;
+
+        _previousGamerules.Add(data.GamePresetProto.Value.Id);
 
         var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
-        ticker.SetGamePreset(data.GamePresetProto!);
+        ticker.SetGamePreset(data.GamePresetProto.Value);
     }
 
     private void OnRoundStarting(RoundStartingEvent _)
