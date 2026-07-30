@@ -212,30 +212,30 @@ public sealed partial class AutoVotesSystem : EntitySystem
         }
     }
 
-    private bool DoesOptionLeadToPreset(AutoVoteOptionData option, ProtoId<GamePresetPrototype> presetId)
-    {
-        switch (option.AnswerData.Action)
-        {
-            case AutoVoteOptionAction.GameModeStart:
-                return option.AnswerData.GamePresetProto.Id == presetId.Id;
+    // private bool DoesOptionLeadToPreset(AutoVoteOptionData option, ProtoId<GamePresetPrototype> presetId)
+    // {
+    //     switch (option.AnswerData.Action)
+    //     {
+    //         case AutoVoteOptionAction.GameModeStart:
+    //             return option.AnswerData.GamePresetProto.Id == presetId.Id;
 
-            case AutoVoteOptionAction.NextVote:
-                foreach (var nextProtoId in option.AnswerData.NextVoteProto)
-                {
-                    if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
-                        continue;
+    //         case AutoVoteOptionAction.NextVote:
+    //             foreach (var nextProtoId in option.AnswerData.NextVoteProto)
+    //             {
+    //                 if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
+    //                     continue;
 
-                    // foreach (var childOption in nextProto.Options)
-                    //     if (DoesOptionLeadToPreset(childOption, presetId))
-                    //         return true;
-                }
+    //                 // foreach (var childOption in nextProto.Options)
+    //                 //     if (DoesOptionLeadToPreset(childOption, presetId))
+    //                 //         return true;
+    //             }
 
-                return false;
+    //             return false;
 
-            default:
-                return false;
-        }
-    }
+    //         default:
+    //             return false;
+    //     }
+    // }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent _)
     {
