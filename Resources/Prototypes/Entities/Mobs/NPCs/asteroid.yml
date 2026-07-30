@@ -120,7 +120,6 @@
   name: tentacle
   components:
   - type: Transform
-    anchored: True
   - type: Physics
     bodyType: Static
     canCollide: true

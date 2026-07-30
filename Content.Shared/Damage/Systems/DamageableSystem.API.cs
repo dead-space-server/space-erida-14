@@ -422,7 +422,7 @@ public sealed partial class DamageableSystem
     /// <summary>
     /// Gets the total amount of damage currently sustained by an entity.
     /// </summary>
-    [Obsolete("Do not rely on the ability to determine a numerically quantifiable amount of damage")]
+    // [Obsolete("Do not rely on the ability to determine a numerically quantifiable amount of damage")] Erida edit
     public FixedPoint2 GetTotalDamage(Entity<DamageableComponent?> ent)
     {
         if (!_damageableQuery.Resolve(ent, ref ent.Comp, false))

@@ -65,6 +65,7 @@
   categories: [ HideSpawnMenu ]
   name: ipc appearance
   components:
+  - type: ZombieImmune # Erida edit
   - type: InitialBody
     organs:
       Torso: ADTOrganIPCTorso

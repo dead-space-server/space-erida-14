@@ -21,13 +21,13 @@ public abstract partial class SharedSupermatterSystem : EntitySystem
 
 
         _projectileQuery = GetEntityQuery<ProjectileComponent>();
-        _supermatterImmuneQuery = GetEntityQuery<BkmSupermatterImmuneComponent>();
+        SupermatterImmuneQuery = GetEntityQuery<BkmSupermatterImmuneComponent>();
     }
 
     protected float GetIntegrity(float damage, float explosionPoint)
     {
         var integrity = damage / explosionPoint;
-        integrity = (float) Math.Round(100 - integrity * 100, 2);
+        integrity = (float)Math.Round(100 - integrity * 100, 2);
         integrity = integrity < 0 ? 0 : integrity;
         return integrity;
     }
@@ -47,14 +47,14 @@ public abstract partial class SharedSupermatterSystem : EntitySystem
     {
         var target = args.OtherEntity;
         if (args.OtherBody.BodyType == BodyType.Static
-            || _supermatterImmuneQuery.HasComp(target)
+            || SupermatterImmuneQuery.HasComp(target)
             || _container.IsEntityInContainer(uid))
             return;
 
         if (TryComp<BkmSupermatterFoodComponent>(target, out var supermatterFood))
             supermatter.Power += supermatterFood.Energy;
         else if (_projectileQuery.TryComp(target, out var projectile))
-            supermatter.Power += (float) projectile.Damage.GetTotal();
+            supermatter.Power += (float)projectile.Damage.GetTotal();
         else
             supermatter.Power++;
 
@@ -68,13 +68,12 @@ public abstract partial class SharedSupermatterSystem : EntitySystem
     }
 
 
-    [ValidatePrototypeId<EntityPrototype>]
-    protected const string Ash = "Ash";
+    protected static readonly EntProtoId Ash = "Ash";
 
 
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedContainerSystem _container = default!;
 
     private EntityQuery<ProjectileComponent> _projectileQuery;
-    protected EntityQuery<BkmSupermatterImmuneComponent> _supermatterImmuneQuery;
+    protected EntityQuery<BkmSupermatterImmuneComponent> SupermatterImmuneQuery;
 }

@@ -102,8 +102,7 @@ public sealed partial class LactationSystem : EntitySystem
 
         if (!isContainerValid
             && args.Target == args.User
-            || !_ingestionSystem.HasMouthAvailable(ent.Owner, args.Target)
-            || !_bodySystem.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var _))
+            || !_ingestionSystem.HasMouthAvailable(ent.Owner, args.Target))
             return;
 
         AlternativeVerb verb = new()

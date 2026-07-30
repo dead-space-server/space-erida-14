@@ -1,11 +1,12 @@
 using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.Addictions;
 
 public abstract partial class SharedAddictionSystem : EntitySystem
 {
-    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private StatusEffectNew.StatusEffectsSystem _statusEffects = default!;
 
     public ProtoId<StatusEffectPrototype> StatusEffectKey = "Addicted";
 
@@ -18,13 +19,13 @@ public abstract partial class SharedAddictionSystem : EntitySystem
 
         UpdateTime(uid);
 
-        if (!_statusEffects.HasStatusEffect(uid, StatusEffectKey, status))
+        if (!_statusEffects.HasStatusEffect(uid, StatusEffectKey.Id))
         {
-            _statusEffects.TryAddStatusEffect<AddictedComponent>(uid, StatusEffectKey, TimeSpan.FromSeconds(addictionTime), true, status);
+            _statusEffects.TryAddStatusEffect(uid, StatusEffectKey.Id, out var _, TimeSpan.FromSeconds(addictionTime));
         }
         else
         {
-            _statusEffects.TryAddTime(uid, StatusEffectKey, TimeSpan.FromSeconds(addictionTime), status);
+            _statusEffects.TryAddTime(uid, StatusEffectKey.Id, TimeSpan.FromSeconds(addictionTime));
         }
     }
 

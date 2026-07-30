@@ -14,6 +14,7 @@ using Content.Shared.Slippery;
 using Content.Shared.Standing;
 using Content.Shared.StatusEffect;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Shared._Goobstation.Heretic.Systems.Abilities;
 
@@ -31,12 +32,12 @@ public abstract partial class SharedHereticAbilitySystem
         SubscribeLocalEvent<SilverMaelstromComponent, SlipAttemptEvent>(OnBladeSlipAttempt);
         SubscribeLocalEvent<SilverMaelstromComponent, GetClothingStunModifierEvent>(OnBladeStunModify);
         SubscribeLocalEvent<SilverMaelstromComponent, DropHandItemsEvent>(OnBladeDropItems,
-            before: new[] { typeof(SharedHandsSystem) });
+            before: [typeof(SharedHandsSystem)]);
         // Protective blades do that
         // SubscribeLocalEvent<SilverMaelstromComponent, BeforeHarmfulActionEvent>(OnBladeHarmfulAction);
 
         SubscribeLocalEvent<RealignmentComponent, BeforeStaminaDamageEvent>(OnBeforeBladeStaminaDamage);
-        SubscribeLocalEvent<RealignmentComponent, BeforeOldStatusEffectAddedEvent>(OnBeforeBladeStatusEffect);
+        SubscribeLocalEvent<RealignmentComponent, BeforeStatusEffectAddedEvent>(OnBeforeBladeStatusEffect);
         SubscribeLocalEvent<RealignmentComponent, SlipAttemptEvent>(OnBladeSlipAttempt);
         SubscribeLocalEvent<RealignmentComponent, BeforeHarmfulActionEvent>(OnBladeHarmfulAction);
         SubscribeLocalEvent<RealignmentComponent, StatusEffectEndedEvent>(OnStatusEnded);
@@ -78,9 +79,9 @@ public abstract partial class SharedHereticAbilitySystem
         args.NoSlip = true;
     }
 
-    private void OnBeforeBladeStatusEffect(EntityUid uid, Component component, ref BeforeOldStatusEffectAddedEvent args)
+    private void OnBeforeBladeStatusEffect(EntityUid uid, Component component, ref BeforeStatusEffectAddedEvent args)
     {
-        if (args.EffectKey is not ("KnockedDown" or "Stun"))
+        if (args.Effect != "KnockedDown" && args.Effect != "Stun")
             return;
 
         args.Cancelled = true;

@@ -615,7 +615,7 @@ public sealed partial class SupermatterSystem : SharedSupermatterSystem
     private void OnHandInteract(EntityUid uid, BkmSupermatterComponent supermatter, InteractHandEvent args)
     {
         var target = args.User;
-        if (_supermatterImmuneQuery.HasComp(target))
+        if (SupermatterImmuneQuery.HasComp(target))
             return;
 
         supermatter.MatterPower += 200;
