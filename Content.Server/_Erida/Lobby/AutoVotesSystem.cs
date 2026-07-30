@@ -163,8 +163,8 @@ public sealed partial class AutoVotesSystem : EntitySystem
             {
                 if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
                     && _previousGamerules.Count != 0
-                    && option.AnswerData.GamePresetProto != null
-                    && option.AnswerData.GamePresetProto.Value == _previousGamerules[_previousGamerules.Count - 1])
+                    && option.AnswerData.GamePresetProto is not { } protot
+                    && protot == _previousGamerules[_previousGamerules.Count - 1])
                     continue;
 
                 options.Options.Add((Loc.GetString(option.Label), option));
@@ -182,13 +182,13 @@ public sealed partial class AutoVotesSystem : EntitySystem
         if (_previousGamerules.Count >= 3)
             _previousGamerules.RemoveAt(0);
 
-        if (data.GamePresetProto == null)
+        if (data.GamePresetProto is not { } proto)
             return;
 
-        _previousGamerules.Add(data.GamePresetProto.Value);
+        _previousGamerules.Add(proto);
 
         var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
-        ticker.SetGamePreset(data.GamePresetProto.Value);
+        ticker.SetGamePreset(proto);
     }
 
     private void OnRoundStarting(RoundStartingEvent _)
