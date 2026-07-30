@@ -203,12 +203,12 @@ public sealed partial class AutoVotesSystem : EntitySystem
             if (!main.ShouldBeInFirstVote)
                 continue;
 
-            foreach (var option in main.Options)
-                if (DoesOptionLeadToPreset(option, _gameTicker.CurrentPreset.ID))
-                {
-                    _previousChoosedMainOption = option;
-                    break;
-                }
+            // foreach (var option in main.Options)
+            // if (DoesOptionLeadToPreset(option, _gameTicker.CurrentPreset.ID))
+            // {
+            //     _previousChoosedMainOption = option;
+            //     break;
+            // }
         }
     }
 
@@ -225,9 +225,9 @@ public sealed partial class AutoVotesSystem : EntitySystem
                     if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
                         continue;
 
-                    foreach (var childOption in nextProto.Options)
-                        if (DoesOptionLeadToPreset(childOption, presetId))
-                            return true;
+                    // foreach (var childOption in nextProto.Options)
+                    //     if (DoesOptionLeadToPreset(childOption, presetId))
+                    //         return true;
                 }
 
                 return false;
