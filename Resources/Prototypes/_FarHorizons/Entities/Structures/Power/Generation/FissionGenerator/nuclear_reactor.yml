@@ -83,7 +83,6 @@
         - MachineLayer
         - HighImpassable
   - type: Damageable
-    damageContainer: StructuralInorganic
     # damageModifierSet: StructuralReactorCasing # LP Edit
   - type: Destructible
     thresholds:
@@ -142,7 +141,8 @@
     guides:
     - NuclearReactor
     - Power
-  - type: Injurable #Erida shitfix
+  - type: Injurable
+    damageContainer: StructuralInorganic
 
 - type: entity
   id: BaseNuclearReactorSmall
