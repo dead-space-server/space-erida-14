@@ -10,6 +10,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.MapText;
 
+#pragma warning disable CS0618 // Erida edit
+
 /// <inheritdoc/>
 public sealed partial class MapTextSystem : SharedMapTextSystem
 {
@@ -70,7 +72,7 @@ public sealed partial class MapTextSystem : SharedMapTextSystem
             component.CachedText = Loc.GetString("map-text-font-error");
             component.Color = Color.Red;
 
-            if(_prototypeManager.TryIndex<FontPrototype>(SharedMapTextComponent.DefaultFont, out var @default))
+            if (_prototypeManager.TryIndex<FontPrototype>(SharedMapTextComponent.DefaultFont, out var @default))
                 component.CachedFont = new VectorFont(_resourceCache.GetResource<FontResource>(@default.Path), 14);
             return;
         }

@@ -43,6 +43,7 @@ public sealed partial class HumanoidProfileEditor
     /// <summary>
     /// Refresh all loadouts.
     /// </summary>
+#pragma warning disable CS0618 // Erida edit
     public void RefreshLoadouts()
     {
         _loadoutWindow?.Dispose();

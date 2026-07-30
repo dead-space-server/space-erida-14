@@ -13,6 +13,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.MassMedia.Ui;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class ArticleEditorPanel : Control
 {
@@ -32,7 +35,7 @@ public sealed partial class ArticleEditorPanel : Control
         // Customize scrollbar width and margin. This is not possible in xaml
         var scrollbar = ContentField.GetChild(1);
         scrollbar.SetWidth = 6f;
-        scrollbar.Margin = new Thickness(9, 0, 2 , 0);
+        scrollbar.Margin = new Thickness(9, 0, 2, 0);
 
         RichTextInfoLabel.TooltipSupplier = sender =>
         {

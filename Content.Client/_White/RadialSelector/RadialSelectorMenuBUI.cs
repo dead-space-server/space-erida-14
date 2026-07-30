@@ -48,6 +48,7 @@ public sealed partial class AttachedRadialSelectorMenuBUI(EntityUid owner, Enum 
         _openCentered = radialSelectorState.OpenCentered;
     }
 
+#pragma warning disable CS0618 // Erida edit
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

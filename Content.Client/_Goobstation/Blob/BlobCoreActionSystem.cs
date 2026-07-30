@@ -16,6 +16,8 @@ using Content.Shared._Goobstation.Blob;
 using Content.Shared._Goobstation.Blob.Events;
 using Robust.Shared.Prototypes;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client._Goobstation.Blob;
 
 public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
@@ -34,7 +36,7 @@ public sealed partial class BlobCoreActionSystem : SharedBlobCoreActionSystem
 
     private void OnBlobAttack(BlobAttackEvent ev)
     {
-        if(!TryGetEntity(ev.BlobEntity, out var user))
+        if (!TryGetEntity(ev.BlobEntity, out var user))
             return;
 
         _meleeWeaponSystem.DoLunge(user.Value, user.Value, Angle.Zero, ev.Position, Animation, false);

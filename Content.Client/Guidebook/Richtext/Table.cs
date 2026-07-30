@@ -5,6 +5,8 @@ using Robust.Client.UserInterface;
 
 namespace Content.Client.Guidebook.Richtext;
 
+#pragma warning disable CS0618 // Erida edit
+
 [UsedImplicitly]
 public sealed class Table : TableContainer, IDocumentTag
 {

@@ -15,6 +15,8 @@ using Robust.Shared.Maths;
 using Robust.Shared.Utility;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Crayon.UI
 {
     [GenerateTypedNameReferences]

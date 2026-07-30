@@ -7,6 +7,8 @@ using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 using static Content.Shared.Access.Components.IdCardConsoleComponent;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Access.UI
 {
     public sealed partial class IdCardConsoleBoundUserInterface : BoundUserInterface
@@ -61,7 +63,7 @@ namespace Content.Client.Access.UI
         protected override void UpdateState(BoundUserInterfaceState state)
         {
             base.UpdateState(state);
-            var castState = (IdCardConsoleBoundUserInterfaceState) state;
+            var castState = (IdCardConsoleBoundUserInterfaceState)state;
             _window?.UpdateState(castState);
         }
 

@@ -13,6 +13,8 @@ using Robust.Shared.Prototypes;
 
 // ReSharper disable InconsistentNaming
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client._White.RadialSelector;
 
 public abstract partial class BasedRadialSelectorMenuBUI : BoundUserInterface

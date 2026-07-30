@@ -8,6 +8,10 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 namespace Content.Client.UserInterface.Systems.Alerts.Controls
 {
     public sealed partial class AlertControl : BaseButton

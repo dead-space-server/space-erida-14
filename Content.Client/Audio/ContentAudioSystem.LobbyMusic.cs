@@ -16,6 +16,9 @@ using Robust.Shared.Utility;
 namespace Content.Client.Audio;
 
 // Part of ContentAudioSystem that is responsible for lobby music playing/stopping and round-end sound-effect.
+
+#pragma warning disable CS0618 // Erida edit
+
 public sealed partial class ContentAudioSystem
 {
     [Dependency] private IBaseClient _client = default!;

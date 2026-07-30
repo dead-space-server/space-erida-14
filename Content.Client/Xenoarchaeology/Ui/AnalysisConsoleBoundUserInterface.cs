@@ -43,7 +43,7 @@ public sealed class AnalysisConsoleBoundUserInterface(EntityUid owner, Enum uiKe
     {
         _consoleMenu?.Update(ent);
     }
-
+#pragma warning disable CS0618 // Erida edit
     /// <inheritdoc />
     protected override void Dispose(bool disposing)
     {

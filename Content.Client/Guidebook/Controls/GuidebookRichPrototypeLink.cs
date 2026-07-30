@@ -8,6 +8,9 @@ using Content.Client.UserInterface.ControlExtensions;
 
 namespace Content.Client.Guidebook.Controls;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 /// <summary>
 /// A RichTextLabel which is a link to a specified IPrototype.
 /// The link is activated by the owner if the prototype is represented

@@ -48,6 +48,7 @@ public sealed class StorageTest : GameTest
     }
 
     [Test]
+    [Obsolete] // Erida edit STORAGE DEPRECATED
     public async Task TestStorageFillPrototypes()
     {
         var pair = Pair;
@@ -75,6 +76,7 @@ public sealed class StorageTest : GameTest
     }
 
     [Test]
+    [Obsolete] // Erida edit STORAGE DEPRECATED
     public async Task TestSufficientSpaceForFill()
     {
         var pair = Pair;
@@ -161,6 +163,7 @@ public sealed class StorageTest : GameTest
     }
 
     [Test]
+    [Obsolete] // Erida edit STORAGE DEPRECATED
     public async Task TestSufficientSpaceForEntityStorageFill()
     {
         var pair = Pair;
@@ -215,6 +218,7 @@ public sealed class StorageTest : GameTest
         return 0;
     }
 
+    [Obsolete] // Erida edit STORAGE DEPRECATED
     private int GetFillSize(StorageFillComponent fill, bool getCount, IPrototypeManager protoMan, SharedItemSystem itemSystem)
     {
         var totalSize = 0;
@@ -236,6 +240,7 @@ public sealed class StorageTest : GameTest
     /// Tests that prototypes are not using multiple container fill components at the same time.
     /// </summary>
     [Test]
+    [Obsolete] // Erida edit STORAGE DEPRECATED
     public async Task NoMultipleContainerFillsTest()
     {
         var pair = Pair;

@@ -16,6 +16,8 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.UserInterface.Systems.EscapeMenu;
 
+#pragma warning disable CS0618 // Erida edit
+
 [UsedImplicitly]
 public sealed partial class EscapeUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
@@ -120,7 +122,7 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))
             .Register<EscapeUIController>();
     }
-
+#pragma warning disable CS0618 // Erida edit
     public void OnStateExited(GameplayState state)
     {
         if (_escapeWindow != null)

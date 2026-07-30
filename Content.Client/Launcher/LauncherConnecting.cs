@@ -73,6 +73,7 @@ namespace Content.Client.Launcher
             CurrentPage = Page.Connecting;
         }
 
+#pragma warning disable CS0618 // Erida edit
         protected override void Shutdown()
         {
             _control?.Dispose();

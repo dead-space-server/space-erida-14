@@ -5,6 +5,10 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 public sealed class ChannelFilterButton : ChatPopupButton<ChannelFilterPopup>
 {
     private static readonly Color ColorNormal = Color.FromHex("#7b7e9e");

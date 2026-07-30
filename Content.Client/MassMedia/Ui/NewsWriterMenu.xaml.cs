@@ -8,6 +8,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.MassMedia.Ui;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class NewsWriterMenu : FancyWindow
 {
@@ -29,7 +32,7 @@ public sealed partial class NewsWriterMenu : FancyWindow
         // Customize scrollbar width and margin. This is not possible in xaml
         var scrollbar = ArticleListScrollbar.GetChild(1);
         scrollbar.SetWidth = 6f;
-        scrollbar.Margin = new Thickness(0, 0, 2 , 0);
+        scrollbar.Margin = new Thickness(0, 0, 2, 0);
 
         ButtonCreate.OnPressed += OnCreate;
     }
@@ -40,7 +43,7 @@ public sealed partial class NewsWriterMenu : FancyWindow
         ArticleCount.Text = Loc.GetString("news-write-ui-article-count-text", ("count", articles.Length));
 
         //Iterate backwards to have the newest article at the top
-        for (var i = articles.Length - 1; i >= 0 ; i--)
+        for (var i = articles.Length - 1; i >= 0; i--)
         {
             var article = articles[i];
             var control = new NewsArticleCard
@@ -84,7 +87,7 @@ public sealed partial class NewsWriterMenu : FancyWindow
         base.Resized();
         var margin = ArticleEditorPanel.Margin;
         // Bandaid for the funny 1 pixel margin differences
-        ArticleEditorPanel.Margin =  new Thickness(Width - 1, margin.Top, margin.Right, margin.Bottom);
+        ArticleEditorPanel.Margin = new Thickness(Width - 1, margin.Top, margin.Right, margin.Bottom);
     }
 
     protected override void Dispose(bool disposing)

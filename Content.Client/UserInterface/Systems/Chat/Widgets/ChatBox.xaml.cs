@@ -15,6 +15,10 @@ using static Robust.Client.UserInterface.Controls.LineEdit;
 
 namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 [Virtual]
 public partial class ChatBox : UIWidget

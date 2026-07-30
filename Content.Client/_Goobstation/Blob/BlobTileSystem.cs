@@ -8,6 +8,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Client.DamageState;
 using Content.Shared._Goobstation.Blob;
 using Content.Shared._Goobstation.Blob.Components;
@@ -33,7 +35,7 @@ public sealed class BlobTileVisualizerSystem : VisualizerSystem<BlobTileComponen
         if (!Resolve(id, ref appearance, ref sprite))
             return;
 
-        foreach (var key in new []{ DamageStateVisualLayers.Base, DamageStateVisualLayers.BaseUnshaded })
+        foreach (var key in new[] { DamageStateVisualLayers.Base, DamageStateVisualLayers.BaseUnshaded })
         {
             if (!sprite.LayerMapTryGet(key, out _))
                 continue;

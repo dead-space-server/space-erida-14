@@ -35,6 +35,7 @@ public sealed class AtmosMonitoringConsoleBoundUserInterface : BoundUserInterfac
         if (!disposing)
             return;
 
+#pragma warning disable CS0618 // Erida edit
         _menu?.Dispose();
     }
 }

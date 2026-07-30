@@ -40,6 +40,7 @@ public sealed class TrackedRadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : 
         _trackedEntity = EntMan.GetEntity(trackedRadialSelectorState.TrackedEntity);
     }
 
+#pragma warning disable CS0618 // Erida edit
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

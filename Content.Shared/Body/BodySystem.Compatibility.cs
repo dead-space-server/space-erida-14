@@ -12,7 +12,7 @@ public sealed partial class BodySystem
     /// <param name="organs">The set of organs with the given component.</param>
     /// <typeparam name="TComp">The component to test for.</typeparam>
     /// <returns>Whether any organs were returned.</returns>
-    [Obsolete("Use an event-relay based approach instead")]
+    // [Obsolete("Use an event-relay based approach instead")]
     [PublicAPI]
     public bool TryGetOrgansWithComponent<TComp>(Entity<BodyComponent?> ent, out List<Entity<TComp>> organs) where TComp : Component
     {

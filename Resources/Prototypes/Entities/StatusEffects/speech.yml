@@ -14,7 +14,6 @@
 - type: entity
   parent: SpeechStatusEffectBase
   id: StatusEffectStutter
-  name: stutter
   components:
   - type: StutteringAccent
 
@@ -22,7 +21,6 @@
 - type: entity
   parent: SpeechStatusEffectBase
   id: StatusEffectSlurred
-  name: slurred
   components:
   - type: SlurredAccent
 
@@ -30,7 +28,6 @@
 - type: entity
   parent: SpeechStatusEffectBase
   id: StatusEffectScrambled
-  name: scrambled
   components:
   - type: ScrambledAccent
 
@@ -38,7 +35,6 @@
 - type: entity
   parent: SpeechStatusEffectBase
   id: StatusEffectOwO
-  name: owoaccent
   components:
   - type: OwOAccent
 
@@ -46,7 +42,6 @@
 - type: entity
   parent: SpeechStatusEffectBase
   id: StatusEffectAllCaps
-  name: allcapsaccent
   components:
   - type: AllCapsAccent
 
@@ -54,6 +49,5 @@
 - type: entity
   parent: SpeechStatusEffectBase
   id: StatusEffectBark
-  name: barkaccent
   components:
   - type: BarkAccent

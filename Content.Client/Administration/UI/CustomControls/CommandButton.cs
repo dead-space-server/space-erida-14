@@ -4,6 +4,8 @@ using Robust.Client.Console;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Administration.UI.CustomControls
 {
     [Virtual]

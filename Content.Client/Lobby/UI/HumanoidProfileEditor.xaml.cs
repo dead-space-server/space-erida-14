@@ -483,6 +483,8 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

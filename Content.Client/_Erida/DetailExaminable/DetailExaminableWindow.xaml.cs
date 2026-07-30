@@ -14,6 +14,9 @@ using Robust.Shared.Configuration;
 
 namespace Content.Client._Erida.DetailExaminable;
 
+#pragma warning disable CS0672 // Erida edit
+#pragma warning disable CS0618 // Erida edit
+
 //
 // License-Identifier: GPL-3.0-or-later
 //

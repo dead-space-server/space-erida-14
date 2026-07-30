@@ -11,6 +11,9 @@ using Robust.Shared.Timing;
 
 namespace Content.Client.Power.Battery;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 /// <summary>
 /// Interface control for batteries.
 /// </summary>

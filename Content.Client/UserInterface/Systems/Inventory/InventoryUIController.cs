@@ -82,7 +82,7 @@ public sealed partial class InventoryUIController : UIController, IOnStateEntere
             .Bind(ContentKeyFunctions.OpenInventoryMenu, InputCmdHandler.FromDelegate(_ => ToggleInventoryBar()))
             .Register<ClientInventorySystem>();
     }
-
+#pragma warning disable CS0618 // Erida edit
     public void OnStateExited(GameplayState state)
     {
         if (_strippingWindow != null)

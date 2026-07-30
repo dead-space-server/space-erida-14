@@ -18,6 +18,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Audio;
 
+#pragma warning disable CS0618 // Erida edit
+
 public sealed partial class ContentAudioSystem
 {
     [Dependency] private IConfigurationManager _configManager = default!;

@@ -5,6 +5,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using System.Linq;
 using System.Numerics;
 using Content.Shared._EstacaoPirata.Cards.Hand;
@@ -43,7 +45,7 @@ public sealed partial class CardHandSystem : EntitySystem
                 continue;
             }
             _notInit[ent] = value + 1;
-            if(!TryComp(ent.Owner, out CardStackComponent? stack) || stack.Cards.Count <= 0)
+            if (!TryComp(ent.Owner, out CardStackComponent? stack) || stack.Cards.Count <= 0)
                 continue;
 
             // If cards were correctly initialized, we update the sprite
@@ -110,7 +112,7 @@ public sealed partial class CardHandSystem : EntitySystem
         }
         else
         {
-            var intervalAngle = comp.Angle / (cardCount-1);
+            var intervalAngle = comp.Angle / (cardCount - 1);
             var intervalSize = comp.XOffset / (cardCount - 1);
 
             _cardSpriteSystem.TryHandleLayerConfiguration(
@@ -118,7 +120,7 @@ public sealed partial class CardHandSystem : EntitySystem
                 cardCount,
                 (sprt, cardIndex, layerIndex) =>
                 {
-                    var angle = (-(comp.Angle/2)) + cardIndex * intervalAngle;
+                    var angle = (-(comp.Angle / 2)) + cardIndex * intervalAngle;
                     var x = (-(comp.XOffset / 2)) + cardIndex * intervalSize;
                     var y = -(x * x) + 0.10f;
 
@@ -154,7 +156,7 @@ public sealed partial class CardHandSystem : EntitySystem
             _notInit[(uid, comp)] = 0;
             return;
         }
-        if(stack.Cards.Count <= 0)
+        if (stack.Cards.Count <= 0)
             _notInit[(uid, comp)] = 0;
         UpdateSprite(uid, comp);
     }

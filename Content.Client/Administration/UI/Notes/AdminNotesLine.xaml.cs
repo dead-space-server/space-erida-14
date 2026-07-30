@@ -11,6 +11,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Administration.UI.Notes;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class AdminNotesLine : BoxContainer
 {

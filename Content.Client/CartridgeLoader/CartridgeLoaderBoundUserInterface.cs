@@ -58,7 +58,7 @@ public abstract class CartridgeLoaderBoundUserInterface : BoundUserInterface
             AttachCartridgeUI(control, Loc.GetString(comp?.ProgramName ?? "default-program-name"));
             SendCartridgeUiReadyEvent(_activeProgram.Value);
         }
-
+#pragma warning disable CS0618 // Erida edit
         _activeCartridgeUI = ui;
         _activeUiFragment?.Dispose();
         _activeUiFragment = control;

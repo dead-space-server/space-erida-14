@@ -20,6 +20,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Goobstation.Blob;
 
+#pragma warning disable CS0618 // Erida edit
 public sealed partial class BlobObserverSystem : SharedBlobObserverSystem
 {
     [Dependency] private ILightManager _lightManager = default!;

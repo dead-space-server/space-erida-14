@@ -6,6 +6,8 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Administration.UI.ManageSolutions
 {
     /// <summary>
@@ -23,7 +25,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
         private ReagentPrototype? _selectedReagent;
 
         // FloatSpinBox does not (yet?) play nice with xaml
-        private FloatSpinBox _quantitySpin = new(1, 2) { Value = 10, HorizontalExpand = true};
+        private FloatSpinBox _quantitySpin = new(1, 2) { Value = 10, HorizontalExpand = true };
 
         public AddReagentWindow(NetEntity targetEntity, string targetSolution)
         {
@@ -62,7 +64,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
 
         private void ReagentListSelected(ItemList.ItemListSelectedEventArgs obj)
         {
-            _selectedReagent = (ReagentPrototype) obj.ItemList[obj.ItemIndex].Metadata!;
+            _selectedReagent = (ReagentPrototype)obj.ItemList[obj.ItemIndex].Metadata!;
             UpdateAddButton();
         }
 

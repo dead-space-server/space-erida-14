@@ -135,6 +135,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         ReloadCharacterSetup();
     }
 
+#pragma warning disable CS0618 // Erida edit
     public void OnStateExited(LobbyState state)
     {
         PreviewPanel?.SetLoaded(false);

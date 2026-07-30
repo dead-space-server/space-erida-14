@@ -7,6 +7,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.RichText;
 
+#pragma warning disable CS0618 // Erida edit
+
 /// <summary>
 /// Sets the font to a monospaced variant
 /// </summary>

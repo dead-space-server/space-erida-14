@@ -16,6 +16,7 @@ public sealed partial class BanListControl : Control
         RobustXamlLoader.Load(this);
     }
 
+#pragma warning disable CS0618 // Erida edit
     public void SetBans(List<SharedBan> bans)
     {
         for (var i = Bans.ChildCount - 1; i >= 1; i--)

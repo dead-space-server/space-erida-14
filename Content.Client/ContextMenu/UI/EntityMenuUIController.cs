@@ -23,6 +23,8 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
+
+#pragma warning disable CS0618 // Erida edit
 #pragma warning disable IDE0028
 namespace Content.Client.ContextMenu.UI
 {
@@ -335,7 +337,7 @@ namespace Content.Client.ContextMenu.UI
         {
             if (element.SubMenu == null)
                 return;
-
+#pragma warning disable CS0618 // Erida edit
             // Get the first entity in the sub-menus
             var entity = GetFirstEntityOrNull(element.SubMenu);
             if (entity == null)

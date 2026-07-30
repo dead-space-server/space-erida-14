@@ -7,6 +7,8 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.CustomControls;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.UserInterface.Systems.Storage.Controls;
 
 public sealed class ItemGridPiece : Control, IEntityControl
@@ -48,7 +50,7 @@ public sealed class ItemGridPiece : Control, IEntityControl
     private Texture? _markedSecondTexture;
     #endregion
 
-    public ItemGridPiece(Entity<ItemComponent> entity, ItemStorageLocation location,  IEntityManager entityManager)
+    public ItemGridPiece(Entity<ItemComponent> entity, ItemStorageLocation location, IEntityManager entityManager)
     {
         IoCManager.InjectDependencies(this);
 
@@ -117,7 +119,7 @@ public sealed class ItemGridPiece : Control, IEntityControl
 
         var hovering = !_storageController.IsDragging && UserInterfaceManager.CurrentlyHovered == this;
         //yeah, this coloring is kinda hardcoded. deal with it. B)
-        Color? colorModulate = hovering  ? null : Color.FromHex("#a8a8a8");
+        Color? colorModulate = hovering ? null : Color.FromHex("#a8a8a8");
 
         var marked = Marked != null;
         Vector2i? maybeMarkedPos = null;
@@ -133,12 +135,12 @@ public sealed class ItemGridPiece : Control, IEntityControl
                 var offset = size * 2 * new Vector2(x - boundingGrid.Left, y - boundingGrid.Bottom);
                 var topLeft = PixelPosition + offset.Floored();
 
-                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.NorthEast) is {} neTexture)
+                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.NorthEast) is { } neTexture)
                 {
                     var neOffset = new Vector2(size.X, 0);
                     handle.DrawTextureRect(neTexture, new UIBox2(topLeft + neOffset, topLeft + neOffset + size), colorModulate);
                 }
-                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.NorthWest) is {} nwTexture)
+                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.NorthWest) is { } nwTexture)
                 {
                     _texturesPositions.Add((nwTexture, Position + offset / UIScale));
                     handle.DrawTextureRect(nwTexture, new UIBox2(topLeft, topLeft + size), colorModulate);
@@ -149,12 +151,12 @@ public sealed class ItemGridPiece : Control, IEntityControl
                         marked = false;
                     }
                 }
-                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.SouthEast) is {} seTexture)
+                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.SouthEast) is { } seTexture)
                 {
                     var seOffset = size;
                     handle.DrawTextureRect(seTexture, new UIBox2(topLeft + seOffset, topLeft + seOffset + size), colorModulate);
                 }
-                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.SouthWest) is {} swTexture)
+                if (GetTexture(adjustedShape, new Vector2i(x, y), Direction.SouthWest) is { } swTexture)
                 {
                     var swOffset = new Vector2(0, size.Y);
                     handle.DrawTextureRect(swTexture, new UIBox2(topLeft + swOffset, topLeft + swOffset + size), colorModulate);
@@ -199,7 +201,7 @@ public sealed class ItemGridPiece : Control, IEntityControl
                 overrideDirection: Direction.South);
         }
 
-        if (maybeMarkedPos is {} markedPos)
+        if (maybeMarkedPos is { } markedPos)
         {
             var markedTexture = Marked switch
             {

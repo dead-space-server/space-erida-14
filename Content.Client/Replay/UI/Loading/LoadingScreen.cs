@@ -35,7 +35,7 @@ public partial class LoadingScreen<TResult> : State
         _screen = new(_resourceCache);
         _userInterfaceManager.StateRoot.AddChild(_screen);
     }
-
+#pragma warning disable CS0618 // Erida edit
     protected override void Shutdown()
     {
         _screen.Dispose();

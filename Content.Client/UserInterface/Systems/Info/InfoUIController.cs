@@ -48,7 +48,7 @@ public sealed partial class InfoUIController : UIController, IOnStateExited<Game
         if (message.ShouldShowRules)
             ShowRules(message.PopupTime);
     }
-
+#pragma warning disable CS0618 // Erida edit
     public void OnStateExited(GameplayState state)
     {
         if (_infoWindow == null)

@@ -19,6 +19,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Shared._DV.VendingMachines;
 using Content.Shared.VendingMachines;
 using Robust.Client.Animations;

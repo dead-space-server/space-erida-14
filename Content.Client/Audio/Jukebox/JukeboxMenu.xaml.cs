@@ -12,6 +12,10 @@ using FancyWindow = Content.Client.UserInterface.Controls.FancyWindow;
 
 namespace Content.Client.Audio.Jukebox;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class JukeboxMenu : FancyWindow
 {

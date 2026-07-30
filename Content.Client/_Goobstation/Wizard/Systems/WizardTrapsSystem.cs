@@ -5,6 +5,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Shared._Goobstation.Wizard.Traps;
 using Robust.Client.GameObjects;
 
@@ -27,6 +29,6 @@ public sealed class WizardTrapsSystem : SharedWizardTrapsSystem
         if (args.Sprite is not { } sprite)
             return;
 
-        sprite.Color = sprite.Color.WithAlpha((float) alpha);
+        sprite.Color = sprite.Color.WithAlpha((float)alpha);
     }
 }

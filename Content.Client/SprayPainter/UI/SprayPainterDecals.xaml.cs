@@ -13,6 +13,9 @@ using System.Numerics;
 
 namespace Content.Client.SprayPainter.UI;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 /// <summary>
 /// Used to control decal painting parameters for the spray painter.
 /// </summary>

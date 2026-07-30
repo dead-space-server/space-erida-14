@@ -7,6 +7,9 @@ using Robust.Shared.Map;
 
 namespace Content.Client.Shuttles.BUI;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 [UsedImplicitly]
 public sealed class ShuttleConsoleBoundUserInterface : BoundUserInterface
 {

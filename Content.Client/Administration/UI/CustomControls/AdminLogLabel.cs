@@ -1,9 +1,11 @@
-﻿using Content.Shared.Administration.Logs;
+using Content.Shared.Administration.Logs;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.Administration.UI.CustomControls;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
 public sealed class AdminLogLabel : RichTextLabel
 {
     public AdminLogLabel(ref SharedAdminLog log, HSeparator separator)

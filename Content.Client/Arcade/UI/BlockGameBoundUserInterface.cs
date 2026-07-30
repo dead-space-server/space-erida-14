@@ -71,6 +71,7 @@ public sealed class BlockGameBoundUserInterface : BoundUserInterface
         if (!disposing)
             return;
 
+#pragma warning disable CS0618 // Erida edit
         _menu?.Dispose();
     }
 }

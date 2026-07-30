@@ -14,6 +14,10 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 namespace Content.Client.Construction.UI
 {
     /// <summary>
@@ -436,10 +440,10 @@ namespace Content.Client.Construction.UI
                 }
 
                 _placementManager.BeginPlacing(new PlacementInformation
-                    {
-                        IsTile = false,
-                        PlacementOption = _selected.PlacementMode
-                    },
+                {
+                    IsTile = false,
+                    PlacementOption = _selected.PlacementMode
+                },
                     new ConstructionPlacementHijack(_constructionSystem, _selected));
 
                 UpdateGhostPlacement();
@@ -464,10 +468,10 @@ namespace Content.Client.Construction.UI
             var constructSystem = _systemManager.GetEntitySystem<ConstructionSystem>();
 
             _placementManager.BeginPlacing(new PlacementInformation()
-                {
-                    IsTile = false,
-                    PlacementOption = _selected.PlacementMode,
-                },
+            {
+                IsTile = false,
+                PlacementOption = _selected.PlacementMode,
+            },
                 new ConstructionPlacementHijack(constructSystem, _selected));
 
             _constructionView.BuildButtonPressed = true;

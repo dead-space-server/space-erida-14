@@ -7,6 +7,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Audio.Jukebox;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
 {
     [Dependency] private IPrototypeManager _protoManager = default!;
@@ -63,7 +67,7 @@ public sealed partial class JukeboxBoundUserInterface : BoundUserInterface
         if (_protoManager.Resolve(jukebox.SelectedSongId, out var songProto))
         {
             var length = EntMan.System<AudioSystem>().GetAudioLength(songProto.Path.Path.ToString());
-            _menu.SetSelectedSong(songProto.Name, (float) length.TotalSeconds);
+            _menu.SetSelectedSong(songProto.Name, (float)length.TotalSeconds);
         }
         else
         {

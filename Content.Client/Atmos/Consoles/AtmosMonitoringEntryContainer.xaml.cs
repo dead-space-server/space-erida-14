@@ -13,6 +13,9 @@ using System.Linq;
 
 namespace Content.Client.Atmos.Consoles;
 
+#pragma warning disable CS0618 // Erida edit
+
+
 [GenerateTypedNameReferences]
 public sealed partial class AtmosMonitoringEntryContainer : BoxContainer
 {

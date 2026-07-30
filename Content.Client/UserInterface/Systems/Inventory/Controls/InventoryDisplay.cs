@@ -5,6 +5,9 @@ using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.UserInterface.Systems.Inventory.Controls;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable IDE1006 // Erida edit
+
 public sealed class InventoryDisplay : LayoutContainer
 {
     private int Columns = 0;

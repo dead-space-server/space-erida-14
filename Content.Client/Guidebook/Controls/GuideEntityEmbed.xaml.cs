@@ -19,6 +19,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Guidebook.Controls;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 /// <summary>
 ///     Control for embedding an entity into a guidebook/document. This is effectively a sprite-view that supports
 ///     examination, interactions, and captions.

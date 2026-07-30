@@ -173,6 +173,7 @@ public sealed partial class AdminLogsEui : BaseEui
         });
 
         LogsControl.Orphan();
+#pragma warning disable CS0618 // Erida edit
         LogsWindow.Dispose();
         LogsWindow = null;
 
@@ -188,7 +189,7 @@ public sealed partial class AdminLogsEui : BaseEui
 
     public override void HandleState(EuiStateBase state)
     {
-        var s = (AdminLogsEuiState) state;
+        var s = (AdminLogsEuiState)state;
 
         if (s.IsLoading)
         {

@@ -9,6 +9,9 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Flash
 {
     public sealed partial class FlashOverlay : Overlay

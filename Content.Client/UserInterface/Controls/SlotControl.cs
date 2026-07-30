@@ -8,6 +8,8 @@ using Robust.Shared.Input;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
+
+#pragma warning disable CS0618 // Erida edit
 namespace Content.Client.UserInterface.Controls
 {
     public abstract class SlotControl : Control, IEntityControl
@@ -51,9 +53,9 @@ namespace Content.Client.UserInterface.Controls
             }
         }
 
-        public bool Highlight { get => HighlightRect.Visible; set => HighlightRect.Visible = value;}
+        public bool Highlight { get => HighlightRect.Visible; set => HighlightRect.Visible = value; }
 
-        public bool Blocked { get => BlockedRect.Visible; set => BlockedRect.Visible = value;}
+        public bool Blocked { get => BlockedRect.Visible; set => BlockedRect.Visible = value; }
 
         private string? _blockedTexturePath;
         public string? BlockedTexturePath

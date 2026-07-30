@@ -91,6 +91,7 @@ public sealed partial class GhostGui : UIWidget
     }
     // End Frontier
 
+#pragma warning disable CS0618 // Erida edit
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

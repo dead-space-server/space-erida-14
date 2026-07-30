@@ -4,6 +4,10 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.UserInterface.Systems.Chat.Controls;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 public sealed class ChannelSelectorPopup : Popup
 {
     // order in which the channels show up in the channel selector
@@ -104,7 +108,7 @@ public sealed class ChannelSelectorPopup : Popup
 
     private void OnSelectorPressed(ButtonEventArgs args)
     {
-        var button = (ChannelSelectorItemButton) args.Button;
+        var button = (ChannelSelectorItemButton)args.Button;
         Select(button.Channel);
     }
 

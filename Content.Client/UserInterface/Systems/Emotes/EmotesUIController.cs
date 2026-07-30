@@ -123,6 +123,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
             EmotesButton.Pressed = true;
     }
 
+#pragma warning disable CS0618 // Erida edit
     private void CloseMenu()
     {
         if (_menu == null)
@@ -140,7 +141,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
         Dictionary<EmoteCategory, List<RadialMenuOptionBase>> emotesByCategory = [];
         foreach (var emote in emotePrototypes)
         {
-            if(emote.Category == EmoteCategory.Invalid)
+            if (emote.Category == EmoteCategory.Invalid)
                 continue;
 
             // only valid emotes that have ways to be triggered by chat and player have access / no restriction on

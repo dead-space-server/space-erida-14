@@ -8,6 +8,8 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Humanoid;
 
 [GenerateTypedNameReferences]

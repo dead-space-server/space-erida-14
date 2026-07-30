@@ -25,6 +25,8 @@ namespace Content.Benchmarks
         private (Color, Color)[] _colors;
         private Color[] _output;
 
+        private readonly IRobustRandom _random = default!;
+
         [Params(100)] public int N { get; set; }
 
         [GlobalSetup]
@@ -37,15 +39,15 @@ namespace Content.Benchmarks
 
             for (var i = 0; i < N; i++)
             {
-                var r1 = random.NextFloat();
-                var g1 = random.NextFloat();
-                var b1 = random.NextFloat();
-                var a1 = random.NextFloat();
+                var r1 = _random.NextFloat();
+                var g1 = _random.NextFloat();
+                var b1 = _random.NextFloat();
+                var a1 = _random.NextFloat();
 
-                var r2 = random.NextFloat();
-                var g2 = random.NextFloat();
-                var b2 = random.NextFloat();
-                var a2 = random.NextFloat();
+                var r2 = _random.NextFloat();
+                var g2 = _random.NextFloat();
+                var b2 = _random.NextFloat();
+                var a2 = _random.NextFloat();
 
                 _colors[i] = (new Color(r1, g1, b1, a1), new Color(r2, g2, b2, a2));
             }

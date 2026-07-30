@@ -47,7 +47,6 @@
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectForcedSleeping
-  name: forced sleep
   components:
   - type: ForcedSleepingStatusEffect
   - type: StunnedStatusEffect
@@ -57,7 +56,6 @@
 - type: entity
   parent: MobStatusEffectBase # Not even rejuvenate can cure SSD...
   id: StatusEffectSSDSleeping
-  name: forced sleep
   components:
   - type: ForcedSleepingStatusEffect
   - type: StunnedStatusEffect
@@ -67,7 +65,6 @@
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectDrowsiness
-  name: drowsiness
   components:
   - type: DrowsinessStatusEffect
 
@@ -75,7 +72,6 @@
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectSeeingRainbow
-  name: hallucinations
   components:
   - type: SeeingRainbowsStatusEffect
 
@@ -83,7 +79,6 @@
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectWoozy
-  name: woozy
   components:
   - type: DrunkStatusEffect
 
@@ -97,7 +92,6 @@
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectBlindness
-  name: temporary blindness
   components:
   - type: StatusEffect
     whitelist:

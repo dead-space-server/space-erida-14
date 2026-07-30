@@ -4,6 +4,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client._NF.UserInterface.Systems.Ghost.Controls
 {
     [GenerateTypedNameReferences]

@@ -6,6 +6,9 @@ using Robust.Shared.Input;
 
 namespace Content.Client.Info.PlaytimeStats;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class PlaytimeStatsHeader : Control
 {

@@ -58,6 +58,7 @@ namespace Content.Client.Instruments.UI
             }
         }
 
+#pragma warning disable CS0618 // Erida edit
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -95,7 +96,7 @@ namespace Content.Client.Instruments.UI
 
         public void CloseBandMenu()
         {
-            if(_bandMenu?.IsOpen ?? false)
+            if (_bandMenu?.IsOpen ?? false)
                 _bandMenu.Close();
         }
 
@@ -108,7 +109,7 @@ namespace Content.Client.Instruments.UI
 
         public void CloseChannelsMenu()
         {
-            if(_channelsMenu?.IsOpen ?? false)
+            if (_channelsMenu?.IsOpen ?? false)
                 _channelsMenu.Close();
         }
     }

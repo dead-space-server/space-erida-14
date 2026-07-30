@@ -7,7 +7,7 @@
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
+#pragma warning disable CS0618 // Erida edit
 using System.Numerics;
 using Content.Client.IconSmoothing;
 using Content.Shared._Goobstation.Heretic.Components;

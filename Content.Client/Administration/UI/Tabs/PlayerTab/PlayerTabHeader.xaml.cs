@@ -6,6 +6,10 @@ using Robust.Shared.Input;
 
 namespace Content.Client.Administration.UI.Tabs.PlayerTab;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
+
 [GenerateTypedNameReferences]
 public sealed partial class PlayerTabHeader : Control
 {

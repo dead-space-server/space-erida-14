@@ -78,6 +78,7 @@ public sealed class SpaceHeaterBoundUserInterface : BoundUserInterface
         base.Dispose(disposing);
         if (!disposing)
             return;
+#pragma warning disable CS0618 // Erida edit
         _window?.Dispose();
     }
 }

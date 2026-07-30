@@ -7,6 +7,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using System.Numerics;
 using Content.Client.Stylesheets;
 using Content.Shared._Goobstation.Blob;
@@ -64,7 +66,7 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
 
         var group = new ButtonGroup();
 
-        foreach (var (blobChem,blobColor) in _possibleChems)
+        foreach (var (blobChem, blobColor) in _possibleChems)
         {
             if (!_prototypeManager.TryIndex(NormalBlobTile, out EntityPrototype? proto))
                 continue;
@@ -74,7 +76,7 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
                 MinSize = new Vector2(64, 64),
                 HorizontalExpand = true,
                 Group = group,
-                StyleClasses = {StyleClass.ButtonSquare},
+                StyleClasses = { StyleClass.ButtonSquare },
                 ToggleMode = true,
                 Pressed = _selectedId == blobChem,
                 ToolTip = Loc.GetString($"blob-chem-{blobChem.ToString().ToLower()}-info"),

@@ -47,6 +47,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
         {
             base.Close();
             _addReagentWindow?.Close();
+#pragma warning disable CS0618 // Erida edit
             _addReagentWindow?.Dispose();
         }
 
@@ -114,7 +115,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
             var capacitySpin = new FloatSpinBox(1, 2);
             capacitySpin.HorizontalExpand = true;
             capacitySpin.Margin = new Thickness(0, 1);
-            capacitySpin.Value = (float) solution.MaxVolume;
+            capacitySpin.Value = (float)solution.MaxVolume;
             capacitySpin.OnValueChanged += SetCapacity;
 
             capacityBox.AddChild(capacityLabel);
@@ -141,7 +142,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
             var heatCapacityLabel = new Label();
             heatCapacityLabel.HorizontalExpand = true;
             heatCapacityLabel.Margin = new Thickness(0, 1);
-            heatCapacityLabel.Text = Loc.GetString("admin-solutions-window-heat-capacity-label", ("heatCapacity", (heatCap/solution.Volume.Float()).ToString("G3")));
+            heatCapacityLabel.Text = Loc.GetString("admin-solutions-window-heat-capacity-label", ("heatCapacity", (heatCap / solution.Volume.Float()).ToString("G3")));
 
             // Temperature entry:
             var temperatureBox = new BoxContainer();
@@ -201,7 +202,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
             spin.OnValueChanged += (args) => SetReagent(args, reagentQuantity.Reagent.Prototype);
             spin.HorizontalExpand = true;
 
-            box.AddChild(new Label() { Text = reagentQuantity.Reagent.Prototype , HorizontalExpand = true});
+            box.AddChild(new Label() { Text = reagentQuantity.Reagent.Prototype, HorizontalExpand = true });
             box.AddChild(spin);
 
             ReagentList.AddChild(box);
@@ -310,7 +311,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
         private void SolutionSelected(OptionButton.ItemSelectedEventArgs args)
         {
             SolutionOption.SelectId(args.Id);
-            _selectedSolution = (string?) SolutionOption.SelectedMetadata;
+            _selectedSolution = (string?)SolutionOption.SelectedMetadata;
             _addReagentWindow?.UpdateSolution(_selectedSolution);
             UpdateReagents();
         }
@@ -363,7 +364,7 @@ namespace Content.Client.Administration.UI.ManageSolutions
             }
 
             SolutionOption.Select(selectedIndex);
-            _selectedSolution = (string?) SolutionOption.SelectedMetadata;
+            _selectedSolution = (string?)SolutionOption.SelectedMetadata;
         }
 
         protected override void FrameUpdate(FrameEventArgs args)

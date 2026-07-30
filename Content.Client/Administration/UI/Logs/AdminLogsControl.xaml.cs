@@ -12,6 +12,9 @@ using static Robust.Client.UserInterface.Controls.LineEdit;
 
 namespace Content.Client.Administration.UI.Logs;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class AdminLogsControl : Control
 {
@@ -300,7 +303,7 @@ public sealed partial class AdminLogsControl : Control
 
     private void TypeButtonPressed(ButtonEventArgs args)
     {
-        var button = (AdminLogTypeButton) args.Button;
+        var button = (AdminLogTypeButton)args.Button;
         if (button.Pressed)
         {
             SelectedTypes.Add(button.Type);
@@ -315,7 +318,7 @@ public sealed partial class AdminLogsControl : Control
 
     private void PlayerButtonPressed(ButtonEventArgs args)
     {
-        var button = (AdminLogPlayerButton) args.Button;
+        var button = (AdminLogPlayerButton)args.Button;
         if (button.Pressed)
         {
             SelectedPlayers.Add(button.Id);
@@ -330,7 +333,7 @@ public sealed partial class AdminLogsControl : Control
 
     private void ImpactButtonPressed(ButtonEventArgs args)
     {
-        var button = (AdminLogImpactButton) args.Button;
+        var button = (AdminLogImpactButton)args.Button;
         if (button.Pressed)
         {
             SelectedImpacts.Add(button.Impact);

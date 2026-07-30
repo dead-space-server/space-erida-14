@@ -43,6 +43,8 @@ public sealed class AnomalyScannerBoundUserInterface : BoundUserInterface
         base.Dispose(disposing);
         if (!disposing)
             return;
+
+#pragma warning disable CS0618 // Erida edit
         _menu?.Dispose();
     }
 }

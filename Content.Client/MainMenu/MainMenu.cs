@@ -10,6 +10,8 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
 using UsernameHelpers = Robust.Shared.AuthLib.UsernameHelpers;
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable IDE1006 // Erida edit
 
 namespace Content.Client.MainMenu
 {
@@ -181,7 +183,7 @@ namespace Content.Client.MainMenu
 
         private void _onConnectFailed(object? _, NetConnectFailArgs args)
         {
-            _userInterfaceManager.Popup(Loc.GetString("main-menu-failed-to-connect",("reason", args.Reason)));
+            _userInterfaceManager.Popup(Loc.GetString("main-menu-failed-to-connect", ("reason", args.Reason)));
             _netManager.ConnectFailed -= _onConnectFailed;
             _setConnectingState(false);
         }

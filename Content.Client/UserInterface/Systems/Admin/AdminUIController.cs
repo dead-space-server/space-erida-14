@@ -79,6 +79,7 @@ public sealed partial class AdminUIController : UIController,
 
     public void OnSystemUnloaded(AdminSystem system)
     {
+#pragma warning disable CS0618 // Erida edit
         if (_window != null)
             _window.Dispose();
 
@@ -167,7 +168,7 @@ public sealed partial class AdminUIController : UIController,
 
     private void Toggle()
     {
-        if (_window is {IsOpen: true})
+        if (_window is { IsOpen: true })
         {
             _window.Close();
         }
@@ -179,7 +180,7 @@ public sealed partial class AdminUIController : UIController,
 
     private void PlayerTabEntryKeyBindDown(GUIBoundKeyEventArgs args, ListData? data)
     {
-        if (data is not PlayerListData {Info: var info})
+        if (data is not PlayerListData { Info: var info })
             return;
 
         if (info.NetEntity == null)

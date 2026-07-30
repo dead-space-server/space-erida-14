@@ -7,6 +7,9 @@ using Content.Shared.IdentityManagement;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 namespace Content.Client.ContextMenu.UI
 {
     public sealed partial class EntityMenuElement : ContextMenuElement, IEntityControl

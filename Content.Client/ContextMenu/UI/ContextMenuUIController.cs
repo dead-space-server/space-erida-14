@@ -76,7 +76,7 @@ namespace Content.Client.ContextMenu.UI
             RootMenu.OnPopupHide += Close;
             Menus.Push(RootMenu);
         }
-
+#pragma warning disable CS0618 // Erida edit
         public void Shutdown()
         {
             if (!_setup)

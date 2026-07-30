@@ -22,7 +22,7 @@ public sealed class AtmosAlertsComputerBoundUserInterface : BoundUserInterface
     {
         base.UpdateState(state);
 
-        var castState = (AtmosAlertsComputerBoundInterfaceState) state;
+        var castState = (AtmosAlertsComputerBoundInterfaceState)state;
 
         EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
         _menu?.UpdateUI(xform?.Coordinates, castState.AirAlarms, castState.FireAlarms, castState.FocusData);
@@ -44,6 +44,7 @@ public sealed class AtmosAlertsComputerBoundUserInterface : BoundUserInterface
         if (!disposing)
             return;
 
+#pragma warning disable CS0618 // Erida edit
         _menu?.Dispose();
     }
 }

@@ -36,6 +36,7 @@ using static Robust.Shared.Input.Binding.PointerInputCmdHandler;
 namespace Content.Client.Mapping;
 
 #pragma warning disable IDE0028
+#pragma warning disable CS0618 // Erida edit
 
 public sealed partial class MappingState : GameplayStateBase
 {

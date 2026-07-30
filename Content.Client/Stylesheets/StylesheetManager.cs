@@ -6,6 +6,9 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Reflection;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Stylesheets
 {
     public sealed partial class StylesheetManager : IStylesheetManager
@@ -44,7 +47,7 @@ namespace Content.Client.Stylesheets
 
             // add all sheetlets to the hashset
             var tys = _reflection.FindTypesWithAttribute<CommonSheetletAttribute>();
-            UnusedSheetlets = [..tys];
+            UnusedSheetlets = [.. tys];
 
             Stylesheets = [];
             SheetNanotrasen = Init(new NanotrasenStylesheet(new BaseStylesheet.NoConfig(), this));

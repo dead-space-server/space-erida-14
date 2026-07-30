@@ -18,7 +18,7 @@ public sealed class NodeScannerBoundUserInterface(EntityUid owner, Enum uiKey) :
         _scannerDisplay = this.CreateWindow<NodeScannerDisplay>();
         _scannerDisplay.SetOwner(Owner);
     }
-
+#pragma warning disable CS0618 // Erida edit
     /// <inheritdoc />
     protected override void Dispose(bool disposing)
     {

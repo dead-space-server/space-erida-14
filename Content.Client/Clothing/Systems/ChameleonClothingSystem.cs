@@ -8,6 +8,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Clothing.Systems;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 // All valid items for chameleon are calculated on client startup and stored in dictionary.
 public sealed class ChameleonClothingSystem : SharedChameleonClothingSystem
 {

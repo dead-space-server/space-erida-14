@@ -41,7 +41,7 @@ public sealed class MeleeSpeechBoundUserInterface : BoundUserInterface
 
         _window.SetCurrentBattlecry(cast.CurrentBattlecry);
     }
-
+#pragma warning disable CS0618 // Erida edit
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

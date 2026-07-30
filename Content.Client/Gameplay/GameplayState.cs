@@ -76,6 +76,7 @@ namespace Content.Client.Gameplay
             return client || server;
         }
 
+#pragma warning disable CS0618 // Erida edit
         protected override void Shutdown()
         {
             _overlayManager.RemoveOverlay<ShowHandItemOverlay>();

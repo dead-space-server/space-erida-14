@@ -28,6 +28,7 @@ public sealed class StationAiCustomizationBoundUserInterface : BoundUserInterfac
         SendPredictedMessage(new StationAiCustomizationMessage(groupProtoId, customizationProtoId));
     }
 
+#pragma warning disable CS0618 // Erida edit
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);

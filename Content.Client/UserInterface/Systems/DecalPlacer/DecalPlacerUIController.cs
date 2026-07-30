@@ -25,12 +25,12 @@ public sealed partial class DecalPlacerUIController : UIController, IOnStateExit
         {
             _window.Close();
         }
-        else if(_sandbox.SandboxAllowed)
+        else if (_sandbox.SandboxAllowed)
         {
             _window.Open();
         }
     }
-
+#pragma warning disable CS0618 // Erida edit
     public void OnStateExited(GameplayState state)
     {
         if (_window == null)

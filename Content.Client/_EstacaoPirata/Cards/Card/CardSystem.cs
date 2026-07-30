@@ -5,6 +5,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
 using Robust.Client.GameObjects;

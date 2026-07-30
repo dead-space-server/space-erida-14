@@ -5,6 +5,9 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 namespace Content.Client.ContextMenu.UI
 {
     /// <summary>
@@ -32,7 +35,7 @@ namespace Content.Client.ContextMenu.UI
 
         private ContextMenuUIController _uiController;
 
-        public ContextMenuPopup (ContextMenuUIController uiController, ContextMenuElement? parentElement) : base()
+        public ContextMenuPopup(ContextMenuUIController uiController, ContextMenuElement? parentElement) : base()
         {
             RobustXamlLoader.Load(this);
             MenuPanel.SetOnlyStyleClass(StyleClassContextMenuPopup);

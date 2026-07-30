@@ -34,6 +34,8 @@ public sealed partial class BanListEui : BaseEui
     private BanListControl BanControl { get; }
     private RoleBanListControl RoleBanControl { get; }
 
+#pragma warning disable CS0618 // Erida edit
+
     private void OnClosed()
     {
         if (_popup != null)

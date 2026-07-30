@@ -21,7 +21,7 @@ public sealed partial class GunSystem
         if (ent.Comp.Control != null)
             args.Controls.Add(ent.Comp.Control);
     }
-
+#pragma warning disable CS0618 // Erida edit
     /// <summary>
     /// Refreshes the control being used to show ammo. Useful if you change the AmmoProvider.
     /// </summary>

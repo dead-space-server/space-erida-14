@@ -150,7 +150,7 @@ namespace Content.Client.Cargo.BUI
 
             if (!disposing)
                 return;
-
+#pragma warning disable CS0618 // Erida edit
             _menu?.Dispose();
             _orderMenu?.Dispose();
         }

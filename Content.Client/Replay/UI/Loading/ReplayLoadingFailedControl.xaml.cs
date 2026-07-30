@@ -7,6 +7,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Replay.UI.Loading;
 
+#pragma warning disable CS0618 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class ReplayLoadingFailedControl : Control
 {

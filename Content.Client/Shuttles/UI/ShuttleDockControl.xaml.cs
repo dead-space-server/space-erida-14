@@ -128,11 +128,11 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
 
         if (viewedDockPos != null)
         {
-            viewedDockPos = viewedDockPos.Value + _angle.Value.RotateVec(new Vector2(0f,-0.6f) * MinimapScale);
+            viewedDockPos = viewedDockPos.Value + _angle.Value.RotateVec(new Vector2(0f, -0.6f) * MinimapScale);
         }
 
         var canDockChange = _timing.CurTime > _nextDockChange;
-        var lineOffset = (float) _timing.RealTime.TotalSeconds * 30f;
+        var lineOffset = (float)_timing.RealTime.TotalSeconds * 30f;
 
         foreach (var grid in _grids)
         {
@@ -340,6 +340,7 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
         var viewedEnt = ViewedDock;
         _viewedState = null;
 
+#pragma warning disable CS0618 // Erida edit
         foreach (var btn in _dockButtons.Values)
         {
             btn.Dispose();

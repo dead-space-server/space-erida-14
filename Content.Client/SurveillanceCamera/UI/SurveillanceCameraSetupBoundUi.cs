@@ -65,6 +65,7 @@ public sealed class SurveillanceCameraSetupBoundUi : BoundUserInterface
 
         if (disposing)
         {
+#pragma warning disable CS0618 // Erida edit
             _window?.Dispose();
             _window = null;
         }

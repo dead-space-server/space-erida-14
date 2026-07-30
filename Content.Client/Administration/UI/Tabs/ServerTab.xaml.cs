@@ -5,6 +5,10 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
+
 namespace Content.Client.Administration.UI.Tabs
 {
     [GenerateTypedNameReferences]

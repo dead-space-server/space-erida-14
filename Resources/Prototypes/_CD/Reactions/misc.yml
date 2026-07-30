@@ -3,6 +3,5 @@
 - type: entity
   parent: MobStatusEffectDebuff
   id: StatusEffectChronicPainSuppressed
-  name: chronic pain suppression
   components:
   - type: ChronicPainSuppressedStatusEffect

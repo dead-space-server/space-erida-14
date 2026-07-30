@@ -15,6 +15,8 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Mapping;
 
+#pragma warning disable CS0618 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class MappingScreen : InGameScreen
 {
@@ -129,7 +131,7 @@ public sealed partial class MappingScreen : InGameScreen
             _picker.OpenToLeft();
             _picker.PaletteList.OnItemSelected += args =>
             {
-                var color = ((Color?) args.ItemList.GetSelected().First().Metadata)!.Value;
+                var color = ((Color?)args.ItemList.GetSelected().First().Metadata)!.Value;
                 OnDecalColorPicked(color);
             };
 

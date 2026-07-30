@@ -6,6 +6,9 @@ using static Robust.Client.UserInterface.Controls.BaseButton;
 
 namespace Content.Client.Administration.UI.BanList.RoleBans;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class RoleBanListLine : BoxContainer, IBanListLine<SharedBan>
 {

@@ -95,8 +95,10 @@ public sealed partial class HumanoidProfileEditor
             _flavorText.OnNSFWTagsTextChanged -= OnNSFWTagsFlavorTextChange;
             _flavorText.OnFlavorTabChanged -= OnTabChanged;
             // Erida end
+#pragma warning disable CS0618 // Erida edit
             _flavorText.Dispose();
             _flavorTextEdit?.Dispose();
+#pragma warning restore CS0618 // Erida edit
             _flavorTextEdit = null;
             _flavorText = null;
             // Erida start
@@ -368,7 +370,7 @@ public sealed partial class HumanoidProfileEditor
             url.StartsWith("https://", StringComparison.OrdinalIgnoreCase) ||
             url.StartsWith("www.", StringComparison.OrdinalIgnoreCase);
     }
-
+#pragma warning disable CS0618 // Erida edit
     private void CreateLinkButton(string url, BoxContainer linksContainer) // Erida edit
     {
         var button = new Button

@@ -5,6 +5,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using System.Linq;
 using System.Numerics;
 using Content.Shared._EstacaoPirata.Cards.Deck;
@@ -145,7 +147,7 @@ public sealed partial class CardDeckSystem : EntitySystem
             return;
         }
 
-        if(stack.Cards.Count <= 0)
+        if (stack.Cards.Count <= 0)
             _notInitialized[(uid, comp)] = 0;
         UpdateSprite(uid, comp);
     }

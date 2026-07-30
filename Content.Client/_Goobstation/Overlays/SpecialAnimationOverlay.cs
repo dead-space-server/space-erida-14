@@ -9,6 +9,8 @@ using Robust.Shared.Graphics;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client._Goobstation.Overlays;
 
 public sealed partial class SpecialAnimationOverlay : Overlay
@@ -174,7 +176,7 @@ public sealed partial class SpecialAnimationOverlay : Overlay
     private void CalculateAnimation(SpecialAnimationData animation)
     {
         var curTime = _timing.CurTime;
-        var frameTime = (float) (curTime - animation.LastTime).TotalSeconds;
+        var frameTime = (float)(curTime - animation.LastTime).TotalSeconds;
         var fadeInEndTime = animation.StartTime + TimeSpan.FromSeconds(animation.FadeInDuration);
         var fadeOutStartTime = animation.StartTime + TimeSpan.FromSeconds(animation.TotalDuration) - TimeSpan.FromSeconds(animation.FadeOutDuration);
 

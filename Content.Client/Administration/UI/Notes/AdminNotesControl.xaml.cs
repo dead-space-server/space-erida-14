@@ -12,6 +12,9 @@ using Robust.Shared.Configuration;
 
 namespace Content.Client.Administration.UI.Notes;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 [GenerateTypedNameReferences]
 public sealed partial class AdminNotesControl : Control
 {
@@ -139,7 +142,7 @@ public sealed partial class AdminNotesControl : Control
         }
         else
         {
-            alpha = (float) (1 - Math.Clamp((timeDiff.TotalDays - _noteFreshDays) / (_noteStaleDays - _noteFreshDays), 0, 1));
+            alpha = (float)(1 - Math.Clamp((timeDiff.TotalDays - _noteFreshDays) / (_noteStaleDays - _noteFreshDays), 0, 1));
         }
 
         input.Modulate = input.Modulate.WithAlpha(alpha);

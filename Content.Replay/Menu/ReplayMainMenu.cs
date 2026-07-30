@@ -263,6 +263,7 @@ public sealed partial class ReplayMainScreen : State
         }
         catch (Exception ex)
         {
+#pragma warning disable CS0618 // Erida edit
             Logger.Error($"Failed to load replay info. Exception: {ex}");
             SelectReplay(null);
             return;
@@ -274,6 +275,7 @@ public sealed partial class ReplayMainScreen : State
     {
         _mainMenuControl.Dispose();
         _selectWindow?.Dispose();
+#pragma warning restore CS0618
     }
 
     private void OptionsButtonPressed(BaseButton.ButtonEventArgs args)

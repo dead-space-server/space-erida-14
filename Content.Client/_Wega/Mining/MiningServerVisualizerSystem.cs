@@ -1,6 +1,8 @@
 using Robust.Client.GameObjects;
 using Content.Shared.Mining.Components;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Mining.Visualizers
 {
     public sealed class MiningServerVisualizerSystem : VisualizerSystem<MiningServerVisualsComponent>

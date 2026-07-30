@@ -7,6 +7,8 @@ using Robust.Shared.Input;
 using Robust.Shared.Utility;
 using Content.Client.UserInterface.ControlExtensions;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Client.Guidebook.RichText;
 
 [UsedImplicitly]
