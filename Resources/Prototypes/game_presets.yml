@@ -265,18 +265,18 @@
   - BasicRoundstartVariation
 # Erida end
 
-- type: gamePreset
-  id: Zombieteors
-  alias:
-  - zombieteors
-  - zombombies
-  - meteombies
-  name: zombieteors-title
-  description: zombieteors-description
-  showInVote: false
-  rules:
-  - Zombie
-  - BasicStationEventScheduler
-  - KesslerSyndromeScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
+# - type: gamePreset
+#   id: Zombieteors
+#   alias:
+#   - zombieteors
+#   - zombombies
+#   - meteombies
+#   name: zombieteors-title
+#   description: zombieteors-description
+#   showInVote: false
+#   rules:
+#   - Zombie
+#   - BasicStationEventScheduler
+#   - KesslerSyndromeScheduler
+#   - SpaceTrafficControlEventScheduler
+#   - BasicRoundstartVariation
