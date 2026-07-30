@@ -21,7 +21,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
     [Dependency] private DocumentParsingManager _parsingMan = default!;
     [Dependency] private IResourceManager _resourceManager = default!;
 
-    private Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> _entries = new();
+    private Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> _entries = [];
 
     private readonly ISawmill _sawmill;
 
@@ -131,7 +131,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
 
         var (linkableControls, linkControls) = GetLinkableControlsAndLinks(EntryContainer);
 
-        HashSet<IPrototype> availablePrototypeLinks = new();
+        HashSet<IPrototype> availablePrototypeLinks = [];
         foreach (var linkableControl in linkableControls)
         {
             var prototype = linkableControl.RepresentedPrototype;
@@ -203,7 +203,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
     {
         Tree.Clear();
 
-        HashSet<ProtoId<GuideEntryPrototype>> addedEntries = new();
+        HashSet<ProtoId<GuideEntryPrototype>> addedEntries = [];
 
         var parent = forcedRoot == null ? null : AddEntry(forcedRoot.Value, null, addedEntries);
         foreach (var entry in GetSortedEntries(roots))
@@ -263,8 +263,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
 
     private static (List<IPrototypeRepresentationControl>, List<IPrototypeLinkControl>) GetLinkableControlsAndLinks(Control parent)
     {
-        List<IPrototypeRepresentationControl> linkableList = new();
-        List<IPrototypeLinkControl> linkList = new();
+        List<IPrototypeRepresentationControl> linkableList = [];
+        List<IPrototypeLinkControl> linkList = [];
 
         foreach (var child in parent.Children)
         {

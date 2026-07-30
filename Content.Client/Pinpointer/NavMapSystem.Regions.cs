@@ -73,7 +73,7 @@ public sealed partial class NavMapSystem
         foreach (var chunk in floodedChunks)
         {
             if (!component.ChunkToRegionOwnerTable.TryGetValue(chunk, out var owners))
-                owners = new();
+                owners = [];
 
             owners.Add(regionOwner);
             component.ChunkToRegionOwnerTable[chunk] = owners;
@@ -83,7 +83,7 @@ public sealed partial class NavMapSystem
     private (HashSet<Vector2i>, HashSet<Vector2i>) FloodFillRegion(EntityUid uid, NavMapComponent component, NavMapRegionProperties regionProperties)
     {
         if (!regionProperties.Seeds.Any())
-            return (new(), new());
+            return ([], []);
 
         var visitedChunks = new HashSet<Vector2i>();
         var visitedTiles = new HashSet<Vector2i>();
@@ -97,7 +97,7 @@ public sealed partial class NavMapSystem
             {
                 // If the max region area is hit, exit
                 if (visitedTiles.Count > regionProperties.MaxArea)
-                    return (new(), new());
+                    return ([], []);
 
                 // Pop the top tile from the stack 
                 var current = tilesToVisit.Pop();
@@ -188,7 +188,7 @@ public sealed partial class NavMapSystem
     private List<(Vector2i, Vector2i)> GetMergedRegionTiles(HashSet<Vector2i> tiles)
     {
         if (!tiles.Any())
-            return new();
+            return [];
 
         var x = tiles.Select(t => t.X);
         var minX = x.Min();

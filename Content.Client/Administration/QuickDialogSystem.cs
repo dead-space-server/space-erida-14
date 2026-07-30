@@ -30,7 +30,7 @@ public sealed class QuickDialogSystem : EntitySystem
         window.OnCancelled += () =>
         {
             RaiseNetworkEvent(new QuickDialogResponseEvent(ev.DialogId,
-                new(),
+                [],
                 QuickDialogButtonFlag.CancelButton));
         };
     }

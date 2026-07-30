@@ -181,8 +181,8 @@ namespace Content.Client.Verbs
             // Some admin menu interactions will try get verbs for entities that have not yet been sent to the player.
             if (!TryGetEntity(target, out var local))
             {
-                extraCategories = new();
-                return new();
+                extraCategories = [];
+                return [];
             }
 
             return GetLocalVerbs(local.Value, user, verbTypes, out extraCategories, force);

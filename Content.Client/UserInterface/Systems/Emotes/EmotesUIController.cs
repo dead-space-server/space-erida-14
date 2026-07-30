@@ -137,7 +137,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
         var whitelistSystem = EntitySystemManager.GetEntitySystem<EntityWhitelistSystem>();
         var player = _playerManager.LocalSession?.AttachedEntity;
 
-        Dictionary<EmoteCategory, List<RadialMenuOptionBase>> emotesByCategory = new();
+        Dictionary<EmoteCategory, List<RadialMenuOptionBase>> emotesByCategory = [];
         foreach (var emote in emotePrototypes)
         {
             if(emote.Category == EmoteCategory.Invalid)
@@ -157,7 +157,7 @@ public sealed partial class EmotesUIController : UIController, IOnStateChanged<G
 
             if (!emotesByCategory.TryGetValue(emote.Category, out var list))
             {
-                list = new List<RadialMenuOptionBase>();
+                list = [];
                 emotesByCategory.Add(emote.Category, list);
             }
 

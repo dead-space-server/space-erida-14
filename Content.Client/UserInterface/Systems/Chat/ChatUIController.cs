@@ -127,15 +127,15 @@ public sealed partial class ChatUIController : UIController
     ///     We track them to push them up when new ones get added.
     /// </summary>
     private readonly Dictionary<EntityUid, List<SpeechBubble>> _activeSpeechBubbles =
-        new();
+        [];
 
     /// <summary>
     ///     Speech bubbles that are to-be-sent because of the "rate limit" they have.
     /// </summary>
     private readonly Dictionary<EntityUid, SpeechBubbleQueueData> _queuedSpeechBubbles
-        = new();
+        = [];
 
-    private readonly HashSet<ChatBox> _chats = new();
+    private readonly HashSet<ChatBox> _chats = [];
     public IReadOnlySet<ChatBox> Chats => _chats;
 
     /// <summary>
@@ -147,10 +147,10 @@ public sealed partial class ChatUIController : UIController
     /// For currently disabled chat filters,
     /// unread messages (messages received since the channel has been filtered out).
     /// </summary>
-    private readonly Dictionary<ChatChannel, int> _unreadMessages = new();
+    private readonly Dictionary<ChatChannel, int> _unreadMessages = [];
 
     // TODO add a cap for this for non-replays
-    public readonly List<(GameTick Tick, ChatMessage Msg)> History = new();
+    public readonly List<(GameTick Tick, ChatMessage Msg)> History = [];
 
     // Maintains which channels a client should be able to filter (for showing in the chatbox)
     // and select (for attempting to send on).
@@ -461,7 +461,7 @@ public sealed partial class ChatUIController : UIController
         }
         else
         {
-            existing = new List<SpeechBubble>();
+            existing = [];
             _activeSpeechBubbles.Add(entity, existing);
         }
 

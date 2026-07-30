@@ -206,7 +206,7 @@ public sealed partial class NanoChatUiFragment : BoxContainer
 
         if (!_messages.TryGetValue(activeChat.Value, out var value))
         {
-            value = new List<NanoChatMessage>();
+            value = [];
             _messages[activeChat.Value] = value;
         }
 

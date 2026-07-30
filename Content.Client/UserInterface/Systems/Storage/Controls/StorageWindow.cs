@@ -36,11 +36,11 @@ public sealed partial class StorageWindow : BaseWindow
     private Label _titleLabel;
 
     // Needs to be nullable in case a piece is in default spot.
-    private readonly Dictionary<EntityUid, (ItemStorageLocation? Loc, ItemGridPiece Control)> _pieces = new();
-    private readonly List<Control> _controlGrid = new();
+    private readonly Dictionary<EntityUid, (ItemStorageLocation? Loc, ItemGridPiece Control)> _pieces = [];
+    private readonly List<Control> _controlGrid = [];
 
-    private ValueList<EntityUid> _contained = new();
-    private ValueList<EntityUid> _toRemove = new();
+    private ValueList<EntityUid> _contained = [];
+    private ValueList<EntityUid> _toRemove = [];
 
     // Manually store this because you can't have a 0x0 GridContainer but we still need to add child controls for 1x1 containers.
     private Vector2i _pieceGridSize;

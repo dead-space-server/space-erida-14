@@ -13,7 +13,7 @@ namespace Content.Server.Construction; //Uses base namespace to extend Construct
 
 public sealed partial class ConstructionSystem
 {
-    [Dependency] ExamineSystemShared _examineSystem = default!;
+    [Dependency] private ExamineSystemShared _examineSystem = default!;
 
     private void InitializeMachineUpgrades()
     {

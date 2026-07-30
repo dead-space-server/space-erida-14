@@ -78,7 +78,7 @@ public sealed partial class TrayScannerSystem : SharedTrayScannerSystem
             break;
         }
 
-        inRange = new HashSet<Entity<SubFloorHideComponent>>();
+        inRange = [];
 
         if (canSee)
         {

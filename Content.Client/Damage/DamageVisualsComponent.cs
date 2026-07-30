@@ -25,7 +25,7 @@ public sealed partial class DamageVisualsComponent : Component
     ///     isn't required for it.
     /// </remarks>
     [DataField("thresholds", required: true)]
-    public List<FixedPoint2> Thresholds = new();
+    public List<FixedPoint2> Thresholds = [];
 
     /// <summary>
     ///     Layers to target, by layerMapKey.
@@ -117,13 +117,13 @@ public sealed partial class DamageVisualsComponent : Component
     /// </summary>
     [DataField("damageOverlay")] public  DamageVisualizerSprite? DamageOverlay;
 
-    public readonly List<Enum> TargetLayerMapKeys = new();
+    public readonly List<Enum> TargetLayerMapKeys = [];
     public bool Disabled = false;
     public bool Valid = true;
     public FixedPoint2 LastDamageThreshold = FixedPoint2.Zero;
-    public readonly Dictionary<object, bool> DisabledLayers = new();
-    public readonly Dictionary<object, string> LayerMapKeyStates = new();
-    public readonly Dictionary<string, FixedPoint2> LastThresholdPerGroup = new();
+    public readonly Dictionary<object, bool> DisabledLayers = [];
+    public readonly Dictionary<object, string> LayerMapKeyStates = [];
+    public readonly Dictionary<string, FixedPoint2> LastThresholdPerGroup = [];
     public string TopMostLayerKey = default!;
 }
 

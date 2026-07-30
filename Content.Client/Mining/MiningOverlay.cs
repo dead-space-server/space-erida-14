@@ -24,7 +24,7 @@ public sealed partial class MiningOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
     public override bool RequestScreenTexture => false;
 
-    private readonly HashSet<Entity<MiningScannerViewableComponent>> _viewableEnts = new();
+    private readonly HashSet<Entity<MiningScannerViewableComponent>> _viewableEnts = [];
 
     public MiningOverlay()
     {

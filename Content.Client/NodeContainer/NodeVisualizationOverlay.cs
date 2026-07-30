@@ -23,9 +23,9 @@ namespace Content.Client.NodeContainer
         private readonly SharedTransformSystem _transformSystem;
         private readonly SharedMapSystem _mapSystem;
 
-        private readonly Dictionary<(int, int), NodeRenderData> _nodeIndex = new();
-        private readonly Dictionary<EntityUid, Dictionary<Vector2i, List<(GroupData, NodeDatum)>>> _gridIndex = new();
-        private List<Entity<MapGridComponent>> _grids = new();
+        private readonly Dictionary<(int, int), NodeRenderData> _nodeIndex = [];
+        private readonly Dictionary<EntityUid, Dictionary<Vector2i, List<(GroupData, NodeDatum)>>> _gridIndex = [];
+        private List<Entity<MapGridComponent>> _grids = [];
 
         private readonly Font _font;
 

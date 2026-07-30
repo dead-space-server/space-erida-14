@@ -57,8 +57,9 @@ public sealed partial class AreaEchoSystem : EntitySystem
     /// <remarks>
     ///     Keep in ascending order.
     /// </remarks>
+#pragma warning disable IDE0028 // Erida edit
     private static readonly List<(float, ProtoId<AudioPresetPrototype>)> DistancePresets = new() { (12f, "Hallway"), (20f, "Auditorium"), (30f, "ConcertHall"), (40f, "Hangar") };
-
+#pragma warning restore IDE0028 // Erida edit
     /// <summary>
     ///     When is the next time we should check all audio entities and see if they are eligible to be updated.
     /// </summary>

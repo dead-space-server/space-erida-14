@@ -22,7 +22,7 @@ public sealed class ChannelSelectorPopup : Popup
     };
 
     private readonly BoxContainer _channelSelectorHBox;
-    private readonly Dictionary<ChatSelectChannel, ChannelSelectorItemButton> _selectorStates = new();
+    private readonly Dictionary<ChatSelectChannel, ChannelSelectorItemButton> _selectorStates = [];
     private readonly ChatUIController _chatUIController;
 
     public event Action<ChatSelectChannel>? Selected;

@@ -19,7 +19,7 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
     /// <summary>
     /// A dictionary that stores open groups
     /// </summary>
-    private Dictionary<string, bool> _openedGroups = new();
+    private Dictionary<string, bool> _openedGroups = [];
 
     private readonly LoadoutGroupPrototype _groupProto;
 

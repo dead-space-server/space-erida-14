@@ -15,7 +15,7 @@ namespace Content.Client.UserInterface.Systems.Alerts.Widgets;
 public sealed partial class AlertsUI : UIWidget
 {
     // also known as Control.Children?
-    private readonly Dictionary<AlertKey, AlertControl> _alertControls = new();
+    private readonly Dictionary<AlertKey, AlertControl> _alertControls = [];
 
     public AlertsUI()
     {

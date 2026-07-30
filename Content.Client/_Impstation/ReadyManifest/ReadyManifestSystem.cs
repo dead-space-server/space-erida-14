@@ -4,7 +4,7 @@ namespace Content.Client._Impstation.ReadyManifest;
 
 public sealed class ReadyManifestSystem : EntitySystem
 {
-    private HashSet<string> _departments = new();
+    private HashSet<string> _departments = [];
 
     public IReadOnlySet<string> Departments => _departments;
 

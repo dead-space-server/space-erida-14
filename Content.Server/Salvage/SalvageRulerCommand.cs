@@ -6,7 +6,7 @@ using Robust.Shared.Map;
 namespace Content.Server.Salvage;
 
 [AdminCommand(AdminFlags.Admin)]
-sealed partial class SalvageRulerCommand : IConsoleCommand
+internal sealed partial class SalvageRulerCommand : IConsoleCommand
 {
     [Dependency] private IEntityManager _entities = default!;
     [Dependency] private IMapManager _maps = default!;

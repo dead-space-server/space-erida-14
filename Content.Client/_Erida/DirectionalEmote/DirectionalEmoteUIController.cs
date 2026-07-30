@@ -33,7 +33,7 @@ public sealed class DirectionalEmoteUIController : UIController
             _typingIndicator.ClientChangedChatFocus(false);
             _typingIndicator.ClientSubmittedChatText();
             _directionalEmoteSystem.ShowMessage(_emoteWindow.Source, _emoteWindow.Target, _emoteWindow.Text);
-            _emoteWindow.Dispose();
+            _emoteWindow.Close();
         };
     }
 
@@ -54,7 +54,7 @@ public sealed class DirectionalEmoteUIController : UIController
         if (_emoteWindow.IsOpen)
         {
             _typingIndicator.ClientChangedChatFocus(false);
-            _emoteWindow.Dispose();
+            _emoteWindow.Close();
         }
         else
         {

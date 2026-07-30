@@ -57,9 +57,9 @@ public class ListContainer : Control
     private const int DefaultSeparation = 3;
 
     private readonly VScrollBar _vScrollBar;
-    private readonly Dictionary<ListData, ListContainerButton> _buttons = new();
+    private readonly Dictionary<ListData, ListContainerButton> _buttons = [];
 
-    private List<ListData> _data = new();
+    private List<ListData> _data = [];
     private ListData? _selected;
     private float _itemHeight = 0;
     private float _totalHeight = 0;

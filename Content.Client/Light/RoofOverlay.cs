@@ -22,7 +22,7 @@ public sealed partial class RoofOverlay : Overlay
     private readonly SharedRoofSystem _roof = default!;
     private readonly SharedTransformSystem _xformSystem;
 
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
     public override OverlaySpace Space => OverlaySpace.BeforeLighting;
 

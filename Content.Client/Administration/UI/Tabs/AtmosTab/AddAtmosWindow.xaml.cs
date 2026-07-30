@@ -16,7 +16,7 @@ namespace Content.Client.Administration.UI.Tabs.AtmosTab
         [Dependency] private IPlayerManager _players = default!;
         [Dependency] private IEntityManager _entities = default!;
 
-        private readonly List<Entity<MapGridComponent>> _data = new();
+        private readonly List<Entity<MapGridComponent>> _data = [];
 
         public AddAtmosWindow()
         {

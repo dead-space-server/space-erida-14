@@ -23,7 +23,7 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
     [Dependency] private ILocalizationManager _loc = default!;
 
     private TimeSpan _retentionTime;
-    private readonly Dictionary<int, SensorData> _sensorData = new();
+    private readonly Dictionary<int, SensorData> _sensorData = [];
 
     /// <summary>
     /// <para>A shared array used to store vertices for drawing graphs in <see cref="GraphView"/>.
@@ -204,7 +204,7 @@ public sealed partial class SensorMonitoringWindow : FancyWindow, IComputerWindo
         public string Address = "";
         public SensorDeviceType DeviceType;
 
-        public readonly Dictionary<int, SensorStream> Streams = new();
+        public readonly Dictionary<int, SensorStream> Streams = [];
     }
 
     private sealed class SensorStream

@@ -21,7 +21,7 @@ public sealed partial class LoadoutWindow : FancyWindow
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutUnpressed;
 
-    private List<LoadoutGroupContainer> _groups = new();
+    private List<LoadoutGroupContainer> _groups = [];
 
     public HumanoidCharacterProfile Profile;
 

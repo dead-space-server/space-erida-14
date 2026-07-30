@@ -8,7 +8,7 @@ namespace Content.Client.Graphics;
 /// <typeparam name="T">The type of data stored in the cache.</typeparam>
 public sealed class OverlayResourceCache<T> : IDisposable where T : class, IDisposable
 {
-    private readonly Dictionary<long, CacheEntry> _cache = new();
+    private readonly Dictionary<long, CacheEntry> _cache = [];
 
     /// <summary>
     /// Get the data for a specific viewport, creating a new entry if necessary.

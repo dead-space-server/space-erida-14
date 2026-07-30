@@ -57,11 +57,11 @@ public sealed partial class AdminLogsControl : Control
     private int RoundLogs { get; set; }
     public bool IncludeNonPlayerLogs { get; set; }
 
-    public HashSet<LogType> SelectedTypes { get; } = new();
+    public HashSet<LogType> SelectedTypes { get; } = [];
 
-    public HashSet<Guid> SelectedPlayers { get; } = new();
+    public HashSet<Guid> SelectedPlayers { get; } = [];
 
-    public HashSet<LogImpact> SelectedImpacts { get; } = new();
+    public HashSet<LogImpact> SelectedImpacts { get; } = [];
 
     public void SetCurrentRound(int round)
     {

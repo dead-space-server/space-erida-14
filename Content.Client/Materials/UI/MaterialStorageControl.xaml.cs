@@ -20,7 +20,7 @@ public sealed partial class MaterialStorageControl : ScrollContainer
 
     private EntityUid? _owner;
 
-    private Dictionary<ProtoId<MaterialPrototype>, int> _currentMaterials = new();
+    private Dictionary<ProtoId<MaterialPrototype>, int> _currentMaterials = [];
 
     public MaterialStorageControl()
     {

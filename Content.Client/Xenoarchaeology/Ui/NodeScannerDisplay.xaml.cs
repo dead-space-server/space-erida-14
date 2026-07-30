@@ -20,7 +20,7 @@ public sealed partial class NodeScannerDisplay : FancyWindow
     private TimeSpan? _nextUpdate;
     private EntityUid _owner;
     private TimeSpan _updateFromAttachedFrequency;
-    private readonly HashSet<string> _triggeredNodeNames = new();
+    private readonly HashSet<string> _triggeredNodeNames = [];
 
     public NodeScannerDisplay()
     {

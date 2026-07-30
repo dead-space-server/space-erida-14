@@ -77,7 +77,7 @@ public sealed partial class TargetOutlineSystem : EntitySystem
     private ShaderInstance? _shaderTargetValid;
     private ShaderInstance? _shaderTargetInvalid;
 
-    private readonly HashSet<SpriteComponent> _highlightedSprites = new();
+    private readonly HashSet<SpriteComponent> _highlightedSprites = [];
 
     public override void Initialize()
     {

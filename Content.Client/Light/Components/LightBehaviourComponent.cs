@@ -303,7 +303,7 @@ namespace Content.Client.Light.Components
         [DataField("property")]
         public override string Property { get; protected set; } = nameof(PointLightComponent.Color);
 
-        [DataField("colors")] public List<Color> ColorsToCycle { get; set; } = new();
+        [DataField("colors")] public List<Color> ColorsToCycle { get; set; } = [];
 
         private int _colorIndex;
 
@@ -381,13 +381,13 @@ namespace Content.Client.Light.Components
 
         [ViewVariables(VVAccess.ReadOnly)]
         [DataField("behaviours")]
-        public List<LightBehaviourAnimationTrack> Behaviours = new();
+        public List<LightBehaviourAnimationTrack> Behaviours = [];
 
         [ViewVariables(VVAccess.ReadOnly)]
-        public readonly List<AnimationContainer> Animations = new();
+        public readonly List<AnimationContainer> Animations = [];
 
         [ViewVariables(VVAccess.ReadOnly)]
-        public Dictionary<string, object> OriginalPropertyValues = new();
+        public Dictionary<string, object> OriginalPropertyValues = [];
 
         void ISerializationHooks.AfterDeserialization()
         {

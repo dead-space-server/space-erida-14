@@ -39,7 +39,7 @@ public sealed partial class LatheMenu : FancyWindow
     public event Action? OnClaimMiningPoints; // DeltaV
     public event Action? DeleteFabricatingAction;
 
-    public List<ProtoId<LatheRecipePrototype>> Recipes = new();
+    public List<ProtoId<LatheRecipePrototype>> Recipes = [];
 
     public List<ProtoId<LatheCategoryPrototype>>? Categories;
 

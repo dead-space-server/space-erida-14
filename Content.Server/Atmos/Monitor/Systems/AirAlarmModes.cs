@@ -22,7 +22,7 @@ public interface IAirAlarmMode
     ///     This is to ensure that modes like Filter/Panic
     ///     are immediately set.
     /// </summary>
-    public void Execute(EntityUid uid);
+    void Execute(EntityUid uid);
 }
 
 // IAirAlarmModeUpdate
@@ -44,13 +44,13 @@ public interface IAirAlarmModeUpdate
     ///     unique identifier that ID's the
     ///     owner of the mode's executor.
     /// </summary>
-    public string NetOwner { get; set; }
+    string NetOwner { get; set; }
     /// <summary>
     ///     This is executed every time the air alarm
     ///     update loop is fully executed. This should
     ///     be where all the logic goes.
     /// </summary>
-    public void Update(EntityUid uid);
+    void Update(EntityUid uid);
 }
 
 public sealed class AirAlarmModeFactory

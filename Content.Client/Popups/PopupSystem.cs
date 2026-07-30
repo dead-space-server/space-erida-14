@@ -34,8 +34,8 @@ namespace Content.Client.Popups
         public IReadOnlyCollection<WorldPopupLabel> WorldLabels => _aliveWorldLabels.Values;
         public IReadOnlyCollection<CursorPopupLabel> CursorLabels => _aliveCursorLabels.Values;
 
-        private readonly Dictionary<WorldPopupData, WorldPopupLabel> _aliveWorldLabels = new();
-        private readonly Dictionary<CursorPopupData, CursorPopupLabel> _aliveCursorLabels = new();
+        private readonly Dictionary<WorldPopupData, WorldPopupLabel> _aliveWorldLabels = [];
+        private readonly Dictionary<CursorPopupData, CursorPopupLabel> _aliveCursorLabels = [];
 
         public const float MinimumPopupLifetime = 0.7f;
         public const float MaximumPopupLifetime = 5f;

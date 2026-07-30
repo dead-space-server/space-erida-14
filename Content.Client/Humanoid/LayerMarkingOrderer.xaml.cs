@@ -21,7 +21,7 @@ public sealed partial class LayerMarkingOrderer : BoxContainer
     private readonly HumanoidVisualLayers _layer;
     private readonly MarkingsViewModel _markingsModel;
     private readonly DragDropHelper<LayerMarkingDragged> _dragDropHelper;
-    private readonly List<LayerDragDropBeacon> _beacons = new();
+    private readonly List<LayerDragDropBeacon> _beacons = [];
     private LayerDragDropBeacon? _dragTarget;
 
     [Dependency] private IPrototypeManager _prototype = default!;

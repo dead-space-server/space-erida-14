@@ -54,8 +54,8 @@ public sealed partial class AmbientSoundSystem : SharedAmbientSoundSystem
     /// </summary>
     private int MaxSingleSound => (int) (_maxAmbientCount / (16.0f / 6.0f));
 
-    private readonly Dictionary<Entity<AmbientSoundComponent>, (EntityUid? Stream, SoundSpecifier Sound, string Path)> _playingSounds = new();
-    private readonly Dictionary<string, int> _playingCount = new();
+    private readonly Dictionary<Entity<AmbientSoundComponent>, (EntityUid? Stream, SoundSpecifier Sound, string Path)> _playingSounds = [];
+    private readonly Dictionary<string, int> _playingCount = [];
 
     public bool OverlayEnabled
     {
@@ -188,7 +188,7 @@ public sealed partial class AmbientSoundSystem : SharedAmbientSoundSystem
 
     private readonly struct QueryState
     {
-        public readonly Dictionary<string, List<(float Importance, Entity<AmbientSoundComponent>)>> SourceDict = new();
+        public readonly Dictionary<string, List<(float Importance, Entity<AmbientSoundComponent>)>> SourceDict = [];
         public readonly Vector2 MapPos;
         public readonly TransformComponent Player;
         public readonly SharedTransformSystem TransformSystem;

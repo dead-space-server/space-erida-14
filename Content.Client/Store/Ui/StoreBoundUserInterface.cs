@@ -19,7 +19,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
     private string _search = string.Empty;
 
     [ViewVariables]
-    private HashSet<ListingDataWithCostModifiers> _listings = new();
+    private HashSet<ListingDataWithCostModifiers> _listings = [];
 
     public StoreBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {

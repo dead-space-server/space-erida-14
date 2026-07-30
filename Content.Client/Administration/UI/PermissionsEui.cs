@@ -27,10 +27,10 @@ namespace Content.Client.Administration.UI
         [Dependency] private IClientAdminManager _adminManager = default!;
 
         private readonly Menu _menu;
-        private readonly List<BaseWindow> _subWindows = new();
+        private readonly List<BaseWindow> _subWindows = [];
 
         private Dictionary<int, PermissionsEuiState.AdminRankData> _ranks =
-            new();
+            [];
 
         public PermissionsEui()
         {
@@ -356,7 +356,7 @@ namespace Content.Client.Administration.UI
             public readonly CheckBox SuspendedCheckbox;
 
             public readonly Dictionary<AdminFlags, (Button inherit, Button sub, Button plus)> FlagButtons
-                = new();
+                = [];
 
             public EditAdminWindow(PermissionsEui ui, PermissionsEuiState.AdminData? data)
             {
@@ -540,7 +540,7 @@ namespace Content.Client.Administration.UI
             public readonly LineEdit NameEdit;
             public readonly Button SaveButton;
             public readonly Button? RemoveButton;
-            public readonly Dictionary<AdminFlags, CheckBox> FlagCheckBoxes = new();
+            public readonly Dictionary<AdminFlags, CheckBox> FlagCheckBoxes = [];
 
             public EditAdminRankWindow(PermissionsEui ui, KeyValuePair<int, PermissionsEuiState.AdminRankData>? data)
             {

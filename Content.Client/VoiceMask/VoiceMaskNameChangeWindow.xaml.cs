@@ -21,8 +21,8 @@ public sealed partial class VoiceMaskNameChangeWindow : FancyWindow
     public Action? OnToggle;
     public Action? OnAccentToggle;
 
-    private List<(string, string)> _verbs = new();
-    private List<TTSVoicePrototype> _voices = new(); // Corvax-TTS
+    private List<(string, string)> _verbs = [];
+    private List<TTSVoicePrototype> _voices = []; // Corvax-TTS
 
     private string? _verb;
 

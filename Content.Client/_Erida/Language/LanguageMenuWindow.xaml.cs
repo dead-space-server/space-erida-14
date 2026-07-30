@@ -13,7 +13,7 @@ namespace Content.Client._Erida.Language;
 public sealed partial class LanguageMenuWindow : DefaultWindow, IEntityEventSubscriber
 {
     private readonly LanguageSystem _clientLanguageSystem;
-    private readonly List<EntryState> _entries = new();
+    private readonly List<EntryState> _entries = [];
 
 
     public LanguageMenuWindow()
@@ -23,11 +23,10 @@ public sealed partial class LanguageMenuWindow : DefaultWindow, IEntityEventSubs
 
         _clientLanguageSystem.OnLanguagesChanged += OnUpdateState;
     }
-
-    protected override void Dispose(bool disposing)
+    public override void Close()
     {
-        base.Dispose(disposing);
         _clientLanguageSystem.OnLanguagesChanged -= OnUpdateState;
+        base.Close();
     }
 
     protected override void Opened()
@@ -60,15 +59,15 @@ public sealed partial class LanguageMenuWindow : DefaultWindow, IEntityEventSubs
         // Disable the button for the currently chosen language
         foreach (var entry in _entries)
         {
-            if (entry.button != null)
-                entry.button.Disabled = entry.language == currentLanguage;
+            if (entry.Button != null)
+                entry.Button.Disabled = entry.Language == currentLanguage;
         }
     }
 
     private void AddLanguageEntry(string language)
     {
         var proto = _clientLanguageSystem.GetLanguagePrototype(language);
-        var state = new EntryState { language = language };
+        var state = new EntryState { Language = language };
 
         var container = new BoxContainer { Orientation = BoxContainer.LayoutOrientation.Vertical };
 
@@ -89,7 +88,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow, IEntityEventSubs
 
         var button = new Button { Text = "Choose" };
         button.OnPressed += _ => OnLanguageChosen(language);
-        state.button = button;
+        state.Button = button;
 
         header.AddChild(name);
         header.AddChild(button);
@@ -141,7 +140,7 @@ public sealed partial class LanguageMenuWindow : DefaultWindow, IEntityEventSubs
 
     private struct EntryState
     {
-        public string language;
-        public Button? button;
+        public string Language;
+        public Button? Button;
     }
 }

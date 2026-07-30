@@ -21,7 +21,7 @@ public sealed partial class ChangelingIdentitySystem : SharedChangelingIdentityS
         if (args.Current is not ChangelingIdentityComponentState state)
             return;
 
-        ent.Comp.ConsumedIdentities = new List<ChangelingIdentityData>();
+        ent.Comp.ConsumedIdentities = [];
 
         foreach (var identity in state.ConsumedIdentities)
         {

@@ -25,14 +25,14 @@ public sealed partial class AtmosMonitoringConsoleNavMapControl : NavMapControl
     private readonly Color _basePipeNetColor = Color.LightGray;
     private readonly Color _unfocusedPipeNetColor = Color.DimGray;
 
-    private List<AtmosMonitoringConsoleLine> _atmosPipeNetwork = new();
-    private Dictionary<Color, Color> _sRGBLookUp = new Dictionary<Color, Color>();
+    private List<AtmosMonitoringConsoleLine> _atmosPipeNetwork = [];
+    private Dictionary<Color, Color> _sRGBLookUp = [];
 
     // Look up tables for merging continuous lines. Indexed by line color
-    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _horizLines = new();
-    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _horizLinesReversed = new();
-    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _vertLines = new();
-    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _vertLinesReversed = new();
+    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _horizLines = [];
+    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _horizLinesReversed = [];
+    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _vertLines = [];
+    private Dictionary<Color, Dictionary<Vector2i, Vector2i>> _vertLinesReversed = [];
 
     public AtmosMonitoringConsoleNavMapControl() : base()
     {
@@ -77,7 +77,7 @@ public sealed partial class AtmosMonitoringConsoleNavMapControl : NavMapControl
                 var end = ScalePosition(chunkedLine.Terminus - offset);
 
                 if (!pipeNetworks.TryGetValue(chunkedLine.Color, out var subNetwork))
-                    subNetwork = new ValueList<Vector2>();
+                    subNetwork = [];
 
                 subNetwork.Add(start);
                 subNetwork.Add(end);
@@ -119,7 +119,7 @@ public sealed partial class AtmosMonitoringConsoleNavMapControl : NavMapControl
                     - offset);
 
                 if (!pipeVertexUVs.TryGetValue(chunkedLine.Color, out var pipeVertexUV))
-                    pipeVertexUV = new ValueList<Vector2>();
+                    pipeVertexUV = [];
 
                 pipeVertexUV.Add(leftBottom);
                 pipeVertexUV.Add(leftTop);
@@ -173,25 +173,25 @@ public sealed partial class AtmosMonitoringConsoleNavMapControl : NavMapControl
                 // Get the associated line look up tables
                 if (!_horizLines.TryGetValue(color, out var horizLines))
                 {
-                    horizLines = new();
+                    horizLines = [];
                     _horizLines[color] = horizLines;
                 }
 
                 if (!_horizLinesReversed.TryGetValue(color, out var horizLinesReversed))
                 {
-                    horizLinesReversed = new();
+                    horizLinesReversed = [];
                     _horizLinesReversed[color] = horizLinesReversed;
                 }
 
                 if (!_vertLines.TryGetValue(color, out var vertLines))
                 {
-                    vertLines = new();
+                    vertLines = [];
                     _vertLines[color] = vertLines;
                 }
 
                 if (!_vertLinesReversed.TryGetValue(color, out var vertLinesReversed))
                 {
-                    vertLinesReversed = new();
+                    vertLinesReversed = [];
                     _vertLinesReversed[color] = vertLinesReversed;
                 }
 

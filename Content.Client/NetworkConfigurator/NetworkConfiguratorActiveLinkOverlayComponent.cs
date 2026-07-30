@@ -11,5 +11,5 @@ public sealed partial class NetworkConfiguratorActiveLinkOverlayComponent : Comp
     ///     This could just... couldn't this just be grabbed
     ///     if DeviceList was shared?
     /// </summary>
-    public HashSet<EntityUid> Devices = new();
+    public HashSet<EntityUid> Devices = [];
 }

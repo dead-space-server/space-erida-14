@@ -14,7 +14,7 @@ namespace Content.Client.Items
         /// <summary>
         /// A list of controls that will be displayed on the HUD. Handlers should add their controls here.
         /// </summary>
-        public List<Control> Controls = new();
+        public List<Control> Controls = [];
     }
 
     /// <summary>

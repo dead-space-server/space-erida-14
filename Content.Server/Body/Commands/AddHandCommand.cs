@@ -7,7 +7,7 @@ using Robust.Shared.Console;
 namespace Content.Server.Body.Commands
 {
     [AdminCommand(AdminFlags.Fun)]
-    sealed partial class AddHandCommand : IConsoleCommand
+    internal sealed partial class AddHandCommand : IConsoleCommand
     {
         [Dependency] private IEntityManager _entManager = default!;
 

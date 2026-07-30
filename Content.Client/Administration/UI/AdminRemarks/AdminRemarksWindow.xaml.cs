@@ -14,7 +14,7 @@ public sealed partial class AdminRemarksWindow : FancyWindow
 {
     [Dependency] private IEntitySystemManager _entitySystem = default!;
     private readonly SpriteSystem _sprites;
-    private readonly Dictionary<(int, NoteType), AdminNotesLine> _inputs = new();
+    private readonly Dictionary<(int, NoteType), AdminNotesLine> _inputs = [];
 
     public AdminRemarksWindow()
     {

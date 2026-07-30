@@ -12,7 +12,7 @@ namespace Content.Client.Viewport
     {
         [Dependency] private IConfigurationManager _cfg = default!;
 
-        private readonly List<MainViewport> _viewports = new();
+        private readonly List<MainViewport> _viewports = [];
 
         public void Initialize()
         {

@@ -38,10 +38,10 @@ namespace Content.Client.Voting.UI
 
         public Dictionary<StandardVoteType, CreateVoteOption> AvailableVoteOptions = new Dictionary<StandardVoteType, CreateVoteOption>()
         {
-            { StandardVoteType.Restart, new CreateVoteOption("ui-vote-type-restart", new(), false, null) },
-            { StandardVoteType.Preset, new CreateVoteOption("ui-vote-type-gamemode", new(), false, null) },
-            { StandardVoteType.Map, new CreateVoteOption("ui-vote-type-map", new(), false, null) },
-            { StandardVoteType.Votekick, new CreateVoteOption("ui-vote-type-votekick", new(), true, 0) }
+            { StandardVoteType.Restart, new CreateVoteOption("ui-vote-type-restart", [], false, null) },
+            { StandardVoteType.Preset, new CreateVoteOption("ui-vote-type-gamemode", [], false, null) },
+            { StandardVoteType.Map, new CreateVoteOption("ui-vote-type-map", [], false, null) },
+            { StandardVoteType.Votekick, new CreateVoteOption("ui-vote-type-votekick", [], true, 0) }
         };
 
         public Dictionary<string, string> VotekickReasons = new Dictionary<string, string>()
@@ -51,7 +51,7 @@ namespace Content.Client.Voting.UI
             { VotekickReasonType.Spam.ToString(), Loc.GetString("ui-vote-votekick-type-spamming") }
         };
 
-        public Dictionary<NetUserId, (NetEntity, string)> PlayerList = new();
+        public Dictionary<NetUserId, (NetEntity, string)> PlayerList = [];
 
         public OptionButton? _followDropdown = null;
 
@@ -119,6 +119,7 @@ namespace Content.Client.Voting.UI
                 Close();
         }
 
+#pragma warning disable IDE0028 // Erida edit
         private void UpdateVotePlayerList(VotePlayerListResponseEvent msg)
         {
             Dictionary<string, string> optionsList = new();
@@ -139,6 +140,7 @@ namespace Content.Client.Voting.UI
             updatedDropdownOption.Dropdowns = new List<Dictionary<string, string>>() { optionsList, VotekickReasons };
             AvailableVoteOptions[StandardVoteType.Votekick] = updatedDropdownOption;
         }
+#pragma warning restore IDE0028 // Erida edit
 
         private void CreatePressed(BaseButton.ButtonEventArgs obj)
         {
@@ -154,7 +156,7 @@ namespace Content.Client.Voting.UI
             else
             {
                 int i = 0;
-                foreach(var dropdowns in VoteOptionsButtonContainer.Children)
+                foreach (var dropdowns in VoteOptionsButtonContainer.Children)
                 {
                     if (dropdowns is OptionButton optionButton && AvailableVoteOptions[(StandardVoteType)typeId].Dropdowns != null)
                     {
@@ -226,7 +228,7 @@ namespace Content.Client.Voting.UI
                 {
                     VoteNotTrustedLabel.Visible = true;
                     var updatedDropdownOption = AvailableVoteOptions[StandardVoteType.Votekick];
-                    updatedDropdownOption.Dropdowns = new List<Dictionary<string, string>>();
+                    updatedDropdownOption.Dropdowns = [];
                     AvailableVoteOptions[StandardVoteType.Votekick] = updatedDropdownOption;
                 }
                 else

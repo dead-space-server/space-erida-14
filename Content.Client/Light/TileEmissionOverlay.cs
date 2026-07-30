@@ -20,9 +20,9 @@ public sealed partial class TileEmissionOverlay : Overlay
     private readonly EntityLookupSystem _lookup;
 
     private readonly EntityQuery<TransformComponent> _xformQuery;
-    private readonly HashSet<Entity<TileEmissionComponent>> _entities = new();
+    private readonly HashSet<Entity<TileEmissionComponent>> _entities = [];
 
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
     public const int ContentZIndex = RoofOverlay.ContentZIndex + 1;
 

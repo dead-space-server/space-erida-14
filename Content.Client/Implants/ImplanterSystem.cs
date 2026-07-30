@@ -25,7 +25,7 @@ public sealed partial class ImplanterSystem : SharedImplanterSystem
         {
             // TODO: Don't use protoId for deimplanting
             // and especially not raw strings!
-            Dictionary<string, string> implants = new();
+            Dictionary<string, string> implants = [];
             foreach (var implant in component.DeimplantWhitelist)
             {
                 if (_proto.Resolve(implant, out var proto))

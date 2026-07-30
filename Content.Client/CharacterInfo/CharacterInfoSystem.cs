@@ -58,7 +58,7 @@ public sealed partial class CharacterInfoSystem : EntitySystem
     [ByRefEvent]
     public readonly record struct GetCharacterInfoControlsEvent(EntityUid Entity)
     {
-        public readonly List<Control> Controls = new();
+        public readonly List<Control> Controls = [];
 
         public readonly EntityUid Entity = Entity;
     }

@@ -23,7 +23,7 @@ public sealed partial class MappingOverlay : Overlay
     private static readonly Color PickColor = new(1, 255, 0);
     private static readonly Color DeleteColor = new(255, 1, 0);
 
-    private readonly Dictionary<EntityUid, Color> _oldColors = new();
+    private readonly Dictionary<EntityUid, Color> _oldColors = [];
 
     private readonly MappingState _state;
     private readonly ShaderInstance _shader;

@@ -7,12 +7,12 @@ namespace Content.Client.Audio;
 public sealed partial class ContentAudioSystem : SharedContentAudioSystem
 {
     // Need how much volume to change per tick and just remove it when it drops below "0"
-    private readonly Dictionary<EntityUid, float> _fadingOut = new();
+    private readonly Dictionary<EntityUid, float> _fadingOut = [];
 
     // Need volume change per tick + target volume.
-    private readonly Dictionary<EntityUid, (float VolumeChange, float TargetVolume)> _fadingIn = new();
+    private readonly Dictionary<EntityUid, (float VolumeChange, float TargetVolume)> _fadingIn = [];
 
-    private readonly List<EntityUid> _fadeToRemove = new();
+    private readonly List<EntityUid> _fadeToRemove = [];
 
     private const float MinVolume = -32f;
     private const float DefaultDuration = 2f;

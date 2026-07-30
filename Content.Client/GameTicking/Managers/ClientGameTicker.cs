@@ -23,8 +23,8 @@ namespace Content.Client.GameTicking.Managers
         [Dependency] private IClyde _clyde = default!;
         [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
 
-        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = new();
-        private Dictionary<NetEntity, string> _stationNames = new();
+        private Dictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>>  _jobsAvailable = [];
+        private Dictionary<NetEntity, string> _stationNames = [];
 
         [ViewVariables] public bool AreWeReady { get; private set; }
         [ViewVariables] public bool IsGameStarted { get; private set; }

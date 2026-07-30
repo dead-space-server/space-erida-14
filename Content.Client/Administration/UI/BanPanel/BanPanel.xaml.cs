@@ -37,7 +37,7 @@ public sealed partial class BanPanel : DefaultWindow
     // This is less efficient than just holding a reference to the root control and enumerating children, but you
     // have to know how the controls are nested, which makes the code more complicated.
     // Role group name -> the role buttons themselves.
-    private readonly Dictionary<string, List<(Button, IPrototype)>> _roleCheckboxes = new();
+    private readonly Dictionary<string, List<(Button, IPrototype)>> _roleCheckboxes = [];
     private readonly ISawmill _banPanelSawmill;
 
     [Dependency] private IGameTiming _gameTiming = default!;

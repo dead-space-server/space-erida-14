@@ -38,9 +38,9 @@ namespace Content.Client.LateJoin
         private readonly CrewManifestSystem _crewManifest;
         private readonly ISawmill _sawmill;
 
-        private readonly Dictionary<NetEntity, Dictionary<string, List<JobButton>>> _jobButtons = new();
-        private readonly Dictionary<NetEntity, Dictionary<string, BoxContainer>> _jobCategories = new();
-        private readonly List<ScrollContainer> _jobLists = new();
+        private readonly Dictionary<NetEntity, Dictionary<string, List<JobButton>>> _jobButtons = [];
+        private readonly Dictionary<NetEntity, Dictionary<string, BoxContainer>> _jobCategories = [];
+        private readonly List<ScrollContainer> _jobLists = [];
 
         private readonly Control _base;
 
@@ -169,12 +169,12 @@ namespace Content.Client.LateJoin
                 var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();
                 Array.Sort(departments, DepartmentUIComparer.Instance);
 
-                _jobButtons[id] = new Dictionary<string, List<JobButton>>();
+                _jobButtons[id] = [];
 
                 foreach (var department in departments)
                 {
                     var departmentName = Loc.GetString(department.Name);
-                    _jobCategories[id] = new Dictionary<string, BoxContainer>();
+                    _jobCategories[id] = [];
                     var stationAvailable = _gameTicker.JobsAvailable[id];
                     var jobsAvailable = new List<JobPrototype>();
 
@@ -287,7 +287,7 @@ namespace Content.Client.LateJoin
 
                         if (!_jobButtons[id].ContainsKey(prototype.ID))
                         {
-                            _jobButtons[id][prototype.ID] = new List<JobButton>();
+                            _jobButtons[id][prototype.ID] = [];
                         }
 
                         _jobButtons[id][prototype.ID].Add(jobButton);

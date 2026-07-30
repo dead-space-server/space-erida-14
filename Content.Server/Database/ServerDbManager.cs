@@ -109,7 +109,7 @@ namespace Content.Server.Database
         Task<BanDef> AddBanAsync(BanDef ban);
         Task AddUnbanAsync(UnbanDef ban);
 
-        public Task EditBan(
+        Task EditBan(
             int id,
             string reason,
             NoteSeverity severity,

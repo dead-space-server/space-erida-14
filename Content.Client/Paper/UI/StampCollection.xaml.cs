@@ -9,7 +9,7 @@ namespace Content.Client.Paper.UI;
 [GenerateTypedNameReferences]
 public sealed partial class StampCollection : Container
 {
-    private List<StampWidget> _stamps = new();
+    private List<StampWidget> _stamps = [];
 
     /// Seed for random number generator to place stamps deterministically
     public int PlacementSeed;

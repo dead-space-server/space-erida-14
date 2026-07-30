@@ -29,7 +29,7 @@ public sealed partial class AtmosDebugOverlay : Overlay
     private readonly AtmosDebugOverlaySystem _system;
     private readonly SharedMapSystem _map;
     private readonly Font _font;
-    private List<(Entity<MapGridComponent>, DebugMessage)> _grids = new();
+    private List<(Entity<MapGridComponent>, DebugMessage)> _grids = [];
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace | OverlaySpace.ScreenSpace;
 

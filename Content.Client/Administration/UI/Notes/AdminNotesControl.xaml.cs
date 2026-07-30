@@ -42,7 +42,7 @@ public sealed partial class AdminNotesControl : Control
         ShowMoreButton.OnPressed += OnShowMoreButtonPressed;
     }
 
-    private Dictionary<(int noteId, NoteType noteType), AdminNotesLine> Inputs { get; } = new();
+    private Dictionary<(int noteId, NoteType noteType), AdminNotesLine> Inputs { get; } = [];
     private bool CanCreate { get; set; }
     private bool CanDelete { get; set; }
     private bool CanEdit { get; set; }

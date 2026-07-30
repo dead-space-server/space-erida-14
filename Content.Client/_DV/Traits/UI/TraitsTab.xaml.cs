@@ -22,8 +22,8 @@ public sealed partial class TraitsTab : BoxContainer
     /// </summary>
     public event Action<HashSet<ProtoId<TraitPrototype>>>? OnTraitsChanged;
 
-    private readonly Dictionary<ProtoId<TraitCategoryPrototype>, TraitCategory> _categoryUis = new();
-    private readonly HashSet<ProtoId<TraitPrototype>> _selectedTraits = new();
+    private readonly Dictionary<ProtoId<TraitCategoryPrototype>, TraitCategory> _categoryUis = [];
+    private readonly HashSet<ProtoId<TraitPrototype>> _selectedTraits = [];
 
     private int _maxGlobalTraits;
     private int _maxGlobalPoints;

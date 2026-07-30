@@ -24,7 +24,7 @@ public sealed partial class LawDisplay : Control
 
     private static readonly TimeSpan PressCooldown = TimeSpan.FromSeconds(3);
 
-    private readonly Dictionary<Button, TimeSpan> _nextAllowedPress = new();
+    private readonly Dictionary<Button, TimeSpan> _nextAllowedPress = [];
 
     public LawDisplay(EntityUid uid, SiliconLaw law, HashSet<ProtoId<RadioChannelPrototype>>? radioChannels)
     {

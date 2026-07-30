@@ -40,7 +40,7 @@ namespace Content.Client.Administration.Systems
         {
             if(ev.PlayerInfo == null) return;
 
-            if (_playerList == null) _playerList = new();
+            if (_playerList == null) _playerList = [];
 
             _playerList[ev.PlayerInfo.SessionId] = ev.PlayerInfo;
             PlayerListChanged?.Invoke(_playerList.Values.ToList());

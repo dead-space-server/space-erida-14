@@ -335,7 +335,7 @@ namespace Content.Client.Lobby.UI
                 SetDirty();
             };
 
-            _jobCategories = new Dictionary<string, BoxContainer>();
+            _jobCategories = [];
 
             RefreshAntags();
             RefreshJobs();

@@ -20,11 +20,11 @@ namespace Content.Client.Options.UI.Tabs
     public sealed partial class KeyRebindTab : Control
     {
         // List of key functions that must be registered as toggle instead.
-        private static readonly HashSet<BoundKeyFunction> ToggleFunctions = new()
-        {
+        private static readonly HashSet<BoundKeyFunction> ToggleFunctions =
+        [
             EngineKeyFunctions.ShowDebugMonitors,
             EngineKeyFunctions.HideUI,
-        };
+        ];
 
         [Dependency] private IInputManager _inputManager = default!;
         [Dependency] private IConfigurationManager _cfg = default!;
@@ -32,9 +32,9 @@ namespace Content.Client.Options.UI.Tabs
         private BindButton? _currentlyRebinding;
 
         private readonly Dictionary<BoundKeyFunction, KeyControl> _keyControls =
-            new();
+            [];
 
-        private readonly List<Action> _deferCommands = new();
+        private readonly List<Action> _deferCommands = [];
 
         private void InitToggleWalk()
         {

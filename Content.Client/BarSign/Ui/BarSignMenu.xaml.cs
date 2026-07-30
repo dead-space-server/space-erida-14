@@ -8,7 +8,7 @@ namespace Content.Client.BarSign.Ui;
 [GenerateTypedNameReferences]
 public sealed partial class BarSignMenu : FancyWindow
 {
-    private List<BarSignPrototype> _cachedPrototypes = new();
+    private List<BarSignPrototype> _cachedPrototypes = [];
 
     public event Action<string>? OnSignSelected;
 

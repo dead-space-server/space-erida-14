@@ -8,7 +8,7 @@ using Robust.Shared.Network;
 
 namespace Content.Server.GameTicking.Commands
 {
-    sealed partial class RespawnCommand : LocalizedEntityCommands
+    internal sealed partial class RespawnCommand : LocalizedEntityCommands
     {
         [Dependency] private IPlayerManager _player = default!;
         [Dependency] private IPlayerLocator _locator = default!;

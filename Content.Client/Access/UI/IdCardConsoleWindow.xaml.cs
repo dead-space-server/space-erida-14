@@ -24,7 +24,7 @@ namespace Content.Client.Access.UI
         private readonly IdCardConsoleBoundUserInterface _owner;
 
         private AccessLevelControl _accessButtons = new();
-        private readonly List<string> _jobPrototypeIds = new();
+        private readonly List<string> _jobPrototypeIds = [];
 
         private string? _lastFullName;
         private string? _lastJobTitle;
@@ -185,9 +185,9 @@ namespace Content.Client.Access.UI
             JobPresetOptionButton.Disabled = !interfaceEnabled;
 
             _accessButtons.UpdateState(state.TargetIdAccessList?.ToList() ??
-                                       new List<ProtoId<AccessLevelPrototype>>(),
+                                       [],
                                        state.AllowedModifyAccessList?.ToList() ??
-                                       new List<ProtoId<AccessLevelPrototype>>());
+                                       []);
 
             var jobIndex = _jobPrototypeIds.IndexOf(state.TargetIdJobPrototype);
             // If the job index is < 0 that means they don't have a job registered in the station records

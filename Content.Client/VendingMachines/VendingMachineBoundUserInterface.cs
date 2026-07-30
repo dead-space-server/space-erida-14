@@ -13,7 +13,7 @@ namespace Content.Client.VendingMachines
         private VendingMachineMenu? _menu;
 
         [ViewVariables]
-        private List<VendingMachineInventoryEntry> _cachedInventory = new();
+        private List<VendingMachineInventoryEntry> _cachedInventory = [];
 
         public VendingMachineBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
@@ -78,7 +78,6 @@ namespace Content.Client.VendingMachines
 
             _menu.OnItemSelected -= OnItemSelected;
             _menu.OnClose -= Close;
-            _menu.Dispose();
         }
     }
 }

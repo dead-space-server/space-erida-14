@@ -147,7 +147,7 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
         if (_markingsModel.GetMarking(_organ, _layer, _markingPrototype.ID) is not { } marking)
             return;
 
-        _colorSliders = new();
+        _colorSliders = [];
 
         for (var i = 0; i < _markingPrototype.Sprites.Count; i++)
         {

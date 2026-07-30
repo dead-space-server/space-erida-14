@@ -20,7 +20,7 @@ public sealed partial class ExplosionVisualsTexturesComponent : Component
     ///     The textures used for the explosion fire effect. Each fire-state is associated with an explosion
     ///     intensity range, and each stat itself has several textures.
     /// </summary>
-    public List<Texture[]> FireFrames = new();
+    public List<Texture[]> FireFrames = [];
 
     public Color? FireColor;
 }

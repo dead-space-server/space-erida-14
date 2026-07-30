@@ -52,7 +52,7 @@ public sealed partial class LanguageMenuUIController :
         if (LanguageWindow == null)
             return;
 
-        LanguageWindow.Dispose();
+        LanguageWindow.Close();
         LanguageWindow = null;
     }
 
@@ -98,7 +98,7 @@ public sealed partial class LanguageMenuUIController :
 
     public void OnSystemUnloaded(LanguageSystem system)
     {
-        LanguageWindow?.Dispose();
+        LanguageWindow?.Close();
         CommandBinds.Unregister<LanguageMenuUIController>();
     }
 }

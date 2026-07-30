@@ -18,8 +18,8 @@ public sealed partial class StoreWithdrawWindow : DefaultWindow
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!;
 
-    private Dictionary<CurrencyPrototype, FixedPoint2> _validCurrencies = new();
-    private HashSet<CurrencyWithdrawButton> _buttons = new();
+    private Dictionary<CurrencyPrototype, FixedPoint2> _validCurrencies = [];
+    private HashSet<CurrencyWithdrawButton> _buttons = [];
     public event Action<BaseButton.ButtonEventArgs, string, int>? OnWithdrawAttempt;
 
     public StoreWithdrawWindow()

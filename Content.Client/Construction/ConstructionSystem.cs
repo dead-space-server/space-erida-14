@@ -30,8 +30,8 @@ namespace Content.Client.Construction
         [Dependency] private SpriteSystem _sprite = default!;
         [Dependency] private PopupSystem _popupSystem = default!;
 
-        private readonly Dictionary<int, EntityUid> _ghosts = new();
-        private readonly Dictionary<string, ConstructionGuide> _guideCache = new();
+        private readonly Dictionary<int, EntityUid> _ghosts = [];
+        private readonly Dictionary<string, ConstructionGuide> _guideCache = [];
 
         private readonly Dictionary<string, string> _recipesMetadataCache = [];
 

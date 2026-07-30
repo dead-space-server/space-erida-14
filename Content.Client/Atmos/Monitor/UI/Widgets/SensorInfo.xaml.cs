@@ -23,8 +23,8 @@ public sealed partial class SensorInfo : BoxContainer
 
     private ThresholdControl _pressureThreshold;
     private ThresholdControl _temperatureThreshold;
-    private Dictionary<Gas, ThresholdControl> _gasThresholds = new();
-    private Dictionary<Gas, RichTextLabel> _gasLabels = new();
+    private Dictionary<Gas, ThresholdControl> _gasThresholds = [];
+    private Dictionary<Gas, RichTextLabel> _gasLabels = [];
     private Button _copySettings => CCopySettings;
 
     public SensorInfo(AtmosSensorData data, string address)

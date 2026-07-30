@@ -334,7 +334,19 @@ dotnet_naming_symbols.static_readonly_symbols.applicable_kinds = field
 dotnet_naming_symbols.static_readonly_symbols.required_modifiers = static, readonly
 
 dotnet_naming_symbols.types_and_namespaces_symbols.applicable_accessibilities = *
-dotnet_naming_symbols.types_and_namespaces_symbols.applicable_kinds = namespace, class, struct, enum, delegate
+# Erida edit start
+dotnet_naming_symbols.types_and_namespaces_symbols.applicable_kinds = class, struct, enum, delegate
+dotnet_naming_rule.namespace_rule.severity = warning
+dotnet_naming_rule.namespace_rule.style = namespace_pascal_case_style
+dotnet_naming_rule.namespace_rule.symbols = namespace_symbols
+
+dotnet_naming_symbols.namespace_symbols.applicable_accessibilities = *
+dotnet_naming_symbols.namespace_symbols.applicable_kinds = namespace
+
+dotnet_naming_style.namespace_pascal_case_style.capitalization = pascal_case
+dotnet_naming_style.namespace_pascal_case_style.word_separator = _
+# Erida end
+
 
 dotnet_naming_symbols.type_parameters_symbols.applicable_accessibilities = *
 dotnet_naming_symbols.type_parameters_symbols.applicable_kinds = type_parameter

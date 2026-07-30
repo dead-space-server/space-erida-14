@@ -1,10 +1,10 @@
-﻿namespace Content._Corvax.Interfaces.Server;
+﻿namespace Content.Server._Corvax;
 
 public interface IServerJoinQueueManager
 {
-    public bool IsEnabled { get; }
-    public int PlayerInQueueCount { get; }
-    public int ActualPlayersCount { get; }
-    public void Initialize();
-    public void PostInitialize();
+    bool IsEnabled { get; }
+    int PlayerInQueueCount { get; }
+    int ActualPlayersCount { get; }
+    void Initialize();
+    void PostInitialize();
 }

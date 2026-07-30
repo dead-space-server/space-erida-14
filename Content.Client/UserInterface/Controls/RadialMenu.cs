@@ -60,7 +60,7 @@ public class RadialMenu : BaseWindow
         }
     }
 
-    private readonly List<Control> _path = new();
+    private readonly List<Control> _path = [];
     private string? _backButtonStyleClass;
     private string? _closeButtonStyleClass;
 

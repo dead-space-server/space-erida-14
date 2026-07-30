@@ -16,7 +16,7 @@ public sealed partial class AccessLevelControl : GridContainer
 
     private ISawmill _sawmill = default!;
 
-    public readonly Dictionary<ProtoId<AccessLevelPrototype>, Button> ButtonsList = new();
+    public readonly Dictionary<ProtoId<AccessLevelPrototype>, Button> ButtonsList = [];
 
     public AccessLevelControl()
     {

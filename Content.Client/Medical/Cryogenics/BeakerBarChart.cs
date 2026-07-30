@@ -57,7 +57,7 @@ public sealed class BeakerBarChart : Control
     // disappear and create a new cryox entry behind the alox entry.
     private int _nextUpdateableEntry = 0;
 
-    private readonly List<Entry> _entries = new();
+    private readonly List<Entry> _entries = [];
 
 
     public BeakerBarChart()

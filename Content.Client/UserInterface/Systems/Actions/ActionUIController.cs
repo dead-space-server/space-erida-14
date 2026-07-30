@@ -52,7 +52,7 @@ public sealed partial class ActionUIController : UIController, IOnStateChanged<G
     [UISystemDependency] private readonly SpriteSystem _spriteSystem = default!;
 
     private ActionButtonContainer? _container;
-    private readonly List<EntityUid?> _actions = new();
+    private readonly List<EntityUid?> _actions = [];
     private readonly DragDropHelper<ActionButton> _menuDragHelper;
     private readonly TextureRect _dragShadow;
     private ActionsWindow? _window;

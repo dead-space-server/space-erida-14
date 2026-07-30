@@ -244,7 +244,7 @@ namespace Content.Client.Inventory
             if (!TryComp<InventorySlotsComponent>(ent, out var inventorySlots))
                 return;
 
-            List<SlotData> slotDataToRemove = new(); // don't modify dict while iterating
+            List<SlotData> slotDataToRemove = []; // don't modify dict while iterating
 
             foreach (var slotData in inventorySlots.SlotData.Values)
             {

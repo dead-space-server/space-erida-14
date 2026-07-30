@@ -28,10 +28,10 @@ public sealed partial class StoreMenu : DefaultWindow
     public event Action<BaseButton.ButtonEventArgs, string, int>? OnWithdrawAttempt;
     public event Action<BaseButton.ButtonEventArgs>? OnRefundAttempt;
 
-    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Balance = new();
+    public Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> Balance = [];
     public string CurrentCategory = string.Empty;
 
-    private List<ListingDataWithCostModifiers> _cachedListings = new();
+    private List<ListingDataWithCostModifiers> _cachedListings = [];
 
     public StoreMenu()
     {

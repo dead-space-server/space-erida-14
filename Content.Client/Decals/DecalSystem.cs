@@ -15,8 +15,8 @@ namespace Content.Client.Decals
 
         private DecalOverlay? _overlay;
 
-        private HashSet<uint> _removedUids = new();
-        private readonly List<Vector2i> _removedChunks = new();
+        private HashSet<uint> _removedUids = [];
+        private readonly List<Vector2i> _removedChunks = [];
 
         public override void Initialize()
         {

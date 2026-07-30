@@ -30,7 +30,7 @@ public sealed partial class BorgMenu : FancyWindow
 
     public float AccumulatedTime;
     private string _lastValidName;
-    private List<EntityUid> _modules = new();
+    private List<EntityUid> _modules = [];
 
     // CCVar.
     private int _maxNameLength;

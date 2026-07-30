@@ -17,7 +17,7 @@ namespace Content.Client.Parallax
 {
     public sealed class ParallaxGenerator
     {
-        private readonly List<Layer> Layers = new();
+        private readonly List<Layer> Layers = [];
 
         public static Image<Rgba32> GenerateParallax(TomlTable config, Size size, ISawmill sawmill, List<Image<Rgba32>>? debugLayerDump, CancellationToken cancel = default)
         {

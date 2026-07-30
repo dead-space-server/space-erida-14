@@ -10,6 +10,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.DeadSpace.Photocopier.UI;
 
+#pragma warning disable IDE0028
+
 [GenerateTypedNameReferences]
 public sealed partial class PhotocopierWindow : FancyWindow
 {

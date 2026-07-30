@@ -12,7 +12,7 @@ public sealed partial class TeleportMenu : DefaultWindow
 {
     public string SearchText = "";
 
-    public HashSet<TeleportPoint> Warps = new();
+    public HashSet<TeleportPoint> Warps = [];
 
     public event Action<NetEntity, string>? TeleportClicked;
 

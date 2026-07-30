@@ -17,8 +17,8 @@ public sealed partial class ExplosionDebugOverlay : Overlay
     [Dependency] private IEyeManager _eyeManager = default!;
 
     public Dictionary<int, List<Vector2i>>? SpaceTiles;
-    public Dictionary<EntityUid, Dictionary<int, List<Vector2i>>> Tiles = new();
-    public List<float> Intensity = new();
+    public Dictionary<EntityUid, Dictionary<int, List<Vector2i>>> Tiles = [];
+    public List<float> Intensity = [];
     public float TotalIntensity;
     public float Slope;
     public ushort SpaceTileSize;

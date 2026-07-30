@@ -10,6 +10,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Damage;
 
+#pragma warning disable IDE0028
 /// <summary>
 ///     A simple visualizer for any entity with a DamageableComponent
 ///     to display the status of how damaged it is.

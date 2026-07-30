@@ -26,8 +26,8 @@ public sealed partial class SpawnExplosionWindow : DefaultWindow
     private readonly SharedTransformSystem _transform = default!;
 
     private readonly SpawnExplosionEui _eui;
-    private List<MapId> _mapData = new();
-    private List<string> _explosionTypes = new();
+    private List<MapId> _mapData = [];
+    private List<string> _explosionTypes = [];
 
     /// <summary>
     ///     Used to prevent unnecessary preview updates when setting fields (e.g., updating position)..

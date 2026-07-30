@@ -23,7 +23,7 @@ public sealed partial class GeneratedParallaxCache : IPostInjectInit
     [Dependency] private IResourceManager _res = null!;
     [Dependency] private ILogManager _logManager = null!;
 
-    private readonly Dictionary<string, CacheDatum> _data = new();
+    private readonly Dictionary<string, CacheDatum> _data = [];
 
     private ISawmill _sawmill = null!;
 

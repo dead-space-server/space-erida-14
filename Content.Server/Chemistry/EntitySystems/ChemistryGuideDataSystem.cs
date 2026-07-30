@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Chemistry.EntitySystems;
 
-
+#pragma warning disable IDE0028
 public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
 {
     [Dependency] private IPlayerManager _player = default!;
@@ -55,7 +55,7 @@ public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataS
 
         foreach (var (id, proto) in reagents.Modified)
         {
-            var reagentProto = (ReagentPrototype) proto;
+            var reagentProto = (ReagentPrototype)proto;
             var entry = new ReagentGuideEntry(reagentProto, PrototypeManager, EntityManager.EntitySysManager);
             changeset.GuideEntries.Add(id, entry);
             Registry[id] = entry;

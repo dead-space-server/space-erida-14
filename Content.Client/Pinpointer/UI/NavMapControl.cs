@@ -42,13 +42,13 @@ public partial class NavMapControl : MapGridControl
     public event Action<DrawingHandleScreen>? PostWallDrawingAction;
 
     // Tracked data
-    public Dictionary<EntityCoordinates, (bool Visible, Color Color)> TrackedCoordinates = new();
-    public Dictionary<NetEntity, NavMapBlip> TrackedEntities = new();
+    public Dictionary<EntityCoordinates, (bool Visible, Color Color)> TrackedCoordinates = [];
+    public Dictionary<NetEntity, NavMapBlip> TrackedEntities = [];
 
-    public List<(Vector2, Vector2)> TileLines = new();
-    public List<(Vector2, Vector2)> TileRects = new();
-    public List<(Vector2[], Color)> TilePolygons = new();
-    public List<NavMapRegionOverlay> RegionOverlays = new();
+    public List<(Vector2, Vector2)> TileLines = [];
+    public List<(Vector2, Vector2)> TileRects = [];
+    public List<(Vector2[], Color)> TilePolygons = [];
+    public List<NavMapRegionOverlay> RegionOverlays = [];
 
     // Default colors
     public Color WallColor = new(102, 217, 102);
@@ -68,15 +68,15 @@ public partial class NavMapControl : MapGridControl
 
     // Local variables
     private float _updateTimer = 1.0f;
-    private Dictionary<Color, Color> _sRGBLookUp = new();
+    private Dictionary<Color, Color> _sRGBLookUp = [];
     protected Color BackgroundColor;
     protected float BackgroundOpacity = 0.9f;
     private int _targetFontsize = 8;
 
-    private Dictionary<Vector2i, Vector2i> _horizLines = new();
-    private Dictionary<Vector2i, Vector2i> _horizLinesReversed = new();
-    private Dictionary<Vector2i, Vector2i> _vertLines = new();
-    private Dictionary<Vector2i, Vector2i> _vertLinesReversed = new();
+    private Dictionary<Vector2i, Vector2i> _horizLines = [];
+    private Dictionary<Vector2i, Vector2i> _horizLinesReversed = [];
+    private Dictionary<Vector2i, Vector2i> _vertLines = [];
+    private Dictionary<Vector2i, Vector2i> _vertLinesReversed = [];
 
     // Components
     private NavMapComponent? _navMap;

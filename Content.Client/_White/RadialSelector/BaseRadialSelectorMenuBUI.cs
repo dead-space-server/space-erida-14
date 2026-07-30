@@ -24,7 +24,7 @@ public abstract partial class BasedRadialSelectorMenuBUI : BoundUserInterface
     protected readonly SpriteSystem _spriteSystem;
 
     // Used to clearing on state changing
-    private readonly HashSet<RadialContainer> _cachedContainers = new();
+    private readonly HashSet<RadialContainer> _cachedContainers = [];
 
     private readonly Vector2 ItemSize = Vector2.One * 64;
 

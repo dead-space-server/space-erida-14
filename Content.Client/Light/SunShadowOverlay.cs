@@ -23,7 +23,7 @@ public sealed partial class SunShadowOverlay : Overlay
     private readonly EntityLookupSystem _lookup;
     private readonly SharedTransformSystem _xformSys;
 
-    private readonly HashSet<Entity<SunShadowCastComponent>> _shadows = new();
+    private readonly HashSet<Entity<SunShadowCastComponent>> _shadows = [];
 
     private readonly OverlayResourceCache<CachedResources> _resources = new();
 
@@ -35,7 +35,7 @@ public sealed partial class SunShadowOverlay : Overlay
         ZIndex = AfterLightTargetOverlay.ContentZIndex + 1;
     }
 
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
     protected override void Draw(in OverlayDrawArgs args)
     {

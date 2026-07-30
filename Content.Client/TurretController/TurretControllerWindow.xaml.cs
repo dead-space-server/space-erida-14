@@ -86,7 +86,7 @@ public sealed partial class TurretControllerWindow : BaseWindow
 
     private void Initialize()
     {
-        RefreshLinkedTurrets(new());
+        RefreshLinkedTurrets([]);
 
         if (_entManager.TryGetComponent<DeployableTurretControllerComponent>(_owner, out var turretController))
         {

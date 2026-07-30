@@ -15,7 +15,7 @@ public sealed partial class NanoTaskUiFragment : BoxContainer
     public Action<int>? OpenTask;
     public Action<int>? ToggleTaskCompletion;
     public Action? NewTask;
-    public List<NanoTaskItemAndId> Tasks = new();
+    public List<NanoTaskItemAndId> Tasks = [];
 
     public NanoTaskUiFragment()
     {

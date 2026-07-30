@@ -8,7 +8,7 @@ namespace Content.Client.Lobby.UI;
 public sealed partial class HumanoidProfileEditor
 {
 
-    private List<TTSVoicePrototype> _voiceList = new();
+    private List<TTSVoicePrototype> _voiceList = [];
 
     private void InitializeVoice()
     {

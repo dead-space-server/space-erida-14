@@ -140,7 +140,7 @@ public sealed partial class ThermalVisionOverlay : Overlay
         var rotation = _transform.GetWorldRotation(xform);
 
         var originalColor = sprite.Color;
-        Dictionary<int, (ShaderInstance? shader, Color color)> layerData = new();
+        Dictionary<int, (ShaderInstance? shader, Color color)> layerData = [];
         if (shader != null)
         {
             // Layer shaders break handle shader so we have to do this. It has a side effect of clothing not rendering

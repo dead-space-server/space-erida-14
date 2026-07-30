@@ -10,6 +10,8 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
 namespace Content.Client.Items.Systems;
 
+#pragma warning disable IDE0028
+
 public sealed partial class ItemSystem : SharedItemSystem
 {
     [Dependency] private IResourceCache _resCache = default!;

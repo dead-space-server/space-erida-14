@@ -13,9 +13,9 @@ namespace Content.Server.Power.Components
     // So BaseNetConnectorNodeGroup<TNetType> is slow as shit.
     public interface IBaseNetConnectorComponent<in TNetType>
     {
-        public TNetType? Net { set; }
-        public Voltage Voltage { get; }
-        public string? NodeId { get; }
+        TNetType? Net { set; }
+        Voltage Voltage { get; }
+        string? NodeId { get; }
     }
 
     public abstract partial class BaseNetConnectorComponent<TNetType> : Component, IBaseNetConnectorComponent<TNetType>

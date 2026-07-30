@@ -8,7 +8,7 @@ namespace Content.Client.Medical.CrewMonitoring;
 public sealed partial class CrewMonitoringNavMapControl : NavMapControl
 {
     public NetEntity? Focus;
-    public Dictionary<NetEntity, string> LocalizedNames = new();
+    public Dictionary<NetEntity, string> LocalizedNames = [];
 
     private Label _trackedEntityLabel;
     private PanelContainer _trackedEntityPanel;

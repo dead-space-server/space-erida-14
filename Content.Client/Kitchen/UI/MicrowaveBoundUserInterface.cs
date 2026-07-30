@@ -16,10 +16,10 @@ namespace Content.Client.Kitchen.UI
         private MicrowaveMenu? _menu;
 
         [ViewVariables]
-        private readonly Dictionary<int, EntityUid> _solids = new();
+        private readonly Dictionary<int, EntityUid> _solids = [];
 
         [ViewVariables]
-        private readonly Dictionary<int, ReagentQuantity> _reagents = new();
+        private readonly Dictionary<int, ReagentQuantity> _reagents = [];
 
         public MicrowaveBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {

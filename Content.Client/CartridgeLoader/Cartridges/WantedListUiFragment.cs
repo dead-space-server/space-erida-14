@@ -24,7 +24,7 @@ public sealed partial class WantedListUiFragment : BoxContainer
     private readonly SpriteSystem _spriteSystem;
 
     private string? _selectedTargetName;
-    private List<WantedRecord> _wantedRecords = new();
+    private List<WantedRecord> _wantedRecords = [];
 
     public WantedListUiFragment()
     {

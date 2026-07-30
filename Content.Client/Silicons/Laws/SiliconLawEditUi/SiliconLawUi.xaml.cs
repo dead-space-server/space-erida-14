@@ -10,7 +10,7 @@ namespace Content.Client.Silicons.Laws.SiliconLawEditUi;
 [GenerateTypedNameReferences]
 public sealed partial class SiliconLawUi : FancyWindow
 {
-    private List<SiliconLaw> _laws = new();
+    private List<SiliconLaw> _laws = [];
 
     public SiliconLawUi()
     {

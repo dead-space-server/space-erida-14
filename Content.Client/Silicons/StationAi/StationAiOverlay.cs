@@ -25,7 +25,7 @@ public sealed partial class StationAiOverlay : Overlay
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
-    private readonly HashSet<Vector2i> _visibleTiles = new();
+    private readonly HashSet<Vector2i> _visibleTiles = [];
 
     private readonly OverlayResourceCache<CachedResources> _resources = new();
 

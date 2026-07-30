@@ -32,7 +32,7 @@ namespace Content.Client.Examine
         [Dependency] private VerbSystem _verbSystem = default!;
         [Dependency] private SpriteSystem _sprite = default!;
 
-        private List<Verb> _verbList = new();
+        private List<Verb> _verbList = [];
 
         public const string StyleClassEntityTooltip = "entity-tooltip";
 

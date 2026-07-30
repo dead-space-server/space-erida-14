@@ -55,9 +55,10 @@ public sealed partial class ChameleonControllerMenu : FancyWindow
 
         // Dictionary to easily put outfits in departments.
         // Department name -> UI element holding that department.
-        var departments = new Dictionary<string, BoxContainer>();
-
-        departments.Add(UnknownDepartment, CreateDepartment(UnknownDepartment));
+        var departments = new Dictionary<string, BoxContainer>
+        {
+            { UnknownDepartment, CreateDepartment(UnknownDepartment) }
+        };
 
         // Go through every outfit and add them to the correct department.
         foreach (var outfit in _outfits)

@@ -23,7 +23,7 @@ public sealed partial class DocumentParsingManager
     [Dependency] private IResourceManager _resourceManager = default!;
     [Dependency] private ISandboxHelper _sandboxHelper = default!;
 
-    private readonly Dictionary<string, Parser<char, Control>> _tagControlParsers = new();
+    private readonly Dictionary<string, Parser<char, Control>> _tagControlParsers = [];
     private Parser<char, Control> _controlParser = default!;
 
     private ISawmill _sawmill = default!;

@@ -15,7 +15,7 @@ public sealed partial class GuideHelpComponent : Component
     /// selected guidebook.
     /// </summary>
     [DataField(required: true)]
-    public List<ProtoId<GuideEntryPrototype>> Guides = new();
+    public List<ProtoId<GuideEntryPrototype>> Guides = [];
 
     /// <summary>
     /// Whether or not to automatically include the children of the given guides.

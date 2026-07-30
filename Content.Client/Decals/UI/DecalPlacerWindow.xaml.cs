@@ -217,7 +217,7 @@ public sealed partial class DecalPlacerWindow : DefaultWindow
 
     public void Populate(IEnumerable<DecalPrototype> prototypes)
     {
-        _decals = new SortedDictionary<string, Texture>();
+        _decals = [];
         foreach (var decalPrototype in prototypes)
         {
             if (decalPrototype.ShowMenu)

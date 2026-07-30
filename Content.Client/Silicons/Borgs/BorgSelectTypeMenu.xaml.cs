@@ -11,6 +11,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Silicons.Borgs;
 
+#pragma warning disable IDE0028
+
 /// <summary>
 /// Menu used by borgs to select their type.
 /// </summary>

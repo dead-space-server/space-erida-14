@@ -19,7 +19,7 @@ public sealed partial class CloseRecentWindowUIController : UIController
     /// be in this list once, with the most recent window at the end, and the oldest
     /// window at the start.
     /// </summary>
-    List<BaseWindow> recentlyInteractedWindows = new List<BaseWindow>();
+    List<BaseWindow> recentlyInteractedWindows = [];
 
     public override void Initialize()
     {

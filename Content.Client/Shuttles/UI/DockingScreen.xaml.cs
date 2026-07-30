@@ -20,12 +20,12 @@ public sealed partial class DockingScreen : BoxContainer
     /// <summary>
     /// Stored by GridID then by docks
     /// </summary>
-    public Dictionary<NetEntity, List<DockingPortState>> Docks = new();
+    public Dictionary<NetEntity, List<DockingPortState>> Docks = [];
 
     /// <summary>
     /// Store the dock buttons for the side buttons.
     /// </summary>
-    private readonly Dictionary<NetEntity, Button> _ourDockButtons = new();
+    private readonly Dictionary<NetEntity, Button> _ourDockButtons = [];
 
     public event Action<NetEntity, NetEntity>? DockRequest;
     public event Action<NetEntity>? UndockRequest;

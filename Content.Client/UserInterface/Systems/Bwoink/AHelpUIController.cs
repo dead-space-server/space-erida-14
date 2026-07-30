@@ -336,7 +336,7 @@ public sealed class AdminAHelpUIHandler : IAHelpUIHandler
     {
         _ownerId = owner;
     }
-    private readonly Dictionary<NetUserId, BwoinkPanel> _activePanelMap = new();
+    private readonly Dictionary<NetUserId, BwoinkPanel> _activePanelMap = [];
     public bool IsAdmin => true;
     public bool IsOpen => Window is { Disposed: false, IsOpen: true } || ClydeWindow is { IsDisposed: false };
     public bool EverOpened;

@@ -5,7 +5,7 @@ using Robust.Shared.Console;
 namespace Content.Server.GameTicking.Commands;
 
 [AdminCommand(AdminFlags.Round)]
-sealed class DelayStartCommand : LocalizedEntityCommands
+internal sealed class DelayStartCommand : LocalizedEntityCommands
 {
     public override string Command => "delaystart";
 

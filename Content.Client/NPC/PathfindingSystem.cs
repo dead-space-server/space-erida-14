@@ -63,9 +63,9 @@ namespace Content.Client.NPC
         private PathfindingDebugMode _modes = PathfindingDebugMode.None;
 
         // It's debug data IDC if it doesn't support snapshots I just want something fast.
-        public Dictionary<NetEntity, Dictionary<Vector2i, List<PathfindingBreadcrumb>>> Breadcrumbs = new();
-        public Dictionary<NetEntity, Dictionary<Vector2i, Dictionary<Vector2i, List<DebugPathPoly>>>> Polys = new();
-        public readonly List<(TimeSpan Time, PathRouteMessage Message)> Routes = new();
+        public Dictionary<NetEntity, Dictionary<Vector2i, List<PathfindingBreadcrumb>>> Breadcrumbs = [];
+        public Dictionary<NetEntity, Dictionary<Vector2i, Dictionary<Vector2i, List<DebugPathPoly>>>> Polys = [];
+        public readonly List<(TimeSpan Time, PathRouteMessage Message)> Routes = [];
 
         public override void Initialize()
         {
@@ -145,7 +145,7 @@ namespace Content.Client.NPC
         public override OverlaySpace Space => OverlaySpace.ScreenSpace | OverlaySpace.WorldSpace;
 
         private readonly Font _font;
-        private List<Entity<MapGridComponent>> _grids = new();
+        private List<Entity<MapGridComponent>> _grids = [];
 
         public PathfindingOverlay(
             IEntityManager entManager,

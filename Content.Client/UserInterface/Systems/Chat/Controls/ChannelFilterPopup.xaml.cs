@@ -29,7 +29,7 @@ public sealed partial class ChannelFilterPopup : Popup
         ChatChannel.Server
     };
 
-    private readonly Dictionary<ChatChannel, ChannelFilterCheckbox> _filterStates = new();
+    private readonly Dictionary<ChatChannel, ChannelFilterCheckbox> _filterStates = [];
 
     public event Action<ChatChannel, bool>? OnChannelFilter;
     public event Action<string>? OnNewHighlights;

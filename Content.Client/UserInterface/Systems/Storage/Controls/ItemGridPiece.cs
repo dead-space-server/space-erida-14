@@ -14,7 +14,7 @@ public sealed class ItemGridPiece : Control, IEntityControl
     private readonly IEntityManager _entityManager;
     private readonly StorageUIController _storageController;
 
-    private readonly List<(Texture, Vector2)> _texturesPositions = new();
+    private readonly List<(Texture, Vector2)> _texturesPositions = [];
 
     public readonly EntityUid Entity;
     public ItemStorageLocation Location;

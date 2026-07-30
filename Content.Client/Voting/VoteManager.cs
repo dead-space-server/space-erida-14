@@ -41,9 +41,9 @@ namespace Content.Client.Voting
         [Dependency] private IGameTiming _gameTiming = default!;
         [Dependency] private IResourceCache _res = default!;
 
-        private readonly Dictionary<StandardVoteType, TimeSpan> _standardVoteTimeouts = new();
-        private readonly Dictionary<int, ActiveVote> _votes = new();
-        private readonly Dictionary<int, UI.VotePopup> _votePopups = new();
+        private readonly Dictionary<StandardVoteType, TimeSpan> _standardVoteTimeouts = [];
+        private readonly Dictionary<int, ActiveVote> _votes = [];
+        private readonly Dictionary<int, UI.VotePopup> _votePopups = [];
         private Control? _popupContainer;
 
         private IAudioSource? _voteSource;

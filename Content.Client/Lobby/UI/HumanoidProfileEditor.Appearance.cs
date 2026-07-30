@@ -19,7 +19,7 @@ public sealed partial class HumanoidProfileEditor
     public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
     private ColorSelectorSliders _rgbSkinColorSelector;
-    private List<SpeciesPrototype> _species = new();
+    private List<SpeciesPrototype> _species = [];
     private static readonly ProtoId<GuideEntryPrototype> DefaultSpeciesGuidebook = "Species";
 
     public void UpdateSpeciesGuidebookIcon()
@@ -264,8 +264,10 @@ public sealed partial class HumanoidProfileEditor
 
         if (_prototypeManager.Resolve(DefaultSpeciesGuidebook, out var guideRoot))
         {
-            var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>();
-            dict.Add(DefaultSpeciesGuidebook, guideRoot);
+            var dict = new Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry>
+            {
+                { DefaultSpeciesGuidebook, guideRoot }
+            };
             //TODO: Don't close the guidebook if its already open, just go to the correct page
             guidebookController.OpenGuidebook(dict, includeChildren: true, selected: page);
         }

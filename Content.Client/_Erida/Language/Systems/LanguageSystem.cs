@@ -21,11 +21,11 @@ public sealed class LanguageSystem : SharedLanguageSystem
     /// <summary>
     ///   The list of languages the currently possessed entity can speak.
     /// </summary>
-    public List<ProtoId<LanguagePrototype>> SpokenLanguages { get; private set; } = new();
+    public List<ProtoId<LanguagePrototype>> SpokenLanguages { get; private set; } = [];
     /// <summary>
     ///   The list of languages the currently possessed entity can understand.
     /// </summary>
-    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages { get; private set; } = new();
+    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages { get; private set; } = [];
 
     public event EventHandler<LanguagesUpdatedMessage>? OnLanguagesChanged;
 

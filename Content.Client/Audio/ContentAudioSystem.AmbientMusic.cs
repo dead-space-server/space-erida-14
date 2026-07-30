@@ -52,7 +52,7 @@ public sealed partial class ContentAudioSystem
     /// number of times.
     /// When we get to the end of the list we'll re-shuffle
     /// </summary>
-    private readonly Dictionary<string, List<ResPath>> _ambientSounds = new();
+    private readonly Dictionary<string, List<ResPath>> _ambientSounds = [];
 
     private ISawmill _sawmill = default!;
 

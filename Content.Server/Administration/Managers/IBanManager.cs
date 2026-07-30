@@ -11,8 +11,8 @@ namespace Content.Server.Administration.Managers;
 
 public interface IBanManager
 {
-    public void Initialize();
-    public void Restart();
+    void Initialize();
+    void Restart();
 
     /// <summary>
     /// Create a server ban in the database, blocking connection for matching players.
@@ -30,7 +30,7 @@ public interface IBanManager
     /// <param name="severity">Severity of the resulting ban note</param>
     /// <param name="reason">Reason for the ban</param>
     [Obsolete("Use CreateServerBan(CreateBanInfo) instead")]
-    public void CreateServerBan(NetUserId? target,
+void CreateServerBan(NetUserId? target,
         string? targetUsername,
         NetUserId? banningAdmin,
         (IPAddress, int)? addressRange,
@@ -66,7 +66,7 @@ public interface IBanManager
     /// <summary>
     /// Gets a list of prefixed prototype IDs with the player's role bans.
     /// </summary>
-    public HashSet<BanRoleDef>? GetRoleBans(NetUserId playerUserId);
+    HashSet<BanRoleDef>? GetRoleBans(NetUserId playerUserId);
 
     /// <summary>
     /// Checks if the player is currently banned from any of the listed roles.
@@ -74,7 +74,7 @@ public interface IBanManager
     /// <param name="player">The player.</param>
     /// <param name="antags">A list of valid antag prototype IDs.</param>
     /// <returns>Returns True if an active role ban is found for this player for any of the listed roles.</returns>
-    public bool IsRoleBanned(ICommonSession player, params List<ProtoId<AntagPrototype>> antags);
+    bool IsRoleBanned(ICommonSession player, params List<ProtoId<AntagPrototype>> antags);
 
     /// <summary>
     /// Checks if the player is currently banned from any of the listed roles.
@@ -82,22 +82,22 @@ public interface IBanManager
     /// <param name="player">The player.</param>
     /// <param name="jobs">A list of valid job prototype IDs.</param>
     /// <returns>Returns True if an active role ban is found for this player for any of the listed roles.</returns>
-    public bool IsRoleBanned(ICommonSession player, params List<ProtoId<JobPrototype>> jobs);
+    bool IsRoleBanned(ICommonSession player, params List<ProtoId<JobPrototype>> jobs);
 
     /// <summary>
     /// Gets a list of prototype IDs with the player's job bans.
     /// </summary>
-    public HashSet<ProtoId<JobPrototype>>? GetJobBans(NetUserId playerUserId);
+    HashSet<ProtoId<JobPrototype>>? GetJobBans(NetUserId playerUserId);
 
     /// <summary>
     /// Gets a list of prototype IDs with the player's antag bans.
     /// </summary>
-    public HashSet<ProtoId<AntagPrototype>>? GetAntagBans(NetUserId playerUserId);
+    HashSet<ProtoId<AntagPrototype>>? GetAntagBans(NetUserId playerUserId);
 
     /// <summary>
     /// Creates a role ban, preventing matching players from playing said roles.
     /// </summary>
-    public void CreateRoleBan(CreateRoleBanInfo banInfo);
+    void CreateRoleBan(CreateRoleBanInfo banInfo);
 
     /// <summary>
     /// Pardons a role ban by its ID.
@@ -105,13 +105,13 @@ public interface IBanManager
     /// <param name="banId">The id of the role ban to pardon.</param>
     /// <param name="unbanningAdmin">The admin, if any, that pardoned the role ban.</param>
     /// <param name="unbanTime">The time at which this role ban was pardoned.</param>
-    public Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime);
+    Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime);
 
     /// <summary>
     /// Sends role bans to the target
     /// </summary>
     /// <param name="pSession">Player's session</param>
-    public void SendRoleBans(ICommonSession pSession);
+    void SendRoleBans(ICommonSession pSession);
 }
 
 /// <summary>

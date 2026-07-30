@@ -25,7 +25,7 @@ namespace Content.Client.Administration.UI.Tabs.AtmosTab
             var playerManager = IoCManager.Resolve<IPlayerManager>();
 
             var gridQuery = entManager.AllEntityQueryEnumerator<MapGridComponent>();
-            _data ??= new List<NetEntity>();
+            _data ??= [];
             _data.Clear();
 
             while (gridQuery.MoveNext(out var uid, out _))

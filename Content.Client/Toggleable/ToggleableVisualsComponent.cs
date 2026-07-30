@@ -20,11 +20,11 @@ public sealed partial class ToggleableVisualsComponent : Component
     /// Layers to add to the sprite of the player that is holding this entity (while the component is toggled on).
     /// </summary>
     [DataField]
-    public Dictionary<HandLocation, List<PrototypeLayerData>> InhandVisuals = new();
+    public Dictionary<HandLocation, List<PrototypeLayerData>> InhandVisuals = [];
 
     /// <summary>
     /// Layers to add to the sprite of the player that is wearing this entity (while the component is toggled on).
     /// </summary>
     [DataField]
-    public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
+    public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = [];
 }

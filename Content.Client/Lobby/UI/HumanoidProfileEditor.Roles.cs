@@ -24,7 +24,7 @@ public sealed partial class HumanoidProfileEditor
     // One at a time.
     private LoadoutWindow? _loadoutWindow;
 
-    private List<(string, RequirementsSelector)> _jobPriorities = new();
+    private List<(string, RequirementsSelector)> _jobPriorities = [];
 
     private readonly Dictionary<string, BoxContainer> _jobCategories;
 

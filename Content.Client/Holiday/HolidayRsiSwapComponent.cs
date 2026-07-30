@@ -10,5 +10,5 @@ public sealed partial class HolidayRsiSwapComponent : Component
     /// A dictionary of arbitrary visual keys to an rsi to swap the sprite to.
     /// </summary>
     [DataField]
-    public Dictionary<string, string> Sprite = new();
+    public Dictionary<string, string> Sprite = [];
 }

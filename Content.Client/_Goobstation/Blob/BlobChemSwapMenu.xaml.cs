@@ -28,7 +28,7 @@ public sealed partial class BlobChemSwapMenu : DefaultWindow
     private readonly SpriteSystem _sprite;
     public event Action<BlobChemType>? OnIdSelected;
 
-    private BlobChemColors _possibleChems = new();
+    private BlobChemColors _possibleChems = [];
     private BlobChemType _selectedId;
 
     public BlobChemSwapMenu()

@@ -26,10 +26,10 @@ namespace Content.Client.Clickable
         [Dependency] private IResourceCache _resourceCache = default!;
 
         [ViewVariables]
-        private readonly Dictionary<Texture, ClickMap> _textureMaps = new();
+        private readonly Dictionary<Texture, ClickMap> _textureMaps = [];
 
         [ViewVariables] private readonly Dictionary<RSI, RsiClickMapData> _rsiMaps =
-            new();
+            [];
 
         public void PostInject()
         {

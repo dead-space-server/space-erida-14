@@ -39,7 +39,7 @@ public sealed partial class InventoryUIController : UIController, IOnStateEntere
 
     private EntityUid? _playerUid;
     private InventorySlotsComponent? _playerInventory;
-    private readonly Dictionary<string, ItemSlotButtonContainer> _slotGroups = new();
+    private readonly Dictionary<string, ItemSlotButtonContainer> _slotGroups = [];
 
     private StrippingWindow? _strippingWindow;
     private ItemSlotButtonContainer? _inventoryHotbar;

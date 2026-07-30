@@ -70,7 +70,7 @@ namespace Content.Client.Light
             }
 
             rgb.Holder = args.User;
-            rgb.HolderLayers = new();
+            rgb.HolderLayers = [];
 
             if (!TryComp(args.User, out SpriteComponent? sprite))
                 return;
@@ -88,7 +88,7 @@ namespace Content.Client.Light
         private void OnEquipmentVisualsUpdated(EntityUid uid, RgbLightControllerComponent rgb, EquipmentVisualsUpdatedEvent args)
         {
             rgb.Holder = args.Equipee;
-            rgb.HolderLayers = new();
+            rgb.HolderLayers = [];
 
             if (!TryComp(args.Equipee, out SpriteComponent? sprite))
                 return;
@@ -121,14 +121,14 @@ namespace Content.Client.Light
                 return;
 
             rgb.OriginalLightColor = light.Color;
-            rgb.OriginalLayerColors = new();
+            rgb.OriginalLayerColors = [];
 
             var layerCount = sprite.AllLayers.Count();
 
             // if layers is null, get unshaded layers
             if (rgb.Layers == null)
             {
-                rgb.Layers = new();
+                rgb.Layers = [];
 
                 for (var i = 0; i < layerCount; i++)
                 {

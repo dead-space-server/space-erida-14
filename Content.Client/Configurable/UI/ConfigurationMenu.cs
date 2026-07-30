@@ -24,7 +24,7 @@ namespace Content.Client.Configurable.UI
         {
             MinSize = SetSize = new Vector2(300, 250);
 
-            Inputs = new List<(string name, LineEdit input)>();
+            Inputs = [];
 
             Title = Loc.GetString("configuration-menu-device-title");
 

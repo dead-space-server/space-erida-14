@@ -24,7 +24,7 @@ public static class ControlExtension
 
     public static List<T> GetControlOfType<T>(this Control parent, string childType, bool fullTreeSearch) where T : Control
     {
-        List<T> controlList = new List<T>();
+        List<T> controlList = [];
 
         foreach (var child in parent.Children)
         {
@@ -49,7 +49,7 @@ public static class ControlExtension
 
     public static List<ISearchableControl> GetSearchableControls(this Control parent, bool fullTreeSearch = false)
     {
-        List<ISearchableControl> controlList = new List<ISearchableControl>();
+        List<ISearchableControl> controlList = [];
 
         foreach (var child in parent.Children)
         {

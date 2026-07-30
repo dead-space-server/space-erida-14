@@ -25,7 +25,7 @@ public sealed partial class NotekeeperUiFragment : BoxContainer
             Input.Clear();
         };
 
-        UpdateState(new List<string>());
+        UpdateState([]);
     }
 
     public void UpdateState(List<string> notes)

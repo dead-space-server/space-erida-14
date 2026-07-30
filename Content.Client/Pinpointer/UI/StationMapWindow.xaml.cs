@@ -12,7 +12,7 @@ public sealed partial class StationMapWindow : FancyWindow
 {
     [Dependency] private IEntityManager _entMan = default!;
 
-    private readonly List<StationMapBeaconControl> _buttons = new();
+    private readonly List<StationMapBeaconControl> _buttons = [];
 
     public StationMapWindow()
     {

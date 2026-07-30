@@ -17,9 +17,9 @@ public sealed partial class StorageSystem : SharedStorageSystem
     [Dependency] private IPlayerManager _player = default!;
     [Dependency] private EntityPickupAnimationSystem _entityPickupAnimation = default!;
 
-    private Dictionary<EntityUid, ItemStorageLocation> _oldStoredItems = new();
+    private Dictionary<EntityUid, ItemStorageLocation> _oldStoredItems = [];
 
-    private List<(StorageBoundUserInterface Bui, bool Value)> _queuedBuis = new();
+    private List<(StorageBoundUserInterface Bui, bool Value)> _queuedBuis = [];
 
     public override void Initialize()
     {

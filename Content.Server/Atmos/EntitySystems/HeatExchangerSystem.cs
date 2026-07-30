@@ -15,7 +15,7 @@ public sealed partial class HeatExchangerSystem : EntitySystem
     [Dependency] private NodeContainerSystem _nodeContainer = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
-    float tileLoss;
+    private float tileLoss;
 
     public override void Initialize()
     {

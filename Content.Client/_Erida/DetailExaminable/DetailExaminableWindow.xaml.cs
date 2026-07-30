@@ -21,6 +21,7 @@ namespace Content.Client._Erida.DetailExaminable;
 [GenerateTypedNameReferences]
 public sealed partial class DetailExaminableWindow : FancyWindow
 {
+#pragma warning disable IDE0028
     private readonly List<Direction> _rotationSequence = new()
     {
         Direction.East,
@@ -28,6 +29,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         Direction.West,
         Direction.South,
     };
+#pragma warning restore IDE0028
 
     private int _currentDirectionIndex = 3;
     private EntityUid? _currentEntity;

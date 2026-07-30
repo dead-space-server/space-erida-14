@@ -65,7 +65,7 @@ public sealed partial class TextScreenVisualsComponent : Component
     ///     Per-character layers, for mapping into the sprite component.
     /// </summary>
     [DataField("layerStatesToDraw")]
-    public Dictionary<string, string?> LayerStatesToDraw = new();
+    public Dictionary<string, string?> LayerStatesToDraw = [];
 
     [DataField("hourFormat")]
     public string HourFormat = "D2";

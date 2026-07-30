@@ -38,10 +38,10 @@ namespace Content.Client.Cargo.UI
 
         public event Action<ButtonEventArgs>? OnToggleUnboundedLimit;
 
-        private readonly List<string> _categoryStrings = new();
+        private readonly List<string> _categoryStrings = [];
         private string? _category;
 
-        public List<ProtoId<CargoProductPrototype>> ProductCatalogue = new();
+        public List<ProtoId<CargoProductPrototype>> ProductCatalogue = [];
 
         public CargoConsoleMenu(EntityUid owner, IEntityManager entMan, IPrototypeManager protoManager, SpriteSystem spriteSystem)
         {

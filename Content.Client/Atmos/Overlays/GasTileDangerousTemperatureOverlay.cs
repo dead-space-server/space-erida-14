@@ -27,7 +27,7 @@ public sealed partial class GasTileDangerousTemperatureOverlay : Overlay
     private EntityQuery<GasTileOverlayComponent> _overlayQuery;
 
     private readonly OverlayResourceCache<CachedResources> _resources = new();
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
     // Cache used to transform ThermalByte into Color for overlay
     private readonly Color[] _colorCache = new Color[256];

@@ -10,5 +10,5 @@ public sealed partial class TextScreenTimerComponent : Component
 {
     [DataField("targetTime", customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan Target = TimeSpan.Zero;
-    public Dictionary<string, string?> LayerStatesToDraw = new();
+    public Dictionary<string, string?> LayerStatesToDraw = [];
 }

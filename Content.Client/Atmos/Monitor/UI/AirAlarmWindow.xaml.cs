@@ -33,13 +33,13 @@ public sealed partial class AirAlarmWindow : FancyWindow
     private BoxContainer _ventDevices => CVentContainer;
     private BoxContainer _scrubberDevices => CScrubberContainer;
 
-    private Dictionary<string, PumpControl> _pumps = new();
-    private Dictionary<string, ScrubberControl> _scrubbers = new();
-    private Dictionary<string, SensorInfo> _sensors = new();
+    private Dictionary<string, PumpControl> _pumps = [];
+    private Dictionary<string, ScrubberControl> _scrubbers = [];
+    private Dictionary<string, SensorInfo> _sensors = [];
     private Button _resyncDevices => CResyncButton;
 
 
-    private Dictionary<Gas, Label> _gasLabels = new();
+    private Dictionary<Gas, Label> _gasLabels = [];
 
     private OptionButton _modes => CModeButton;
 

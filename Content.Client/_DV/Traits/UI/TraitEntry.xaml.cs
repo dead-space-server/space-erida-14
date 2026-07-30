@@ -27,7 +27,7 @@ public sealed partial class TraitEntry : PanelContainer
 
     private readonly TraitPrototype _trait;
     private bool _isUpdating;
-    private readonly List<string> _failedConditionTooltips = new();
+    private readonly List<string> _failedConditionTooltips = [];
 
     public TraitEntry(TraitPrototype trait)
     {

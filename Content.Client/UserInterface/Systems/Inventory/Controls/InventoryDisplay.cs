@@ -14,7 +14,7 @@ public sealed class InventoryDisplay : LayoutContainer
     private const int ButtonSize = 75;
     private readonly Control resizer;
 
-    private readonly Dictionary<string, (SlotControl, Vector2i)> _buttons = new();
+    private readonly Dictionary<string, (SlotControl, Vector2i)> _buttons = [];
 
     public InventoryDisplay()
     {

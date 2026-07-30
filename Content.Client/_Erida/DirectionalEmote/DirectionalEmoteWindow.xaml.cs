@@ -26,6 +26,6 @@ public sealed partial class DirectionalEmoteWindow : FancyWindow
             Text = Rope.Collapse(e.TextRope).Trim();
             MessageChanged?.Invoke();
         };
-        CloseButton.OnPressed += _ => Dispose();
+        CloseButton.OnPressed += _ => Close();
     }
 }

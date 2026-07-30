@@ -15,7 +15,7 @@ namespace Content.Client.Fluids.UI
     {
         private readonly IEntityManager _entManager;
         private readonly EntityUid _uid;
-        private Dictionary<Color, float> _progress = new();
+        private Dictionary<Color, float> _progress = [];
 
         public AbsorbentItemStatus(EntityUid uid, IEntityManager entManager)
         {

@@ -23,9 +23,9 @@ public sealed partial class GroupedAccessLevelChecklist : BoxContainer
     private string? _labelStyleClass;
 
     // Access data
-    private HashSet<ProtoId<AccessGroupPrototype>> _accessGroups = new();
-    private HashSet<ProtoId<AccessLevelPrototype>> _accessLevels = new();
-    private HashSet<ProtoId<AccessLevelPrototype>> _activeAccessLevels = new();
+    private HashSet<ProtoId<AccessGroupPrototype>> _accessGroups = [];
+    private HashSet<ProtoId<AccessLevelPrototype>> _accessLevels = [];
+    private HashSet<ProtoId<AccessLevelPrototype>> _activeAccessLevels = [];
 
     // Button groups
     private readonly ButtonGroup _accessGroupsButtons = new();
@@ -33,9 +33,9 @@ public sealed partial class GroupedAccessLevelChecklist : BoxContainer
     // Temp values
     private int _accessGroupTabIndex = 0;
     private bool _canInteract = false;
-    private List<AccessLevelPrototype> _accessLevelsForTab = new();
-    private readonly List<AccessLevelEntry> _accessLevelEntries = new();
-    private readonly Dictionary<AccessGroupPrototype, List<AccessLevelPrototype>> _groupedAccessLevels = new();
+    private List<AccessLevelPrototype> _accessLevelsForTab = [];
+    private readonly List<AccessLevelEntry> _accessLevelEntries = [];
+    private readonly Dictionary<AccessGroupPrototype, List<AccessLevelPrototype>> _groupedAccessLevels = [];
 
     // Events
     public event Action<HashSet<ProtoId<AccessLevelPrototype>>, bool>? OnAccessLevelsChangedEvent;
@@ -60,13 +60,13 @@ public sealed partial class GroupedAccessLevelChecklist : BoxContainer
             if (!_protoManager.Resolve(accessGroup, out var accessGroupProto))
                 continue;
 
-            _groupedAccessLevels.Add(accessGroupProto, new());
+            _groupedAccessLevels.Add(accessGroupProto, []);
         }
 
         // Ensure that the 'general' access group is added to handle
         // misc. access levels that aren't associated with any group
         if (_protoManager.Resolve(GeneralAccessGroup, out var generalAccessProto))
-            _groupedAccessLevels.TryAdd(generalAccessProto, new());
+            _groupedAccessLevels.TryAdd(generalAccessProto, []);
 
         // Assign known access levels with their associated groups
         foreach (var accessLevel in _accessLevels)
@@ -426,7 +426,7 @@ public sealed partial class GroupedAccessLevelChecklist : BoxContainer
 
         public LineRenderer()
         {
-            Lines = new List<(Vector2, Vector2)>();
+            Lines = [];
         }
 
         public LineRenderer(List<(Vector2, Vector2)> lines)

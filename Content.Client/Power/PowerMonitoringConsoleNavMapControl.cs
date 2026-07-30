@@ -20,17 +20,17 @@ public sealed partial class PowerMonitoringConsoleNavMapControl : NavMapControl
 
     private readonly Color[] _powerCableColors = { Color.OrangeRed, Color.Yellow, Color.LimeGreen };
     private readonly Vector2[] _powerCableOffsets = { new Vector2(-0.2f, -0.2f), Vector2.Zero, new Vector2(0.2f, 0.2f) };
-    private Dictionary<Color, Color> _sRGBLookUp = new Dictionary<Color, Color>();
+    private Dictionary<Color, Color> _sRGBLookUp = [];
 
     public PowerMonitoringCableNetworksComponent? PowerMonitoringCableNetworks;
-    public List<PowerMonitoringConsoleLineGroup> HiddenLineGroups = new();
-    public List<PowerMonitoringConsoleLine> PowerCableNetwork = new();
-    public List<PowerMonitoringConsoleLine> FocusCableNetwork = new();
+    public List<PowerMonitoringConsoleLineGroup> HiddenLineGroups = [];
+    public List<PowerMonitoringConsoleLine> PowerCableNetwork = [];
+    public List<PowerMonitoringConsoleLine> FocusCableNetwork = [];
 
-    private Dictionary<Vector2i, Vector2i>[] _horizLines = [new(), new(), new()];
-    private Dictionary<Vector2i, Vector2i>[] _horizLinesReversed = [new(), new(), new()];
-    private Dictionary<Vector2i, Vector2i>[] _vertLines = [new(), new(), new()];
-    private Dictionary<Vector2i, Vector2i>[] _vertLinesReversed = [new(), new(), new()];
+    private Dictionary<Vector2i, Vector2i>[] _horizLines = [[], [], []];
+    private Dictionary<Vector2i, Vector2i>[] _horizLinesReversed = [[], [], []];
+    private Dictionary<Vector2i, Vector2i>[] _vertLines = [[], [], []];
+    private Dictionary<Vector2i, Vector2i>[] _vertLinesReversed = [[], [], []];
 
     private MapGridComponent? _grid;
 

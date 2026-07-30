@@ -16,13 +16,13 @@ public sealed partial class ParallaxPrototype : IPrototype
     /// Parallax layers.
     /// </summary>
     [DataField("layers")]
-    public List<ParallaxLayerConfig> Layers { get; private set; } = new();
+    public List<ParallaxLayerConfig> Layers { get; private set; } = [];
 
     /// <summary>
     /// Parallax layers, low-quality.
     /// </summary>
     [DataField("layersLQ")]
-    public List<ParallaxLayerConfig> LayersLQ { get; private set; } = new();
+    public List<ParallaxLayerConfig> LayersLQ { get; private set; } = [];
 
     /// <summary>
     /// If low-quality layers don't exist for this parallax and high-quality should be used instead.

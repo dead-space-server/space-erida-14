@@ -24,7 +24,7 @@ public sealed partial class RoboticsConsoleWindow : FancyWindow
     public Action<string>? OnDestroyPressed;
 
     private string? _selected;
-    private Dictionary<string, CyborgControlData> _cyborgs = new();
+    private Dictionary<string, CyborgControlData> _cyborgs = [];
 
     public EntityUid Entity;
 

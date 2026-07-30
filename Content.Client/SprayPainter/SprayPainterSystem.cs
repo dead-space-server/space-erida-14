@@ -23,8 +23,8 @@ public sealed partial class SprayPainterSystem : SharedSprayPainterSystem
     [Dependency] private UserInterfaceSystem _ui = default!;
 
     public List<SprayPainterDecalEntry> Decals = [];
-    public Dictionary<string, List<string>> PaintableGroupsByCategory = new();
-    public Dictionary<string, Dictionary<string, EntProtoId>> PaintableStylesByGroup = new();
+    public Dictionary<string, List<string>> PaintableGroupsByCategory = [];
+    public Dictionary<string, Dictionary<string, EntProtoId>> PaintableStylesByGroup = [];
 
     public override void Initialize()
     {

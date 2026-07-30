@@ -46,7 +46,7 @@ namespace Content.Client.Stylesheets
             var tys = _reflection.FindTypesWithAttribute<CommonSheetletAttribute>();
             UnusedSheetlets = [..tys];
 
-            Stylesheets = new Dictionary<string, Stylesheet>();
+            Stylesheets = [];
             SheetNanotrasen = Init(new NanotrasenStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetSystem = Init(new SystemStylesheet(new BaseStylesheet.NoConfig(), this));
             SheetNano = new StyleNano(_resCache).Stylesheet; // TODO: REMOVE (obsolete)

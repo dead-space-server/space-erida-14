@@ -26,7 +26,7 @@ public sealed partial class FtlArrivalOverlay : Overlay
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private IPrototypeManager _protos = default!;
 
-    private readonly HashSet<Entity<FtlVisualizerComponent>> _visualizers = new();
+    private readonly HashSet<Entity<FtlVisualizerComponent>> _visualizers = [];
 
     private ShaderInstance _shader;
 

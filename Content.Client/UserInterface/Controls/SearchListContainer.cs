@@ -6,7 +6,7 @@ namespace Content.Client.UserInterface.Controls;
 public sealed class SearchListContainer : ListContainer
 {
     private LineEdit? _searchBar;
-    private List<ListData> _unfilteredData = new();
+    private List<ListData> _unfilteredData = [];
 
     /// <summary>
     /// The <see cref="LineEdit"/> that is used to filter the list data.

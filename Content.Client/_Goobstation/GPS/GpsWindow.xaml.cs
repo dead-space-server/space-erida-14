@@ -39,7 +39,7 @@ public sealed partial class GpsWindow : BaseWindow
     private bool _enabled;
 
     private string? _lastEnteredText;
-    private List<GpsEntry> _previousEntry = new();
+    private List<GpsEntry> _previousEntry = [];
 
     public GpsWindow()
     {

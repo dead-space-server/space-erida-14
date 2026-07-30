@@ -19,7 +19,7 @@ public sealed partial class LayerMarkingPicker : BoxContainer
     private readonly ProtoId<OrganCategoryPrototype> _organ;
     private readonly HumanoidVisualLayers _layer;
     private readonly MarkingsViewModel _markingsModel;
-    private List<ISearchableControl> _searchable = new();
+    private List<ISearchableControl> _searchable = [];
     private const int _columnWidth = 500;
 
     public LayerMarkingPicker(MarkingsViewModel markingsModel, ProtoId<OrganCategoryPrototype> organ, HumanoidVisualLayers layer, IReadOnlyDictionary<string, MarkingPrototype> allMarkings)

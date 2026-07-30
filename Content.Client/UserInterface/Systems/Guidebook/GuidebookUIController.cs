@@ -222,7 +222,7 @@ public sealed partial class GuidebookUIController : UIController, IOnStateEntere
         bool includeChildren = true,
         ProtoId<GuideEntryPrototype>? selected = null)
     {
-        Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> guides = new();
+        Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> guides = [];
         foreach (var guideId in guideList)
         {
             if (!_prototypeManager.TryIndex(guideId, out var guide))

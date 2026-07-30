@@ -14,9 +14,9 @@ namespace Content.Client.Mapping;
 public sealed partial class MappingPrototypeList : Control
 {
     private (int start, int end) _lastIndices;
-    private readonly List<MappingPrototype> _prototypes = new();
-    private readonly List<Texture> _insertTextures = new();
-    private readonly List<MappingPrototype> _search = new();
+    private readonly List<MappingPrototype> _prototypes = [];
+    private readonly List<Texture> _insertTextures = [];
+    private readonly List<MappingPrototype> _search = [];
 
     public MappingSpawnButton? Selected;
     public Action<IPrototype, List<Texture>>? GetPrototypeData;

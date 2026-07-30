@@ -2,6 +2,8 @@ using Content.Shared.IdentityManagement;
 using Robust.Client.GameObjects;
 using System.Linq;
 
+#pragma warning disable IDE0028
+
 namespace Content.Client.ContextMenu.UI
 {
     public sealed partial class EntityMenuUIController

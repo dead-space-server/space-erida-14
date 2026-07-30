@@ -43,8 +43,8 @@ namespace Content.Client.Actions
         public event Action? ClearAssignments;
         public event Action<List<SlotAssignment>>? AssignSlot;
 
-        private readonly List<EntityUid> _removed = new();
-        private readonly List<Entity<ActionComponent>> _added = new();
+        private readonly List<EntityUid> _removed = [];
+        private readonly List<Entity<ActionComponent>> _added = [];
 
         public static readonly EntProtoId MappingEntityAction = "BaseMappingEntityAction";
 

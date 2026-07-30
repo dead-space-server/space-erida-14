@@ -8,7 +8,7 @@ public sealed partial class PuddleDebugOverlaySystem : SharedPuddleDebugOverlayS
 {
     [Dependency] private IOverlayManager _overlayManager = default!;
 
-    public readonly Dictionary<EntityUid, PuddleOverlayDebugMessage> TileData = new();
+    public readonly Dictionary<EntityUid, PuddleOverlayDebugMessage> TileData = [];
     private PuddleOverlay? _overlay;
     public override void Initialize()
     {

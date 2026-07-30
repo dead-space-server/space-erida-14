@@ -9,8 +9,8 @@ public sealed partial class ChargesSystem : SharedChargesSystem
 {
     [Dependency] private ActionsSystem _actions = default!;
 
-    private Dictionary<EntityUid, int> _lastCharges = new();
-    private Dictionary<EntityUid, int> _tempLastCharges = new();
+    private Dictionary<EntityUid, int> _lastCharges = [];
+    private Dictionary<EntityUid, int> _tempLastCharges = [];
 
     public override void Update(float frameTime)
     {

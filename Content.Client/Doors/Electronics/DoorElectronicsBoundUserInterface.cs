@@ -36,7 +36,7 @@ public sealed partial class DoorElectronicsBoundUserInterface : BoundUserInterfa
 
     private void Reset()
     {
-        List<ProtoId<AccessLevelPrototype>> accessLevels = new();
+        List<ProtoId<AccessLevelPrototype>> accessLevels = [];
 
         foreach (var accessLevel in _prototypeManager.EnumeratePrototypes<AccessLevelPrototype>())
         {

@@ -15,8 +15,8 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
         public event Action<GhostRoleInfo>? OnRoleRequestButtonClicked;
         public event Action<GhostRoleInfo>? OnRoleFollow;
 
-        private Dictionary<(string name, string description), Collapsible> _collapsibleBoxes = new();
-        private HashSet<(string name, string description)> _uncollapsedStates = new();
+        private Dictionary<(string name, string description), Collapsible> _collapsibleBoxes = [];
+        private HashSet<(string name, string description)> _uncollapsedStates = [];
 
         public GhostRolesWindow()
         {

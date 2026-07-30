@@ -20,7 +20,7 @@ public sealed partial class GatewayWindow : FancyWindow,
     private readonly IGameTiming _timing;
 
     public event Action<NetEntity>? OpenPortal;
-    private List<GatewayDestinationData> _destinations = new();
+    private List<GatewayDestinationData> _destinations = [];
 
     public NetEntity Owner;
 

@@ -10,7 +10,7 @@ public sealed partial class DeimplantChoiceWindow : FancyWindow
 {
     public Action<string?>? OnImplantChange;
 
-    private Dictionary<string, string> _implants = new();
+    private Dictionary<string, string> _implants = [];
 
     private string? _chosenImplant;
 

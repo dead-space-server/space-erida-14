@@ -33,7 +33,7 @@ public sealed partial class AtmosAlertsComputerWindow : FancyWindow
     private IEnumerable<AtmosAlertsComputerEntry>? _allAlarms = null;
 
     private IEnumerable<AtmosAlertsComputerEntry>? _activeAlarms = null;
-    private Dictionary<NetEntity, float> _deviceSilencingProgress = new();
+    private Dictionary<NetEntity, float> _deviceSilencingProgress = [];
 
     public event Action<NetEntity?>? SendFocusChangeMessageAction;
     public event Action<NetEntity, bool>? SendDeviceSilencedMessageAction;

@@ -32,7 +32,7 @@ namespace Content.Client.Access.UI
             }
             else
             {
-                accessLevels = new List<ProtoId<AccessLevelPrototype>>();
+                accessLevels = [];
                 _idCardConsoleSystem.Log.Error($"No IdCardConsole component found for {EntMan.ToPrettyString(Owner)}!");
             }
 

@@ -23,6 +23,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
+#pragma warning disable IDE0028
 namespace Content.Client.ContextMenu.UI
 {
     /// <summary>
@@ -69,7 +70,7 @@ namespace Content.Client.ContextMenu.UI
             _context.OnContextKeyEvent += OnKeyBindDown;
 
             CommandBinds.Builder
-                .Bind(EngineKeyFunctions.UseSecondary,  new PointerInputCmdHandler(HandleOpenEntityMenu, outsidePrediction: true))
+                .Bind(EngineKeyFunctions.UseSecondary, new PointerInputCmdHandler(HandleOpenEntityMenu, outsidePrediction: true))
                 .Register<EntityMenuUIController>();
         }
 

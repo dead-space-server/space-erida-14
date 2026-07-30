@@ -20,7 +20,7 @@ public sealed partial class ColorFlashEffectSystem : SharedColorFlashEffectSyste
     /// </summary>
     private const float AnimationLength = 0.30f;
     private const string AnimationKey = "color-flash-effect";
-    private ValueList<EntityUid> _toRemove = new();
+    private ValueList<EntityUid> _toRemove = [];
 
     public override void Initialize()
     {

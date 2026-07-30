@@ -13,7 +13,7 @@ public interface IItemslotUIContainer
 
 public abstract class ItemSlotUIContainer<T> : GridContainer, IItemslotUIContainer where T : SlotControl
 {
-    private readonly Dictionary<string, T> _buttons = new();
+    private readonly Dictionary<string, T> _buttons = [];
 
     public int? MaxColumns { get; set; }
 

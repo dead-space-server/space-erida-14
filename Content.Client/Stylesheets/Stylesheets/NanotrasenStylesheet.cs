@@ -8,6 +8,8 @@ using static Robust.Client.UserInterface.StylesheetHelpers;
 
 namespace Content.Client.Stylesheets.Stylesheets;
 
+#pragma warning disable IDE0028 // Erida edit
+
 [Virtual]
 public partial class NanotrasenStylesheet : CommonStylesheet
 {

@@ -16,7 +16,7 @@ public sealed partial class CompassControl : LayoutContainer
 
     private MapCoordinates _gpsCoordinates;
     private NetEntity? _trackedEntity;
-    private List<GpsEntry> _gpsEntries = new();
+    private List<GpsEntry> _gpsEntries = [];
     private float _zoom = 6f;
 
     private const float GridLinesPerMeter = 4f;

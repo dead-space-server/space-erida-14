@@ -25,7 +25,7 @@ public sealed partial class GrinderMenu : FancyWindow
     private readonly SharedReagentGrinderSystem _grinder = default!;
     private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
-    private readonly Dictionary<int, EntityUid> _chamberVisualContents = new();
+    private readonly Dictionary<int, EntityUid> _chamberVisualContents = [];
     private EntityUid _owner;
 
     public event Action? OnToggleAuto;

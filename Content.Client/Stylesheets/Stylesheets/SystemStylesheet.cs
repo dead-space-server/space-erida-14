@@ -9,6 +9,8 @@ using static Robust.Client.UserInterface.StylesheetHelpers;
 
 namespace Content.Client.Stylesheets.Stylesheets;
 
+#pragma warning disable IDE0028
+
 [Virtual]
 public partial class SystemStylesheet : CommonStylesheet
 {

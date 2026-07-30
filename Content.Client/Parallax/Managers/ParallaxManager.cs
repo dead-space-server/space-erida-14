@@ -18,10 +18,10 @@ public sealed partial class ParallaxManager : IParallaxManager
 
     public Vector2 ParallaxAnchor { get; set; }
 
-    private readonly Dictionary<string, ParallaxLayerPrepared[]> _parallaxesLQ = new();
-    private readonly Dictionary<string, ParallaxLayerPrepared[]> _parallaxesHQ = new();
+    private readonly Dictionary<string, ParallaxLayerPrepared[]> _parallaxesLQ = [];
+    private readonly Dictionary<string, ParallaxLayerPrepared[]> _parallaxesHQ = [];
 
-    private readonly Dictionary<string, CancellationTokenSource> _loadingParallaxes = new();
+    private readonly Dictionary<string, CancellationTokenSource> _loadingParallaxes = [];
 
     public bool IsLoaded(string name) => _parallaxesLQ.ContainsKey(name);
 

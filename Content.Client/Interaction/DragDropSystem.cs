@@ -102,7 +102,7 @@ public sealed partial class DragDropSystem : SharedDragDropSystem
     private ShaderInstance? _dropTargetInRangeShader;
     private ShaderInstance? _dropTargetOutOfRangeShader;
 
-    private readonly List<SpriteComponent> _highlightedSprites = new();
+    private readonly List<SpriteComponent> _highlightedSprites = [];
 
     public override void Initialize()
     {

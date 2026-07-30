@@ -80,7 +80,7 @@ public sealed partial class CrewMonitoringWindow : FancyWindow
         NoServerLabel.Visible = false;
 
         // Collect one status per user, using the sensor with the most data available.
-        Dictionary<NetEntity, SuitSensorStatus> uniqueSensorsMap = new();
+        Dictionary<NetEntity, SuitSensorStatus> uniqueSensorsMap = [];
         foreach (var sensor in sensors)
         {
             if (uniqueSensorsMap.TryGetValue(sensor.OwnerUid, out var existingSensor))

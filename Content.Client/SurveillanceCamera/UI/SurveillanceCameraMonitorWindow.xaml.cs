@@ -40,7 +40,7 @@ public sealed partial class SurveillanceCameraMonitorWindow : DefaultWindow
     private string _currentAddress = string.Empty;
     private bool _isSwitching;
     private readonly FixedEye _defaultEye = new();
-    private readonly Dictionary<string, int> _subnetMap = new();
+    private readonly Dictionary<string, int> _subnetMap = [];
     private EntityUid? _mapUid;
 
     private string? SelectedSubnet

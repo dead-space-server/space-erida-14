@@ -13,7 +13,7 @@ namespace Content.Client.Access.UI
     [GenerateTypedNameReferences]
     public sealed partial class AccessOverriderWindow : DefaultWindow
     {
-        private readonly Dictionary<string, Button> _accessButtons = new();
+        private readonly Dictionary<string, Button> _accessButtons = [];
 
         public event Action<List<ProtoId<AccessLevelPrototype>>>? OnSubmit;
 

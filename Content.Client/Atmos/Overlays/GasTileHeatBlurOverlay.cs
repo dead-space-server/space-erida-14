@@ -39,7 +39,7 @@ public sealed partial class GasTileHeatBlurOverlay : Overlay
 
     private readonly Texture _noiseTexture;
     private readonly Texture _heatGradientTexture;
-    private List<Entity<MapGridComponent>> _intersectingGrids = new();
+    private List<Entity<MapGridComponent>> _intersectingGrids = [];
     private readonly OverlayResourceCache<CachedResources> _resources = new();
 
     // Overlay settings

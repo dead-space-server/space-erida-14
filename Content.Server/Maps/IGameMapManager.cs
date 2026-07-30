@@ -66,7 +66,7 @@ public interface IGameMapManager
     /// <summary>
     /// Selects the map by following rules set in the config
     /// </summary>
-    public void SelectMapByConfigRules();
+    void SelectMapByConfigRules();
 
     /// <summary>
     /// Checks if the given map exists

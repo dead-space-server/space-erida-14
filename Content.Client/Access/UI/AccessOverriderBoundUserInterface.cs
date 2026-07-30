@@ -55,7 +55,7 @@ namespace Content.Client.Access.UI
             }
             else
             {
-                accessLevels = new List<ProtoId<AccessLevelPrototype>>();
+                accessLevels = [];
                 _accessOverriderSystem.Log.Error($"No AccessOverrider component found for {EntMan.ToPrettyString(Owner)}!");
             }
 

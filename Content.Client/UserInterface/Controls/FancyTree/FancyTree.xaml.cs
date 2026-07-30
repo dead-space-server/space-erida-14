@@ -27,7 +27,7 @@ public sealed partial class FancyTree : Control
     public const string StylePropertyIconCollapsed = "IconCollapsed";
     public const string StylePropertyIconNoChildren = "IconNoChildren";
 
-    public readonly List<TreeItem> Items = new();
+    public readonly List<TreeItem> Items = [];
 
     public event Action<TreeItem?>? OnSelectedItemChanged;
 

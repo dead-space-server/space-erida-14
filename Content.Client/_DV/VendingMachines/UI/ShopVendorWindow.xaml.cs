@@ -50,7 +50,7 @@ public sealed partial class ShopVendorWindow : FancyWindow
     private EntityUid _owner;
     private readonly StyleBoxFlat _style = new() { BackgroundColor = new Color(70, 73, 102) };
     private readonly StyleBoxFlat _styleBroke = new() { BackgroundColor = Color.FromHex("#303133") };
-    private readonly List<ListContainerButton> _buttons = new();
+    private readonly List<ListContainerButton> _buttons = [];
     private uint _balance = 1;
 
     public ShopVendorWindow()

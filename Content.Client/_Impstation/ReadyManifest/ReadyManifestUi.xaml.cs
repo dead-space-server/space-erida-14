@@ -26,7 +26,7 @@ public sealed partial class ReadyManifestUi : DefaultWindow
     {
         RobustXamlLoader.Load(this);
         Title = Loc.GetString("lobby-state-manifest-title");
-        _jobCategories = new Dictionary<string, BoxContainer>();
+        _jobCategories = [];
         _prototypeManager = IoCManager.Resolve<IPrototypeManager>();
         _playerManager = IoCManager.Resolve<ISharedPlayerManager>();
         _entitySystem = IoCManager.Resolve<IEntitySystemManager>();

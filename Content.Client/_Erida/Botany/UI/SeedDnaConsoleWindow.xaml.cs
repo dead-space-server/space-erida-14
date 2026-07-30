@@ -197,7 +197,7 @@ public sealed partial class SeedDnaConsoleWindow : DefaultWindow
             },
             setterSeedValue: obj =>
             {
-                _seedDataDto!.Chemicals ??= new Dictionary<string, SeedChemQuantityDto>();
+                _seedDataDto!.Chemicals ??= [];
                 _seedDataDto.Chemicals[chemicalName] = (SeedChemQuantityDto) obj!;
             },
             getterDnaDiskValue: () =>
@@ -208,7 +208,7 @@ public sealed partial class SeedDnaConsoleWindow : DefaultWindow
             },
             setterDnaDiskValue: obj =>
             {
-                _dnaDiskDataDto!.Chemicals ??= new Dictionary<string, SeedChemQuantityDto>();
+                _dnaDiskDataDto!.Chemicals ??= [];
                 _dnaDiskDataDto.Chemicals[chemicalName] = (SeedChemQuantityDto) obj!;
             },
             getSeedPotency: getSeedPotency,
@@ -355,12 +355,12 @@ public sealed partial class SeedDnaConsoleWindow : DefaultWindow
     {
         if (consume)
         {
-            dto.ConsumeGasses ??= new Dictionary<Gas, float>();
+            dto.ConsumeGasses ??= [];
             dto.ConsumeGasses[gas] = value;
             return;
         }
 
-        dto.ExudeGasses ??= new Dictionary<Gas, float>();
+        dto.ExudeGasses ??= [];
         dto.ExudeGasses[gas] = value;
     }
 

@@ -41,7 +41,7 @@ namespace Content.Client.Construction.UI
         private ConstructionSystem? _constructionSystem;
         private ConstructionPrototype? _selected;
         private List<ConstructionPrototype> _favoritedRecipes = [];
-        private readonly Dictionary<string, ContainerButton> _recipeButtons = new();
+        private readonly Dictionary<string, ContainerButton> _recipeButtons = [];
         private string _selectedCategory = string.Empty;
 
         private const string FavoriteCatName = "construction-category-favorites";

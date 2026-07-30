@@ -22,13 +22,13 @@ namespace Content.Client.NodeContainer
 
         public bool VisEnabled { get; private set; }
 
-        public Dictionary<int, NodeVis.GroupData> Groups { get; } = new();
-        public HashSet<string> Filtered { get; } = new();
+        public Dictionary<int, NodeVis.GroupData> Groups { get; } = [];
+        public HashSet<string> Filtered { get; } = [];
 
         public Dictionary<EntityUid, (NodeVis.GroupData group, NodeVis.NodeDatum node)[]>
-            Entities { get; private set; } = new();
+            Entities { get; private set; } = [];
 
-        public Dictionary<(int group, int node), NodeVis.NodeDatum> NodeLookup { get; private set; } = new();
+        public Dictionary<(int group, int node), NodeVis.NodeDatum> NodeLookup { get; private set; } = [];
 
         public override void Initialize()
         {

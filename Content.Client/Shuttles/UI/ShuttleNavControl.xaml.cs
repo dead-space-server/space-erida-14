@@ -36,7 +36,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
     private Angle? _rotation;
 
-    private Dictionary<NetEntity, List<DockingPortState>> _docks = new();
+    private Dictionary<NetEntity, List<DockingPortState>> _docks = [];
 
     public bool ShowIFF { get; set; } = true;
     public bool ShowDocks { get; set; } = true;
@@ -47,7 +47,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
     /// </summary>
     public Action<EntityCoordinates>? OnRadarClick;
 
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
     public ShuttleNavControl() : base(64f, 256f, 256f)
     {

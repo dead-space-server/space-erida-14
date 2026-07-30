@@ -35,7 +35,7 @@ namespace Content.Client.Viewport
         private ScalingViewportIgnoreDimension _ignoreDimension = ScalingViewportIgnoreDimension.None;
         private int _fixedRenderScale = 1;
 
-        private readonly List<CopyPixelsDelegate<Rgba32>> _queuedScreenshots = new();
+        private readonly List<CopyPixelsDelegate<Rgba32>> _queuedScreenshots = [];
 
         public int CurrentRenderScale => _curRenderScale;
 

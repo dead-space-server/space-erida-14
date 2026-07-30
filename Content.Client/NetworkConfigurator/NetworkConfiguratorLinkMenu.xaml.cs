@@ -21,9 +21,9 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
 
     private readonly LinksRender _links;
 
-    private readonly List<SourcePortPrototype> _sources = new();
+    private readonly List<SourcePortPrototype> _sources = [];
 
-    private readonly List<SinkPortPrototype> _sinks = new();
+    private readonly List<SinkPortPrototype> _sinks = [];
 
     private (ButtonPosition position, string id, int index)? _selectedButton;
 
@@ -165,9 +165,9 @@ public sealed partial class NetworkConfiguratorLinkMenu : FancyWindow
     /// </summary>
     private sealed class LinksRender : Control
     {
-        public readonly List<(ProtoId<SourcePortPrototype>, ProtoId<SinkPortPrototype>)> Links = new();
-        public readonly Dictionary<string, Button> SourceButtons = new();
-        public readonly Dictionary<string, Button> SinkButtons = new();
+        public readonly List<(ProtoId<SourcePortPrototype>, ProtoId<SinkPortPrototype>)> Links = [];
+        public readonly Dictionary<string, Button> SourceButtons = [];
+        public readonly Dictionary<string, Button> SinkButtons = [];
         private readonly BoxContainer _leftButtonContainer;
         private readonly BoxContainer _rightButtonContainer;
 

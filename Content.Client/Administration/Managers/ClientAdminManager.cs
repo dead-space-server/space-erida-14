@@ -21,7 +21,7 @@ namespace Content.Client.Administration.Managers
         [Dependency] private IUserInterfaceManager _userInterface = default!;
 
         private AdminData? _adminData;
-        private readonly HashSet<string> _availableCommands = new();
+        private readonly HashSet<string> _availableCommands = [];
 
         private readonly AdminCommandPermissions _localCommandPermissions = new();
         private ISawmill _sawmill = default!;

@@ -63,8 +63,8 @@ public sealed partial class RCDMenuBoundUserInterface : BoundUserInterface
 
     private IEnumerable<RadialMenuOptionBase> ConvertToButtons(HashSet<ProtoId<RCDPrototype>> prototypes)
     {
-        Dictionary<string, List<RadialMenuActionOptionBase>> buttonsByCategory = new();
-        ValueList<RadialMenuActionOptionBase> topLevelActions = new();
+        Dictionary<string, List<RadialMenuActionOptionBase>> buttonsByCategory = [];
+        ValueList<RadialMenuActionOptionBase> topLevelActions = [];
         foreach (var protoId in prototypes)
         {
             var prototype = _prototypeManager.Index(protoId);
@@ -84,7 +84,7 @@ public sealed partial class RCDMenuBoundUserInterface : BoundUserInterface
 
             if (!buttonsByCategory.TryGetValue(prototype.Category, out var list))
             {
-                list = new List<RadialMenuActionOptionBase>();
+                list = [];
                 buttonsByCategory.Add(prototype.Category, list);
             }
 

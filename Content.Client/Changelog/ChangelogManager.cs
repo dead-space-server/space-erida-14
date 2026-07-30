@@ -174,7 +174,7 @@ namespace Content.Client.Changelog
             ///     These are not kept around in memory in the changelog manager.
             /// </summary>
             [DataField("Entries")]
-            public List<ChangelogEntry> Entries = new();
+            public List<ChangelogEntry> Entries = [];
 
             /// <summary>
             ///     Whether or not this changelog will be displayed as a tab to non-admins.

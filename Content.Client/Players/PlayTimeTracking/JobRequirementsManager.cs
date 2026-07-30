@@ -24,10 +24,10 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
     [Dependency] private IPlayerManager _playerManager = default!;
     [Dependency] private IPrototypeManager _prototypes = default!;
 
-    private readonly Dictionary<string, TimeSpan> _roles = new();
-    private readonly List<ProtoId<JobPrototype>> _jobBans = new();
-    private readonly List<ProtoId<AntagPrototype>> _antagBans = new();
-    private readonly List<string> _jobWhitelists = new();
+    private readonly Dictionary<string, TimeSpan> _roles = [];
+    private readonly List<ProtoId<JobPrototype>> _jobBans = [];
+    private readonly List<ProtoId<AntagPrototype>> _antagBans = [];
+    private readonly List<string> _jobWhitelists = [];
 
     private ISawmill _sawmill = default!;
 

@@ -14,7 +14,7 @@ public sealed partial class NetworkConfiguratorLinkOverlay : Overlay
     private readonly DeviceListSystem _deviceListSystem;
     private readonly SharedTransformSystem _transformSystem;
 
-    public Dictionary<EntityUid, Color> Colors = new();
+    public Dictionary<EntityUid, Color> Colors = [];
     public EntityUid? Action;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;

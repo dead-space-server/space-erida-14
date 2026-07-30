@@ -34,15 +34,15 @@ public partial class BaseShuttleControl : MapGridControl
     private GridDrawJob _drawJob;
 
     // Cache grid drawing data as it can be expensive to build
-    public readonly Dictionary<EntityUid, GridDrawData> GridData = new();
+    public readonly Dictionary<EntityUid, GridDrawData> GridData = [];
 
     // Per-draw caching
-    private readonly Dictionary<Vector2i, ContentTileDefinition> _gridTileList = new(); // Mono
+    private readonly Dictionary<Vector2i, ContentTileDefinition> _gridTileList = []; // Mono
     // Mono - tile mapped to vector lying along each of 4 directions, if any
-    private readonly Dictionary<Vector2i, Box2?[]> _gridDirEdges = new();
+    private readonly Dictionary<Vector2i, Box2?[]> _gridDirEdges = [];
     // stores inward directions of borders
-    private readonly List<(Vector2 Start, Vector2 End)> _edges = new();
-    private readonly HashSet<Entity<GridEdgeMarkerComponent>> _edgeMarkers = new();
+    private readonly List<(Vector2 Start, Vector2 End)> _edges = [];
+    private readonly HashSet<Entity<GridEdgeMarkerComponent>> _edgeMarkers = [];
 
     private EntityQuery<TransformComponent> _xformQuery; // Mono
 
@@ -716,7 +716,7 @@ public sealed class GridDrawData
      * List of lists because we use LineStrip and TriangleStrip respectively (less data to pass to the GPU).
      */
 
-    public List<Vector2> Vertices = new();
+    public List<Vector2> Vertices = [];
 
     /// <summary>
     /// Vertices index from when edges start.

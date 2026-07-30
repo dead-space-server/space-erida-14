@@ -35,17 +35,17 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
 
     public DockingInterfaceState? DockState = null;
 
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
-    private readonly HashSet<DockingPortState> _drawnDocks = new();
-    private readonly Dictionary<DockingPortState, Button> _dockButtons = new();
+    private readonly HashSet<DockingPortState> _drawnDocks = [];
+    private readonly Dictionary<DockingPortState, Button> _dockButtons = [];
 
     private readonly Color _fallbackHighlightedColor = Color.Magenta;
 
     /// <summary>
     /// Store buttons for every other dock
     /// </summary>
-    private readonly Dictionary<DockingPortState, Control> _dockContainers = new();
+    private readonly Dictionary<DockingPortState, Control> _dockContainers = [];
 
     private static readonly TimeSpan DockChangeCooldown = TimeSpan.FromSeconds(0.5);
 

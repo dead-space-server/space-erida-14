@@ -7,6 +7,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using static Robust.Client.UserInterface.Controls.BaseButton;
 
+#pragma warning disable IDE0028 // Erida edit
+
 namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 {
     [GenerateTypedNameReferences]
@@ -138,9 +140,9 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             {
                 raffleSettings = new GhostRoleRaffleSettings()
                 {
-                    InitialDuration = (uint) RaffleInitialDuration.Value,
-                    JoinExtendsDurationBy = (uint) RaffleJoinExtendsDurationBy.Value,
-                    MaxDuration = (uint) RaffleMaxDuration.Value
+                    InitialDuration = (uint)RaffleInitialDuration.Value,
+                    JoinExtendsDurationBy = (uint)RaffleJoinExtendsDurationBy.Value,
+                    MaxDuration = (uint)RaffleMaxDuration.Value
                 };
             }
             else if (_raffleSettingId != RaffleDontRaffleId)

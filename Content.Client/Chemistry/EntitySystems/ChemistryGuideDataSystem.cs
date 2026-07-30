@@ -13,6 +13,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client.Chemistry.EntitySystems;
 
+#pragma warning disable IDE0028
 /// <inheritdoc/>
 public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
 {
@@ -64,7 +65,7 @@ public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataS
                 continue;
 
             var data = new ReagentReactionSourceData(
-                reaction.MixingCategories ?? new () { DefaultMixingCategory },
+                reaction.MixingCategories ?? new() { DefaultMixingCategory },
                 reaction);
             foreach (var product in reaction.Products.Keys)
             {
@@ -78,7 +79,7 @@ public sealed partial class ChemistryGuideDataSystem : SharedChemistryGuideDataS
                 continue;
 
             var data = new ReagentGasSourceData(
-                new () { DefaultCondenseCategory },
+                new() { DefaultCondenseCategory },
                 gas);
             _reagentSources[gas.Reagent].Add(data);
         }

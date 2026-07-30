@@ -273,7 +273,7 @@ namespace Content.Client.Hands.Systems
             }
             else
             {
-                revealedLayers = new();
+                revealedLayers = [];
                 handComp.RevealedLayers[hand.Value.Location] = revealedLayers;
             }
 

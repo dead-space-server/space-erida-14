@@ -79,7 +79,7 @@ public sealed partial class SignalTimerWindow : DefaultWindow
 
     public void OnCurrentDelayMinutesChange(string text)
     {
-        List<char> toRemove = new();
+        List<char> toRemove = [];
 
         foreach (var a in text)
         {
@@ -109,7 +109,7 @@ public sealed partial class SignalTimerWindow : DefaultWindow
 
     public void OnCurrentDelaySecondsChange(string text)
     {
-        List<char> toRemove = new();
+        List<char> toRemove = [];
 
         foreach (var a in text)
         {

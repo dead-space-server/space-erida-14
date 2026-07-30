@@ -9,7 +9,7 @@ namespace Content.Client.Overlays;
 
 public sealed partial class StencilOverlay
 {
-    private List<Entity<MapGridComponent>> _grids = new();
+    private List<Entity<MapGridComponent>> _grids = [];
 
     private void DrawWeather(
         in OverlayDrawArgs args,

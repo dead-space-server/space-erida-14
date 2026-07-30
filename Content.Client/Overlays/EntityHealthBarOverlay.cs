@@ -35,7 +35,7 @@ public sealed class EntityHealthBarOverlay : Overlay
 
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
-    public HashSet<string> DamageContainers = new();
+    public HashSet<string> DamageContainers = [];
     public ProtoId<HealthIconPrototype>? StatusIcon;
 
     public EntityHealthBarOverlay(IEntityManager entManager, IPrototypeManager prototype)

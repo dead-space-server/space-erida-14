@@ -26,7 +26,7 @@ namespace Content.Client.Radiation.Overlays
         public override bool RequestScreenTexture => true;
 
         private readonly ShaderInstance _baseShader;
-        private readonly Dictionary<EntityUid, (ShaderInstance shd, RadiationShaderInstance instance)> _pulses = new();
+        private readonly Dictionary<EntityUid, (ShaderInstance shd, RadiationShaderInstance instance)> _pulses = [];
 
         public RadiationPulseOverlay()
         {

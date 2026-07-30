@@ -34,9 +34,9 @@ public sealed partial class FundingAllocationMenu : FancyWindow
     private double _primaryCut;
     private double _lockboxCut;
 
-    private readonly HashSet<Control> _addedControls = new();
-    private readonly List<SpinBox> _spinBoxes = new();
-    private readonly Dictionary<ProtoId<CargoAccountPrototype>, RichTextLabel> _balanceLabels = new();
+    private readonly HashSet<Control> _addedControls = [];
+    private readonly List<SpinBox> _spinBoxes = [];
+    private readonly Dictionary<ProtoId<CargoAccountPrototype>, RichTextLabel> _balanceLabels = [];
 
     public FundingAllocationMenu()
     {

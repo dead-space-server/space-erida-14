@@ -34,17 +34,17 @@ public sealed partial class SprayPainterWindow : DefaultWindow
 
     // Pipe color data
     private ItemList _colorList = default!;
-    public Dictionary<string, int> ItemColorIndex = new();
+    public Dictionary<string, int> ItemColorIndex = [];
 
-    private Dictionary<string, Color> _currentPalette = new();
+    private Dictionary<string, Color> _currentPalette = [];
     private const string ColorLocKeyPrefix = "pipe-painter-color-";
 
     // Paintable objects
-    private Dictionary<string, Dictionary<string, EntProtoId>> _currentStylesByGroup = new();
-    private Dictionary<string, List<string>> _currentGroupsByCategory = new();
+    private Dictionary<string, Dictionary<string, EntProtoId>> _currentStylesByGroup = [];
+    private Dictionary<string, List<string>> _currentGroupsByCategory = [];
 
     // Tab controls
-    private Dictionary<string, SprayPainterGroup> _paintableControls = new();
+    private Dictionary<string, SprayPainterGroup> _paintableControls = [];
     private BoxContainer? _pipeControl;
 
     // Decals

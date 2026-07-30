@@ -15,7 +15,9 @@ namespace Content.Client.Cargo.UI
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
+#pragma warning disable IDE0028
             Amount.SetButtons(new List<int> { -3, -2, -1 }, new List<int> { 1, 2, 3 });
+#pragma warning restore IDE0028
             Amount.IsValid = n => n > 0;
         }
     }

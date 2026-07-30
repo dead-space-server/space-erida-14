@@ -62,7 +62,7 @@ public sealed partial class MarkingsViewModel
     /// <seealso cref="EnforceGroupAndSexRestrictions" />
     public event Action? EnforcementsChanged;
 
-    private Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> _organProfileData = new();
+    private Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> _organProfileData = [];
 
     /// <summary>
     /// The organ profile data this view model is concerned with.
@@ -126,7 +126,7 @@ public sealed partial class MarkingsViewModel
     /// <seealso cref="SetOrganEyeColor" />
     public event Action<bool>? OrganProfileDataChanged;
 
-    private Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> _markings = new();
+    private Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> _markings = [];
 
     /// <summary>
     /// The currently applied set of markings
@@ -156,7 +156,7 @@ public sealed partial class MarkingsViewModel
     /// </summary>
     public event Action<ProtoId<OrganCategoryPrototype>, HumanoidVisualLayers>? MarkingsChanged;
 
-    private Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> _organData = new();
+    private Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> _organData = [];
 
     /// <summary>
     /// The organ marking data the view model is concerned with.
@@ -181,7 +181,7 @@ public sealed partial class MarkingsViewModel
     /// </summary>
     public event Action? OrganDataChanged;
 
-    private readonly Dictionary<ProtoId<MarkingPrototype>, List<Color>> _previousColors = new();
+    private readonly Dictionary<ProtoId<MarkingPrototype>, List<Color>> _previousColors = [];
 
     public MarkingsViewModel()
     {

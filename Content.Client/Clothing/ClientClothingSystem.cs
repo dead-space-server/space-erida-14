@@ -18,6 +18,7 @@ using static Robust.Client.GameObjects.SpriteComponent;
 
 namespace Content.Client.Clothing;
 
+#pragma warning disable IDE0028
 public sealed partial class ClientClothingSystem : ClothingSystem
 {
     public const string Jumpsuit = "jumpsuit";

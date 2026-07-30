@@ -9,7 +9,7 @@ namespace Content.Client.UserInterface.Systems.Hands.Controls;
 public sealed class HandsContainer : ItemSlotUIContainer<HandButton>
 {
     private readonly GridContainer _grid;
-    private readonly List<HandButton> _orderedButtons = new();
+    private readonly List<HandButton> _orderedButtons = [];
     public HandsComponent? PlayerHandsComponent;
 
     public int ColumnLimit { get; set; } = 6;

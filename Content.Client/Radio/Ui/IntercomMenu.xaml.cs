@@ -17,7 +17,7 @@ public sealed partial class IntercomMenu : FancyWindow
     public event Action<bool>? OnSpeakerPressed;
     public event Action<string>? OnChannelSelected;
 
-    private readonly List<string> _channels = new();
+    private readonly List<string> _channels = [];
 
     public IntercomMenu()
     {

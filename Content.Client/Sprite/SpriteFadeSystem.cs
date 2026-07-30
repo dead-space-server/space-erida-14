@@ -32,9 +32,9 @@ public sealed partial class SpriteFadeSystem : EntitySystem
     [Dependency] private EntityQuery<FadingSpriteComponent> _fadingQuery = default!;
     [Dependency] private EntityQuery<FixturesComponent> _fixturesQuery = default!;
 
-    private List<(MapCoordinates Point, bool ExcludeBoundingBox)> _points = new();
+    private List<(MapCoordinates Point, bool ExcludeBoundingBox)> _points = [];
 
-    private readonly HashSet<FadingSpriteComponent> _comps = new();
+    private readonly HashSet<FadingSpriteComponent> _comps = [];
 
     private const float TargetAlpha = 0.4f;
     private const float ChangeRate = 1f;

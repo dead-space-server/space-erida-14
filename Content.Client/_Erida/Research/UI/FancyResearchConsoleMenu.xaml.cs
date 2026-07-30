@@ -46,7 +46,7 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// <summary>
     /// All technologies and their availablity
     /// </summary>
-    public Dictionary<string, ResearchAvailability> List = new();
+    public Dictionary<string, ResearchAvailability> List = [];
 
     /// <summary>
     /// Cached research points

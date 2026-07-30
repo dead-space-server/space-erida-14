@@ -8,8 +8,8 @@ public sealed partial class CrewManifestSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!;
 
-    private Dictionary<string, Dictionary<string, int>> _jobDepartmentLookup = new();
-    private HashSet<string> _departments = new();
+    private Dictionary<string, Dictionary<string, int>> _jobDepartmentLookup = [];
+    private HashSet<string> _departments = [];
 
     public IReadOnlySet<string> Departments => _departments;
 
@@ -48,7 +48,7 @@ public sealed partial class CrewManifestSystem : EntitySystem
             {
                 if (!_jobDepartmentLookup.TryGetValue(department.Roles[i - 1], out var departments))
                 {
-                    departments = new();
+                    departments = [];
                     _jobDepartmentLookup.Add(department.Roles[i - 1], departments);
                 }
 

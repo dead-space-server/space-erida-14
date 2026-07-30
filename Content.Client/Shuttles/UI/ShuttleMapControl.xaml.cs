@@ -61,14 +61,14 @@ public sealed partial class ShuttleMapControl : BaseShuttleControl
     /// <summary>
     /// Set every draw to determine the beacons that are clickable for mouse events
     /// </summary>
-    private List<IMapObject> _beacons = new();
+    private List<IMapObject> _beacons = [];
 
     // Per frame data to avoid re-allocating
-    private readonly List<IMapObject> _mapObjects = new();
-    private readonly Dictionary<Color, List<Vector2>> _verts = new();
-    private readonly Dictionary<Color, List<Vector2>> _edges = new();
-    private readonly Dictionary<Color, List<(Vector2, string)>> _strings = new();
-    private readonly List<ShuttleExclusionObject> _viewportExclusions = new();
+    private readonly List<IMapObject> _mapObjects = [];
+    private readonly Dictionary<Color, List<Vector2>> _verts = [];
+    private readonly Dictionary<Color, List<Vector2>> _edges = [];
+    private readonly Dictionary<Color, List<(Vector2, string)>> _strings = [];
+    private readonly List<ShuttleExclusionObject> _viewportExclusions = [];
 
     public ShuttleMapControl() : base(256f, 512f, 512f)
     {

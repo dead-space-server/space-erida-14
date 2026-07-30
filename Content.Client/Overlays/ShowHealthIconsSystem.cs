@@ -17,7 +17,7 @@ public sealed partial class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealt
     [Dependency] private IPrototypeManager _prototypeMan = default!;
 
     [ViewVariables]
-    public HashSet<string> DamageContainers = new();
+    public HashSet<string> DamageContainers = [];
 
     public override void Initialize()
     {

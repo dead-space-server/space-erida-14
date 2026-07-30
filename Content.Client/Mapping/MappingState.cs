@@ -35,11 +35,13 @@ using static Robust.Shared.Input.Binding.PointerInputCmdHandler;
 
 namespace Content.Client.Mapping;
 
+#pragma warning disable IDE0028
+
 public sealed partial class MappingState : GameplayStateBase
 {
-    #if !FULL_RELEASE
+#if !FULL_RELEASE
     [Dependency] private IClientAdminManager _admin = default!;
-    #endif
+#endif
 
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IEntityNetworkManager _entityNetwork = default!;
@@ -72,7 +74,7 @@ public sealed partial class MappingState : GameplayStateBase
     private bool _updatePlacement;
     private bool _updateEraseDecal;
 
-    private MappingScreen Screen => (MappingScreen) UserInterfaceManager.ActiveScreen!;
+    private MappingScreen Screen => (MappingScreen)UserInterfaceManager.ActiveScreen!;
     private MainViewport Viewport => UserInterfaceManager.ActiveScreen!.GetWidget<MainViewport>()!;
 
     public CursorState State { get; set; }
@@ -554,21 +556,21 @@ public sealed partial class MappingState : GameplayStateBase
         switch (prototype)
         {
             case EntityPrototype entity:
-            {
-                var placementId = Screen.EntityPlacementMode.SelectedId;
-
-                var placement = new PlacementInformation
                 {
-                    PlacementOption = placementId > 0 ? EntitySpawnWindow.InitOpts[placementId] : entity.PlacementMode,
-                    EntityType = entity.ID,
-                    IsTile = false
-                };
+                    var placementId = Screen.EntityPlacementMode.SelectedId;
 
-                Screen.EntityContainer.Visible = true;
-                _decal.SetActive(false);
-                _placement.BeginPlacing(placement);
-                break;
-            }
+                    var placement = new PlacementInformation
+                    {
+                        PlacementOption = placementId > 0 ? EntitySpawnWindow.InitOpts[placementId] : entity.PlacementMode,
+                        EntityType = entity.ID,
+                        IsTile = false
+                    };
+
+                    Screen.EntityContainer.Visible = true;
+                    _decal.SetActive(false);
+                    _placement.BeginPlacing(placement);
+                    break;
+                }
             case DecalPrototype decal:
                 _placement.Clear();
 
@@ -577,18 +579,18 @@ public sealed partial class MappingState : GameplayStateBase
                 Screen.DecalContainer.Visible = true;
                 break;
             case ContentTileDefinition tile:
-            {
-                var placement = new PlacementInformation
                 {
-                    PlacementOption = "AlignTileAny",
-                    TileType = tile.TileId,
-                    IsTile = true
-                };
+                    var placement = new PlacementInformation
+                    {
+                        PlacementOption = "AlignTileAny",
+                        TileType = tile.TileId,
+                        IsTile = true
+                    };
 
-                _decal.SetActive(false);
-                _placement.BeginPlacing(placement);
-                break;
-            }
+                    _decal.SetActive(false);
+                    _placement.BeginPlacing(placement);
+                    break;
+                }
             default:
                 _placement.Clear();
                 break;

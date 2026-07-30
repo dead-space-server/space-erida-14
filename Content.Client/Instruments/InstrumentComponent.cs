@@ -28,7 +28,7 @@ public sealed partial class InstrumentComponent : SharedInstrumentComponent
     ///     A queue of MidiEvents to be sent to the server.
     /// </summary>
     [ViewVariables]
-    public readonly List<RobustMidiEvent> MidiEventBuffer = new();
+    public readonly List<RobustMidiEvent> MidiEventBuffer = [];
 
     /// <summary>
     ///     Whether a midi song will loop or not.

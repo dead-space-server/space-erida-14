@@ -24,8 +24,8 @@ public sealed partial class PlayerListControl : BoxContainer
 
     private PlayerInfo? _selectedPlayer;
 
-    private List<PlayerInfo> _playerList = new();
-    private List<PlayerInfo> _sortedPlayerList = new();
+    private List<PlayerInfo> _playerList = [];
+    private List<PlayerInfo> _sortedPlayerList = [];
 
     public Comparison<PlayerInfo>? Comparison;
     public Func<PlayerInfo, string, string>? OverrideText;

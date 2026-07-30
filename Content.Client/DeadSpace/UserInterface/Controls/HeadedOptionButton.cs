@@ -14,8 +14,8 @@ public class HeadedOptionButton : ContainerButton
     public const string StyleClassOptionsBackground = "optionButtonBackground";
     public readonly ScrollContainer OptionsScroll;
 
-    public readonly List<ButtonData> _buttonData = new(); // DS14-TTS-search: Visibility changed from private to public
-    private readonly Dictionary<int, int> _idMap = new();
+    public readonly List<ButtonData> _buttonData = []; // DS14-TTS-search: Visibility changed from private to public
+    private readonly Dictionary<int, int> _idMap = [];
     private readonly Popup _popup;
     private readonly BoxContainer _popupVBox;
     private readonly Label _label;
@@ -51,7 +51,7 @@ public class HeadedOptionButton : ContainerButton
 
     public HeadedOptionButton()
     {
-        OptionStyleClasses = new List<string>();
+        OptionStyleClasses = [];
         AddStyleClass(StyleClassButton);
         OnPressed += OnPressedInternal;
 

@@ -32,7 +32,7 @@ public sealed partial class ScrubberControl : BoxContainer
     private Button _deselectAll => CDeselectAll;
 
     private GridContainer _gases => CGasContainer;
-    private Dictionary<Gas, Button> _gasControls = new();
+    private Dictionary<Gas, Button> _gasControls = [];
 
     public ScrubberControl(GasVentScrubberData data, string address)
     {

@@ -41,8 +41,8 @@ public sealed partial class MapScreen : BoxContainer
     private FTLState _state;
     private StartEndTime _ftlTime;
 
-    private List<ShuttleBeaconObject> _beacons = new();
-    private List<ShuttleExclusionObject> _exclusions = new();
+    private List<ShuttleBeaconObject> _beacons = [];
+    private List<ShuttleExclusionObject> _exclusions = [];
 
     private TimeSpan _nextPing;
     private TimeSpan _pingCooldown = TimeSpan.FromSeconds(3);
@@ -56,16 +56,16 @@ public sealed partial class MapScreen : BoxContainer
     public event Action<MapCoordinates, Angle>? RequestFTL;
     public event Action<NetEntity, Angle>? RequestBeaconFTL;
 
-    private readonly Dictionary<MapId, BoxContainer> _mapHeadings = new();
-    private readonly Dictionary<MapId, List<IMapObject>> _mapObjects = new();
-    private readonly List<(MapId mapId, IMapObject mapobj)> _pendingMapObjects = new();
+    private readonly Dictionary<MapId, BoxContainer> _mapHeadings = [];
+    private readonly Dictionary<MapId, List<IMapObject>> _mapObjects = [];
+    private readonly List<(MapId mapId, IMapObject mapobj)> _pendingMapObjects = [];
 
     /// <summary>
     /// Store the names of map object controls for re-sorting later.
     /// </summary>
-    private Dictionary<Control, string> _mapObjectControls = new();
+    private Dictionary<Control, string> _mapObjectControls = [];
 
-    private List<Control> _sortChildren = new();
+    private List<Control> _sortChildren = [];
 
     public MapScreen()
     {

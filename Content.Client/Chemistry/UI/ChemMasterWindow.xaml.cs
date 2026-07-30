@@ -109,7 +109,7 @@ namespace Content.Client.Chemistry.UI
         private List<ReagentButton> CreateReagentTransferButtons(ReagentId reagent, bool isBuffer, bool addReagentButtons)
         {
             if (!addReagentButtons)
-                return new List<ReagentButton>(); // Return an empty list if reagentTransferButton creation is disabled.
+                return []; // Return an empty list if reagentTransferButton creation is disabled.
 
             var buttonConfigs = new (string text, ChemMasterReagentAmount amount, string styleClass)[]
             {

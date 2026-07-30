@@ -34,8 +34,8 @@ namespace Content.Client.Verbs.UI
         [UISystemDependency] private readonly VerbSystem _verbSystem = default!;
 
         public NetEntity CurrentTarget;
-        public SortedSet<Verb> CurrentVerbs = new();
-        public List<VerbCategory> ExtraCategories = new();
+        public SortedSet<Verb> CurrentVerbs = [];
+        public List<VerbCategory> ExtraCategories = [];
 
         /// <summary>
         ///     Separate from <see cref="ContextMenuUIController.RootMenu"/>, since we can open a verb menu as a submenu
@@ -134,7 +134,7 @@ namespace Content.Client.Verbs.UI
         /// </summary>
         private void FillVerbPopup(ContextMenuPopup popup)
         {
-            HashSet<string> listedCategories = new();
+            HashSet<string> listedCategories = [];
             var extras = new ValueList<string>(ExtraCategories.Count);
 
             foreach (var cat in ExtraCategories)
@@ -169,7 +169,7 @@ namespace Content.Client.Verbs.UI
         public void AddVerbCategory(VerbCategory category, ContextMenuPopup popup)
         {
             // Get a list of the verbs in this category
-            List<Verb> verbsInCategory = new();
+            List<Verb> verbsInCategory = [];
             var drawIcons = false;
             foreach (var verb in CurrentVerbs)
             {
