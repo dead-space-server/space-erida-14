@@ -203,39 +203,39 @@ public sealed partial class AutoVotesSystem : EntitySystem
             if (!main.ShouldBeInFirstVote)
                 continue;
 
-            // foreach (var option in main.Options)
-            // if (DoesOptionLeadToPreset(option, _gameTicker.CurrentPreset.ID))
-            // {
-            //     _previousChoosedMainOption = option;
-            //     break;
-            // }
+            foreach (var option in main.Options)
+                if (DoesOptionLeadPreset(option, _gameTicker.CurrentPreset.ID))
+                {
+                    _previousChoosedMainOption = option;
+                    break;
+                }
         }
     }
 
-    // private bool DoesOptionLeadToPreset(AutoVoteOptionData option, ProtoId<GamePresetPrototype> presetId)
-    // {
-    //     switch (option.AnswerData.Action)
-    //     {
-    //         case AutoVoteOptionAction.GameModeStart:
-    //             return option.AnswerData.GamePresetProto.Id == presetId.Id;
+    private bool DoesOptionLeadPreset(AutoVoteOptionData option, ProtoId<GamePresetPrototype> presetId)
+    {
+        switch (option.AnswerData.Action)
+        {
+            case AutoVoteOptionAction.GameModeStart:
+                return option.AnswerData.GamePresetProto.Id == presetId.Id;
 
-    //         case AutoVoteOptionAction.NextVote:
-    //             foreach (var nextProtoId in option.AnswerData.NextVoteProto)
-    //             {
-    //                 if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
-    //                     continue;
+            case AutoVoteOptionAction.NextVote:
+                foreach (var nextProtoId in option.AnswerData.NextVoteProto)
+                {
+                    if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
+                        continue;
 
-    //                 // foreach (var childOption in nextProto.Options)
-    //                 //     if (DoesOptionLeadToPreset(childOption, presetId))
-    //                 //         return true;
-    //             }
+                    foreach (var childOption in nextProto.Options)
+                        if (DoesOptionLeadPreset(childOption, presetId))
+                            return true;
+                }
 
-    //             return false;
+                return false;
 
-    //         default:
-    //             return false;
-    //     }
-    // }
+            default:
+                return false;
+        }
+    }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent _)
     {
