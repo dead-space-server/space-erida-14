@@ -59,6 +59,7 @@ public sealed partial class AutoVotesSystem : EntitySystem
 
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarting);
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup);
+        SubscribeLocalEvent<RoundStartedEvent>(OnRoundStarted);
     }
 
     private void FindAndStartMainVotes()
@@ -189,7 +190,10 @@ public sealed partial class AutoVotesSystem : EntitySystem
     private void OnRoundStarting(RoundStartingEvent _)
     {
         _voteTriggered = false;
+    }
 
+    private void OnRoundStarted(RoundStartedEvent _)
+    {
         if (_gameTicker.CurrentPreset == null)
             return;
 
