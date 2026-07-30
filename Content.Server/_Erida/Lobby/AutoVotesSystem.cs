@@ -35,11 +35,19 @@ public sealed partial class AutoVotesSystem : EntitySystem
     private List<string> _previousGamerules = [];
     private AutoVoteOptionData _previousChoosedMainOption = new();
     private TimeSpan _startAfter = TimeSpan.Zero;
+    private bool _isAutoVotesEnabled;
     private bool _voteTriggered;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _cfg.OnValueChanged(CCVars.AutomaticVoteEnabled,
+            value =>
+            {
+                _isAutoVotesEnabled = value;
+            }, true);
+
 
         _cfg.OnValueChanged(CCVars.AutomaticVoteStartAt,
             value =>
@@ -194,6 +202,9 @@ public sealed partial class AutoVotesSystem : EntitySystem
         base.Update(frameTime);
 
         if (_gameTicker.RunLevel != GameRunLevel.PreRoundLobby)
+            return;
+
+        if (!_isAutoVotesEnabled)
             return;
 
         if (_voteTriggered)

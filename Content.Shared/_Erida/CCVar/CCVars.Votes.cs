@@ -9,7 +9,7 @@ namespace Content.Shared.CCVar;
 public sealed partial class CCVars
 {
     public static readonly CVarDef<bool> AutomaticVoteEnabled =
-        CVarDef.Create("autovote.enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("autovote.enabled", false, CVar.SERVERONLY);
 
     public static readonly CVarDef<TimeSpan> AutomaticVoteDuration =
         CVarDef.Create("autovote.duration", TimeSpan.FromSeconds(30), CVar.SERVERONLY);

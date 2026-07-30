@@ -178,15 +178,6 @@ public sealed partial class AntagSelectionSystem
         if (!_whitelist.CheckBoth(uid, def.Blacklist, def.Whitelist))
             return false;
 
-        // Erida start
-        // IPC antag selection bug. Not best fix, but better then nothing
-        if (_containerSystem.IsEntityInContainer(uid.Value)
-            && _containerSystem.TryGetContainingContainer((uid.Value, null), out var container)
-            && container.ID == "body_organs"
-            && !_whitelist.CheckBoth(container.Owner, def.Blacklist, def.Whitelist))
-            return false;
-        // Erida end
-
         if (_arrivals.IsOnArrivals((uid.Value, null)))
             return false;
 
