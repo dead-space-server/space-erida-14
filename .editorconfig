@@ -1,4 +1,4 @@
-﻿root = true
+root = true
 
 [*]
 
@@ -371,3 +371,11 @@ indent_size = 2
 
 [{*.yaml,*.yml}]
 ij_yaml_indent_sequence_value = false
+
+# Erida start
+[*.cs]
+dotnet_analyzer_diagnostic.severity = none
+
+[**/_*/**.cs]
+dotnet_analyzer_diagnostic.severity = warning
+# Erida end
