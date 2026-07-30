@@ -8,6 +8,8 @@ using Content.Shared.Storage;
 
 namespace Content.Shared._Nyanotrasen.Item.PseudoItem;
 
+#pragma warning disable CS0618 // Erida edit
+
 public partial class SharedPseudoItemSystem
 {
     /// <summary>

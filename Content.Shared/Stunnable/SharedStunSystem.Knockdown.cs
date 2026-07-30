@@ -22,6 +22,8 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared.Stunnable;
 
 /// <summary>

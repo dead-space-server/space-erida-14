@@ -10,6 +10,8 @@ using Content.Shared.Verbs;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Power.EntitySystems
 {
     public sealed partial class PowerReceiverSystem : SharedPowerReceiverSystem
@@ -53,7 +55,7 @@ namespace Content.Server.Power.EntitySystems
             {
                 Text = Loc.GetString("verb-debug-toggle-need-power"),
                 Category = VerbCategory.Debug,
-                Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/smite.svg.192dpi.png")), // "smite" is a lightning bolt
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/smite.svg.192dpi.png")), // "smite" is a lightning bolt
                 Act = () =>
                 {
                     SetNeedsPower(uid, !component.NeedsPower, component);
@@ -108,7 +110,7 @@ namespace Content.Server.Power.EntitySystems
 
         private void AddSwitchPowerVerb(EntityUid uid, PowerSwitchComponent component, GetVerbsEvent<AlternativeVerb> args)
         {
-            if(!args.CanAccess || !args.CanInteract)
+            if (!args.CanAccess || !args.CanInteract)
                 return;
 
             if (!_handsQuery.HasComp(args.User))
@@ -126,7 +128,7 @@ namespace Content.Server.Power.EntitySystems
                 {
                     TogglePower(uid, user: args.User);
                 },
-                Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/Spare/poweronoff.svg.192dpi.png")),
                 Text = Loc.GetString("power-switch-component-toggle-verb"),
                 Priority = -3
             };

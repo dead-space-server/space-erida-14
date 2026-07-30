@@ -6,6 +6,9 @@ using Content.Shared.NodeContainer;
 using Content.Shared.NodeContainer.NodeGroups;
 using Content.Shared.Power;
 
+#pragma warning disable CS0618 // Erida edit
+
+
 namespace Content.Server.Power.Components
 {
     // TODO find a way to just remove this or turn it into one component.
@@ -62,7 +65,7 @@ namespace Content.Server.Power.Components
             if (_entMan.TryGetComponent(Owner, out NodeContainerComponent? container))
             {
                 var compatibleNet = container.Nodes.Values
-                    .Where(node => (NodeId == null || NodeId == node.Name) && node.NodeGroupID == (NodeGroupID) Voltage)
+                    .Where(node => (NodeId == null || NodeId == node.Name) && node.NodeGroupID == (NodeGroupID)Voltage)
                     .Select(node => node.NodeGroup)
                     .OfType<TNetType>()
                     .FirstOrDefault();

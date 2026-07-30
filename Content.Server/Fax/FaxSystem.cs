@@ -33,6 +33,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Fax;
 
 public sealed partial class FaxSystem : EntitySystem

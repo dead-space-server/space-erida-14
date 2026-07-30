@@ -6,6 +6,8 @@ using Content.Shared.Actions.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared._Lavaland.Megafauna.Systems;
 
 public sealed partial class MegafaunaSystem

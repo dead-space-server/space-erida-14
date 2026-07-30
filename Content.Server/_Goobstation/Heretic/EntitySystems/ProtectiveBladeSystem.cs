@@ -8,6 +8,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Server._Goobstation.Heretic.Components;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Damage;

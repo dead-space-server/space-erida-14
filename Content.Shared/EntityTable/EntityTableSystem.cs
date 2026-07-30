@@ -6,6 +6,10 @@ using Robust.Shared.Random;
 
 namespace Content.Shared.EntityTable;
 
+
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 public sealed partial class EntityTableSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototypeManager = default!;

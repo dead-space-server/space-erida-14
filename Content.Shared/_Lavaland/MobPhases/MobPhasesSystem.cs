@@ -10,6 +10,8 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using JetBrains.Annotations;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared._Lavaland.MobPhases;
 
 public sealed partial class MobPhasesSystem : EntitySystem

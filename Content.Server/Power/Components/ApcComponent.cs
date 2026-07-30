@@ -3,6 +3,8 @@ using Content.Shared.APC;
 using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Power.Components;
 
 [RegisterComponent, AutoGenerateComponentPause]

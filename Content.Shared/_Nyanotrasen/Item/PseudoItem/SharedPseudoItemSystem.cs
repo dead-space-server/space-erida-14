@@ -49,6 +49,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Nyanotrasen.Item.PseudoItem;
 
+#pragma warning disable CS0618 // Erida edit
+
 public abstract partial class SharedPseudoItemSystem : EntitySystem
 {
     [Dependency] private SharedStorageSystem _storage = default!;

@@ -20,6 +20,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared._EstacaoPirata.Cards.Deck;
 
 /// <summary>

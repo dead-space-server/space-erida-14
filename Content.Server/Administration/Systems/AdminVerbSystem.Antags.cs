@@ -14,6 +14,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Roles.Components;
 
+#pragma warning disable CS0612 // Erida edit
+
 namespace Content.Server.Administration.Systems;
 
 public sealed partial class AdminVerbSystem

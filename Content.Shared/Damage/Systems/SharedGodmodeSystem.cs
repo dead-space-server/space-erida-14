@@ -10,6 +10,9 @@ using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Robust.Shared.Prototypes;
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 namespace Content.Shared.Damage.Systems;
 
 public abstract partial class SharedGodmodeSystem : EntitySystem

@@ -7,6 +7,8 @@ using Content.Shared.Movement.Systems;
 
 namespace Content.Shared.Damage.Systems;
 
+#pragma warning disable CS0618 // Erida edit
+
 public sealed partial class SlowOnDamageSystem : EntitySystem
 {
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifierSystem = default!;

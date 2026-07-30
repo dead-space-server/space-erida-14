@@ -20,6 +20,8 @@ using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Emp;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server._ADT.Silicon.Systems;
 
 public sealed partial class SiliconEmpSystem : EntitySystem

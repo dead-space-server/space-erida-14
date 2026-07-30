@@ -7,6 +7,8 @@ using Robust.Shared.Network;
 
 namespace Content.Shared.DoAfter;
 
+#pragma warning disable CS0618 // Erida edit
+
 public abstract partial class SharedDoAfterSystem : EntitySystem
 {
     [Dependency] private IDynamicTypeFactory _factory = default!;

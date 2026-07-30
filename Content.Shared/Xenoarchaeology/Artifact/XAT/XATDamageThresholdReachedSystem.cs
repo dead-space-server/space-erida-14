@@ -6,6 +6,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Xenoarchaeology.Artifact.XAT;
 
+#pragma warning disable CS0618 // Erida edit
+
 /// <summary>
 /// System for xeno artifact trigger that requires certain damage to be applied to artifact within a timeframe.
 /// </summary>

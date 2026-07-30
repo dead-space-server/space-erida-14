@@ -9,6 +9,8 @@ using Content.Shared.Stacks;
 using JetBrains.Annotations;
 using Robust.Shared.Map.Components;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Engineering.EntitySystems
 {
     [UsedImplicitly]

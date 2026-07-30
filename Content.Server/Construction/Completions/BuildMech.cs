@@ -8,6 +8,8 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Construction.Completions;
 
 /// <summary>

@@ -4,6 +4,8 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared.NodeContainer;
 using Content.Shared.Power;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Power.Components;
 
 /// <summary>
@@ -83,7 +85,7 @@ public sealed partial class PowerMonitoringDeviceComponent : Component
     public string SpriteState = string.Empty;
 
     /// <summary>
-    ///    Determines what power monitoring group this entity should belong to 
+    ///    Determines what power monitoring group this entity should belong to
     /// </summary>
     [DataField("group", required: true), ViewVariables]
     public PowerMonitoringConsoleGroup Group;

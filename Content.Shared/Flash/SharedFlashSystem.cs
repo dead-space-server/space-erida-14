@@ -28,6 +28,7 @@ using Content.Shared._Goobstation.FlashModifiers;
 
 namespace Content.Shared.Flash;
 
+#pragma warning disable CS0618 // Erida edit
 public abstract partial class SharedFlashSystem : EntitySystem
 {
     [Dependency] private SharedAppearanceSystem _appearance = default!;

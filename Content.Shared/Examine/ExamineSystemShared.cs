@@ -11,6 +11,8 @@ using Robust.Shared.Physics;
 using Robust.Shared.Utility;
 using static Content.Shared.Interaction.SharedInteractionSystem;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared.Examine
 {
     public abstract partial class ExamineSystemShared : EntitySystem
@@ -393,7 +395,7 @@ namespace Content.Shared.Examine
         ///     sort messages the same as well as grouped together properly, even if subscriptions are different.
         ///     You should wrap it in a using() block so popping automatically occurs.
         /// </summary>
-        public ExamineGroupDisposable PushGroup(string groupName, int priority=0)
+        public ExamineGroupDisposable PushGroup(string groupName, int priority = 0)
         {
             // Ensure that other examine events correctly ended their groups.
             DebugTools.Assert(_currentGroupPart == null);
@@ -423,7 +425,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="PushMarkup"/>
         /// <seealso cref="PushText"/>
-        public void PushMessage(FormattedMessage message, int priority=0)
+        public void PushMessage(FormattedMessage message, int priority = 0)
         {
             if (message.Nodes.Count == 0)
                 return;
@@ -446,7 +448,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="PushText"/>
         /// <seealso cref="PushMessage"/>
-        public void PushMarkup(string markup, int priority=0)
+        public void PushMarkup(string markup, int priority = 0)
         {
             PushMessage(FormattedMessage.FromMarkupOrThrow(markup), priority);
         }
@@ -458,7 +460,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="PushMarkup"/>
         /// <seealso cref="PushMessage"/>
-        public void PushText(string text, int priority=0)
+        public void PushText(string text, int priority = 0)
         {
             var msg = new FormattedMessage();
             msg.AddText(text);
@@ -494,7 +496,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="AddText"/>
         /// <seealso cref="AddMessage"/>
-        public void AddMarkup(string markup, int priority=0)
+        public void AddMarkup(string markup, int priority = 0)
         {
             AddMessage(FormattedMessage.FromMarkupOrThrow(markup), priority);
         }
@@ -506,7 +508,7 @@ namespace Content.Shared.Examine
         /// </summary>
         /// <seealso cref="AddMarkup"/>
         /// <seealso cref="AddMessage"/>
-        public void AddText(string text, int priority=0)
+        public void AddText(string text, int priority = 0)
         {
             var msg = new FormattedMessage();
             msg.AddText(text);

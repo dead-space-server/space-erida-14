@@ -4,6 +4,8 @@ using ActivatableUIComponent = Content.Shared.UserInterface.ActivatableUICompone
 
 namespace Content.Server.Instruments;
 
+#pragma warning disable CS0618 // Erida edit
+
 [RegisterComponent]
 public sealed partial class InstrumentComponent : SharedInstrumentComponent
 {

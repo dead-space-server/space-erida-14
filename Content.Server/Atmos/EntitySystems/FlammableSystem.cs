@@ -31,6 +31,8 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class FlammableSystem : EntitySystem

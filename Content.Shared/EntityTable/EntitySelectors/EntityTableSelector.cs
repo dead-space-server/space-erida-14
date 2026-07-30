@@ -7,6 +7,10 @@ using Robust.Shared.Random;
 
 namespace Content.Shared.EntityTable.EntitySelectors;
 
+
+#pragma warning disable CS0618 // Erida edit
+
+
 [ImplicitDataDefinitionForInheritors, UsedImplicitly(ImplicitUseTargetFlags.WithInheritors)]
 public abstract partial class EntityTableSelector
 {

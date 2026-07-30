@@ -6,6 +6,8 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 using System.Diagnostics.Tracing;
 using Content.Shared.Tools.Systems;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Power.Components;
 
 /// <summary>

@@ -10,6 +10,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Shared.ActionBlocker;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Climbing.Events;

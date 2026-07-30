@@ -10,6 +10,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration.Commands;
 
+#pragma warning disable CS0618 // Erida edit
+
 [AdminCommand(AdminFlags.Fun)]
 public sealed partial class PlayGlobalSoundCommand : IConsoleCommand
 {

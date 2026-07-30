@@ -2,6 +2,8 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffect;
 using Robust.Shared.Timing;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared.Jittering
 {
     /// <summary>
@@ -56,7 +58,7 @@ namespace Content.Shared.Jittering
             {
                 var jittering = Comp<JitteringComponent>(uid);
 
-                if(forceValueChange || jittering.Amplitude < amplitude)
+                if (forceValueChange || jittering.Amplitude < amplitude)
                     jittering.Amplitude = amplitude;
 
                 if (forceValueChange || jittering.Frequency < frequency)

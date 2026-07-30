@@ -19,6 +19,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared.Light.EntitySystems;
 
 public abstract partial class SharedPoweredLightSystem : EntitySystem

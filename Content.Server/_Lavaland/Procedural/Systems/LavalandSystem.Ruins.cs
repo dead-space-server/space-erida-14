@@ -3,6 +3,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using System.Linq;
 using System.Numerics;
 using Content.Server._Lavaland.Procedural.Components;
@@ -382,7 +384,7 @@ public sealed partial class LavalandSystem
                     _map.SetTile(grid,
                         grid,
                         tilePos,
-                        _tile.GetVariantTile((ContentTileDefinition) _tiledef[DungeonSystem.FallbackTileId],
+                        _tile.GetVariantTile((ContentTileDefinition)_tiledef[DungeonSystem.FallbackTileId],
                             _random.GetRandom()));
                 }
 

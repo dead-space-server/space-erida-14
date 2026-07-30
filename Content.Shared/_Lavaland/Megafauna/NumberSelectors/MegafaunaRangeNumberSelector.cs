@@ -3,6 +3,8 @@ using Robust.Shared.Random;
 
 namespace Content.Shared._Lavaland.Megafauna.NumberSelectors;
 
+#pragma warning disable CS0618 // Erida edit
+
 /// <summary>
 /// Gives a value between the two numbers specified, inclusive.
 /// </summary>

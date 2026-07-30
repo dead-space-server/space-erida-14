@@ -1,6 +1,8 @@
 using Content.Server.Atmos.Piping.EntitySystems;
 using JetBrains.Annotations;
 
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Server.Atmos.Piping.Components;
 
 [RegisterComponent]

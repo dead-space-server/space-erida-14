@@ -10,6 +10,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using System.Linq;
 using System.Numerics;
 using System.Threading;
@@ -224,8 +226,8 @@ public sealed partial class BlobCoreSystem : EntitySystem
 
     private void OnBlobCaptureInfo(EntityUid uid, Objectives.BlobCaptureConditionComponent component, ref ObjectiveAfterAssignEvent args)
     {
-        _metaDataSystem.SetEntityName(uid,Loc.GetString("objective-condition-blob-capture-title"));
-        _metaDataSystem.SetEntityDescription(uid,Loc.GetString("objective-condition-blob-capture-description", ("count", component.Target)));
+        _metaDataSystem.SetEntityName(uid, Loc.GetString("objective-condition-blob-capture-title"));
+        _metaDataSystem.SetEntityDescription(uid, Loc.GetString("objective-condition-blob-capture-description", ("count", component.Target)));
     }
 
     private void OnBlobCaptureProgress(EntityUid uid, Objectives.BlobCaptureConditionComponent component, ref ObjectiveGetProgressEvent args)
@@ -241,7 +243,7 @@ public sealed partial class BlobCoreSystem : EntitySystem
         args.Progress = 0;
 
         if (target != 0)
-            args.Progress = MathF.Min((float) blobCoreComponent.BlobTiles.Count / target, 1f);
+            args.Progress = MathF.Min((float)blobCoreComponent.BlobTiles.Count / target, 1f);
         else
             args.Progress = 1f;
     }
@@ -259,7 +261,7 @@ public sealed partial class BlobCoreSystem : EntitySystem
 
         // This one for points
         var pt = store.Balance.GetValueOrDefault(BlobMoney);
-        var pointsSeverity = (short) Math.Clamp(Math.Round(pt.Float() / 10f), 0, 51);
+        var pointsSeverity = (short)Math.Clamp(Math.Round(pt.Float() / 10f), 0, 51);
         _alerts.ShowAlert(component.Observer.Value, BlobResource, pointsSeverity);
 
         // And this one for health.
@@ -267,7 +269,7 @@ public sealed partial class BlobCoreSystem : EntitySystem
             return;
 
         var currentHealth = component.CoreBlobTotalHealth - _damageable.GetTotalDamage((core.Owner, damageComp));
-        var healthSeverity = (short) Math.Clamp(Math.Round(currentHealth.Float() / 20f), 0, 20);
+        var healthSeverity = (short)Math.Clamp(Math.Round(currentHealth.Float() / 20f), 0, 20);
 
         _alerts.ShowAlert(component.Observer.Value, BlobHealth, healthSeverity);
     }
@@ -331,10 +333,10 @@ public sealed partial class BlobCoreSystem : EntitySystem
         }
     }
 
-    private void ChangeBlobEntChem(EntityUid uid, BlobChemType newChem, BlobTileComponent? compo = null )
+    private void ChangeBlobEntChem(EntityUid uid, BlobChemType newChem, BlobTileComponent? compo = null)
     {
         // No change for reflective blobs! SPCR-2025
-        if(compo is not null && compo.BlobTileType == BlobTileType.Reflective)
+        if (compo is not null && compo.BlobTileType == BlobTileType.Reflective)
             return;
         switch (newChem)
         {
@@ -582,7 +584,7 @@ public sealed partial class BlobCoreSystem : EntitySystem
                 if (blobRuleComp.Stage is BlobStage.TheEnd or BlobStage.Default)
                     continue;
 
-                if(stationUid != null)
+                if (stationUid != null)
                     _alertLevelSystem.SetLevel(stationUid.Value, "green", true, true, true);
 
                 _roundEndSystem.CancelRoundEndCountdown(forceRecall: true);

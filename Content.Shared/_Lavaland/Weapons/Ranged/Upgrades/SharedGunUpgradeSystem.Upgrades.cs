@@ -9,6 +9,9 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Weapons.Ranged.Upgrades.Components;
 using Robust.Shared.Containers;
 
+
+#pragma warning disable CS0618 // Erida edit
+
 namespace Content.Shared._Lavaland.Weapons.Ranged.Upgrades;
 
 public abstract partial class SharedGunUpgradeSystem

@@ -9,6 +9,8 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Shared.FixedPoint;
 using Content.Shared._Goobstation.Clothing.Components;
 using Content.Server.Ghost.Roles.Components;
@@ -75,7 +77,7 @@ public sealed partial class HereticAbilitySystem
         }
 
         var maxToSpawn = ent.Comp.MaxMimics - ent.Comp.FleshMimics.Count;
-        var toSpawn = (int) (ent.Comp.TrackedDamage / ent.Comp.MimicDamage);
+        var toSpawn = (int)(ent.Comp.TrackedDamage / ent.Comp.MimicDamage);
         toSpawn = Math.Clamp(toSpawn, 0, maxToSpawn);
 
         if (toSpawn == 0)

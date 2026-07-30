@@ -3,6 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+#pragma warning disable CS0618 // Erida edit
+#pragma warning disable CS0672 // Erida edit
+
 using Content.Shared._Lavaland.Aggression;
 using Content.Shared._Lavaland.Anger.Components;
 using Content.Shared._Lavaland.Megafauna.Events;

@@ -5,6 +5,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+
+#pragma warning disable CS0618 // Erida edit
+
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Network;
 

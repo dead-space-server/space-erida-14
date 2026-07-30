@@ -47,7 +47,7 @@ jobs:
 
       - name: Run Content.Tests
         shell: bash
-        run: dotnet test --property:WarningLevel=0 --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0 NUnit.TestOutputXml=logs NUnit.WorkDirectory="$(pwd)/test_results/content-tests"
+        run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0 NUnit.TestOutputXml=logs NUnit.WorkDirectory="$(pwd)/test_results/content-tests"
 
       - name: Archive NUnit3 Content.Tests results.
         if: always()

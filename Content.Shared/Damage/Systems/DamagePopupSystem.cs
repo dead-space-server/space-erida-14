@@ -4,6 +4,8 @@ using Content.Shared.Popups;
 
 namespace Content.Shared.Damage.Systems;
 
+#pragma warning disable CS0618 // Erida edit
+
 public sealed partial class DamagePopupSystem : EntitySystem
 {
     [Dependency] private SharedPopupSystem _popupSystem = default!;

@@ -18,6 +18,7 @@ using Content.Shared.Destructible;
 
 namespace Content.Server.Nutrition.EntitySystems;
 
+#pragma warning disable CS0618 // Erida edit
 public sealed partial class SliceableFoodSystem : EntitySystem
 {
     [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
