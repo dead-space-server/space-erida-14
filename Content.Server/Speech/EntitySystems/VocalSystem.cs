@@ -97,8 +97,14 @@ public sealed partial class VocalSystem : EntitySystem
                 return;
             }
         }
+        // Goobstation end
+
+        if (component.EmoteSounds is not { } sounds)
+            return;
+
+        // just play regular sound based on emote proto
+        args.Handled = _chat.TryPlayEmoteSound(uid, _proto.Index(sounds), args.Emote);
     }
-    // Goobstation end
 
     private void OnScreamAction(EntityUid uid, VocalComponent component, ScreamActionEvent args)
     {

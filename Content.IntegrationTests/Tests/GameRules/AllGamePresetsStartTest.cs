@@ -6,12 +6,15 @@ using Content.Server.Antag;
 using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
+using Content.Server.Preferences.Managers;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Antag;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
+using Content.Shared.Preferences;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
@@ -113,6 +116,25 @@ public sealed class AllGamePresetsStartTest : GameTest
             var dummies = await server.AddDummySessions(min - 1);
             // Put our client at the front of the list.
             players = players.Union(dummies).ToList();
+
+            // Erida start
+            await server.WaitPost(() =>
+            {
+                var prefsMgr = IoCManager.Resolve<IServerPreferencesManager>();
+                foreach (var dummy in dummies)
+                {
+                    var prefs = prefsMgr.GetPreferences(dummy.UserId);
+                    if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
+                        continue;
+
+                    if (profile.Species == "IPC")
+                    {
+                        var fixedProfile = profile.WithSpecies("Human");
+                        prefsMgr.SetProfile(dummy.UserId, prefs.SelectedCharacterIndex, fixedProfile);
+                    }
+                }
+            });
+            // Erida end
         }
 
         await Pair.RunUntilSynced();
