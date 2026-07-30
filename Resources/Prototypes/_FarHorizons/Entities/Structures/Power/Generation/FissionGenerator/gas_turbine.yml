@@ -52,7 +52,6 @@
         layer:
         - MachineLayer
   - type: Damageable
-    damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
   - type: Anchorable
     delay: 10
@@ -119,7 +118,8 @@
     guides:
     - GasTurbine
     - Power
-  - type: Injurable #Erida shitfix
+  - type: Injurable
+  - damageContainer: StructuralInorganic
 
 - type: entity
   id: BaseGasTurbineSmall
