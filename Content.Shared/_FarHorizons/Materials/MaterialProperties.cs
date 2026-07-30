@@ -4,7 +4,7 @@
 /// A data type that stores information on a material's properties
 /// </summary>
 [DataDefinition]
-public sealed partial class MaterialProperties()
+public sealed partial class MaterialProperties
 {
     [DataField("electrical")]
     public float ElectricalConductivity { get; set; } = 5;
