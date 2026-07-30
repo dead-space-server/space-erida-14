@@ -188,7 +188,7 @@ public sealed partial class AutoVotesSystem : EntitySystem
         _previousGamerules.Add(data.GamePresetProto.Value);
 
         var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
-        ticker.SetGamePreset(data.GamePresetProto);
+        ticker.SetGamePreset(data.GamePresetProto.Value);
     }
 
     private void OnRoundStarting(RoundStartingEvent _)
