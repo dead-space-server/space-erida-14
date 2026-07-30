@@ -161,6 +161,7 @@ public sealed partial class AutoVotesSystem : EntitySystem
             {
                 if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
                     && _previousGamerules.Count != 0
+                    && protoData.Options.Count > 1
                     && option.AnswerData.GamePresetProto.Id == _previousGamerules[_previousGamerules.Count - 1])
                     continue;
 
