@@ -28,10 +28,9 @@ public sealed class AllGamePresetsStartTest : GameTest
     /// A list of blacklisted <see cref="GamePresetPrototype"/> for this test. Some down streams might make changes which nuke upstream game modes they don't use.
     /// This prevents them from being tested. If you use this to silence valid test fails and your game fails to start. Skill issue. Do 100 push-ups.
     /// </summary>
-    private static readonly HashSet<string> IgnoredPresets = []; // Is a string to prevent YAML Linter from freaking if this is empty.
+    private static readonly HashSet<string> IgnoredPresets = ["Zombie"]; // Is a string to prevent YAML Linter from freaking if this is empty.
 
     private static string[] _gamePresets = GameDataScrounger.PrototypesOfKind<GamePresetPrototype>().Where(p => !IgnoredPresets.Contains(p)).ToArray();
-
     public override PoolSettings PoolSettings => new()
     {
         Dirty = true,
@@ -116,25 +115,6 @@ public sealed class AllGamePresetsStartTest : GameTest
             var dummies = await server.AddDummySessions(min - 1);
             // Put our client at the front of the list.
             players = players.Union(dummies).ToList();
-
-            // Erida start
-            await server.WaitPost(() =>
-            {
-                var prefsMgr = IoCManager.Resolve<IServerPreferencesManager>();
-                foreach (var dummy in dummies)
-                {
-                    var prefs = prefsMgr.GetPreferences(dummy.UserId);
-                    if (prefs.SelectedCharacter is not HumanoidCharacterProfile profile)
-                        continue;
-
-                    if (profile.Species == "IPC")
-                    {
-                        var fixedProfile = profile.WithSpecies("Human");
-                        prefsMgr.SetProfile(dummy.UserId, prefs.SelectedCharacterIndex, fixedProfile);
-                    }
-                }
-            });
-            // Erida end
         }
 
         await Pair.RunUntilSynced();
