@@ -239,6 +239,10 @@
 - type: entity
   parent: [ OrganArachnidVisual, OrganBaseEyes, OrganArachnidInternal ]
   id: OrganArachnidEyes
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganArachnidInternal ]

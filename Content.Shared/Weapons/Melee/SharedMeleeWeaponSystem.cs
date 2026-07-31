@@ -70,7 +70,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
     [Dependency] private EntityQuery<DamageableComponent> _damageQuery = default!;
 
-    private const int AttackMask = (int) (CollisionGroup.MobMask | CollisionGroup.Opaque);
+    private const int AttackMask = (int)(CollisionGroup.MobMask | CollisionGroup.Opaque);
 
     /// <summary>
     /// Maximum amount of targets allowed for a wide-attack.
@@ -207,7 +207,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
     private void OnLightAttack(LightAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not { } user)
             return;
 
         if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
@@ -221,7 +221,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
     private void OnHeavyAttack(HeavyAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not { } user)
             return;
 
         if (!TryGetWeapon(user, out var weaponUid, out var weapon) ||
@@ -235,7 +235,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
     private void OnDisarmAttack(DisarmAttackEvent msg, EntitySessionEventArgs args)
     {
-        if (args.SenderSession.AttachedEntity is not {} user)
+        if (args.SenderSession.AttachedEntity is not { } user)
             return;
 
         if (TryGetWeapon(user, out var weaponUid, out var weapon))
@@ -354,6 +354,17 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         return AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(targetXform.Coordinates)), null, predicted);
     }
+
+    // Goobstation start
+    public bool AttemptHeavyAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, List<EntityUid> targets, EntityCoordinates coordinates)
+    {
+        return AttemptAttack(user,
+            weaponUid,
+            weapon,
+            new HeavyAttackEvent(GetNetEntity(weaponUid), GetNetEntityList(targets), GetNetCoordinates(coordinates)),
+            null);
+    }
+    // Goobstation end
 
     public bool AttemptDisarmAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
     {
@@ -485,7 +496,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         return true;
     }
 
-    protected abstract bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session);
+    public abstract bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session); // Goob edit
 
     protected virtual void DoLightAttack(EntityUid user, LightAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
@@ -528,6 +539,13 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             return;
         }
 
+        // Goobstation start
+        var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm);
+        RaiseLocalEvent(target.Value, beforeEvent);
+        if (beforeEvent.Cancelled)
+            return;
+        // Goobstation end
+
         // Sawmill.Debug($"Melee damage is {damage.Total} out of {component.Damage.Total}");
 
         // Raise event before doing damage so we can cancel damage if the event is handled
@@ -557,7 +575,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         var modifiedDamage = DamageSpecifier.ApplyModifierSets(damage + hitEvent.BonusDamage + attackedEvent.BonusDamage, hitEvent.ModifiersList);
 
-        if (Damageable.TryChangeDamage(target.Value, modifiedDamage, out var damageResult, origin:user, ignoreResistances:resistanceBypass))
+        if (Damageable.TryChangeDamage(target.Value, modifiedDamage, out var damageResult, origin: user, ignoreResistances: resistanceBypass))
         {
             // If the target has stamina and is taking blunt damage, they should also take stamina damage based on their blunt to stamina factor
             if (damageResult.DamageDict.TryGetValue("Blunt", out var bluntDamage))
@@ -588,7 +606,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         }
     }
 
-    protected abstract void DoDamageEffect(List<EntityUid> targets, EntityUid? user,  TransformComponent targetXform);
+    protected abstract void DoDamageEffect(List<EntityUid> targets, EntityUid? user, TransformComponent targetXform);
 
     private bool DoHeavyAttack(EntityUid user, HeavyAttackEvent ev, EntityUid meleeUid, MeleeWeaponComponent component, ICommonSession? session)
     {
@@ -674,6 +692,13 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             if (entity == user ||
                 !_damageQuery.HasComponent(entity))
                 continue;
+
+            // Goobstation start
+            var beforeEvent = new BeforeHarmfulActionEvent(user, HarmfulActionType.Harm);
+            RaiseLocalEvent(entity, beforeEvent);
+            if (beforeEvent.Cancelled)
+                continue;
+            // Goobstation end
 
             targets.Add(entity);
         }
@@ -764,11 +789,11 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         return true;
     }
 
-    protected HashSet<EntityUid> ArcRayCast(Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId, EntityUid ignore)
+    public HashSet<EntityUid> ArcRayCast(Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId, EntityUid ignore)
     {
         // TODO: This is pretty sucky.
         var widthRad = arcWidth;
-        var increments = 1 + 35 * (int) Math.Ceiling(widthRad / (2 * Math.PI));
+        var increments = 1 + 35 * (int)Math.Ceiling(widthRad / (2 * Math.PI));
         var increment = widthRad / increments;
         var baseAngle = angle - widthRad / 2;
 

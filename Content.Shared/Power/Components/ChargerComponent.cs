@@ -1,4 +1,5 @@
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio; // erida edit
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -38,6 +39,17 @@ public sealed partial class ChargerComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool Portable = false;
+
+    // erida edit start
+    [DataField, AutoNetworkedField]
+    public float TargetTemp = 373.0f;
+
+    [DataField, AutoNetworkedField]
+    public bool BlowUp = true;
+
+    [DataField, AutoNetworkedField]
+    public float MinChargeSize = 50.0f;
+    // erida edit end
 }
 
 [Serializable, NetSerializable]

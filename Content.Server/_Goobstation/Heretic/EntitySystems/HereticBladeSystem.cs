@@ -1,0 +1,57 @@
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Atmos.EntitySystems;
+using Content.Server.Body.Systems;
+using Content.Shared._Goobstation.Heretic.Systems;
+using Content.Shared._Goobstation.Teleportation;
+using Content.Server.Fluids.EntitySystems;
+using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared._Goobstation.Teleportation.Systems;
+
+namespace Content.Server._Goobstation.Heretic.EntitySystems;
+
+public sealed partial class HereticBladeSystem : SharedHereticBladeSystem
+{
+    [Dependency] private FlammableSystem _flammable = default!;
+    [Dependency] private BloodstreamSystem _blood = default!;
+    [Dependency] private SharedRandomTeleportSystem _teleport = default!;
+    [Dependency] private SharedSolutionContainerSystem _sol = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
+
+    protected override void ApplyAshBladeEffect(EntityUid target)
+    {
+        base.ApplyAshBladeEffect(target);
+
+        _flammable.AdjustFireStacks(target, 2.5f, null, true, 0.5f);
+    }
+
+    protected override void ApplyFleshBladeEffect(EntityUid target)
+    {
+        base.ApplyFleshBladeEffect(target);
+
+        if (!TryComp(target, out BloodstreamComponent? bloodStream))
+            return;
+
+        _blood.TryModifyBleedAmount((target, bloodStream), 2f);
+
+        if (!_sol.ResolveSolution(target,
+                bloodStream.BloodSolutionName,
+                ref bloodStream.BloodSolution,
+                out var bloodSolution))
+            return;
+
+        _puddle.TrySpillAt(target, bloodSolution.SplitSolution(10), out _);
+    }
+
+    protected override void RandomTeleport(EntityUid user, EntityUid blade, RandomTeleportComponent comp)
+    {
+        base.RandomTeleport(user, blade, comp);
+
+        _teleport.RandomTeleport(user, comp, false);
+        QueueDel(blade);
+    }
+}

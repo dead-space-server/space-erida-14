@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 ADT Development
+# SPDX-FileCopyrightText: 2026 OpenWendor
+# SPDX-License-Identifier: MIT
+
 - type: cargoProduct
   id: ADTFunCrateWedding
   icon:
@@ -6,7 +10,7 @@
   product: ADTCrateWedding
   category: cargoproduct-category-name-fun
   cost: 1500
-  
+
 - type: cargoProduct
   id: FunRingBox
   icon:

@@ -163,16 +163,3 @@
         loop: true
         volume: -6
 
-- type: entity
-  parent: WeatherBase
-  id: WeatherStorm
-  components:
-  - type: WeatherStatusEffect
-    sprite:
-      sprite: /Textures/Effects/weather.rsi
-      state: storm
-    sound:
-      path: /Audio/Effects/Weather/rain_heavy.ogg
-      params:
-        loop: true
-        volume: -6

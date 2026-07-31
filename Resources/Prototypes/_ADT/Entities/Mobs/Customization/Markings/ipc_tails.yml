@@ -1,0 +1,49 @@
+# SPDX-FileCopyrightText: 2026 ADT Development
+# SPDX-FileCopyrightText: 2026 OpenWendor
+# SPDX-License-Identifier: MIT
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCTailHydra
+  bodyPart: Tail
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_third
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_hydra_fourth
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCTailOctopus
+  bodyPart: Tail
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_octopus
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCTailFox
+  bodyPart: Tail
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fox_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fox_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fox_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCTailFork
+  bodyPart: Tail
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fork_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fork_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_tails.rsi
+      state: ipc_tail_fork_third

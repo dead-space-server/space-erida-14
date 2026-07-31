@@ -1116,3 +1116,80 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/407
   avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
   title: NightmareUpdate
+- author: vanomorodellefake
+  changes:
+    - type: Tweak
+      message: Реворк атмос голопроектора
+  id: 93
+  time: '2026-07-25T16:16:28.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/382
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Atmos holoprojector rework
+- author: OpenWendor
+  changes:
+    - type: Add
+      message: 'Новая раса КПБ '
+    - type: Add
+      message: Кастомизация КПБ
+    - type: Add
+      message: Промышленный зарядник КПБ
+  id: 94
+  time: '2026-07-25T16:34:48.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/417
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: Ipc
+- author: DefinitelyNotMori
+  changes:
+    - type: Add
+      message: порт системы грабов с губов
+  id: 95
+  time: '2026-07-25T19:43:24.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/401
+  avatar_url: https://avatars.githubusercontent.com/u/92030026?v=4
+  title: '[PORT] Goobstation grabs port'
+- author: Lytheriia
+  changes:
+    - type: Tweak
+      message: Гриншифт вернулся в пулл голосований
+  id: 96
+  time: '2026-07-25T19:54:55.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/423
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: Added greenshift to game votes
+- author: OpenWendor
+  changes:
+    - type: Add
+      message: Добавлен антагонист "Еретик"
+  id: 97
+  time: '2026-07-25T19:54:55.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/406
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: Heretic
+- author: Lytheriia
+  changes:
+    - type: Add
+      message: Автоматические голосования за режим и карту
+    - type: Add
+      message: Добавлено чередование режимов при онлайне выше 15
+    - type: Tweak
+      message: Голосование за режим поделено на 2 типа
+  id: 98
+  time: '2026-07-29T17:24:40.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/427
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Add] Base of automatic votes'
+- author: Lytheriia
+  changes:
+    - type: Fix
+      message: Звуки эмоций вновь работают
+    - type: Fix
+      message: Исправлено падение сервера из-за 2 расширов подряд
+    - type: Fix
+      message: Чередование режимов более не изменяется неудачным стартом
+    - type: Fix
+      message: Исправный суицид кпб
+  id: 99
+  time: '2026-07-31T10:41:33.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/429
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: tests

@@ -4,6 +4,7 @@ using Content.Server.Antag.Selectors;
 using Content.Shared.Antag;
 using Content.Shared.Chat;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Players;
 using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
@@ -73,6 +74,20 @@ public sealed partial class AntagSelectionSystem
     {
         return session.Status is SessionStatus.Disconnected or SessionStatus.Zombie;
     }
+
+    // Goobstation start
+    public List<ICommonSession> GetAliveConnectedPlayers(IList<ICommonSession> pool)
+    {
+        var l = new List<ICommonSession>();
+        foreach (var session in pool)
+        {
+            if (IsDisconnected(session))
+                continue;
+            l.Add(session);
+        }
+        return l;
+    }
+    // Goobstation end
 
     /// <summary>
     /// Gets the total number of antags a game rule wishes to spawn.

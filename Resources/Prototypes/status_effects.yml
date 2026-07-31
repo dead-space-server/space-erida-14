@@ -38,6 +38,9 @@
   id: Corporeal
   alert: Corporeal
 
+- type: statusEffect # Goobstation
+  id: TemporaryBlindness
+
 - type: statusEffect
   id: Pacified #cannot attack
 

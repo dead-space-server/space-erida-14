@@ -44,7 +44,7 @@ public sealed partial class CodewordSystem : EntitySystem
             return Comp<CodewordComponent>(codewordEntity).Codewords;
         }
 
-        Log.Warning("Codeword system not initialized. Returning empty array.");
+        Log.Debug("Codeword system not initialized. Returning empty array."); // Goobstation
         // While throwing in this situation would be cool, that causes a test fail (in SpawnAndDeleteEntityCountTest)
         // as the traitor codewords paper gets spawned in and calls this method,
         // but the "start round" event never gets called in this test case.

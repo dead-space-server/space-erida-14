@@ -15,6 +15,8 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+    - GasMask # Goobstation
+    - Mask # Goobstation
   - type: HideLayerClothing
     layers:
       Snout: Mask
@@ -363,6 +365,10 @@
   - type: Construction
     graph: Muzzle
     node: muzzle
+  - type: Tag # Goobstation
+    tags:
+    - Mask
+    - Muzzle
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -410,6 +416,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - GasMask # Goobstation
+    - Mask # Goobstation
   - type: HideLayerClothing
     slots:
     - Hair
@@ -456,6 +464,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - GasMask # Goobstation
+    - Mask # Goobstation
   - type: HideLayerClothing
     slots:
     - Hair
@@ -749,6 +759,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - GasMask
+    - Mask
 
 # Entity tables
 - type: entityTable

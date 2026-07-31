@@ -1,0 +1,39 @@
+﻿# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Zayyaan <terraspark4941@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: TouchSpellFleshSurgery
+  name: knit flesh
+  description: Let's go practice medicine.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Unremoveable
+  - type: Item
+  - type: Sprite
+    sprite: _Goobstation/Heretic/Entities/flesh_surgery.rsi
+    state: icon
+  - type: Appearance
+  - type: PointLight
+    enabled: true
+    radius: 2
+    energy: 1
+    color: "#911500"
+  - type: FleshSurgery
+    delay: 0.8 # Hand picked to not trigger health analyzer UI
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
+  - type: HealthAnalyzer
+    scanningEndSound:
+      path: /Audio/Items/welder.ogg
+  - type: UserInterface
+    interfaces:
+      enum.HealthAnalyzerUiKey.Key:
+        type: HealthAnalyzerBoundUserInterface

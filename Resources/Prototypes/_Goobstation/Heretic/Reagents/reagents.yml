@@ -1,0 +1,119 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: flavor
+  id: eldritch
+  flavorType: Complex
+  description: flavor-complex-eldritch
+
+- type: reagent
+  id: EldritchEssence
+  parent: BaseDrink
+  group: Unknown
+  name: reagent-name-eldritch
+  desc: reagent-desc-eldritch
+  physicalDesc: reagent-physical-desc-eldritch
+  flavor: eldritch
+  color: "#1f8016"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 2
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: -0.75
+            Shock: -0.75
+            Cold: -0.75
+            Caustic: -0.75
+            Poison: -1.5
+            Radiation: -1.5
+            Asphyxiation: -1.5
+            Bloodloss: -1.5
+            Blunt: -1
+            Slash: -1
+            Piercing: -1
+            Cellular: -3
+            Holy: -5
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+      - !type:ModifyBleed
+        amount: -1
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+      - !type:CleanBloodstream
+        cleanseRate: 3
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        time: 50.0
+        type: Remove
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+      - !type:TakeStaminaDamage
+        amount: -10
+        immediate: true
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+      - !type:Electrocute
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+          inverted: true
+        probability: 0.5
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 5
+        conditions:
+        - !type:HasComponentCondition
+          checkMind: true
+          components:
+          - type: Heretic
+          - type: Ghoul
+          guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
+          inverted: true
+  tileReactions:
+  - !type:ChangeTileReaction # Rusts tile

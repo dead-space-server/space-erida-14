@@ -1490,6 +1490,16 @@
       path: /Audio/Animals/ferret_happy.ogg
     interactFailureSound:
       path: /Audio/Items/wirecutter.ogg
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganAnimalLungs
+        - id: OrganAnimalHeart
+        - id: OrganAnimalStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
+        - id: OrganAnimalEyes
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Effects/bite.ogg

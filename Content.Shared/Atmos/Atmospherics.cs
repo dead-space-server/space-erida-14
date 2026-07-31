@@ -20,6 +20,11 @@ namespace Content.Shared.Atmos
         public const float OneAtmosphere = 101.325f;
 
         /// <summary>
+        ///     37ºC in K --GOOB EDIT--
+        /// </summary>
+        public const float T37C = 310.1f;
+
+        /// <summary>
         /// Global Atmospherics epsilon. Used for all general floating-point comparisons.
         /// </summary>
         public const float Epsilon = 0.5f;

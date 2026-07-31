@@ -37,7 +37,7 @@
     - Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    # - Zombie
     - Wizard
     - Xenoborgs
     - KesslerSyndromeScheduler
@@ -59,7 +59,7 @@
     - Nukeops
     - Traitor
     - Revolutionary
-    - Zombie
+    # - Zombie
     - Wizard
     - Xenoborgs
     - BasicStationEventScheduler
@@ -90,7 +90,7 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: false
+  showInVote: true
   description: greenshift-description
   rules:
   - BasicRoundstartVariation
@@ -264,19 +264,3 @@
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
 # Erida end
-
-- type: gamePreset
-  id: Zombieteors
-  alias:
-  - zombieteors
-  - zombombies
-  - meteombies
-  name: zombieteors-title
-  description: zombieteors-description
-  showInVote: false
-  rules:
-  - Zombie
-  - BasicStationEventScheduler
-  - KesslerSyndromeScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation

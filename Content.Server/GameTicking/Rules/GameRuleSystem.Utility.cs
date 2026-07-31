@@ -1,17 +1,23 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Station.Components;
+using Content.Server.Station.Systems; // Goobstation
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Maps; // Goobstation
 using Content.Shared.Random.Helpers;
 using Content.Shared.Station.Components;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Utility; // Goobstation
 
 namespace Content.Server.GameTicking.Rules;
 
 public abstract partial class GameRuleSystem<T> where T: IComponent
 {
+    [Dependency] private StationSystem _station = default!; // Goobstation
+    [Dependency] private TurfSystem _turf = default!; // Goobstation
+
     protected EntityQueryEnumerator<ActiveGameRuleComponent, T, GameRuleComponent> QueryActiveRules()
     {
         return EntityQueryEnumerator<ActiveGameRuleComponent, T, GameRuleComponent>();
@@ -128,6 +134,49 @@ public abstract partial class GameRuleSystem<T> where T: IComponent
 
         return found;
     }
+
+    // Goobstation start
+    protected Entity<MapGridComponent>? GetStationMainGrid(StationDataComponent station)
+    {
+        if ((station.Grids.FirstOrNull(HasComp<BecomesStationComponent>) ?? _station.GetLargestGrid(station.Owner)) is not
+            { } grid || !TryComp(grid, out MapGridComponent? gridComp))
+            return null;
+
+        return (grid, gridComp);
+    }
+
+    protected bool TryFindTileOnGrid(Entity<MapGridComponent> grid,
+        out Vector2i tile,
+        out EntityCoordinates targetCoords,
+        int tries = 10)
+    {
+        tile = default;
+        targetCoords = EntityCoordinates.Invalid;
+
+        var aabb = grid.Comp.LocalAABB;
+
+        for (var i = 0; i < tries; i++)
+        {
+            var randomX = RobustRandom.Next((int) aabb.Left, (int) aabb.Right);
+            var randomY = RobustRandom.Next((int) aabb.Bottom, (int) aabb.Top);
+
+            tile = new Vector2i(randomX, randomY);
+
+            if (!_map.TryGetTile(grid.Comp, tile, out var selectedTile) || selectedTile.IsEmpty ||
+                _turf.IsSpace(selectedTile))
+                continue;
+
+            if (_atmosphere.IsTileSpace(grid.Owner, Transform(grid.Owner).MapUid, tile)
+                || _atmosphere.IsTileAirBlockedCached(grid.Owner, tile))
+                continue;
+
+            targetCoords = _map.GridTileToLocal(grid.Owner, grid.Comp, tile);
+            return true;
+        }
+
+        return false;
+    }
+    // Goobstation end
 
     protected void ForceEndSelf(EntityUid uid, GameRuleComponent? component = null)
     {

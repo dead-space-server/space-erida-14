@@ -18,9 +18,17 @@ public sealed class GetFireProtectionEvent : EntityEventArgs, IInventoryRelayEve
     /// </summary>
     public float Multiplier;
 
-    public GetFireProtectionEvent()
+    // Goobstation: Target field for original entity tracking
+    /// <summary>
+    /// The entity the event was originally raised on.
+    /// </summary>
+    public readonly EntityUid Target;
+
+    // Goobstation: constructor with target parameter
+    public GetFireProtectionEvent(EntityUid target)
     {
         Multiplier = 1f;
+        Target = target;
     }
 
     /// <summary>
@@ -28,6 +36,9 @@ public sealed class GetFireProtectionEvent : EntityEventArgs, IInventoryRelayEve
     /// </summary>
     public void Reduce(float by)
     {
+        // Goobstation: negative multiplier ignores fire AP
+        if (Multiplier < 0f)
+            return;
         Multiplier -= by;
         Multiplier = MathF.Max(Multiplier, 0f);
     }

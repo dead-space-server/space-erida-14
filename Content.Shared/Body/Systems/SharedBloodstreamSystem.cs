@@ -366,7 +366,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     /// <returns>
     /// Solution of removed chemicals or null if none were removed.
     /// </returns>
-    public Solution? FlushChemicals(Entity<BloodstreamComponent?> ent, FixedPoint2 quantity, ProtoId<ReagentPrototype>? excludedReagent = null )
+    public Solution? FlushChemicals(Entity<BloodstreamComponent?> ent, FixedPoint2 quantity, ProtoId<ReagentPrototype>? excludedReagent = null)
     {
         if (!Resolve(ent, ref ent.Comp, logMissing: false)
             || !SolutionContainer.ResolveSolution(ent.Owner, ent.Comp.BloodSolutionName, ref ent.Comp.BloodSolution, out var bloodSolution))
@@ -435,7 +435,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             else if (error < 0)
             {
                 // invert the error since we're removing reagents...
-                error = FixedPoint2.Min( -error, adjustedAmount);
+                error = FixedPoint2.Min(-error, adjustedAmount);
                 bloodSolution.RemoveReagent(referenceReagent, error);
             }
         }

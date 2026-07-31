@@ -1,9 +1,10 @@
-﻿using Robust.Shared.GameStates;
+﻿using Content.Shared._White.Grab;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Tag;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(TagSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(TagSystem), typeof(GrabThrownSystem))] // Erida edit
 public sealed partial class TagComponent : Component
 {
     [DataField, ViewVariables, AutoNetworkedField]

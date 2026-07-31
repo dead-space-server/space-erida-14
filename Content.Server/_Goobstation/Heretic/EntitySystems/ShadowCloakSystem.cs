@@ -1,0 +1,55 @@
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Buckle.Systems;
+using Content.Shared.IdentityManagement;
+using Content.Shared._Goobstation.Heretic.Components;
+using Content.Shared._Goobstation.Heretic.Systems;
+using Content.Shared.FixedPoint;
+using Robust.Shared.Timing;
+
+namespace Content.Server._Goobstation.Heretic.EntitySystems;
+
+public sealed partial class ShadowCloakSystem : SharedShadowCloakSystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IdentitySystem _identity = default!;
+
+    private static readonly TimeSpan SustainedDamageReductionInterval = TimeSpan.FromSeconds(1);
+    private TimeSpan _nextUpdate = TimeSpan.Zero;
+
+    protected override void Startup(Entity<ShadowCloakedComponent> ent)
+    {
+        base.Startup(ent);
+
+        _identity.QueueIdentityUpdate(ent);
+    }
+
+    protected override void Shutdown(Entity<ShadowCloakedComponent> ent)
+    {
+        base.Shutdown(ent);
+
+        _identity.QueueIdentityUpdate(ent);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var now = _timing.CurTime;
+
+        if (_nextUpdate > now)
+            return;
+
+        _nextUpdate = now + SustainedDamageReductionInterval;
+
+        var shadowCloakedQuery = EntityQueryEnumerator<ShadowCloakEntityComponent>();
+        while (shadowCloakedQuery.MoveNext(out _, out var comp))
+        {
+            comp.SustainedDamage =
+                FixedPoint2.Max(comp.SustainedDamage - comp.SustainedDamageReductionRate, FixedPoint2.Zero);
+        }
+    }
+}

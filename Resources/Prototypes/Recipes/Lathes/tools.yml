@@ -178,7 +178,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: HolofanProjector
-  result: HolofanProjectorEmpty
+  result: HolofanProjector # Erida-edit
   completetime: 8
   materials:
     Steel: 300

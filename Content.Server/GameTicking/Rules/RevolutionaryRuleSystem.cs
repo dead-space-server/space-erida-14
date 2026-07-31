@@ -31,6 +31,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Cuffs.Components;
 using Robust.Shared.Player;
+using Content.Shared._Goobstation.Conversion;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -141,6 +142,9 @@ public sealed partial class RevolutionaryRuleSystem : GameRuleSystem<Revolutiona
 
         if (!_mind.TryGetMind(ev.Target, out var mindId, out var mind) && !alwaysConvertible)
             return;
+        // goob - event instead of whatever the fuck the hascomp obelisk below is (whoever did this needs to be flogged)
+        var convEv = new BeforeConversionEvent(ev.Target);
+        RaiseLocalEvent(ev.Target, ref convEv, true);
 
         if (HasComp<RevolutionaryComponent>(ev.Target) ||
             HasComp<MindShieldComponent>(ev.Target) ||
@@ -152,6 +156,18 @@ public sealed partial class RevolutionaryRuleSystem : GameRuleSystem<Revolutiona
         {
             return;
         }
+
+
+        // goob - event start
+        if (convEv.Blocked)
+        {
+            if (ev.User != null)
+                _popup.PopupEntity("The conversion failed!", ev.User.Value, ev.User.Value);
+
+            return;
+        }
+        // goob - event end
+
 
         _npcFaction.AddFaction(ev.Target, RevolutionaryNpcFaction);
         var revComp = EnsureComp<RevolutionaryComponent>(ev.Target);

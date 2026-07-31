@@ -1,0 +1,204 @@
+﻿// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Body.Systems;
+using Content.Shared.Doors.Components;
+using Content.Shared.Doors.Systems;
+using Content.Shared._Goobstation.Heretic;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using System.Linq;
+using Content.Shared.Humanoid;
+using Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
+using Content.Server._Goobstation.Heretic.Abilities;
+using Content.Server.Medical;
+using Content.Shared._Goobstation.Heretic.Components;
+using Content.Shared._Goobstation.Heretic.Systems;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Medical;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Stunnable;
+
+namespace Content.Server._Goobstation.Heretic.EntitySystems;
+
+public sealed partial class HereticCombatMarkSystem : SharedHereticCombatMarkSystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedDoorSystem _door = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private BloodstreamSystem _blood = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;
+    [Dependency] private ProtectiveBladeSystem _pbs = default!;
+    [Dependency] private VoidCurseSystem _voidcurse = default!;
+    [Dependency] private VomitSystem _vomit = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    [Dependency] private PullingSystem _pulling = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private StarMarkSystem _starMark = default!;
+    [Dependency] private HereticAbilitySystem _ability = default!;
+    [Dependency] private HereticSystem _heretic = default!;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<HereticCombatMarkComponent, ComponentStartup>(OnStart);
+        SubscribeLocalEvent<HereticCombatMarkComponent, ComponentRemove>(OnRemove);
+
+        SubscribeLocalEvent<HereticCosmicMarkComponent, ComponentRemove>(OnCosmicRemove);
+    }
+
+    public override bool ApplyMarkEffect(EntityUid target,
+        HereticCombatMarkComponent mark,
+        string? path,
+        EntityUid user,
+        HereticComponent heretic)
+    {
+        if (!base.ApplyMarkEffect(target, mark, path, user, heretic))
+            return false;
+
+        switch (path)
+        {
+            case "Ash":
+                _stamina.TakeStaminaDamage(target, 6f * mark.Repetitions);
+
+                var dmg = new DamageSpecifier
+                {
+                    DamageDict =
+                    {
+                        { "Heat", 3f * mark.Repetitions },
+                    },
+                };
+
+                _damageable.TryChangeDamage(target, dmg, origin: user);
+                break;
+
+            case "Blade":
+                _pbs.AddProtectiveBlade(user);
+                break;
+
+            case "Flesh":
+                {
+                    _ability.CreateFleshMimic(target, user, false, true, 50, null);
+                }
+                break;
+
+            case "Lock":
+                // bolts nearby doors
+                var lookup = _lookup.GetEntitiesInRange(target, 5f);
+                foreach (var door in lookup)
+                {
+                    if (!TryComp<DoorBoltComponent>(door, out var doorComp))
+                        continue;
+                    _door.SetBoltsDown((door, doorComp), true);
+                }
+                _audio.PlayPvs(new SoundPathSpecifier("/Audio/Magic/knock.ogg"), target);
+                break;
+
+            case "Rust":
+                _vomit.Vomit(target);
+                _stun.KnockdownOrStun(target, TimeSpan.FromSeconds(20), true);
+                break;
+
+            case "Void":
+                _voidcurse.DoCurse(target, 3);
+                break;
+
+            case "Cosmos":
+                if (!TryComp(target, out HereticCosmicMarkComponent? cosmicMark))
+                    break;
+
+                var targetCoords = Transform(target).Coordinates;
+                _starMark.SpawnCosmicField(targetCoords, heretic.PathStage);
+
+                if (Exists(cosmicMark.CosmicDiamondUid))
+                {
+                    Spawn(cosmicMark.CosmicCloud, targetCoords);
+                    var newCoords = Transform(cosmicMark.CosmicDiamondUid.Value).Coordinates;
+                    _pulling.StopAllPulls(target);
+                    _transform.SetCoordinates(target, newCoords);
+                    Spawn(cosmicMark.CosmicCloud, newCoords);
+                    Del(cosmicMark.CosmicDiamondUid.Value); // Just in case
+                }
+
+                _stun.TryUpdateParalyzeDuration(target, cosmicMark.ParalyzeTime);
+                break;
+
+            default:
+                return false;
+        }
+
+        var repetitions = mark.Repetitions - 1;
+        if (repetitions <= 0)
+            return true;
+
+        // transfers the mark to the next nearby person
+        var look = _lookup.GetEntitiesInRange(target, 5f, flags: LookupFlags.Dynamic)
+            .Where(x => x != target && HasComp<HumanoidProfileComponent>(x) && !_heretic.IsHereticOrGhoul(x))
+            .ToList();
+        if (look.Count == 0)
+            return true;
+
+        _random.Shuffle(look);
+        var lookent = look.First();
+
+        var markComp = EnsureComp<HereticCombatMarkComponent>(lookent);
+        markComp.DisappearTime = markComp.MaxDisappearTime;
+        markComp.Path = path;
+        markComp.Repetitions = repetitions;
+        Dirty(lookent, markComp);
+        return true;
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        foreach (var comp in EntityQuery<HereticCombatMarkComponent>())
+        {
+            if (_timing.CurTime > comp.Timer)
+                RemComp(comp.Owner, comp);
+        }
+    }
+
+    private void OnStart(Entity<HereticCombatMarkComponent> ent, ref ComponentStartup args)
+    {
+        if (ent.Comp.Timer == TimeSpan.Zero)
+            ent.Comp.Timer = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.DisappearTime);
+    }
+
+    private void OnRemove(Entity<HereticCombatMarkComponent> ent, ref ComponentRemove args)
+    {
+        if (TerminatingOrDeleted(ent.Owner))
+            return;
+
+        RemComp<HereticCosmicMarkComponent>(ent.Owner);
+    }
+
+    private void OnCosmicRemove(Entity<HereticCosmicMarkComponent> ent, ref ComponentRemove args)
+    {
+        if (TerminatingOrDeleted(ent.Comp.CosmicDiamondUid))
+            return;
+
+        Del(ent.Comp.CosmicDiamondUid);
+    }
+}

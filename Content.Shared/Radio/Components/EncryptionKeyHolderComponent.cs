@@ -49,4 +49,13 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     /// </summary>
     [ViewVariables]
     public string? DefaultChannel;
+
+    // ADT start
+    /// <summary>
+    ///     Whether or not the headset can be examined to see the encryption keys while the keys aren't accessible.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("examineWhileLocked")]
+    public bool ExamineWhileLocked = true;
+    // ADT end
 }

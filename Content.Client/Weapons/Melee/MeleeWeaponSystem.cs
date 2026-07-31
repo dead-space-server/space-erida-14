@@ -154,7 +154,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
             ClientLightAttack(entity, mousePos, coordinates, weaponUid, weapon);
     }
 
-    protected override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session)
+    public override bool InRange(EntityUid user, EntityUid target, float range, ICommonSession? session) // Goobstation
     {
         var xform = Transform(target);
         var targetCoordinates = xform.Coordinates;

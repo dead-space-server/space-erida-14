@@ -247,6 +247,17 @@ public abstract partial class SharedStunSystem : EntitySystem
         return true;
     }
 
+    // Goobstation start
+    /// <summary>
+    ///     Try knockdown, if it fails - stun.
+    ///     Refresh true by default on either, statuseffectcomp is handled by each system separately
+    /// </summary>
+    public bool KnockdownOrStun(EntityUid uid, TimeSpan time, bool refresh = true)
+    {
+        return TryKnockdown(uid, time, refresh) || TryUpdateStunDuration(uid, time);
+    }
+    // Goobstation end
+
     private void Crawl(Entity<CrawlerComponent?> entity, TimeSpan? time, bool refresh, bool autoStand, bool drop)
     {
         if (!Resolve(entity, ref entity.Comp, false))

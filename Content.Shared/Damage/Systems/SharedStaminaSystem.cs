@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Goobstation.Stunnable;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
 using Content.Shared.CCVar;
@@ -262,13 +263,30 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         return true;
     }
 
+    // Goobstation start
+    public void TakeOvertimeStaminaDamage(EntityUid uid, float value)
+    {
+        // do this only on server side because otherwise shit happens
+        if (value == 0)
+            return;
+
+        var hasComp = TryComp<OvertimeStaminaDamageComponent>(uid, out var overtime);
+
+        if (!hasComp)
+            overtime = EnsureComp<OvertimeStaminaDamageComponent>(uid);
+
+        overtime!.Amount = hasComp ? overtime.Amount + value : value;
+        overtime!.Damage = hasComp ? overtime.Damage + value : value;
+    }
+    // Goobstation end
+
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
         EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null, bool ignoreResist = false)
     {
         if (!Resolve(uid, ref component, false))
             return;
 
-        var ev = new BeforeStaminaDamageEvent(value);
+        var ev = new BeforeStaminaDamageEvent(value, source); // Goobstation: Added source param.
         RaiseLocalEvent(uid, ref ev);
         if (ev.Cancelled)
             return;
@@ -348,6 +366,30 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         }
     }
 
+    // Goobstation start
+    public void ToggleStaminaDrain(EntityUid target, float drainRate, bool enabled, bool modifiesSpeed, string key, EntityUid? source = null, bool applyResistances = false)
+    {
+        if (!TryComp<StaminaComponent>(target, out var stamina))
+            return;
+
+        // If theres no source, we assume its the target that caused the drain.
+        var actualSource = source ?? target;
+
+        if (enabled)
+        {
+            stamina.ActiveDrains.TryAdd(key, (drainRate, modifiesSpeed, GetNetEntity(actualSource), applyResistances));
+            EnsureComp<ActiveStaminaComponent>(target);
+        }
+        else
+        {
+            if (stamina.ActiveDrains.ContainsKey(key))
+                stamina.ActiveDrains.Remove(key);
+        }
+
+        Dirty(target, stamina);
+    }
+    // Goobstation end
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -359,11 +401,22 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         {
             // Just in case we have active but not stamina we'll check and account for it.
             if (!_stamQuery.TryComp(uid, out var comp) ||
-                comp.StaminaDamage <= 0f && !comp.Critical)
+                comp.StaminaDamage <= 0f && !comp.Critical && comp.ActiveDrains.Count == 0)
             {
                 RemComp<ActiveStaminaComponent>(uid);
                 continue;
             }
+
+            // Goobstation start
+            if (comp.ActiveDrains.Count > 0)
+                foreach (var (drainRate, _, source, applyResistances) in comp.ActiveDrains.Values)
+                    TakeStaminaDamage(uid,
+                        drainRate * frameTime,
+                        comp,
+                        source: GetEntity(source),
+                        visual: false,
+                        ignoreResist: !applyResistances); // Goobstation: todo unfuck this shit
+            // Goobstation end
 
             // Shouldn't need to consider paused time as we're only iterating non-paused stamina components.
             var nextUpdate = comp.NextUpdate;
@@ -377,10 +430,12 @@ public abstract partial class SharedStaminaSystem : EntitySystem
 
             comp.NextUpdate += TimeSpan.FromSeconds(1f);
 
-            TakeStaminaDamage(
-                uid,
-                comp.AfterCritical ? -comp.Decay * comp.AfterCritDecayMultiplier : -comp.Decay, // Recover faster after crit
-                comp);
+            // Goobstation: If theres no active drains, recover stamina.
+            if (!comp.ActiveDrains.Values.Any(x => x.DrainRate > 0))
+                TakeStaminaDamage(
+                    uid,
+                    comp.AfterCritical ? -comp.Decay * comp.AfterCritDecayMultiplier : -comp.Decay, // Recover faster after crit
+                    comp);
 
             Dirty(uid, comp);
         }
@@ -406,7 +461,8 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} entered stamina crit");
     }
 
-    private void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
+    // Goobstation: made public
+    public void ExitStamCrit(EntityUid uid, StaminaComponent? component = null)
     {
         if (!Resolve(uid, ref component) ||
             !component.Critical)

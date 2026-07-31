@@ -259,6 +259,9 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganAnthropomorphInternal ]
@@ -275,18 +278,34 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAnthropomorphInternal, OrganAnthropomorphMetabolizer ]
   id: OrganAnthropomorphLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnthropomorphInternal, OrganAnthropomorphMetabolizer ]
   id: OrganAnthropomorphHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganAnthropomorphInternal, OrganAnthropomorphMetabolizer ]
   id: OrganAnthropomorphStomach
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganAnthropomorphInternal, OrganAnthropomorphMetabolizer ]
   id: OrganAnthropomorphLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganAnthropomorphInternal, OrganAnthropomorphMetabolizer ]

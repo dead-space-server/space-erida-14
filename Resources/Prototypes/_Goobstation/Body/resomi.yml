@@ -376,6 +376,9 @@
   - type: VisualOrgan
     data:
       sprite: _Goobstation/Mobs/Customization/eyes.rsi
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganResomiInternal ]
@@ -392,18 +395,34 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganResomiInternal, OrganResomiMetabolizer ]
   id: OrganResomiLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganResomiInternal, OrganResomiMetabolizer ]
   id: OrganResomiHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganResomiInternal, OrganResomiMetabolizer ]
   id: OrganResomiStomach
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganResomiInternal, OrganResomiMetabolizer ]
   id: OrganResomiLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganResomiInternal, OrganResomiMetabolizer ]

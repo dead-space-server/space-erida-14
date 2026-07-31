@@ -368,6 +368,10 @@
 - type: entity
   parent: [ OrganVoxVisual, OrganBaseEyes, OrganVoxInternal ]
   id: OrganVoxEyes
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganVoxInternal ]
@@ -384,10 +388,18 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganVoxInternal, OrganVoxMetabolizer ]
@@ -398,10 +410,17 @@
       tags:
       - Trash
     isSpecialDigestibleExclusive: false
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
   id: OrganVoxLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
