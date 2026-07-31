@@ -1,0 +1,7 @@
+- type: damageContainer
+  id: InorganicMetaphysical
+  supportedGroups:
+    - Brute
+    - Metaphysical
+  supportedTypes:
+    - Shock

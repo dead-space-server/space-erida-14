@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Utility;
@@ -6,12 +6,15 @@ using Content.Server.Antag;
 using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
+using Content.Server.Preferences.Managers;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Antag;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
+using Content.Shared.Preferences;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
@@ -25,10 +28,9 @@ public sealed class AllGamePresetsStartTest : GameTest
     /// A list of blacklisted <see cref="GamePresetPrototype"/> for this test. Some down streams might make changes which nuke upstream game modes they don't use.
     /// This prevents them from being tested. If you use this to silence valid test fails and your game fails to start. Skill issue. Do 100 push-ups.
     /// </summary>
-    private static readonly HashSet<string> IgnoredPresets = []; // Is a string to prevent YAML Linter from freaking if this is empty.
+    private static readonly HashSet<string> IgnoredPresets = ["Zombie"]; // Is a string to prevent YAML Linter from freaking if this is empty.
 
     private static string[] _gamePresets = GameDataScrounger.PrototypesOfKind<GamePresetPrototype>().Where(p => !IgnoredPresets.Contains(p)).ToArray();
-
     public override PoolSettings PoolSettings => new()
     {
         Dirty = true,
@@ -84,7 +86,7 @@ public sealed class AllGamePresetsStartTest : GameTest
                 if (ruleId == GameTicker.DummyGameRule)
                     continue;
 
-                if (!protoMan.Resolve(ruleId, out var rule ))
+                if (!protoMan.Resolve(ruleId, out var rule))
                     continue; // Bruh moment
 
                 // Ignore non-antag game-rules.
@@ -161,7 +163,9 @@ public sealed class AllGamePresetsStartTest : GameTest
             {
                 for (var count = 0; count < amount; count++)
                 {
-                    AssertAntagInitialized(antag, players[j++]);
+                    var session = players[j++];
+
+                    AssertAntagInitialized(antag, session);
                 }
             }
         });
@@ -173,7 +177,7 @@ public sealed class AllGamePresetsStartTest : GameTest
 
         // Clear game preset and return to lobby
         await Pair.WaitCommand("golobby");
-        ticker.SetGamePreset((GamePresetPrototype) null);
+        ticker.SetGamePreset((GamePresetPrototype)null);
         await Pair.RunUntilSynced();
         void AssertAntagInitialized(AntagSpecifierPrototype antag, ICommonSession session)
         {

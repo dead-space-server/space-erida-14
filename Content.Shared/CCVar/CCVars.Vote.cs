@@ -32,7 +32,7 @@ public sealed partial class CCVars
     ///     See vote.enabled, but specific to preset votes
     /// </summary>
     public static readonly CVarDef<bool> VotePresetEnabled =
-        CVarDef.Create("vote.preset_enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("vote.preset_enabled", false, CVar.SERVERONLY);
 
     /// <summary>
     ///     See vote.enabled, but specific to map votes
@@ -72,7 +72,7 @@ public sealed partial class CCVars
     ///     Sets the duration of the map vote timer.
     /// </summary>
     public static readonly CVarDef<int>
-        VoteTimerMap = CVarDef.Create("vote.timermap", 90, CVar.SERVERONLY);
+        VoteTimerMap = CVarDef.Create("vote.timermap", 60, CVar.SERVERONLY);
 
     /// <summary>
     ///     Sets the duration of the restart vote timer.

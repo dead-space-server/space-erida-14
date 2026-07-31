@@ -1,0 +1,9 @@
+silicon-overheating = Вы чувствуете, как ваши микросхемы перегреваются!
+battery-electrocute-charge = Батарея наполняется энергией!
+silicon-power-low = Низкий заряд батареи!
+batteryslotrequireslock-component-alert-owner = {$user} вмешивается в работу вашей панели техобслуживания!
+battery-drinker-verb-drink = Подзарядка
+battery-drinker-empty = {$target} пуст!
+battery-drinker-error = Не удалось зарядиться!
+battery-drinker-no-battery = Нет батареи для зарядки!
+battery-drinker-no-source = Нельзя питаться от этого

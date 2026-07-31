@@ -38,6 +38,7 @@
   id: Silicon
   supportedGroups:
     - Brute
+    - Burn # erida edit
   supportedTypes:
     - Heat
     - Shock

@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Goobstation.Religion;
 using Content.Shared.Charges.Components;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Coordinates.Helpers;
@@ -395,6 +396,14 @@ public abstract partial class SharedMagicSystem : EntitySystem
 
         _physics.ApplyLinearImpulse(ev.Target, impulseVector);
         _gibbing.Gib(ev.Target);
+    }
+
+    // Goobstation
+    public bool IsTouchSpellDenied(EntityUid target)
+    {
+        var ev = new BeforeCastTouchSpellEvent(target);
+        RaiseLocalEvent(target, ev, true);
+        return ev.Cancelled;
     }
 
     // End Touch Spells

@@ -14,7 +14,7 @@ namespace Content.Server.GameTicking;
 
 public sealed partial class GameTicker
 {
-    public const float PresetFailedCooldownIncrease = 30f;
+    public const float PresetFailedCooldownIncrease = -45f; // Erida edit
 
     /// <summary>
     /// The selected preset that will be used at the start of the next round.

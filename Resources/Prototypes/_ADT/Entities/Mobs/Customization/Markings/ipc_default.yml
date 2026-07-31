@@ -1,0 +1,113 @@
+# SPDX-FileCopyrightText: 2026 ADT Development
+# SPDX-FileCopyrightText: 2026 OpenWendor
+# SPDX-License-Identifier: MIT
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCHeadDefault
+  bodyPart: Head
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: head_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: head_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCChestDefault
+  bodyPart: Chest
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: chest_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: chest_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: chest_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLArmDefault
+  bodyPart: LArm
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_arm_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_arm_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_arm_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRArmDefault
+  bodyPart: RArm
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_arm_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_arm_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_arm_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLHandDefault
+  bodyPart: LHand
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_hand_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_hand_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRHandDefault
+  bodyPart: RHand
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_hand_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_hand_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLLegDefault
+  bodyPart: LLeg
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_leg_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_leg_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_leg_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRLegDefault
+  bodyPart: RLeg
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_leg_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_leg_second
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_leg_third
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCLFootDefault
+  bodyPart: LFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_foot_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: l_foot_second
+
+- type: marking
+  groupWhitelist: [Ipc]
+  id: ADTIPCRFootDefault
+  bodyPart: RFoot
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_foot_prime
+    - sprite: _ADT/Mobs/Customization/Ipc/ipc_default.rsi
+      state: r_foot_second

@@ -30,6 +30,7 @@ public sealed partial class ProfilePreviewSpriteView
             return;
 
         EntMan.System<SharedVisualBodySystem>().ApplyProfileTo(PreviewDummy, humanoid);
+        EntMan.System<SpriteSystem>().SetScale(PreviewDummy, new Vector2(humanoid.Width, humanoid.Height)); // Erida edit
     }
 
     /// <summary>

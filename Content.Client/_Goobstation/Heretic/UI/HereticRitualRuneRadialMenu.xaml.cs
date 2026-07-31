@@ -1,0 +1,111 @@
+﻿// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Numerics;
+using Content.Client.UserInterface.Controls;
+using Content.Shared._Goobstation.Heretic;
+using Content.Shared._Goobstation.Heretic.Prototypes;
+using Robust.Client.GameObjects;
+using Robust.Client.UserInterface.Controls;
+using Robust.Client.UserInterface.XAML;
+using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+
+namespace Content.Client._Goobstation.Heretic.UI;
+
+public sealed partial class HereticRitualRuneRadialMenu : RadialMenu
+{
+    [Dependency] private EntityManager _entityManager = default!;
+    [Dependency] private IEntitySystemManager _entitySystem = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
+    private readonly SpriteSystem _spriteSystem;
+    private readonly HereticSystem _heretic;
+
+    public event Action<ProtoId<HereticRitualPrototype>>? SendHereticRitualRuneMessageAction;
+
+    public EntityUid Entity { get; set; }
+
+    public HereticRitualRuneRadialMenu()
+    {
+        IoCManager.InjectDependencies(this);
+        RobustXamlLoader.Load(this);
+        _spriteSystem = _entitySystem.GetEntitySystem<SpriteSystem>();
+        _heretic = _entitySystem.GetEntitySystem<HereticSystem>();
+    }
+
+    public void SetEntity(EntityUid uid)
+    {
+        Entity = uid;
+        RefreshUI();
+    }
+
+    private void RefreshUI()
+    {
+        var main = FindControl<RadialContainer>("Main");
+        if (main == null)
+            return;
+
+        var player = _playerManager.LocalEntity;
+
+        if (player == null || !_heretic.TryGetHereticComponent(player.Value, out var heretic, out _))
+            return;
+
+        foreach (var ritual in heretic.KnownRituals)
+        {
+            if (!_prototypeManager.TryIndex(ritual, out var ritualPrototype))
+                continue;
+
+            var button = new HereticRitualMenuButton
+            {
+                SetSize = new Vector2(64, 64),
+                ToolTip = Loc.GetString(ritualPrototype.LocName),
+                ProtoId = ritualPrototype.ID
+            };
+
+            var texture = new TextureRect
+            {
+                VerticalAlignment = VAlignment.Center,
+                HorizontalAlignment = HAlignment.Center,
+                Texture = _spriteSystem.Frame0(ritualPrototype.Icon),
+                TextureScale = new Vector2(2f, 2f)
+            };
+
+            button.AddChild(texture);
+            main.AddChild(button);
+        }
+
+        AddHereticRitualMenuButtonOnClickAction(main);
+    }
+
+    private void AddHereticRitualMenuButtonOnClickAction(RadialContainer mainControl)
+    {
+        if (mainControl == null)
+            return;
+
+        foreach(var child in mainControl.Children)
+        {
+            var castChild = child as HereticRitualMenuButton;
+
+            if (castChild == null)
+                continue;
+
+            castChild.OnButtonUp += _ =>
+            {
+                SendHereticRitualRuneMessageAction?.Invoke(castChild.ProtoId);
+                Close();
+            };
+        }
+    }
+
+    public sealed class HereticRitualMenuButton : RadialMenuButtonWithSector
+    {
+        public ProtoId<HereticRitualPrototype> ProtoId { get; set; }
+    }
+}

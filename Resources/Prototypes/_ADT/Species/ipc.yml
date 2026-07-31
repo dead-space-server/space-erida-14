@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 ADT Development
+# SPDX-FileCopyrightText: 2026 OpenWendor
+# SPDX-License-Identifier: MIT
+
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: MobIPC
+  dollPrototype: ADTAppearanceIPC
+  skinColoration: Hues
+  minAge: 1
+  maxAge: 55
+  oldAge: 50
+  youngAge: 25
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  lastNames: IpcLast
+  naming: FirstDashFirst
+  sexes:
+  - Unsexed

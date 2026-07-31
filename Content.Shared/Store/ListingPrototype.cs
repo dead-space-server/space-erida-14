@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Goobstation.Heretic.Prototypes; // Goobstation
 using Content.Shared.FixedPoint;
 using Content.Shared.Store.Components;
 using Content.Shared.StoreDiscount.Components;
@@ -42,7 +43,8 @@ public partial class ListingData : IEquatable<ListingData>
         other.RestockTime,
         other.DiscountDownTo,
         other.DisableRefund,
-        other.ApplyToMob
+        other.ApplyToMob,
+        other.ProductHereticKnowledge // Goobstation
     )
     {
 
@@ -69,7 +71,8 @@ public partial class ListingData : IEquatable<ListingData>
         TimeSpan restockTime,
         Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> dataDiscountDownTo,
         bool disableRefund,
-        bool applyToMob
+        bool applyToMob,
+        ProtoId<HereticKnowledgePrototype>? productHereticKnowledge = null // Goobstation
     )
     {
         Name = name;
@@ -93,6 +96,7 @@ public partial class ListingData : IEquatable<ListingData>
         DiscountDownTo = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>(dataDiscountDownTo);
         DisableRefund = disableRefund;
         ApplyToMob = applyToMob;
+        ProductHereticKnowledge = productHereticKnowledge;
     }
 
     [ViewVariables]
@@ -171,6 +175,14 @@ public partial class ListingData : IEquatable<ListingData>
     [DataField]
     public EntProtoId? ProductAction;
 
+    // Erida edit start
+    /// <summary>
+    /// The heretic knowledge that is granted when the listing is purchased.
+    /// </summary>
+    [DataField]
+    public ProtoId<HereticKnowledgePrototype>? ProductHereticKnowledge;
+    // Erida edit end
+
     /// <summary>
     /// The listing ID of the related upgrade listing. Can be used to link a <see cref="ProductAction"/> to an
     /// upgrade or to use standalone as an upgrade
@@ -236,6 +248,7 @@ public partial class ListingData : IEquatable<ListingData>
             ProductEntity != listing.ProductEntity ||
             ProductComponents != listing.ProductComponents ||
             ProductAction != listing.ProductAction ||
+            ProductHereticKnowledge != listing.ProductHereticKnowledge || // Goobstation
             ProductEvent?.GetType() != listing.ProductEvent?.GetType() ||
             RestockTime != listing.RestockTime ||
             DisableRefund != listing.DisableRefund ||
@@ -322,7 +335,8 @@ public sealed partial class ListingDataWithCostModifiers : ListingData
             listingData.RestockTime,
             listingData.DiscountDownTo,
             listingData.DisableRefund,
-            listingData.ApplyToMob
+            listingData.ApplyToMob,
+            listingData.ProductHereticKnowledge // Goobstation
         )
     {
     }

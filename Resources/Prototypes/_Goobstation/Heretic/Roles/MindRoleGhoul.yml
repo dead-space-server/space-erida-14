@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleGhoul
+  name: Ghoul Role
+  components:
+  - type: MindRole
+    antagPrototype: Ghoul
+    exclusiveAntag: false
+    roleType: Familiar
+    subtype: role-subtype-ghoul
+  - type: GhoulRole
+
+- type: entity
+  parent: BaseMindRole
+  id: BaseMindRoleAntagGhostGoob
+  abstract: true
+  components:
+  - type: MindRole
+    antag: true
+    antagPrototype: GenericGhostAntagonistGoob
+    roleType: SoloAntagonist
+    sortWeight: 50
+
+- type: entity
+  parent: [ BaseMindRoleAntagGhostGoob, MindRoleGhostRoleNeutral ]
+  id: MindRoleGhostRoleSoloAntagonistGoob
+  name: Ghost Role (Solo Antagonist)

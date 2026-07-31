@@ -2,7 +2,6 @@
 - type: marking
   id: GauzeLefteyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -15,7 +14,6 @@
 - type: marking
   id: GauzeLefteyePad
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -28,7 +26,6 @@
 - type: marking
   id: GauzeRighteyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -41,7 +38,6 @@
 - type: marking
   id: GauzeRighteyePad
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -54,7 +50,6 @@
 - type: marking
   id: GauzeBlindfold
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -67,7 +62,6 @@
 - type: marking
   id: GauzeShoulder
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -80,7 +74,6 @@
 - type: marking
   id: GauzeStomach
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -93,7 +86,6 @@
 - type: marking
   id: GauzeUpperArmRight
   bodyPart: RArm
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -106,7 +98,6 @@
 - type: marking
   id: GauzeLowerArmRight
   bodyPart: RHand
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -119,7 +110,6 @@
 - type: marking
   id: GauzeLeftArm
   bodyPart: LArm
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -132,7 +122,6 @@
 - type: marking
   id: GauzeLowerLegLeft
   bodyPart: LFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -145,7 +134,6 @@
 - type: marking
   id: GauzeUpperLegLeft
   bodyPart: LLeg
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -158,7 +146,6 @@
 - type: marking
   id: GauzeUpperLegRight
   bodyPart: RLeg
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -171,7 +158,6 @@
 - type: marking
   id: GauzeLowerLegRight
   bodyPart: RFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -184,7 +170,6 @@
 - type: marking
   id: GauzeBoxerWrapRight
   bodyPart: RHand
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -197,7 +182,6 @@
 - type: marking
   id: GauzeBoxerWrapLeft
   bodyPart: LHand
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -210,7 +194,6 @@
 - type: marking
   id: GauzeHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -224,7 +207,6 @@
 - type: marking
   id: GauzeLizardLefteyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -237,7 +219,6 @@
 - type: marking
   id: GauzeLizardRighteyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -250,7 +231,6 @@
 - type: marking
   id: GauzeLizardFootRight
   bodyPart: RFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -263,7 +243,6 @@
 - type: marking
   id: GauzeLizardFootLeft
   bodyPart: LFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -276,7 +255,6 @@
 - type: marking
   id: GauzeLizardBlindfold
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -290,7 +268,6 @@
 - type: marking
   id: GauzeMothBlindfold
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -303,7 +280,6 @@
 - type: marking
   id: GauzeMothShoulder
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -316,7 +292,6 @@
 - type: marking
   id: GauzeMothStomach
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -329,7 +304,6 @@
 - type: marking
   id: GauzeMothLeftEyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -342,7 +316,6 @@
 - type: marking
   id: GauzeMothLeftEyePad
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -355,7 +328,6 @@
 - type: marking
   id: GauzeMothRightEyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -368,7 +340,6 @@
 - type: marking
   id: GauzeMothRightEyePad
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -381,7 +352,6 @@
 - type: marking
   id: GauzeMothUpperArmRight
   bodyPart: RArm
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -394,7 +364,6 @@
 - type: marking
   id: GauzeMothUpperArmLeft
   bodyPart: LArm
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -407,7 +376,6 @@
 - type: marking
   id: GauzeMothUpperLegRight
   bodyPart: RLeg
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -420,7 +388,6 @@
 - type: marking
   id: GauzeMothUpperLegLeft
   bodyPart: LLeg
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -433,7 +400,6 @@
 - type: marking
   id: GauzeMothLowerLegRight
   bodyPart: RFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -446,7 +412,6 @@
 - type: marking
   id: GauzeMothLowerLegLeft
   bodyPart: LFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -460,7 +425,6 @@
 - type: marking
   id: GauzeVulpStomach
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -473,7 +437,6 @@
 - type: marking
   id: GauzeVulpBlindfold
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -486,7 +449,6 @@
 - type: marking
   id: GauzeVulpBoxerwrapLeft
   bodyPart: LHand
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -499,7 +461,6 @@
 - type: marking
   id: GauzeVulpBoxerwrapRight
   bodyPart: RHand
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -512,7 +473,6 @@
 - type: marking
   id: GauzeVulpHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -525,7 +485,6 @@
 - type: marking
   id: GauzeVulpLeftArm
   bodyPart: LArm
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -538,7 +497,6 @@
 - type: marking
   id: GauzeVulpLefteyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -551,7 +509,6 @@
 - type: marking
   id: GauzeVulpLowerArmRight
   bodyPart: RHand
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -564,7 +521,6 @@
 - type: marking
   id: GauzeVulpLowerLegLeft
   bodyPart: LFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -577,7 +533,6 @@
 - type: marking
   id: GauzeVulpLowerLegRight
   bodyPart: RFoot
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -590,7 +545,6 @@
 - type: marking
   id: GauzeVulpRighteyePatch
   bodyPart: Eyes
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -603,7 +557,6 @@
 - type: marking
   id: GauzeVulpShoulder
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -616,7 +569,6 @@
 - type: marking
   id: GauzeVulpUpperLegLeft
   bodyPart: LLeg
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -629,7 +581,6 @@
 - type: marking
   id: GauzeVulpUpperLegRight
   bodyPart: RLeg
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:

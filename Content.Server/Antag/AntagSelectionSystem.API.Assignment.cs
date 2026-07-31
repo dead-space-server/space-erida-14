@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Antag.Components;
@@ -100,17 +100,17 @@ public sealed partial class AntagSelectionSystem
         switch (def.MultiAntagSetting)
         {
             case AntagAcceptability.None:
-            {
-                if (IsAssignedAntag(player, gameRule))
-                    return false;
-                break;
-            }
+                {
+                    if (IsAssignedAntag(player, gameRule))
+                        return false;
+                    break;
+                }
             case AntagAcceptability.NotExclusive:
-            {
-                if (IsAssignedExclusiveAntag(player, gameRule))
-                    return false;
-                break;
-            }
+                {
+                    if (IsAssignedExclusiveAntag(player, gameRule))
+                        return false;
+                    break;
+                }
         }
 
         return player.AttachedEntity == null || HasComp<GhostComponent>(player.AttachedEntity) || IsEntityValid(player, def);
@@ -177,6 +177,15 @@ public sealed partial class AntagSelectionSystem
         // If the player has not spawned in as any entity (e.g., in the lobby), they can be given an antag role/entity.
         if (!_whitelist.CheckBoth(uid, def.Blacklist, def.Whitelist))
             return false;
+
+        // Erida start
+        // IPC antag selection bug. Not best fix, but better then nothing
+        if (_containerSystem.IsEntityInContainer(uid.Value)
+            && _containerSystem.TryGetContainingContainer((uid.Value, null), out var container)
+            && container.ID == "body_organs"
+            && !_whitelist.CheckBoth(container.Owner, def.Blacklist, def.Whitelist))
+            return false;
+        // Erida end
 
         if (_arrivals.IsOnArrivals((uid.Value, null)))
             return false;

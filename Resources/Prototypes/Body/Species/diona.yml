@@ -273,6 +273,9 @@
     data:
       sprite: Mobs/Customization/eyes.rsi
       state: diona
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseLungs, OrganDionaInternal, OrganDionaMetabolizer ]
@@ -281,6 +284,9 @@
   - type: Sprite
     layers:
     - state: lungs
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseStomach, OrganDionaInternal, OrganDionaMetabolizer ]
@@ -289,6 +295,9 @@
   - type: Metabolizer
     maxReagents: 6
     stages: [ Digestion, Bloodstream, Metabolites ]
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: OrganDionaBrain

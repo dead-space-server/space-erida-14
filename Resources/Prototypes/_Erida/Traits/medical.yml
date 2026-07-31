@@ -1,8 +1,12 @@
-- type: trait
+- type: trait # erida edit - IPCs can't have biological traits
   id: CatLigaments
   name: trait-catligaments-name
   description: trait-catligaments-desc
   category: Medical
+  conditions:
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
   effects:
   - !type:AddCompsEffect
     removeExisting: true
@@ -16,11 +20,15 @@
        allowedEmotes: [ 'Mews', 'Meows', 'Purrs', 'Hiss' ]
        speechSounds: Alto
 
-- type: trait
+- type: trait # erida edit - IPCs can't have biological traits
   id: dogpLigaments
   name: trait-dogligaments-name
   description: trait-dogligments-desc
   category: Medical
+  conditions:
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
   effects:
   - !type:AddCompsEffect
     removeExisting: true
@@ -36,3 +44,29 @@
          Male: MaleVulpkanin
          Female: FemaleVulpkanin
          Unsexed: MaleVulpkanin
+
+- type: trait # erida edit - IPCs can't have biological traits
+  id: lactation
+  name: trait-lactation-name
+  description: trait-lactation-desc
+  category: Medical
+  conditions:
+  - !type:IsGenderCondition
+    genders:
+    - Female
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+  - !type:IsSpeciesCondition
+    species: Shadowkin
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    removeExisting: true
+    components:
+    - type: Lactation
+      drinkSound: !type:SoundPathSpecifier
+        params:
+          variation: 0.25
+          volume: -2
+        path: /Audio/Items/drink.ogg

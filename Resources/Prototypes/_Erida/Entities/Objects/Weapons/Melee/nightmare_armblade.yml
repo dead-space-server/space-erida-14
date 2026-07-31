@@ -15,7 +15,7 @@
         types: # Same as energy sword, but slash/pierce instead of slash/heat
           Slash: 15
           Piercing: 15
-          Structural: 30
+          Structural: 15
     - type: Prying
       speedModifier: 3 # Jaws of life speed
       pryPowered: true

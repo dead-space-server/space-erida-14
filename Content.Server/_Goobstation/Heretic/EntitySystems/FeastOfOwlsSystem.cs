@@ -1,0 +1,84 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server.Chat.Systems;
+using Content.Server.Jittering;
+using Content.Server.Popups;
+using Content.Server.Speech.EntitySystems;
+using Content.Server.Stunnable;
+using Content.Shared._Goobstation.Heretic.Components;
+using Content.Shared.Mind.Components;
+using Content.Shared.Popups;
+using Content.Shared.Speech.Components;
+using Content.Shared.StatusEffect;
+using Robust.Shared.Audio.Systems;
+
+namespace Content.Server._Goobstation.Heretic.EntitySystems;
+
+public sealed partial class FeastOfOwlsSystem : EntitySystem
+{
+    [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private JitteringSystem _jitter = default!;
+    [Dependency] private StutteringSystem _stutter = default!;
+    [Dependency] private StunSystem _stun = default!;
+    [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private HereticSystem _heretic = default!;
+    [Dependency] private PopupSystem _popup = default!;
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var vocalQuery = GetEntityQuery<VocalComponent>();
+        var query = EntityQueryEnumerator<FeastOfOwlsComponent, StatusEffectsComponent, MindContainerComponent>();
+        while (query.MoveNext(out var uid, out var comp, out var status, out var mindContainer))
+        {
+            if (comp.CurrentStep >= comp.Reward)
+            {
+                RemCompDeferred(uid, comp);
+                continue;
+            }
+
+            comp.ElapsedTime += frameTime;
+
+            if (comp.ElapsedTime < comp.Timer)
+                continue;
+
+            comp.ElapsedTime = 0f;
+
+            if (comp.CurrentStep + 1 < comp.Reward && !_stun.TryUpdateParalyzeDuration(uid, comp.ParalyzeTime))
+            {
+                _heretic.UpdateKnowledge(uid, comp.Reward - comp.CurrentStep, false, false, mindContainer);
+                RemCompDeferred(uid, comp);
+                continue;
+            }
+
+            _jitter.DoJitter(uid, comp.JitterStutterTime, true, 10f, 10f,  true, status);
+            _stutter.DoStutter(uid, comp.JitterStutterTime, true);
+
+            if (vocalQuery.TryGetComponent(uid, out var vocal))
+                _chat.TryEmoteWithChat(uid, vocal.ScreamId);
+
+            _audio.PlayPvs(comp.KnowledgeGainSound, uid);
+
+            _popup.PopupEntity(Loc.GetString("feast-of-owls-knowledge-gaim-message"), uid, uid, PopupType.LargeCaution);
+
+            _heretic.UpdateKnowledge(uid,  1,  false, false, mindContainer);
+
+            comp.CurrentStep++;
+
+            if (comp.CurrentStep < comp.Reward)
+                continue;
+
+            _status.TryRemoveStatusEffect(uid, "Stun", status);
+            _status.TryRemoveStatusEffect(uid, "KnockedDown", status);
+            RemCompDeferred(uid, comp);
+        }
+    }
+}

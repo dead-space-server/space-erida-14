@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Content.Server._Erida.LightIntension;
 using Content.Server._Erida.Nightmare.Components;
 using Content.Server.Antag;
@@ -105,6 +106,7 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
         {
             args.Handled = true;
             _popup.PopupEntity(Loc.GetString("nightmare-failed-to-shadowwalk"), ent, ent);
+            return;
         }
 
         if (_mindSystem.TryGetMind(ent, out var mindId, out var _)
@@ -237,7 +239,11 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
                     UpdateDarkState(uid, nmComp, true);
 
                     var scale = lightIntension - nmComp.RedLineOfLight;
-                    _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
+                    if (TryComp<DamageableComponent>(uid, out var dComp))
+                    {
+                        if (!_damageable.TryGetDamageGreaterThan((uid, dComp), nmComp.MaxDamageFromBurn, out var _, "Burn"))
+                            _damageable.TryChangeDamage(uid, nmComp.DamageFromBurn * scale, true, false);
+                    }
                     if (nmComp.PlayAudio)
                         _audio.PlayPvs(nmComp.BurnSound, uid);
                 }
@@ -259,14 +265,14 @@ public sealed partial class NightmareSystem : SharedNightmareSystem
             }
         }
 
-        var query2 = EntityQueryEnumerator<NightmareComponent, PolymorphedEntityComponent, TransformComponent>();
-        while (query2.MoveNext(out var uid, out var npComp, out var peComp, out var xform))
+        var query2 = EntityQueryEnumerator<NightmareComponent, NightmarePolymorhedComponent, PolymorphedEntityComponent, TransformComponent>();
+        while (query2.MoveNext(out var uid, out var nComp, out var _, out var peComp, out var xform))
         {
-            if (npComp.TimeToCheck < curTime)
+            if (nComp.TimeToCheck < curTime)
             {
-                npComp.TimeToCheck = curTime + TimeSpan.FromSeconds(npComp.TimeBetweenChecksForShadowWalk);
+                nComp.TimeToCheck = curTime + TimeSpan.FromSeconds(nComp.TimeBetweenChecksForShadowWalk);
 
-                if (!CheckCanTransformToPolymorph(uid, npComp, xform))
+                if (!CheckCanTransformToPolymorph(uid, nComp, xform))
                     _polymorphSystem.Revert((uid, peComp));
             }
         }

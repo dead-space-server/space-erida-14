@@ -114,7 +114,7 @@ public sealed partial class AlertPrototype : IPrototype, IInheritingPrototype
 
         if (severity == null)
         {
-            throw new ArgumentException($"No severity specified but this alert ({AlertKey}) has severity.", nameof(severity));
+            severity = MinSeverity; // erida edit: fallback to min severity instead of crashing
         }
 
         if (severity < MinSeverity)

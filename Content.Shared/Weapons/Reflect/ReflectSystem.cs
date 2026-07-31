@@ -100,7 +100,8 @@ public sealed partial class ReflectSystem : EntitySystem
         }
     }
 
-    private bool TryReflectProjectile(Entity<ReflectComponent> reflector, EntityUid user, Entity<ProjectileComponent?> projectile)
+    // Goobstation: made public for external use
+    public bool TryReflectProjectile(Entity<ReflectComponent> reflector, EntityUid user, Entity<ProjectileComponent?> projectile)
     {
         if (!TryComp<ReflectiveComponent>(projectile, out var reflective) ||
             !_toggle.IsActivated(reflector.Owner) ||
@@ -142,7 +143,8 @@ public sealed partial class ReflectSystem : EntitySystem
 
         return true;
     }
-    private bool TryReflectHitscan(
+    // Goobstation: made public for external use
+    public bool TryReflectHitscan(
         Entity<ReflectComponent> reflector,
         EntityUid user,
         EntityUid? shooter,

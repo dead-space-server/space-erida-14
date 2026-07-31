@@ -1,7 +1,6 @@
 - type: marking
   id: DionaThornsHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -14,7 +13,6 @@
 - type: marking
   id: DionaThornsBody
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -27,7 +25,6 @@
 - type: marking
   id: DionaFlowersHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -40,7 +37,6 @@
 - type: marking
   id: DionaFlowersBody
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -53,7 +49,6 @@
 - type: marking
   id: DionaLeafCover
   bodyPart: Chest
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -65,7 +60,6 @@
 - type: marking
   id: DionaBloomHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -78,7 +72,6 @@
 - type: marking
   id: DionaBracketHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -91,7 +84,6 @@
 - type: marking
   id: DionaBrushHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -103,7 +95,6 @@
 - type: marking
   id: DionaCornflowerHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -116,7 +107,6 @@
 - type: marking
   id: DionaFicusHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -129,7 +119,6 @@
 - type: marking
   id: DionaGarlandHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -142,7 +131,6 @@
 - type: marking
   id: DionaKingHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -155,7 +143,6 @@
 - type: marking
   id: DionaLaurelHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -168,7 +155,6 @@
 - type: marking
   id: DionaLeafyHeadTop
   bodyPart: HeadTop
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -181,7 +167,6 @@
 - type: marking
   id: DionaLotusHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -194,7 +179,6 @@
 - type: marking
   id: DionaMeadowHeadTop
   bodyPart: HeadTop
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -207,7 +191,6 @@
 - type: marking
   id: DionaOakHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -220,7 +203,6 @@
 - type: marking
   id: DionaPalmHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -233,7 +215,6 @@
 - type: marking
   id: DionaRootHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -246,7 +227,6 @@
 - type: marking
   id: DionaRoseHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -259,7 +239,6 @@
 - type: marking
   id: DionaRoseyHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -272,7 +251,6 @@
 - type: marking
   id: DionaShrubHeadTop
   bodyPart: HeadTop
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -285,7 +263,6 @@
 - type: marking
   id: DionaSpinnerHeadSide
   bodyPart: HeadSide
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -298,7 +275,6 @@
 - type: marking
   id: DionaSproutHeadSide
   bodyPart: HeadSide
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -311,7 +287,6 @@
 - type: marking
   id: DionaVineHeadTop
   bodyPart: HeadTop
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -324,7 +299,6 @@
 - type: marking
   id: DionaVinelHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -337,7 +311,6 @@
 - type: marking
   id: DionaVinesHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -350,7 +323,6 @@
 - type: marking
   id: DionaWildflowerHead
   bodyPart: Head
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:
@@ -363,7 +335,6 @@
 - type: marking
   id: DionaVineOverlay
   bodyPart: Overlay
-  groupWhitelist: [] #Erida update
   coloring:
     default:
       type:

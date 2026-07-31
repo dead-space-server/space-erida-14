@@ -50,17 +50,19 @@ public sealed partial class ServerGlobalSoundSystem : SharedGlobalSoundSystem
         RaiseNetworkEvent(msg, filter);
     }
 
-    public void DispatchStationEventMusic(EntityUid source, SoundSpecifier sound, StationEventMusicType type)
+    // Goobstation start
+    public void DispatchStationEventMusic(EntityUid source, SoundSpecifier sound, StationEventMusicType type, AudioParams? audioParams = null)
     {
-        DispatchStationEventMusic(source, _audio.ResolveSound(sound), type);
+        DispatchStationEventMusic(source, _audio.ResolveSound(sound), type, audioParams);
     }
 
-    public void DispatchStationEventMusic(EntityUid source, ResolvedSoundSpecifier specifier, StationEventMusicType type)
+    public void DispatchStationEventMusic(EntityUid source, ResolvedSoundSpecifier specifier, StationEventMusicType type, AudioParams? audioParams = null)
     {
-        var audio = AudioParams.Default.WithVolume(-8);
+        var audio = audioParams ?? AudioParams.Default.WithVolume(-8); // Goobstation
         var msg = new StationEventMusicEvent(specifier, type, audio);
 
         var filter = GetStationAndPvs(source);
         RaiseNetworkEvent(msg, filter);
     }
+    // Goobstation end
 }

@@ -22,22 +22,60 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalLungs
+  components:
+  - type: Tag
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalHeart
+  components:
+  - type: Tag
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalStomach
+  components:
+  - type: Tag
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalLiver
+  components:
+  - type: Tag
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganAnimalInternal, OrganAnimalMetabolizer ]
   id: OrganAnimalKidneys
+
+- type: entity
+  parent: OrganBase
+  id: OrganBaseAnimalEyes
+  abstract: true
+  components:
+  - type: GibbableOrgan
+  - type: Organ
+    category: Eyes
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    layers:
+    - state: eyeball-l
+    - state: eyeball-r
+
+- type: entity
+  parent: OrganBaseAnimalEyes
+  id: OrganAnimalEyes
+  components:
+  - type: Tag
+    tags:
+    - Eyes
 
 - type: entity
   id: BaseMobAnimal

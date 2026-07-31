@@ -311,6 +311,9 @@
   - type: VisualOrgan
     data:
       sprite: _Backmen/Mobs/Species/Shadowkin/parts.rsi
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganShadowkinInternal ]
@@ -327,18 +330,34 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
   id: OrganShadowkinLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
   id: OrganShadowkinHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
   id: OrganShadowkinStomach
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganShadowkinInternal, OrganShadowkinMetabolizer ]
   id: OrganShadowkinLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganShadowkinInternal, OrganShadowkinMetabolizer ]

@@ -94,6 +94,14 @@ namespace Content.Shared.Atmos.Components
         [DataField]
         public bool CanExtinguish = true;
 
+        // Goobstation start
+        /// <summary>
+        ///     ArmorPenetration but for fire resistance
+        /// </summary>
+        [DataField]
+        public float FireProtectionPenetration;
+        // Goobstation end
+
         /// <summary>
         ///     How many firestacks should be applied to component when being set on fire?
         /// </summary>

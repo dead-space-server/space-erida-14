@@ -328,6 +328,10 @@
 - type: entity
   parent: [ OrganVulpkaninVisual, OrganBaseEyes, OrganVulpkaninInternal ]
   id: OrganVulpkaninEyes
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganVulpkaninInternal ]
@@ -344,18 +348,34 @@
 - type: entity
   parent: [ OrganBaseLungs, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninLungs
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Lungs
 
 - type: entity
   parent: [ OrganBaseHeart, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninHeart
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Heart
 
 - type: entity
   parent: [ OrganBaseStomach, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninStomach
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Stomach
 
 - type: entity
   parent: [ OrganBaseLiver, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]
   id: OrganVulpkaninLiver
+  components:
+  - type: Tag # erida edit
+    tags:
+    - Liver
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganVulpkaninInternal, OrganVulpkaninMetabolizer ]

@@ -26,6 +26,7 @@
     - ClothMade
     - Recyclable
     - WhitelistChameleon
+    - WinterCoat # Goobstation
   - type: StaticPrice
     price: 50
 

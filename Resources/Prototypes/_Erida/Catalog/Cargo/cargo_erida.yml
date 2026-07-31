@@ -1,4 +1,4 @@
-- type: cargoProduct
+﻿- type: cargoProduct
   id: GlovesCombat
   icon:
     sprite: Clothing/Hands/Gloves/combat.rsi

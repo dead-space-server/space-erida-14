@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
+using Content.Shared._Goobstation.Speech;
 using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid;
@@ -82,6 +83,22 @@ public sealed partial class VocalSystem : EntitySystem
             return;
         }
 
+        // Goobstation start
+        var getSoundEv = new GetEmoteSoundsEvent();
+        RaiseLocalEvent(uid, ref getSoundEv);
+        if (getSoundEv.Handled)
+        {
+            if (getSoundEv.EmoteSoundProtoId is not { } proto)
+                return;
+
+            if (_proto.TryIndex(proto, out EmoteSoundsPrototype? evSounds))
+            {
+                args.Handled = _chat.TryPlayEmoteSound(uid, evSounds, args.Emote);
+                return;
+            }
+        }
+        // Goobstation end
+
         if (component.EmoteSounds is not { } sounds)
             return;
 
@@ -100,6 +117,19 @@ public sealed partial class VocalSystem : EntitySystem
 
     private bool TryPlayScreamSound(EntityUid uid, VocalComponent component)
     {
+        // Goobstation start
+        var getSoundEv = new GetEmoteSoundsEvent();
+        RaiseLocalEvent(uid, ref getSoundEv);
+        if (getSoundEv.Handled)
+        {
+            if (getSoundEv.EmoteSoundProtoId is not { } proto)
+                return false;
+
+            if (_proto.TryIndex(proto, out EmoteSoundsPrototype? evSounds))
+                return _chat.TryPlayEmoteSound(uid, evSounds, component.ScreamId);
+        }
+        // Goobstation end
+
         if (_random.Prob(component.WilhelmProbability))
         {
             _audio.PlayPvs(component.Wilhelm, uid, component.Wilhelm.Params);

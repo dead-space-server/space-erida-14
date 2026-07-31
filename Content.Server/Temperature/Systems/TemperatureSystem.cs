@@ -7,6 +7,8 @@ using Content.Shared.Temperature;
 using Content.Shared.Projectiles;
 using Content.Shared.Temperature.Components;
 using Content.Shared.Temperature.Systems;
+using Content.Shared._Goobstation.Temperature.Components;
+using Content.Goobstation.Shared.Temperature;
 
 namespace Content.Server.Temperature.Systems;
 
@@ -25,6 +27,12 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
         SubscribeLocalEvent<InternalTemperatureComponent, MapInitEvent>(OnInit);
 
         SubscribeLocalEvent<ChangeTemperatureOnCollideComponent, ProjectileHitEvent>(ChangeTemperatureOnCollide);
+
+        SubscribeLocalEvent<SpecialLowTempImmunityComponent, TemperatureImmunityEvent>(OnCheckLowTemperatureImmunity); // Goob edit
+        SubscribeLocalEvent<SpecialHighTempImmunityComponent, TemperatureImmunityEvent>(OnCheckHighTemperatureImmunity); // Goob edit
+        SubscribeLocalEvent<TemperatureDamageComponent, GetTemperatureThresholdsEvent>(OnGetTemperatureThresholds); // goob edit
+        SubscribeLocalEvent<TemperatureComponent, GetCurrentTemperatureEvent>(OnGetCurrentTemperature); // Goob edit
+
 
         InitializeDamage();
     }
@@ -66,6 +74,14 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
         var lastTemp = temperature.CurrentTemperature;
         var delta = temperature.CurrentTemperature - temp;
+
+        // Goobstation start
+        var attemptEv = new TemperatureChangeAttemptEvent(temp, lastTemp, delta);
+        RaiseLocalEvent(uid, attemptEv);
+        if (attemptEv.Cancelled)
+            return;
+        // Goobstation end
+
         temperature.CurrentTemperature = temp;
         RaiseLocalEvent(uid, new OnTemperatureChangeEvent(temperature.CurrentTemperature, lastTemp, delta), broadcast: true);
     }
@@ -77,15 +93,36 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
         if (!ignoreHeatResistance)
         {
-            var ev = new ModifyChangedTemperatureEvent(heatAmount);
+            var ev = new ModifyChangedTemperatureEvent(heatAmount, uid); // Goobstation
             RaiseLocalEvent(uid, ev);
             heatAmount = ev.TemperatureDelta;
         }
 
+        // Goobstation start
         float lastTemp = temperature.CurrentTemperature;
-        temperature.CurrentTemperature += heatAmount / GetHeatCapacity(uid, temperature);
-        float delta = temperature.CurrentTemperature - lastTemp;
+        float newTemp = temperature.CurrentTemperature + heatAmount / GetHeatCapacity(uid, temperature);
 
+        var preEv = new BeforeTemperatureChange(
+            newTemp,
+            lastTemp,
+            newTemp - lastTemp);
+        RaiseLocalEvent(uid, ref preEv);
+
+        var tempEv = new TemperatureImmunityEvent(newTemp);
+        RaiseLocalEvent(uid, tempEv);
+        newTemp = tempEv.CurrentTemperature;
+
+        float delta = newTemp - lastTemp;
+
+        var attemptEv = new TemperatureChangeAttemptEvent(newTemp, lastTemp, delta);
+        RaiseLocalEvent(uid, attemptEv);
+        if (attemptEv.Cancelled)
+            return;
+
+        temperature.CurrentTemperature = newTemp;
+        // Goobstation end
+
+        temperature.CurrentTemperature = newTemp;
         RaiseLocalEvent(uid, new OnTemperatureChangeEvent(temperature.CurrentTemperature, lastTemp, delta), broadcast: true);
     }
 
@@ -134,4 +171,29 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
     {
         ChangeHeat(args.Target, ent.Comp.Heat, ent.Comp.IgnoreHeatResistance);// adjust the temperature
     }
+
+    // Goob start
+    private void OnCheckLowTemperatureImmunity(Entity<SpecialLowTempImmunityComponent> ent, ref TemperatureImmunityEvent args)
+    {
+        if (args.CurrentTemperature < args.IdealTemperature)
+            args.CurrentTemperature = args.IdealTemperature;
+    }
+
+    private void OnCheckHighTemperatureImmunity(Entity<SpecialHighTempImmunityComponent> ent, ref TemperatureImmunityEvent args)
+    {
+        if (args.CurrentTemperature > args.IdealTemperature)
+            args.CurrentTemperature = args.IdealTemperature;
+    }
+
+    private void OnGetTemperatureThresholds(Entity<TemperatureDamageComponent> ent, ref GetTemperatureThresholdsEvent args)
+    {
+        args.HeatDamageThreshold = ent.Comp.HeatDamageThreshold;
+        args.ColdDamageThreshold = ent.Comp.ColdDamageThreshold;
+    }
+    private void OnGetCurrentTemperature(Entity<TemperatureComponent> ent, ref GetCurrentTemperatureEvent args)
+    {
+        args.CurrentTemperature = ent.Comp.CurrentTemperature;
+    }
+
+    // Goob end
 }

@@ -77,6 +77,11 @@
       reagents:
       - ReagentId: Plasma
         Quantity: 10
+  - type: Tag # Goobstation
+    tags:
+    - SheetPlasma
+    - Sheet
+    - ConstructionMaterial
 
 - type: entity
   parent: SheetPlasma

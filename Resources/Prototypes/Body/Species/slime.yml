@@ -285,6 +285,9 @@
   - type: VisualOrgan
     data:
       sprite: Mobs/Customization/eyes.rsi
+  - type: Tag # erida edit
+    tags:
+    - Eyes
 # Erida end
 
 - type: entity
@@ -294,3 +297,6 @@
   components:
   - type: Lung
     alert: LowNitrogen
+  - type: Tag # erida edit
+    tags:
+    - Lungs

@@ -87,7 +87,7 @@ public sealed partial class AdminFrozenSystem : EntitySystem
     {
         if (TryComp<PullableComponent>(uid, out var pullable))
         {
-            _pulling.TryStopPull(uid, pullable);
+            _pulling.TryStopPull(uid, pullable, ignoreGrab: true); // Goobstation edit
         }
 
         UpdateCanMove(uid, component, args);

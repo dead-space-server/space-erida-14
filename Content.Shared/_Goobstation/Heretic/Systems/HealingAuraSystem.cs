@@ -1,0 +1,93 @@
+﻿// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._Goobstation.Heretic.Components;
+using Content.Shared._Goobstation.Heretic.Systems.Abilities;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Whitelist;
+using Robust.Shared.Timing;
+
+namespace Content.Shared._Goobstation.Heretic.Systems;
+
+public sealed partial class HealingAuraSystem : EntitySystem
+{
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IComponentFactory _compFact = default!;
+
+    [Dependency] private SharedHereticAbilitySystem _heretic = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
+        var query = EntityQueryEnumerator<HealingAuraComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var aura, out var xform))
+        {
+            aura.Accumulator += frameTime;
+
+            if (aura.Accumulator < aura.HealDelay)
+                continue;
+
+            aura.Accumulator = 0f;
+
+            var lookup = _lookup.GetEntitiesInRange<DamageableComponent>(xform.Coordinates, aura.Range);
+            foreach (var (ent, damageable) in lookup)
+            {
+                var multiplier = GetHealMultiplier(ent, (uid, aura));
+                if (multiplier == 0f)
+                    continue;
+
+                _heretic.IHateWoundMed(new Entity<DamageableComponent?>(ent, damageable),
+                    aura.ToHeal * multiplier,
+                    aura.BoneHeal * multiplier,
+                    aura.PainHeal * multiplier,
+                    aura.WoundHeal * multiplier,
+                    aura.BloodHeal * multiplier,
+                    aura.BleedHeal * multiplier);
+            }
+        }
+    }
+
+    private float GetHealMultiplier(EntityUid toHeal, Entity<HealingAuraComponent> ent)
+    {
+        var (uid, aura) = ent;
+
+        if (uid == toHeal)
+            return aura.SelfHealMultiplier;
+
+        if (_whitelist.IsWhitelistFail(aura.Whitelist, toHeal))
+            return 0f;
+
+        if (aura.ComponentHealMultipliers == null)
+            return 1f;
+
+        var multiplier = 0f;
+        foreach (var (key, value) in aura.ComponentHealMultipliers)
+        {
+            if (!_compFact.TryGetRegistration(key, out var reg))
+            {
+                Log.Error($"Unknown component: ${key}");
+                aura.ComponentHealMultipliers.Remove(key);
+                return 0f;
+            }
+
+            if (!HasComp(toHeal, reg.Type))
+                continue;
+
+            var sign = multiplier == 0 ? 1 : MathF.Sign(multiplier);
+            multiplier = sign * MathF.Max(MathF.Abs(multiplier), MathF.Abs(value));
+        }
+
+        return multiplier;
+    }
+}

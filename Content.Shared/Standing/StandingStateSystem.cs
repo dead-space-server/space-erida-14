@@ -204,7 +204,8 @@ public sealed partial class StandingStateSystem : EntitySystem
 }
 
 [ByRefEvent]
-public record struct DropHandItemsEvent();
+// Goobstation
+public record struct DropHandItemsEvent(bool Handled = false);
 
 /// <summary>
 /// Subscribe if you can potentially block a down attempt.

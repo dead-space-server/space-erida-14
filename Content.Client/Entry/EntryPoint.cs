@@ -118,6 +118,7 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("gameMap");
             _prototypeManager.RegisterIgnore("gameMapPool");
             _prototypeManager.RegisterIgnore("gamePreset");
+            _prototypeManager.RegisterIgnore("autoVotes"); // Erida edit
             _prototypeManager.RegisterIgnore("noiseChannel");
             _prototypeManager.RegisterIgnore("playerConnectionWhitelist");
             _prototypeManager.RegisterIgnore("spaceBiome");

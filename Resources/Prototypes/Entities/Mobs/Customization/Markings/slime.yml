@@ -1,7 +1,6 @@
 - type: marking
   id: SlimeGradientLeftArm
   bodyPart: LArm
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_arm
@@ -9,7 +8,6 @@
 - type: marking
   id: SlimeGradientRightArm
   bodyPart: RArm
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_arm
@@ -17,7 +15,6 @@
 - type: marking
   id: SlimeGradientLeftLeg
   bodyPart: LLeg
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_leg
@@ -25,7 +22,6 @@
 - type: marking
   id: SlimeGradientRightLeg
   bodyPart: RLeg
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_leg
@@ -33,7 +29,6 @@
 - type: marking
   id: SlimeGradientLeftFoot
   bodyPart: LFoot
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_foot
@@ -41,7 +36,6 @@
 - type: marking
   id: SlimeGradientRightFoot
   bodyPart: RFoot
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_foot
@@ -49,7 +43,6 @@
 - type: marking
   id: SlimeGradientLeftHand
   bodyPart: LHand
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_l_hand
@@ -57,7 +50,6 @@
 - type: marking
   id: SlimeGradientRightHand
   bodyPart: RHand
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/slime_parts.rsi
     state: gradient_r_hand

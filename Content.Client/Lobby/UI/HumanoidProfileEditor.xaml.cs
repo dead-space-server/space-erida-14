@@ -45,8 +45,6 @@ namespace Content.Client.Lobby.UI
 
         private readonly SpriteSystem _sprite;
 
-        private readonly SharedScaleVisualsSystem _sharedScaleVisualsSystem;
-
         // CCvar.
         private int _maxNameLength;
         private int _maxCustomSpeciesLength; // Erida
@@ -113,7 +111,6 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
-            _sharedScaleVisualsSystem = _entManager.System<SharedScaleVisualsSystem>();
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
             _maxCustomSpeciesLength = _cfgManager.GetCVar(CCVars.MaxCustomSpeciesLength); // Erida
@@ -213,10 +210,7 @@ namespace Content.Client.Lobby.UI
                 SpeciesButton.SelectId(args.Id);
                 SetSpecies(_species[args.Id].ID);
                 OnSkinColorOnValueChanged();
-                // Erida start
-                _markingsModel.Markings = [];
                 UpdateMarkings();
-                // Erida end
                 UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
             };
 
@@ -467,6 +461,8 @@ namespace Content.Client.Lobby.UI
             UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
             UpdateWeight(); // Goobstation: port EE height/width sliders
 
+            ReloadProfilePreview(); // Erida edit
+
             if (Profile != null)
             {
                 PreferenceUnavailableButton.SelectId((int)Profile.PreferenceUnavailable);
@@ -482,11 +478,6 @@ namespace Content.Client.Lobby.UI
                 return;
 
             SpriteView.ReloadProfilePreview(Profile);
-
-            // Erida start
-            if (SpriteView.Sprite != null)
-                _sharedScaleVisualsSystem.SetSpriteScale(SpriteView.PreviewDummy, new Vector2(Profile.Width, Profile.Height));
-            // Erida end
 
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();

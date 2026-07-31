@@ -2,6 +2,7 @@ using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Server.Inventory;
 using Content.Server.Polymorph.Components;
+using Content.Shared.Actions.Components;
 using Content.Shared.Body;
 using Content.Shared.Buckle;
 using Content.Shared.Coordinates;
@@ -20,6 +21,7 @@ using Robust.Server.Audio;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -27,6 +29,8 @@ namespace Content.Server.Polymorph.Systems;
 
 public sealed partial class PolymorphSystem : EntitySystem
 {
+    [Dependency] private ISerializationManager _serialization = default!; // Goobstation
+    [Dependency] private IComponentFactory _compFact = default!;
     [Dependency] private SharedMapSystem _map = default!;
     [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private IGameTiming _gameTiming = default!;
@@ -109,6 +113,8 @@ public sealed partial class PolymorphSystem : EntitySystem
         {
             _actions.SetEntityIcon((component.Action.Value, action), component.Parent);
             _actions.SetUseDelay(component.Action.Value, TimeSpan.FromSeconds(component.Configuration.Delay));
+            if (component.Configuration.SkipRevertConfirmation) // Goobstation
+                RemComp<ConfirmableActionComponent>(component.Action.Value);
         }
     }
 
@@ -211,7 +217,7 @@ public sealed partial class PolymorphSystem : EntitySystem
                 ("child", Identity.Entity(child, EntityManager))),
                 child);
 
-        _mindSystem.MakeSentient(child);
+        _mindSystem.MakeSentient(child, configuration.AllowMovement);
 
         var polymorphedComp = Factory.GetComponent<PolymorphedEntityComponent>();
         polymorphedComp.Parent = uid;
@@ -221,8 +227,12 @@ public sealed partial class PolymorphSystem : EntitySystem
         var childXform = Transform(child);
         _transform.SetLocalRotation(child, targetTransformComp.LocalRotation, childXform);
 
-        if (_container.TryGetContainingContainer((uid, targetTransformComp, null), out var cont))
+        // Goob edit start
+        if (configuration.AttachToGridOrMap)
+            _transform.AttachToGridOrMap(child, childXform);
+        else if (_container.TryGetContainingContainer((uid, targetTransformComp, null), out var cont))
             _container.Insert(child, cont);
+        // Goob edit end
 
         //Transfers all damage from the original to the new one
         if (configuration.TransferDamage &&
@@ -265,6 +275,38 @@ public sealed partial class PolymorphSystem : EntitySystem
         {
             _visualBody.CopyAppearanceFrom(uid, child);
         }
+        // Goobstation start
+        if (configuration.ComponentsToTransfer.Count > 0) // Goobstation
+        {
+            foreach (var data in configuration.ComponentsToTransfer)
+            {
+                if (!_compFact.TryGetRegistration(data.Component, out var registration))
+                    continue;
+
+                var type = registration.Type;
+
+                if (!EntityManager.TryGetComponent(uid, type, out var component))
+                    continue;
+
+                var newComp = _compFact.GetComponent(type);
+
+                if (data.Mirror)
+                {
+                    if (!HasComp(child, type))
+                        AddComp(child, newComp);
+
+                    continue;
+                }
+
+                if (!data.Override && HasComp(child, type))
+                    continue;
+
+                object? temp = (Component) newComp;
+                _serialization.CopyTo(component, ref temp, notNullableOverride: true);
+                AddComp(child, (Component) temp!, true);
+            }
+        }
+        // Goobstation end
 
         if (_mindSystem.TryGetMind(uid, out var mindId, out var mind))
             _mindSystem.TransferTo(mindId, child, mind: mind);
@@ -370,11 +412,14 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (component.Configuration.EffectProto != null)
             SpawnAttachedTo(component.Configuration.EffectProto, parent.ToCoordinates());
 
+        string? popup = null; // Goobstation
         if (component.Configuration.ExitPolymorphPopup != null)
-            _popup.PopupEntity(Loc.GetString(component.Configuration.ExitPolymorphPopup,
+            popup = Loc.GetString(component.Configuration.ExitPolymorphPopup,
                 ("parent", Identity.Entity(uid, EntityManager)),
-                ("child", Identity.Entity(parent, EntityManager))),
-                parent);
+                ("child", Identity.Entity(parent, EntityManager)));
+
+        if (component.Configuration.ShowPopup) // Gobostation
+            _popup.PopupEntity(popup, parent);
         QueueDel(uid);
 
         return parent;

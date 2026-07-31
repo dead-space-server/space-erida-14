@@ -2,7 +2,6 @@
   id: HumanNoseSchnozz
   bodyPart: Snout
   forcedColoring: true
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: schnozz
@@ -11,7 +10,6 @@
   id: HumanNoseNubby
   bodyPart: Snout
   forcedColoring: true
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: nubby
@@ -20,7 +18,6 @@
   id: HumanNoseDroop
   bodyPart: Snout
   forcedColoring: true
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: droop
@@ -29,7 +26,6 @@
   id: HumanNoseBlob
   bodyPart: Snout
   forcedColoring: true
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: blob
@@ -38,7 +34,6 @@
   id: HumanNoseUppie
   bodyPart: Snout
   forcedColoring: true
-  groupWhitelist: [] #Erida update
   sprites:
   - sprite: Mobs/Customization/human_noses.rsi
     state: uppie
