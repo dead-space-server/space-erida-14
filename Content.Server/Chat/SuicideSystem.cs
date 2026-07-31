@@ -37,7 +37,6 @@ public sealed partial class SuicideSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<DamageableComponent, SuicideEvent>(OnDamageableSuicide);
-        SubscribeLocalEvent<MobStateComponent, SuicideEvent>(OnEnvironmentalSuicide);
         SubscribeLocalEvent<MindContainerComponent, SuicideGhostEvent>(OnSuicideGhost);
     }
 
@@ -108,44 +107,6 @@ public sealed partial class SuicideSystem : EntitySystem
 
         if (_ghostSystem.OnGhostAttempt(victim.Comp.Mind.Value, args.CanReturnToBody, mind: mindComponent))
             args.Handled = true;
-    }
-
-    /// <summary>
-    /// Raise event to attempt to use held item, or surrounding entities to attempt to commit suicide
-    /// </summary>
-    private void OnEnvironmentalSuicide(Entity<MobStateComponent> victim, ref SuicideEvent args)
-    {
-        if (args.Handled || _mobState.IsCritical(victim))
-            return;
-
-        var suicideByEnvironmentEvent = new SuicideByEnvironmentEvent(victim);
-
-        // Try to suicide by raising an event on the held item
-        if (_hands.TryGetActiveItem(victim.Owner, out var item))
-        {
-            RaiseLocalEvent(item.Value, suicideByEnvironmentEvent);
-            if (suicideByEnvironmentEvent.Handled)
-            {
-                args.Handled = suicideByEnvironmentEvent.Handled;
-                return;
-            }
-        }
-
-        // Try to suicide by nearby entities, like Microwaves or Crematoriums, by raising an event on it
-        // Returns upon being handled by any entity
-        foreach (var entity in _entityLookupSystem.GetEntitiesInRange(victim, 1, LookupFlags.Approximate | LookupFlags.Static))
-        {
-            // Skip any nearby items that can be picked up, we already checked the active held item above
-            if (_itemQuery.HasComponent(entity))
-                continue;
-
-            RaiseLocalEvent(entity, suicideByEnvironmentEvent);
-            if (!suicideByEnvironmentEvent.Handled)
-                continue;
-
-            args.Handled = suicideByEnvironmentEvent.Handled;
-            return;
-        }
     }
 
     /// <summary>
