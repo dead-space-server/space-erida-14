@@ -804,7 +804,7 @@
         emptyLabel: borg-slot-construction-gas-tank
         whitelist:
           components:
-          - GasTank`
+          - GasTank
     # Erida end
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
