@@ -1,0 +1,21 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:cc="clr-namespace:Content.Client._Erida.Circuits.Setup"
+                      SetSize="1270 850">
+    <LayoutContainer HorizontalExpand="True"
+                     VerticalExpand="True">
+
+        <cc:CircuitBackgroundControl Name="Background"
+                                     LayoutContainer.AnchorRight="1"
+                                     LayoutContainer.AnchorBottom="1">
+
+            <cc:CircuitSetupCanvasControl Name="Canvas"/>
+        </cc:CircuitBackgroundControl>
+
+        <cc:CircuitHudPanel Name="HudPanel"
+                            LayoutContainer.AnchorLeft="1"
+                            LayoutContainer.AnchorRight="1"
+                            LayoutContainer.MarginLeft="-360"
+                            MinSize="360 64"/>
+    </LayoutContainer>
+</controls:FancyWindow>

@@ -1,0 +1,21 @@
+- type: entity
+  id: CircuitPrinter
+  parent: [ BaseItem ]
+  name: circuit printer
+  description: TODO add desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Tools/electronic_tools.rsi
+    state: circuit_printer
+  - type: CircuitPrinter
+
+- type: entity
+  id: CircuitDebugger
+  parent: [ BaseItem ]
+  name: circuit debugger
+  description: TODO add desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Tools/electronic_tools.rsi
+    state: debugger
+  - type: CircuitDebugger

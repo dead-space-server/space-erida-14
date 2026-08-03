@@ -1,0 +1,8 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                Name="PortRoot"
+                MouseFilter="Pass">
+    <BoxContainer Name="Row"
+                  Orientation="Horizontal"
+                  SeparationOverride="5"
+                  VerticalAlignment="Center"/>
+</PanelContainer>

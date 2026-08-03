@@ -35,6 +35,10 @@ namespace Content.Shared.Verbs
             IconsOnly = iconsOnly;
         }
 
+        // Erida start
+        public static readonly VerbCategory IntegratedCircuit =
+                    new("verb-categories-integrated-circuit", "/Textures/Interface/hamburger.svg.192dpi.png");
+        // Erida end
         public static readonly VerbCategory Admin =
             new("verb-categories-admin", "/Textures/Interface/character.svg.192dpi.png");
 

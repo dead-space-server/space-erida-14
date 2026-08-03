@@ -1,0 +1,56 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                Name="RootPanel"
+                MinSize="220 0">
+    <BoxContainer Orientation="Vertical"
+                  SeparationOverride="0">
+
+        <PanelContainer Name="TitleBar"
+                        VerticalExpand="False">
+            <BoxContainer Orientation="Horizontal"
+                          Margin="8 6 6 6"
+                          SeparationOverride="6">
+                <Label Name="TitleLabel"
+                       HorizontalExpand="True"
+                       StyleClasses="LabelBig"/>
+                <Button Name="DebugButton"
+                        Text="Dev"
+                        MinSize="20 20"/>
+                <Button Name="DeleteButton"
+                        Text="x"
+                        MinSize="20 20"/>
+            </BoxContainer>
+        </PanelContainer>
+
+        <Control Name="AccentDivider"
+                 MinSize="0 8"/>
+
+        <BoxContainer Orientation="Horizontal"
+                      Margin="8 4 8 8"
+                      SeparationOverride="14">
+
+            <BoxContainer Orientation="Vertical"
+                          HorizontalExpand="True"
+                          SeparationOverride="4">
+                <Label Text="IN"
+                       StyleClasses="LabelSubText"/>
+                <BoxContainer Name="InputsBox"
+                              Orientation="Vertical"
+                              SeparationOverride="5"/>
+            </BoxContainer>
+
+            <BoxContainer Orientation="Vertical"
+                          HorizontalExpand="True"
+                          SeparationOverride="4">
+                <Label Text="OUT"
+                       StyleClasses="LabelSubText"
+                       HorizontalAlignment="Right"/>
+                <BoxContainer Name="OutputsBox"
+                              Orientation="Vertical"
+                              SeparationOverride="5"
+                              Align="End"/>
+            </BoxContainer>
+
+        </BoxContainer>
+
+    </BoxContainer>
+</PanelContainer>

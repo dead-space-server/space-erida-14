@@ -1,0 +1,33 @@
+- type: entity
+  id: BaseCircuitSetup
+  abstract: true
+  parent: [ BaseItem ]
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/Electronic/electronic_setups.rsi
+    state: setup_small
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: CircuitSetup
+  - type: ActivatableUI
+    key: enum.CircuitSetupUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CircuitSetupUiKey.Key:
+        type: CircuitSetupBoundUserInterface
+
+- type: entity
+  id: CircuitSetupSmall
+  parent: [ BaseCircuitSetup ]
+  name: small setup
+  description: TODO add desc
+  components:
+  - type: Sprite
+    state: setup_small

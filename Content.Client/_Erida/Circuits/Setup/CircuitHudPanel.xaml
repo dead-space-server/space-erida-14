@@ -1,0 +1,20 @@
+<PanelContainer xmlns="https://spacestation14.io"
+                Name="Root">
+    <BoxContainer Orientation="Vertical"
+                  Margin="56 10 16 10"
+                  SeparationOverride="6">
+
+        <BoxContainer Orientation="Horizontal"
+                      SeparationOverride="10">
+            <Label Name="StatusLabel"
+                   HorizontalExpand="True"
+                   StyleClasses="LabelBig"/>
+            <Button Name="HudCloseButton"
+                    Text="×"
+                    MinSize="22 22"/>
+        </BoxContainer>
+
+        <Label Name="PercentLabel"/>
+
+    </BoxContainer>
+</PanelContainer>

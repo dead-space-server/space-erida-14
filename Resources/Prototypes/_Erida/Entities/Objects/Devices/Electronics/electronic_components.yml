@@ -1,0 +1,61 @@
+- type: entity
+  id: BaseCircuitComponent
+  abstract: true
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/Electronic/electronic_components.rsi
+    state: and
+  - type: CircuitComponent
+    answerType: test
+
+- type: entity
+  id: CircuitComponentDebug
+  abstract: true
+  parent: BaseCircuitComponent
+  components:
+  - type: Sprite
+    state: and
+  - type: CircuitComponent
+    inputs:
+    - dataType: boolean
+    - dataType: string
+    - dataType: number
+    - dataType: signal
+    output:
+    - dataType: boolean
+    - dataType: string
+    - dataType: number
+    - dataType: signal
+
+- type: entity
+  id: CircuitComponentButton
+  parent: BaseCircuitComponent
+  name: button
+  description: TODO add desc
+  components:
+  - type: Sprite
+    state: button
+  - type: CircuitComponent
+    needSignalsForActivate: 0
+    answerType: Button
+    eventType: Verb
+    output:
+    - dataType: signal
+
+- type: entity
+  id: CircuitComponentVoice
+  parent: BaseCircuitComponent
+  name: voice
+  description: TODO add desc
+  components:
+  - type: Sprite
+    state: voice
+  - type: CircuitComponent
+    needSignalsForActivate: 1
+    answerType: Voice
+    inputs:
+    - dataType: string
+    - dataType: signal
+    output:
+    - dataType: signal
