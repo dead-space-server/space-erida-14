@@ -700,6 +700,16 @@
     sprite: Objects/Materials/Sheets/other.rsi
     state: generic_materials
 
+# Erida start
+- type: entity
+  id: BorgModuleConstructionGasTankPlaceholder
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/plasma.rsi
+    state: icon
+# Erida end
+
 - type: entity
   id: BorgModuleConstruction
   parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
@@ -788,6 +798,14 @@
     - item: GasAnalyzer
     - item: HolofanProjectorBorg
     - item: GeigerCounter
+    # Erida start
+    - hand:
+        emptyRepresentative: BorgModuleConstructionGasTankPlaceholder
+        emptyLabel: borg-slot-construction-gas-tank
+        whitelist:
+          components:
+          - GasTank`
+    # Erida end
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
 

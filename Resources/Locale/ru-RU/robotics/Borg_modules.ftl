@@ -1,5 +1,6 @@
 borg-slot-cables-empty = Кабели
 borg-slot-construction-empty = Строительные материалы
+borg-slot-construction-gas-tank = Баллоны
 borg-slot-circuitboards-empty = Платы
 borg-slot-flatpacks-empty = Упаковки
 borg-slot-tiles-empty = Плитки

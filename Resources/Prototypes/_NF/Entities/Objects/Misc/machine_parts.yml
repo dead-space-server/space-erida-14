@@ -17,6 +17,7 @@
       stackType: Capacitor
     - type: Tag # _Lua
       tags: # _Lua
+      - ConstructionMaterial # Erida
       - CapacitorStockPart # _Lua
     - type: StackPrice
       price: 5
@@ -37,6 +38,7 @@
       stackType: MatterBin
     - type: Tag # _Lua
       tags: # _Lua
+      - ConstructionMaterial # Erida
       - MatterBinStockPart # _Lua
     - type: StackPrice
       price: 5
