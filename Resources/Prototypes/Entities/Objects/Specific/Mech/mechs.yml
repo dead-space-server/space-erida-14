@@ -98,7 +98,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 1000
+        damage: 400
       behaviors:
       - !type:PlaySoundBehavior
         sound:

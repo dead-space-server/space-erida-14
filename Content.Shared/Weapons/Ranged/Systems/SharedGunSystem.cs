@@ -36,8 +36,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Item;
-using Content.Shared.Mech.Components;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
@@ -148,14 +146,12 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         var user = args.SenderSession.AttachedEntity;
 
-        if (user == null || !_combatMode.IsInCombatMode(user))
+        if (user == null ||
+            !_combatMode.IsInCombatMode(user) ||
+            !TryGetGun(user.Value, out var gun))
+        {
             return;
-
-        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
-            user = mechPilot.Mech;
-
-        if (!TryGetGun(user.Value, out var gun))
-            return;
+        }
 
         if (gun.Owner != GetEntity(msg.Gun))
             return;
@@ -188,29 +184,26 @@ public abstract partial class SharedGunSystem : EntitySystem
         // Erida-end
     }
 
-    private void OnStopShootRequest(RequestStopShootEvent msg, EntitySessionEventArgs args)
+    private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
-        var user = args.SenderSession.AttachedEntity;
-        var gunUid = GetEntity(msg.Gun);
+        var user = args.SenderSession.AttachedEntity; // Erida-edit
 
-        if (user == null)
+        var gunUid = GetEntity(ev.Gun);
+
+        if (user == null || // Erida-edit
+            !TryComp<GunComponent>(gunUid, out var gun) ||
+            !TryGetGun(user.Value, out var userGun)) //Erida-edit
+        {
             return;
+        }
 
-        if (TryComp<MechPilotComponent>(user.Value, out var mechPilot))
-            user = mechPilot.Mech;
-
-        if (!TryGetGun(user.Value, out var gunEntity))
+        if (userGun != (gunUid, gun))
             return;
-
-        if (gunEntity.Owner != gunUid)
-            return;
-
-        EntityUid ent = gunEntity.Owner;
 
         // Erida-start
-        if (!GetAllGuns(user.Value, gunEntity, out var allGuns))
+        if (!GetAllGuns(user.Value, userGun, out var allGuns))
         {
-            StopShooting(gunEntity);
+            StopShooting(userGun);
             return;
         }
 
@@ -264,22 +257,7 @@ public abstract partial class SharedGunSystem : EntitySystem
     /// <returns>True if gun was found</returns>
     public bool TryGetGun(EntityUid entity, out Entity<GunComponent> gun)
     {
-        if (TryComp<MechPilotComponent>(entity, out var pilot) &&
-            TryComp<MechComponent>(pilot.Mech, out var mech) &&
-            mech.CurrentSelectedEquipment.HasValue &&
-            TryComp<GunComponent>(mech.CurrentSelectedEquipment.Value, out var mechGun))
-        {
-            gun = (mech.CurrentSelectedEquipment.Value, mechGun);
-            return true;
-        }
-
-        if (TryComp<MechComponent>(entity, out var mechDirect) &&
-            mechDirect.CurrentSelectedEquipment.HasValue &&
-            TryComp<GunComponent>(mechDirect.CurrentSelectedEquipment.Value, out var mechDirectGun))
-        {
-            gun = (mechDirect.CurrentSelectedEquipment.Value, mechDirectGun);
-            return true;
-        }
+        gun = default;
 
         if (_hands.GetActiveItem(entity) is { } held &&
             TryComp(held, out GunComponent? gunComp))
@@ -288,13 +266,13 @@ public abstract partial class SharedGunSystem : EntitySystem
             return true;
         }
 
+        // Last resort is check if the entity itself is a gun.
         if (TryComp(entity, out gunComp))
         {
             gun = (entity, gunComp);
             return true;
         }
 
-        gun = default!;
         return false;
     }
 

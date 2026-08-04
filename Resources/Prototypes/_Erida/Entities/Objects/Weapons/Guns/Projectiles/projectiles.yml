@@ -200,14 +200,3 @@
     radius: 2
     color: purple
     energy: 1
-
-- type: entity
-  id: BulletCaselessRifle20
-  name: bullet (.20 rifle caseless)
-  parent: BaseBullet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    damage:
-      types:
-        Piercing: 17

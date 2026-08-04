@@ -6,7 +6,6 @@ using Content.Client.Weapons.Ranged.Components;
 using Content.Shared.Camera;
 using Content.Shared.CCVar;
 using Content.Shared.CombatMode;
-using Content.Shared.Mech.Components; // Goobstation
 using Content.Shared.Damage;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Ranged;
@@ -175,8 +174,6 @@ public sealed partial class GunSystem : SharedGunSystem
         {
             return;
         }
-        if (TryComp<MechPilotComponent>(entity, out var mechPilot)) // Goobstation
-            entity = mechPilot.Mech;
 
         var useKey = gun.Comp.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 

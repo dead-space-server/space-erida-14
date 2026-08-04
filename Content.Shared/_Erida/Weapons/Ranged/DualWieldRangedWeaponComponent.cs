@@ -1,10 +1,9 @@
 using Robust.Shared.GameStates;
-using Content.Shared.Weapons.Ranged.Systems;
 
-namespace Content.Shared.Weapons.Ranged.Components;
+namespace Content.Shared._Erida.Weapons.Ranged.MakedonShooting.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access(typeof(DualWeaponsSystem), typeof(SharedGunSystem))]
-public sealed partial class DualWeaponsBonusComponent : Component
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true, true)]
+public sealed partial class DualWieldRangedWeaponComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("minAngle"), AutoNetworkedField]
     public Angle MinAngle = Angle.FromDegrees(45);
