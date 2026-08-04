@@ -75,7 +75,6 @@
     price: 500
   - type: UseDelay
     delay: 1
-  - type: DualWeaponsBonus # Erida-edit
 
 - type: entity
   name: L6 SAW

@@ -70,7 +70,6 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  - type: DualWeaponsBonus # Erida-edit
 
 - type: entity
   name: Atreides

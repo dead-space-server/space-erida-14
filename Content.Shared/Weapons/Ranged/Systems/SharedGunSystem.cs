@@ -10,7 +10,6 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
-using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
@@ -156,43 +155,20 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (gun.Owner != GetEntity(msg.Gun))
             return;
 
-        // Erida-start
-        if (!GetAllGuns(user.Value, gun, out var allGuns))
-        {
-            gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
-            gun.Comp.Target = GetEntity(msg.Target);
-            AttemptShoot(user.Value, gun);
-            if (msg.Continuous)
-                gun.Comp.ShotCounter = 0;
-            return;
-        }
-
-        foreach (var weapon in allGuns)
-        {
-            if (TryComp<DualWeaponsBonusComponent>(weapon, out var dual))
-            {
-                dual.DualCurrent = true;
-                RefreshModifiers((weapon, weapon));
-            }
-
-            weapon.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
-            weapon.Comp.Target = GetEntity(msg.Target);
-            AttemptShoot(user.Value, weapon);
-            if (msg.Continuous)
-                weapon.Comp.ShotCounter = 0;
-        }
-        // Erida-end
+        gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
+        gun.Comp.Target = GetEntity(msg.Target);
+        AttemptShoot(user.Value, gun);
+        if (msg.Continuous)
+            gun.Comp.ShotCounter = 0;
     }
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
     {
-        var user = args.SenderSession.AttachedEntity; // Erida-edit
-
         var gunUid = GetEntity(ev.Gun);
 
-        if (user == null || // Erida-edit
+        if (args.SenderSession.AttachedEntity == null ||
             !TryComp<GunComponent>(gunUid, out var gun) ||
-            !TryGetGun(user.Value, out var userGun)) //Erida-edit
+            !TryGetGun(args.SenderSession.AttachedEntity.Value, out var userGun))
         {
             return;
         }
@@ -200,23 +176,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (userGun != (gunUid, gun))
             return;
 
-        // Erida-start
-        if (!GetAllGuns(user.Value, userGun, out var allGuns))
-        {
-            StopShooting(userGun);
-            return;
-        }
-
-        foreach (var weapon in allGuns)
-        {
-            if (TryComp<DualWeaponsBonusComponent>(weapon, out var dual))
-            {
-                dual.DualCurrent = false;
-                RefreshModifiers((weapon, weapon));
-            }
-            StopShooting(weapon);
-        }
-        // Erida-end
+        StopShooting(userGun);
     }
 
     public bool CanShoot(GunComponent component)
@@ -227,34 +187,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         return true;
     }
 
-    // Erida-start
-    private bool GetAllGuns(EntityUid entity, EntityUid activeGun, out List<Entity<GunComponent>> weaponsList)
-    {
-        weaponsList = new List<Entity<GunComponent>>();
-
-        if (!TryComp<HandsComponent>(entity, out var handsComp))
-            return false;
-
-        foreach (var (handString, handClass) in handsComp.Hands)
-        {
-            if (!_hands.TryGetHeldItem(entity, handString, out var heldItem))
-                continue;
-            if (TryComp<GunComponent>(heldItem.Value, out var gunComp))
-            {
-                weaponsList.Add((heldItem.Value, gunComp));
-            }
-        }
-
-        return weaponsList.Count > 1;
-    }
-
-    // Erida-end
-    /// <summary>
-    ///     Tries to get an entity with <see cref="GunComponent"/> from the specified entity's hands, or from the entity itself.
-    /// </summary>
-    /// <param name="entity">Entity that is holding the gun, or is the gun</param>
-    /// <param name="gun">Gun entity to return</param>
-    /// <returns>True if gun was found</returns>
     public bool TryGetGun(EntityUid entity, out Entity<GunComponent> gun)
     {
         gun = default;

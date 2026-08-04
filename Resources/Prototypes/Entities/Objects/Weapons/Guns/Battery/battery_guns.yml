@@ -36,7 +36,6 @@
     startingCharge: 1000
   - type: StaticPrice
     price: 500
-  - type: DualWeaponsBonus # Erida-edit
 
 - type: entity
   parent: [BaseWeaponBattery, BaseGunWieldable]
@@ -111,7 +110,6 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
-  - type: DualWeaponsBonus # Erida-edit
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -132,11 +130,6 @@
     slots:
     - Belt
     - suitStorage
-   # Erida-start
-  - type: DualWeaponsBonus
-    minAngle: 30
-    maxAngle: 30
-  # Erida-end
 
 - type: entity
   id: BaseWeaponPowerCellSmall

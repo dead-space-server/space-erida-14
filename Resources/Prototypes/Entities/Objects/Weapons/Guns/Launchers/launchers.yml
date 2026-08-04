@@ -27,7 +27,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
-  - type: DualWeaponsBonus # Erida-edit
 
 - type: entity
   name: china lake
