@@ -80,6 +80,11 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  # Erida-start
+  - type: DualWieldRangedWeapon
+    minAngle: 30
+    maxAngle: 30
+  # Erida-end
 
 - type: entity
   name: viper
@@ -202,6 +207,12 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 1500
+  # Erida-start
+  - type: DualWieldRangedWeapon
+    minAngle: 0
+    maxAngle: 0
+    angleIncrease: 0
+  # Erida-end
 
 - type: entity
   name: mk 58

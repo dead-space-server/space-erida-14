@@ -70,6 +70,7 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: DualWieldRangedWeapon # Erida-start
 
 - type: entity
   name: Atreides
@@ -111,7 +112,7 @@
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
   - type: Wieldable
     unwieldOnUse: false
-  - type: GunWieldBonus # Erida-edit 
+  - type: GunWieldBonus # Erida-edit
     minAngle: -6 # -19 -> -6
     maxAngle: -10 # -16 -> -10
   - type: Gun # Erida-edit

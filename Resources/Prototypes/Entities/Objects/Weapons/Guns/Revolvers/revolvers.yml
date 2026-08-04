@@ -61,6 +61,11 @@
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: StaticPrice
     price: 500
+  # Erida-start
+  - type: DualWieldRangedWeapon
+    minAngle: 30
+    maxAngle: 30
+  # Erida-end
 
 - type: entity
   name: Deckard

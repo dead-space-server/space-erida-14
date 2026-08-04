@@ -36,6 +36,7 @@
     startingCharge: 1000
   - type: StaticPrice
     price: 500
+  - type: DualWieldRangedWeapon # Erida-edit
 
 - type: entity
   parent: [BaseWeaponBattery, BaseGunWieldable]
@@ -110,6 +111,7 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
+  - type: DualWieldRangedWeapon # Erida-edit
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -130,6 +132,11 @@
     slots:
     - Belt
     - suitStorage
+  # Erida-start
+  - type: DualWieldRangedWeapon
+    minAngle: 30
+    maxAngle: 30
+  # Erida-end
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -176,7 +183,7 @@
     - Sidearm
     - LaserWeapon
   # Erida-start
-  - type: DualWeaponsBonus
+  - type: DualWieldRangedWeapon
     minAngle: 0
     maxAngle: 3
     angleIncrease: 0
@@ -584,6 +591,7 @@
     - Security
     - Antagonists
   - type: PacifismAllowedGun
+  - type: DualWieldRangedWeapon
 
 - type: entity
   name: disabler SMG

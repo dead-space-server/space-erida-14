@@ -39,7 +39,7 @@
     tags:
     - Sidearm
   # Erida-start
-  - type: DualWeaponsBonus
+  - type: DualWieldRangedWeapon
     minAngle: 0
     maxAngle: 3
     angleIncrease: 0

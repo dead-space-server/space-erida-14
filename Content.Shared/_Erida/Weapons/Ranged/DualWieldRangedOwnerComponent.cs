@@ -7,5 +7,11 @@ namespace Content.Shared._Erida.Weapons.Ranged.MakedonShooting.Components;
 public sealed partial class DualWieldRangedOwnerComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public HashSet<Entity<GunComponent>> WeaponList = [];
+    public HashSet<EntityUid> WeaponList = [];
+
+    public bool DualWield => WeaponList.Count >= 2;
+
+    public bool NeedToUpdateOnUp => WeaponList.Count == 2;
+
+    public bool NeedToUpdateOnDown => WeaponList.Count == 1;
 }

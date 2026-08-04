@@ -54,6 +54,7 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: DualWieldRangedWeapon # Erida-start
 
 - type: entity
   name: Bulldog
@@ -123,7 +124,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 5000
-  - type: DualWeaponsBonus # Erida-edit
+  - type: DualWieldRangedWeapon # Erida-edit
 
 - type: entity
   name: double-barreled shotgun

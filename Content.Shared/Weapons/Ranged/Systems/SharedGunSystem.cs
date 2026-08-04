@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
+using Content.Shared._Erida.Weapons.Ranged.MakedonShooting.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
@@ -143,6 +144,13 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private void OnShootRequest(RequestShootEvent msg, EntitySessionEventArgs args)
     {
+        // Erida-Start
+        var gunUid = GetEntity(msg.Gun);
+
+        if (HasComp<DualWieldRangedWeaponComponent>(gunUid))
+            return;
+        // Erida-end
+
         var user = args.SenderSession.AttachedEntity;
 
         if (user == null ||
@@ -152,7 +160,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return;
         }
 
-        if (gun.Owner != GetEntity(msg.Gun))
+        if (gun.Owner != gunUid) // Erida-edit
             return;
 
         gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);

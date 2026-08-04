@@ -7,6 +7,7 @@ using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable;
+using Content.Shared.Wieldable.Components;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Shared._Erida.Weapons.Ranged.MakedonShooting;
@@ -20,40 +21,24 @@ public sealed partial class DualWieldRangedSystem : EntitySystem
         base.Initialize();
 
         SubscribeAllEvent<RequestShootEvent>(OnShootRequest);
-        SubscribeAllEvent<RequestStopShootEvent>(OnStopShootRequest);
 
-        SubscribeLocalEvent<DualWieldRangedWeaponComponent, EquippedHandEvent>(OnEquippedHand);
-        SubscribeLocalEvent<DualWieldRangedWeaponComponent, UnequippedHandEvent>(OnUnequippedHand);
+        SubscribeLocalEvent<DualWieldRangedWeaponComponent, GotEquippedHandEvent>(OnGotEquippedHand);
+        SubscribeLocalEvent<DualWieldRangedWeaponComponent, GotUnequippedHandEvent>(OnGotUnequippedHand);
 
-        SubscribeLocalEvent<DualWieldRangedWeaponComponent, ItemUnwieldedEvent>(OnItemUnwieldedHand);
         SubscribeLocalEvent<DualWieldRangedWeaponComponent, ItemWieldedEvent>(OnItemWieldedHand);
+        SubscribeLocalEvent<DualWieldRangedWeaponComponent, ItemUnwieldedEvent>(OnItemUnwieldedHand);
+
 
         SubscribeLocalEvent<DualWieldRangedWeaponComponent, GunRefreshModifiersEvent>(OnGunRefreshModifiers);
     }
 
     private void OnShootRequest(RequestShootEvent msg, EntitySessionEventArgs args)
     {
-        var user = args.SenderSession.AttachedEntity;
-
-        if (user == null)
-            return;
-
         var gunUid = GetEntity(msg.Gun);
 
         if (!HasComp<DualWieldRangedWeaponComponent>(gunUid))
             return;
 
-        if (!TryGetWeaponsList(user.Value, out var weaponList))
-            return;
-
-        foreach (var weapon in weaponList)
-        {
-            _gunSystem.AttemptShoot(user.Value, weapon, GetCoordinates(msg.Coordinates), GetEntity(msg.Target));
-        }
-    }
-
-    private void OnStopShootRequest(RequestStopShootEvent msg, EntitySessionEventArgs args)
-    {
         var user = args.SenderSession.AttachedEntity;
 
         if (user == null)
@@ -64,32 +49,32 @@ public sealed partial class DualWieldRangedSystem : EntitySystem
 
         foreach (var weapon in weaponList)
         {
-            _gunSystem.StopShooting(weapon);
+            if (!TryComp<GunComponent>(weapon, out var gComp))
+                continue;
+
+            _gunSystem.AttemptShoot(user.Value, (weapon, gComp), GetCoordinates(msg.Coordinates), GetEntity(msg.Target));
         }
     }
 
-    private void OnEquippedHand(Entity<DualWieldRangedWeaponComponent> entity, ref EquippedHandEvent args)
+    private void OnGotEquippedHand(Entity<DualWieldRangedWeaponComponent> entity, ref GotEquippedHandEvent args)
     {
         if (!TryComp<GunComponent>(entity, out var gComp))
             return;
 
-        var dwroComp = EnsureComp<DualWieldRangedOwnerComponent>(args.User);
-
-        entity.Comp.DualCurrent = true;
-        dwroComp.WeaponList.Add((entity.Owner, gComp));
-        _gunSystem.RefreshModifiers((entity.Owner, gComp));
+        AddWeaponToList(entity, args.User, gComp);
     }
 
-    private void OnUnequippedHand(Entity<DualWieldRangedWeaponComponent> entity, ref UnequippedHandEvent args)
+    private void OnGotUnequippedHand(Entity<DualWieldRangedWeaponComponent> entity, ref GotUnequippedHandEvent args)
     {
         if (!TryComp<GunComponent>(entity, out var gComp))
             return;
 
-        var dwroComp = EnsureComp<DualWieldRangedOwnerComponent>(args.User);
+        RemoveWeaponFromList(entity, args.User, gComp);
+    }
 
-        entity.Comp.DualCurrent = false;
-        dwroComp.WeaponList.Remove((entity.Owner, gComp));
-        _gunSystem.RefreshModifiers((entity.Owner, gComp));
+    private void OnItemWieldedHand(Entity<DualWieldRangedWeaponComponent> entity, ref ItemWieldedEvent args)
+    {
+        AddWeaponToList(entity, args.User);
     }
 
     private void OnItemUnwieldedHand(Entity<DualWieldRangedWeaponComponent> entity, ref ItemUnwieldedEvent args)
@@ -100,15 +85,75 @@ public sealed partial class DualWieldRangedSystem : EntitySystem
         RemoveWeaponFromList(entity, args.User);
     }
 
-    private void OnItemWieldedHand(Entity<DualWieldRangedWeaponComponent> entity, ref ItemWieldedEvent args)
+    public bool AddWeaponToList(Entity<DualWieldRangedWeaponComponent> weapon, EntityUid user, GunComponent? gComp = null)
     {
-        if (!HasComp<GunRequiresWieldComponent>(entity))
-            return;
+        if (TryComp<WieldableComponent>(weapon, out var wComp)
+            && HasComp<GunRequiresWieldComponent>(weapon)
+            && !wComp.Wielded)
+            return false;
 
-        AddWeaponToList(entity, args.User);
+        if (!Resolve(weapon, ref gComp))
+            return false;
+
+        var dwroComp = EnsureComp<DualWieldRangedOwnerComponent>(user);
+
+        dwroComp.WeaponList.Add(weapon);
+        DirtyField(user, dwroComp, nameof(DualWieldRangedOwnerComponent.WeaponList));
+
+        if (dwroComp.NeedToUpdateOnUp)
+            UpdateState(user, dwroComp);
+        else if (dwroComp.DualWield)
+            weapon.Comp.DualCurrent = true;
+
+        if (dwroComp.DualWield)
+            _gunSystem.RefreshModifiers((weapon, gComp));
+
+        return true;
     }
 
-    public bool UpdateWeaponList(EntityUid uid, out HashSet<Entity<GunComponent>>? weaponList)
+    public bool RemoveWeaponFromList(Entity<DualWieldRangedWeaponComponent> weapon, EntityUid user, GunComponent? gComp = null)
+    {
+        if (!Resolve(weapon, ref gComp))
+            return false;
+
+        var dwroComp = EnsureComp<DualWieldRangedOwnerComponent>(user);
+
+        weapon.Comp.DualCurrent = false;
+        dwroComp.WeaponList.Remove(weapon);
+        DirtyField(user, dwroComp, nameof(DualWieldRangedOwnerComponent.WeaponList));
+
+        if (dwroComp.NeedToUpdateOnDown)
+            UpdateState(user, dwroComp);
+
+        _gunSystem.RefreshModifiers((weapon, gComp));
+
+        return true;
+    }
+
+    public bool UpdateState(EntityUid user, DualWieldRangedOwnerComponent? dwroComp = null, HashSet<EntityUid>? weapons = null)
+    {
+        if (!Resolve(user, ref dwroComp))
+            return false;
+
+        weapons ??= dwroComp.WeaponList;
+
+        UpdateDualCurrentList(weapons, dwroComp.DualWield);
+
+        return true;
+    }
+
+    private void UpdateDualCurrentList(HashSet<EntityUid> weaponList, bool state)
+    {
+        foreach (var weapon in weaponList)
+        {
+            if (!TryComp<DualWieldRangedWeaponComponent>(weapon, out var drwComp))
+                continue;
+
+            drwComp.DualCurrent = state;
+        }
+    }
+
+    public bool UpdateWeaponList(EntityUid uid, out HashSet<EntityUid>? weaponList)
     {
         weaponList = null;
 
@@ -121,8 +166,6 @@ public sealed partial class DualWieldRangedSystem : EntitySystem
 
         var itemsInHands = _handsSystem.EnumerateHeld((uid, hComp));
 
-        var activeItem = _handsSystem.GetActiveItem(uid);
-
         foreach (var item in itemsInHands)
         {
             if (!TryComp<DualWieldRangedWeaponComponent>(item, out var dwrwComp)
@@ -131,40 +174,14 @@ public sealed partial class DualWieldRangedSystem : EntitySystem
 
             dwrwComp.DualCurrent = true;
             _gunSystem.RefreshModifiers((item, gComp));
-            dwroComp.WeaponList.Add((item, gComp));
+            dwroComp.WeaponList.Add(item);
         }
 
         weaponList = dwroComp.WeaponList;
         return true;
     }
 
-    public bool AddWeaponToList(Entity<DualWieldRangedWeaponComponent> weapon, EntityUid user, GunComponent? gComp = null)
-    {
-        if (!Resolve(weapon, ref gComp))
-            return false;
-
-        var dwroComp = EnsureComp<DualWieldRangedOwnerComponent>(user);
-
-        weapon.Comp.DualCurrent = true;
-        dwroComp.WeaponList.Add((user, gComp));
-        _gunSystem.RefreshModifiers((weapon, gComp));
-        return true;
-    }
-
-    public bool RemoveWeaponFromList(Entity<DualWieldRangedWeaponComponent> weapon, EntityUid user, GunComponent? gComp = null)
-    {
-        if (!Resolve(weapon, ref gComp))
-            return false;
-
-        var dwroComp = EnsureComp<DualWieldRangedOwnerComponent>(user);
-
-        weapon.Comp.DualCurrent = false;
-        dwroComp.WeaponList.Remove((user, gComp));
-        _gunSystem.RefreshModifiers((weapon, gComp));
-        return true;
-    }
-
-    public bool TryGetWeaponsList(EntityUid uid, out HashSet<Entity<GunComponent>> weaponList)
+    public bool TryGetWeaponsList(EntityUid uid, out HashSet<EntityUid> weaponList)
     {
         if (TryComp<DualWieldRangedOwnerComponent>(uid, out var msoComp)
             && msoComp.WeaponList != null)
