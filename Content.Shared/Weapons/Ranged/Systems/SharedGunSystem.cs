@@ -146,9 +146,6 @@ public abstract partial class SharedGunSystem : EntitySystem
     {
         // Erida-Start
         var gunUid = GetEntity(msg.Gun);
-
-        if (HasComp<DualWieldRangedWeaponComponent>(gunUid))
-            return;
         // Erida-end
 
         var user = args.SenderSession.AttachedEntity;
@@ -161,6 +158,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         }
 
         if (gun.Owner != gunUid) // Erida-edit
+            return;
+
+        if (HasComp<DualWieldRangedWeaponComponent>(gunUid)
+            && TryComp<DualWieldRangedOwnerComponent>(user, out var dwroComp)
+            && dwroComp.DualWieldEnabled)
             return;
 
         gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
