@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **⚠️ This repository is archived and no longer maintained.** 
+>
+> Development has moved to the new repository: **[dead-space-server/EridaGoob](https://github.com/dead-space-server/EridaGoob)**
+
 <div align="center">
     <h1>【 Erida 】</h1>
     <h3></h3>
